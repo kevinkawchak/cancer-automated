@@ -138,7 +138,11 @@ cancer-automated/
 │   ├── execution_stage.py          # Method 3: execute code
 │   ├── paper_stage.py              # Method 4: assemble paper
 │   ├── orchestrator.py             # End-to-end orchestration of all stages
-│   └── examples-pipeline/          # Runnable pipeline examples
+│   └── examples-pipeline/
+│       ├── README.md
+│       ├── 01_single_deliverable.py
+│       ├── 02_instruction_to_paper.py
+│       └── 03_full_daily_run.py
 │
 ├── vvuq/                           # ★ Verification, Validation, Uncertainty Quantification
 │   ├── README.md
@@ -147,35 +151,53 @@ cancer-automated/
 │   ├── uncertainty.py              # Uncertainty across the three runs
 │   ├── vvuq_gate.py                # Gate held to a higher standard than codegen
 │   └── examples-vvuq/
+│       ├── README.md
+│       ├── 01_verification_checks.py
+│       ├── 02_validation_against_reference.py
+│       └── 03_uncertainty_budget.py
 │
 ├── simulation/                     # ★ Auto-simulate every project three times
 │   ├── README.md
 │   ├── triple_runner.py
 │   ├── consensus.py
 │   └── examples-simulation/
+│       ├── README.md
+│       ├── 01_triple_run.py
+│       └── 02_consensus_report.py
 │
 ├── ingestion/                      # ★ Robust web search and PDF processing
 │   ├── README.md
 │   ├── web_search.py
 │   ├── pdf_processor.py
 │   └── examples-ingestion/
+│       ├── README.md
+│       ├── 01_web_search.py
+│       └── 02_pdf_extract.py
 │
 ├── chunking/                       # ★ 200K per-file caps, autochunk with READMEs
 │   ├── README.md
 │   ├── chunker.py
 │   ├── readme_generator.py
 │   └── examples-chunking/
+│       ├── README.md
+│       ├── 01_chunk_document.py
+│       └── 02_chunk_with_readme.py
 │
 ├── scheduler/                      # ★ Non-stop commit schedules
 │   ├── README.md
 │   ├── commit_scheduler.py
 │   └── examples-scheduler/
+│       ├── README.md
+│       └── 01_daily_schedule.py
 │
 ├── physical-ai/                    # ★ Stage 2 deployment references
 │   ├── README.md
 │   ├── lights_off_factory.py       # Code runs physical AI in lights-off factories
 │   ├── hybrid_surgery_medicine.py  # Hybrid surgery and medicine first pilot
 │   └── examples-physical-ai/
+│       ├── README.md
+│       ├── 01_lights_off_cell.py
+│       └── 02_hybrid_pilot.py
 │
 ├── configs/
 │   ├── pipeline_config.yaml        # Stage and automation defaults (200K cap, 3 runs)
@@ -184,7 +206,7 @@ cancer-automated/
 ├── scripts/
 │   └── verify_installation.py
 │
-└── tests/
+└── tests/                          # 9 test modules, run with: pytest tests/
     ├── conftest.py
     ├── test_foundation.py
     ├── test_pipeline.py
@@ -230,6 +252,25 @@ A central Stage 1 principle is that VVUQ is more robust than code generation. Co
 - Uncertainty quantification: the three simulation runs agree within the configured coefficient of variation.
 
 Thresholds live in `configs/vvuq_thresholds.yaml`, and the gate blocks on any failure and escalates divergence to a human.
+
+## Continuous Integration
+
+The `CI` workflow runs on every pull request and push to `main`:
+
+| Job | What it checks | Python |
+|-----|----------------|--------|
+| `lint-and-format` | `ruff check`, `ruff format --check`, `yamllint -d relaxed` | 3.10, 3.11, 3.12 |
+| `validate-scripts` | `python -m py_compile scripts/verify_installation.py` | 3.10 |
+| `test` | `pytest tests/` | 3.10, 3.11, 3.12 |
+
+Reproduce the checks locally before opening a pull request:
+
+```bash
+ruff check .
+ruff format --check .
+yamllint -d relaxed configs/ .github/
+pytest tests/
+```
 
 ## Dependencies
 
