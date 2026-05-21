@@ -104,7 +104,9 @@ class VVUQGate:
         reasons: list[str] = []
 
         if ver.fraction_passed < ver_t["min_checks_passed_fraction"]:
-            reasons.append(f"verification fraction {ver.fraction_passed:.2f} below {ver_t['min_checks_passed_fraction']}")
+            reasons.append(
+                f"verification fraction {ver.fraction_passed:.2f} below {ver_t['min_checks_passed_fraction']}"
+            )
         if val.agreement < val_t["min_agreement_with_reference"]:
             reasons.append(f"validation agreement {val.agreement:.2f} below {val_t['min_agreement_with_reference']}")
         if val.max_relative_error > val_t["max_relative_error"]:
