@@ -1,0 +1,43 @@
+# cancer-automated
+# Requirements file - May 2026
+# Source: https://github.com/kevinkawchak/cancer-automated
+#
+# The core daily-deliverable engine runs on the Python standard library so that
+# the lint-and-format and test CI jobs stay green without heavy installs. Every
+# heavy or optional dependency below is imported through a try/except guard in
+# the module that uses it, so the package remains importable when it is absent.
+
+# Core dependencies
+numpy>=1.24.0
+pyyaml>=6.0.0
+
+# Agentic AI backends for instruction and code generation (optional, guarded)
+anthropic>=0.40.0  # https://github.com/anthropics/anthropic-sdk-python/releases
+openai>=1.60.0  # https://github.com/openai/openai-python/releases
+
+# Model Context Protocol (donated to AAIF/Linux Foundation Dec 2025)
+mcp>=0.1.0  # https://modelcontextprotocol.io/
+
+# Robust web search and PDF processing for ingestion (optional, guarded)
+requests>=2.31.0
+pypdf>=4.0.0  # https://github.com/py-pdf/pypdf/releases
+beautifulsoup4>=4.12.0
+
+# Physics simulation backends for triple-simulation runs (optional, guarded)
+mujoco>=3.4.0  # https://github.com/google-deepmind/mujoco/releases
+
+# Utilities
+tqdm>=4.66.0
+
+# Testing and linting
+pytest>=7.4.0
+ruff>=0.6.0
+yamllint>=1.35.0
+
+# Optional: NVIDIA Isaac Sim and Isaac Lab for lights-off factory deployment
+# Require separate installation from NVIDIA.
+# Isaac Sim 5.0.0: https://docs.isaacsim.omniverse.nvidia.com/
+# Isaac Lab 2.3.1: https://github.com/isaac-sim/IsaacLab/releases
+
+# Optional: ros2 packages installed via apt (ros-jazzy-* or ros-kilted-*)
+# ROS 2 Kilted Kaiju: https://docs.ros.org/en/kilted/

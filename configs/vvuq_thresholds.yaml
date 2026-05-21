@@ -1,0 +1,29 @@
+# VVUQ gate thresholds for cancer-automated.
+# VVUQ is held to a higher standard than code generation, so the gate is
+# intentionally strict. A deliverable is accepted only when every threshold
+# below is satisfied across all three simulation runs.
+
+version: "0.1.0"
+
+# Verification: did we build the deliverable right?
+verification:
+  min_checks_passed_fraction: 1.0   # All structural checks must pass.
+  require_schema_valid: true
+  require_lint_clean: true
+
+# Validation: did we build the right deliverable?
+validation:
+  min_agreement_with_reference: 0.95
+  max_relative_error: 0.05
+  require_human_review: true
+
+# Uncertainty quantification across the three simulation runs.
+uncertainty:
+  max_coefficient_of_variation: 0.10
+  min_consensus_runs: 3
+  confidence_level: 0.95
+
+# Gate decision policy.
+gate:
+  block_on_any_failure: true
+  escalate_to_human_on_divergence: true
