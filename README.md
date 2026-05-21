@@ -43,7 +43,7 @@ The thesis above is realized by a pipeline that runs the five established method
 
 ```
   Inputs                     Five Established Methods            Assured Output
-  (web + PDF)          -->   (per daily deliverable)       -->  (committed + archived)
+  (web + PDF)            --> (per daily deliverable)        --> (committed + archived)
   +-------------------+      +---------------------------+      +-------------------+
   | Web search        |  ->  | 1. Instruction generation |  ->  | Daily deliverable |
   | PDF processing    |      | 2. Code generation        |      | committed to Git  |
