@@ -1,0 +1,50 @@
+# Daily-deliverable pipeline configuration for cancer-automated.
+# Production-ready defaults aligned with the Stage 1 roadmap.
+
+version: "0.1.0"
+project: cancer-automated
+
+# The five established methods run in order for every deliverable.
+stages:
+  - name: instruction
+    enabled: true
+    description: Generate the bracketed instruction set for a deliverable.
+  - name: codegen
+    enabled: true
+    description: Generate code from the instruction set.
+  - name: execution
+    enabled: true
+    description: Execute the generated code and capture outputs.
+  - name: paper
+    enabled: true
+    description: Assemble a paper from the executed results.
+
+# Stage 1 automation targets.
+automation:
+  non_stop_commits: true        # Commit cadence runs without manual triggers.
+  commits_per_day: 24           # One deliverable increment per hour.
+  simulate_runs: 3              # Auto-simulate every project three times.
+  vvuq_stricter_than_codegen: true
+
+# File-size and chunking policy.
+chunking:
+  per_file_cap_bytes: 200000    # Increased per-file size cap to 200K.
+  emit_readme_per_chunk: true   # Autochunk code and documents with READMEs.
+  formats:
+    - .py
+    - .md
+    - .tex
+    - .json
+    - .yaml
+
+# Ingestion policy for robust web search and PDF processing.
+ingestion:
+  web_search: true
+  pdf_processing: true
+  max_documents: 64
+  retry_attempts: 4
+
+# Stage 2 deployment flags (long-term, disabled by default).
+deployment:
+  lights_off_factory: false
+  hybrid_surgery_medicine_pilot: false

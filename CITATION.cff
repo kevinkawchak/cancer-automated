@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables"
+message: "If you use this repository in your research, please cite it using this metadata."
+type: software
+authors:
+  - family-names: Kawchak
+    given-names: Kevin
+    affiliation: ChemicalQDevice
+version: "0.1.0"
+date-released: "2026-05-21"
+url: "https://github.com/kevinkawchak/cancer-automated"
+repository-code: "https://github.com/kevinkawchak/cancer-automated"
+license: MIT
+keywords:
+  - physical-ai
+  - oncology
+  - clinical-trials
+  - automation
+  - code-generation
+  - verification-validation
+  - uncertainty-quantification
+  - daily-deliverables
+abstract: >-
+  Production-ready, scalable automation for Physical AI oncology trial daily
+  deliverables. The repository packages established methods for generating
+  instructions, generating code, executing code, and creating papers into a
+  single repeatable pipeline, then layers verification, validation, and
+  uncertainty quantification (VVUQ), triple simulation, robust web and PDF
+  ingestion, and autochunking on top so deliverables are produced faster and
+  with higher assurance.

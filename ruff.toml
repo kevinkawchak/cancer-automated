@@ -1,0 +1,32 @@
+# Ruff configuration for cancer-automated
+# See https://docs.astral.sh/ruff/configuration/
+
+line-length = 120
+target-version = "py310"
+
+[lint]
+select = ["E", "F", "W"]
+# F841: unused variables are common in reference code that demonstrates patterns
+# E741: single-letter variables (l, O) appear in physics and math formulas
+# E501: long lines in regulatory strings and descriptions are more readable unsplit
+ignore = ["F841", "E741", "E501"]
+
+[lint.per-file-ignores]
+# Pipeline stages use try/except optional imports and cross-stage references
+"pipeline/**/*.py" = ["F401", "F402", "E402"]
+# VVUQ modules use conditional imports for optional numeric backends
+"vvuq/**/*.py" = ["F401", "F402"]
+# Triple-simulation modules use conditional imports and loop variable shadowing
+"simulation/**/*.py" = ["F401", "F402"]
+# Ingestion modules probe optional web search and pdf packages via try/except
+"ingestion/**/*.py" = ["F401"]
+# Chunking modules use conditional imports
+"chunking/**/*.py" = ["F401"]
+# Scheduler modules use conditional imports
+"scheduler/**/*.py" = ["F401"]
+# Physical AI deployment modules use conditional imports for optional robotics frameworks
+"physical-ai/**/*.py" = ["F401", "F402"]
+# Utility scripts use try/except to probe optional packages
+"scripts/*.py" = ["F401"]
+# Tests use dynamic file-path imports and redefinition across cases
+"tests/**/*.py" = ["F401", "F811"]
