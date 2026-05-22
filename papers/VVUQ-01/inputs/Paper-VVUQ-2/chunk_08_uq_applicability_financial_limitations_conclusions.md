@@ -1,0 +1,61 @@
+# Chunk 08 — Uncertainty Quantification (Narrative), Applicability Assessment (Narrative), Financial Assessments, Limitations and Future Work, Conclusions
+
+---
+
+### 4.5 Uncertainty Quantification
+
+*Figure: ORR%: 10 Random Seeds, Arm J*
+
+*Figure: Arm C/Arm J Criteria Assessment*
+
+*Figure: 10 Random Seed PFS-6% Robustness*
+
+*Figure: DCR Waterfall of 10 Arms*
+
+The first ORR% box plot visualizes the results of the ensemble simulation described in test Test ID UQ-03. By executing 10 runs with different random seeds, the script successfully quantified the stochastic uncertainty of the simulation. The resulting plot displays the distribution and variability of the Objective Response Rate (ORR) for each treatment arm, providing a measure of robustness and confidence for the reported point estimates, thereby meeting the core objective of the acceptance criteria.
+
+The multi-criteria radar analysis directly addresses the purpose of test Test ID UQ-01 in V&V Test Suite (Part 2), which is to assess how variance in drug sensitivity affects outcomes. The plots for Arm C and Arm J clearly show that modifying the sigma parameter (from 0.2 to 0.8) alters key metrics like mPFS and mOS. The visualization confirms that a larger Arm C sigma, greater patient variability is experienced, impacting the model's outputs, and achieving the goal of demonstrating how the distribution of inputs affects the confidence in the results.
+
+The blue line chart shows PFS-6 with uncertainty bands fulfilling the requirements outlined in test UQ-03. The visualization is generated from the 10 ensemble runs performed with different seeds, and the min-max range explicitly quantifies the stochastic uncertainty of the simulation. This provides robust confidence intervals around the median PFS-6 point estimates for each arm, satisfying the acceptance criteria by demonstrating the impact of random variation on a key output.
+
+In the lower right hand corner, the DCR plot reflects relatively high values for the majority of the Arms. The plot represents a limitation of the study in regards to calibration to known data from prior trials. This script generated the initial plot using values obtained from final trial summaries, which established the baseline distribution of Disease Control Rate (DCR). This chart serves as a reference to future improvements regarding the spread of responders and non-responders.
+
+---
+
+### 4.6 Applicability Assessment
+
+*Figure: Forest Plot of 10 Arms Across Tests*
+
+*Figure: FDA Section VI.B Credibility*
+
+The forest plot on the left visualizes the stability of Progression-Free Survival (PFS) and Overall Survival (OS) hazard ratios across several applicability tests. The analysis confirms that altering the patient population mix impacts trial outcomes as expected; for instance, the hazard ratios for both PFS and OS shift when the prevalence of "Young Fit" vs. "Elderly Frail" archetypes is modified, demonstrating the model's applicability to different enrollment scenarios (Test ID A-01). The script also shows that the model exhibits long-term stability, as the OS hazard ratios from the 60-month simulation horizon are nearly identical to the original 36-month run (A-04). Furthermore, the visualization demonstrates the sensitivity of the PFS endpoint to the definition of progression, as the PFS hazard ratios change under the more lenient progression criterion (A-03). The script does not contain data to evaluate the alternative dosing schedule (A-02).
+
+The final verification image on the right provides a high-level summary of how each applicability test contributes to the model's overall credibility. The visualization implies that all applicability assessments were successfully achieved. The increased "Population Validation" score for the 'A01 PopVar' scenario indicates the model successfully predicted how outcomes would shift with different patient populations, confirming its generalizability. The improved "Emergent Model Behavior" score under 'A02 Dosing' suggests the model demonstrated its flexibility to predict outcomes for a non-standard dosing regimen. The increased achievement scores for 'A03 Threshold' reflect the successful test of endpoint sensitivity to progression criteria. Finally, the improved 'Calculation Verification' score for the 'A04 Duration' test signifies that the model's long-term stability and handling of censoring under different trial durations were successfully assessed.
+
+---
+
+## 5. Financial Assessments
+
+*Figure 14A: Accelerated FDA Cost Efficiency of a PDAC Digital Twin Simulation — Several Aspects of the FDA MIDD Submission Process Have Been Optimized*
+
+---
+
+## 6. Limitations and Future Work
+
+The final trial notebook utilizes archetype assignments, biomarker flags, and a single lognormal "drug sensitivity multiplier." It does not perform patient-specific parameter estimation from longitudinal data (e.g., Bayesian updating of PK/PD or tumor growth parameters). In addition, physiologic fidelity differences existed with the model used a simplified Emax PK/PD, no explicit immune compartments, and no spatial tumor heterogeneity. More advanced virtual twins often integrate multi-scale physiology (cellular to organ), mechanistic immune–tumor interplay, microenvironmental features, and realistic PK (distribution, permeability, TMDD).
+
+In addition, no online filtering/regression was applied to fit each patient's evolving labs/imaging as patient generated patient data within the model did not have this feature. A real twin would ingest electronic health records (EHRs), labs, vitals, imaging-derived tumor measurements, and patient reported outcomes (PROs) in real time, with data governance and provenance. Also, real in person twins require bias/fairness analysis, and sometimes regulatory clearance. Furthermore, there was no handling of measurement noise/delays. The recommendation policy in this study is a simple rule-based switch (continue vs. switch to a single 2L option vs. BSC). It is not a formal decision-optimization (e.g., model predictive control or reinforcement learning balancing efficacy, toxicity, and patient preferences). No interim-futility, no adaptive randomization, no CI/uncertainty reporting, and no bootstrap/posterior intervals were utilized for endpoints. Also, there were no security/PHI controls, deployment infrastructure, monitoring, or fail-safes for clinical use.
+
+Another main limitation was external validation to prior clinical trial controls. After obtaining a functional trial simulation, a majority of the experiments were spent achieving acceptable trial summary statistics, as shown in Results Convergence Table (dt=0.1, dt=0.5, dt=1.0). For Arm A (Gemcitabine + nab-paclitaxel; first-line metastatic PDAC; MPACT trial), the published (approximate) for ORR was ~23%; mPFS was ~5.5 months; while mOS was ~8.5 months. The 12-month OS was in the mid-30% range; Grade 3/4 AEs roughly high-30s to 40%; with discontinuation around the high teens. The final_g25p notebook was ORR 21%, mPFS 4.7 mo, mOS 9.3 mo, OS-12 43%, G3+ 31%, Drop 17%. PFS was somewhat low (4.7 vs ~5.5 mo). OS-12 and mOS were a bit higher than expected for control; G3+ rate was somewhat low; DCR 82% was likely higher than many reports for GnP (DCR definitions vary, but 82% was on the high side). For Arm G (nal-IRI + 5-FU/LV; 2L; NAPOLI-1 doublet): The published (approximate) was mOS ~6.1 mo; mPFS ~3.1 mo; response rate modest (single-digit to teens depending on criteria); 12-month OS around mid-20% range. final_g25p was ORR 3%, DCR 41%, mPFS 1.8 mo, mOS 5.6 mo, OS-12 15%, G3+ 18%, Drop 10%. PFS was short (1.8 vs ~3.1 mo) and 12-month OS too low vs typical reports.
+
+Arm G Safety profile was simplified (per-cycle G3+ probability), so the G3+ rate may not reflect true 2L chemo toxicity patterns. Arms J vs K (Olaparib maintenance vs placebo; POLO trial, gBRCA-mt, post-platinum) were farther off for the current study than in literature. The remaining arms Arms B (magrolimab combo), C (MRTX1133 combo), D (PEGPH20 combo), E (pembro + mitazalimab combo), H/I (daraxonrasib ± chemo + mitazalimab) also were attempted to external studies, with some success in endpoint performance. No confidence intervals, no p-values, no multiplicity control, and no calibration report that shows simultaneous fit to multiple endpoints (ORR/PFS/OS/G3+/dropout) against reference data were provided. Future studies can address some of these calibration issues by running repeated simulations to produce confidence intervals, tightening calibration of A, G, and J/K to their respective trials, and porting selective mechanistic components from the prior QSP trial (e.g., neutrophil-driven toxicity or dose modification) into final_g25p while preserved the digital twin feedback loop. The paragraphs in this section were assisted by gpt-5 high.
+
+---
+
+## 7. Conclusions
+
+The final_g25p notebook delivered a working digital-twin simulation with a bidirectional feedback loop, per-patient decision logs, time-series data streams, and arm-level clinical endpoints. Key digital twin mechanisms defined by the author were verified throughout the trial iteration process: I) Generates a continuous stream of patient data, II) Analyzes the patient data, III) Returns back treatment recommendations to the patients, and IV) After patients are treated sends their updated recordings back to the digital twin. The current trial is biologically simpler and computationally lighter than the author's prior QSP study and has some improved face-validity for some endpoints (e.g., Arm A). Compared to the QSP study, the digital twin sacrifices mechanistic fidelity (immune, TMDD, spatial diffusion, lesion-level RECIST, dose modifications, interim-futility) for a compact, easy-to-run twin that demonstrates the end-to-end "sense–analyze–recommend–act–learn" loop. For clinical/external validation, at least the control arms (A, G, K) need closer calibration to known trials (MPACT, NAPOLI-1, POLO), and the model should report uncertainty and reproduce key comparators across multiple seeds/runs. Several investigational arms have no definitive clinical benchmarks, so no absolute performance claims can be made.
+
+This virtual trial is modeling what would be an ambitious Phase II "umbrella" or "platform" trial design, where multiple treatment hypotheses are tested simultaneously to identify promising signals for further development in Phase III trials. The sample size of 100 patients per arm is typical for Phase II trials testing efficacy signals. Multiple experimental arms testing 10 different regimens simultaneously is characteristic of exploratory Phase II platform trials endpoints which focus on efficacy signals (ORR, PFS, OS) rather than dose-finding or definitive superiority. Biomarker stratification used BRCA and KRAS mutations for patient selection, common in Phase II precision oncology trials. Novel combinations of experimental drugs (MRTX1133, Daraxonrasib, Mitazalimab) based on three prior studies [20KawchakQSPPDAC, 19KawchakSimPDAC, 18KawchakPDAC] combined with standard therapies. Overall, the model saw an increase in trial summary performance over notebook iterations using AI, and exhibited core digital twin functionals with generated patient data, as shown in the Swimmer Plot figure.
+
+The current study was effective at addressing the FDA "Assessing the Credibility of Computational Modeling and Simulation in Medical Device Submissions" and ASME V&V 40 Computational Modeling standard with high cost efficiency achieved through AI generations of text protocols, Python models, and multiple model log outputs used in visualizations. These tests performed by the author helped to answer questions regarding a) Verification: how input uncertainty propagates to output uncertainty, b) Validation: how suitable the model is for its intended purpose, c) Uncertainty Quantification: how robust the model was to biological and clinical assumptions regarding changes in key parameters, and d) Applicability: how credible the model was in regards to assumptions against its intended use. Overall AI performance scores for compliance related tests were found to be 81.9/100 for Verifications from the Verification Overall Scores figure and 85.75% for the Validations in the Validation Tests Final Score figure.
