@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.3.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.4.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web and PDF ingestion, and autochunking on top, so each deliverable is produced faster and with higher assurance.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/23: v0.4.0 (VVUQ-01 Publication Figures Rendered)** Renders the 10 image instructions into [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen): 10 self-contained matplotlib scripts (the generated code) and the 10 portrait, full-size, 300 dpi PNG figures they produce (the execution output), plus a comprehensive README with the embedded gallery. Each figure (funnel, waterfall, flowchart, radar wheel, Gantt, treemap, state diagram, financial bridge, value proposition matrix, and Sankey) is grounded in code generation (v0.1.0) and execution (v0.2.0), uses the shared portrait page frame, white background only, the section symbol `§`, and single dashes, and was committed and pushed in real time as one pull request. The scripts are `ruff` clean so the `lint-and-format` CI stays green across Python 3.10, 3.11, and 3.12. See [releases.md](releases.md) for full release notes.
 
 **5/23: v0.3.0 (VVUQ-01 Image Instructions for Publication Figures)** Adds [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct): 10 comprehensive image instructions plus a master README that specify, ahead of any rendering, how Claude Code Opus 4.7 (1M) Max builds 10 portrait, full-size, 300 dpi figures (funnel, waterfall, flowchart, radar wheel, Gantt, treemap, state diagram, financial bridge, value proposition matrix, and Sankey) under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). Instructions only, grounded in code generation (v0.1.0) and execution (v0.2.0); no images are generated yet. See [releases.md](releases.md) for full release notes.
 
@@ -245,7 +247,18 @@ cancer-automated/
         │   ├── 08-fda-cost-efficiency-bridge/  # Financial bridge plus credibility
         │   ├── 09-value-proposition-matrix/  # Matrix: cloud vs conventional server
         │   └── 10-file-generation-sankey/  # Sankey: 13 files to 4 paper roles
-        └── imagegen/               # Future matplotlib scripts and 300 dpi PNG outputs
+        └── imagegen/               # ★ v0.4.0 rendered figures (10 scripts + 10 PNGs + README)
+            ├── README.md           # Rendered gallery, generated code vs execution, reproduction
+            ├── 01-vvuq-gate-funnel/           # 01-vvuq-gate-funnel.py + .png (funnel)
+            ├── 02-acceleration-waterfall/     # script + 300 dpi PNG (waterfall)
+            ├── 03-five-methods-flowchart/     # script + 300 dpi PNG (flowchart)
+            ├── 04-vvuq-assurance-wheel/       # script + 300 dpi PNG (radar wheel)
+            ├── 05-pdac-pilot-timeline/        # script + 300 dpi PNG (Gantt)
+            ├── 06-test-coverage-treemap/      # script + 300 dpi PNG (treemap)
+            ├── 07-lights-off-state-machine/   # script + 300 dpi PNG (state diagram)
+            ├── 08-fda-cost-efficiency-bridge/ # script + 300 dpi PNG (bridge + bullets)
+            ├── 09-value-proposition-matrix/   # script + 300 dpi PNG (matrix)
+            └── 10-file-generation-sankey/     # script + 300 dpi PNG (Sankey)
 ```
 
 ## Established Methods Proven Across Projects
@@ -285,17 +298,18 @@ Thresholds live in `configs/vvuq_thresholds.yaml`, and the gate blocks on any fa
 
 ## VVUQ-01 Figures and Image Instructions
 
-The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct). It holds 10 comprehensive image instructions plus a master README. Each instruction fully specifies one publication ready, portrait, full-size, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0). No images exist yet: the instructions specify exactly how a future agent writes the matplotlib script and renders the PNG under `papers/VVUQ-01/imagegen`. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate.
+The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct) and rendered under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). The instructions hold 10 comprehensive specifications plus a master README; each fully specifies one publication ready, portrait, full-size, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0). As of v0.4.0 the figures are built: `imagegen` carries 10 self-contained matplotlib scripts (the generated code) and the 10 rendered PNG figures (the execution output), one numbered subdirectory per figure. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the build follows that specification with no manual positioning.
 
 ```
   image-instruct/NN-name/         imagegen/NN-name/            imagegen/NN-name/
   +----------------------+        +----------------------+      +-------------------+
   | README.md            |  -->   | NN-name.py           |  --> | NN-name.png       |
-  | full figure spec     |        | self-contained       |      | portrait, 300 dpi |
-  | (data, layout, color,|        | matplotlib + numpy,  |      | white background, |
+  | full figure spec     |  spec  | self-contained       | run  | portrait, 300 dpi |
+  | (data, layout, color,| =====> | matplotlib + numpy,  | ===> | white background, |
   |  page frame, paths)  |        | hardcoded grounded   |      | full size, aligned|
-  +----------------------+        | values, ruff clean   |      | no positioning    |
-                                  +----------------------+      +-------------------+
+  |  v0.3.0 instructions |        | values, ruff clean   |      | no positioning    |
+  +----------------------+        +----------------------+      +-------------------+
+        generated code (script)  ----------------->  execution output (image)
 ```
 
 | No. | Instruction | Chart family | Basis |
@@ -311,7 +325,7 @@ The image generation leg of the thesis is specified under [papers/VVUQ-01/image-
 | 09 | `09-value-proposition-matrix` | Value proposition matrix | execution |
 | 10 | `10-file-generation-sankey` | Sankey flow | both |
 
-The set avoids basic bar, pie, and line charts, shares one professional palette and portrait page frame, uses the section symbol `§` where required, and uses single dashes only. See the [image-instruct README](papers/VVUQ-01/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
+The set avoids basic bar, pie, and line charts, shares one professional palette and portrait page frame, uses the section symbol `§` where required, and uses single dashes only. See the [image-instruct README](papers/VVUQ-01/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications, and the [imagegen README](papers/VVUQ-01/imagegen) for the rendered gallery, the generated code versus execution split, and reproduction with matplotlib.
 
 ## Continuous Integration
 
@@ -360,7 +374,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.3.0},
+  version = {0.4.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}

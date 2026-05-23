@@ -5,6 +5,48 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-23
+
+### Added
+- `papers/VVUQ-01/imagegen/`: the rendered realization of the 10 v0.3.0 image
+  instructions, authored autonomously by Claude Code Opus 4.7 (1M context) Max.
+  Each numbered subdirectory holds one self contained matplotlib script
+  `NN-name/NN-name.py` (the generated code) and the portrait, full page, 300 dpi
+  figure `NN-name/NN-name.png` it produces (the execution output, 2550 by 3300
+  pixels, white background only). A comprehensive `README.md` documents the
+  rendered gallery, the generated code versus execution split, the shared page
+  frame and palette, and reproduction with matplotlib.
+- The 10 figures use professional chart families and avoid basic bar, pie, and
+  line charts: `01-vvuq-gate-funnel` (funnel), `02-acceleration-waterfall`
+  (waterfall), `03-five-methods-flowchart` (process flowchart),
+  `04-vvuq-assurance-wheel` (radar wheel), `05-pdac-pilot-timeline` (Gantt),
+  `06-test-coverage-treemap` (treemap), `07-lights-off-state-machine` (state
+  diagram), `08-fda-cost-efficiency-bridge` (financial bridge and bullets),
+  `09-value-proposition-matrix` (matrix), and `10-file-generation-sankey`
+  (Sankey). Every number traces to code generation (v0.1.0) or code execution
+  (v0.2.0).
+
+### Changed
+- `README.md`: release badge updated to v0.4.0, a new v0.4.0 summary added above
+  the v0.3.0 summary, the figures section text diagram and closing links updated
+  to reflect the rendered build, the repository structure now expands
+  `papers/VVUQ-01/imagegen` with its README and the 10 figure subdirectories,
+  and the citation version was bumped.
+- `releases.md`: v0.4.0 release notes added above the v0.3.0 notes.
+- Removed the `papers/VVUQ-01/imagegen/a.md` placeholder now that the directory
+  holds the rendered scripts and figures.
+
+### Notes
+- This release renders the figures specified in v0.3.0; it does not change the
+  executable v0.1.0 source modules or the v0.2.0 and v0.3.0 records. Each script
+  depends only on `matplotlib` and `numpy` and renders headless via the `Agg`
+  backend. Rendering requires `matplotlib`; the core CI does not install it and
+  the `test` job does not import `imagegen/`, so `lint-and-format` (ruff check,
+  ruff format check, yamllint) and `test` (51 passed, 0 skipped) stay green
+  across Python 3.10, 3.11, and 3.12 because the scripts are ruff clean.
+- All prose uses single dashes only; triple dashes are reserved for Markdown
+  rules, table separators, and YAML document separators.
+
 ## [0.3.0] - 2026-05-23
 
 ### Added
@@ -120,7 +162,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - All prose uses single dashes only; triple dashes are reserved for Markdown
   rules, table separators, and YAML document separators.
 
-[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/kevinkawchak/cancer-automated/releases/tag/v0.1.0
