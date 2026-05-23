@@ -4,6 +4,45 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-01 Publication Figures Rendered (v0.4.0)
+v0.4.0 - VVUQ-01 Publication Figures Rendered
+
+## Summary
+
+- Renders the 10 v0.3.0 image instructions into papers/VVUQ-01/imagegen: 10 self contained matplotlib scripts (the generated code) and the 10 portrait, full page, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README with an embedded gallery. Authored autonomously by Claude Code Opus 4.7 (1M context) Max in a managed cloud container, one figure per commit, with every commit pushed to GitHub in real time as part of a single pull request.
+- Advances the image generation leg of the thesis that the LLM VVUQ process must be more substantial than the generated artifact across codegen, imagegen, and papergen. Because the full assurance specification for each figure was front loaded in v0.3.0, each figure builds deterministically from its instruction with no manual positioning. The directory keeps a clean split between the generated code (the NN-name.py script) and execution (running the script to render NN-name.png), the same split the pipeline draws between code generation and code execution.
+- The 10 figures use professional and effective chart families and avoid basic bar, pie, and line charts: a VVUQ gate decision funnel, a schedule acceleration waterfall, a five established methods process flowchart, a VVUQ assurance radar wheel, a 2030 PDAC Gantt timeline, a test coverage treemap, a lights off factory safety state machine, an FDA cost efficiency financial bridge with measured credibility bullets, a value proposition matrix, and a file generation Sankey.
+- Numbers are grounded and reconciled, matching the v0.2.0 execution record: the funnel narrows 6, 5, 3, 1 across the six gate cases; the waterfall evaluates the codegen model to 30, 20, 15, 12 days with reductions 10, 5, 3; the treemap tiles 51 of 51 tests across 8 modules; the wheel plots six normalized assurance spokes; the Gantt carries the 60 second 8 arm Whipple plus six 28 day cycles over 168 regimen days; the cost bridge cascades 100, 82, 66, 54, 40, 30 with measured credibility scores 81.9 and 85.75 against a target 80; and the Sankey byte flows sum to 54127 across the five sections and the four paper roles.
+- Every figure inherits one shared page frame (portrait 8.5 by 11 inches, 300 dpi giving 2550 by 3300 pixels, white background only with no dark mode), one professional palette, fixed reserved header, content, and footer bands, the section symbol § where required, and single dashes only; long headers, subtitles, and footers auto shrink to stay inside the frame so the author needs no manual positioning.
+- Each script is self contained, depends only on matplotlib and numpy, sets a non interactive Agg backend, and passes ruff check and ruff format check, so the lint-and-format CI workflow (ruff check, ruff format check, yamllint) stays green across Python 3.10, 3.11, and 3.12, alongside validate-scripts and the test job (51 passed, 0 skipped). matplotlib is the one added rendering dependency; the core CI does not install it and does not import imagegen.
+- Updates the repository documentation: the main README release badge, a new v0.4.0 summary above the previous summary, the figures section text diagram and closing links, the repository structure now expanding papers/VVUQ-01/imagegen, the citation version, the CHANGELOG (v0.4.0), and these release notes; the comprehensive imagegen README is added.
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators.
+
+## Features
+
+- papers/VVUQ-01/imagegen/README.md: the rendered gallery and build record, including the generated code versus execution split table, the 10 figure index, the embedded figure gallery with grounding, the shared output conventions, the reproduction steps with matplotlib, and the as built acceptance summary.
+- 01-vvuq-gate-funnel: a funnel narrowing six candidate deliverables to one accepted with verbatim block and escalate reasons, grounded in vvuq/vvuq_gate.py and configs/vvuq_thresholds.yaml (v0.1.0) and execution §03 (v0.2.0).
+- 02-acceleration-waterfall: a schedule waterfall bridging 30 baseline days to 12 automated days with an audit panel reproducing the codegen formula, grounded in pipeline/codegen_stage.py and configs/pipeline_config.yaml (v0.1.0) and execution §02 (v0.2.0).
+- 03-five-methods-flowchart: a process flowchart with an orchestrator swimlane and a VVUQ gate diamond carrying module names, byte counts, and stage durations, grounded in pipeline/ (v0.1.0) and execution §02 DAILY-0001 (v0.2.0).
+- 04-vvuq-assurance-wheel: a radar wheel of six normalized assurance spokes with the threshold ring, the accepted polygon, and per spoke failing markers, grounded in configs/vvuq_thresholds.yaml and vvuq/ (v0.1.0) and execution §03 (v0.2.0).
+- 05-pdac-pilot-timeline: a Gantt timeline of the 2030 PDAC hybrid pilot, grounded in physical-ai/hybrid_surgery_medicine.py (v0.1.0) and the execution §05 timeline artifact (v0.2.0).
+- 06-test-coverage-treemap: a treemap of 51 of 51 passing tests across 8 modules with a sequential teal to navy scale, grounded in execution §01 test-suite.md (v0.2.0).
+- 07-lights-off-state-machine: a safety gating state diagram with four interlocks, four states, and four cases, grounded in physical-ai/lights_off_factory.py (v0.1.0) and execution §05 (v0.2.0).
+- 08-fda-cost-efficiency-bridge: an illustrative cost bridge with measured credibility bullets referencing FDA §VI.B and ASME V&V 40, grounded in the execution comparison and the pipeline and vvuq levers (v0.1.0 and v0.2.0) and the inputs corpus.
+- 09-value-proposition-matrix: a 2 by 2 positioning matrix and a better, different, worse summary with a net verdict banner, grounded in the execution README comparison (v0.2.0).
+- 10-file-generation-sankey: a top to bottom Sankey flowing 13 generated files and 54127 bytes into four future paper roles, grounded in the execution README file generation outcomes (v0.2.0) and the pipeline artifacts (v0.1.0).
+- README.md, CHANGELOG.md, and releases.md updated for v0.4.0: the release badge, a new figures summary, the figures section text diagram and links, the repository structure now expanding papers/VVUQ-01/imagegen, the citation version, and a v0.4.0 release line.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release renders the figures specified in v0.3.0; it does not change the executable v0.1.0 source modules or the v0.2.0 and v0.3.0 records. Each script depends only on matplotlib and numpy and renders headless through the Agg backend. Rendering the PNG files requires matplotlib in the rendering environment (pip install matplotlib, which pulls in numpy, already a core dependency); the core CI does not install matplotlib and the test job does not import imagegen, so lint-and-format (ruff check, ruff format check, yamllint) and test stay green across Python 3.10, 3.11, and 3.12 because the scripts are ruff clean. The figures are planning and documentation drafts: a VVUQ gate and a human reviewer must clear any deliverable before clinical use, and the Stage 2 references (the lights off factory and the hybrid surgery and medicine pilot) require VVUQ clearance, human oversight, IRB approval, and regulatory authorization before any real use.
+
+---
+
 VVUQ-01 Image Instructions for Publication Figures (v0.3.0)
 v0.3.0 - VVUQ-01 Image Instructions for Publication Figures
 
