@@ -1,0 +1,9 @@
+summary: {'surgery': 'Robotic Whipple (60 second)', 'surgery_seconds': 60.0, 'surgery_arms': 8, 'medicine': 'Daraxonrasib (adjuvant)', 'regimen_days': 168, 'events': 7, 'requires_human_oversight': True}
+timeline:
+  day   0 [surgery] Robotic Whipple (60 second): 8-arm procedure, 60 s
+  day  28 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 1
+  day  56 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 2
+  day  84 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 3
+  day 112 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 4
+  day 140 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 5
+  day 168 [medicine] Daraxonrasib (adjuvant): adjuvant cycle 6
