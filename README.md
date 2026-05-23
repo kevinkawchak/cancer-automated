@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.2.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.3.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web and PDF ingestion, and autochunking on top, so each deliverable is produced faster and with higher assurance.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/23: v0.3.0 (VVUQ-01 Image Instructions for Publication Figures)** Adds [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct): 10 comprehensive image instructions plus a master README that specify, ahead of any rendering, how Claude Code Opus 4.7 (1M) Max builds 10 portrait, full-size, 300 dpi figures (funnel, waterfall, flowchart, radar wheel, Gantt, treemap, state diagram, financial bridge, value proposition matrix, and Sankey) under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). Instructions only, grounded in code generation (v0.1.0) and execution (v0.2.0); no images are generated yet. See [releases.md](releases.md) for full release notes.
 
 **5/23: v0.2.0 (VVUQ-01 Execution and Stage 2 PDAC Reference)** Executes the entire v0.1.0 codebase and the Stage 2 2030 60-second PDAC procedure code, and records the full run under [papers/VVUQ-01/execution](papers/VVUQ-01/execution). All 15 example scripts ran to exit 0, the test suite passed (51 passed, 0 skipped), the lint-and-format CI surface is clean, and the VVUQ gate blocked five of six candidate cases, which shows the assurance work is the substantial part. See [releases.md](releases.md) for full release notes.
 
@@ -32,6 +34,7 @@ This repository is complementary and open source. Please implement code safely a
 - [Established Methods Proven Across Projects](#established-methods-proven-across-projects)
 - [Core Capabilities](#core-capabilities)
 - [VVUQ Held Higher Than Code Generation](#vvuq-held-higher-than-code-generation)
+- [VVUQ-01 Figures and Image Instructions](#vvuq-01-figures-and-image-instructions)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -219,17 +222,30 @@ cancer-automated/
 │   ├── test_scheduler.py
 │   └── test_physical_ai.py
 │
-└── papers/                         # Paper workspaces and execution records
+└── papers/                         # Paper workspaces, execution records, figures
     └── VVUQ-01/
         ├── inputs/                 # Source paper and research chunks (ingestion inputs)
         ├── templates/Template_10/  # LaTeX manuscript template (future paper build)
-        └── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
-            ├── README.md           # Index, badges, ASCII diagrams, results, limitations
-            ├── 01-foundation/      # Environment, tests (51 passed), lint and format
-            ├── 02-pipeline/        # Five established methods, generated artifacts
-            ├── 03-vvuq/            # Gate decision surface (1 accept, 5 block, 1 escalate)
-            ├── 04-stage1-automation/  # Simulation, ingestion, chunking, scheduler
-            └── 05-physical-ai-stage2/ # 2030 PDAC pilot and lights-off safety surface
+        ├── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
+        │   ├── README.md           # Index, badges, ASCII diagrams, results, limitations
+        │   ├── 01-foundation/      # Environment, tests (51 passed), lint and format
+        │   ├── 02-pipeline/        # Five established methods, generated artifacts
+        │   ├── 03-vvuq/            # Gate decision surface (1 accept, 5 block, 1 escalate)
+        │   ├── 04-stage1-automation/  # Simulation, ingestion, chunking, scheduler
+        │   └── 05-physical-ai-stage2/ # 2030 PDAC pilot and lights-off safety surface
+        ├── image-instruct/         # ★ v0.3.0 image instructions (10 specs + master README)
+        │   ├── README.md           # Processing model, page frame, palette, 10-spec index
+        │   ├── 01-vvuq-gate-funnel/        # Funnel: 6 candidates to 1 accepted
+        │   ├── 02-acceleration-waterfall/  # Waterfall: 30 to 12 days, 2.5x
+        │   ├── 03-five-methods-flowchart/  # Flowchart: the five established methods
+        │   ├── 04-vvuq-assurance-wheel/    # Radar wheel: threshold vs achieved
+        │   ├── 05-pdac-pilot-timeline/     # Gantt: 168-day 2030 PDAC pilot
+        │   ├── 06-test-coverage-treemap/   # Treemap: 51 tests across 8 modules
+        │   ├── 07-lights-off-state-machine/  # State diagram: factory safety surface
+        │   ├── 08-fda-cost-efficiency-bridge/  # Financial bridge plus credibility
+        │   ├── 09-value-proposition-matrix/  # Matrix: cloud vs conventional server
+        │   └── 10-file-generation-sankey/  # Sankey: 13 files to 4 paper roles
+        └── imagegen/               # Future matplotlib scripts and 300 dpi PNG outputs
 ```
 
 ## Established Methods Proven Across Projects
@@ -266,6 +282,36 @@ A central Stage 1 principle is that VVUQ is more robust than code generation. Co
 - Uncertainty quantification: the three simulation runs agree within the configured coefficient of variation.
 
 Thresholds live in `configs/vvuq_thresholds.yaml`, and the gate blocks on any failure and escalates divergence to a human.
+
+## VVUQ-01 Figures and Image Instructions
+
+The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct). It holds 10 comprehensive image instructions plus a master README. Each instruction fully specifies one publication ready, portrait, full-size, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0). No images exist yet: the instructions specify exactly how a future agent writes the matplotlib script and renders the PNG under `papers/VVUQ-01/imagegen`. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate.
+
+```
+  image-instruct/NN-name/         imagegen/NN-name/            imagegen/NN-name/
+  +----------------------+        +----------------------+      +-------------------+
+  | README.md            |  -->   | NN-name.py           |  --> | NN-name.png       |
+  | full figure spec     |        | self-contained       |      | portrait, 300 dpi |
+  | (data, layout, color,|        | matplotlib + numpy,  |      | white background, |
+  |  page frame, paths)  |        | hardcoded grounded   |      | full size, aligned|
+  +----------------------+        | values, ruff clean   |      | no positioning    |
+                                  +----------------------+      +-------------------+
+```
+
+| No. | Instruction | Chart family | Basis |
+|-----|-------------|--------------|-------|
+| 01 | `01-vvuq-gate-funnel` | Funnel | both |
+| 02 | `02-acceleration-waterfall` | Waterfall | both |
+| 03 | `03-five-methods-flowchart` | Process flowchart | both |
+| 04 | `04-vvuq-assurance-wheel` | Radar wheel | both |
+| 05 | `05-pdac-pilot-timeline` | Gantt timeline | both |
+| 06 | `06-test-coverage-treemap` | Treemap | execution |
+| 07 | `07-lights-off-state-machine` | State diagram | both |
+| 08 | `08-fda-cost-efficiency-bridge` | Financial bridge and bullet | both |
+| 09 | `09-value-proposition-matrix` | Value proposition matrix | execution |
+| 10 | `10-file-generation-sankey` | Sankey flow | both |
+
+The set avoids basic bar, pie, and line charts, shares one professional palette and portrait page frame, uses the section symbol `§` where required, and uses single dashes only. See the [image-instruct README](papers/VVUQ-01/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
 
 ## Continuous Integration
 
@@ -314,7 +360,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.1.0},
+  version = {0.3.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}
