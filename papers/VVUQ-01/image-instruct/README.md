@@ -250,6 +250,27 @@ instruction repeats this as a per figure checklist.
 - Output paths are exactly `papers/VVUQ-01/imagegen/NN-name/NN-name.py` and
   `papers/VVUQ-01/imagegen/NN-name/NN-name.png`.
 
+## Consistency and error-fix pass
+
+All 10 instructions were cross checked as a set before release. The pass
+confirmed:
+
+- Arithmetic reconciles. The Sankey byte flows sum to 54127 across both the five
+  section nodes and the four paper roles; the treemap row heights sum to 1.0 with
+  each tile area equal to its test count over 51; the waterfall evaluates the
+  model to 30, 20, 15, 12 days with reductions 10, 5, 3; the cost bridge cascades
+  100, 82, 66, 54, 40, 30; the funnel narrows 6, 5, 3, 1 with five blocked cases.
+- Grounding matches the source files. Every number traces to a cited v0.1.0
+  module or config or a v0.2.0 execution section, including the six gate cases,
+  the 51 of 51 tests across 8 modules, the 168 day 7 event PDAC pilot, and the
+  four lights off cases.
+- Symbols and dashes are clean. The section symbol renders as `§` (for example
+  `execution §03` and `FDA §VI.B`), no em dashes, en dashes, or prose double
+  dashes appear, and triple dashes occur only in Markdown table separators.
+- Naming is one to one. Each instruction `NN-name` maps to
+  `papers/VVUQ-01/imagegen/NN-name/NN-name.py` and `.png`, and every figure uses
+  the shared portrait page frame, 300 dpi, white background, and palette.
+
 ## Responsible use
 
 These figures describe an automated assurance platform and a Stage 2 deployment

@@ -68,15 +68,25 @@ bottom=0.07`), with the funnel centered and callout columns on the right.
 - Header at `y = 0.965`: `VVUQ Gate Decision Funnel`. Subtitle at `y = 0.935`:
   `Six candidate deliverables enter, one ships, five are blocked`.
 - Funnel body, centered on `x = 0.42` of the axis, occupying the vertical span of
-  the content band. Draw four stacked trapezoid segments using
-  `matplotlib.patches.Polygon`, top segment widest (count 6) and each lower
-  segment narrower in proportion to the passing count (6, 5, 3, 1). Map count to
-  half width linearly so the silhouette tapers smoothly. Fill the segments with a
-  vertical progression from primary navy `#1F3A5F` at the top to teal `#2A9D8F`
-  near the bottom, and fill the final accepted tip with accept green `#2E7D32`.
-  Outline each segment in white at 1.5 pt so the segment boundaries read cleanly.
-- Inside each segment, centered, place two lines of 11 pt text: the stage label
-  and the count, for example `Verification` and `6 in, 5 pass`. Use near black
+  the content band. Draw four stacked trapezoid bands top to bottom using
+  `matplotlib.patches.Polygon`, where each band tapers from its entering count
+  (top width) to its passing count (bottom width). Use exactly these bands so the
+  geometry is unambiguous:
+
+  | Band, top to bottom | Top width count | Bottom width count |
+  |---------------------|-----------------|--------------------|
+  | Verification | 6 | 5 |
+  | Validation | 5 | 3 |
+  | Uncertainty | 3 | 1 |
+  | Accept | 1 | 1 |
+
+  Map count to half width linearly (the same scale for all bands) so the
+  silhouette tapers smoothly and the bands meet edge to edge. Fill with a vertical
+  progression from primary navy `#1F3A5F` at the top to teal `#2A9D8F` near the
+  bottom, and fill the final Accept band (a width 1 tip) with accept green
+  `#2E7D32`. Outline each band in white at 1.5 pt so the boundaries read cleanly.
+- Inside each band, centered, place two lines of 11 pt text: the stage label and
+  the counts, for example `Verification` and `6 in, 5 pass`. Use near black
   `#1A1A1A`; on the dark navy top segment use white text for contrast.
 - Left gutter (`x` near 0.04 to 0.16 of the axis): a thin vertical arrow pointing
   down labeled `Gate evaluation order` in neutral gray `#6B7280`, 9 pt, rotated
@@ -113,8 +123,10 @@ bottom=0.07`), with the funnel centered and callout columns on the right.
 - One axis spanning the content band; call `ax.set_xlim(0, 1)`, `ax.set_ylim(0,
   1)`, `ax.axis("off")` and place all geometry in axis coordinates so the layout
   is fully deterministic and needs no manual nudging.
-- Compute the four trapezoids from a single `counts = [6, 5, 3, 1]` list and a
-  top count of 6 so the widths are derived, not hand placed.
+- Compute the four trapezoids from a single `bands = [(6, 5), (5, 3), (3, 1), (1,
+  1)]` list of (top count, bottom count) pairs and one shared count to half width
+  scale, so the widths are derived, not hand placed, and adjacent bands meet edge
+  to edge.
 - Wrap long card text with `textwrap.fill` at about 34 characters so no text
   leaves its card.
 - Save with `fig.savefig("papers/VVUQ-01/imagegen/01-vvuq-gate-funnel/01-vvuq-gate-funnel.png",
