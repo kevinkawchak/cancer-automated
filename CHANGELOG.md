@@ -5,6 +5,45 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-05-23
+
+### Added
+- `papers/VVUQ-01/execution/`: the complete execution record of the v0.1.0
+  codebase and the Stage 2 2030 PDAC procedure code, produced autonomously by
+  Claude Code Opus 4.7 (1M context) on Python 3.11.15. Includes a comprehensive
+  index `README.md` with badges, ASCII diagrams, a file-generation-outcomes
+  summary, the full process narrative, limitations, and a comparison with
+  conventional high-end server processing.
+- `01-foundation/`: environment and dependency posture, the
+  `verify_installation.py` output, the full `pytest` run (51 passed, 0 skipped
+  across 8 test modules), and the `ruff` and `yamllint` static-analysis evidence.
+- `02-pipeline/`: the three pipeline examples run end to end, the four generated
+  artifacts (instructions, generated code, execution log, paper), and per-stage
+  logs and timing. The acceleration factor is 2.5 (30 baseline to 12 automated
+  days).
+- `03-vvuq/`: the three vvuq examples plus the full gate decision surface across
+  six cases (one accept, five block, one escalate), demonstrating the gate is
+  held higher than code generation.
+- `04-stage1-automation/`: the seven simulation, ingestion, chunking, and
+  scheduler examples, an independent chunk-losslessness verification, and a
+  documented multibyte hard-split limitation.
+- `05-physical-ai-stage2/`: the two physical-ai examples, the full lights-off
+  factory safety surface, and the 2030 PDAC hybrid pilot timeline (60-second
+  8-arm Whipple plus six 28-day Daraxonrasib cycles, 168 regimen days).
+
+### Changed
+- `README.md`: release and contributors badges updated for v0.2.0, the
+  repository structure now shows `papers/VVUQ-01/execution`, and a v0.2.0
+  release line was added.
+
+### Notes
+- This release is an execution and documentation record; it does not change the
+  executable v0.1.0 source modules.
+- The `lint-and-format` CI workflow remains green across Python 3.10, 3.11, and
+  3.12, alongside `validate-scripts` and `test`.
+- All prose uses single dashes only; triple dashes are reserved for Markdown
+  rules, table separators, and YAML document separators.
+
 ## [0.1.0] - 2026-05-21
 
 ### Added
@@ -44,5 +83,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - All prose uses single dashes only; triple dashes are reserved for Markdown
   rules, table separators, and YAML document separators.
 
-[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/kevinkawchak/cancer-automated/releases/tag/v0.1.0

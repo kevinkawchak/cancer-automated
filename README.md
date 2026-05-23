@@ -1,18 +1,20 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.1.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.2.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
 [![CI](https://img.shields.io/badge/CI-lint%20and%20format-blue.svg)](.github/workflows/ci.yml)
-[![Contributors](https://img.shields.io/badge/Contributors-2-blue.svg)](releases.md)
+[![Contributors](https://img.shields.io/badge/Contributors-4-blue.svg)](releases.md)
 
 **Production-ready, scalable automation for Physical AI oncology trial daily deliverables, by Claude Code Opus 4.7, Cowork; building on developments proven across physical-ai-oncology-trials, robotic-surgeries, and Clinical-AI-Demos.**
 
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web and PDF ingestion, and autochunking on top, so each deliverable is produced faster and with higher assurance.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/23: v0.2.0 (VVUQ-01 Execution and Stage 2 PDAC Reference)** Executes the entire v0.1.0 codebase and the Stage 2 2030 60-second PDAC procedure code, and records the full run under [papers/VVUQ-01/execution](papers/VVUQ-01/execution). All 15 example scripts ran to exit 0, the test suite passed (51 passed, 0 skipped), the lint-and-format CI surface is clean, and the VVUQ gate blocked five of six candidate cases, which shows the assurance work is the substantial part. See [releases.md](releases.md) for full release notes.
 
 **5/21: v0.1.0 (Initial Automation Platform)** First release of the daily-deliverable pipeline (instruction, code generation, execution, paper assembly), the VVUQ gate held to a higher standard than code generation, triple simulation with consensus, robust web and PDF ingestion, 200K autochunking with per-chunk READMEs, and a non-stop commit scheduler. See [releases.md](releases.md) for full release notes.
 
@@ -206,16 +208,28 @@ cancer-automated/
 ├── scripts/
 │   └── verify_installation.py
 │
-└── tests/                          # 9 test modules, run with: pytest tests/
-    ├── conftest.py
-    ├── test_foundation.py
-    ├── test_pipeline.py
-    ├── test_vvuq.py
-    ├── test_simulation.py
-    ├── test_ingestion.py
-    ├── test_chunking.py
-    ├── test_scheduler.py
-    └── test_physical_ai.py
+├── tests/                          # 8 test modules plus conftest, run with: pytest tests/
+│   ├── conftest.py
+│   ├── test_foundation.py
+│   ├── test_pipeline.py
+│   ├── test_vvuq.py
+│   ├── test_simulation.py
+│   ├── test_ingestion.py
+│   ├── test_chunking.py
+│   ├── test_scheduler.py
+│   └── test_physical_ai.py
+│
+└── papers/                         # Paper workspaces and execution records
+    └── VVUQ-01/
+        ├── inputs/                 # Source paper and research chunks (ingestion inputs)
+        ├── templates/Template_10/  # LaTeX manuscript template (future paper build)
+        └── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
+            ├── README.md           # Index, badges, ASCII diagrams, results, limitations
+            ├── 01-foundation/      # Environment, tests (51 passed), lint and format
+            ├── 02-pipeline/        # Five established methods, generated artifacts
+            ├── 03-vvuq/            # Gate decision surface (1 accept, 5 block, 1 escalate)
+            ├── 04-stage1-automation/  # Simulation, ingestion, chunking, scheduler
+            └── 05-physical-ai-stage2/ # 2030 PDAC pilot and lights-off safety surface
 ```
 
 ## Established Methods Proven Across Projects
