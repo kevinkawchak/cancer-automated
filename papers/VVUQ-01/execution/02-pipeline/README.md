@@ -253,7 +253,7 @@ cap.
 | Item | Result |
 |------|--------|
 | Examples run | 3 of 3, all exit 0 |
-| Deliverables completed | DAILY-0001, DAILY-0002, DAILY-0003 (5 total across examples 1 and 3) |
+| Deliverables completed | 5 deliverable runs total (example 1 ran 1, example 2 ran 1, example 3 ran 3) over IDs DAILY-0001 to DAILY-0003 |
 | Stages completed per deliverable | 4 of 4 (instruction, codegen, execution, paper) |
 | Backend used | deterministic template (no agentic API key present) |
 | Largest artifact | paper.md at 1000 bytes, far under the 200000 byte cap |

@@ -40,12 +40,13 @@ collecting ... collected 51 items
 
 ## Per-module breakdown
 
-The 51 tests are distributed across 9 test modules that map one-to-one onto the
-source packages.
+The 51 tests are distributed across 8 test modules that map one-to-one onto the
+source packages (a shared `conftest.py` provides the file-path module loader and
+is not itself a test module).
 
 | Test module | Tests | Target package | All passed |
 |-------------|-------|----------------|------------|
-| test_foundation.py | 16 | repository files, configs, verify script | yes |
+| test_foundation.py | 17 | repository files, configs, verify script | yes |
 | test_pipeline.py | 5 | pipeline (five established methods) | yes |
 | test_vvuq.py | 8 | vvuq (verification, validation, uncertainty, gate) | yes |
 | test_simulation.py | 4 | simulation (triple runner, consensus) | yes |

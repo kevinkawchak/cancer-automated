@@ -155,9 +155,9 @@ Each is mapped below to the paper section it can support.
 |----------------|-------|------|-------------------|
 | 01-foundation/README.md | 1899 | index | Methods: environment gate |
 | 01-foundation/environment-and-verification.md | 4994 | report | Methods: reproducibility, dependency posture |
-| 01-foundation/test-suite.md | 7072 | report | Verification: automated test evidence |
+| 01-foundation/test-suite.md | 7166 | report | Verification: automated test evidence |
 | 01-foundation/lint-format-yaml.md | 3245 | report | Verification: static analysis evidence |
-| 02-pipeline/README.md | 8559 | report | Methods and Results: the five methods |
+| 02-pipeline/README.md | 8601 | report | Methods and Results: the five methods |
 | 02-pipeline/artifacts/instructions.md | 963 | artifact | Results: generated instruction set |
 | 02-pipeline/artifacts/execution_log.txt | 95 | artifact | Results: captured execution output |
 | 02-pipeline/artifacts/paper.md | 1000 | artifact | Results: auto-assembled paper draft |
