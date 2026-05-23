@@ -59,7 +59,8 @@ def _shrink_to_width(fig, text_obj, max_frac, floor):
 
 
 def add_frame(fig, title, subtitle, footer):
-    fig.text(0.5, 0.965, title, ha="center", va="center", fontsize=20, fontweight="bold", color=PALETTE["ink"])
+    t = fig.text(0.5, 0.965, title, ha="center", va="center", fontsize=20, fontweight="bold", color=PALETTE["ink"])
+    _shrink_to_width(fig, t, 0.92, 15.0)
     sub = fig.text(0.5, 0.935, subtitle, ha="center", va="center", fontsize=12.5, color=PALETTE["ink"])
     _shrink_to_width(fig, sub, 0.88, 9.5)
     parts = [p.strip() for p in footer.split("|")]
