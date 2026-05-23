@@ -4,6 +4,44 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-01 Image Instructions for Publication Figures (v0.3.0)
+v0.3.0 - VVUQ-01 Image Instructions for Publication Figures
+
+## Summary
+
+- Adds papers/VVUQ-01/image-instruct, a set of 10 comprehensive image instructions plus a master README, authored autonomously by Claude Code Opus 4.7 (1M context) Max in a managed cloud container, with each instruction committed and pushed to GitHub in real time as part of a single pull request. Each instruction is a complete, self contained specification for one publication ready, portrait, full page, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0).
+- Advances the image generation leg of the thesis that the LLM VVUQ process must be more substantial than the generated artifact across codegen, imagegen, and papergen. The full assurance specification for each figure is written ahead of time, before any pixel is rendered, which is the image generation analog of the VVUQ gate. No images are generated in this release; the instructions specify exactly how Claude Code Opus 4.7 (1M) Max writes the matplotlib scripts and renders the PNG files at a future date under papers/VVUQ-01/imagegen.
+- The 10 figures use professional and effective chart families and avoid basic bar, pie, and line charts: a VVUQ gate decision funnel, a schedule acceleration waterfall, a five established methods process flowchart, a VVUQ assurance radar wheel, a 2030 PDAC Gantt timeline, a test coverage treemap, a lights off factory safety state machine, an FDA cost efficiency financial bridge with measured credibility bullets, a value proposition matrix, and a file generation Sankey.
+- Every figure inherits one shared page frame (portrait 8.5 by 11 inches, 300 dpi, white background only with no dark mode), one professional palette, fixed reserved header, content, and footer bands, the section symbol § where required, and single dashes only, so the set is coherent and a renderer needs no manual positioning.
+- Numbers are grounded and reconciled: the Sankey byte flows sum to 54127 across both the five section nodes and the four paper roles, the treemap tiles 51 of 51 tests across 8 modules, the waterfall evaluates the codegen model to 30, 20, 15, 12 days, the funnel narrows 6, 5, 3, 1 across the six gate cases, and the PDAC timeline carries the 60 second 8 arm Whipple plus six 28 day cycles over 168 regimen days.
+- Updates the repository documentation: the main README badges, repository structure, a new figures section with a text diagram and a table of contents entry, the citation version, the CHANGELOG (v0.3.0), and these release notes.
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators.
+
+## Features
+
+- papers/VVUQ-01/image-instruct/README.md: the master specification, including the exact processing model for Claude Code Opus 4.7 (1M) Max, the directory and file naming convention mapping each instruction to papers/VVUQ-01/imagegen/NN-name/NN-name.py and .png, the shared portrait page frame, the professional palette and typography, the symbol and dash rules, the 10 instruction index, the grounding sources, the future imagegen workflow and matplotlib dependency note, the cross instruction consistency results, and the global acceptance criteria.
+- 01-vvuq-gate-funnel: a funnel narrowing six candidate deliverables to one accepted across verification, validation, and uncertainty, grounded in vvuq/ (v0.1.0) and execution §03 (v0.2.0).
+- 02-acceleration-waterfall: a schedule waterfall bridging 30 baseline days to 12 automated days by per run reductions, grounded in pipeline/codegen_stage.py (v0.1.0) and execution §02 (v0.2.0).
+- 03-five-methods-flowchart: a process flowchart with an orchestrator swimlane and a VVUQ gate node, grounded in pipeline/ (v0.1.0) and execution §02 (v0.2.0).
+- 04-vvuq-assurance-wheel: a radar wheel of six normalized assurance spokes with the threshold ring, the accepted polygon, and per spoke failing markers, grounded in configs/vvuq_thresholds.yaml and vvuq/ (v0.1.0) and execution §03 (v0.2.0).
+- 05-pdac-pilot-timeline: a Gantt timeline of the 2030 PDAC hybrid pilot, grounded in physical-ai/hybrid_surgery_medicine.py (v0.1.0) and execution §05 (v0.2.0).
+- 06-test-coverage-treemap: a treemap of 51 of 51 passing tests across 8 modules, grounded in execution §01 (v0.2.0).
+- 07-lights-off-state-machine: a safety gating state diagram with four interlocks and four cases, grounded in physical-ai/lights_off_factory.py (v0.1.0) and execution §05 (v0.2.0).
+- 08-fda-cost-efficiency-bridge: a financial bridge with measured credibility bullets referencing FDA §VI.B and ASME V&V 40, grounded in the execution comparison and the pipeline and vvuq levers (v0.1.0 and v0.2.0) and the inputs corpus.
+- 09-value-proposition-matrix: a 2 by 2 positioning matrix and a better, different, worse summary, grounded in the execution README comparison (v0.2.0).
+- 10-file-generation-sankey: a top to bottom Sankey flowing 13 generated files and 54127 bytes into four future paper roles, grounded in the execution README file generation outcomes (v0.2.0) and the pipeline artifacts (v0.1.0).
+- README.md, CHANGELOG.md, and releases.md updated for v0.3.0: the release and updated badges, the repository structure now showing papers/VVUQ-01/image-instruct and papers/VVUQ-01/imagegen, a new figures section with a text diagram and a table of contents entry, the citation version, and a v0.3.0 release line.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release adds instructions only. No matplotlib script and no PNG file is generated yet; those are produced at a future date under papers/VVUQ-01/imagegen by following the per instruction steps, which require matplotlib to be installed in the rendering environment. The lint-and-format CI workflow (ruff check, ruff format check, yamllint) stays green across Python 3.10, 3.11, and 3.12 because the additions are Markdown and fall outside the ruff and yamllint surface, alongside validate-scripts and the test job (51 passed, 0 skipped). Prior code generation (v0.1.0) and code execution (v0.2.0) files are unchanged. The figures are planning and documentation drafts: a VVUQ gate and a human reviewer must clear any deliverable before clinical use, and the Stage 2 references (the lights off factory and the hybrid surgery and medicine pilot) require VVUQ clearance, human oversight, IRB approval, and regulatory authorization before any real use.
+
+---
+
 VVUQ-01 Execution and Stage 2 PDAC Reference (v0.2.0)
 v0.2.0 - VVUQ-01 Execution and Stage 2 PDAC Reference
 

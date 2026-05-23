@@ -5,6 +5,43 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-05-23
+
+### Added
+- `papers/VVUQ-01/image-instruct/`: 10 comprehensive image instructions plus a
+  master `README.md`, authored autonomously by Claude Code Opus 4.7 (1M context)
+  Max. Each instruction is a complete, self contained specification for one
+  publication ready, portrait, full page, 300 dpi figure, grounded in code
+  generation (v0.1.0) and code execution (v0.2.0). The master README defines the
+  processing model, the directory and file naming, the shared page frame, the
+  palette and typography, the symbol and dash rules, the index, the grounding
+  sources, the future imagegen workflow, and the acceptance criteria.
+- The 10 instructions use professional chart families and avoid basic bar, pie,
+  and line charts: `01-vvuq-gate-funnel` (funnel), `02-acceleration-waterfall`
+  (waterfall), `03-five-methods-flowchart` (process flowchart), `04-vvuq-assurance-wheel`
+  (radar wheel), `05-pdac-pilot-timeline` (Gantt), `06-test-coverage-treemap`
+  (treemap), `07-lights-off-state-machine` (state diagram), `08-fda-cost-efficiency-bridge`
+  (financial bridge and bullets), `09-value-proposition-matrix` (matrix), and
+  `10-file-generation-sankey` (Sankey).
+
+### Changed
+- `README.md`: release badge updated to v0.3.0, the repository structure now
+  shows `papers/VVUQ-01/image-instruct` and `papers/VVUQ-01/imagegen`, a new
+  figures section with a text diagram and a table of contents entry was added,
+  the citation version was bumped, and a v0.3.0 release line was added.
+- `releases.md`: v0.3.0 release notes added above the v0.2.0 notes.
+
+### Notes
+- This release adds instructions only. No matplotlib script and no PNG file is
+  generated yet; those are produced at a future date under
+  `papers/VVUQ-01/imagegen/`, which requires `matplotlib` in the rendering
+  environment. The additions are Markdown and fall outside the `ruff` and
+  `yamllint` surface, so `lint-and-format` stays green across Python 3.10, 3.11,
+  and 3.12, alongside `validate-scripts` and `test` (51 passed, 0 skipped).
+- Prior code generation (v0.1.0) and code execution (v0.2.0) files are unchanged.
+- All prose uses single dashes only; triple dashes are reserved for Markdown
+  rules, table separators, and YAML document separators.
+
 ## [0.2.0] - 2026-05-23
 
 ### Added
@@ -83,6 +120,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - All prose uses single dashes only; triple dashes are reserved for Markdown
   rules, table separators, and YAML document separators.
 
-[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/kevinkawchak/cancer-automated/releases/tag/v0.1.0
