@@ -1,0 +1,90 @@
+% Methods: platform design, the five methods, the gate, and the
+% autonomous per-commit generation methodology. Instruction only.
+
+[PROCESSING INSTRUCTION (Methods). Describe, as a senior author would,
+how the platform is built and how it was generated. Cover four things in
+order, each as a short subsection.
+
+(1) The five established methods, one daily deliverable. Explain the four
+producing stages and the orchestrator, then the fifth method, the VVUQ
+gate, that clears each candidate. Ground every claim in pipeline/ source.
+
+(2) The VVUQ gate and its thresholds. State the three dimensions and the
+exact default thresholds: verification fraction must equal 1.0 (six
+checks, schema valid, lint clean, 200K file cap); validation agreement at
+least 0.95 with maximum relative error at most 0.05 and a recorded human
+review; uncertainty at least 3 runs with coefficient of variation at most
+0.10. Note the gate blocks on any failure and escalates divergence.
+Ground in vvuq/ and configs/vvuq\_thresholds.yaml.
+
+(3) Stage 1 automation and the Stage 2 references. Briefly: triple
+simulation with consensus, robust web and PDF ingestion, 200K autochunk
+with reconstruction READMEs, and the non-stop commit scheduler; then the
+Stage 2 lights-off factory and hybrid surgery and medicine pilot, disabled
+by default and gated on human oversight and a reachable VVUQ gate.
+
+(4) Autonomous per-commit generation. Explain that Claude Code Opus 4.7
+(1M context) Max generated the codebase in a managed cloud container, one
+section per commit, pushed in real time within a single pull request, then
+re-ran every CI check and fixed issues before a final repository-update
+commit. Present the codegen commit metrics in
+Table~\ref{tab:methods_codegen_commits} as evidence of scalable, real
+life, per commit LLM VVUQ processing, and contrast with prior non
+incremental systems.
+
+SOURCE FILES (Table~\ref{tab:methods_sources}):
+
+\begin{table}[H]
+\caption{Methods source map (abbreviated paths under repo root).}
+\label{tab:methods_sources}
+\centering
+\begin{tabular}{L{4.6cm} L{8.8cm}}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  pipeline/ : 6 stage modules + examples-pipeline/ & The four producing stages and the orchestrator; the daily deliverable model. \\
+  vvuq/ : 4 assurance modules + examples-vvuq/ & The fifth method, the gate; the three VVUQ dimensions. \\
+  configs/ : pipeline + vvuq YAML configs & The 200K cap, the 3 run default, and the gate thresholds. \\
+  physical-ai/ : factory + pilot modules, examples & Stage 2 references and the safety interlocks. \\
+  simulation/, ingestion/, chunking/, scheduler/ & Stage 1 automation around the pipeline. \\
+  scripts/ verify script; tests/ : 8 modules, conftest & The environment gate and the verification floor. \\
+  execution/01-foundation/ : env, tests, lint reports & Methods reproducibility: Python 3.11.15, tooling, clean static analysis. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+SOURCE DATA to render as a publication table (do not alter the numbers):
+
+\begin{table}[H]
+\caption{Autonomous codegen commits that built the platform.}
+\label{tab:methods_codegen_commits}
+\centering
+\begin{tabular}{C{0.7cm} L{2.0cm} L{5.4cm} C{1.6cm} C{1.6cm}}
+\toprule
+\textbf{\#} & \textbf{SHA} & \textbf{Section} & \textbf{Gap} & \textbf{Churn} \\
+\midrule
+  C1 & c9e1404 & Foundation: tooling, CI, community & - & +1088 -2 \\
+  C2 & a111ca8 & Pipeline (5 established methods) & 4m42s & +825 \\
+  C3 & 187ba9e & VVUQ framework & 2m44s & +691 \\
+  C4 & dcb11c0 & Stage 1 automation (4 modules) & 4m46s & +1127 \\
+  C5 & 082fa9f & Stage 2 deployment refs & 1m49s & +389 \\
+  C6 & 13b253d & Fix all errors (2nd to last) & 0m48s & +3 -1 \\
+  C7 & bb27fd6 & Repo updates (last) & 3m05s & +119 -9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Also render the supporting breakdowns as compact tables: files by type
+(44 .py / 2829 lines; 24 .md / 1140; 2 .yaml / 79; 1 .yml / 73; 1 .txt /
+43; 1 .toml / 32; 1 .cff / 30; LICENSE / 21; .gitignore / 6; 76 files
+total including the pre-existing LICENSE) and directory lines (pipeline
+753, vvuq 573, tests 559 over 53 tests, physical-ai 325, ingestion 278,
+simulation 266, chunking 260, .github 185, scheduler 143, scripts 112,
+configs 79). Reference these tables; do not narrate every row.
+
+HOW TO PROCESS: explain the architecture in prose and let the tables carry
+the file inventory; abbreviate long module names. Reuse the
+configs/vvuq\_thresholds.yaml numbers verbatim. Tie the per commit cadence
+to the thesis by noting that the assurance, not the generation, dominated
+the effort. Cite \cite{repo-cancer-automated}, \cite{anthropicopus47},
+\cite{anthropicclaudecodeweb}, \cite{iec62304}, and \cite{iche6r3}.]

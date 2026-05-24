@@ -1,0 +1,38 @@
+% References: citation strategy instruction, then the final bibliography.
+% The bibliography is final (references.bib, 28 entries). The future pass
+% replaces the bracketed instruction below with nothing once citations
+% are wired through the body; it must not weaken the .bib conventions.
+
+{\small\itshape [PROCESSING INSTRUCTION (References). The bibliography
+below is final: 28 entries in references.bib rendered with ieeetr, at
+least 20 as required. Do not lose detail and do not add a howpublished
+field. Every DOI entry must keep its human readable DOI string and a
+clickable resolver URL in the note; repository entries must keep both a
+GitHub and a Zenodo URL, each once, with no duplicate link; both the
+repository DOI and the paper DOI must remain clickable. The future pass
+wires \textbackslash cite calls through the body per the per-section maps:
+VVUQ and digital twin theory in the Introduction (sel2025vvuq, zaid2025pbpk,
+moradi2026twins, asmevv40, fda2023credibility); generation context
+(trooskens2026compiled, carlisle2026pipeline, yan2026clinagent); platform
+lineage and prior PDAC and oncology work in Methods and Results
+(repo-cancer-automated, kawchak2026sponsor, kawchak2025qsppdac,
+kawchak2025pdactwin, kawchak2025pdacsim, kawchak2025fdadtwin); tooling and
+regulatory framing in Discussion (anthropicopus47, anthropicclaudecodeweb,
+anthropiclifesciences, fda2026realtime, iche6r3, iec62304). If more
+entries are needed, harvest additional DOI-bearing BibTeX from
+inputs/Paper-VVUQ-1/chunk\_10a, chunk\_10b; inputs/Paper-VVUQ-2/chunk\_10,
+chunk\_11; inputs/VVUQ-Research-1/chunk3; inputs/VVUQ-Research-2/chunk3;
+and the prior Clinical-AI-Demos 07-humanoid references.bib, preserving the
+doi plus url plus note triad exactly.]\par}
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begingroup
+\raggedright
+% \nocite{*} renders the full curated bibliography (28 entries) in the
+% draft even before every \cite is wired through the body. The future
+% pass may keep it or rely on explicit \cite calls once they are placed.
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup

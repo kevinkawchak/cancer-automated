@@ -1,0 +1,135 @@
+% Results: the execution evidence and the figures. Instruction only.
+
+[PROCESSING INSTRUCTION (Results). Report the executed evidence in five
+short subsections that follow the execution record, then the per commit
+processing evidence, then the figures. Report every number exactly as in
+the execution files; do not round differently.
+
+(1) Foundation and verification floor. 51 of 51 tests passed (0 skipped)
+across 8 test modules; static analysis (ruff check, ruff format, yamllint)
+clean. Render the per module counts (17, 8, 5, 5, 4, 4, 4, 4) as a table
+from test-suite.md and reference it.
+
+(2) Pipeline generation. Five deliverables completed all four stages; the
+acceleration factor is 2.5 (30 baseline days to 12 automated days) from
+the codegen formula automated\_days = 30.0 / (1.0 + runs * 0.5). Point to
+the three saved artifacts (instructions.md, execution\_log.txt, paper.md).
+
+(3) VVUQ gate, the core result. Summarize the three shipped examples
+(verification fraction 1.0; validation agreement 1.0 with worst relative
+error 0.033 and human review recorded; uncertainty maximum CV 0.0068 over
+3 runs, accepted). Then present the full decision surface in
+Table~\ref{tab:results_gate}: 1 accept and 5 distinct blocks, 1 of which
+escalates. Stress that a single failed check out of six dropped the
+verification fraction to 0.83 and blocked case 6, which is the thesis in
+one line.
+
+(4) Stage 1 automation. Triple-run consensus converged (CV 0.0007 and
+0.0001, 0 divergent); web search degraded gracefully to a labeled offline
+stub after 4 bounded retries; the 200K chunker is byte-identical lossless
+on line and ASCII paths; and one genuine limitation was found, a multibyte
+hard-split that loses 6 characters at boundaries (carry this honestly into
+Limitations). The scheduler planned 24 evenly spaced slots at 3600 s.
+
+(5) Stage 2 reference. The 2030 PDAC hybrid pilot: a 60 second 8 arm
+robotic Whipple on day 0 plus six 28 day Daraxonrasib adjuvant cycles
+through day 168 (7 timeline events, human oversight required). The
+lights-off controller emergency-stops over budget faults and blocks on an
+unsatisfied interlock; note that vvuq\_gate\_online is one of the four
+default interlocks, wiring Stage 1 assurance into Stage 2 safety.
+
+(6) Per commit processing evidence. Present the execution commit metrics
+in Table~\ref{tab:results_exec_commits} and reproduce the ASCII commit
+timeline as a figure; use it to argue that real time, per commit LLM VVUQ
+processing scales in practice, a concrete advantage over prior batch
+systems.
+
+SOURCE FILES (Table~\ref{tab:results_sources}):
+
+\begin{table}[H]
+\caption{Results source map (abbreviated paths under repo root).}
+\label{tab:results_sources}
+\centering
+\begin{tabular}{L{4.7cm} L{8.7cm}}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  execution/01-foundation/ : test-suite.md & 51 of 51 tests, 8 module counts, the verbatim roster. \\
+  execution/02-pipeline/ : README + 3 artifacts & Five deliverables, the 2.5x factor, the three generated artifacts. \\
+  execution/03-vvuq/ : README.md & Examples 1 to 3 and the full 6 case gate decision surface. \\
+  execution/04-stage1-automation/ : README + chunk artifact & Simulation, ingestion, chunking, scheduler outcomes and the multibyte finding. \\
+  execution/05-physical-ai-stage2/ : README + PDAC timeline & PDAC pilot timeline and the lights-off safety surface. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+SOURCE DATA to render as publication tables (numbers are fixed):
+
+\begin{table}[H]
+\caption{The full VVUQ gate decision surface (1 accept, 5 block, 1 escalate).}
+\label{tab:results_gate}
+\centering
+\begin{tabular}{C{0.6cm} L{4.6cm} C{1.5cm} C{1.4cm} L{4.0cm}}
+\toprule
+\textbf{\#} & \textbf{Scenario} & \textbf{Accept} & \textbf{Escal.} & \textbf{Blocking reason} \\
+\midrule
+  1 & clean, human reviewed, low CV & yes & no & none \\
+  2 & no human review recorded & no & no & human review not recorded \\
+  3 & divergent runs, high CV & no & yes & max cv 0.365 above 0.1 \\
+  4 & observed disagrees with reference & no & no & agreement 0.00; rel err 0.600 \\
+  5 & only 2 runs, need 3 & no & no & only 2 runs, need 3 \\
+  6 & artifact exceeds 200K cap & no & no & verification fraction 0.83 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\caption{Autonomous execution commits producing the run record.}
+\label{tab:results_exec_commits}
+\centering
+\begin{tabular}{C{0.6cm} L{1.9cm} L{4.8cm} C{1.5cm} C{1.6cm}}
+\toprule
+\textbf{\#} & \textbf{Hash} & \textbf{Section} & \textbf{Lines} & \textbf{Time (UTC)} \\
+\midrule
+  1 & d7721a7 & Foundation (env, tests, lint) & +387 & 04:20:42 \\
+  2 & b146ef7 & Pipeline (five methods) & +322 & 04:22:43 \\
+  3 & c340cef & VVUQ (gate surface) & +223 & 04:24:05 \\
+  4 & f5cb95b & Stage 1 automation & +238 & 04:26:26 \\
+  5 & 2eb5cf0 & Physical-AI Stage 2 (PDAC) & +176 & 04:27:42 \\
+  6 & ddd41e9 & Comprehensive README & +401/-1 & 04:32:08 \\
+  7 & 9437292 & Fix errors (2nd to last) & +7/-6 & 04:35:34 \\
+  8 & 57aa8db & Repository updates (last) & +102/-13 & 04:38:44 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Reproduce the ASCII commit timeline (UTC, commit, section, delta, gap)
+from the task's EXECUTION COMMIT PROCESSING block inside a verbatim figure
+so the cadence is visible at a glance.
+
+FIGURES from imagegen Python data, listed in Table~\ref{tab:results_figs}
+(use the .py scripts for the data literals, never the .png files; do not use
+the image-instruct directory). Three of the four in-scope scripts belong
+here; the fourth, 08-fda-cost-efficiency-bridge, is used in the Discussion:
+
+\begin{table}[H]
+\caption{Results figures grounded in imagegen Python scripts.}
+\label{tab:results_figs}
+\centering
+\begin{tabular}{L{4.8cm} L{8.6cm}}
+\toprule
+\textbf{Script dir (under imagegen/)} & \textbf{Render as} \\
+\midrule
+  02-acceleration-waterfall/ *.py & A schedule waterfall, 30 to 12 days via reductions 10, 5, 3; reproduce the audit formula. \\
+  04-vvuq-assurance-wheel/ *.py & A radar wheel of the six normalized assurance spokes against the threshold ring. \\
+  06-test-coverage-treemap/ *.py & A treemap of 51 of 51 tests across the 8 modules (areas 17, 8, 5, 5, 4, 4, 4, 4). \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+HOW TO PROCESS: pull the numeric arrays from each script's literals and
+either redraw the figure or tabulate the data; cite the figure, do not
+restate it in prose. Keep subsections tight and let
+Tables~\ref{tab:results_gate} and~\ref{tab:results_exec_commits} carry the
+detail. Cite \cite{repo-cancer-automated}, \cite{sel2025vvuq}, and
+\cite{kawchak2025pdactwin} where the evidence connects to the literature.]

@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.4.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.5.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web and PDF ingestion, and autochunking on top, so each deliverable is produced faster and with higher assurance.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/25: v0.5.0 (VVUQ-01 Draft Paper Scaffold)** Adds [papers/VVUQ-01/draft-paper](papers/VVUQ-01/draft-paper): a compilable single column LaTeX scaffold for the manuscript *Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code*. The seven body section files carry bracketed processing instructions that name the exact repository directories and files for a future Claude Code Opus 4.7 (1M) Max pass to write a 70+ page paper, while the title page, style, the final 29 entry bibliography (each DOI with a clickable URL, and GitHub plus Zenodo for repositories), and back matter are final. Authored one file per commit and pushed in real time as a single pull request, with `lint-and-format` green across Python 3.10, 3.11, and 3.12. See [releases.md](releases.md) for full release notes.
 
 **5/23: v0.4.0 (VVUQ-01 Publication Figures Rendered)** Renders the 10 image instructions into [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen): 10 self-contained matplotlib scripts (the generated code) and the 10 portrait, full-size, 300 dpi PNG figures they produce (the execution output), plus a comprehensive README with the embedded gallery. Each figure (funnel, waterfall, flowchart, radar wheel, Gantt, treemap, state diagram, financial bridge, value proposition matrix, and Sankey) is grounded in code generation (v0.1.0) and execution (v0.2.0), uses the shared portrait page frame, white background only, the section symbol `§`, and single dashes, and was committed and pushed in real time as one pull request. The scripts are `ruff` clean so the `lint-and-format` CI stays green across Python 3.10, 3.11, and 3.12. See [releases.md](releases.md) for full release notes.
 
@@ -37,6 +39,7 @@ This repository is complementary and open source. Please implement code safely a
 - [Core Capabilities](#core-capabilities)
 - [VVUQ Held Higher Than Code Generation](#vvuq-held-higher-than-code-generation)
 - [VVUQ-01 Figures and Image Instructions](#vvuq-01-figures-and-image-instructions)
+- [VVUQ-01 Draft Paper](#vvuq-01-draft-paper)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -247,18 +250,26 @@ cancer-automated/
         │   ├── 08-fda-cost-efficiency-bridge/  # Financial bridge plus credibility
         │   ├── 09-value-proposition-matrix/  # Matrix: cloud vs conventional server
         │   └── 10-file-generation-sankey/  # Sankey: 13 files to 4 paper roles
-        └── imagegen/               # ★ v0.4.0 rendered figures (10 scripts + 10 PNGs + README)
-            ├── README.md           # Rendered gallery, generated code vs execution, reproduction
-            ├── 01-vvuq-gate-funnel/           # 01-vvuq-gate-funnel.py + .png (funnel)
-            ├── 02-acceleration-waterfall/     # script + 300 dpi PNG (waterfall)
-            ├── 03-five-methods-flowchart/     # script + 300 dpi PNG (flowchart)
-            ├── 04-vvuq-assurance-wheel/       # script + 300 dpi PNG (radar wheel)
-            ├── 05-pdac-pilot-timeline/        # script + 300 dpi PNG (Gantt)
-            ├── 06-test-coverage-treemap/      # script + 300 dpi PNG (treemap)
-            ├── 07-lights-off-state-machine/   # script + 300 dpi PNG (state diagram)
-            ├── 08-fda-cost-efficiency-bridge/ # script + 300 dpi PNG (bridge + bullets)
-            ├── 09-value-proposition-matrix/   # script + 300 dpi PNG (matrix)
-            └── 10-file-generation-sankey/     # script + 300 dpi PNG (Sankey)
+        ├── imagegen/               # ★ v0.4.0 rendered figures (10 scripts + 10 PNGs + README)
+        │   ├── README.md           # Rendered gallery, generated code vs execution, reproduction
+        │   ├── 01-vvuq-gate-funnel/           # 01-vvuq-gate-funnel.py + .png (funnel)
+        │   ├── 02-acceleration-waterfall/     # script + 300 dpi PNG (waterfall)
+        │   ├── 03-five-methods-flowchart/     # script + 300 dpi PNG (flowchart)
+        │   ├── 04-vvuq-assurance-wheel/       # script + 300 dpi PNG (radar wheel)
+        │   ├── 05-pdac-pilot-timeline/        # script + 300 dpi PNG (Gantt)
+        │   ├── 06-test-coverage-treemap/      # script + 300 dpi PNG (treemap)
+        │   ├── 07-lights-off-state-machine/   # script + 300 dpi PNG (state diagram)
+        │   ├── 08-fda-cost-efficiency-bridge/ # script + 300 dpi PNG (bridge + bullets)
+        │   ├── 09-value-proposition-matrix/   # script + 300 dpi PNG (matrix)
+        │   └── 10-file-generation-sankey/     # script + 300 dpi PNG (Sankey)
+        └── draft-paper/            # ★ v0.5.0 draft paper scaffold (LaTeX + instructions)
+            ├── README.md           # Badges, processing model, section to source map
+            ├── main.tex            # Title page, disclaimer, TOC, section inputs
+            ├── new_paper.sty       # Single column serif style; black links, green ORCID
+            ├── references.bib      # 29 final entries, DOI + clickable URL, no duplicates
+            ├── draft-paper.zip     # Overleaf ready bundle
+            └── sections/           # abstract, intro, methods, results, discussion,
+                                    #   limitations_future, conclusions, references, back_matter
 ```
 
 ## Established Methods Proven Across Projects
@@ -327,6 +338,22 @@ The image generation leg of the thesis is specified under [papers/VVUQ-01/image-
 
 The set avoids basic bar, pie, and line charts, shares one professional palette and portrait page frame, uses the section symbol `§` where required, and uses single dashes only. See the [image-instruct README](papers/VVUQ-01/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications, and the [imagegen README](papers/VVUQ-01/imagegen) for the rendered gallery, the generated code versus execution split, and reproduction with matplotlib.
 
+## VVUQ-01 Draft Paper
+
+The paper generation leg of the thesis begins under [papers/VVUQ-01/draft-paper](papers/VVUQ-01/draft-paper), a complete and compilable single column LaTeX scaffold for the manuscript *Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code*. The scaffold separates final files from instruction files: the title page (`main.tex`), the style (`new_paper.sty`), the 29 entry bibliography (`references.bib`), the references section, and the back matter are final, while the seven body section files carry bracketed processing instructions that name the exact repository directories and files for a future Claude Code Opus 4.7 (1M) Max pass to write a 70+ page paper. Writing the assurance specification (which sources, which metrics, which figures, and the formatting contract) ahead of the prose is the paper generation analog of the VVUQ gate.
+
+```
+  draft-paper/ (now)                          Future pass (full paper)
+  +-----------------------------------+       +-----------------------------------+
+  | FINAL    main.tex, new_paper.sty, | -->   | REPLACE the bracketed [ ... ]     |
+  |          references.bib, back      | 70+  | blocks in the seven body sections |
+  |          matter, references        | page | with grounded prose, tables, and  |
+  | INSTRUCT the seven body sections   | ===> | figures; keep the scaffold intact |
+  +-----------------------------------+       +-----------------------------------+
+```
+
+The bibliography is final: every DOI entry carries its human readable DOI and a clickable resolver URL, and repository entries carry both a GitHub and a Zenodo URL, each once, with no duplicate link and no `howpublished` field. A `draft-paper.zip` bundle is provided for a one step Overleaf upload. The additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green.
+
 ## Continuous Integration
 
 The `CI` workflow runs on every pull request and push to `main`:
@@ -374,7 +401,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.4.0},
+  version = {0.5.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}

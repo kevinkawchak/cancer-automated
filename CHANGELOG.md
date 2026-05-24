@@ -5,6 +5,45 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-05-25
+
+### Added
+- `papers/VVUQ-01/draft-paper/`: a complete and compilable single column LaTeX
+  scaffold for the manuscript "Two Stage VVUQ Oncology Clinical Trial
+  Verification Automation Priority over Existing Generated Code", authored
+  autonomously by Claude Code Opus 4.7 (1M context) Max, one file per commit,
+  each pushed to GitHub in real time as part of a single pull request. The
+  seven body section files (`sections/abstract.tex`, `introduction.tex`,
+  `methods.tex`, `results.tex`, `discussion.tex`, `limitations_future.tex`,
+  `conclusions.tex`) carry bracketed processing instructions that name the
+  exact repository directories and files to process for a future 70+ page
+  paper. The title page (`main.tex`), style (`new_paper.sty`), bibliography
+  (`references.bib`), references section (`sections/references.tex`), and back
+  matter (`sections/back_matter.tex`) are final.
+- `references.bib`: 29 final entries rendered with `ieeetr`. Every DOI entry
+  carries its human readable DOI string and a clickable resolver URL in the
+  note; repository entries carry both a GitHub and a Zenodo URL, each once,
+  with no duplicate link and no `howpublished` field. Both the repository DOI
+  and the paper DOI are clickable.
+- `draft-paper.zip`: an Overleaf ready bundle of the LaTeX project.
+
+### Changed
+- `README.md`: release badge updated to v0.5.0, a new v0.5.0 summary added
+  above the v0.4.0 summary, a VVUQ-01 draft paper section and table of contents
+  entry added, the repository structure now expands
+  `papers/VVUQ-01/draft-paper`, and the citation version was bumped.
+- `releases.md`: v0.5.0 release notes added above the v0.4.0 notes.
+
+### Notes
+- This release adds a paper scaffold only; it does not change the executable
+  v0.1.0 source modules or the v0.2.0 through v0.4.0 records. The additions are
+  LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so
+  `lint-and-format` (ruff check, ruff format check, yamllint) stays green across
+  Python 3.10, 3.11, and 3.12, alongside `validate-scripts` and `test` (51
+  passed, 0 skipped).
+- All prose uses single dashes only; triple dashes are reserved for Markdown
+  rules, table separators, and YAML document separators.
+
 ## [0.4.0] - 2026-05-23
 
 ### Added
@@ -162,7 +201,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - All prose uses single dashes only; triple dashes are reserved for Markdown
   rules, table separators, and YAML document separators.
 
-[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/kevinkawchak/cancer-automated/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/kevinkawchak/cancer-automated/compare/v0.1.0...v0.2.0

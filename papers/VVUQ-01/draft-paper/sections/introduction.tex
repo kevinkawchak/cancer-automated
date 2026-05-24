@@ -1,0 +1,61 @@
+% Introduction: motivation, VVUQ principles, thesis, contributions.
+% Instruction only. The Introduction precedes the Table of Contents.
+
+[PROCESSING INSTRUCTION (Introduction). Open with the clinical and
+technical need: physical AI is entering oncology trials through in
+silico simulation, autonomous code generation, and eventually robotic
+procedures, where an error that ships is far costlier than one caught
+before shipping. Then define the three VVUQ dimensions in the oncology
+trial context, briefly and in plain terms, using exactly these framings:
+Verification asks ``Did we build the code correctly?''; Validation asks
+``Did we build the right model?''; and Uncertainty Quantification asks
+``How confident are we in the results?''. Make clear that code
+generation answers none of these on its own.
+
+State the thesis next, in the author's voice: the LLM VVUQ process must
+be more substantial than the code generation it gates, and being so is
+what makes autonomous oncology trial deliverables faster, cheaper, and
+more rigorous than conventional verification. Then give the three to
+four contributions of this work, each mapped forward to a later section:
+(i) a single repeatable pipeline of five established methods (Methods);
+(ii) a VVUQ gate held to a higher standard than generation, exercised
+across its full accept, block, and escalate surface (Results); (iii) an
+honest account of what ran, what was approximated, and what could not run
+(Limitations); and (iv) a Stage 2 2030 PDAC deployment reference
+(Results, Discussion). Close by positioning this platform as the next
+step beyond the prior humanoid instruction to code to execution to paper
+workflow, which proved the workflow but left the assurance and per commit
+automation to be strengthened here.
+
+SOURCE FILES (Table~\ref{tab:intro_sources}; read first, then write in your
+own words):
+
+\begin{table}[H]
+\caption{Introduction source map (abbreviated paths).}
+\label{tab:intro_sources}
+\centering
+\begin{tabular}{L{4.6cm} L{8.8cm}}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  vvuq/ : README + 4 modules & The three VVUQ dimensions and the gate principle, stated plainly. \\
+  execution/README.md : Thesis section & The thesis wording and the assurance over generation argument. \\
+  inputs/Paper-VVUQ-1, -2 : README + chunk 01 & Background on VVUQ for in silico trials; the 117 DOI input corpus. \\
+  inputs/VVUQ-Research-1, -2 : README + chunk 1 & Additional VVUQ and digital twin framing for oncology. \\
+  Clinical-AI-Demos 07-humanoid final-paper & The prior workflow this paper extends (cite, do not copy). \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+CITATIONS: support the VVUQ definitions and the precision medicine
+framing with \cite{sel2025vvuq}, \cite{zaid2025pbpk}, and
+\cite{moradi2026twins}; the credibility framing with \cite{asmevv40} and
+\cite{fda2023credibility}; the autonomous generation context with
+\cite{trooskens2026compiled}, \cite{carlisle2026pipeline}, and
+\cite{yan2026clinagent}; and the platform lineage with
+\cite{kawchak2026sponsor}, \cite{kawchak2025qsppdac}, and
+\cite{repo-cancer-automated}.
+
+HOW TO PROCESS: keep the VVUQ definitions to a few sentences each; do not
+restate Table~\ref{tab:intro_sources}, reference it. Connect the thesis
+here to the Results and Discussion so the paper reads as one argument.]

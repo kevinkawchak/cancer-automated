@@ -1,0 +1,67 @@
+% Limitations and Future Work: honest gaps and the roadmap. Instruction only.
+
+[PROCESSING INSTRUCTION (Limitations and Future Work). Be deliberately
+complete and honest; the thesis depends on transparent VVUQ. Do not bury
+or soften any gap. Write two short subsections.
+
+(1) Limitations, approximations, and what could not be run. Enumerate the
+gaps exactly as recorded in execution/README.md: agentic model backends
+not exercised live (anthropic and openai absent, no API key, so generation
+ran on deterministic offline templates); live web search not reachable, so
+ingestion exhausted its 4 retries and fell back to the labeled offline
+stub; PDF extraction backend (pypdf) absent, so only the size-based chunk
+estimate ran; physics and robotics backends (mujoco, Isaac, ROS 2) absent
+with no GPU or display; the multibyte hard-split chunking edge case that
+loses 6 characters at boundaries (reported, not repaired, as it was out of
+the execution scope); the LaTeX template not compiled to PDF in the
+container; imagegen having no executable code in v0.1.0; and a single local
+Python version (3.11.15) with cross-version 3.10 and 3.12 left to CI. Add
+the two assurance gaps the Discussion raised: no independent validation
+reference, and the repository's rich inputs/ corpus not yet wired into the
+executed pipeline. Present these compactly in
+Table~\ref{tab:limits_future}.
+
+(2) Future work: VVUQ automation across all oncology clinical trials. Make
+the central forward claim that this VVUQ automation should be adapted
+through the full breadth of oncology clinical trials, because the speed,
+quality, and cost benefits compound at scale while patient safety is
+preserved by the gate. Lay out the tractable next steps in priority order:
+supply an independent validation reference; wire the inputs/ corpus through
+ingestion so codegen and papergen run on real source material; make the
+triple simulation genuinely stochastic with more runs and confidence
+intervals; enable the live model, network, PDF, and physics paths; repair
+the multibyte chunker and add a multibyte test; close all three thesis legs
+(codegen, imagegen, papergen) end to end; and emit machine readable
+results. Frame the destination as a flexible, future proof assurance layer
+that lets the industry check these steps off once rather than repeatedly.
+
+SOURCE DATA to render as a publication table (paired now and next):
+
+\begin{table}[H]
+\caption{Limitations now and the tractable next steps.}
+\label{tab:limits_future}
+\centering
+\begin{tabular}{L{6.4cm} L{7.0cm}}
+\toprule
+\textbf{Limitation (this run)} & \textbf{Future step} \\
+\midrule
+  No independent validation reference (self referential accept) & Supply an external gold standard so validation carries weight. \\
+  inputs/ corpus not wired into the pipeline & Feed the chunked corpus through ingestion into codegen and papergen. \\
+  Generation on offline templates; no live backends & Enable live model, web search, PDF, and physics paths. \\
+  Near-deterministic 3 run simulation (CV 0.0007) & Genuine stochasticity, more runs, confidence intervals, sensitivity. \\
+  Multibyte hard-split loses 6 characters & Carry trailing bytes forward; add a multibyte chunking test. \\
+  imagegen has no executable code in v0.1.0; template uncompiled & Close codegen, imagegen, and papergen legs end to end. \\
+  Single local Python version & Run the 3.10 / 3.11 / 3.12 matrix locally, emit JSON results. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+SOURCE FILES: execution/README.md (the ``Limitations, approximations, and
+what could not be run'' section) is the authoritative list;
+execution/04-stage1-automation/README.md for the multibyte detail.
+
+HOW TO PROCESS: keep the limitations factual and specific, reference
+Table~\ref{tab:limits_future} rather than repeating it, and let the future
+work read as a confident roadmap toward all-trial adoption. Cite
+\cite{repo-cancer-automated}, \cite{sel2025vvuq}, \cite{kawchak2026federated},
+\cite{kawchak2025qsppdac}, and \cite{fda2026realtime}.]
