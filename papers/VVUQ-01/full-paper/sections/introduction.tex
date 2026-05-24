@@ -1,0 +1,141 @@
+% Introduction: motivation, VVUQ principles, thesis, contributions.
+% The Introduction precedes the Table of Contents.
+
+Physical artificial intelligence is entering oncology clinical trials along
+three converging fronts. The first is in silico simulation, where digital twins
+and mechanistic models stand in for cohorts of patients so that dose, schedule,
+and endpoint decisions can be explored before a single person is enrolled. The
+second is autonomous code generation, where large language model agents now
+write the analysis code, the simulation harness, and even the statistical
+programming that a trial depends on. The third, and the most consequential, is
+the gradual arrival of physical procedures under machine control, from
+laboratory automation to the robotic surgery and combined medicine pilots that a
+2030 oncology program may rely on. Across all three fronts the asymmetry of cost
+is the same and it is severe: an error that is caught before a deliverable ships
+is a line in a log file, while an error that ships into a simulation that informs
+a protocol, or into a procedure that touches a patient, is a clinical and a
+regulatory event. The faster and the more autonomous the generation becomes, the
+more this asymmetry matters, because speed without a commensurate increase in
+assurance simply ships mistakes sooner.
+
+The discipline that addresses this asymmetry is verification, validation, and
+uncertainty quantification, abbreviated VVUQ, and it is now well established for
+digital twins in precision medicine~\cite{sel2025vvuq, moradi2026twins} and for
+the physiologically based pharmacokinetic models that underpin oncology dosing
+~\cite{zaid2025pbpk}. In the specific context of an oncology trial deliverable,
+the three dimensions can be stated plainly. Verification asks ``Did we build the
+code correctly?'', that is, does the software implement its specification, pass
+its structural and schema checks, and behave as intended on its own terms.
+Validation asks ``Did we build the right model?'', that is, does the deliverable
+agree with a trusted reference or ground truth to within an acceptable error, and
+has a qualified human reviewed and signed off on it. Uncertainty quantification
+asks ``How confident are we in the results?'', that is, when the work is repeated
+under controlled perturbation, how dispersed are the outputs and is that
+dispersion inside an agreed bound. These three questions are the substance of the
+credibility frameworks that regulators and standards bodies have built for
+computational evidence in medical contexts~\cite{asmevv40, fda2023credibility}.
+The point that organizes this paper is that code generation, however capable,
+answers none of these three questions on its own. A generator produces a
+candidate. Whether that candidate is correct, right, and confident is decided
+entirely downstream, by the assurance process.
+
+That observation leads directly to the thesis of this work. The LLM VVUQ process
+must be more substantial than the automated code generation it gates, and being
+more substantial is precisely what makes autonomous oncology trial deliverables
+faster, less expensive, and more rigorous than conventional verification. This is
+not a claim that generation is unimportant. It is a claim about where the
+decision weight sits. Modern agents can emit a complete, well formed deliverable
+in well under a millisecond, and recent systems show that deterministic and
+agentic code generation for clinical workflows is increasingly
+reliable~\cite{trooskens2026compiled, carlisle2026pipeline, yan2026clinagent}.
+The hard, decision bearing work is not producing that candidate; it is the gate
+that decides whether the candidate may ship, the thresholds that gate enforces,
+and the escalation policy that routes a doubtful case to a human. When that
+assurance layer is automated, exercised across its full decision surface, and
+held to a deliberately higher standard than the generator, the result is a loop
+that is both quick and trustworthy. The platform analyzed here, the
+\texttt{cancer-automated} repository, is the realization of that
+loop~\cite{repo-cancer-automated}, and it continues a line of the author's
+physical AI oncology trial automation that includes a fully automated sponsor
+platform~\cite{kawchak2026sponsor} and a metastatic pancreatic cancer trial
+established under an explicit code, VVUQ, and playbook
+pattern~\cite{kawchak2025qsppdac}.
+
+This paper makes four contributions, each developed in a later section and
+referenced here so the argument reads as one connected piece. First, it presents
+a single repeatable pipeline of five established methods, four producing stages
+and one assurance gate, packaged so that one daily deliverable runs them in order
+(\autoref{sec:methods}). Second, it presents a VVUQ gate that is held to a higher
+standard than the generation it gates and is exercised across its full accept,
+block, and escalate surface, which is the core empirical result of the work
+(\autoref{sec:results}). Third, it gives a deliberately honest account of what
+actually ran, what was approximated, and what could not be run in the execution
+environment, because a thesis built on assurance is only credible if its own gaps
+are reported plainly (\autoref{sec:limitations}). Fourth, it carries a Stage 2
+deployment reference, a 2030 pancreatic cancer analog combining a robotic Whipple
+procedure with an adjuvant medicine regimen, that shows how the same gate extends
+from software assurance into physical safety (\autoref{sec:results} and
+\autoref{sec:discussion}).
+
+The surrounding literature motivates each half of this argument. On the assurance
+side, the survey of VVUQ for precision medicine digital twins frames the
+verification, validation, and uncertainty vocabulary used here~\cite{sel2025vvuq},
+the image to physics to digital twin pathway shows where personalized cancer
+models are heading~\cite{moradi2026twins}, and the application of VVUQ to
+physiologically based pharmacokinetic models for theranostics is a direct oncology
+analog of the dosing decisions a trial must defend~\cite{zaid2025pbpk}. The
+credibility of such computational evidence is governed by established frameworks,
+in particular the risk informed ASME V\&V 40 standard and the FDA guidance on
+assessing credibility of modeling and simulation in device
+submissions~\cite{asmevv40, fda2023credibility}, with good clinical practice and
+medical device software life cycle expectations layered on
+top~\cite{iche6r3, iec62304}. On the generation side, deterministic and agentic
+code generation for clinical workflows is advancing quickly, from compiled and
+deterministic generation~\cite{trooskens2026compiled} to validated generative
+extraction pipelines~\cite{carlisle2026pipeline} and layered autonomous
+statistical programming~\cite{yan2026clinagent}. The contribution here is not to
+improve either half in isolation but to insist on the ordering between them, and
+to do so at a moment when regulators are themselves moving toward faster, real
+time clinical evidence~\cite{fda2026realtime}.
+
+This work also stands on a substantial body of prior evidence. The repository's
+input corpus references many distinct external DOIs spanning VVUQ theory, digital
+twins, and in silico oncology trials, and the platform itself continues a
+sequence of the author's physical AI oncology trial systems, from autonomous
+glioblastoma meta analyses with explicit verification~\cite{kawchak2025glioblastoma}
+and a large language model code generation benchmark on adverse event
+data~\cite{kawchak2025faers}, to federated trial unification~\cite{kawchak2026federated}
+and accelerated patient prediction~\cite{kawchak2026prediction}. What none of that
+prior work did was hold the assurance process explicitly above the generation at
+the granularity of a single commit, which is the specific gap this platform
+closes.
+
+Finally, this work positions the platform as the next step beyond the prior
+humanoid instruction to code to execution to paper workflow developed in the
+author's Clinical-AI-Demos project. That earlier workflow proved that an agent
+can carry a task from a bracketed instruction through code, execution, and a
+written paper without a human in the inner loop. What it left open, and what this
+platform strengthens, is the assurance around that loop and the discipline of
+per commit automation: a VVUQ gate held above generation, triple run
+uncertainty, lossless autochunking under a strict file size cap, and a record
+where every section is its own commit pushed in real time. The sources that
+ground each part of the argument are collected in \autoref{tab:intro_sources};
+the prose that follows draws on them in the author's own words rather than
+restating them.
+
+\begin{table}[H]
+\caption{Introduction source map (abbreviated paths under the repository root).}
+\label{tab:intro_sources}
+\centering
+\begin{tabularx}{\textwidth}{L{4.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  \texttt{vvuq/} : README and 4 modules & The three VVUQ dimensions and the gate principle, stated plainly. \\
+  \texttt{execution/README.md} : Thesis & The thesis wording and the assurance over generation argument. \\
+  \texttt{inputs/Paper-VVUQ-1, -2} : README and chunk 01 & Background on VVUQ for in silico trials and the broad DOI input corpus. \\
+  \texttt{inputs/VVUQ-Research-1, -2} : README and chunk 1 & Additional VVUQ and digital twin framing for oncology. \\
+  Clinical-AI-Demos 07-humanoid paper & The prior workflow this paper extends (cited, not copied). \\
+\bottomrule
+\end{tabularx}
+\end{table}

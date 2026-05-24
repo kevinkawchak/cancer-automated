@@ -1,0 +1,333 @@
+% Methods: platform design, the five methods, the gate, and the autonomous
+% per-commit generation methodology.
+
+This section describes how the platform is built and how it was generated. It
+covers four things in order: the five established methods that produce one daily
+deliverable, the VVUQ gate and its thresholds, the Stage 1 automation that
+surrounds the pipeline together with the Stage 2 deployment references, and the
+autonomous per commit process that authored the codebase. Each claim is grounded
+in the repository sources collected in \autoref{tab:methods_sources}; the prose
+references those sources rather than reproducing them, and long module names are
+abbreviated in the tables.
+
+\begin{table}[H]
+\caption{Methods source map (abbreviated paths under the repository root).}
+\label{tab:methods_sources}
+\centering
+\begin{tabularx}{\textwidth}{L{4.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  \texttt{pipeline/} : 6 modules and \texttt{examples-pipeline/} & The four producing stages, the orchestrator, and the daily deliverable model. \\
+  \texttt{vvuq/} : 4 modules and \texttt{examples-vvuq/} & The fifth method, the gate, and the three VVUQ dimensions. \\
+  \texttt{configs/} : pipeline and vvuq YAML & The 200K cap, the 3 run default, and the gate thresholds. \\
+  \texttt{physical-ai/} : factory and pilot modules & Stage 2 references and the safety interlocks. \\
+  \texttt{simulation/}, \texttt{ingestion/}, \texttt{chunking/}, \texttt{scheduler/} & Stage 1 automation around the pipeline. \\
+  \texttt{scripts/} verify script; \texttt{tests/} : 8 modules & The environment gate and the verification floor. \\
+  \texttt{execution/01-foundation/} reports & Reproducibility: Python 3.11.15, tooling, clean static analysis. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Five established methods, one daily deliverable}
+
+The pipeline packages five methods that prior projects established and proved,
+and runs them so that one daily deliverable passes through all five in a fixed
+order. Four of the methods produce the deliverable and the fifth clears it. The
+four producing stages are instruction generation, code generation, code
+execution, and paper assembly, and they are realized in \texttt{pipeline/} by
+\texttt{instruction\_stage.py}, \texttt{codegen\_stage.py},
+\texttt{execution\_stage.py}, and \texttt{paper\_stage.py} respectively. A single
+data model in \texttt{deliverable.py} carries the work between stages: it defines
+the stage enumeration, the per stage status, the artifact records, and the
+\texttt{Deliverable} object itself, so that each stage reads the previous stage's
+output and appends its own. The orchestrator in \texttt{orchestrator.py} threads
+one \texttt{Deliverable} object through the four producing stages in strict order
+and then invokes the fifth method, the VVUQ gate, as a callable applied to the
+finished candidate. The orchestrator is configured with the number of simulation
+runs, and the default configuration uses three.
+
+Each producing stage emits a concrete artifact. Instruction generation writes a
+bracketed instruction set, code generation writes a generated module, execution
+writes a captured log whose key and value lines are parsed back into the
+deliverable's metadata, and paper assembly writes a short paper that tabulates
+the executed results. The acceleration that the pipeline reports is not a free
+parameter. It follows directly from a single audited formula in the code
+generation stage, \texttt{automated\_days = 30.0 / (1.0 + runs * 0.5)}, evaluated
+against a fixed conventional baseline of 30 days. With the default of three
+simulation runs the denominator is 2.5, the automated schedule is 12 days, and
+the acceleration factor is the ratio of the two, namely 2.5. The same model
+evaluated at one and two runs gives the intermediate factors of 1.5 and 2.0, so
+the headline 2.5 is the third point on a transparent curve rather than an
+isolated claim. Because the formula depends only on the run count and not on the
+deliverable's topic, three identical inputs yield three identical outputs, a
+property that matters when the uncertainty dimension is examined in
+\autoref{sec:results}.
+
+The four producing stages and their artifacts are summarized in
+\autoref{tab:methods_stages}. Each stage is small, single purpose, and
+deterministic in the absence of a live model backend, which is what allows the
+whole pipeline to run in well under a millisecond and to be reproduced exactly.
+The orchestrator does not hide this structure: it exposes each stage result and
+each artifact on the deliverable, so the VVUQ gate that follows can inspect the
+work rather than trust it. This separation, generation that produces and a gate
+that inspects, is the architectural expression of the thesis, and it is why the
+remainder of the methods concentrates on the gate rather than on the generation.
+
+\begin{table}[H]
+\caption{The four producing stages, their modules, and their artifacts.}
+\label{tab:methods_stages}
+\centering
+\begin{tabularx}{\textwidth}{L{2.7cm} L{3.6cm} L{3.0cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Stage} & \textbf{Module} & \textbf{Artifact} & \textbf{Behavior} \\
+\midrule
+  Instruction & \texttt{instruction\_stage.py} & \texttt{instructions.md} & Emits the bracketed instruction set that drives generation. \\
+  Code generation & \texttt{codegen\_stage.py} & \texttt{generated\_*.py} & Authors code from the instructions and applies the acceleration model. \\
+  Code execution & \texttt{execution\_stage.py} & \texttt{execution\_log.txt} & Runs the code and parses key and value lines into metadata. \\
+  Paper assembly & \texttt{paper\_stage.py} & \texttt{paper.md} & Assembles a short paper tabulating the executed results. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The VVUQ gate and its thresholds}
+
+The fifth method is the part the thesis turns on. The gate in
+\texttt{vvuq/vvuq\_gate.py} combines three independent checks, each implemented in
+its own module, and decides whether a candidate deliverable may ship. Its
+thresholds are not hard coded into the gate; they are loaded at run time from
+\texttt{configs/vvuq\_thresholds.yaml}, so the policy is auditable and can be
+tightened without touching the decision logic. The full set of defaults is given
+in \autoref{tab:methods_thresholds}.
+
+The verification module in \texttt{verification.py} answers whether the
+deliverable was built correctly. It runs six structural and policy checks, namely
+that all stages completed, that the expected artifacts are present, that those
+artifacts are non empty, that no artifact exceeds the 200{,}000 byte per file
+cap, that the schema is valid, and that the deliverable lints cleanly. The
+fraction of these checks that pass must equal exactly 1.0; nothing less is
+acceptable, so a single failed check among the six is sufficient to block. The
+validation module in \texttt{validation.py} answers whether the right deliverable
+was built. It compares the observed results against a trusted reference,
+requiring an agreement of at least 0.95 and a maximum relative error of at most
+0.05, and it additionally requires that a human review has been recorded. The
+uncertainty module in \texttt{uncertainty.py} answers how confident the result
+is. It computes the mean, the standard deviation, and the coefficient of
+variation of each metric across the simulation runs, requires at least three
+runs, and requires the coefficient of variation to stay at or below 0.10 at a
+0.95 confidence level. The gate policy itself is deliberately strict: it blocks
+on any failure of any dimension, and when the runs diverge beyond the dispersion
+bound it does not silently fail but escalates the case to a human. This
+escalation path is what separates a doubtful result, which a person should
+adjudicate, from a clearly bad one, which the gate simply refuses. The posture is
+consistent with the credibility and software life cycle expectations of medical
+computational evidence~\cite{iec62304, iche6r3}.
+
+\begin{table}[H]
+\caption{VVUQ gate default thresholds, loaded verbatim from \texttt{configs/vvuq\_thresholds.yaml}.}
+\label{tab:methods_thresholds}
+\centering
+\begin{tabularx}{\textwidth}{L{3.0cm} >{\raggedright\arraybackslash}X C{3.3cm}}
+\toprule
+\textbf{Dimension} & \textbf{Requirement} & \textbf{Default} \\
+\midrule
+  Verification & Fraction of structural checks passed & $= 1.0$ (6 of 6) \\
+               & Schema valid                         & required \\
+               & Lint clean                           & required \\
+               & Per file size cap                    & 200{,}000 bytes \\
+  \addlinespace
+  Validation   & Agreement with reference             & $\geq 0.95$ \\
+               & Maximum relative error               & $\leq 0.05$ \\
+               & Recorded human review                & required \\
+  \addlinespace
+  Uncertainty  & Coefficient of variation across runs & $\leq 0.10$ \\
+               & Consensus runs                       & $\geq 3$ \\
+               & Confidence level                     & 0.95 \\
+  \addlinespace
+  Gate policy  & Block on any failure                 & enabled \\
+               & Escalate on divergence               & enabled \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Two design choices in the gate deserve emphasis because they are what make it
+substantial rather than cosmetic. First, the verification fraction is an equality
+to 1.0, not an inequality with slack. Many quality systems accept a high pass
+rate, but a single unmet structural or policy check, for example an artifact one
+byte over the cap, is treated here as disqualifying, so the gate cannot be
+satisfied by being mostly correct. Second, the uncertainty module does not merely
+report a coefficient of variation; it distinguishes a value that is high from one
+that is divergent, and only divergence triggers the escalation path. The
+practical effect is a three way outcome rather than a binary pass or fail: a clean
+candidate is accepted, a clearly defective one is blocked, and an ambiguous one,
+where the runs disagree enough that no single run can be trusted, is routed to a
+human for adjudication. That third outcome is the part a purely automated gate
+usually lacks, and it is the part that a regulated setting most needs.
+
+\subsection{Stage 1 automation and the Stage 2 deployment references}
+
+Around the five methods sit four Stage 1 capabilities that make the pipeline run
+continuously and safely. Triple simulation, in \texttt{simulation/}, runs each
+project three times under distinct seeds through \texttt{triple\_runner.py} and
+forms a consensus across the runs in \texttt{consensus.py}, flagging any metric
+whose dispersion exceeds the bound as divergent. Robust ingestion, in
+\texttt{ingestion/}, provides a web search client and a PDF processor that both
+guard their optional dependencies: when a backend or the network is unavailable
+the client retries up to the configured budget of four attempts and then degrades
+to a clearly labeled offline stub rather than failing. Autochunking, in
+\texttt{chunking/}, enforces the 200{,}000 byte per file cap by splitting
+oversized files in \texttt{chunker.py} and writing a reconstruction README per
+chunk in \texttt{readme\_generator.py}, so that any split file can be rebuilt with
+a single concatenation. The non stop commit scheduler, in
+\texttt{scheduler/commit\_scheduler.py}, plans an evenly spaced cadence of
+deliverables across the day; the default configuration plans twenty four slots at
+an hourly interval. These defaults, including the 200{,}000 byte cap, the three
+run default, the four retry attempts, and the twenty four commits per day, live
+in \texttt{configs/pipeline\_config.yaml}. Two further ingestion defaults sit in
+the same configuration, a maximum of 64 documents per run and the four attempt
+retry budget, and the chunker recognizes the project's text formats, the Python,
+Markdown, LaTeX, JSON, and YAML sources, so that any of them can be split and
+rebuilt. The reconstruction README that accompanies each split records the exact
+concatenation command, so a chunked file is never left without the recipe that
+restores it byte for byte.
+
+The Stage 2 deployment references, in \texttt{physical-ai/}, show where the same
+assurance posture is meant to extend. The lights off factory controller in
+\texttt{lights\_off\_factory.py} runs autonomous batches across cells under a set
+of safety interlocks, and the hybrid surgery and medicine pilot in
+\texttt{hybrid\_surgery\_medicine.py} expresses the 2030 pancreatic cancer analog
+as a timeline. Both are deliberately disabled by default in the deployment
+configuration and require human oversight to run. Critically, one of the four
+default factory interlocks is named \texttt{vvuq\_gate\_online}, alongside
+\texttt{estop\_armed}, \texttt{perimeter\_clear}, and
+\texttt{human\_oversight\_remote}. Wiring the Stage 1 assurance gate into the
+Stage 2 safety chain as an interlock is the design decision that connects the two
+stages: a physical batch cannot start unless the same gate that clears software
+deliverables is itself online, which is essential when a 60 second procedure
+leaves no time for manual verification inside the loop. The controller is a small
+state machine. It idles in a dark state, transitions to running only when every
+interlock is satisfied, returns to dark when a batch completes within its fault
+budget, emergency stops when cumulative faults exceed that budget, and refuses to
+start at all, raising a fault, when any interlock is unsatisfied. Because
+\texttt{vvuq\_gate\_online} is one of those interlocks, a lapse in software
+assurance is, by construction, a condition that prevents the physical line from
+running. The clinical content of this pilot remains a planning reference and requires VVUQ clearance, human
+oversight, IRB approval, and regulatory authorization before any real use.
+
+\subsection{Autonomous per commit generation}
+
+The platform was not written by hand. Claude Code Opus 4.7 (1M context) Max
+generated the codebase autonomously in a managed cloud
+container~\cite{anthropicopus47, anthropicclaudecodeweb}, and the way it did so
+is itself part of the method, because it demonstrates that the assurance
+discipline can be applied at the granularity of a single commit. The agent wrote
+one section of the platform per commit and pushed each commit to GitHub in real
+time, so that every increment was independently visible and the working context
+stayed focused on one concern at a time. After the producing commits it re ran
+the full continuous integration surface end to end and repaired any issue in a
+dedicated second to last commit, then made a final commit that updated the
+repository documentation. All commits belonged to a single pull request on
+\texttt{cancer-automated}, and no other repository was touched~\cite{repo-cancer-automated}.
+The seven commits that built the platform are summarized in
+\autoref{tab:methods_codegen_commits}, where the gap column records the elapsed
+time between consecutive commits and the churn column records the added and
+removed lines.
+
+\begin{table}[H]
+\caption{Autonomous code generation commits that built the platform.}
+\label{tab:methods_codegen_commits}
+\centering
+\begin{tabularx}{\textwidth}{C{0.7cm} L{2.0cm} >{\raggedright\arraybackslash}X C{1.6cm} C{2.0cm}}
+\toprule
+\textbf{\#} & \textbf{SHA} & \textbf{Section} & \textbf{Gap} & \textbf{Churn} \\
+\midrule
+  C1 & c9e1404 & Foundation: tooling, CI, community files & - & +1088 -2 \\
+  C2 & a111ca8 & Pipeline (five established methods) & 4m42s & +825 \\
+  C3 & 187ba9e & VVUQ framework & 2m44s & +691 \\
+  C4 & dcb11c0 & Stage 1 automation (4 modules) & 4m46s & +1127 \\
+  C5 & 082fa9f & Stage 2 deployment references & 1m49s & +389 \\
+  C6 & 13b253d & Fix all errors (second to last) & 0m48s & +3 -1 \\
+  C7 & bb27fd6 & Repository updates (last) & 3m05s & +119 -9 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The composition of the platform that these commits produced is summarized in two
+compact inventories. \autoref{tab:methods_filetypes} breaks the 76 committed
+files down by type, and \autoref{tab:methods_dirlines} gives the line count of
+each source directory. Two observations from these inventories support the
+thesis. First, the assurance and test code is comparable in size to the
+producing code: the verification, validation, uncertainty, and gate modules
+together, plus the eight test modules, account for a large share of the lines, so
+the effort spent deciding whether deliverables are trustworthy is on par with the
+effort spent generating them. Second, the per commit cadence in
+\autoref{tab:methods_codegen_commits} is fine grained and fast, with most
+sections separated by a few minutes, which contrasts with prior non incremental
+systems that generate an entire codebase in one batch and verify only at the end.
+A representative prior run by the author generated 108 modules in a single batch
+of thirteen commits~\cite{kawchak2026sponsor}; the present run instead gates each
+section as it lands, so a regression is caught at the commit that introduced it
+rather than at a terminal verification pass.
+
+\begin{table}[H]
+\caption{Committed files by type for the generated platform (76 files total).}
+\label{tab:methods_filetypes}
+\centering
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X C{3.0cm} C{3.0cm}}
+\toprule
+\textbf{File type} & \textbf{Files} & \textbf{Lines} \\
+\midrule
+  Python (\texttt{.py})            & 44 & 2829 \\
+  Markdown (\texttt{.md})          & 24 & 1140 \\
+  YAML (\texttt{.yaml})            & 2  & 79 \\
+  Workflow (\texttt{.yml})         & 1  & 73 \\
+  Text (\texttt{.txt})             & 1  & 43 \\
+  Config (\texttt{.toml})          & 1  & 32 \\
+  Citation (\texttt{.cff})         & 1  & 30 \\
+  LICENSE                          & 1  & 21 \\
+  \texttt{.gitignore}              & 1  & 6 \\
+  \midrule
+  Total                            & 76 & 4253 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\caption{Source directory line counts for the generated platform.}
+\label{tab:methods_dirlines}
+\centering
+\begin{tabularx}{\textwidth}{L{3.2cm} C{2.4cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Directory} & \textbf{Lines} & \textbf{Composition} \\
+\midrule
+  \texttt{pipeline/}    & 753 & six stage modules plus three examples \\
+  \texttt{vvuq/}        & 573 & four assurance modules plus three examples \\
+  \texttt{tests/}       & 559 & eight test modules, 51 tests, plus conftest \\
+  \texttt{physical-ai/} & 325 & factory and pilot modules plus two examples \\
+  \texttt{ingestion/}   & 278 & web search and PDF processor plus examples \\
+  \texttt{simulation/}  & 266 & triple runner and consensus plus examples \\
+  \texttt{chunking/}    & 260 & chunker and README generator plus examples \\
+  \texttt{.github/}     & 185 & CI workflow and community templates \\
+  \texttt{scheduler/}   & 143 & commit scheduler plus one example \\
+  \texttt{scripts/}     & 112 & environment verification script \\
+  \texttt{configs/}     & 79  & pipeline and VVUQ threshold configuration \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Reproducibility was treated as part of the method rather than an afterthought. The
+environment was pinned to Python 3.11.15 and the suite was run under pytest
+9.0.3, with the static analysis performed by the same \texttt{ruff} and
+\texttt{yamllint} tools the continuous integration uses. A standalone verification
+script confirms the environment before any deliverable runs, and the core engine
+depends only on the standard library, with every heavy or optional dependency
+imported behind a guard so that the package stays importable when a dependency is
+absent. This is why the lint and test surface stays green on a minimal runner and
+why the recorded commands can be replayed to reproduce each claim. The discipline
+extends the prior humanoid instruction to code to execution to paper workflow by
+adding exactly this assurance scaffolding around it~\cite{anthropicclaudecodeweb}.
+
+Taken together, the architecture and the build process embody the thesis in their
+proportions. The generation is fast and inexpensive, the gate is strict and
+auditable, and the assurance work, not the generation, dominated both the code
+that was written and the discipline with which it was committed.

@@ -1,0 +1,18 @@
+% References: the final bibliography. The scaffold's bracketed processing
+% instruction has been removed now that the \cite calls are wired through the
+% body. The .bib conventions are preserved: ieeetr, 29 entries, each DOI entry
+% prints its human readable DOI string and a clickable resolver URL in the note,
+% repository entries print both a GitHub and a Zenodo URL with no duplicate
+% link, and no entry uses a howpublished field.
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begingroup
+\raggedright
+% \nocite{*} renders the full curated bibliography (29 entries) so every entry
+% appears even if it is not explicitly cited in the body. Explicit \cite calls
+% throughout the body determine citation order; the remaining entries follow.
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
