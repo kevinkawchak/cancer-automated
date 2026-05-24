@@ -9,6 +9,9 @@
 [![Backgrounds](https://img.shields.io/badge/Mode-light%20only-lightgrey.svg)](README.md)
 [![Deps](https://img.shields.io/badge/Deps-matplotlib%20%2B%20numpy-blue.svg)](../../../requirements.txt)
 
+### Update 2026-05-24: The 10 300 DPI images are now available on [Google Drive](https://drive.google.com/drive/folders/1V6VCSZGZZ5xBDQMnyR6Ht_MDXcFpq6lw)
+
+
 This directory holds the rendered realization of the 10 image specifications in
 [`papers/VVUQ-01/image-instruct`](../image-instruct). For each numbered
 instruction `NN-name`, this directory carries one self contained matplotlib
