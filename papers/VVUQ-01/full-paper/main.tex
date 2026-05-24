@@ -1,0 +1,199 @@
+% ============================================================
+% Two Stage VVUQ Oncology Clinical Trial Verification
+% Automation Priority over Existing Generated Code
+%
+% FULL PAPER for kevinkawchak/cancer-automated.
+% Author: Kevin Kawchak, CEO ChemicalQDevice
+% License: CC BY 4.0
+%
+% This is the full manuscript built from the draft-paper scaffold under
+% papers/VVUQ-01/draft-paper. Every \input{sections/...} file now carries
+% grounded, publication grade prose, tables, and figures in place of the
+% bracketed processing instructions of the scaffold. The title page, the
+% style file, the bibliography, the references block, and the back matter
+% follow the scaffold conventions without change in intent.
+%
+% GLOBAL FORMATTING RULES kept throughout:
+%   - Ragged right body, even inter-word spacing, no white rivers, and no
+%     line running off the right margin (knobs live in new_paper.sty).
+%   - No orphan or widow lines; never strand a one or two word line on its
+%     own page. Do not overcrowd a page; some white space is acceptable.
+%   - Single dashes only. No em dashes, no double dashes, no triple dashes.
+%     Any stray "SS" artifact is the section sign \S.
+%   - Every tabular uses fixed width paragraph columns prefixed with
+%     >{\raggedright\arraybackslash}p{...} through the L, C, R column types
+%     declared below, and every table matches the body text width.
+%   - Prose reads as a senior human author wrote it: ideas connect across
+%     sections, tables and figures are referenced rather than restated, and
+%     each section is self standing. Body text and links are black; the
+%     ORCID mark is ORCID green.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{new_paper}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage[hidelinks,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+\usepackage{underscore}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{caption}
+
+\setlength{\headheight}{16pt}
+\renewcommand{\shorttitle}{\scriptsize\scshape Two Stage VVUQ Oncology Trial Verification Automation}
+
+% Even inter-word spacing and no overflow into the right margin. These knobs
+% complement the ragged right body set in new_paper.sty.
+\tolerance=2500
+\emergencystretch=3em
+\hbadness=2500
+\hyphenpenalty=50
+\exhyphenpenalty=50
+\sloppy
+
+% Same color formatting as the draft scaffold: all links black, body black,
+% and the ORCID mark green (set below).
+\hypersetup{
+  urlcolor=black,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black
+}
+
+% Aggressive URL and path breaking so long repository paths never run off the
+% right margin when they appear in \url{...} or \path{...}.
+\def\UrlBreaks{\do\/\do-\do.\do=\do_\do?\do\&\do\%\do\a\do\b\do\c\do\d\do\e%
+\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I%
+\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+\do\Y\do\Z}
+
+% ORCID mark. If orcid_icon.png is present it is used; otherwise the green
+% textual iD fallback renders, matching the draft scaffold.
+\IfFileExists{orcid_icon.png}{
+  \newcommand{\orcidicon}[1]{%
+    \href{https://orcid.org/#1}{%
+    \raisebox{-1pt}{\includegraphics[height=9pt]{orcid_icon.png}}}}
+}{
+  \definecolor{orcidgreen}{HTML}{A6CE39}
+  \newcommand{\orcidicon}[1]{%
+    \href{https://orcid.org/#1}{%
+    \textbf{\textcolor{orcidgreen}{\textsf{iD}}}}}
+}
+
+% Fixed width, left aligned paragraph column types. Every width value is
+% prefixed with \raggedright\arraybackslash so no table opens big gaps between
+% words. All tables in this paper use these types.
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% Breakable file path macro for body prose and table cells. Keeps a long path
+% from overflowing the right margin. Not for use inside moving arguments such
+% as \caption or \section.
+\newcommand{\fp}[1]{\path{#1}}
+
+% Figure handling. The four figures are added by the author as image files in
+% the Images/ directory after this manuscript is written. Until each file is
+% present, a sized, labeled placeholder renders in its slot so the document
+% always compiles in Overleaf; once Images/<name> exists, the real figure is
+% used automatically. This follows the same \IfFileExists pattern used for the
+% ORCID mark above.
+\graphicspath{{Images/}{./Images/}}
+\definecolor{slotfill}{gray}{0.96}
+\definecolor{slotedge}{gray}{0.70}
+\definecolor{slotink}{gray}{0.40}
+\newcommand{\figslot}[1]{%
+  \setlength{\fboxsep}{0pt}%
+  \fcolorbox{slotedge}{slotfill}{%
+    \begin{minipage}[c][0.40\textheight][c]{1.1\linewidth}%
+      \centering\color{slotink}\itshape\small
+      Figure placeholder.\\[0.4em]#1\\[0.4em]
+      The final rendered image is added by the author to
+      \mbox{Images/} after typesetting.%
+    \end{minipage}}}
+
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+
+\title{Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code}
+
+\author{
+  Kevin Kawchak\hspace{2pt}\orcidicon{0009-0007-5457-8667} \\
+  CEO ChemicalQDevice\\
+  \href{https://doi.org/10.5281/zenodo.xxxxxxxx}{10.5281/zenodo.xxxxxxxx} \\
+}
+
+\date{May 25, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+% Disclaimer directly below the abstract (two lines).
+\vspace{0.4em}
+\noindent{\small\itshape Disclaimer: This work is independent and not endorsed or sponsored by trial sponsors, FDA, CRO, site, IRB, regulator, or medical society; and was generated using Artificial Intelligence.\par}
+\vspace{0.2em}
+
+% Keywords appear on the first page directly after the disclaimer. Plain text,
+% comma separated, not underlined.
+\keywords{verification validation and uncertainty quantification, oncology
+clinical trials, physical AI, autonomous code generation, Claude Code, VVUQ
+gate, lights-off automation}
+
+\vspace{-0.2cm}
+
+\section{Introduction}
+\label{sec:introduction}
+\input{sections/introduction}
+
+\tableofcontents
+\vspace{0.4cm}
+
+\newpage
+\section{Methods}
+\label{sec:methods}
+\input{sections/methods}
+\newpage
+
+\section{Results}
+\label{sec:results}
+\input{sections/results}
+\newpage
+
+\section{Discussion}
+\label{sec:discussion}
+\input{sections/discussion}
+
+\section{Limitations and Future Work}
+\label{sec:limitations}
+\input{sections/limitations_future}
+\newpage
+
+\section{Conclusions}
+\label{sec:conclusions}
+\input{sections/conclusions}
+\newpage
+
+\input{sections/references}
+\newpage
+
+\input{sections/back_matter}
+
+\end{document}
