@@ -4,6 +4,42 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-01 Draft Paper Scaffold with Processing Instructions (v0.5.0)
+v0.5.0 - VVUQ-01 Draft Paper Scaffold with Processing Instructions
+
+## Summary
+
+- Adds papers/VVUQ-01/draft-paper, a complete and compilable single column LaTeX scaffold for the manuscript Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code, authored autonomously by Claude Code Opus 4.7 (1M context) Max in a managed cloud container, one file per commit, each pushed to GitHub in real time as part of a single pull request.
+- The seven body section files carry bracketed processing instructions rather than finished prose; each names the exact cancer-automated directories and files to process and how to process them, so a future Claude Code Opus 4.7 (1M) Max pass can write a 70+ page paper. The title page, style file, bibliography, and back matter are final.
+- Advances the paper generation leg of the thesis that the LLM VVUQ process must be more substantial than the generated artifact across codegen, imagegen, and papergen, accomplished faster and less expensively than conventional verification, toward faster, cheaper, and more rigorous physical AI oncology trials.
+- The bibliography is final: 29 ieeetr entries. Every DOI entry carries its human readable DOI string and a clickable resolver URL in the note; repository entries carry both a GitHub and a Zenodo URL, each once, with no duplicate link and no howpublished field. Both the repository DOI and the paper DOI are clickable.
+- Formatting follows a senior author contract: ragged right body for even inter-word spacing with no rivers, strong widow and orphan control, raggedright paragraph table columns, single dashes only, the section symbol §, and black links with a green ORCID mark matching the prior template.
+- The bracketed instructions ground each section in the existing repository: the execution metrics and the full VVUQ gate decision surface, the codegen and execution per-commit tables, and the imagegen 02, 04, 06, and 08 Python data (the scripts are read for data, never the PNG files; the image-instruct directory is excluded).
+- A draft-paper.zip bundle is provided for a one step Overleaf upload; the scaffold compiles as is and the bracketed blocks render as visible placeholders until the future pass replaces them. The PDF is not compiled here.
+- Updates the main README (release badge, a v0.5.0 summary, a draft paper section and table of contents entry, the repository structure, and the citation version), this releases file, and the CHANGELOG (v0.5.0).
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators.
+
+## Features
+
+- papers/VVUQ-01/draft-paper/main.tex: the preamble, the title page with the green ORCID mark and clickable paper DOI, the disclaimer below the abstract, the keywords slot, the table of contents, and the section input lines.
+- papers/VVUQ-01/draft-paper/new_paper.sty: a single column Computer Modern serif style with ragged right body, widow and orphan control, raggedbottom, and raggedright paragraph column types, with black body and links and a green ORCID mark.
+- papers/VVUQ-01/draft-paper/references.bib: 29 final entries spanning VVUQ and digital twin theory, credibility standards (ASME V&V 40, FDA), prior PDAC and oncology automation work, autonomous tooling, and open science, each with a DOI plus a clickable URL where one exists.
+- papers/VVUQ-01/draft-paper/README.md: DOI badges, the processing model that separates final files from bracketed instruction sections, the file layout, a section to source map, the Overleaf compile recipe, the formatting contract, the bibliography rules, and ASCII diagrams.
+- papers/VVUQ-01/draft-paper/sections: abstract, introduction, methods, results, discussion, limitations_future, conclusions, references (the citation map plus the final bibliography block), and back_matter (final acknowledgments, ethics, rights, citation, and data availability text).
+- papers/VVUQ-01/draft-paper/draft-paper.zip: the Overleaf ready bundle of the LaTeX project.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release adds a paper scaffold only; it does not change the executable v0.1.0 source modules or the v0.2.0 through v0.4.0 records. The seven body section files are bracketed instructions for a future Claude Code Opus 4.7 (1M) Max pass; the title page, style file, bibliography, and back matter are final. The additions are LaTeX, Markdown, and a zip, all outside the ruff and yamllint surface, so lint-and-format (ruff check, ruff format check, yamllint) stays green across Python 3.10, 3.11, and 3.12, alongside validate-scripts and test (51 passed, 0 skipped). The scaffold is a draft: a VVUQ gate and a human reviewer must clear any deliverable before clinical use, and the Stage 2 references (the lights off factory and the hybrid surgery and medicine pilot) require VVUQ clearance, human oversight, IRB approval, and regulatory authorization before any real use.
+
+---
+
 VVUQ-01 Publication Figures Rendered (v0.4.0)
 v0.4.0 - VVUQ-01 Publication Figures Rendered
 
