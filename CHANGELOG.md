@@ -5,6 +5,46 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-05-25
+
+### Added
+- `papers/VVUQ-01/full-paper/`: the full manuscript "Two Stage VVUQ Oncology
+  Clinical Trial Verification Automation Priority over Existing Generated Code",
+  built from the v0.5.0 draft scaffold without modifying it, authored
+  autonomously by Claude Code Opus 4.7 (1M context) Max, one commit per file and
+  per section, each pushed to GitHub in real time as part of a single pull
+  request. Every bracketed processing instruction in the seven body sections is
+  replaced with grounded, publication grade prose, tables, and figures, targeting
+  roughly 70 typeset pages, while `main.tex`, `new_paper.sty`, `references.bib`,
+  `sections/references.tex`, and `sections/back_matter.tex` are carried over.
+- The full paper renders the executed evidence: 51 of 51 tests across 8 modules,
+  the 2.5x acceleration (30 to 12 days), the full VVUQ gate decision surface (1
+  accept, 5 block, 1 escalate), triple run consensus, the lights off factory
+  safety cases, and the 2030 PDAC pilot. It carries 18 tabularx tables sized to
+  the body text width, 5 figures, and 29 `ieeetr` references.
+- `papers/VVUQ-01/full-paper/Images/`: a guide naming the four author supplied
+  figure files. Each figure environment renders a labeled placeholder slot until
+  its image is present, so the project compiles in Overleaf either way.
+- `papers/VVUQ-01/full-paper/full-paper.zip`: an Overleaf ready bundle of the
+  LaTeX project.
+
+### Changed
+- `README.md`: release badge updated to v0.6.0, a new v0.6.0 summary added above
+  the v0.5.0 summary, a VVUQ-01 full paper section and table of contents entry
+  added, the repository structure now expands `papers/VVUQ-01/full-paper`, and
+  the citation version was bumped.
+- `releases.md`: v0.6.0 release notes added above the v0.5.0 notes.
+
+### Notes
+- This release adds the full paper only; it does not change the executable v0.1.0
+  source modules or the v0.2.0 through v0.5.0 records, and it does not modify the
+  draft scaffold. The additions are LaTeX, Markdown, and a zip, all outside the
+  `ruff` and `yamllint` surface, so `lint-and-format` (ruff check, ruff format
+  check, yamllint) stays green across Python 3.10, 3.11, and 3.12, alongside
+  `validate-scripts` and `test` (51 passed, 0 skipped).
+- All prose uses single dashes only; triple dashes are reserved for Markdown
+  rules, table separators, and YAML document separators.
+
 ## [0.5.0] - 2026-05-25
 
 ### Added

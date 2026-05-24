@@ -4,6 +4,43 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-01 Full Paper from the Draft Scaffold (v0.6.0)
+v0.6.0 - VVUQ-01 Full Paper from the Draft Scaffold
+
+## Summary
+
+- Adds papers/VVUQ-01/full-paper, the full manuscript Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code, built from the v0.5.0 draft scaffold without modifying it, authored autonomously by Claude Code Opus 4.7 (1M context) Max in a managed cloud container, one commit per file and per section, each pushed to GitHub in real time as part of a single pull request.
+- Replaces every bracketed processing instruction in the seven body sections with grounded, publication grade prose, tables, and figures, targeting roughly 70 typeset pages, and keeps the title page, style file, bibliography, references block, and back matter intact.
+- Advances the paper generation leg of the thesis that the LLM VVUQ process must be more substantial than the generated artifact across codegen, imagegen, and papergen, accomplished faster and less expensively than conventional verification, toward faster, cheaper, and more rigorous physical AI oncology trials.
+- Renders the executed evidence: the verification floor (51 of 51 tests across 8 modules), the 2.5x schedule acceleration (30 baseline to 12 automated days), the full VVUQ gate decision surface (1 accept, 5 block, 1 escalate), triple run consensus, the lights off factory safety cases, and the 2030 PDAC pilot (60 second 8 arm robotic Whipple plus six 28 day cycles, 168 regimen days).
+- Eighteen tabularx tables sized to the body text width with raggedright paragraph columns, five figures, and twenty nine ieeetr references; the four images use placeholder slots that the author replaces later, so the project compiles either way.
+- The bibliography is final: every DOI entry carries its human readable DOI string and a clickable resolver URL in the note; repository entries carry both a GitHub and a Zenodo URL, each once, with no duplicate link and no howpublished field.
+- Formatting follows the senior author contract: ragged right body for even inter-word spacing with no rivers, strong widow and orphan control, raggedright paragraph table columns, single dashes only, the section symbol §, and black links with a green ORCID mark.
+- A full-paper.zip bundle is provided for one step Overleaf upload; the project compiles as is and the figure slots render as labeled placeholders until the author adds the four images. The PDF is not compiled here.
+- Updates the main README (release badge, a v0.6.0 summary, a full paper section and table of contents entry, the repository structure, and the citation version), this releases file, and the CHANGELOG (v0.6.0).
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators.
+
+## Features
+
+- papers/VVUQ-01/full-paper/main.tex: the preamble, the title page with the green ORCID mark and clickable paper DOI, the disclaimer below the abstract, the keywords, the table of contents, the figure placeholder machinery, and the section input lines.
+- papers/VVUQ-01/full-paper/new_paper.sty: a single column Computer Modern serif style with ragged right body, widow and orphan control, raggedbottom, and raggedright paragraph column types, with black body and links and a green ORCID mark.
+- papers/VVUQ-01/full-paper/references.bib: 29 final ieeetr entries spanning VVUQ and digital twin theory, credibility standards (ASME V&V 40, FDA), prior PDAC and oncology automation work, autonomous tooling, and open science, each with a DOI plus a clickable URL where one exists.
+- papers/VVUQ-01/full-paper/README.md: DOI badges, the draft to full build diagram, the file layout, a section to source map, the figure slot table, the Overleaf compile recipe, the formatting contract, the bibliography rules, and ASCII diagrams.
+- papers/VVUQ-01/full-paper/sections: abstract (under 300 words, no citations), introduction, methods, results, discussion, limitations_future, conclusions, references (the final bibliography block), and back_matter, each written in full.
+- papers/VVUQ-01/full-paper/Images: the four author supplied figure slots plus a guide naming each expected image file.
+- papers/VVUQ-01/full-paper/full-paper.zip: the Overleaf ready bundle of the LaTeX project.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+
+## Notes
+
+This release adds the full paper built from the v0.5.0 draft scaffold without modifying the draft. It does not change the executable v0.1.0 source modules or the v0.2.0 through v0.5.0 records. The additions are LaTeX, Markdown, and a zip, all outside the ruff and yamllint surface, so lint-and-format (ruff check, ruff format check, yamllint) stays green across Python 3.10, 3.11, and 3.12, alongside validate-scripts and test (51 passed, 0 skipped). The paper is a draft: a VVUQ gate and a human reviewer must clear any deliverable before clinical use, and the Stage 2 references (the lights off factory and the hybrid surgery and medicine pilot) require VVUQ clearance, human oversight, IRB approval, and regulatory authorization before any real use. The four figures are added by the author later; the document compiles with labeled placeholders until then.
+
+---
+
 VVUQ-01 Draft Paper Scaffold with Processing Instructions (v0.5.0)
 v0.5.0 - VVUQ-01 Draft Paper Scaffold with Processing Instructions
 
