@@ -1,0 +1,113 @@
+% ============================================================
+% new_paper.sty
+% Style file for the full manuscript:
+%   Two Stage VVUQ Oncology Clinical Trial Verification
+%   Automation Priority over Existing Generated Code
+%
+% Adapted from the Translational Oncology Manuscript Template
+% (papers/VVUQ-01/templates/Template_10/new_paper.sty) and carried over
+% unchanged in intent from the draft scaffold style. Single column,
+% Computer Modern serif body. Body text and links render in black; the
+% ORCID mark renders in ORCID green. The same text color formatting as the
+% draft is preserved.
+%
+% Layout intent (a senior author expects these defaults):
+%   - Ragged right body so inter-word spacing stays even and no white
+%     rivers open inside paragraphs. The \emergencystretch and tolerance
+%     knobs keep any line from running past the right margin, so text never
+%     overflows the right edge of the page.
+%   - Strong widow and orphan control so a single or two word line is never
+%     stranded at the top or bottom of a page, and so a lone line is never
+%     split away from the paragraph it belongs to.
+%   - \raggedbottom lets a little white space sit at a page foot rather than
+%     stretching paragraphs apart to fill the column.
+%   - All tabular columns are fixed width paragraph columns prefixed with
+%     \raggedright\arraybackslash via the L, C, and R column types declared
+%     in main.tex, so table cells never stretch words apart, and every table
+%     is sized to the body text width.
+%
+% Single dashes only throughout the paper. No em dashes, no double dashes,
+% no triple dashes. A stray "SS" artifact is the section sign "\S".
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{new_paper}[2026/05/25 VVUQ Oncology Automation Manuscript Style]
+\ProcessOptions\relax
+
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+  \newgeometry{textheight=9in,textwidth=6.4in,top=1in,headheight=14pt,headsep=20pt,footskip=30pt}
+}
+
+% Even inter-word spacing. \RaggedRight removes the justification stretch that
+% opens white gaps between words; the emergency stretch and tolerant badness
+% then keep any stubborn line from overflowing the right margin.
+\usepackage{ragged2e}
+\setlength{\emergencystretch}{3em}
+\RaggedRight
+\tolerance=2500
+\hbadness=2500
+\hfuzz=2pt
+\sloppy
+
+% Widow and orphan control. Never strand a one or two word line on its own at
+% the top or bottom of a page, and discourage splitting a hyphenated word
+% across a page break.
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\raggedbottom
+
+\newcommand{\headeright}{}
+\newcommand{\shorttitle}{\@title}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyheadoffset{0pt}
+\chead{\small\shorttitle}
+\cfoot{\thepage}
+
+\def\keywordname{{\itshape Keywords.}}%
+\def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
+\def\and{\ifhmode\unskip\nobreak\fi\ ,\
+}\noindent\keywordname\enspace\ignorespaces#1\par}}
+
+\renewcommand{\normalsize}{\@setfontsize\normalsize\@xipt{13.4}}
+\normalsize
+
+\providecommand{\section}{}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+  {-2.0ex \@plus -0.5ex \@minus -0.2ex}{1.2ex \@plus 0.2ex \@minus 0.2ex}
+  {\large\bfseries\centering}}
+\providecommand{\subsection}{}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
+  {-1.6ex \@plus -0.4ex \@minus -0.2ex}{0.6ex \@plus 0.2ex}
+  {\normalsize\bfseries}}
+\providecommand{\subsubsection}{}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}
+  {-1.2ex \@plus -0.3ex \@minus -0.2ex}{0.4ex \@plus 0.2ex}
+  {\normalsize\bfseries\itshape}}
+
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{3\p@}
+\renewcommand{\arraystretch}{1.15}
+
+\providecommand{\maketitle}{}
+\renewcommand{\maketitle}{\par\begingroup
+  \thispagestyle{empty}\@maketitle\endgroup
+  \let\maketitle\relax}
+
+\providecommand{\@maketitle}{}
+\renewcommand{\@maketitle}{\vbox{\hsize\textwidth \linewidth\hsize
+  \vskip 0.3in \centering
+  {\Large\bfseries\@title\par}\vskip 0.35in
+  \begin{tabular}[t]{c}\@author\end{tabular}\\[0.6em]
+  {\@date}\vskip 0.15in}}
+
+\renewenvironment{abstract}
+  {\par\noindent\centerline{\bfseries\large Abstract}\vskip 0.4em\begin{quote}}
+  {\end{quote}}
+
+\endinput
