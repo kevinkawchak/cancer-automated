@@ -1,0 +1,26 @@
+% Abstract: a single paragraph, under 300 words, no citations.
+
+Physical AI is entering oncology clinical trials through in silico simulation,
+autonomous code generation, and eventually robotic procedures, settings in which
+an error that ships costs far more than one caught before it ships. This work
+reports an end to end pipeline in which a single autonomous agent, Claude Code
+Opus 4.7 (1M context) Max, performs five operations in order: it generates
+bracketed instructions, generates code from them, executes that code, generates
+the charts and figures, and then assembles first a draft and finally this full
+paper. The central argument is that none of these generation steps decides
+whether a deliverable is trustworthy; the verification, validation, and
+uncertainty quantification (VVUQ) process does, and it must be held to a higher
+standard than the generation it gates. Holding assurance above generation is
+what makes autonomous physical AI oncology trial deliverables faster, less
+expensive, and more rigorous than conventional verification. The executed
+evidence supports the claim directly. The platform, packaged as the
+\texttt{cancer-automated} repository, passed 51 of 51 automated tests across 8
+modules and accelerated a representative schedule by a factor of 2.5, from 30
+baseline days to 12 automated days. Its VVUQ gate, centered on
+\texttt{vvuq/vvuq\_gate.py}, was exercised across 6 cases: it accepted 1 and
+blocked 5, escalating 1 of those blocks to a human, and it requires a
+verification fraction of exactly 1.0 to ship, while the accepted candidate held
+a maximum coefficient of variation of 0.0068 against a 0.10 bound. The same gate
+scales to a Stage 2 2030 pancreatic cancer analog: a 60 second 8 arm robotic
+Whipple followed by six 28 day adjuvant cycles spanning 168 regimen days, each
+gated and supervised by a human.
