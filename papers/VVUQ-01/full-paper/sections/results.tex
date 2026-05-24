@@ -1,0 +1,258 @@
+% Results: the execution evidence and the figures.
+
+This section reports the executed evidence in five subsections that follow the
+execution record, then a sixth on the per commit processing evidence. Every
+number is reported exactly as it appears in the execution files, which are mapped
+in \autoref{tab:results_sources}. The platform was executed autonomously by
+Claude Code Opus 4.7 (1M context) Max, and across the whole run fifteen example
+scripts ran to a zero exit code, the test suite passed, the static analysis was
+clean, and the gate and factory safety surfaces were exercised in
+full~\cite{repo-cancer-automated}.
+
+\begin{table}[H]
+\caption{Results source map (abbreviated paths under the repository root).}
+\label{tab:results_sources}
+\centering
+\begin{tabularx}{\textwidth}{L{4.7cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  \texttt{execution/01-foundation/} : \texttt{test-suite.md} & 51 of 51 tests, the 8 module counts, the verbatim roster. \\
+  \texttt{execution/02-pipeline/} : README and 3 artifacts & Five deliverables, the 2.5x factor, the three generated artifacts. \\
+  \texttt{execution/03-vvuq/} : \texttt{README.md} & Examples 1 to 3 and the full 6 case gate decision surface. \\
+  \texttt{execution/04-stage1-automation/} : README and chunk artifact & Simulation, ingestion, chunking, and scheduler outcomes, and the multibyte finding. \\
+  \texttt{execution/05-physical-ai-stage2/} : README and PDAC timeline & The PDAC pilot timeline and the lights off safety surface. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Foundation and the verification floor}
+
+Before any deliverable was generated, the verification floor was established. The
+full automated test suite ran on the container Python, version 3.11.15, under
+pytest 9.0.3, and all 51 collected tests passed with none failing and none
+skipped. The suite was also run with the optional numerical backend uninstalled,
+and the result was identical, which confirms that no test silently depends on an
+optional package. The 51 tests are distributed across eight modules that map one
+to one onto the source packages, as shown in \autoref{tab:results_tests} and
+visualized in \autoref{figtreemap}. Alongside the tests, the three static
+analysis checks, the lint check, the format check, and the YAML lint, were all
+clean. This is the verification half of VVUQ applied to the platform itself, and
+it held without exception, which is the precondition for trusting anything the
+platform then produces.
+
+\begin{table}[H]
+\caption{Automated tests by module (51 of 51 passed, 0 skipped).}
+\label{tab:results_tests}
+\centering
+\begin{tabularx}{\textwidth}{L{4.2cm} C{1.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Test module} & \textbf{Tests} & \textbf{Target package} \\
+\midrule
+  \texttt{test\_foundation.py}   & 17 & repository files, configs, verify script \\
+  \texttt{test\_vvuq.py}         & 8  & verification, validation, uncertainty, gate \\
+  \texttt{test\_pipeline.py}     & 5  & pipeline, the five established methods \\
+  \texttt{test\_physical\_ai.py} & 5  & lights off factory, hybrid pilot \\
+  \texttt{test\_simulation.py}   & 4  & triple runner, consensus \\
+  \texttt{test\_ingestion.py}    & 4  & web search, PDF processor \\
+  \texttt{test\_chunking.py}     & 4  & chunker, README generator \\
+  \texttt{test\_scheduler.py}    & 4  & commit scheduler \\
+  \midrule
+  Total                          & 51 & all eight packages \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+    \hspace{-0.8cm}%
+    \IfFileExists{Images/test-coverage-treemap.png}
+      {\includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/test-coverage-treemap.png}}
+      {\figslot{Test coverage treemap, 51 tests across 8 modules}}
+    \caption{Test coverage treemap of the 51 passing tests across the eight modules, each tile sized to its test count.}
+    \label{figtreemap}
+\end{figure}
+
+\subsection{Pipeline generation}
+
+With the floor established, the pipeline produced its deliverables. Across the
+three pipeline examples, five deliverables completed all four producing stages,
+and every deliverable reported the same acceleration factor of 2.5, computed from
+the audited formula at the default of three simulation runs, that is 30 baseline
+days reduced to 12 automated days. This decomposition is shown in
+\autoref{figwaterfall}. The generation itself was effectively instantaneous: the
+slowest of the four stages on a representative deliverable completed in under two
+ten thousandths of a second, and the largest artifact produced was a 1000 byte
+paper, far below the 200{,}000 byte cap. Three artifacts from the pipeline are
+saved in the execution record as concrete evidence of the run, namely the
+generated instruction set, the captured execution log, and the auto assembled
+paper. The speed of this step is precisely the point developed in the discussion:
+producing a well formed candidate is cheap, so the value of the workflow cannot
+lie there.
+
+\begin{figure}[H]
+    \hspace{-0.8cm}%
+    \IfFileExists{Images/acceleration-waterfall.png}
+      {\includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/acceleration-waterfall.png}}
+      {\figslot{Schedule acceleration waterfall, 30 to 12 days}}
+    \caption{Schedule acceleration waterfall from a 30 day baseline to a 12 day automated schedule, a 2.5x reduction.}
+    \label{figwaterfall}
+\end{figure}
+
+\subsection{The VVUQ gate, the core result}
+
+The central result is the behavior of the gate. Three shipped examples first
+exercised each dimension on a clean deliverable. Verification passed all six
+structural checks for a fraction of 1.0. Validation reported perfect agreement of
+1.0 against the reference with a worst case relative error of 0.033, inside the
+0.05 bound, and a recorded human review. Uncertainty, measured across three runs,
+reported a maximum coefficient of variation of 0.0068, comfortably inside the
+0.10 bound, and the candidate was accepted. The accepted deliverable clears every
+spoke of the threshold ring shown in \autoref{figwheel}. The decisive evidence,
+however, is the full decision surface in \autoref{tab:results_gate}, where the
+gate was exercised across six cases. It accepted exactly one and blocked five,
+and one of those five blocks escalated to a human because the runs diverged. The
+single most important row is case 6: a candidate that exceeded the 200{,}000 byte
+cap failed exactly one of the six verification checks, which dropped the
+verification fraction to 0.83, and that single failure was sufficient to block
+the deliverable even though everything else about it was well formed. That
+asymmetry, a complete and valid looking candidate refused on one failed check out
+of six, is the thesis in a single line: the gate is deliberately harder to
+satisfy than the generator is to run.
+
+\begin{figure}[H]
+    \hspace{-0.8cm}%
+    \IfFileExists{Images/vvuq-assurance-wheel.png}
+      {\includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/vvuq-assurance-wheel.png}}
+      {\figslot{VVUQ assurance wheel, accepted candidate versus threshold ring}}
+    \caption{VVUQ assurance wheel: the accepted deliverable clears every spoke, while each blocked case fails the spoke shown.}
+    \label{figwheel}
+\end{figure}
+
+\begin{table}[H]
+\caption{The full VVUQ gate decision surface (1 accept, 5 block, 1 escalate).}
+\label{tab:results_gate}
+\centering
+\begin{tabularx}{\textwidth}{C{0.6cm} L{4.2cm} C{1.3cm} C{1.3cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{\#} & \textbf{Scenario} & \textbf{Accept} & \textbf{Escal.} & \textbf{Blocking reason} \\
+\midrule
+  1 & clean, human reviewed, low CV     & yes & no  & none \\
+  2 & no human review recorded          & no  & no  & human review not recorded \\
+  3 & divergent runs, high CV           & no  & yes & max cv 0.365 above 0.1 \\
+  4 & observed disagrees with reference & no  & no  & agreement 0.00; rel err 0.600 \\
+  5 & only 2 runs, need 3               & no  & no  & only 2 runs, need 3 \\
+  6 & artifact exceeds 200K cap         & no  & no  & verification fraction 0.83 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Stage 1 automation}
+
+The Stage 1 capabilities ran around the pipeline and all behaved as designed.
+Triple run consensus converged: the acceleration factor metric showed a
+coefficient of variation of 0.0007 and the automated days metric a coefficient of
+variation of 0.0001 across the three runs, with zero metrics flagged as
+divergent. Robust ingestion degraded gracefully: with the network unreachable the
+web search client exhausted its four attempt retry budget and then returned a
+clearly labeled offline stub rather than raising, and with the PDF backend absent
+the processor reported its clean non fatal status and ran only the size based
+chunk estimate. Autochunking was verified to be lossless: the chunker is byte
+identical on line boundary splits and on ASCII hard splits, both independently
+reconstructed and confirmed. One genuine limitation was discovered here and is
+carried honestly into \autoref{sec:limitations}: a single oversized line of
+multibyte UTF-8 text loses one character at each internal split boundary, six
+characters in the tested case, because of a decode that ignores errors after a
+byte level cut. The scheduler planned twenty four evenly spaced commit slots at
+an hourly interval of 3600 seconds. These outcomes connect the platform to the
+prior triplicate and digital twin work that motivated triple run
+consensus~\cite{kawchak2025pdactwin}.
+
+\subsection{Stage 2 reference}
+
+The Stage 2 reference was executed as a planning artifact. The 2030 pancreatic
+cancer hybrid pilot is expressed as a seven event timeline: a 60 second eight arm
+robotic Whipple procedure on day 0, followed by six 28 day adjuvant medicine
+cycles that run through day 168, for a total of 168 regimen days, with human
+oversight required throughout. The lights off factory controller exercised its
+full safety surface correctly. On a clean batch it completed all tasks and
+returned to its dark idle state; when cumulative faults exceeded the configured
+budget it emergency stopped; and when an interlock was left unsatisfied it blocked
+before any task ran. Among the four default interlocks is
+\texttt{vvuq\_gate\_online}, so the Stage 1 assurance gate is a precondition for
+any Stage 2 batch. This is the concrete mechanism by which the software assurance
+of Stage 1 becomes the physical safety of Stage 2, and it is why the gate, not
+the generator, is the component that scales across both stages.
+
+\subsection{Per commit processing evidence}
+
+Finally, the execution run was itself recorded one commit per section, and that
+record is evidence that real time, per commit assurance is practical at the speed
+the pipeline runs. The eight execution commits are listed in
+\autoref{tab:results_exec_commits} and drawn as a timeline in
+\autoref{figtimeline}. The producing commits land within one to two minutes of
+each other, the documentation and the two closing commits take slightly longer,
+and the whole run spans roughly eighteen minutes. Because each section was
+committed and pushed as soon as it was verified, a regression in any section would
+have been attributable to the commit that introduced it rather than discovered in
+a single terminal pass, which is the per commit advantage over prior batch
+oriented generation.
+
+\begin{table}[H]
+\caption{Autonomous execution commits producing the run record.}
+\label{tab:results_exec_commits}
+\centering
+\begin{tabularx}{\textwidth}{C{0.6cm} L{1.9cm} >{\raggedright\arraybackslash}X C{1.7cm} C{2.0cm}}
+\toprule
+\textbf{\#} & \textbf{Hash} & \textbf{Section} & \textbf{Lines} & \textbf{Time (UTC)} \\
+\midrule
+  1 & d7721a7 & Foundation (env, tests, lint)  & +387     & 04:20:42 \\
+  2 & b146ef7 & Pipeline (five methods)        & +322     & 04:22:43 \\
+  3 & c340cef & VVUQ (gate surface)            & +223     & 04:24:05 \\
+  4 & f5cb95b & Stage 1 automation             & +238     & 04:26:26 \\
+  5 & 2eb5cf0 & Physical-AI Stage 2 (PDAC)     & +176     & 04:27:42 \\
+  6 & ddd41e9 & Comprehensive README           & +401 -1  & 04:32:08 \\
+  7 & 9437292 & Fix errors (second to last)    & +7 -6    & 04:35:34 \\
+  8 & 57aa8db & Repository updates (last)      & +102 -13 & 04:38:44 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{verbatim}
+UTC       Commit   Section                        Delta     Gap
+--------  -------  -----------------------------  --------  ------
+04:20:42  d7721a7  Foundation (env, tests, lint)  +387      start
+04:22:43  b146ef7  Pipeline (five methods)        +322      2m01s
+04:24:05  c340cef  VVUQ (gate surface)            +223      1m22s
+04:26:26  f5cb95b  Stage 1 automation             +238      2m21s
+04:27:42  2eb5cf0  Physical-AI Stage 2 (PDAC)     +176      1m16s
+04:32:08  ddd41e9  Comprehensive README           +401 -1   4m26s
+04:35:34  9437292  Fix errors (second to last)    +7 -6     3m26s
+04:38:44  57aa8db  Repository updates (last)      +102 -13  3m10s
+--------  -------  -----------------------------  --------  ------
+8 commits over 18m02s, all pushed in real time in one pull request
+\end{verbatim}
+\caption{Execution commit timeline, one section per commit, pushed in real time.}
+\label{figtimeline}
+\end{figure}
+
+The figures in this section are grounded in the imagegen Python scripts listed in
+\autoref{tab:results_figs}; the numeric arrays are taken from the script literals
+rather than from any rendered image, and each figure is referenced in the prose
+above rather than restated~\cite{sel2025vvuq}.
+
+\begin{table}[H]
+\caption{Results figures grounded in the imagegen Python scripts.}
+\label{tab:results_figs}
+\centering
+\begin{tabularx}{\textwidth}{L{4.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Script directory (under \texttt{imagegen/})} & \textbf{Renders as} \\
+\midrule
+  \texttt{02-acceleration-waterfall} & A schedule waterfall, 30 to 12 days via reductions of 10, 5, and 3, with the audit formula. \\
+  \texttt{04-vvuq-assurance-wheel} & A radar wheel of the six normalized assurance spokes against the threshold ring. \\
+  \texttt{06-test-coverage-treemap} & A treemap of 51 of 51 tests across the 8 modules, areas 17, 8, 5, 5, 4, 4, 4, 4. \\
+\bottomrule
+\end{tabularx}
+\end{table}
