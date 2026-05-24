@@ -33,6 +33,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   entry added, the repository structure now expands
   `papers/VVUQ-01/draft-paper`, and the citation version was bumped.
 - `releases.md`: v0.5.0 release notes added above the v0.4.0 notes.
+- @kevinkawchak removed images from cancer-automated/tree/main/papers/VVUQ-01/imagegen subdirectories, and linked images to Google Drive to reduce repository file size from 4.7MB to 450KB on 2026-05-24.
 
 ### Notes
 - This release adds a paper scaffold only; it does not change the executable
