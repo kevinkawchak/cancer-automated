@@ -47,6 +47,18 @@ This is the distinction between credibility of a method and credibility of a
 result that the VVUQ literature for precision medicine is careful to
 draw~\cite{sel2025vvuq}.
 
+This is also where the present work departs from the prior humanoid instruction
+to code to execution to paper workflow that it extends. That earlier workflow
+demonstrated autonomous end to end generation but verified the result mainly at
+the end, as a final check on a finished artifact. Here the gate is a first class
+component exercised on every candidate as it is produced, and it is wired forward
+as a Stage 2 safety interlock. The difference between the two is therefore not
+the generation, which both do well and quickly, but the assurance, which this
+platform makes explicit, strict, and per commit rather than terminal. That shift
+is small to state and large in consequence, because it is the shift from a system
+that can produce trustworthy output to one that will not release output until it
+has been shown to be trustworthy.
+
 \subsection{What ``blocked'' means}
 
 The word ``blocked'' must not be misread, because in everyday engineering it
@@ -124,7 +136,25 @@ found at all. It was different in being ephemeral and commit driven, which
 enforced the per commit discipline but means nothing persists unless pushed. And
 it was worse in the ways that matter for heavy backends: no live agentic
 generation, no live web or PDF, and no GPU, display, or physics engine, so those
-paths simply did not run. The candid read is therefore twofold. The assurance
+paths simply did not run. These three sides of the comparison are summarized in
+\autoref{tab:discussion_compare}.
+
+\begin{table}[H]
+\caption{The autonomous cloud run compared with a conventional high end server.}
+\label{tab:discussion_compare}
+\centering
+\begin{tabularx}{\textwidth}{L{2.2cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Aspect} & \textbf{Autonomous cloud run} & \textbf{Conventional high end server} \\
+\midrule
+  Better    & Near zero setup, one integrated loop, systematic assurance beyond the shipped tests. & Often begins with a slow heavy install that can fail on platform constraints. \\
+  Different & Ephemeral and commit driven, with finer per section commit granularity. & Persistent state across days, more forgiving but less reproducible. \\
+  Worse     & No live model, web, PDF, GPU, display, or physics backends. & Can exercise live backends and accelerated workloads directly. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The candid read is therefore twofold. The assurance
 machinery is real and reusable today; it can be pointed at a new deliverable
 immediately. The clinical content, by contrast, remains a reference until it is
 fed real data and an independent source of truth. The illustrative cost and

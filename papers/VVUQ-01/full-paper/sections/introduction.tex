@@ -77,6 +77,39 @@ procedure with an adjuvant medicine regimen, that shows how the same gate extend
 from software assurance into physical safety (\autoref{sec:results} and
 \autoref{sec:discussion}).
 
+The surrounding literature motivates each half of this argument. On the assurance
+side, the survey of VVUQ for precision medicine digital twins frames the
+verification, validation, and uncertainty vocabulary used here~\cite{sel2025vvuq},
+the image to physics to digital twin pathway shows where personalized cancer
+models are heading~\cite{moradi2026twins}, and the application of VVUQ to
+physiologically based pharmacokinetic models for theranostics is a direct oncology
+analog of the dosing decisions a trial must defend~\cite{zaid2025pbpk}. The
+credibility of such computational evidence is governed by established frameworks,
+in particular the risk informed ASME V\&V 40 standard and the FDA guidance on
+assessing credibility of modeling and simulation in device
+submissions~\cite{asmevv40, fda2023credibility}, with good clinical practice and
+medical device software life cycle expectations layered on
+top~\cite{iche6r3, iec62304}. On the generation side, deterministic and agentic
+code generation for clinical workflows is advancing quickly, from compiled and
+deterministic generation~\cite{trooskens2026compiled} to validated generative
+extraction pipelines~\cite{carlisle2026pipeline} and layered autonomous
+statistical programming~\cite{yan2026clinagent}. The contribution here is not to
+improve either half in isolation but to insist on the ordering between them, and
+to do so at a moment when regulators are themselves moving toward faster, real
+time clinical evidence~\cite{fda2026realtime}.
+
+This work also stands on a substantial body of prior evidence. The repository's
+input corpus references many distinct external DOIs spanning VVUQ theory, digital
+twins, and in silico oncology trials, and the platform itself continues a
+sequence of the author's physical AI oncology trial systems, from autonomous
+glioblastoma meta analyses with explicit verification~\cite{kawchak2025glioblastoma}
+and a large language model code generation benchmark on adverse event
+data~\cite{kawchak2025faers}, to federated trial unification~\cite{kawchak2026federated}
+and accelerated patient prediction~\cite{kawchak2026prediction}. What none of that
+prior work did was hold the assurance process explicitly above the generation at
+the granularity of a single commit, which is the specific gap this platform
+closes.
+
 Finally, this work positions the platform as the next step beyond the prior
 humanoid instruction to code to execution to paper workflow developed in the
 author's Clinical-AI-Demos project. That earlier workflow proved that an agent
@@ -94,7 +127,7 @@ restating them.
 \caption{Introduction source map (abbreviated paths under the repository root).}
 \label{tab:intro_sources}
 \centering
-\begin{tabular}{L{4.6cm} L{8.8cm}}
+\begin{tabularx}{\textwidth}{L{4.8cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Source (under repo root)} & \textbf{Use for} \\
 \midrule
@@ -104,5 +137,5 @@ restating them.
   \texttt{inputs/VVUQ-Research-1, -2} : README and chunk 1 & Additional VVUQ and digital twin framing for oncology. \\
   Clinical-AI-Demos 07-humanoid paper & The prior workflow this paper extends (cited, not copied). \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}

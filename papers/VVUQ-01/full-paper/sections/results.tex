@@ -79,10 +79,12 @@ three pipeline examples, five deliverables completed all four producing stages,
 and every deliverable reported the same acceleration factor of 2.5, computed from
 the audited formula at the default of three simulation runs, that is 30 baseline
 days reduced to 12 automated days. This decomposition is shown in
-\autoref{figwaterfall}. The generation itself was effectively instantaneous: the
-slowest of the four stages on a representative deliverable completed in under two
-ten thousandths of a second, and the largest artifact produced was a 1000 byte
-paper, far below the 200{,}000 byte cap. Three artifacts from the pipeline are
+\autoref{figwaterfall}. The generation itself was effectively instantaneous: on a representative
+deliverable the four artifacts measured 963, 735, 95, and 1000 bytes for the
+instruction set, the generated code, the execution log, and the paper, the
+slowest of the four stages completed in under two ten thousandths of a second,
+and the largest artifact, the 1000 byte paper, was far below the 200{,}000 byte
+cap. Three artifacts from the pipeline are
 saved in the execution record as concrete evidence of the run, namely the
 generated instruction set, the captured execution log, and the auto assembled
 paper. The speed of this step is precisely the point developed in the discussion:
@@ -106,8 +108,16 @@ structural checks for a fraction of 1.0. Validation reported perfect agreement o
 1.0 against the reference with a worst case relative error of 0.033, inside the
 0.05 bound, and a recorded human review. Uncertainty, measured across three runs,
 reported a maximum coefficient of variation of 0.0068, comfortably inside the
-0.10 bound, and the candidate was accepted. The accepted deliverable clears every
-spoke of the threshold ring shown in \autoref{figwheel}. The decisive evidence,
+0.10 bound, and the candidate was accepted. The two validated metrics carried
+relative errors of 0.020 for the acceleration factor and 0.033 for the automated
+day count, both inside the 0.05 bound, and the low dispersion accept showed an
+acceleration factor mean of 2.5033 with a standard deviation of 0.0125 and an
+automated day count mean of 12.0000 with a standard deviation of 0.0816. The
+escalated case in the table below is the same measurement under deliberately
+divergent runs, where the automated day count coefficient of variation rose from
+0.0068 to 0.3646, well past the bound, which is what triggered the escalation
+rather than a silent block. The accepted deliverable clears every spoke of the
+threshold ring shown in \autoref{figwheel}. The decisive evidence,
 however, is the full decision surface in \autoref{tab:results_gate}, where the
 gate was exercised across six cases. It accepted exactly one and blocked five,
 and one of those five blocks escalated to a human because the runs diverged. The
@@ -152,13 +162,19 @@ The Stage 1 capabilities ran around the pipeline and all behaved as designed.
 Triple run consensus converged: the acceleration factor metric showed a
 coefficient of variation of 0.0007 and the automated days metric a coefficient of
 variation of 0.0001 across the three runs, with zero metrics flagged as
-divergent. Robust ingestion degraded gracefully: with the network unreachable the
+divergent. The per run values, run under three distinct seeds, are given in
+\autoref{tab:results_triplerun}; the run to run spread is tiny because the
+generation is deterministic in the run count, a point taken up honestly in the
+discussion and the limitations. Robust ingestion degraded gracefully: with the network unreachable the
 web search client exhausted its four attempt retry budget and then returned a
 clearly labeled offline stub rather than raising, and with the PDF backend absent
 the processor reported its clean non fatal status and ran only the size based
 chunk estimate. Autochunking was verified to be lossless: the chunker is byte
 identical on line boundary splits and on ASCII hard splits, both independently
-reconstructed and confirmed. One genuine limitation was discovered here and is
+reconstructed and confirmed. In the worked example a 114{,}890 byte document
+split into six chunks under a reduced 20{,}000 byte cap and reconstructed byte for
+byte, and a separate oversized document split into four chunks, each carrying a
+reconstruction README that records the exact concatenation command. One genuine limitation was discovered here and is
 carried honestly into \autoref{sec:limitations}: a single oversized line of
 multibyte UTF-8 text loses one character at each internal split boundary, six
 characters in the tested case, because of a decode that ignores errors after a
@@ -166,6 +182,24 @@ byte level cut. The scheduler planned twenty four evenly spaced commit slots at
 an hourly interval of 3600 seconds. These outcomes connect the platform to the
 prior triplicate and digital twin work that motivated triple run
 consensus~\cite{kawchak2025pdactwin}.
+
+\begin{table}[H]
+\caption{Triple run metrics and consensus across three seeds.}
+\label{tab:results_triplerun}
+\centering
+\begin{tabularx}{\textwidth}{L{2.8cm} C{2.8cm} C{3.0cm} C{3.0cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Run} & \textbf{Seed} & \textbf{Accel. factor} & \textbf{Automated days} & \textbf{Divergent} \\
+\midrule
+  Run 1          & 20260521 & 2.502  & 11.998  & no \\
+  Run 2          & 20260522 & 2.504  & 11.996  & no \\
+  Run 3          & 20260523 & 2.506  & 11.994  & no \\
+  \midrule
+  Consensus mean & -        & 2.5040 & 11.9960 & no \\
+  CV across runs & -        & 0.0007 & 0.0001  & within bound \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{Stage 2 reference}
 
@@ -181,7 +215,27 @@ before any task ran. Among the four default interlocks is
 \texttt{vvuq\_gate\_online}, so the Stage 1 assurance gate is a precondition for
 any Stage 2 batch. This is the concrete mechanism by which the software assurance
 of Stage 1 becomes the physical safety of Stage 2, and it is why the gate, not
-the generator, is the component that scales across both stages.
+the generator, is the component that scales across both stages. The four safety
+cases exercised on the controller are summarized in
+\autoref{tab:results_factory}, covering a clean batch, an over budget fault, an
+unsatisfied interlock, and a within budget fault, each ending in the expected
+state.
+
+\begin{table}[H]
+\caption{Lights off factory safety cases and their outcomes.}
+\label{tab:results_factory}
+\centering
+\begin{tabularx}{\textwidth}{C{1.0cm} L{6.0cm} C{1.9cm} C{1.5cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Case} & \textbf{Scenario} & \textbf{End state} & \textbf{Faults} & \textbf{Blocked} \\
+\midrule
+  A & clean batch, 6 tasks, fault budget 1 & dark & 0 & no \\
+  B & over budget, 9 tasks, every 3rd faults & estop & 2 & no \\
+  C & interlock unsatisfied (perimeter) & fault & 0 & yes \\
+  D & within budget, 9 tasks, fault budget 3 & dark & 3 & no \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{Per commit processing evidence}
 

@@ -64,6 +64,32 @@ deliverable's topic, three identical inputs yield three identical outputs, a
 property that matters when the uncertainty dimension is examined in
 \autoref{sec:results}.
 
+The four producing stages and their artifacts are summarized in
+\autoref{tab:methods_stages}. Each stage is small, single purpose, and
+deterministic in the absence of a live model backend, which is what allows the
+whole pipeline to run in well under a millisecond and to be reproduced exactly.
+The orchestrator does not hide this structure: it exposes each stage result and
+each artifact on the deliverable, so the VVUQ gate that follows can inspect the
+work rather than trust it. This separation, generation that produces and a gate
+that inspects, is the architectural expression of the thesis, and it is why the
+remainder of the methods concentrates on the gate rather than on the generation.
+
+\begin{table}[H]
+\caption{The four producing stages, their modules, and their artifacts.}
+\label{tab:methods_stages}
+\centering
+\begin{tabularx}{\textwidth}{L{2.7cm} L{3.6cm} L{3.0cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Stage} & \textbf{Module} & \textbf{Artifact} & \textbf{Behavior} \\
+\midrule
+  Instruction & \texttt{instruction\_stage.py} & \texttt{instructions.md} & Emits the bracketed instruction set that drives generation. \\
+  Code generation & \texttt{codegen\_stage.py} & \texttt{generated\_*.py} & Authors code from the instructions and applies the acceleration model. \\
+  Code execution & \texttt{execution\_stage.py} & \texttt{execution\_log.txt} & Runs the code and parses key and value lines into metadata. \\
+  Paper assembly & \texttt{paper\_stage.py} & \texttt{paper.md} & Assembles a short paper tabulating the executed results. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{The VVUQ gate and its thresholds}
 
 The fifth method is the part the thesis turns on. The gate in
@@ -124,6 +150,20 @@ computational evidence~\cite{iec62304, iche6r3}.
 \end{tabularx}
 \end{table}
 
+Two design choices in the gate deserve emphasis because they are what make it
+substantial rather than cosmetic. First, the verification fraction is an equality
+to 1.0, not an inequality with slack. Many quality systems accept a high pass
+rate, but a single unmet structural or policy check, for example an artifact one
+byte over the cap, is treated here as disqualifying, so the gate cannot be
+satisfied by being mostly correct. Second, the uncertainty module does not merely
+report a coefficient of variation; it distinguishes a value that is high from one
+that is divergent, and only divergence triggers the escalation path. The
+practical effect is a three way outcome rather than a binary pass or fail: a clean
+candidate is accepted, a clearly defective one is blocked, and an ambiguous one,
+where the runs disagree enough that no single run can be trusted, is routed to a
+human for adjudication. That third outcome is the part a purely automated gate
+usually lacks, and it is the part that a regulated setting most needs.
+
 \subsection{Stage 1 automation and the Stage 2 deployment references}
 
 Around the five methods sit four Stage 1 capabilities that make the pipeline run
@@ -143,7 +183,13 @@ a single concatenation. The non stop commit scheduler, in
 deliverables across the day; the default configuration plans twenty four slots at
 an hourly interval. These defaults, including the 200{,}000 byte cap, the three
 run default, the four retry attempts, and the twenty four commits per day, live
-in \texttt{configs/pipeline\_config.yaml}.
+in \texttt{configs/pipeline\_config.yaml}. Two further ingestion defaults sit in
+the same configuration, a maximum of 64 documents per run and the four attempt
+retry budget, and the chunker recognizes the project's text formats, the Python,
+Markdown, LaTeX, JSON, and YAML sources, so that any of them can be split and
+rebuilt. The reconstruction README that accompanies each split records the exact
+concatenation command, so a chunked file is never left without the recipe that
+restores it byte for byte.
 
 The Stage 2 deployment references, in \texttt{physical-ai/}, show where the same
 assurance posture is meant to extend. The lights off factory controller in
@@ -158,8 +204,14 @@ default factory interlocks is named \texttt{vvuq\_gate\_online}, alongside
 Stage 2 safety chain as an interlock is the design decision that connects the two
 stages: a physical batch cannot start unless the same gate that clears software
 deliverables is itself online, which is essential when a 60 second procedure
-leaves no time for manual verification inside the loop. The clinical content of
-this pilot remains a planning reference and requires VVUQ clearance, human
+leaves no time for manual verification inside the loop. The controller is a small
+state machine. It idles in a dark state, transitions to running only when every
+interlock is satisfied, returns to dark when a batch completes within its fault
+budget, emergency stops when cumulative faults exceed that budget, and refuses to
+start at all, raising a fault, when any interlock is unsatisfied. Because
+\texttt{vvuq\_gate\_online} is one of those interlocks, a lapse in software
+assurance is, by construction, a condition that prevents the physical line from
+running. The clinical content of this pilot remains a planning reference and requires VVUQ clearance, human
 oversight, IRB approval, and regulatory authorization before any real use.
 
 \subsection{Autonomous per commit generation}
@@ -262,6 +314,18 @@ rather than at a terminal verification pass.
 \bottomrule
 \end{tabularx}
 \end{table}
+
+Reproducibility was treated as part of the method rather than an afterthought. The
+environment was pinned to Python 3.11.15 and the suite was run under pytest
+9.0.3, with the static analysis performed by the same \texttt{ruff} and
+\texttt{yamllint} tools the continuous integration uses. A standalone verification
+script confirms the environment before any deliverable runs, and the core engine
+depends only on the standard library, with every heavy or optional dependency
+imported behind a guard so that the package stays importable when a dependency is
+absent. This is why the lint and test surface stays green on a minimal runner and
+why the recorded commands can be replayed to reproduce each claim. The discipline
+extends the prior humanoid instruction to code to execution to paper workflow by
+adding exactly this assurance scaffolding around it~\cite{anthropicclaudecodeweb}.
 
 Taken together, the architecture and the build process embody the thesis in their
 proportions. The generation is fast and inexpensive, the gate is strict and
