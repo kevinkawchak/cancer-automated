@@ -1,0 +1,151 @@
+% Discussion: interpretation, comparison, and implications.
+
+This section interprets the results against the thesis. It is organized as four
+threads that move from what the evidence means, to how a reader should
+understand the word ``blocked'', to an honest account of what was missing, and
+finally to the practical standing of the work and the regulatory opportunity it
+points toward. The sources for each thread are collected in
+\autoref{tab:discussion_sources}.
+
+\begin{table}[H]
+\caption{Discussion source map (abbreviated paths under the repository root).}
+\label{tab:discussion_sources}
+\centering
+\begin{tabularx}{\textwidth}{L{4.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Source (under repo root)} & \textbf{Use for} \\
+\midrule
+  \texttt{execution/README.md} : server comparison & The better, different, and worse comparison. \\
+  \texttt{execution/03-vvuq/} : why VVUQ is substantial & The asymmetry argument and the self referential caveat. \\
+  \texttt{execution/04-stage1-automation/} : multibyte finding & The discovered bug and its disposition. \\
+  \texttt{imagegen/08-fda-cost-efficiency-bridge} & Figure data: the cost bridge and the credibility scores. \\
+  Clinical-AI-Demos 07-humanoid paper & Contrast with the prior workflow (cited, not copied). \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Two VVUQ results, kept distinct}
+
+It is important to separate two different things that both came out green, because
+conflating them would overstate the result. The first is VVUQ applied to the
+codebase itself, the question of whether the v0.1.0 platform was built correctly.
+That answer was unambiguously yes: 51 of 51 tests passed, the static analysis was
+clean, and all fifteen example scripts exited zero. This is the verification
+floor, and it held. The second, and the more meaningful result, is the behavior
+of the VVUQ gate as a decision maker. It accepted one of six candidates and
+blocked five. That asymmetry is the entire point, because the pipeline produced a
+complete, well formed deliverable in well under a millisecond and the gate still
+refused five of the six variants put to it. The cheap part ran instantly; the
+consequential part discriminated. The honest caveat must be stated just as
+plainly. This run verified the machinery thoroughly but exercised the content
+shallowly. The single accepted case used inputs in which the reference values
+equalled the observed values, and the human review flag was simply set to true,
+so the validation dimension was effectively self referential: no independent gold
+standard was supplied against which the deliverable could have been found wrong.
+The gate worked; it was simply not yet given a hard validation problem to solve.
+This is the distinction between credibility of a method and credibility of a
+result that the VVUQ literature for precision medicine is careful to
+draw~\cite{sel2025vvuq}.
+
+\subsection{What ``blocked'' means}
+
+The word ``blocked'' must not be misread, because in everyday engineering it
+suggests a crash or a failure, and that is not what happened here. Nothing in the
+actual production of deliverables was blocked. All five real pipeline deliverables
+completed every stage and wrote their files. The blocks occurred only inside the
+gate demonstration, where candidates with specific defects were constructed on
+purpose to show the gate refusing them. A blocked candidate still exists on disk
+exactly as generated; ``blocked'' means only that it is gated from production or
+clinical use until the named failure is corrected. The five block meanings are
+laid out in plain terms in \autoref{tab:discussion_blocks}. The case worth
+dwelling on is again the file size cap. A single failed check among six dropped
+the verification fraction to 0.83, below the required 1.0, and that was enough to
+block an otherwise complete artifact. A code generator left to its own devices
+would happily emit an oversized file; the gate is what refuses it. That is the
+intended strictness, and it is the difference between a system that produces
+plausible output and one that produces shippable output.
+
+\begin{table}[H]
+\caption{What each blocked case means in the real world.}
+\label{tab:discussion_blocks}
+\centering
+\begin{tabularx}{\textwidth}{L{5.6cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Blocked case} & \textbf{Real world meaning} \\
+\midrule
+  No human review recorded & A required sign off is missing; procedural, not numeric. \\
+  Run divergence (CV 0.365, escalated) & The three simulations disagree too much to trust any one; a human is paged. \\
+  Reference disagreement (rel err 0.60) & The output does not match the trusted reference; it is likely wrong. \\
+  Only 2 runs, need 3 & Insufficient sampling to estimate uncertainty at all. \\
+  Artifact exceeds 200K cap & A structural or policy violation; 1 failed check of 6, a fraction of 0.83. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Missing inputs and how to improve}
+
+This is the most important part of the discussion, because a paper that argues
+for honest assurance must be honest about its own gaps. Several inputs to the run
+were absent or synthetic, and one absence matters above all the others: there was
+no independent validation reference. Beyond that, the live model backends were not
+exercised, so generation ran on deterministic offline templates rather than a
+live agent; the web search path was not reachable, so ingestion fell back to its
+labeled offline stub; PDF text extraction did not run because the backend was
+absent; no real trial or patient data was used; and the rich corpus of paper and
+research inputs that already exists in the repository was not yet wired into the
+executed pipeline. The improvement priorities follow in order of importance.
+First, supply an independent validation reference so that the validation
+dimension can find a deliverable wrong rather than agreeing with itself. Second,
+wire the existing input corpus through ingestion so that code generation and
+paper generation run on real source material rather than templates. Third, make
+the triple simulation genuinely stochastic, with more than three runs and
+reported confidence intervals, so the near zero dispersion observed here reflects
+real sampling rather than identical inputs. Fourth, exercise the live model,
+network, PDF, and physics paths. Fifth, repair the multibyte chunking edge case
+and add a multibyte test. Sixth, emit machine readable results alongside the
+human readable prose so that downstream tools can audit the gate decisions
+directly. None of these is speculative; each is a concrete next step, and several
+echo the direction of recent agentic clinical work~\cite{trooskens2026compiled,
+kawchak2026prediction}.
+
+\subsection{Practical standing and the regulatory opportunity}
+
+How does an autonomous cloud run compare with running the same codebase on a
+conventional high end workstation or server, and how close to real life is it?
+The comparison is genuinely mixed. The cloud run was better in several respects:
+near zero setup, because the core engine is pure standard library with guarded
+optional imports and ran immediately; one integrated loop, because running code,
+observing output, writing documentation, re running the checks, committing, and
+pushing all happened without a human switching between a terminal, an editor, and
+a git client; and systematic assurance beyond the shipped tests, because the
+agent exercised the full gate and factory safety surfaces and independently re
+verified the chunk losslessness claim, which is how the multibyte limitation was
+found at all. It was different in being ephemeral and commit driven, which
+enforced the per commit discipline but means nothing persists unless pushed. And
+it was worse in the ways that matter for heavy backends: no live agentic
+generation, no live web or PDF, and no GPU, display, or physics engine, so those
+paths simply did not run. The candid read is therefore twofold. The assurance
+machinery is real and reusable today; it can be pointed at a new deliverable
+immediately. The clinical content, by contrast, remains a reference until it is
+fed real data and an independent source of truth. The illustrative cost and
+credibility picture is drawn in \autoref{figbridge}, where the cost axis is an
+explicitly labeled planning index rather than measured dollars, and the
+credibility scores, a verification score of 81.9 and a validation score of 85.75
+against a target of 80, are the measured values. These scores are aligned with
+established credibility frameworks, in particular FDA \S VI.B and ASME V\&V
+40~\cite{fda2023credibility, asmevv40}. The forward looking and respectful point
+is that the gate is built to support exactly those frameworks, and that
+accelerating rigorous, automated LLM VVUQ is a path by which the United States
+can lead on patient safety, efficacy, and trial speed at once, consistent with
+recent moves toward real time clinical trials and with the growing adoption of
+these tools in life sciences~\cite{fda2026realtime, anthropiclifesciences}.
+Nothing here is endorsed by any regulator, and no endorsement is claimed.
+
+\begin{figure}[H]
+    \hspace{-0.8cm}%
+    \IfFileExists{Images/fda-cost-bridge.png}
+      {\includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/fda-cost-bridge.png}}
+      {\figslot{FDA cost efficiency bridge and credibility assessment}}
+    \caption{Illustrative relative effort cost bridge (a labeled planning index, not dollars) with the measured VVUQ credibility scores against a target of 80.}
+    \label{figbridge}
+\end{figure}
