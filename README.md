@@ -14,7 +14,7 @@ This repository packages the established methods for generating instructions, ge
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
 
-**5/25: v0.6.0 (VVUQ-01 Full Paper)** Adds [papers/VVUQ-01/full-paper](papers/VVUQ-01/full-paper): the full manuscript built from the v0.5.0 draft scaffold without modifying it. Every bracketed processing instruction in the seven body sections is replaced with grounded prose, 18 tables.
+**5/25 [Final PDF](https://doi.org/10.5281/zenodo.20372501): v0.6.0 (VVUQ-01 Full Paper)** Adds [papers/VVUQ-01/full-paper](papers/VVUQ-01/full-paper): the full manuscript built from the v0.5.0 draft scaffold without modifying it. Every bracketed processing instruction in the seven body sections is replaced with grounded prose, 18 tables.
 
 **5/25: v0.5.0 (VVUQ-01 Draft Paper Scaffold)** Adds [papers/VVUQ-01/draft-paper](papers/VVUQ-01/draft-paper): a compilable single column LaTeX scaffold for the manuscript *Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code*. 
 
