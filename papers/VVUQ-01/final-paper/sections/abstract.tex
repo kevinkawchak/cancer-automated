@@ -1,0 +1,17 @@
+% Abstract: a single paragraph, under 300 words, no citations.
+
+Physical AI is entering oncology trials through in silico simulation,
+autonomous code generation, and eventually robotic procedures - settings in which
+an error that ships costs far more than one caught prior to production.\ This work
+reports an end to end pipeline in which Claude Code performs five operations in order. Specifically, it generates code from instructions, executes that code, generates image instructions, generates figures, then assembles a draft, and finally a full
+paper. The central argument is that none of these generation steps decides
+whether a deliverable is trustworthy; the verification, validation, and
+uncertainty quantification (VVUQ) process does. These precautions can also make autonomous physical AI oncology trials faster, less
+expensive, and more rigorous than conventional verifications. Code execution supports the claim directly in the
+\texttt{cancer-automated} repository, passing 51 of 51 automated tests across 8
+modules and accelerated a representative schedule by a factor of 2.5, from 30 to 12 days. Its VVUQ gate, centered on generated script \texttt{vvuq/vvuq\_gate.py} exercised across 6 cases, accepted 1 of 5 - escalating the blocked cases to a human, and requiring a verification fraction of exactly 1.0. 
+
+% The same gate
+% scales to a Stage 2 2030 pancreatic cancer analog: a 60 second 8 arm robotic
+% Whipple followed by six 28 day adjuvant cycles spanning 168 regimen days, each
+% gated and supervised by a human.

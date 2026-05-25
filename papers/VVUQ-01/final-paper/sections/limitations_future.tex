@@ -1,0 +1,96 @@
+% Limitations and Future Work: honest gaps and the roadmap.
+
+The thesis of this paper depends on transparent VVUQ, so this section is
+deliberately complete and does not soften any gap. It has two parts: an enumeration of what was approximated or could not be run, and a roadmap for
+extending the assurance automation across oncology clinical trials.
+
+\subsection{Limitations, approximations, and what could not be run}
+
+The execution environment was a managed cloud container, and several inputs and
+backends were absent by design or by circumstance. The agentic model backends
+were not exercised live: the \texttt{anthropic} and \texttt{openai} packages
+were not installed and no API key was present, so instruction and code generation
+ran on their deterministic offline templates rather than a live model. Live web
+search was not reachable, so ingestion exhausted its four attempt retry budget
+and fell back to the clearly labeled offline stub, leaving the live HTML parsing
+path unexercised. The PDF extraction backend was absent, so only the size based
+chunk estimate ran and no real text extraction occurred. 
+
+The physics and robotics
+backends, namely the simulation engine, the NVIDIA Isaac stack, and ROS 2, were
+not present and the container had no GPU or display, so the physical-ai modules
+ran only as pure standard library references. The multibyte hard split chunking
+edge case, which loses six characters at internal boundaries on a single
+oversized line of multibyte text, was reported but not repaired, because the run
+scope was to execute v0.1.0 rather than to modify the baseline. The LaTeX
+template was not compiled to PDF in the container, since no TeX toolchain was
+available there. 
+
+The imagegen leg had no executable code in v0.1.0. And only a
+single local Python version, 3.11.15, was run, with cross version behavior on
+3.10 and 3.12 delegated to the continuous integration matrix. To these
+environmental limits the discussion added two assurance gaps that matter more for
+the thesis than any backend: there was no independent validation reference, so
+the one accepted case was self referential, and the repository's rich input
+corpus was not yet wired into the executed pipeline. These limitations are paired
+with their remedies in \autoref{tab:limits_future}.
+
+\begin{table}[H]
+\caption{Limitations now and the tractable next steps.}
+\label{tab:limits_future}
+\centering
+\begin{tabularx}{\textwidth}{L{6.2cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Limitation (this run)} & \textbf{Future step} \\
+\midrule
+  No independent validation reference, so the accept is self referential & Supply an external gold standard so validation carries real weight. \\
+  Input corpus not wired into the pipeline & Feed the chunked corpus through ingestion into codegen and papergen. \\
+  Generation on offline templates, no live backends & Enable the live model, web search, PDF, and physics paths. \\
+  Near deterministic 3 run simulation (CV 0.0007) & Genuine stochasticity, more runs, confidence intervals, sensitivity. \\
+  Multibyte hard split loses 6 characters & Carry trailing bytes forward and add a multibyte chunking test. \\
+  imagegen has no executable code in v0.1.0; template uncompiled & Close the codegen, imagegen, and papergen legs end to end. \\
+  Single local Python version & Run 3.10, 3.11, 3.12 matrix locally, emit JSON results. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+None of these limitations is hidden, and that is deliberate. The multibyte
+chunking finding in particular surfaced only because the losslessness claim was
+independently re verified rather than trusted, which is the same discipline the
+gate applies to deliverables, now turned on the platform itself. A thesis that
+asks the reader to value assurance over generation cannot be credible if it
+conceals the places where assurance has not yet been applied, so each gap above
+is paired in \autoref{tab:limits_future} with the concrete step that closes it,
+and the most consequential gap, the absent independent validation reference, is
+listed first because it bounds what any of the other results can claim.
+
+\subsection{Future work: VVUQ automation across all oncology clinical trials}
+
+The central forward claim is simple. This VVUQ automation should be adapted across
+the full breadth of oncology clinical trials, because the speed, quality, and cost
+benefits compound at scale while the gate preserves patient safety at every step.
+A single trial gains a fast, auditable assurance loop; a portfolio of trials gains
+a common standard of evidence that does not have to be rebuilt each time. The
+tractable next steps follow in priority order, and they mirror the remedies in
+\autoref{tab:limits_future} while adding the larger integration goals. Supply an
+independent validation reference first, because without it the validation
+dimension cannot do its job. Wire the existing input corpus through ingestion so
+that code generation and paper generation operate on real source material.
+
+Make the triple simulation genuinely stochastic, with more runs and reported
+confidence intervals, so the dispersion bound is tested against real variation.
+Enable the live model, network, PDF, and physics paths so the guarded fallbacks
+become the exception rather than the rule. Repair the multibyte chunker and add a
+multibyte test so the one known correctness gap is closed and stays closed. Close
+all three legs of the thesis, code generation, image generation, and paper
+generation, end to end, so the whole pipeline runs under one gate. 
+
+Emit
+machine readable results alongside the prose so the assurance decisions are
+themselves auditable by downstream tools. The destination is a flexible, future
+proof assurance layer that lets the industry check these steps off once rather
+than solving them repeatedly, and it is designed to stay consistent as trials,
+models, and procedures evolve~\cite{repo-cancer-automated, sel2025vvuq}. This is
+the same direction as the author's federated and protocol to prediction oncology
+work~\cite{kawchak2026federated, kawchak2025qsppdac}, and it is aligned with the
+move toward faster, real time clinical evidence~\cite{fda2026realtime}.
