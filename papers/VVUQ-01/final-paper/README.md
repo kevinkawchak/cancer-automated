@@ -1,8 +1,8 @@
 # VVUQ-01 Final Paper: Two Stage VVUQ Oncology Clinical Trial Verification Automation
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
-[![Repo DOI](https://img.shields.io/badge/Repo%20DOI-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
+[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
+[![Repo DOI](https://img.shields.io/badge/Repo%20DOI-10.5281%2Fzenodo.20331505-blue.svg)](https://doi.org/10.5281/zenodo.20331505)
 [![Release](https://img.shields.io/badge/Release-v0.6.0-brightgreen.svg)](../../../releases.md)
 [![Engine](https://img.shields.io/badge/pdfLaTeX-Overleaf-success.svg)](https://www.overleaf.com/)
 [![Style](https://img.shields.io/badge/Style-ieeetr%20%2B%20black%20links-lightgrey.svg)](references.bib)
