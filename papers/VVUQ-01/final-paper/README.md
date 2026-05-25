@@ -1,4 +1,4 @@
-# VVUQ-01 Full Paper: Two Stage VVUQ Oncology Clinical Trial Verification Automation
+# VVUQ-01 Final Paper: Two Stage VVUQ Oncology Clinical Trial Verification Automation
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
@@ -8,6 +8,8 @@
 [![Style](https://img.shields.io/badge/Style-ieeetr%20%2B%20black%20links-lightgrey.svg)](references.bib)
 [![Bibliography](https://img.shields.io/badge/References-29%20entries%2C%20DOI%20%2B%20URL-informational.svg)](references.bib)
 [![Authored](https://img.shields.io/badge/Authored-Claude%20Code%20Opus%204.7%201M%20Max-purple.svg)](https://www.anthropic.com/news/claude-opus-4-7)
+
+### Please see Zenodo for full PDF and LaTeX [Source Files](https://doi.org/10.5281/zenodo.20372501)
 
 This directory holds the **full paper** for the manuscript *Two Stage VVUQ
 Oncology Clinical Trial Verification Automation Priority over Existing Generated
