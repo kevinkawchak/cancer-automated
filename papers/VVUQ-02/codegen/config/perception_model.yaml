@@ -1,0 +1,68 @@
+# H2-Surgical 1.0 perception stack model (hypothetical 2030).
+# Head stereo plus NIR ICG plus endoscopic and ultrasound fusion, augmented with
+# wrist and palm cameras. Channel definitions reuse the PDAC NIR ICG, vessel
+# proximity, bile spectrophotometry, and ultrasound B-mode definitions.
+
+cameras:
+  head_stereo:
+    count: 2
+    resolution_px: [1920, 1080]
+    baseline_mm: 65.0
+    fov_deg: 70
+    rate_hz: 60
+  wrist:
+    count: 2
+    resolution_px: [1280, 720]
+    rate_hz: 60
+  palm:
+    count: 2
+    resolution_px: [640, 480]
+    rate_hz: 30
+
+intrinsics_head:
+  fx: 1400.0
+  fy: 1400.0
+  cx: 960.0
+  cy: 540.0
+
+channels:
+  nir_icg:
+    count: 4
+    wavelength_nm: 800
+    rate_hz: 10000
+  vessel_proximity:
+    count: 1
+    method: confocal_laser_triangulation
+    resolution_mm: 0.01
+    rate_hz: 100000
+  duct_manometry:
+    count: 1
+    unit: mmHg
+    rate_hz: 10000
+  ring_tension:
+    count: 1
+    unit: newton
+    rate_hz: 10000
+  bile_spectrophotometry:
+    count: 4
+    wavelength_nm: [410, 470, 532, 600]
+    rate_hz: 10000
+  us_b_mode:
+    count: 8
+    element: linear
+    rate_hz: 10000
+
+structures:
+  - vessel
+  - pancreatic_duct
+  - bile_duct
+  - tumor_margin
+  - instrument
+
+segmentation:
+  grid: 16
+  dice_reference: data/reference/scene_masks_reference.json
+  occlusion_parameter: perception_occlusion_fraction
+
+status: hypothetical_2030
+...
