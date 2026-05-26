@@ -1,0 +1,34 @@
+=== comparison.json structural analysis ===
+source: papers/VVUQ-02/codegen/results/comparison.json
+file lines: 1791
+backend: offline
+iterations: 32  rounds/iter: 4  total round verdicts: 128
+entrants on leaderboard: 4
+
+=== leaderboard (frozen 6-component composite weights) ===
+  rank entrant                    composite_mean win_rate total_wins
+     1 PancreSpeed_1_0                    93.782    0.875         56
+     2 H2_Surgical_1_0                    93.334     0.75         72
+     3 da_Vinci_successor_2030             83.97      0.0          0
+     4 Dutch_human_baseline               67.885      0.0          0
+
+=== per-round matchup and aggregate winner over all 32 iterations ===
+  round 1: H2_Surgical_1_0 vs PancreSpeed_1_0
+    wins -> {'PancreSpeed_1_0': 24, 'H2_Surgical_1_0': 8}; dominant: PancreSpeed_1_0 (24/32)
+  round 2: H2_Surgical_1_0 vs da_Vinci_successor_2030
+    wins -> {'H2_Surgical_1_0': 32}; dominant: H2_Surgical_1_0 (32/32)
+  round 3: H2_Surgical_1_0 vs Dutch_human_baseline
+    wins -> {'H2_Surgical_1_0': 32}; dominant: H2_Surgical_1_0 (32/32)
+  round 4: PancreSpeed_1_0 vs da_Vinci_successor_2030
+    wins -> {'PancreSpeed_1_0': 32}; dominant: PancreSpeed_1_0 (32/32)
+
+=== caveat coverage (every robot-involving round must carry the sim caveat) ===
+  robot-involving rounds: 128; carrying sim-vs-sim caveat: 128
+  round-3 human-vs-robot rounds carrying the time-dimension caveat: 32
+  caveat coverage on robot rounds: 100.0% (must be 100%)
+
+=== composite-score dispersion per entrant (across all appearances) ===
+  PancreSpeed_1_0            n= 64 min= 92.764 max= 94.730 mean= 93.782 spread= 1.966
+  H2_Surgical_1_0            n= 96 min= 92.468 max= 94.417 mean= 93.334 spread= 1.949
+  da_Vinci_successor_2030    n= 64 min= 82.928 max= 84.832 mean= 83.970 spread= 1.904
+  Dutch_human_baseline       n= 32 min= 66.911 max= 68.884 mean= 67.885 spread= 1.973
