@@ -132,7 +132,7 @@ final repository updates. Each is mapped to the paper section it can support.
 | 03-vvuq/README.md | 8813 | report | Core Results: the VVUQ decision surface |
 | 03-vvuq/artifacts/gate_decision_surface.txt | 1396 | artifact | Results: ACCEPT/BLOCK/ESCALATE captures |
 | 03-vvuq/artifacts/vvuq_report.md | 778 | artifact | Results: nominal all-ACCEPT report |
-| 03-vvuq/artifacts/vvuq_decisions.json | 4061 | artifact | Results: per-gate scores and standards |
+| 03-vvuq/artifacts/vvuq_decisions.json | 4062 | artifact | Results: per-gate scores and standards |
 | 04-automation/README.md | 7205 | report | Results: integration layer |
 | 04-automation/artifacts/comparison_analysis.txt | 1894 | artifact | Results: 1790-line tournament processed |
 | 04-automation/artifacts/comparison_leaderboard.md | 558 | artifact | Results: 4-entrant leaderboard |
