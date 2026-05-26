@@ -1,0 +1,53 @@
+# Frozen 8-phase reference plan for the autonomous H2-Surgical 1.0 Whipple.
+# This is the annotated reference plan that VVUQ 04 (autonomous-plan-correctness)
+# validates the on-prem-LLM-proposed plan against. Targets are in the patient
+# frame in millimetres (x right, y caudal, z anterior), reused from the PDAC
+# anastomosis and dissection geometry so the humanoid run stays comparable.
+
+reference_plan:
+  - phase: 1
+    name: exploration_kocher
+    intents:
+      - {hand: R, action: kocher_mobilize, tip_target: [20.0, -20.0, -40.0], grasp: tripod}
+      - {hand: L, action: retract_duodenum, tip_target: [10.0, -18.0, -38.0], grasp: power}
+  - phase: 2
+    name: vascular_control_venous_dissection
+    intents:
+      - {hand: R, action: dissect_smv, tip_target: [15.0, -45.0, -50.0], grasp: tripod}
+      - {hand: L, action: control_portal_vein, tip_target: [5.0, -55.0, -52.0], grasp: pinch}
+  - phase: 3
+    name: uncinate_dissection_artery_first
+    intents:
+      - {hand: R, action: uncinate_from_sma, tip_target: [2.0, -50.0, -57.0], grasp: tripod}
+      - {hand: L, action: retract_mesentery, tip_target: [0.0, -40.0, -55.0], grasp: power}
+  - phase: 4
+    name: specimen_removal_en_bloc
+    intents:
+      - {hand: R, action: remove_specimen, tip_target: [12.0, -35.0, -45.0], grasp: power}
+      - {hand: L, action: hemostasis_bed, tip_target: [8.0, -42.0, -48.0], grasp: tripod}
+  - phase: 5
+    name: pancreaticojejunostomy
+    intents:
+      - {hand: R, action: suture_pj_duct_mucosa, tip_target: [18.0, -30.0, -42.0], grasp: needle_driver}
+      - {hand: L, action: present_pj_ring, tip_target: [18.0, -31.0, -42.0], grasp: pinch}
+  - phase: 6
+    name: hepaticojejunostomy
+    intents:
+      - {hand: R, action: suture_hj_end_side, tip_target: [12.0, -50.0, -48.0], grasp: needle_driver}
+      - {hand: L, action: present_hj_ring, tip_target: [12.0, -51.0, -48.0], grasp: pinch}
+  - phase: 7
+    name: gastrojejunostomy
+    intents:
+      - {hand: R, action: suture_gj_antecolic, tip_target: [-8.0, -40.0, -30.0], grasp: needle_driver}
+      - {hand: L, action: present_gj_loop, tip_target: [-8.0, -41.0, -30.0], grasp: power}
+  - phase: 8
+    name: hemostasis_drain_withdrawal
+    intents:
+      - {hand: R, action: final_hemostasis, tip_target: [10.0, -40.0, -45.0], grasp: tripod}
+      - {hand: L, action: place_drains, tip_target: [6.0, -44.0, -46.0], grasp: power}
+
+concordance:
+  metric: phase_step_concordance
+  description: fraction of reference intents whose phase, hand, action, and grasp are matched by the compiled plan within the tip-target tolerance
+  tip_target_tolerance_mm: 2.0
+...
