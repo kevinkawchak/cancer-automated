@@ -69,9 +69,10 @@ hspace=0.32)`; the three panels share the x axis tick 0 to 499.
   VVUQ 02`.
 - Panel A bounds: a soft cap dashed line at 5.0 in escalate amber labeled `soft cap
   5.0 N -> force scaling` and a hard cap dashed line at 6.0 in block red labeled
-  `hard cap 6.0 N -> e-stop`. Set y from 4.0 to 6.9. Add a 9 pt note `the summed
-  two-hand force rides near the 5.0 N soft cap; the gate scales at soft and
-  e-stops at hard`.
+  `hard cap 6.0 N -> e-stop`. Set y from 4.0 to 6.9. Add a 9 pt note `raw per-tick
+  summed two-hand force is the gate input; the VVUQ 02 bimanual check scales at the
+  soft cap and e-stops at the hard cap`, so the figure does not imply the raw
+  sample is itself a guaranteed-safe trace.
 - Panel B bounds: a stability floor dashed line at 8.0 in block red labeled
   `stability floor 8.0 mm`. Set y from 0 to 45 so the floor and the 38 to 43 mm
   band are both visible, showing the large margin. Add a 9 pt note `margin stays
