@@ -1,0 +1,30 @@
+=== 1. AUTONOMY: on-prem LLM intent -> deterministic compile (VVUQ 04) ===
+  backend selected: offline
+  phase 1: 2 intents -> 2 commands; source=reference; concordance=1.000
+  phase 5: 2 intents -> 2 commands; source=reference; concordance=1.000
+
+=== 2. KINEMATICS: forward kinematics of the right 7-DOF arm from config ===
+  arm 'R': 7 joints; base (0.0, -0.18, 1.25); tip = (-0.2796, -0.2895, 1.8185) m
+
+=== 3. PERCEPTION: scene segmentation Dice vs occlusion (VVUQ 08) ===
+  occlusion 0.00 -> mean Dice 1.0000
+  occlusion 0.10 -> mean Dice 0.9208
+  occlusion 0.20 -> mean Dice 0.8290
+  occlusion 0.30 -> mean Dice 0.8185
+  NIR/US/bile fusion usable structures (>=0.5): ['bile_duct', 'instrument', 'pancreatic_duct', 'tumor_margin', 'vessel']
+
+=== 4. HANDS: fingertip force tracking + bimanual cap + grasp (VVUQ 02, 05) ===
+  track_force -> commanded 1.84 N; soft_exceeded=False; estop=False; err=0.1600 N
+  bimanual_check -> cumulative 5.0 N; within_hard=True; estop=False
+  grasp(needle_driver) -> success=True; slip=False; quality=0.7521
+  handover(R->L) -> success=True; recv_quality=0.7922; duration=200.0 ms
+
+=== 5. BALANCE: ZMP margin + posture recovery under disturbance (VVUQ 03) ===
+  push   0.0 N -> margin 130.00 mm; corrected 130.00 mm; force_scale 1.0; state=stable; estop=False
+  push  20.0 N -> margin 96.17 mm; corrected 96.17 mm; force_scale 1.0; state=stable; estop=False
+  push  40.0 N -> margin 62.33 mm; corrected 62.33 mm; force_scale 1.0; state=stable; estop=False
+
+=== 6. SUTURING: bimanual anastomosis ring-tension control (VVUQ 07) ===
+  pancreaticojejunostomy  : 16 stitches; RMSE 0.00302 N; in-band 1.0; grade A
+  hepaticojejunostomy     : 12 stitches; RMSE 0.00442 N; in-band 1.0; grade absent
+  gastrojejunostomy       : 9 stitches; RMSE 0.00460 N; in-band 1.0; grade patent
