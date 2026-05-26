@@ -1,0 +1,25 @@
+=== A. NOMINAL: all 10 gates over their independent references ===
+  01 bimanual-handeye-servo             -> ACCEPT
+  02 dexterous-finger-force             -> ACCEPT
+  03 whole-body-balance                 -> ACCEPT
+  04 autonomous-plan-correctness        -> ACCEPT
+  05 instrument-grasp-handover          -> ACCEPT
+  06 vascular-no-fly-hand               -> ACCEPT
+  07 bimanual-suturing-anastomosis      -> ACCEPT
+  08 perception-scene-understanding     -> ACCEPT
+  09 shared-or-human-collision          -> ACCEPT
+  10 fault-estop-graceful-degradation   -> ACCEPT
+  all ACCEPT: True
+
+=== B. BLOCK: vascular-no-fly hard predicate fails (catastrophe gate) ===
+  vascular-no-fly-hand -> BLOCK; reasons: ['hard check failed: hard_stop_violations_zero']
+
+=== C. BLOCK: verification check fails (fraction < 1.0) ===
+  perception-scene-understanding -> BLOCK; reasons: ["verification fraction 0.80 below 1.0: ['all_structures_segmented: ']"]
+
+=== D. BLOCK: validation agreement below the bound ===
+  whole-body-balance -> BLOCK; reasons: ['validation agreement 0.00 below 0.98', 'max relative error 0.500 above 0.03']
+
+=== E. ESCALATE: dispersion above the CV bound (divergence) ===
+  dexterous-finger-force -> ESCALATE; escalate=True; reasons: ['max cv 0.163 above 0.1']
+  scores: {'verification_fraction': 1.0, 'validation_agreement': 1.0, 'max_relative_error': 0.0, 'max_cv': 0.1633, 'n_runs': 3}
