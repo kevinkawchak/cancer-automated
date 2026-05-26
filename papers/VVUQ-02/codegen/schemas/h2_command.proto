@@ -1,0 +1,19 @@
+// H2-Surgical 1.0 per-hand command (proto3).
+// Derived from h2_command.schema.json. Field numbers are stable.
+
+syntax = "proto3";
+
+package vvuq02.h2;
+
+message H2Command {
+  uint32 tick = 1;
+  string hand_id = 2;
+  uint32 phase = 3;
+  repeated double tip_target = 4;        // 3
+  repeated double tip_orientation = 5;   // 4
+  repeated double finger_target = 6;     // 20
+  string grasp_state = 7;
+  double velocity_scale = 8;
+  double force_soft_cap_n = 9;
+  string intent_id = 10;
+}

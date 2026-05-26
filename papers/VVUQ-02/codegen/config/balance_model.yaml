@@ -1,0 +1,44 @@
+# Unitree H2-Surgical 1.0 whole-body balance model (hypothetical 2030).
+# A standing humanoid can fall over where a fixed coelomic arm cannot, so balance
+# is safety-critical. Grounded in ISO 13482 stability and fall-prevention.
+
+units:
+  mass: kilogram
+  length: metre
+  force: newton
+
+body:
+  total_mass_kg: 47.0
+  standing_height_m: 1.32
+  nominal_com_height_m: 0.78
+
+# Support polygon for a static double-support stance, expressed as foot corner
+# offsets from the mid-stance point in the floor plane (x forward, y left).
+support_polygon:
+  feet_separation_m: 0.24
+  foot_length_m: 0.26
+  foot_width_m: 0.11
+  corners_m:
+    - [0.13, 0.175]
+    - [0.13, -0.175]
+    - [-0.13, -0.175]
+    - [-0.13, 0.175]
+
+# Zero-moment-point stability. The margin is the shortest distance from the ZMP
+# to any support-polygon edge; it must stay at or above the floor while the hands
+# exert surgical reaction forces.
+zmp:
+  stability_margin_floor_mm: 8.0
+  warning_margin_mm: 15.0
+  nominal_margin_mm: 45.0
+  recovery_bandwidth_hz: 200
+
+# Disturbance budget driven by the per-hand surgical reaction wrench plus an
+# external push. Used by the 32-iteration sweep free parameter
+# balance_disturbance_amplitude_n.
+disturbance:
+  max_hand_reaction_force_n: 6.0
+  external_push_budget_n: 40.0
+
+status: hypothetical_2030
+...

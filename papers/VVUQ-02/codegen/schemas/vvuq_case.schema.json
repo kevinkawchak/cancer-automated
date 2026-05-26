@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vvuq_case.schema.json",
+  "title": "VVUQ candidate case",
+  "description": "One candidate behavior presented to one of the 10 VVUQ gates: the gate slug, the structural verification inputs, the observed metrics, the independent reference metrics, the multi-run set for uncertainty, and whether a human review was recorded.",
+  "type": "object",
+  "required": ["gate_slug", "verification_inputs", "observed", "reference", "runs", "human_review"],
+  "properties": {
+    "gate_slug": {
+      "type": "string",
+      "enum": [
+        "bimanual-handeye-servo", "dexterous-finger-force", "whole-body-balance",
+        "autonomous-plan-correctness", "instrument-grasp-handover",
+        "vascular-no-fly-hand", "bimanual-suturing-anastomosis",
+        "perception-scene-understanding", "shared-or-human-collision",
+        "fault-estop-graceful-degradation"
+      ]
+    },
+    "iteration_id": {"type": "integer", "minimum": 0},
+    "verification_inputs": {
+      "type": "object",
+      "description": "structural and policy facts the gate verification predicates consume",
+      "additionalProperties": true
+    },
+    "observed": {"type": "object", "additionalProperties": {"type": "number"}, "description": "observed metric values for this candidate"},
+    "reference": {"type": "object", "additionalProperties": {"type": "number"}, "description": "independent reference metric values (the validation truth)"},
+    "runs": {"type": "array", "items": {"type": "object", "additionalProperties": {"type": "number"}}, "minItems": 1, "description": "per-run metric dicts for uncertainty quantification"},
+    "human_review": {"type": "boolean", "description": "true when a recorded human reviewer has signed off"}
+  }
+}

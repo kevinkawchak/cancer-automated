@@ -1,0 +1,71 @@
+// H2-Surgical 1.0 per-tick humanoid sensor record (proto3).
+// Derived from h2_sensor_record.schema.json. Field numbers are stable.
+
+syntax = "proto3";
+
+package vvuq02.h2;
+
+enum GraspState {
+  GRASP_OPEN = 0;
+  GRASP_PINCH = 1;
+  GRASP_TRIPOD = 2;
+  GRASP_POWER = 3;
+  GRASP_NEEDLE_DRIVER = 4;
+}
+
+enum BalanceState {
+  BALANCE_STABLE = 0;
+  BALANCE_WARNING = 1;
+  BALANCE_RECOVERING = 2;
+  BALANCE_FALL = 3;
+}
+
+enum EstopState {
+  ESTOP_IDLE = 0;
+  ESTOP_ARMED = 1;
+  ESTOP_TRIGGERED = 2;
+  ESTOP_PARKED = 3;
+}
+
+enum CollisionState {
+  COLLISION_CLEAR = 0;
+  COLLISION_PROXIMITY = 1;
+  COLLISION_CONTACT = 2;
+  COLLISION_UNSAFE = 3;
+}
+
+message H2SensorRecord {
+  uint32 tick = 1;
+  string hand_id = 2;
+  uint32 phase = 3;
+  repeated double q_arm = 4;             // 7
+  repeated double qd_arm = 5;            // 7
+  repeated double tau_arm = 6;           // 7
+  repeated double finger_q = 7;          // 20
+  repeated double finger_force = 8;      // 5
+  repeated double ee_pos = 9;            // 3
+  repeated double ee_quat = 10;          // 4
+  repeated double ee_force = 11;         // 3
+  repeated double fingertip_pos = 12;    // 15
+  GraspState grasp_state = 13;
+  double vessel_proximity = 14;
+  repeated double nir_icg = 15;          // 4
+  double duct_manometry = 16;
+  double ring_tension = 17;
+  repeated double bile_spectrophotometry = 18;  // 4
+  repeated double us_b_mode = 19;        // 8
+  repeated double com = 20;              // 3
+  repeated double zmp = 21;              // 2
+  double support_polygon_margin = 22;
+  repeated double ankle_torque = 23;     // 2
+  repeated double hip_torque = 24;       // 2
+  BalanceState balance_state = 25;
+  double tip_force_scalar = 26;
+  double bimanual_cumulative_force = 27;
+  EstopState estop_state = 28;
+  CollisionState collision_state = 29;
+  double temperature = 30;
+  double power = 31;
+  uint64 heartbeat_seq = 32;
+  uint32 heartbeat_watchdog = 33;
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vvuq_decision.schema.json",
+  "title": "VVUQ gate decision",
+  "description": "The verdict of one VVUQ gate for one candidate case: ACCEPT, BLOCK, or ESCALATE, with the reasons and the per-dimension scores.",
+  "type": "object",
+  "required": ["gate_slug", "accepted", "blocked", "escalate", "reasons", "scores"],
+  "properties": {
+    "gate_slug": {"type": "string"},
+    "iteration_id": {"type": "integer", "minimum": 0},
+    "accepted": {"type": "boolean"},
+    "blocked": {"type": "boolean"},
+    "escalate": {"type": "boolean"},
+    "decision": {"type": "string", "enum": ["ACCEPT", "BLOCK", "ESCALATE"]},
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "scores": {
+      "type": "object",
+      "properties": {
+        "verification_fraction": {"type": "number"},
+        "validation_agreement": {"type": "number"},
+        "max_relative_error": {"type": "number"},
+        "max_cv": {"type": "number"},
+        "n_runs": {"type": "integer"}
+      },
+      "additionalProperties": true
+    },
+    "standards": {"type": "array", "items": {"type": "string"}, "description": "governing standard designations for this gate"}
+  }
+}
