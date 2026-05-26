@@ -5,6 +5,52 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-26
+
+### Added
+- `papers/VVUQ-02/imagegen/`: the 15 rendered figures, authored by Claude Code Opus
+  4.7 (1M context) Max running autonomously in a managed cloud container across 15
+  commits in a single pull request, one figure per commit pushed to GitHub in real
+  time, then a 16th commit for the error-fix and consistency pass and a 17th commit
+  for the repository updates. Each figure is one self-contained `NN-name.py`
+  matplotlib script (the generated code) and one `NN-name.png` (the execution
+  output), portrait `figsize=(8.5, 11)` at 300 dpi (2550 by 3300 pixels), white
+  background only with no dark mode, rendering its v0.9.0 specification with no
+  manual positioning.
+- 15 distinct chart families rendered from the codegen (v0.7.0) and execution
+  (v0.8.0) records: platform pipeline flow, gate decision funnel, ten-gate threshold
+  forest, gate to standard binding matrix, clinical and regulatory standards wheel,
+  172-test coverage treemap, validation parity scatter, sweep composite strip plot,
+  composite weighting waterfall, four-entrant comparison box plot, sensor stream
+  safety bands, eight-phase Whipple swimmer, assurance cost assessment, value
+  proposition matrix, and platform mind map. Six satisfy the required-data brief.
+- A comprehensive `imagegen/README.md` with DOI and status badges, the conventions,
+  the 15-figure index, the data-availability mapping, repository-structure and
+  spec-to-script-to-PNG ASCII diagrams, the reproduction note, and the verification
+  pass.
+- `prompt-imagegen.md` (the generating prompt, verbatim) and `output-imagegen.md`
+  (the narrative markdown output of this run).
+
+### Changed
+- Top-level `README.md`: release badge to v1.0.0, a v1.0.0 summary above the prior
+  summary, a VVUQ-02 Imagegen section with an ASCII flow diagram and a table of
+  contents entry, the repository structure tree (the imagegen directory expanded to
+  the rendered figure set), and the cross-references in the VVUQ-02 image
+  instructions section.
+- `releases.md` (v1.0.0 release notes), this `CHANGELOG.md` (v1.0.0), and
+  `CITATION.cff` (v1.0.0).
+
+### Notes
+- Every script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, and
+  passes `ruff check` and `ruff format --check` repository-wide, so the
+  `lint-and-format` CI job stays green across Python 3.10, 3.11, and 3.12; the
+  `test` and `validate-scripts` jobs do not import `imagegen/`. Re-rendering is
+  deterministic (byte-identical PNGs; any jitter is seeded). The arithmetic
+  reconciles (treemap 172, weights 1.00, swimmer 60 s, appearances 256, sweep
+  min/max/mean). No images, Mermaid diagrams, or colored images are added to any
+  Markdown. The v0.9.0 image instruction files are not modified, and only
+  `kevinkawchak/cancer-automated` was edited.
+
 ## [0.9.0] - 2026-05-26
 
 ### Added
