@@ -4,6 +4,36 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-02 Imagegen: 15 Rendered Publication Figures (v1.0.0)
+v1.0.0 - VVUQ-02 Imagegen: 15 Rendered Publication Figures
+
+## Summary
+
+- Renders the v0.9.0 image instructions into papers/VVUQ-02/imagegen: 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), authored by Claude Code Opus 4.7 (1M context) Max running autonomously in a managed ephemeral cloud container across 15 commits in a single pull request, one figure per commit pushed to GitHub in real time, then a 16th commit for the error-fix and consistency pass and a 17th commit for the repository updates.
+- Completes the image generation leg of the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: the rendered gate funnel, threshold forest, standards binding matrix, test treemap, decision parity, and gated composite all make the assurance layer the visible center of the platform, which is the image generation analog of the VVUQ gate and a basis for a future technical paper.
+- Each figure follows its v0.9.0 specification with no manual positioning: portrait figsize 8.5 by 11 inches saved at 300 dpi (2550 by 3300 pixels), white background only with no dark mode, a deterministic GridSpec layout, dark legible text, the shared professional palette, the section symbol § where a section or clause is referenced, and single dashes only in visible text. A shared auto-fit frame keeps the header, subtitle, and footer from clipping.
+- Grounds every number in the cited source files of the codegen (v0.7.0) and execution (v0.8.0) records: the 10 gate thresholds and catastrophe hard predicates, the 172 tests across 15 modules, the 32-iteration sweep composite scores, the four-entrant tournament dispersion and leaderboard, the 1000-row sensor channel statistics, the six composite weights, and the 60-second 8-phase timeline.
+- Renders 15 distinct chart families with no family reused and no basic bar, pie, or line chart: platform pipeline flow, gate decision funnel, ten-gate threshold forest, gate to standard binding matrix, clinical and regulatory standards wheel, 172-test coverage treemap, validation parity scatter, sweep composite strip plot, composite weighting waterfall, four-entrant comparison box plot, sensor stream safety bands, eight-phase Whipple swimmer, assurance cost assessment, value proposition matrix, and platform mind map. Six satisfy the required-data brief (R1 to R6).
+- Keeps the pull request lint-safe and reproducible: every script is pure matplotlib plus numpy, sets matplotlib.use("Agg"), hardcodes its grounded values, and passes ruff check and ruff format --check under the repository ruff.toml, so the lint-and-format CI job stays green across Python 3.10, 3.11, and 3.12; the test and validate-scripts jobs do not import imagegen. Re-rendering is deterministic (byte-identical PNGs; any jitter is seeded with 20260525).
+- Verifies the arithmetic invariants before release: the treemap tile areas sum to 172 tests across 15 modules and to subsystem totals 76, 74, and 22; the composite weights sum to 1.00; the swimmer phase durations sum to 60 seconds; the four-entrant appearance counts sum to 256 over 128 verdicts; and the 32 strip-plot composite values reproduce min 93.417, max 93.715, and mean 93.562 exactly (asserted in the script).
+- Updates the main README (release badge to v1.0.0, a v1.0.0 summary above the prior summary, a VVUQ-02 Imagegen section with an ASCII flow diagram and a table of contents entry, and the repository structure tree with the imagegen directory expanded), this releases file, the CHANGELOG (v1.0.0), and CITATION.cff. No images, Mermaid diagrams, or colored images are added to any Markdown.
+
+## Features
+
+- papers/VVUQ-02/imagegen/README.md: the comprehensive README with DOI and status badges, the project brief and thesis link, the rendering process for Claude Code Opus 4.7 (1M) Max, the directory and file naming conventions, the shared page frame and palette and typography and symbol and dash rules, the 15-figure index, the data-availability mapping, the grounding sources, repository-structure and spec-to-script-to-PNG ASCII diagrams, the reproduction and dependency note, the file-generation outcomes as a basis for a future technical paper, and the verification pass.
+- papers/VVUQ-02/imagegen/01-platform-pipeline-flow through 15-platform-mindmap: 15 numbered subdirectories, each with a self-contained NN-name.py matplotlib script and the NN-name.png portrait 300 dpi figure it renders on a white background.
+- papers/VVUQ-02/imagegen/prompt-imagegen.md and output-imagegen.md: the generating prompt verbatim and the narrative markdown output of the imagegen step.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release renders the VVUQ-02 image set and edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials, and the v0.9.0 image instruction files are not modified. Rendering requires matplotlib installed in the environment; the scripts remain pure matplotlib plus numpy so they reproduce without any heavy or networked backend. The assurance cost assessment figure uses an illustrative relative index rather than measured dollars, because the repository records no cost figures, with the direction and the documented advantages grounded verbatim in the execution README this-run-versus-conventional section and the axis labeled illustrative so the figure does not overclaim. The sensor-stream figure draws a seeded stationary trace for visual continuity; the band, mean, min, and max it shows equal the cited channel statistics. The H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform and every number is a simulation result; the four-entrant comparison is simulation against simulation. The figures are planning and documentation artifacts: the 10 VVUQ gates plus a recorded human reviewer must clear any deliverable before clinical use, and a real deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization.
+
+---
+
 VVUQ-02 Image Instructions for 15 Publication Figures (v0.9.0)
 v0.9.0 - VVUQ-02 Image Instructions for 15 Publication Figures
 

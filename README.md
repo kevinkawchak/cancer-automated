@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.9.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -14,7 +14,9 @@ This repository packages the established methods for generating instructions, ge
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
 
-**5/26: v0.9.0 (VVUQ-02 Image Instructions)** Adds [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README that specify, ahead of any rendering, how Claude Code Opus 4.7 (1M) Max builds 15 portrait, full-size, 300 dpi figures from the codegen (v0.7.0) and execution (v0.8.0) records. Instructions only; the matplotlib scripts and PNGs are a future imagegen pull request.
+**5/26: v1.0.0 (VVUQ-02 Imagegen)** Renders the v0.9.0 image instructions into [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README. Every figure is grounded in the codegen (v0.7.0) and execution (v0.8.0) records, renders on a white background with no dark mode, and is ruff clean.
+
+**5/26: v0.9.0 (VVUQ-02 Image Instructions)** Adds [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README that specify, ahead of any rendering, how Claude Code Opus 4.7 (1M) Max builds 15 portrait, full-size, 300 dpi figures from the codegen (v0.7.0) and execution (v0.8.0) records. Instructions only; the matplotlib scripts and PNGs are rendered in v1.0.0.
 
 **5/26: v0.8.0 (VVUQ-02 Execution)** Executes the entire [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen) tree and records the full run under [papers/VVUQ-02/execution](papers/VVUQ-02/execution) across 8 commits in a single pull request. Every entry point ran to exit 0, the suite passed (172 passed, 0 skipped).
 
@@ -52,6 +54,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Humanoid VVUQ Codegen](#vvuq-02-humanoid-vvuq-codegen)
 - [VVUQ-02 Execution](#vvuq-02-execution)
 - [VVUQ-02 Image Instructions](#vvuq-02-image-instructions)
+- [VVUQ-02 Imagegen](#vvuq-02-imagegen)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -336,7 +339,11 @@ cancer-automated/
         │   ├── 13-assurance-cost-assessment/     # Financial: autonomous vs conventional
         │   ├── 14-value-proposition-matrix/      # Value matrix: faster, cheaper, patient
         │   └── 15-platform-mindmap/              # Mind map: the whole VVUQ-02 platform
-        ├── imagegen/               # placeholder (future v-next: 15 scripts + PNGs)
+        ├── imagegen/               # ★ v1.0.0 rendered figures (15 scripts + 15 PNGs + README)
+        │   ├── README.md           # Conventions, palette, 15-figure index, outcomes, badges
+        │   ├── prompt-imagegen.md  # the generating prompt, verbatim
+        │   ├── output-imagegen.md  # the narrative output of the imagegen step
+        │   └── NN-name/            # NN-name.py (matplotlib + numpy) and NN-name.png (300 dpi)
         └── draft-paper/ full-paper/ final-paper/  # placeholders (future manuscript)
 ```
 
@@ -484,7 +491,7 @@ The decision-bearing result is the operationalized thesis: control behaviors are
 
 ## VVUQ-02 Image Instructions
 
-The image generation leg of the thesis is specified under [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README, each a self-contained specification for one publication ready, portrait, full-size, 300 dpi figure grounded in the VVUQ-02 code generation record (v0.7.0) and code execution record (v0.8.0). The set is instructions only; the matplotlib scripts and the PNG files are produced at a future date under `papers/VVUQ-02/imagegen/`, one numbered subdirectory per instruction. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the future build follows that specification with no manual positioning.
+The image generation leg of the thesis is specified under [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README, each a self-contained specification for one publication ready, portrait, full-size, 300 dpi figure grounded in the VVUQ-02 code generation record (v0.7.0) and code execution record (v0.8.0). As of v1.0.0 the figures are built under [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen), one numbered subdirectory per instruction (see [VVUQ-02 Imagegen](#vvuq-02-imagegen) below). Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the build follows that specification with no manual positioning.
 
 ```
   image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
@@ -495,7 +502,7 @@ The image generation leg of the thesis is specified under [papers/VVUQ-02/image-
   |  page frame, paths)  |        | hardcoded grounded   |      | full size, aligned|
   |  v0.9.0 instructions |        | values, ruff clean   |      | no positioning    |
   +----------------------+        +----------------------+      +-------------------+
-        assurance specification  ----------------->  rendered figure (future)
+        assurance specification  ----------------->  rendered figure (v1.0.0)
 ```
 
 | No. | Instruction | Chart family | Basis |
@@ -517,6 +524,40 @@ The image generation leg of the thesis is specified under [papers/VVUQ-02/image-
 | 15 | `15-platform-mindmap` | Mind map | both |
 
 The 15 chart families are all distinct, chosen from a 20-family menu for best data availability and relevance, and avoid basic bar, pie, and line charts. Six figures satisfy a required-data brief: 172 tests (06), the external-standards anchoring (04), the 10 gates and thresholds (03), the clinical and regulatory corpus (05), the featured 1000-row sensor stream (11), and the four-entrant comparison (10). The set shares one professional palette and portrait page frame, uses the section symbol `§` where required, uses single dashes only, and renders on a white background with no dark mode. See the [image-instruct README](papers/VVUQ-02/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
+
+## VVUQ-02 Imagegen
+
+As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README and the two lineage files. Each script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, hardcodes its grounded values, and renders a fixed `figsize=(8.5, 11)` frame at 300 dpi (2550 by 3300 pixels) on a white background. A shared auto-fit frame keeps the header, subtitle, and footer from clipping, so no manual positioning is needed.
+
+```
+  image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
+  +----------------------+        +----------------------+      +-------------------+
+  | README.md            |  read  | NN-name.py           |  run | NN-name.png       |
+  | full figure spec     | =====> | self-contained       | ===> | portrait, 300 dpi |
+  | v0.9.0 instructions  |  spec  | matplotlib + numpy   |      | white background  |
+  +----------------------+        +----------------------+      +-------------------+
+        assurance specification  ----------------->  rendered figure (v1.0.0)
+```
+
+| No. | Figure | Chart family | Required data |
+|-----|--------|--------------|---------------|
+| 01 | `01-platform-pipeline-flow` | Workflow diagram | - |
+| 02 | `02-vvuq-gate-decision-funnel` | Funnel | - |
+| 03 | `03-ten-gate-threshold-forest` | Forest plot | R3 (10 gates and thresholds) |
+| 04 | `04-gate-standard-binding-matrix` | Heatmap matrix | R2 (external standards) |
+| 05 | `05-clinical-regulatory-standards-wheel` | Wheel | R4 (clinical and regulatory) |
+| 06 | `06-test-coverage-treemap` | Treemap | R1 (172 tests) |
+| 07 | `07-validation-parity-scatter` | Parity plot | - |
+| 08 | `08-sweep-composite-stripplot` | Strip plot | - |
+| 09 | `09-composite-weighting-waterfall` | Waterfall | - |
+| 10 | `10-four-entrant-comparison-violin` | Box plot | R6 (4-entrant comparison) |
+| 11 | `11-sensor-stream-safety-bands` | Line with bands | R5 (1000-row sensor) |
+| 12 | `12-eight-phase-whipple-swimmer` | Swimmer plot | - |
+| 13 | `13-assurance-cost-assessment` | Financial assessment | - |
+| 14 | `14-value-proposition-matrix` | Value matrix | - |
+| 15 | `15-platform-mindmap` | Mind map | - |
+
+The arithmetic reconciles to the source files: the treemap tile areas sum to 172 tests across 15 modules, the composite weights sum to 1.00, the swimmer durations sum to 60 s, the four-entrant appearances sum to 256 over 128 verdicts, and the sweep strip plot reproduces min 93.417, max 93.715, and mean 93.562. The scripts depend only on `matplotlib` and `numpy` and keep `ruff check` and `ruff format --check` clean across Python 3.10, 3.11, and 3.12; the core CI does not import `imagegen/`. See the [imagegen README](papers/VVUQ-02/imagegen) for the rendered gallery, the generated-code versus execution split, and reproduction with matplotlib.
 
 ## Continuous Integration
 
