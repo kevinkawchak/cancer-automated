@@ -1,0 +1,39 @@
+# Human actors in the shared operating room and their keep-out volumes.
+# Gated by VVUQ 09 (shared-or-human-collision), grounded in ISO/TS 15066
+# (collaborative robot biomechanical limits) and ISO 10218. Positions are in the
+# world frame in metres (x forward from the robot base, y left, z up).
+#
+# The clearance is the minimum distance from any humanoid link to any actor
+# keep-out sphere surface; it must never drop below the hard floor.
+
+clearance_bands_mm:
+  clear: 300.0          # distance > 300 mm: full speed
+  proximity: 150.0      # 150 to 300 mm: velocity scaled to 50 percent
+  contact: 50.0         # 50 to 150 mm: velocity scaled to 10 percent
+  hard_floor: 50.0      # below 50 mm: e-stop (intrusion)
+
+intrusion_reaction_latency_budget_ms: 3.0
+
+actors:
+  - id: scrub_nurse
+    role: scrub_nurse
+    position_m: {x: 0.55, y: 0.45, z: 0.95}
+    keep_out_radius_m: 0.30
+  - id: anesthesiologist
+    role: anesthesiologist
+    position_m: {x: -0.40, y: 0.60, z: 1.00}
+    keep_out_radius_m: 0.30
+  - id: assistant_surgeon
+    role: assistant_surgeon
+    position_m: {x: 0.50, y: -0.50, z: 0.95}
+    keep_out_radius_m: 0.30
+
+# Representative humanoid link positions sampled for clearance (world frame, m).
+humanoid_links:
+  - {name: left_hand, x: 0.30, y: 0.18, z: 0.95}
+  - {name: right_hand, x: 0.30, y: -0.18, z: 0.95}
+  - {name: left_elbow, x: 0.12, y: 0.22, z: 1.05}
+  - {name: right_elbow, x: 0.12, y: -0.22, z: 1.05}
+  - {name: head, x: 0.05, y: 0.0, z: 1.30}
+  - {name: torso, x: 0.0, y: 0.0, z: 1.10}
+...
