@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.8.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.9.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/26: v0.9.0 (VVUQ-02 Image Instructions)** Adds [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README that specify, ahead of any rendering, how Claude Code Opus 4.7 (1M) Max builds 15 portrait, full-size, 300 dpi figures from the codegen (v0.7.0) and execution (v0.8.0) records. Instructions only; the matplotlib scripts and PNGs are a future imagegen pull request.
 
 **5/26: v0.8.0 (VVUQ-02 Execution)** Executes the entire [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen) tree and records the full run under [papers/VVUQ-02/execution](papers/VVUQ-02/execution) across 8 commits in a single pull request. Every entry point ran to exit 0, the suite passed (172 passed, 0 skipped).
 
@@ -49,6 +51,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-01 Full Paper](#vvuq-01-full-paper)
 - [VVUQ-02 Humanoid VVUQ Codegen](#vvuq-02-humanoid-vvuq-codegen)
 - [VVUQ-02 Execution](#vvuq-02-execution)
+- [VVUQ-02 Image Instructions](#vvuq-02-image-instructions)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -314,8 +317,26 @@ cancer-automated/
         │   ├── 03-vvuq/            # the 10-gate ACCEPT/BLOCK/ESCALATE surface
         │   ├── 04-automation/      # 32-iter sweep, 1790-line tournament, Zenodo
         │   └── 05-humanoid-deployment/  # 60 s Whipple, 1000-row stream, safety
-        ├── image-instruct/         # placeholder (10 figure specs, future PR)
-        ├── imagegen/               # placeholder (future figure outputs)
+        ├── image-instruct/         # ★ v0.9.0 image instructions (15 specs + master README)
+        │   ├── README.md           # Conventions, palette, page frame, 15-spec index, badges
+        │   ├── prompt-image-instruct.md   # the generating prompt, verbatim
+        │   ├── output-image-instruct.md   # the narrative output of the image-instruct step
+        │   ├── 01-platform-pipeline-flow/        # Workflow: generation to assurance pipeline
+        │   ├── 02-vvuq-gate-decision-funnel/     # Funnel: 5 cases to 1 ACCEPT
+        │   ├── 03-ten-gate-threshold-forest/     # Forest: the 10 gates and thresholds
+        │   ├── 04-gate-standard-binding-matrix/  # Heatmap: gates to 15 standards
+        │   ├── 05-clinical-regulatory-standards-wheel/  # Wheel: inputs corpus, 6 domains
+        │   ├── 06-test-coverage-treemap/         # Treemap: 172 tests across 15 modules
+        │   ├── 07-validation-parity-scatter/     # Parity: observed vs reference
+        │   ├── 08-sweep-composite-stripplot/     # Strip: 32-iteration composite
+        │   ├── 09-composite-weighting-waterfall/ # Waterfall: 6 weights to 1.00, gated
+        │   ├── 10-four-entrant-comparison-violin/  # Box: 4 entrants, humanoid rank 2
+        │   ├── 11-sensor-stream-safety-bands/    # Line bands: 1000-row sensor stream
+        │   ├── 12-eight-phase-whipple-swimmer/   # Swimmer: 60 s 8-phase Whipple
+        │   ├── 13-assurance-cost-assessment/     # Financial: autonomous vs conventional
+        │   ├── 14-value-proposition-matrix/      # Value matrix: faster, cheaper, patient
+        │   └── 15-platform-mindmap/              # Mind map: the whole VVUQ-02 platform
+        ├── imagegen/               # placeholder (future v-next: 15 scripts + PNGs)
         └── draft-paper/ full-paper/ final-paper/  # placeholders (future manuscript)
 ```
 
@@ -441,7 +462,7 @@ The assurance layer is built against external standards already used in real lif
    * immediate-catastrophe gates: V == 1.0, tightest CV, plus a hard predicate
 ```
 
-Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 172 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The execution record is realized in v0.8.0 (below); the 10 figure specifications and the manuscript are reserved as placeholders for future pull requests.
+Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 172 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The execution record is realized in v0.8.0 and the 15 image instructions in v0.9.0 (both below); the manuscript is reserved as a placeholder for a future pull request.
 
 ## VVUQ-02 Execution
 
@@ -460,6 +481,42 @@ The full run record of the codegen tree is under [papers/VVUQ-02/execution](pape
 ```
 
 The decision-bearing result is the operationalized thesis: control behaviors are generated and compiled in microseconds, while clearing one for ship requires a 1.0 verification fraction, an agreement bar up to 1.00, a relative-error bound as tight as 0.01, a coefficient-of-variation bound as tight as 0.05, a recorded human review, and a hard predicate on each catastrophe gate. The two substantial generated files are featured and processed: the 1790-line four-entrant `comparison.json` (128 round verdicts, 100 percent caveat coverage) and the 1000-row, 27-column positional sensor stream (every row and every arm-angle, finger-force, and end-effector payload distinct, no repetition). Each gate, behavior, and safety surface is traced to the published external standard that governs it, so the credibility argument is defensible rather than ad hoc, which is what lets an inexpensive autonomous run stand as evidence for a future physical AI oncology trial.
+
+## VVUQ-02 Image Instructions
+
+The image generation leg of the thesis is specified under [papers/VVUQ-02/image-instruct](papers/VVUQ-02/image-instruct): 15 comprehensive image instructions plus a master README, each a self-contained specification for one publication ready, portrait, full-size, 300 dpi figure grounded in the VVUQ-02 code generation record (v0.7.0) and code execution record (v0.8.0). The set is instructions only; the matplotlib scripts and the PNG files are produced at a future date under `papers/VVUQ-02/imagegen/`, one numbered subdirectory per instruction. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the future build follows that specification with no manual positioning.
+
+```
+  image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
+  +----------------------+        +----------------------+      +-------------------+
+  | README.md            |  -->   | NN-name.py           |  --> | NN-name.png       |
+  | full figure spec     |  spec  | self-contained       | run  | portrait, 300 dpi |
+  | (data, layout, color,| =====> | matplotlib + numpy,  | ===> | white background, |
+  |  page frame, paths)  |        | hardcoded grounded   |      | full size, aligned|
+  |  v0.9.0 instructions |        | values, ruff clean   |      | no positioning    |
+  +----------------------+        +----------------------+      +-------------------+
+        assurance specification  ----------------->  rendered figure (future)
+```
+
+| No. | Instruction | Chart family | Basis |
+|-----|-------------|--------------|-------|
+| 01 | `01-platform-pipeline-flow` | Workflow diagram | both |
+| 02 | `02-vvuq-gate-decision-funnel` | Funnel | both |
+| 03 | `03-ten-gate-threshold-forest` | Forest plot | both |
+| 04 | `04-gate-standard-binding-matrix` | Heatmap matrix | both |
+| 05 | `05-clinical-regulatory-standards-wheel` | Wheel | codegen |
+| 06 | `06-test-coverage-treemap` | Treemap | execution |
+| 07 | `07-validation-parity-scatter` | Parity plot | both |
+| 08 | `08-sweep-composite-stripplot` | Strip plot | execution |
+| 09 | `09-composite-weighting-waterfall` | Waterfall | both |
+| 10 | `10-four-entrant-comparison-violin` | Box plot | both |
+| 11 | `11-sensor-stream-safety-bands` | Line with bands | both |
+| 12 | `12-eight-phase-whipple-swimmer` | Swimmer plot | both |
+| 13 | `13-assurance-cost-assessment` | Financial assessment | both |
+| 14 | `14-value-proposition-matrix` | Value matrix | both |
+| 15 | `15-platform-mindmap` | Mind map | both |
+
+The 15 chart families are all distinct, chosen from a 20-family menu for best data availability and relevance, and avoid basic bar, pie, and line charts. Six figures satisfy a required-data brief: 172 tests (06), the external-standards anchoring (04), the 10 gates and thresholds (03), the clinical and regulatory corpus (05), the featured 1000-row sensor stream (11), and the four-entrant comparison (10). The set shares one professional palette and portrait page frame, uses the section symbol `§` where required, uses single dashes only, and renders on a white background with no dark mode. See the [image-instruct README](papers/VVUQ-02/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
 
 ## Continuous Integration
 
@@ -508,7 +565,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.8.0},
+  version = {0.9.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}

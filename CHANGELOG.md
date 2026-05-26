@@ -5,6 +5,56 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-05-26
+
+### Added
+- `papers/VVUQ-02/image-instruct/`: 15 comprehensive image instructions plus a
+  master README, authored by Claude Code Opus 4.7 (1M context) Max running
+  autonomously in a managed cloud container across 15 commits in a single pull
+  request, one figure specification per commit pushed to GitHub in real time. The
+  set specifies, ahead of any rendering, how a future agent builds 15 portrait,
+  full-size, 300 dpi figures grounded in the codegen (v0.7.0) and execution
+  (v0.8.0) records. Instructions only; no script and no image is rendered here.
+- 15 distinct chart families chosen from a 20-family menu for best data
+  availability and relevance (no family reused, and no basic bar, pie, or line
+  chart): workflow pipeline flow, gate decision funnel, ten-gate threshold forest,
+  gate to standard binding matrix, clinical and regulatory standards wheel,
+  172-test coverage treemap, validation parity scatter, sweep composite strip plot,
+  composite weighting waterfall, four-entrant comparison box plot, sensor stream
+  safety bands, eight-phase Whipple swimmer, assurance cost assessment, value
+  proposition matrix, and platform mind map.
+- Six figures satisfy the required-data brief: the 172 tests (treemap), the
+  external-standards anchoring (binding matrix), the 10 gates and thresholds
+  (forest), the clinical and regulatory corpus (wheel), the featured 1000-row H2
+  sensor stream (line with bands), and the four-entrant comparison featuring the
+  second-place mobile humanoid (box plot).
+- `prompt-image-instruct.md` (the generating prompt, verbatim) and
+  `output-image-instruct.md` (the narrative markdown output of this run).
+- A master `README.md` with DOI and status badges, the shared page frame, palette,
+  font, symbol, and dash conventions, the processing model for Claude Code Opus 4.7
+  (1M) Max, the data-availability mapping, repository-structure ASCII diagrams, the
+  file-generation outcomes as a basis for a future technical paper, and a
+  consistency and error-fix pass.
+
+### Changed
+- Top-level `README.md`: release badge to v0.9.0, a v0.9.0 summary above the prior
+  summary, a VVUQ-02 Image Instructions section with an ASCII flow diagram and a
+  table of contents entry, the repository structure tree (the image-instruct
+  directory expanded to the 15 specifications), the corrected forward references in
+  the VVUQ-02 codegen section, and the citation version.
+- `releases.md` (v0.9.0 release notes), this `CHANGELOG.md` (v0.9.0), and
+  `CITATION.cff` (v0.9.0).
+
+### Notes
+- The image-instruct pull request adds only Markdown, so it carries no Python or
+  YAML and cannot introduce a `ruff` or `yamllint` failure; the `lint-and-format`,
+  `validate-scripts`, and `test` CI jobs stay green across Python 3.10, 3.11, and
+  3.12. No images, Mermaid diagrams, or colored images are added. The matplotlib
+  scripts and 300 dpi PNG files are deferred to a future imagegen pull request. The
+  assurance cost assessment figure uses an illustrative relative index, not
+  measured dollars, with the direction grounded in the execution README. Only
+  `kevinkawchak/cancer-automated` was edited.
+
 ## [0.8.0] - 2026-05-26
 
 ### Added
