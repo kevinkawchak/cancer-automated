@@ -1,0 +1,41 @@
+=== sample_h2_sensor.csv structural analysis ===
+source: papers/VVUQ-02/codegen/data/sample_h2_sensor.csv
+file lines: 1002 (1 header + 1000 data rows)
+columns: 27
+
+=== column groups (robot positional data: hands, 5 fingers, arms, etc.) ===
+  arm-joint angle channels (q_arm_*) : 7 -> ['q_arm_1', 'q_arm_2', 'q_arm_3', 'q_arm_4', 'q_arm_5', 'q_arm_6', 'q_arm_7']
+  fingertip force channels (5 fingers): 5 -> ['finger_force_1', 'finger_force_2', 'finger_force_3', 'finger_force_4', 'finger_force_5']
+  end-effector position channels      : 3 -> ['ee_pos_x', 'ee_pos_y', 'ee_pos_z']
+  per-record state/context channels   : 12
+    ['tick', 'hand_id', 'phase', 'grasp_state', 'vessel_proximity', 'ring_tension', 'support_polygon_margin', 'balance_state', 'tip_force_scalar', 'bimanual_cumulative_force', 'estop_state', 'collision_state']
+
+=== coverage ===
+  hands: ['L', 'R']  ticks: 0..499 (500 ticks)
+  rows = ticks x hands = 500 x 2 = 1000
+  grasp states present: ['tripod']
+  balance/estop/collision states: ['stable'], ['armed'], ['clear']
+
+=== no repetitive data: every row is unique ===
+  distinct whole rows: 1000 of 1000
+  distinct (tick, hand_id) keys: 1000 of 1000
+  distinct arm-angle payloads: 1000 of 1000
+  distinct finger-force payloads: 1000 of 1000
+  distinct ee-position payloads: 1000 of 1000
+
+=== channel value ranges (physical plausibility) ===
+  q_arm_1                    min=    0.000 max=    0.010 mean=    0.005
+  q_arm_7                    min=    0.600 max=    0.610 mean=    0.605
+  finger_force_1             min=    0.401 max=    0.700 mean=    0.550
+  finger_force_5             min=    0.401 max=    0.700 mean=    0.549
+  tip_force_scalar           min=    2.183 max=    3.358 mean=    2.753
+  bimanual_cumulative_force  min=    4.366 max=    6.716 mean=    5.507
+  vessel_proximity           min=    6.018 max=    9.999 mean=    7.983
+  support_polygon_margin     min=   38.005 max=   42.992 mean=   40.458
+  ee_pos_x                   min=   15.000 max=   16.990 mean=   15.968
+  ee_pos_y                   min=  -29.998 max=  -28.000 mean=  -28.972
+  ee_pos_z                   min=  -42.000 max=  -40.001 mean=  -41.014
+
+=== schema conformance check (jsonschema) ===
+  schema title: H2-Surgical 1.0 per-tick humanoid sensor record
+  schema declares 33 properties; required: 33
