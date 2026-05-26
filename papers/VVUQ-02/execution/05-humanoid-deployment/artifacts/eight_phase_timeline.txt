@@ -1,0 +1,18 @@
+60-Second 8-Phase Whipple Timeline (single H2-Surgical humanoid, two hands)
+
+  s  0      6        16      24      32          42      48     54     60
+     |------|--------|-------|-------|-----------|-------|------|------|
+  P1 |Kocher|
+  P2        |venous  |
+            |control |
+  P3                 |uncin. |
+  P4                         |specimen|
+  P5                                  |PJ suture  |
+  P6                                              |HJ     |
+  P7                                                      |GJ    |
+  P8                                                             |close|
+
+  Both hands (L, R) are active every phase; the on-prem LLM emits phase-level
+  intents that the deterministic compiler turns into x/y/z tip plus per-finger
+  joint targets. Phases 5 to 7 use the needle_driver grasp for suturing.
+  Reused verbatim from the PDAC 8-arm baseline for direct comparability.

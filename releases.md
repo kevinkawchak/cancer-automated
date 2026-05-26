@@ -4,6 +4,42 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-02 Execution of the Humanoid VVUQ Codegen (v0.8.0)
+v0.8.0 - VVUQ-02 Execution of the Humanoid VVUQ Codegen
+
+## Summary
+
+- Adds papers/VVUQ-02/execution, the complete run record of the papers/VVUQ-02/codegen tree, produced by Claude Code Opus 4.7 (1M context) Max running autonomously in a managed cloud container across 8 commits in a single pull request, one large section per commit pushed to GitHub in real time so the agent working memory stays focused on one section at a time.
+- Advances the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: the control behaviors are generated and compiled deterministically in microseconds, while clearing one for ship requires a 1.0 verification fraction, a validation agreement bar up to 1.00, a relative-error bound as tight as 0.01, a coefficient-of-variation bound as tight as 0.05, a recorded human review, and a hard predicate on each of the three immediate-catastrophe gates. The 10-gate assurance suite carries 64 of the 172 unit tests, more than a third of the budget.
+- Emphasizes that the external standards add credibility to the study: every gate, behavior, and safety surface is traced to a published consensus standard already used in real life (ASME V&V 40-2018, NASA-STD-7009A, FDA CM&S 2023, IEC 80601-2-77, IEC 60601-1, ISO 13482, ISO/TS 15066, ISO 10218-1, ISO 9283, IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009), resolved at runtime from the wired standards corpus, so the argument is defensible to a regulator rather than ad hoc.
+- Establishes the foundation: CPython 3.11.15 on Linux, a byte-for-byte determinism check that reproduces the committed sensor CSV, the 4-entrant comparison, and the 32-iteration sweep index from seed 20260525, the 172-test suite passing with 0 skipped, and the CI lint-and-format trio (ruff check, ruff format check on 110 files, yamllint) clean.
+- Runs the 10-gate decision surface end to end over five cases: the nominal sweep where all 10 gates ACCEPT over their independent references (the only path that reports a composite), and four adversarial cases covering three distinct BLOCK mechanisms (a catastrophe-gate hard predicate, a verification fraction of 0.80, and a validation agreement collapse) plus one ESCALATE at coefficient of variation 0.163 that defaults to hand-back-to-human.
+- Features and processes the two substantial generated files: the 1790-line, four-entrant comparison.json (32 iterations times 4 rounds is 128 round verdicts, with a leaderboard and a verified 100 percent caveat coverage on all robot-involving rounds), and the 1000-row, 27-column positional sensor stream (7 arm-joint angles, 5 fingertip forces, 3 end-effector positions, and 12 state channels across 500 ticks for each of two hands, with every row and every positional payload distinct and no repetition).
+- Records the deployment reference: the 60-second 8-phase Whipple timeline and the three immediate-catastrophe safety surfaces (vascular no-fly hand, shared-OR human collision FSM, fault e-stop and graceful degradation), each producing the correct boundary behavior.
+- Includes prompt-execution.md (the generating prompt verbatim) and output-execution.md (the narrative markdown output of the run), plus an honest limitations section and a this-run-versus-conventional-server section for future executions on leading MacOS, Windows, and Linux platforms.
+- Updates the main README (release badge, a v0.8.0 summary above the prior summary, a VVUQ-02 Execution section with an ASCII flow diagram and a table of contents entry, the repository structure tree, the corrected codegen test count, and the citation version), this releases file, the CHANGELOG (v0.8.0), and CITATION.cff.
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators. The section symbol § is used where relevant. The paper template files in papers/VVUQ-02/templates/Template_04 were not processed.
+
+## Features
+
+- papers/VVUQ-02/execution/README.md: the index and technical summary with DOI and status badges, the 10-gate and execution-flow ASCII diagrams, an execution-results summary, a file-generation-outcomes table mapping all 19 artifacts to future paper sections, key quantitative results, the full process taken, limitations, the this-run-versus-conventional comparison, the execution repository tree, and the external-standards credibility basis.
+- papers/VVUQ-02/execution/01-foundation: environment-and-verification.md (host, dependency posture, determinism check), test-suite.md (172 tests across 15 modules), and lint-format-yaml.md (the CI lint-and-format checks).
+- papers/VVUQ-02/execution/02-pipeline: the intent to compile to act to score record across six behavior groups, with the verbatim pipeline_execution_log.txt artifact.
+- papers/VVUQ-02/execution/03-vvuq: the 10-gate decision surface with the gate_decision_surface.txt captures, the nominal vvuq_report.md, and vvuq_decisions.json carrying each gate's resolved external standards.
+- papers/VVUQ-02/execution/04-automation: the 32-iteration sweep index, the gated composite_scores.jsonl, the comparison_leaderboard.md, and comparison_analysis.txt processing the 1790-line tournament.
+- papers/VVUQ-02/execution/05-humanoid-deployment: the deployment_safety_log.txt for the three catastrophe gates, sensor_stream_analysis.txt processing the 1000-row stream, and the eight_phase_timeline.txt diagram.
+- papers/VVUQ-02/execution/prompt-execution.md and output-execution.md: the generating prompt verbatim and the narrative output of the execution step.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release adds the VVUQ-02 execution record and edits only kevinkawchak/cancer-automated; no other repository is touched. All code was run from a scratch working directory with the codegen tree on PYTHONPATH, so the committed codegen tree was left pristine and a determinism check confirms the generators reproduce their committed artifacts exactly. No Python or notebook files were added outside the already-clean codegen tree, so the CI lint-and-format surface stays green across Python 3.10, 3.11, and 3.12, alongside validate-scripts and test. The on-prem LLM backends, live Zenodo deposition, and any physics or robotics backend were not exercised live; the modules ran on their guarded deterministic offline paths, which is the correct CI behavior, and the committed sensor sample is the first 50 ms of the timeline by design while the full 60-second stream is the Zenodo L0. The H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform and every number is a simulation result; the 10 VVUQ gates plus a recorded human reviewer must clear any candidate before any non-simulated use, and deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization.
+
+---
+
 10 Unitree H2 Humanoid Surgical VVUQs (v0.7.0)
 v0.7.0 - 10 Mobile Pancreatic Cancer Surgical Unitree H2 Humanoid VVUQs
 

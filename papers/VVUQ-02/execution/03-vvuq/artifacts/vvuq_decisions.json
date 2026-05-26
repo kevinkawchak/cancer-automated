@@ -1,0 +1,186 @@
+{
+  "bimanual-handeye-servo": {
+    "gate_id": "01",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 80601-2-77:2019",
+      "ISO 9283:1998",
+      "ASME V&V 40-2018"
+    ]
+  },
+  "dexterous-finger-force": {
+    "gate_id": "02",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 80601-2-77:2019",
+      "ISO/TS 15066:2016"
+    ]
+  },
+  "whole-body-balance": {
+    "gate_id": "03",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "ISO 13482:2014",
+      "IEC 60601-1:2005+AMD2:2020"
+    ]
+  },
+  "autonomous-plan-correctness": {
+    "gate_id": "04",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "UL 4600 (2023)",
+      "IEEE Std 7009-2024",
+      "IEC 62304:2006+AMD1:2015"
+    ]
+  },
+  "instrument-grasp-handover": {
+    "gate_id": "05",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 80601-2-77:2019",
+      "ISO 9283:1998"
+    ]
+  },
+  "vascular-no-fly-hand": {
+    "gate_id": "06",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 80601-2-77:2019",
+      "ISO 14971:2019"
+    ]
+  },
+  "bimanual-suturing-anastomosis": {
+    "gate_id": "07",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 80601-2-77:2019",
+      "Fistula_Risk_Score"
+    ]
+  },
+  "perception-scene-understanding": {
+    "gate_id": "08",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "ASME V&V 40-2018",
+      "IEC 62304:2006+AMD1:2015"
+    ]
+  },
+  "shared-or-human-collision": {
+    "gate_id": "09",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "ISO/TS 15066:2016",
+      "ISO 10218-1:2011",
+      "ISO 13482:2014"
+    ]
+  },
+  "fault-estop-graceful-degradation": {
+    "gate_id": "10",
+    "decision": "ACCEPT",
+    "accepted": true,
+    "escalate": false,
+    "reasons": [],
+    "scores": {
+      "verification_fraction": 1.0,
+      "validation_agreement": 1.0,
+      "max_relative_error": 0.0,
+      "max_cv": 0.0,
+      "n_runs": 3
+    },
+    "standards": [
+      "IEC 60601-1:2005+AMD2:2020",
+      "ISO 13849-1:2023",
+      "IEEE Std 7009-2024"
+    ]
+  }
+}
