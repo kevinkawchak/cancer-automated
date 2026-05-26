@@ -5,6 +5,54 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-05-26
+
+### Added
+- `papers/VVUQ-02/codegen/`: the standalone generated codebase for 10
+  humanoid-specific VVUQ gates on an autonomous Unitree H2-Surgical 1.0
+  (hypothetical 2030 surgical variant) performing the 60-second 8-phase Whipple on
+  patient PAT-PDAC-0001 with its own two dexterous hands. Authored by Claude Code
+  Opus 4.7 (1M context) Max from `papers/VVUQ-02/instructions/output-instruct.md`
+  across 11 commits in a single pull request, one set of files per commit pushed
+  to GitHub in real time.
+- The assurance layer (`src/vvuq/`) is held to a higher standard than code
+  generation and is grounded in real-world standards: ASME V&V 40-2018 and
+  NASA-STD-7009A for model credibility, IEC 80601-2-77 and IEC 60601-1 for robotic
+  surgery, ISO 13482, ISO/TS 15066, ISO 10218-1, and ISO 9283 for service and
+  collaborative robot safety, IEC 62304, ISO 14971, and ISO 13849-1 for software
+  and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design.
+- Each of the 10 gates (handeye servo, finger force, balance, autonomous plan,
+  grasp and handover, vascular no-fly, suturing, perception, human collision,
+  fault and e-stop) verifies (pass fraction 1.0), validates against an independent
+  reference in `data/reference/`, and quantifies uncertainty across seeded runs,
+  deciding ACCEPT, BLOCK, or ESCALATE. The three immediate-catastrophe gates carry
+  the tightest bounds and an extra hard predicate.
+- `papers/VVUQ-02/inputs/standards/`: the real standards input corpus wired into
+  the gate registry, plus clinical baselines (the 2025 Dutch cohort, the Callery
+  Fistula Risk Score).
+- `config/vvuq_thresholds.yaml`, `config/standards_map.yaml`, JSON Schema plus
+  Protobuf plus Avro schemas, a deterministic 32-iteration Latin hypercube sweep
+  (seed 20260525) where all 32 iterations clear all 10 gates, a 6-component
+  composite reported only when all gates ACCEPT, a 4-entrant comparison tournament,
+  and the Zenodo L0 pointer discipline.
+- README placeholders for the future-use directories (`image-instruct`,
+  `imagegen`, `execution`, `draft-paper`, `full-paper`, `final-paper`), plus
+  `prompt-codegen.md` and `output-codegen.md` recording the generation lineage.
+
+### Changed
+- Updated the main README (release badge v0.7.0, a v0.7.0 summary above the prior
+  summary, a VVUQ-02 section with an ASCII gate diagram and table of contents
+  entry, the repository structure, and the citation version), this CHANGELOG, the
+  releases file, and `CITATION.cff` (v0.7.0).
+
+### Notes
+- The H2-Surgical 1.0 is a clearly labeled hypothetical 2030 surgical variant;
+  every value is simulation-only and paper-only, and comparisons are
+  simulation-against-simulation. The codegen tree keeps `ruff check`,
+  `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12;
+  its 169 tests include a 64-item 10-gate decision surface. Only
+  `kevinkawchak/cancer-automated` was edited.
+
 ## [0.6.0] - 2026-05-25
 
 ### Added
