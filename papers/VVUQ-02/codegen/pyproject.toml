@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vvuq-02-h2-surgical"
+version = "0.1.0"
+description = "VVUQ-02: 10 humanoid-specific VVUQ gates for an autonomous Unitree H2-Surgical 1.0 Whipple"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kevin Kawchak", email = "kawchak@chemicalqdevice.com" }]
+keywords = ["vvuq", "humanoid", "robotic-surgery", "pdac", "whipple", "assurance", "asme-vv40"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "numpy>=1.26",
+    "click>=8.1",
+    "pyyaml>=6.0",
+    "jsonschema>=4.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.7.0",
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "yamllint>=1.35",
+]
+llm-local = [
+    "anthropic>=0.30",
+    "ollama>=0.3",
+    "openai>=1.40",
+]
+zenodo = [
+    "requests>=2.31",
+]
+viz = [
+    "matplotlib>=3.9",
+    "pandas>=2.2",
+    "pyarrow>=17.0",
+]
+
+[project.scripts]
+h2-iterate = "src.simulation.iterate:main"
+h2-metrics = "src.metrics.compute:main"
+h2-vvuq = "src.vvuq.gate_registry:main"
+h2-compare = "src.llm.compare_agent:main"
+h2-zenodo-patch = "src.zenodo.patch_pointers:main"
+
+[tool.setuptools]
+packages = [
+    "src",
+    "src.kinematics",
+    "src.sensors",
+    "src.perception",
+    "src.autonomy",
+    "src.hands",
+    "src.balance",
+    "src.safety",
+    "src.suturing",
+    "src.vvuq",
+    "src.simulation",
+    "src.metrics",
+    "src.llm",
+    "src.zenodo",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["data", "outputs", "results", "releases", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["F401", "F811", "E402"]
+"src/autonomy/*" = ["F401"]
+"src/llm/*" = ["F401"]
+"src/perception/*" = ["F401"]
+"src/simulation/*" = ["F401"]
+"src/zenodo/*" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
