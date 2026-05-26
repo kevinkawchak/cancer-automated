@@ -25,6 +25,12 @@ standards:
     title: Basic Safety and Essential Performance of Robotically Assisted Surgical Equipment
     used_for: positioning accuracy, force limiting, hazardous situation e-stop
     summary_file: iec_80601_2_77_2019.md
+  - key: IEC_60601_1_2005_AMD2_2020
+    designation: IEC 60601-1:2005+AMD2:2020
+    body: IEC
+    title: Medical Electrical Equipment, General Requirements for Basic Safety and Essential Performance
+    used_for: single-fault safe state for the balance and fault paths
+    summary_file: null
   - key: ISO_TS_15066_2016
     designation: ISO/TS 15066:2016
     body: ISO
@@ -37,6 +43,18 @@ standards:
     title: Robots and Robotic Devices, Safety Requirements for Personal Care Robots
     used_for: stability and fall prevention for a standing humanoid
     summary_file: iso_13482_2014.md
+  - key: ISO_10218_1_2011
+    designation: ISO 10218-1:2011
+    body: ISO
+    title: Robots and Robotic Devices, Safety Requirements for Industrial Robots, Part 1
+    used_for: speed and separation monitoring in the shared operating room
+    summary_file: null
+  - key: ISO_9283_1998
+    designation: ISO 9283:1998
+    body: ISO
+    title: Manipulating Industrial Robots, Performance Criteria and Related Test Methods
+    used_for: pose accuracy and repeatability for fingertip placement and handover
+    summary_file: null
   - key: IEC_62304_2006_AMD1_2015
     designation: IEC 62304:2006+AMD1:2015
     body: IEC

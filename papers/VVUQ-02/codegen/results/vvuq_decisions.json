@@ -13,9 +13,9 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_80601_2_77_2019",
-      "ISO_9283_1998",
-      "ASME_V_and_V_40_2018"
+      "IEC 80601-2-77:2019",
+      "ISO 9283:1998",
+      "ASME V&V 40-2018"
     ]
   },
   "dexterous-finger-force": {
@@ -32,8 +32,8 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_80601_2_77_2019",
-      "ISO_TS_15066_2016"
+      "IEC 80601-2-77:2019",
+      "ISO/TS 15066:2016"
     ]
   },
   "whole-body-balance": {
@@ -50,8 +50,8 @@
       "n_runs": 3
     },
     "standards": [
-      "ISO_13482_2014",
-      "IEC_60601_1_2005_AMD2_2020"
+      "ISO 13482:2014",
+      "IEC 60601-1:2005+AMD2:2020"
     ]
   },
   "autonomous-plan-correctness": {
@@ -68,9 +68,9 @@
       "n_runs": 3
     },
     "standards": [
-      "UL_4600_2023",
-      "IEEE_7009_2024",
-      "IEC_62304_2006_AMD1_2015"
+      "UL 4600 (2023)",
+      "IEEE Std 7009-2024",
+      "IEC 62304:2006+AMD1:2015"
     ]
   },
   "instrument-grasp-handover": {
@@ -87,8 +87,8 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_80601_2_77_2019",
-      "ISO_9283_1998"
+      "IEC 80601-2-77:2019",
+      "ISO 9283:1998"
     ]
   },
   "vascular-no-fly-hand": {
@@ -105,8 +105,8 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_80601_2_77_2019",
-      "ISO_14971_2019"
+      "IEC 80601-2-77:2019",
+      "ISO 14971:2019"
     ]
   },
   "bimanual-suturing-anastomosis": {
@@ -123,7 +123,7 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_80601_2_77_2019",
+      "IEC 80601-2-77:2019",
       "Fistula_Risk_Score"
     ]
   },
@@ -141,8 +141,8 @@
       "n_runs": 3
     },
     "standards": [
-      "ASME_V_and_V_40_2018",
-      "IEC_62304_2006_AMD1_2015"
+      "ASME V&V 40-2018",
+      "IEC 62304:2006+AMD1:2015"
     ]
   },
   "shared-or-human-collision": {
@@ -159,9 +159,9 @@
       "n_runs": 3
     },
     "standards": [
-      "ISO_TS_15066_2016",
-      "ISO_10218_1_2011",
-      "ISO_13482_2014"
+      "ISO/TS 15066:2016",
+      "ISO 10218-1:2011",
+      "ISO 13482:2014"
     ]
   },
   "fault-estop-graceful-degradation": {
@@ -178,9 +178,9 @@
       "n_runs": 3
     },
     "standards": [
-      "IEC_60601_1_2005_AMD2_2020",
-      "ISO_13849_1_2023",
-      "IEEE_7009_2024"
+      "IEC 60601-1:2005+AMD2:2020",
+      "ISO 13849-1:2023",
+      "IEEE Std 7009-2024"
     ]
   }
 }

@@ -26,6 +26,7 @@ from src.vvuq.vvuq_gate import GateDecision, evaluate
 CODEGEN_ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG_DIR = CODEGEN_ROOT / "config"
 REFERENCE_DIR = CODEGEN_ROOT / "data" / "reference"
+STANDARDS_MANIFEST = CODEGEN_ROOT.parent / "inputs" / "standards" / "manifest.yaml"
 
 GATE_SLUGS = [
     "bimanual-handeye-servo",
@@ -274,6 +275,34 @@ def load_reference(slug: str, reference_dir: Path | None = None) -> dict:
         return {}
 
 
+def load_standards_corpus(path: Path | None = None) -> dict[str, str]:
+    """Load the wired standards corpus manifest (key to designation).
+
+    Reads papers/VVUQ-02/inputs/standards/manifest.yaml so each gate's standards
+    resolve to a published designation. Returns an empty mapping if PyYAML or the
+    manifest are absent, keeping the harness standalone.
+    """
+    path = path or STANDARDS_MANIFEST
+    try:
+        import yaml
+
+        with path.open("r", encoding="utf-8") as handle:
+            raw = yaml.safe_load(handle) or {}
+    except (ImportError, OSError):
+        return {}
+    designations: dict[str, str] = {}
+    for entry in raw.get("standards", []):
+        if "key" in entry and "designation" in entry:
+            designations[entry["key"]] = entry["designation"]
+    return designations
+
+
+def gate_standards(slug: str, corpus: dict[str, str] | None = None) -> list[str]:
+    """Resolve a gate's governing standards to designations via the wired corpus."""
+    corpus = corpus if corpus is not None else load_standards_corpus()
+    return [corpus.get(key, key) for key in GATES[slug].standards]
+
+
 def run_gate(slug: str, case: dict, thresholds: dict[str, dict] | None = None) -> GateDecision:
     """Run one gate over one candidate case and return its decision."""
     if slug not in GATES:
@@ -338,6 +367,7 @@ def decisions_to_report(decisions: dict[str, GateDecision]) -> str:
 def main() -> None:
     """CLI: run every gate over nominal reference cases and write the report."""
     thresholds = load_thresholds()
+    corpus = load_standards_corpus()
     cases = {slug: nominal_accept_case(slug) for slug in GATE_SLUGS}
     decisions = run_all(cases, thresholds)
     out_dir = CODEGEN_ROOT / "results"
@@ -350,7 +380,7 @@ def main() -> None:
             "escalate": d.escalate,
             "reasons": d.reasons,
             "scores": d.scores,
-            "standards": GATES[slug].standards,
+            "standards": gate_standards(slug, corpus),
         }
         for slug, d in decisions.items()
     }
