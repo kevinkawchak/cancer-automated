@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "metrics.schema.json",
+  "title": "Composite score breakdown with VVUQ gating overlay",
+  "description": "Per-iteration 6-component composite score plus the 10-gate roll-up. The composite is reported only when all 10 gates ACCEPT; otherwise the gate roll-up shows the BLOCK or ESCALATE reason and the composite is withheld.",
+  "type": "object",
+  "required": ["iteration_id", "seed", "components", "composite_score", "gates_all_accepted", "composite_reported"],
+  "properties": {
+    "iteration_id": {"type": "integer", "minimum": 0},
+    "seed": {"type": "integer"},
+    "components": {
+      "type": "object",
+      "required": ["quality", "time", "cost", "safety", "patient_experience", "anastomosis_quality"],
+      "properties": {
+        "quality": {"type": "number"},
+        "time": {"type": "number"},
+        "cost": {"type": "number"},
+        "safety": {"type": "number"},
+        "patient_experience": {"type": "number"},
+        "anastomosis_quality": {"type": "number"}
+      }
+    },
+    "composite_score": {"type": ["number", "null"], "description": "0 to 100 scalar, or null when withheld"},
+    "gates_all_accepted": {"type": "boolean"},
+    "composite_reported": {"type": "boolean"},
+    "gate_rollup": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "enum": ["ACCEPT", "BLOCK", "ESCALATE"]}
+    }
+  }
+}

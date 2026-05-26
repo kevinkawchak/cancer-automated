@@ -1,0 +1,104 @@
+# Machine-readable index of the real-world standards the VVUQ-02 assurance layer
+# is built against. Loaded at runtime by codegen/src/vvuq/gate_registry.py and
+# mirrored in codegen/config/standards_map.yaml. Designations and titles are
+# factual references to published consensus standards; normative text is the
+# property of the issuing bodies (ASME, IEC, ISO, NASA, UL, IEEE, FDA).
+
+corpus_version: "0.1.0"
+
+standards:
+  - key: ASME_V_and_V_40_2018
+    designation: ASME V&V 40-2018
+    body: ASME
+    title: Assessing Credibility of Computational Modeling through Verification and Validation, Application to Medical Devices
+    used_for: model risk, context of use, credibility goals proportional to risk
+    summary_file: asme_vv40_2018.md
+  - key: NASA_STD_7009A
+    designation: NASA-STD-7009A
+    body: NASA
+    title: Standard for Models and Simulations
+    used_for: uncertainty quantification as a first-class credibility factor
+    summary_file: nasa_std_7009a.md
+  - key: IEC_80601_2_77_2019
+    designation: IEC 80601-2-77:2019
+    body: IEC
+    title: Basic Safety and Essential Performance of Robotically Assisted Surgical Equipment
+    used_for: positioning accuracy, force limiting, hazardous situation e-stop
+    summary_file: iec_80601_2_77_2019.md
+  - key: IEC_60601_1_2005_AMD2_2020
+    designation: IEC 60601-1:2005+AMD2:2020
+    body: IEC
+    title: Medical Electrical Equipment, General Requirements for Basic Safety and Essential Performance
+    used_for: single-fault safe state for the balance and fault paths
+    summary_file: null
+  - key: ISO_TS_15066_2016
+    designation: ISO/TS 15066:2016
+    body: ISO
+    title: Robots and Robotic Devices, Collaborative Robots, Biomechanical Limits
+    used_for: human contact force and clearance limits in the shared operating room
+    summary_file: iso_ts_15066_2016.md
+  - key: ISO_13482_2014
+    designation: ISO 13482:2014
+    body: ISO
+    title: Robots and Robotic Devices, Safety Requirements for Personal Care Robots
+    used_for: stability and fall prevention for a standing humanoid
+    summary_file: iso_13482_2014.md
+  - key: ISO_10218_1_2011
+    designation: ISO 10218-1:2011
+    body: ISO
+    title: Robots and Robotic Devices, Safety Requirements for Industrial Robots, Part 1
+    used_for: speed and separation monitoring in the shared operating room
+    summary_file: null
+  - key: ISO_9283_1998
+    designation: ISO 9283:1998
+    body: ISO
+    title: Manipulating Industrial Robots, Performance Criteria and Related Test Methods
+    used_for: pose accuracy and repeatability for fingertip placement and handover
+    summary_file: null
+  - key: IEC_62304_2006_AMD1_2015
+    designation: IEC 62304:2006+AMD1:2015
+    body: IEC
+    title: Medical Device Software, Software Life Cycle Processes
+    used_for: software verification and software safety classification
+    summary_file: null
+  - key: ISO_14971_2019
+    designation: ISO 14971:2019
+    body: ISO
+    title: Application of Risk Management to Medical Devices
+    used_for: model risk, risk control verification, recorded human review
+    summary_file: null
+  - key: ISO_13849_1_2023
+    designation: ISO 13849-1:2023
+    body: ISO
+    title: Safety of Machinery, Safety-Related Parts of Control Systems
+    used_for: performance level of the fault and e-stop control path
+    summary_file: null
+  - key: UL_4600_2023
+    designation: UL 4600 (2023)
+    body: UL
+    title: Standard for Safety for the Evaluation of Autonomous Products
+    used_for: autonomy safety case and safe-state default
+    summary_file: null
+  - key: IEEE_7009_2024
+    designation: IEEE Std 7009-2024
+    body: IEEE
+    title: Standard for Fail-Safe Design of Autonomous and Semi-Autonomous Systems
+    used_for: fail-safe default to a safe state under fault or uncertainty
+    summary_file: null
+  - key: FDA_CMS_Credibility_2023
+    designation: FDA CM&S Credibility 2023
+    body: FDA
+    title: Assessing the Credibility of Computational Modeling and Simulation in Medical Device Submissions
+    used_for: regulatory acceptance of the ASME V&V 40 credibility argument
+    summary_file: null
+
+clinical_baselines:
+  - key: dutch_cohort_2025
+    title: 2025 Dutch nationwide robotic pancreatoduodenectomy cohort
+    used_for: human-surgeon comparator in the 4-entrant tournament
+    summary_file: ../clinical/dutch_cohort_2025.md
+  - key: fistula_risk_score
+    title: Callery Fistula Risk Score
+    used_for: anastomosis quality grounding for VVUQ 07
+    summary_file: ../clinical/fistula_risk_score.md
+...

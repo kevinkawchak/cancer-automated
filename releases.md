@@ -4,6 +4,42 @@ Release notes for the cancer-automated repository.
 
 ---
 
+10 Unitree H2 Humanoid Surgical VVUQs (v0.7.0)
+v0.7.0 - 10 Mobile Pancreatic Cancer Surgical Unitree H2 Humanoid VVUQs
+
+## Summary
+
+- Adds papers/VVUQ-02/codegen, the standalone generated codebase for 10 humanoid-specific VVUQ gates on an autonomous Unitree H2-Surgical 1.0 (a clearly labeled hypothetical 2030 surgical variant) performing the 60-second 8-phase Whipple on patient PAT-PDAC-0001 with its own two dexterous hands and no teleoperation, authored by Claude Code Opus 4.7 (1M context) Max from papers/VVUQ-02/instructions/output-instruct.md across 11 commits in a single pull request, one set of files per commit pushed to GitHub in real time.
+- Advances the code generation leg of the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: because one humanoid concentrates all error potential into one body, the VVUQ assurance layer is more substantial, stricter, and more thoroughly exercised than the control code, and a candidate behavior must clear 10 distinct gates before it ships.
+- Builds the assurance layer against external standards already used in real life so the credibility argument is defensible to a regulator: ASME V&V 40-2018 and NASA-STD-7009A for model credibility with the FDA 2023 computational modeling guidance, IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design.
+- Each gate verifies with a pass fraction of 1.0, validates observed metrics against an independent reference in data/reference, and quantifies uncertainty across seeded runs by the coefficient of variation, deciding ACCEPT, BLOCK, or ESCALATE; the three immediate-catastrophe gates (vascular no-fly, human collision, fault and e-stop) carry the tightest bounds and an extra hard predicate.
+- Wires the real standards input corpus at papers/VVUQ-02/inputs/standards into the gate registry so each gate resolves to a published designation, and supplies clinical baselines (the 2025 Dutch cohort, the Callery Fistula Risk Score).
+- Runs a deterministic 32-iteration Latin hypercube sweep with seed 20260525 over five free parameters; all 32 iterations clear all 10 gates, and the 6-component composite (mean 93.56) is reported only because every gate ACCEPTs, so the assurance layer gates the headline number.
+- Keeps the tree standalone and lint-clean: it runs on the Python standard library with guarded optional backends, and ruff check, ruff format check, and yamllint stay clean across Python 3.10, 3.11, and 3.12; the suite is 169 passing including a 64-item 10-gate decision surface.
+- Updates the main README (release badge, a v0.7.0 summary above the prior summary, a VVUQ-02 section with an ASCII gate diagram and table of contents entry, the repository structure, and the citation version), this releases file, the CHANGELOG (v0.7.0), and CITATION.cff.
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, and YAML document separators. The section symbol § is used where relevant.
+
+## Features
+
+- papers/VVUQ-02/codegen/src/vvuq: the 10-gate harness (verification, validation, uncertainty, the gate decision, and the registry that binds every gate to its predicates, independent reference, threshold block, and governing standards).
+- papers/VVUQ-02/codegen/config: project.yaml (frozen scope, patient, seed, 8-phase timeline, 71-DOF platform), vvuq_thresholds.yaml (the 10 gate blocks), standards_map.yaml, kinematics, hand, balance, perception, autonomy, safety zones, shared OR actors, and anastomosis targets.
+- papers/VVUQ-02/codegen/src: kinematics, sensors, perception, autonomy (the on-prem LLM intent path plus the deterministic plan compiler), hands (finger force, grasp, handover), balance (ZMP and posture), safety (vessel gate, human collision FSM, unified e-stop), suturing (ring tension and bimanual suturing), simulation (the 32-iteration sweep plus a Rust runner), metrics (the gated composite), llm (the 4-entrant tournament), and zenodo (the L0 pointer patcher).
+- papers/VVUQ-02/codegen/schemas: JSON Schema plus Protobuf plus Avro for the humanoid sensor record and command, plus vvuq_case, vvuq_decision, and metrics schemas.
+- papers/VVUQ-02/codegen/data/reference: the independent validation truth per gate, plus the labeled scene masks for the Dice ground truth.
+- papers/VVUQ-02/codegen/docs: methodology (ASME V&V 40), the per-gate specification, the platform and hand specifications, the sensor and perception specifications, the autonomy policy, the shared OR safety protocol, the suturing and anastomosis protocol, the CI checklist, the runtime recipes, and the file-size pyramid.
+- papers/VVUQ-02/codegen/prompt-codegen.md and output-codegen.md: the generating prompt verbatim and the narrative output of the generation step; papers/VVUQ-02/inputs records the prior instruction prompt and the Claude Code Opus 4.7 1M Max output that led to this codegen.
+- papers/VVUQ-02 placeholders: image-instruct, imagegen, execution, draft-paper, full-paper, and final-paper each carry a README placeholder for the future pull requests.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release adds the VVUQ-02 humanoid codegen and edits only kevinkawchak/cancer-automated; no other repository is touched. The Unitree H2-Surgical 1.0 is a clearly labeled hypothetical 2030 surgical variant: the base form factor traces to the real H2 bipedal humanoid lineage, but every clinical-grade capability uplift is paper-only, and every comparison against the 8-arm PancreSpeed 1.0 baseline or human surgeons is simulation-against-simulation. The codegen is a draft: the 10 VVUQ gates plus a recorded human reviewer must clear any candidate before any non-simulated use, and deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization. The autonomy path is gated by VVUQ 04 and VVUQ 10 and defaults to hand-back-to-human on any ESCALATE. The lint-and-format surface (ruff check, ruff format check, yamllint) stays green across Python 3.10, 3.11, and 3.12, alongside validate-scripts and test.
+
+---
+
 VVUQ-01 Full Paper from the Draft Scaffold (v0.6.0)
 v0.6.0 - VVUQ-01 Full Paper from the Draft Scaffold
 

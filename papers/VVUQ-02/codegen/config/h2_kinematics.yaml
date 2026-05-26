@@ -1,0 +1,69 @@
+# Unitree H2-Surgical 1.0 (hypothetical 2030) kinematic model.
+# Base form factor traces to the real H2 bipedal humanoid lineage; the
+# clinical-grade accuracy uplift is hypothetical 2030 and paper-only.
+#
+# Denavit-Hartenberg parameters use the standard convention. Lengths in metres,
+# angles in radians. Each arm is a 7-DOF chain identical in structure to the
+# PancreSpeed per-arm chain so the single humanoid is comparable to the 8-arm
+# baseline: J1 shoulder yaw, J2 shoulder pitch, J3 upper-arm yaw, J4 elbow pitch,
+# J5 wrist yaw, J6 wrist pitch, J7 wrist roll.
+
+units:
+  length: metre
+  angle: radian
+
+frames:
+  world: floor_at_robot_base
+  patient: umbilicus_origin_x_right_y_caudal_z_anterior
+
+arms:
+  - id: L
+    base_offset_m: [0.0, 0.18, 1.25]
+    dh:
+      - {joint: J1, a: 0.0, alpha: 1.5708, d: 0.0, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J2, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -2.0944, q_max: 2.0944}
+      - {joint: J3, a: 0.0, alpha: 1.5708, d: 0.30, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J4, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -2.5307, q_max: 0.0}
+      - {joint: J5, a: 0.0, alpha: 1.5708, d: 0.28, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J6, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -1.7453, q_max: 1.7453}
+      - {joint: J7, a: 0.0, alpha: 0.0, d: 0.10, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+  - id: R
+    base_offset_m: [0.0, -0.18, 1.25]
+    dh:
+      - {joint: J1, a: 0.0, alpha: 1.5708, d: 0.0, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J2, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -2.0944, q_max: 2.0944}
+      - {joint: J3, a: 0.0, alpha: 1.5708, d: 0.30, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J4, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -2.5307, q_max: 0.0}
+      - {joint: J5, a: 0.0, alpha: 1.5708, d: 0.28, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+      - {joint: J6, a: 0.0, alpha: -1.5708, d: 0.0, theta_offset: 0.0, q_min: -1.7453, q_max: 1.7453}
+      - {joint: J7, a: 0.0, alpha: 0.0, d: 0.10, theta_offset: 0.0, q_min: -3.1416, q_max: 3.1416}
+
+head:
+  dof: 2
+  joints:
+    - {joint: pan, q_min: -1.5708, q_max: 1.5708}
+    - {joint: tilt, q_min: -0.7854, q_max: 0.7854}
+
+waist:
+  dof: 3
+  joints:
+    - {joint: yaw, q_min: -1.0472, q_max: 1.0472}
+    - {joint: pitch, q_min: -0.5236, q_max: 0.5236}
+    - {joint: roll, q_min: -0.3491, q_max: 0.3491}
+
+legs:
+  dof_per_leg: 6
+  count: 2
+  joints_per_leg: [hip_yaw, hip_roll, hip_pitch, knee_pitch, ankle_pitch, ankle_roll]
+
+dof_summary:
+  arms: 14
+  hands: 40
+  stance: 15
+  head: 2
+  total: 71
+
+performance:
+  fingertip_positioning_accuracy_mm_rms: 0.05
+  status: hypothetical_2030
+...

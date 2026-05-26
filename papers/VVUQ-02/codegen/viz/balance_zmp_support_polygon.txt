@@ -1,0 +1,21 @@
+Balance ZMP and Support Polygon (VVUQ 03, top-down, x forward, y left)
+
+        y (mm)
+        ^
+   +175 |   +-------------------------------+   <- support polygon edge
+        |   |                               |
+        |   |        warning ring (15 mm)   |
+        |   |      .......................  |
+        |   |      :  floor ring (8 mm)   : |
+        |   |      :      +-----+         : |
+      0 |   |      :      | ZMP |  o CoM  : |   ZMP margin 45 mm (nominal)
+        |   |      :      +-----+         : |
+        |   |      :.....................:  |
+        |   |                               |
+   -175 |   +-------------------------------+
+        +----------------------------------------> x (mm)
+           -130              0             +130
+
+   margin = shortest distance from ZMP to a support-polygon edge
+   ACCEPT while margin >= 8 mm; recover via ankle strategy below the floor;
+   fall (e-stop) when the ZMP leaves the polygon. Grounded in ISO 13482.

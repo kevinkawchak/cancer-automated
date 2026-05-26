@@ -1,0 +1,18 @@
+{
+  "release_version": "v0.1.0",
+  "release_date": "2026-05-26",
+  "root_seed": 20260525,
+  "iterations": 32,
+  "gates": 10,
+  "iterations_clearing_all_gates": 32,
+  "composite_mean": 93.562,
+  "composite_min": 93.417,
+  "composite_max": 93.715,
+  "free_parameters": [
+    "fingertip_placement_noise_mm",
+    "finger_force_noise_n",
+    "balance_disturbance_amplitude_n",
+    "perception_occlusion_fraction",
+    "ring_tension_drift_n"
+  ]
+}

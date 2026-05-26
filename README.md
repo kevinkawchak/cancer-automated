@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.6.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.7.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/26: v0.7.0 (VVUQ-02 Humanoid VVUQ Codegen)** Adds [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen): the standalone generated codebase for 10 humanoid-specific VVUQ gates on an autonomous Unitree H2-Surgical 1.0 (hypothetical 2030) performing the 60-second 8-phase Whipple, built from [papers/VVUQ-02/instructions/output-instruct.md](papers/VVUQ-02/instructions/output-instruct.md) across 11 commits in a single pull request. The assurance layer is grounded in real-world standards (ASME V&V 40-2018, NASA-STD-7009A, IEC 80601-2-77, ISO 13482, ISO/TS 15066, IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009), validates against an independent reference, wires the real standards input corpus, and runs a deterministic 32-iteration sweep where all 32 clear all 10 gates.
 
 **5/25 [Final PDF](https://doi.org/10.5281/zenodo.20372501): v0.6.0 (VVUQ-01 Full Paper)** Adds [papers/VVUQ-01/full-paper](papers/VVUQ-01/full-paper): the full manuscript built from the v0.5.0 draft scaffold without modifying it. Every bracketed processing instruction in the seven body sections is replaced with grounded prose, 18 tables.
 
@@ -43,6 +45,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-01 Figures and Image Instructions](#vvuq-01-figures-and-image-instructions)
 - [VVUQ-01 Draft Paper](#vvuq-01-draft-paper)
 - [VVUQ-01 Full Paper](#vvuq-01-full-paper)
+- [VVUQ-02 Humanoid VVUQ Codegen](#vvuq-02-humanoid-vvuq-codegen)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -231,7 +234,7 @@ cancer-automated/
 │   └── test_physical_ai.py
 │
 └── papers/                         # Paper workspaces, execution records, figures
-    └── VVUQ-01/
+    ├── VVUQ-01/
         ├── inputs/                 # Source paper and research chunks (ingestion inputs)
         ├── templates/Template_10/  # LaTeX manuscript template (future paper build)
         ├── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
@@ -282,6 +285,27 @@ cancer-automated/
             ├── Images/             # Four author supplied figure slots plus a guide
             └── sections/           # abstract, intro, methods, results, discussion,
                                     #   limitations_future, conclusions, references, back_matter
+    └── VVUQ-02/                     # ★ v0.7.0 humanoid VVUQ codegen
+        ├── instructions/           # prompt-instruct.md, output-instruct.md (lineage)
+        ├── inputs/                 # ★ wired standards corpus + clinical baselines
+        │   ├── standards/          # ASME V&V 40, IEC 80601-2-77, ISO/TS 15066, ...
+        │   └── clinical/           # Dutch cohort baseline, Fistula Risk Score
+        ├── templates/Template_04/  # Regulatory and FDA submission LaTeX scaffold
+        ├── codegen/                # ★ standalone 10-gate humanoid codebase
+        │   ├── README.md           # DOI badges, gate ASCII diagram, repo tree
+        │   ├── prompt-codegen.md   # the generating prompt, verbatim
+        │   ├── output-codegen.md   # the narrative output of the generation step
+        │   ├── config/             # frozen scope, kinematics, thresholds, standards map
+        │   ├── schemas/            # JSON Schema + Protobuf + Avro sensor and command
+        │   ├── src/                # kinematics, sensors, perception, autonomy, hands,
+        │   │                       #   balance, safety, suturing, vvuq, simulation, ...
+        │   ├── data/reference/     # independent validation truth per gate
+        │   ├── docs/               # methodology, gate spec, platform, safety protocols
+        │   └── tests/              # 169 passing (64-item 10-gate decision surface)
+        ├── image-instruct/         # placeholder (10 figure specs, future PR)
+        ├── imagegen/               # placeholder (future figure outputs)
+        ├── execution/              # placeholder (future run record)
+        └── draft-paper/ full-paper/ final-paper/  # placeholders (future manuscript)
 ```
 
 ## Established Methods Proven Across Projects
@@ -382,6 +406,32 @@ The full manuscript is realized under [papers/VVUQ-01/full-paper](papers/VVUQ-01
 
 The four figures use placeholder slots that compile immediately and are replaced automatically once the author drops the final image into `Images/`. A `full-paper.zip` bundle is provided for a one step Overleaf upload, and the additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green.
 
+## VVUQ-02 Humanoid VVUQ Codegen
+
+The code generation leg of the thesis advances to a harder subject under [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen): a single autonomous humanoid surgeon (a clearly labeled hypothetical 2030 Unitree H2-Surgical 1.0) that performs the 60-second 8-phase Whipple on patient PAT-PDAC-0001 with its own two dexterous hands, no teleoperation. Because one humanoid concentrates all error potential into one body, the VVUQ assurance layer must be more substantial, stricter, and more thoroughly exercised than the control code, and a candidate behavior must clear 10 distinct humanoid-specific gates before it ships. The codebase was generated by Claude Code Opus 4.7 (1M) Max from [papers/VVUQ-02/instructions/output-instruct.md](papers/VVUQ-02/instructions/output-instruct.md) across 11 commits in a single pull request, one set of files per commit pushed in real time.
+
+The assurance layer is built against external standards already used in real life, so the credibility argument is defensible to a regulator. Each gate binds to its governing standards through a machine-readable map and the wired standards input corpus, validates observed metrics against an independent reference, and quantifies uncertainty across seeded runs.
+
+```
+  candidate humanoid behaviors per iteration
+        |
+   +----v-------------------------------------------------------+
+   | 01 bimanual-handeye-servo        06 vascular-no-fly-hand *  |
+   | 02 dexterous-finger-force        07 bimanual-suturing       |
+   | 03 whole-body-balance            08 perception-scene        |
+   | 04 autonomous-plan-correctness   09 shared-or-collision *   |
+   | 05 instrument-grasp-handover     10 fault-estop-degrade *   |
+   +----v-------------------------------------------------------+
+        |  each gate: Verify (== 1.0) -> Validate (independent
+        |  reference) -> Quantify (coefficient of variation)
+        v
+   ACCEPT (all 10 pass)  /  BLOCK (any fail)  /  ESCALATE (divergence)
+   composite reported only when all 10 gates ACCEPT
+   * immediate-catastrophe gates: V == 1.0, tightest CV, plus a hard predicate
+```
+
+Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 169 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The 10 figure specifications, the execution record, and the manuscript are reserved as placeholders for future pull requests.
+
 ## Continuous Integration
 
 The `CI` workflow runs on every pull request and push to `main`:
@@ -429,7 +479,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.6.0},
+  version = {0.7.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}

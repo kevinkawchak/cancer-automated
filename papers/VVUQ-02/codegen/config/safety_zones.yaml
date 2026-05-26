@@ -1,0 +1,54 @@
+# Five named vessel safety zones for the autonomous H2-Surgical 1.0 Whipple.
+# Geometry reused verbatim from the PDAC 8-arm baseline so the single-humanoid
+# run is directly comparable. Patient frame in mm (x right, y caudal, z anterior).
+# Venous vessels use 2.0/4.0/6.0 mm radii; arterial vessels use the tighter
+# 1.5/3.0/5.0 mm radii. Gated by VVUQ 06 (vascular-no-fly-hand).
+
+vessels:
+  - name: superior_mesenteric_vein
+    centerline_start: {x_mm: 15.0, y_mm: -25.0, z_mm: -45.0}
+    centerline_end: {x_mm: 15.0, y_mm: -65.0, z_mm: -55.0}
+    hard_stop_radius_mm: 2.0
+    soft_warning_radius_mm: 4.0
+    no_fly_radius_mm: 6.0
+    active_phases: [2, 4, 5, 8]
+  - name: portal_vein
+    centerline_start: {x_mm: 5.0, y_mm: -55.0, z_mm: -55.0}
+    centerline_end: {x_mm: 5.0, y_mm: -75.0, z_mm: -50.0}
+    hard_stop_radius_mm: 2.0
+    soft_warning_radius_mm: 4.0
+    no_fly_radius_mm: 6.0
+    active_phases: [2, 4, 5, 8]
+  - name: hepatic_artery_common
+    centerline_start: {x_mm: 5.0, y_mm: -60.0, z_mm: -50.0}
+    centerline_end: {x_mm: 20.0, y_mm: -65.0, z_mm: -55.0}
+    hard_stop_radius_mm: 1.5
+    soft_warning_radius_mm: 3.0
+    no_fly_radius_mm: 5.0
+    active_phases: [2, 4, 6, 8]
+  - name: celiac_axis
+    centerline_start: {x_mm: 0.0, y_mm: -65.0, z_mm: -60.0}
+    centerline_end: {x_mm: 5.0, y_mm: -70.0, z_mm: -55.0}
+    hard_stop_radius_mm: 1.5
+    soft_warning_radius_mm: 3.0
+    no_fly_radius_mm: 5.0
+    active_phases: [3, 4, 8]
+  - name: superior_mesenteric_artery
+    centerline_start: {x_mm: 0.0, y_mm: -35.0, z_mm: -55.0}
+    centerline_end: {x_mm: 5.0, y_mm: -65.0, z_mm: -60.0}
+    hard_stop_radius_mm: 1.5
+    soft_warning_radius_mm: 3.0
+    no_fly_radius_mm: 5.0
+    active_phases: [3, 4, 8]
+
+actions:
+  clear: {velocity_scale: 1.0, force_soft_cap_n: 3.0, e_stop: false}
+  no_fly: {velocity_scale: 0.5, force_soft_cap_n: 2.5, e_stop: false}
+  soft_warning: {velocity_scale: 0.1, force_soft_cap_n: 1.5, e_stop: false}
+  hard_stop:
+    velocity_scale: 0.0
+    force_soft_cap_n: 0.0
+    e_stop: true
+    e_stop_latency_budget_us: 10
+    joint_park_budget_us: 50
+...

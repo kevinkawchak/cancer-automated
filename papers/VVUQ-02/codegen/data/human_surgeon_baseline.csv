@@ -1,0 +1,13 @@
+metric,value,unit,source
+ideal_outcome_rate,47.0,percent,2025 Dutch nationwide robotic pancreatoduodenectomy cohort
+five_year_overall_survival_pdac,13.0,percent,US SEER pancreatic ductal adenocarcinoma
+typical_operative_duration,5.4,hours,robotic Whipple human baseline
+grade_b_c_fistula_rate,18.0,percent,human pancreaticojejunostomy literature
+conversion_rate,9.0,percent,robotic to open conversion human cohort
+ninety_day_mortality,3.1,percent,high-volume center human cohort
+composite_quality,82.0,score,frozen-weight component estimate
+composite_time,8.0,score,frozen-weight component estimate
+composite_cost,90.0,score,frozen-weight component estimate
+composite_safety,80.0,score,frozen-weight component estimate
+composite_patient_experience,78.0,score,frozen-weight component estimate
+composite_anastomosis_quality,82.0,score,frozen-weight component estimate

@@ -1,0 +1,51 @@
+# Unitree H2-Surgical 1.0 dexterous hand model (hypothetical 2030).
+# Two hands, five fingers each, four joints per finger (20 DOF per hand). Force
+# caps are IEC 80601-2-77 derived and set well below the general RASD ceiling.
+
+units:
+  length: metre
+  angle: radian
+  force: newton
+
+fingers:
+  per_hand: 5
+  joints_per_finger: 4
+  joint_names: [mcp_abduction, mcp_flexion, pip_flexion, dip_flexion]
+  names: [thumb, index, middle, ring, little]
+
+# Per-finger 4-DOF chain limits. The thumb opposes; the four long fingers share a
+# common chain structure. Tendon coupling links pip and dip per the under-actuated
+# real H2 hand lineage.
+chains:
+  thumb:
+    link_lengths_m: [0.035, 0.032, 0.025, 0.020]
+    q_min: [-0.5236, -0.2618, 0.0, 0.0]
+    q_max: [1.0472, 1.5708, 1.5708, 1.3963]
+  long_finger:
+    link_lengths_m: [0.0, 0.045, 0.028, 0.022]
+    q_min: [-0.2618, -0.2618, 0.0, 0.0]
+    q_max: [0.2618, 1.5708, 1.5708, 1.3963]
+
+tendon_coupling:
+  pip_dip_ratio: 0.67          # dip flexion coupled to pip via under-actuated tendon
+  max_tendon_tension_n: 40.0
+
+fingertip:
+  positioning_accuracy_mm_rms: 0.05
+  force_resolution_n: 0.01
+  force_sample_rate_hz: 100000
+  per_fingertip_force_soft_n: 2.5
+  per_fingertip_force_hard_n: 3.0
+
+bimanual:
+  cumulative_force_soft_n: 5.0
+  cumulative_force_hard_n: 6.0
+
+grasp_taxonomy:
+  - pinch          # thumb + index, fine needle handling
+  - tripod         # thumb + index + middle, instrument shaft
+  - power          # full enclosure, gross retraction
+  - needle_driver  # locked tripod on a needle-driver handle
+
+status: hypothetical_2030
+...

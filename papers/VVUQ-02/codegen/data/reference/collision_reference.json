@@ -1,0 +1,4 @@
+{
+  "min_clearance_mm": 60.0,
+  "intrusion_reaction_latency_ms": 3.0
+}

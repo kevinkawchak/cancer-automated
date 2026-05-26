@@ -1,0 +1,1791 @@
+{
+  "backend": "offline",
+  "iterations": [
+    {
+      "iteration_id": 0,
+      "seed": 20260525,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.54,
+          "composite_b": 93.479,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.531,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.468,
+          "composite_b": 82.999,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.816,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.885,
+          "composite_b": 68.089,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.941,
+          "composite_b": 84.25,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.79,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 1,
+      "seed": 20260526,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.774,
+          "composite_b": 94.603,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.528,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.28,
+          "composite_b": 84.574,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.824,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.383,
+          "composite_b": 68.27,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.385,
+          "composite_b": 83.335,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.835,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 2,
+      "seed": 20260527,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.509,
+          "composite_b": 92.866,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.512,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.7,
+          "composite_b": 84.632,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.769,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.152,
+          "composite_b": 67.615,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.44,
+          "composite_b": 83.296,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.838,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 3,
+      "seed": 20260528,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.864,
+          "composite_b": 93.621,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.525,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.337,
+          "composite_b": 83.626,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.857,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.088,
+          "composite_b": 67.584,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.337,
+          "composite_b": 84.071,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.842,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 4,
+      "seed": 20260529,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.264,
+          "composite_b": 93.077,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.54,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.488,
+          "composite_b": 83.818,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.822,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.735,
+          "composite_b": 68.38,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.123,
+          "composite_b": 84.304,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.794,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 5,
+      "seed": 20260530,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.86,
+          "composite_b": 94.107,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.542,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.184,
+          "composite_b": 83.681,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.85,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.64,
+          "composite_b": 67.699,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.258,
+          "composite_b": 83.134,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.871,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 6,
+      "seed": 20260531,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.626,
+          "composite_b": 93.31,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.523,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.617,
+          "composite_b": 84.57,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.768,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.631,
+          "composite_b": 68.512,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.824,
+          "composite_b": 84.714,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.77,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 7,
+      "seed": 20260532,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.361,
+          "composite_b": 94.583,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.507,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.114,
+          "composite_b": 83.386,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.824,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 94.247,
+          "composite_b": 67.182,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.992,
+          "composite_b": 84.282,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.79,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 8,
+      "seed": 20260533,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.161,
+          "composite_b": 92.764,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.513,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.128,
+          "composite_b": 83.847,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.809,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.894,
+          "composite_b": 68.884,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.944,
+          "composite_b": 84.148,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.827,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 9,
+      "seed": 20260534,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.895,
+          "composite_b": 93.616,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.524,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.532,
+          "composite_b": 84.611,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.764,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.85,
+          "composite_b": 68.275,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.189,
+          "composite_b": 83.964,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.807,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 10,
+      "seed": 20260535,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.461,
+          "composite_b": 93.073,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.513,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.947,
+          "composite_b": 84.722,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.808,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.114,
+          "composite_b": 67.938,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.176,
+          "composite_b": 84.687,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.816,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 11,
+      "seed": 20260536,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.217,
+          "composite_b": 93.513,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.51,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.143,
+          "composite_b": 84.428,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.791,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 94.099,
+          "composite_b": 68.297,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.73,
+          "composite_b": 83.384,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.878,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 12,
+      "seed": 20260537,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.238,
+          "composite_b": 94.214,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.501,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.912,
+          "composite_b": 83.94,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.799,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.561,
+          "composite_b": 67.569,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.073,
+          "composite_b": 83.455,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.854,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 13,
+      "seed": 20260538,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.781,
+          "composite_b": 93.732,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.532,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.227,
+          "composite_b": 84.598,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.788,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.944,
+          "composite_b": 67.208,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.25,
+          "composite_b": 84.248,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.833,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 14,
+      "seed": 20260539,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.179,
+          "composite_b": 94.646,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.549,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.511,
+          "composite_b": 84.044,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.816,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.78,
+          "composite_b": 68.66,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.241,
+          "composite_b": 84.484,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.825,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 15,
+      "seed": 20260540,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.9,
+          "composite_b": 94.701,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.527,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.564,
+          "composite_b": 84.586,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.766,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.596,
+          "composite_b": 68.148,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.107,
+          "composite_b": 84.813,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.81,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 16,
+      "seed": 20260541,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.621,
+          "composite_b": 94.325,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.557,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.417,
+          "composite_b": 82.972,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.882,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.712,
+          "composite_b": 68.267,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.929,
+          "composite_b": 83.113,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.827,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 17,
+      "seed": 20260542,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.524,
+          "composite_b": 93.099,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.514,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.321,
+          "composite_b": 84.509,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.827,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.891,
+          "composite_b": 67.066,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.616,
+          "composite_b": 84.639,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.833,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 18,
+      "seed": 20260543,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.988,
+          "composite_b": 93.722,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.509,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.454,
+          "composite_b": 83.06,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.846,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 94.164,
+          "composite_b": 66.96,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.495,
+          "composite_b": 84.088,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.847,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 19,
+      "seed": 20260544,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.243,
+          "composite_b": 94.405,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.505,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.396,
+          "composite_b": 83.852,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.818,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.387,
+          "composite_b": 67.193,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.388,
+          "composite_b": 84.01,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.813,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 20,
+      "seed": 20260545,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.514,
+          "composite_b": 93.929,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.547,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.362,
+          "composite_b": 84.584,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.793,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.234,
+          "composite_b": 67.006,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.522,
+          "composite_b": 84.782,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.825,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 21,
+      "seed": 20260546,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.542,
+          "composite_b": 93.622,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.536,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.443,
+          "composite_b": 83.762,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.823,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.574,
+          "composite_b": 66.911,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.202,
+          "composite_b": 83.283,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.864,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 22,
+      "seed": 20260547,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.018,
+          "composite_b": 93.522,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.517,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.874,
+          "composite_b": 83.615,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.842,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.662,
+          "composite_b": 67.77,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.012,
+          "composite_b": 83.463,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.818,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 23,
+      "seed": 20260548,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.122,
+          "composite_b": 93.985,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.529,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.839,
+          "composite_b": 84.126,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.824,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.91,
+          "composite_b": 68.869,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.073,
+          "composite_b": 83.225,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.862,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 24,
+      "seed": 20260549,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.686,
+          "composite_b": 94.576,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.53,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.49,
+          "composite_b": 83.27,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.807,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.059,
+          "composite_b": 68.673,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.303,
+          "composite_b": 84.822,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.783,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 25,
+      "seed": 20260550,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.042,
+          "composite_b": 94.647,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.52,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.692,
+          "composite_b": 83.99,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.79,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.112,
+          "composite_b": 68.012,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.885,
+          "composite_b": 83.026,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.829,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 26,
+      "seed": 20260551,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 94.263,
+          "composite_b": 93.274,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.533,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.923,
+          "composite_b": 83.258,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.856,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.469,
+          "composite_b": 67.592,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 94.113,
+          "composite_b": 84.106,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.834,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 27,
+      "seed": 20260552,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.633,
+          "composite_b": 93.982,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.512,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.079,
+          "composite_b": 83.622,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.815,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.18,
+          "composite_b": 68.238,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.975,
+          "composite_b": 82.928,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.868,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 28,
+      "seed": 20260553,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.591,
+          "composite_b": 93.504,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.503,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.849,
+          "composite_b": 84.227,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.787,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 94.066,
+          "composite_b": 67.887,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.269,
+          "composite_b": 83.25,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.834,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 29,
+      "seed": 20260554,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.715,
+          "composite_b": 94.285,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.519,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.275,
+          "composite_b": 84.191,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.803,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.6,
+          "composite_b": 67.99,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.968,
+          "composite_b": 84.832,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.805,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 30,
+      "seed": 20260555,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 92.786,
+          "composite_b": 93.877,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.536,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.069,
+          "composite_b": 84.446,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.787,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 93.099,
+          "composite_b": 68.636,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.417,
+          "composite_b": 83.829,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.82,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    },
+    {
+      "iteration_id": 31,
+      "seed": 20260556,
+      "rounds": [
+        {
+          "round": 1,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "PancreSpeed_1_0",
+          "composite_a": 93.057,
+          "composite_b": 94.244,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.54,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 2,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 93.249,
+          "composite_b": 83.921,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.811,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 3,
+          "entrant_a": "H2_Surgical_1_0",
+          "entrant_b": "Dutch_human_baseline",
+          "composite_a": 92.472,
+          "composite_b": 66.947,
+          "winner": "H2_Surgical_1_0",
+          "confidence": 0.99,
+          "caveats": [
+            "Structural time-dimension caveat: this round compares a 1 minute robot run against a multi-hour human baseline; the time component dominates the delta.",
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        },
+        {
+          "round": 4,
+          "entrant_a": "PancreSpeed_1_0",
+          "entrant_b": "da_Vinci_successor_2030",
+          "composite_a": 92.939,
+          "composite_b": 84.671,
+          "winner": "PancreSpeed_1_0",
+          "confidence": 0.776,
+          "caveats": [
+            "The H2-Surgical 1.0 is a hypothetical 2030 platform; this comparison is simulation against simulation."
+          ]
+        }
+      ]
+    }
+  ],
+  "leaderboard": [
+    {
+      "entrant": "PancreSpeed_1_0",
+      "composite_mean": 93.782,
+      "win_rate": 0.875,
+      "total_wins": 56
+    },
+    {
+      "entrant": "H2_Surgical_1_0",
+      "composite_mean": 93.334,
+      "win_rate": 0.75,
+      "total_wins": 72
+    },
+    {
+      "entrant": "da_Vinci_successor_2030",
+      "composite_mean": 83.97,
+      "win_rate": 0.0,
+      "total_wins": 0
+    },
+    {
+      "entrant": "Dutch_human_baseline",
+      "composite_mean": 67.885,
+      "win_rate": 0.0,
+      "total_wins": 0
+    }
+  ]
+}

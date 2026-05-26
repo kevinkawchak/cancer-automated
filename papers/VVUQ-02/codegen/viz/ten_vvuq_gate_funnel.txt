@@ -1,0 +1,23 @@
+Ten VVUQ Gate Funnel (candidates to ACCEPT)
+
+   candidate humanoid behaviors per iteration
+   ================================================  100%
+        |
+   [01] bimanual-handeye-servo        V>=0.97 CV<=0.08
+   [02] dexterous-finger-force        V>=0.95 CV<=0.10
+   [03] whole-body-balance            V>=0.98 CV<=0.06
+   [04] autonomous-plan-correctness   V>=0.95 CV<=0.10
+   [05] instrument-grasp-handover     V>=0.96 CV<=0.10
+   [06] vascular-no-fly-hand      *   V=1.00  CV<=0.05  hard: 0 breaches
+   [07] bimanual-suturing             V>=0.96 CV<=0.08
+   [08] perception-scene              V>=0.95 CV<=0.10
+   [09] shared-or-human-collision *   V=1.00  CV<=0.02  hard: clearance floor
+   [10] fault-estop-degradation   *   V=1.00  CV<=0.02  hard: safe state
+        |
+        v
+   ACCEPT (all 10 pass)  -->  composite reported
+   BLOCK (any fail)      -->  composite withheld
+   ESCALATE (divergence) -->  hand back to human
+
+   * immediate-catastrophe gates (tightest bounds plus a hard predicate)
+   verification pass fraction must equal 1.0 for every gate

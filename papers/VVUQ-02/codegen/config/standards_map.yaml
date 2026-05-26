@@ -1,0 +1,45 @@
+# Machine-readable binding from each VVUQ gate to its governing real-world
+# standards and the standard-derived limit it enforces. Loaded by
+# src/vvuq/gate_registry.py and mirrored by the wired corpus at
+# papers/VVUQ-02/inputs/standards/manifest.yaml.
+
+cross_cutting:
+  - ASME_V_and_V_40_2018
+  - NASA_STD_7009A
+  - FDA_CMS_Credibility_2023
+  - IEC_62304_2006_AMD1_2015
+  - ISO_14971_2019
+  - IEC_80601_2_77_2019
+
+gates:
+  bimanual-handeye-servo:
+    standards: [IEC_80601_2_77_2019, ISO_9283_1998, ASME_V_and_V_40_2018]
+    limit: fingertip 0.05 mm RMS positioning validated against optical-tracker truth
+  dexterous-finger-force:
+    standards: [IEC_80601_2_77_2019, ISO_TS_15066_2016]
+    limit: per-fingertip soft 2.5 N hard 3.0 N force limiting
+  whole-body-balance:
+    standards: [ISO_13482_2014, IEC_60601_1_2005_AMD2_2020]
+    limit: ZMP stability margin at or above 8 mm inside the support polygon
+  autonomous-plan-correctness:
+    standards: [UL_4600_2023, IEEE_7009_2024, IEC_62304_2006_AMD1_2015]
+    limit: phase-step concordance vs reference plan, fail-safe default
+  instrument-grasp-handover:
+    standards: [IEC_80601_2_77_2019, ISO_9283_1998]
+    limit: grasp success and slip detection, repeatable handover
+  vascular-no-fly-hand:
+    standards: [IEC_80601_2_77_2019, ISO_14971_2019]
+    limit: zero hard-stop volume breaches, 10 us proximity e-stop
+  bimanual-suturing-anastomosis:
+    standards: [IEC_80601_2_77_2019, Fistula_Risk_Score]
+    limit: ring tension within plus or minus 0.05 N of PJ HJ GJ targets
+  perception-scene-understanding:
+    standards: [ASME_V_and_V_40_2018, IEC_62304_2006_AMD1_2015]
+    limit: Dice agreement vs labeled reference under blood and smoke
+  shared-or-human-collision:
+    standards: [ISO_TS_15066_2016, ISO_10218_1_2011, ISO_13482_2014]
+    limit: minimum human clearance above the 50 mm floor, intrusion reaction within budget
+  fault-estop-graceful-degradation:
+    standards: [IEC_60601_1_2005_AMD2_2020, ISO_13849_1_2023, IEEE_7009_2024]
+    limit: single-fault safe state, fault-detection latency, safe park or hand back
+...

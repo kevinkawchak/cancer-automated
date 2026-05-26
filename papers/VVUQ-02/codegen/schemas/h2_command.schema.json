@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "h2_command.schema.json",
+  "title": "H2-Surgical 1.0 per-hand command",
+  "description": "One compiled command for one hand at one command tick: a Cartesian fingertip-frame target plus 20 per-finger joint targets plus the grasp and tool state. Emitted by src/autonomy/plan_compiler.py from LLM phase-level intents.",
+  "type": "object",
+  "required": [
+    "tick", "hand_id", "phase", "tip_target", "tip_orientation",
+    "finger_target", "grasp_state", "velocity_scale", "force_soft_cap_n"
+  ],
+  "properties": {
+    "tick": {"type": "integer", "minimum": 0, "maximum": 599999, "description": "10 kHz command tick index"},
+    "hand_id": {"type": "string", "enum": ["L", "R"]},
+    "phase": {"type": "integer", "minimum": 1, "maximum": 8},
+    "tip_target": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3, "description": "commanded hand reference tip x y z mm in patient frame"},
+    "tip_orientation": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4, "description": "commanded orientation quaternion qx qy qz qw"},
+    "finger_target": {"type": "array", "items": {"type": "number"}, "minItems": 20, "maxItems": 20, "description": "20 per-finger joint targets radians, 5 fingers x 4 joints"},
+    "grasp_state": {"type": "string", "enum": ["open", "pinch", "tripod", "power", "needle_driver"]},
+    "velocity_scale": {"type": "number", "minimum": 0.0, "maximum": 1.0, "description": "safety-gated velocity scale applied by the vessel and collision gates"},
+    "force_soft_cap_n": {"type": "number", "minimum": 0.0, "maximum": 3.0, "description": "per-fingertip soft force cap applied this tick"},
+    "intent_id": {"type": "string", "description": "identifier of the LLM intent this command was compiled from"}
+  }
+}
