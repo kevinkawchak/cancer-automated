@@ -5,6 +5,57 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-05-26
+
+### Added
+- `papers/VVUQ-02/execution/`: the complete run record of the
+  `papers/VVUQ-02/codegen/` tree, produced by Claude Code Opus 4.7 (1M context)
+  Max running autonomously in a managed cloud container across 8 commits in a
+  single pull request, one large section per commit pushed to GitHub in real time.
+- `01-foundation/`: the host (CPython 3.11.15 on Linux), the dependency posture,
+  a byte-for-byte determinism check that reproduces the committed sensor CSV, the
+  4-entrant comparison, and the 32-iteration sweep index from seed 20260525, the
+  172-test suite (0 skipped, the 10-gate suite carries 64 of the 172), and the CI
+  lint-and-format checks, all green.
+- `02-pipeline/`: the intent to compile to act to score record across six
+  behavior groups (autonomy at concordance 1.000, kinematics, perception, hands,
+  balance, suturing), with a verbatim execution log.
+- `03-vvuq/`: the 10-gate decision surface over five cases (10 ACCEPT nominal,
+  three distinct BLOCK mechanisms, one ESCALATE at coefficient of variation
+  0.163), with the captures, the nominal report, and a decisions JSON carrying
+  each gate's resolved external standards.
+- `04-automation/`: the 32-iteration sweep (32 of 32 clear all 10 gates,
+  composite mean 93.56), the gated composite, the Zenodo L0 pointer discipline,
+  and a structural analysis of the featured 1790-line four-entrant
+  `comparison.json` (128 round verdicts, 100 percent caveat coverage).
+- `05-humanoid-deployment/`: the 60-second 8-phase Whipple timeline, a structural
+  analysis of the featured 1000-row, 27-column positional sensor stream (every
+  row and every positional payload distinct, no repetition), and the three
+  immediate-catastrophe safety surfaces (vascular no-fly, human collision, fault
+  e-stop), each correct at the boundary.
+- `prompt-execution.md` and `output-execution.md` recording the generating prompt
+  verbatim and the narrative output of the execution step.
+
+### Changed
+- Top-level `README.md`: release badge to v0.8.0, a v0.8.0 summary above the prior
+  summary, a VVUQ-02 Execution section with an ASCII flow diagram and a table of
+  contents entry, the repository structure tree (the execution directory
+  expanded), the corrected codegen test count (172), and the citation version.
+- `releases.md` (v0.8.0 release notes), this `CHANGELOG.md` (v0.8.0), and
+  `CITATION.cff` (v0.8.0).
+
+### Notes
+- The external standards (ASME V&V 40-2018, NASA-STD-7009A, FDA CM&S 2023, IEC
+  80601-2-77, IEC 60601-1, ISO 13482, ISO/TS 15066, ISO 10218-1, ISO 9283, IEC
+  62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009) anchor the credibility of the
+  run; every gate, behavior, and safety surface is traced to a published standard.
+- All code ran from a scratch working directory with the codegen tree on
+  `PYTHONPATH`, leaving the committed codegen tree pristine. No Python or notebook
+  files were added outside the already-clean codegen tree, so the CI
+  lint-and-format surface stays green across Python 3.10, 3.11, and 3.12. The
+  paper template files in `papers/VVUQ-02/templates/Template_04/` were not
+  processed. Only `kevinkawchak/cancer-automated` was edited.
+
 ## [0.7.0] - 2026-05-26
 
 ### Added

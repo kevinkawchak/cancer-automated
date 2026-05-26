@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v0.7.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v0.8.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/26: v0.8.0 (VVUQ-02 Execution)** Executes the entire [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen) tree and records the full run under [papers/VVUQ-02/execution](papers/VVUQ-02/execution) across 8 commits in a single pull request. Every entry point ran to exit 0, the suite passed (172 passed, 0 skipped), and the lint-and-format CI surface is clean across Python 3.10, 3.11, and 3.12. The 10-gate decision surface was exercised end to end (10 ACCEPT nominal, three BLOCK paths, one ESCALATE), the deterministic 32-iteration sweep cleared all 10 gates on every iteration (composite mean 93.56), and the substantial 1790-line four-entrant `comparison.json` and the 1000-row positional sensor stream were both reproduced deterministically and processed. The external standards (ASME V&V 40-2018, NASA-STD-7009A, IEC 80601-2-77, IEC 60601-1, ISO 13482, ISO/TS 15066, ISO 10218-1, ISO 9283, IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009) anchor the credibility of the run.
 
 **5/26: v0.7.0 (VVUQ-02 Humanoid VVUQ Codegen)** Adds [papers/VVUQ-02/codegen](papers/VVUQ-02/codegen): the standalone generated codebase for 10 humanoid-specific VVUQ gates on an autonomous Unitree H2-Surgical 1.0 (hypothetical 2030) performing the 60-second 8-phase Whipple, built from [papers/VVUQ-02/instructions/output-instruct.md](papers/VVUQ-02/instructions/output-instruct.md) across 11 commits in a single pull request. The assurance layer is grounded in real-world standards (ASME V&V 40-2018, NASA-STD-7009A, IEC 80601-2-77, ISO 13482, ISO/TS 15066, IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009), validates against an independent reference, wires the real standards input corpus, and runs a deterministic 32-iteration sweep where all 32 clear all 10 gates.
 
@@ -46,6 +48,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-01 Draft Paper](#vvuq-01-draft-paper)
 - [VVUQ-01 Full Paper](#vvuq-01-full-paper)
 - [VVUQ-02 Humanoid VVUQ Codegen](#vvuq-02-humanoid-vvuq-codegen)
+- [VVUQ-02 Execution](#vvuq-02-execution)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -285,7 +288,7 @@ cancer-automated/
             ├── Images/             # Four author supplied figure slots plus a guide
             └── sections/           # abstract, intro, methods, results, discussion,
                                     #   limitations_future, conclusions, references, back_matter
-    └── VVUQ-02/                     # ★ v0.7.0 humanoid VVUQ codegen
+    └── VVUQ-02/                     # ★ v0.7.0 codegen, ★ v0.8.0 execution
         ├── instructions/           # prompt-instruct.md, output-instruct.md (lineage)
         ├── inputs/                 # ★ wired standards corpus + clinical baselines
         │   ├── standards/          # ASME V&V 40, IEC 80601-2-77, ISO/TS 15066, ...
@@ -301,10 +304,18 @@ cancer-automated/
         │   │                       #   balance, safety, suturing, vvuq, simulation, ...
         │   ├── data/reference/     # independent validation truth per gate
         │   ├── docs/               # methodology, gate spec, platform, safety protocols
-        │   └── tests/              # 169 passing (64-item 10-gate decision surface)
+        │   └── tests/              # 172 passing (64-item 10-gate decision surface)
+        ├── execution/              # ★ v0.8.0 full run record of the codegen tree
+        │   ├── README.md           # DOI badges, gate ASCII diagram, outcomes table
+        │   ├── prompt-execution.md # the generating prompt, verbatim
+        │   ├── output-execution.md # the narrative output of the execution step
+        │   ├── 01-foundation/      # environment, determinism, 172 tests, lint
+        │   ├── 02-pipeline/        # intent to compile to act to score
+        │   ├── 03-vvuq/            # the 10-gate ACCEPT/BLOCK/ESCALATE surface
+        │   ├── 04-automation/      # 32-iter sweep, 1790-line tournament, Zenodo
+        │   └── 05-humanoid-deployment/  # 60 s Whipple, 1000-row stream, safety
         ├── image-instruct/         # placeholder (10 figure specs, future PR)
         ├── imagegen/               # placeholder (future figure outputs)
-        ├── execution/              # placeholder (future run record)
         └── draft-paper/ full-paper/ final-paper/  # placeholders (future manuscript)
 ```
 
@@ -430,7 +441,25 @@ The assurance layer is built against external standards already used in real lif
    * immediate-catastrophe gates: V == 1.0, tightest CV, plus a hard predicate
 ```
 
-Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 169 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The 10 figure specifications, the execution record, and the manuscript are reserved as placeholders for future pull requests.
+Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 172 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The execution record is realized in v0.8.0 (below); the 10 figure specifications and the manuscript are reserved as placeholders for future pull requests.
+
+## VVUQ-02 Execution
+
+The full run record of the codegen tree is under [papers/VVUQ-02/execution](papers/VVUQ-02/execution), produced by Claude Code Opus 4.7 (1M) Max running autonomously across 8 commits in a single pull request, one section per commit pushed in real time. Every codegen entry point executed (exit 0), the 172-test suite passed with 0 skipped, and the CI lint-and-format surface stayed clean across Python 3.10, 3.11, and 3.12. The record mirrors the VVUQ-01 execution layout in five numbered sections, with an honest limitations section and a this-run-versus-conventional-server section for future runs on leading MacOS, Windows, and Linux platforms.
+
+```
+  01 foundation     determinism (sensor CSV byte-identical), 172 tests, lint green
+        |
+  02 pipeline       intent -> compile -> act -> score, concordance 1.000
+        |
+  03 vvuq           10-gate surface: 10 ACCEPT, 3 BLOCK paths, 1 ESCALATE
+        |
+  04 automation     32-iter sweep (32/32 clear all gates), 1790-line tournament
+        |
+  05 deployment     60 s Whipple, 1000-row positional stream, 3 catastrophe gates
+```
+
+The decision-bearing result is the operationalized thesis: control behaviors are generated and compiled in microseconds, while clearing one for ship requires a 1.0 verification fraction, an agreement bar up to 1.00, a relative-error bound as tight as 0.01, a coefficient-of-variation bound as tight as 0.05, a recorded human review, and a hard predicate on each catastrophe gate. The two substantial generated files are featured and processed: the 1790-line four-entrant `comparison.json` (128 round verdicts, 100 percent caveat coverage) and the 1000-row, 27-column positional sensor stream (every row and every arm-angle, finger-force, and end-effector payload distinct, no repetition). Each gate, behavior, and safety surface is traced to the published external standard that governs it, so the credibility argument is defensible rather than ad hoc, which is what lets an inexpensive autonomous run stand as evidence for a future physical AI oncology trial.
 
 ## Continuous Integration
 
@@ -479,7 +508,7 @@ If you use this repository in your research, please cite:
 @software{kawchak2026cancerautomated,
   author = {Kawchak, Kevin},
   title = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
-  version = {0.7.0},
+  version = {0.8.0},
   year = {2026},
   publisher = {GitHub},
   url = {https://github.com/kevinkawchak/cancer-automated}
