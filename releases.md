@@ -4,6 +4,39 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-02 Image Instructions for 15 Publication Figures (v0.9.0)
+v0.9.0 - VVUQ-02 Image Instructions for 15 Publication Figures
+
+## Summary
+
+- Adds papers/VVUQ-02/image-instruct, 15 comprehensive image instructions plus a master README, authored by Claude Code Opus 4.7 (1M context) Max running autonomously in a managed ephemeral cloud container across 15 commits in a single pull request, one figure specification per commit pushed to GitHub in real time, then a 16th commit for the cross-instruction error-fix pass and a 17th commit for the repository updates.
+- Establishes the image generation leg of the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: each instruction specifies in full, ahead of any rendering, exactly how a future agent builds one publication ready figure, so the assurance work is done before a single pixel is rendered, which is the image generation analog of the VVUQ gate.
+- Specifies 15 portrait, full-size, 300 dpi figures grounded in the VVUQ-02 code generation record (v0.7.0) and code execution record (v0.8.0). Every number, label, and section reference traces to a real source file, and the instructions name the exact source path for each value so a future agent renders by direct lookup rather than estimation.
+- Picks 15 distinct chart families from a 20-family menu for best data availability and relevance, with no family reused and no basic bar, pie, or line chart: workflow pipeline flow, gate decision funnel, ten-gate threshold forest, gate to standard binding matrix, clinical and regulatory standards wheel, 172-test coverage treemap, validation parity scatter, sweep composite strip plot, composite weighting waterfall, four-entrant comparison box plot, sensor stream safety bands, eight-phase Whipple swimmer, assurance cost assessment, value proposition matrix, and platform mind map.
+- Six figures satisfy the required-data brief: the 172 tests across 15 modules (treemap, from execution/01-foundation/test-suite.md), the external-standards anchoring that recurs throughout the directories (binding matrix, from execution/02-pipeline, 03-vvuq, and 05-humanoid-deployment), the 10 gates and their thresholds (forest, from execution/03-vvuq), the clinical external standards and regulatory relevancies including subdirectories (wheel, from inputs/standards and inputs/clinical), the featured 1000-row H2 sensor stream (line with uncertainty bands, from codegen/data/sample_h2_sensor.csv), and the four-entrant comparison featuring the second-place mobile humanoid (box plot, from codegen/results/comparison.json).
+- Keeps the set instructions only and lint-safe by construction: every file added is Markdown, so the pull request carries no Python or YAML and cannot introduce a ruff or yamllint failure, and the lint-and-format, validate-scripts, and test CI jobs stay green across Python 3.10, 3.11, and 3.12. The matplotlib scripts and the 300 dpi PNG files are deferred to a future imagegen pull request under papers/VVUQ-02/imagegen.
+- Verifies the arithmetic invariants before release: the treemap test counts sum to 172 across 15 modules and to subsystem totals 76, 74, and 22; the composite weights sum to 1.00; the swimmer phase durations sum to 60 seconds; the four-entrant appearance counts sum to 256 over 128 verdicts; and the 32 strip-plot composite values reproduce min 93.417, max 93.715, and mean 93.562 exactly.
+- Updates the main README (release badge, a v0.9.0 summary above the prior summary, a VVUQ-02 Image Instructions section with an ASCII flow diagram and a table of contents entry, the repository structure tree with the image-instruct directory expanded to the 15 specifications, and the citation version), this releases file, the CHANGELOG (v0.9.0), and CITATION.cff. No images, Mermaid diagrams, or colored images are added.
+- All prose uses single dashes only. No em dashes, no double dashes, and no triple dashes outside of Markdown rules, Markdown table separators, ASCII-diagram art, and the verbatim prompt reproduction. The section symbol § is used where relevant, and the figures render dark legible text on a white background with no dark mode.
+
+## Features
+
+- papers/VVUQ-02/image-instruct/README.md: the master specification with DOI and status badges, the project brief and thesis link, the processing model for Claude Code Opus 4.7 (1M) Max, the directory and file naming conventions, the shared page frame and professional palette and typography and symbol and dash rules, the 15-spec index, the data-availability mapping, the grounding sources, repository-structure ASCII diagrams, the future imagegen workflow and dependency note, the global acceptance criteria, the file-generation outcomes as a basis for a future technical paper, and the consistency and error-fix pass.
+- papers/VVUQ-02/image-instruct/01-platform-pipeline-flow through 15-platform-mindmap: 15 self-contained figure specifications, each with the chart family and basis, the purpose and message, the grounding sources and exact data tables, a deterministic portrait full-page layout specification, the color and symbol and dash rules, the matplotlib implementation directives, the exact future script and image output paths, the footer text, and a per figure acceptance checklist.
+- papers/VVUQ-02/image-instruct/prompt-image-instruct.md and output-image-instruct.md: the generating prompt verbatim and the narrative markdown output of the image-instruct step.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release adds the VVUQ-02 image instruction set and edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials. The set is instructions only: no matplotlib script and no rendered PNG is produced here, and rendering is a future imagegen pull request that requires matplotlib installed in that environment. The assurance cost assessment figure uses an illustrative relative index rather than measured dollars, because the repository records no cost figures, with the direction and the documented advantages grounded verbatim in the execution README this-run-versus-conventional section and the axis labeled illustrative so the figure does not overclaim. The H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform and every number is a simulation result; the four-entrant comparison is simulation against simulation. The figures are planning and documentation artifacts: the 10 VVUQ gates plus a recorded human reviewer must clear any deliverable before clinical use, and a real deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization.
+
+---
+
 VVUQ-02 Execution of the Humanoid VVUQ Codegen (v0.8.0)
 v0.8.0 - VVUQ-02 Execution of the Humanoid VVUQ Codegen
 
