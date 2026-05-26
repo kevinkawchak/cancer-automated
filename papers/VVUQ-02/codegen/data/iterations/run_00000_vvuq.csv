@@ -1,0 +1,11 @@
+gate_id,gate_slug,decision
+01,bimanual-handeye-servo,ACCEPT
+02,dexterous-finger-force,ACCEPT
+03,whole-body-balance,ACCEPT
+04,autonomous-plan-correctness,ACCEPT
+05,instrument-grasp-handover,ACCEPT
+06,vascular-no-fly-hand,ACCEPT
+07,bimanual-suturing-anastomosis,ACCEPT
+08,perception-scene-understanding,ACCEPT
+09,shared-or-human-collision,ACCEPT
+10,fault-estop-graceful-degradation,ACCEPT

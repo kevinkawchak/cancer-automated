@@ -1,0 +1,18 @@
+Vessel No-Fly Proximity Bands (VVUQ 06, schematic cross-section)
+
+   distance from tip to nearest active vessel surface
+   (venous radii 2.0 / 4.0 / 6.0 mm; arterial 1.5 / 3.0 / 5.0 mm)
+
+      tip far ................................. clear      v=1.0  cap 3.0 N
+      |
+      | 6 mm ----------------------------------- no_fly     v=0.5  cap 2.5 N
+      |
+      | 4 mm ----------------------------------- soft_warn  v=0.1  cap 1.5 N
+      |
+      | 2 mm ===================================  HARD STOP  v=0.0  e-stop
+      |
+      o  vessel centerline (SMV, PV, hepatic, celiac, SMA)
+
+   The 100 kHz vessel proximity sensor triggers the one-tick (10 us) hard-stop
+   e-stop in depth behind the 10 kHz command gate. VVUQ 06 requires zero
+   hard-stop volume breaches over the run. Grounded in IEC 80601-2-77, ISO 14971.

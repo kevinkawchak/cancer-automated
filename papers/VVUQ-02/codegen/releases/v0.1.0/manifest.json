@@ -1,0 +1,20 @@
+{
+  "release_version": "v0.1.0",
+  "release_date": "2026-05-26",
+  "project": "vvuq-02-h2-surgical",
+  "deposition_doi": "10.5281/zenodo.xxxxxxxx",
+  "seed_contract": {
+    "root_seed": 20260525,
+    "per_iteration": "root_seed + iteration_index",
+    "iterations": 32,
+    "design": "latin_hypercube"
+  },
+  "l0_policy": "L0 raw is deposited to Zenodo only and never committed",
+  "committed_samples": [
+    "data/iterations/index.jsonl",
+    "data/iterations/run_00000_vvuq.csv",
+    "data/iterations/run_00000_events.csv",
+    "data/iterations/run_00000_L0_raw.zenodo_pointer.json"
+  ],
+  "gates_all_accept": true
+}

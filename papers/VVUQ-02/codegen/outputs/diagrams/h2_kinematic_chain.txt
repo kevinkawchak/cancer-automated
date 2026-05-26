@@ -1,0 +1,20 @@
+H2-Surgical 1.0 Kinematic Chain (71 DOF, hypothetical 2030)
+
+                         [head pan/tilt] 2 DOF
+                              |
+                          [ head ]
+                              |
+        [L arm 7 DOF]----[ torso ]----[R arm 7 DOF]
+              |          [waist 3]          |
+        [L hand 20 DOF]      |        [R hand 20 DOF]
+        5 fingers x 4        |         5 fingers x 4
+                          [ pelvis ]
+                          /        \
+                  [L leg 6]        [R leg 6]
+                      |                |
+                  [L foot]          [R foot]
+                  ============  support polygon  ============
+
+  arms 14 + hands 40 + stance 15 + head 2 = 71 DOF
+  per-arm chain: J1 shoulder yaw, J2 pitch, J3 upper-arm yaw, J4 elbow pitch,
+  J5 wrist yaw, J6 wrist pitch, J7 wrist roll. See config/h2_kinematics.yaml.

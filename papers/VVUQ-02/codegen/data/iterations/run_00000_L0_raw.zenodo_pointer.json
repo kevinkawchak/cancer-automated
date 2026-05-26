@@ -1,0 +1,6 @@
+{
+  "iteration_id": 0,
+  "deposition_doi": "10.5281/zenodo.xxxxxxxx",
+  "file_name": "run_00000_L0_raw.parquet",
+  "note": "L0 raw is deposited to Zenodo only and never committed; see src/zenodo/patch_pointers.py"
+}
