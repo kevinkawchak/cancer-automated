@@ -1,0 +1,4 @@
+{
+  "fault_detection_latency_us": 50.0,
+  "safe_state_success_rate": 1.0
+}

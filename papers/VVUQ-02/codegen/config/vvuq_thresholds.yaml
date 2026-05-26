@@ -1,0 +1,95 @@
+# The 10 humanoid-specific VVUQ gate thresholds. VVUQ is held to a higher
+# standard than code generation, so the gate is intentionally strict: a candidate
+# is accepted only when every dimension passes across all seeded runs. Each gate
+# overrides only what differs from the defaults. Values follow the master table.
+# The three immediate-catastrophe gates (06, 09, 10) carry the tightest bounds and
+# an extra hard predicate, in proportion to their ASME V&V 40 model risk.
+
+version: "0.1.0"
+
+defaults:
+  verification:
+    min_checks_passed_fraction: 1.0
+    require_schema_valid: true
+    require_lint_clean: true
+  validation:
+    min_agreement: 0.95
+    max_relative_error: 0.05
+    require_human_review: true
+  uncertainty:
+    max_coefficient_of_variation: 0.10
+    min_consensus_runs: 3
+    confidence_level: 0.95
+  gate:
+    block_on_any_failure: true
+    escalate_on_divergence: true
+
+bimanual-handeye-servo:
+  validation:
+    min_agreement: 0.97
+    reference: data/reference/handeye_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.08
+
+dexterous-finger-force:
+  validation:
+    reference: data/reference/finger_force_reference.json
+
+whole-body-balance:
+  validation:
+    min_agreement: 0.98
+    max_relative_error: 0.03
+    reference: data/reference/balance_zmp_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.06
+
+autonomous-plan-correctness:
+  validation:
+    reference: data/reference/plan_reference.json
+
+instrument-grasp-handover:
+  validation:
+    min_agreement: 0.96
+    reference: data/reference/grasp_reference.json
+
+vascular-no-fly-hand:
+  validation:
+    min_agreement: 1.00
+    max_relative_error: 0.01
+    reference: data/reference/vessel_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.05
+  hard_checks:
+    hard_stop_violations_zero: "hard_stop_violations == 0"
+
+bimanual-suturing-anastomosis:
+  validation:
+    min_agreement: 0.96
+    reference: data/reference/ring_tension_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.08
+
+perception-scene-understanding:
+  validation:
+    reference: data/reference/perception_reference.json
+
+shared-or-human-collision:
+  validation:
+    min_agreement: 1.00
+    max_relative_error: 0.02
+    reference: data/reference/collision_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.06
+  hard_checks:
+    clearance_above_floor: "min_clearance_mm >= 50.0"
+
+fault-estop-graceful-degradation:
+  validation:
+    min_agreement: 1.00
+    max_relative_error: 0.02
+    reference: data/reference/fault_reference.json
+  uncertainty:
+    max_coefficient_of_variation: 0.05
+  hard_checks:
+    safe_state_reached: "safe_state_success_rate == 1.0"
+...
