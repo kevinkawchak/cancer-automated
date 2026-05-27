@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v1.0.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v1.1.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/27: v1.1.0 (VVUQ-02 Draft Paper)** Adds [papers/VVUQ-02/draft-paper](papers/VVUQ-02/draft-paper): a compilable single column LaTeX scaffold for *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation*, built from the Template_04 regulatory and FDA submission scaffold. Every body section is a bracketed processing instruction naming the exact codegen, execution, inputs, and imagegen files a future pass must read; the references (41 entries with clickable DOIs and well-represented external standards) are final, and the five figure floats (forest, binding matrix, standards wheel, sensor bands, cost assessment) are placed with captions, labels, and `\autoref`. Authored across 14 commits in a single pull request, one file per commit pushed in real time, and shipped as a single Overleaf-ready LaTeX zip.
 
 **5/26: v1.0.0 (VVUQ-02 Imagegen)** Renders the v0.9.0 image instructions into [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README. Every figure is grounded in the codegen (v0.7.0) and execution (v0.8.0) records, renders on a white background with no dark mode, and is ruff clean.
 
@@ -55,6 +57,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Execution](#vvuq-02-execution)
 - [VVUQ-02 Image Instructions](#vvuq-02-image-instructions)
 - [VVUQ-02 Imagegen](#vvuq-02-imagegen)
+- [VVUQ-02 Draft Paper](#vvuq-02-draft-paper)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -344,7 +347,17 @@ cancer-automated/
         │   ├── prompt-imagegen.md  # the generating prompt, verbatim
         │   ├── output-imagegen.md  # the narrative output of the imagegen step
         │   └── NN-name/            # NN-name.py (matplotlib + numpy) and NN-name.png (300 dpi)
-        └── draft-paper/ full-paper/ final-paper/  # placeholders (future manuscript)
+        ├── draft-paper/            # ★ v1.1.0 LaTeX draft scaffold (instructions + final refs)
+        │   ├── README.md           # DOI badges, section to source map, formatting rules
+        │   ├── main.tex            # title page, TOC, \input wiring, format directives
+        │   ├── new_paper.sty       # Palatino + navy style (template family)
+        │   ├── references.bib      # 41 final entries; clickable DOIs; standards heavy
+        │   ├── sections/           # abstract..back_matter: bracketed build instructions
+        │   ├── Images/             # author drops the five rendered PNGs here later
+        │   ├── draft-paper.zip     # Overleaf-ready LaTeX bundle
+        │   ├── prompt-draft-paper.md   # the generating prompt, verbatim
+        │   └── output-draft-paper.md   # the narrative output of the draft-paper step
+        └── full-paper/ final-paper/  # placeholders (future 70+ page manuscript)
 ```
 
 ## Established Methods Proven Across Projects
@@ -558,6 +571,22 @@ As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](pa
 | 15 | `15-platform-mindmap` | Mind map | - |
 
 The arithmetic reconciles to the source files: the treemap tile areas sum to 172 tests across 15 modules, the composite weights sum to 1.00, the swimmer durations sum to 60 s, the four-entrant appearances sum to 256 over 128 verdicts, and the sweep strip plot reproduces min 93.417, max 93.715, and mean 93.562. The scripts depend only on `matplotlib` and `numpy` and keep `ruff check` and `ruff format --check` clean across Python 3.10, 3.11, and 3.12; the core CI does not import `imagegen/`. See the [imagegen README](papers/VVUQ-02/imagegen) for the rendered gallery, the generated-code versus execution split, and reproduction with matplotlib.
+
+## VVUQ-02 Draft Paper
+
+As of v1.1.0 the draft manuscript scaffold lives under [papers/VVUQ-02/draft-paper](papers/VVUQ-02/draft-paper): a compilable single column LaTeX bundle for *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation*, built from the Template_04 regulatory and FDA submission scaffold. It is a head start, not a finished paper. Each body section is a bracketed processing instruction that names the exact codegen (v0.7.0), execution (v0.8.0), inputs, and imagegen files a future Claude Code Opus 4.7 (1M) Max pass must read and synthesise into publication-quality prose, with the long paths kept in tables and the prose reserved for connected argument. The references are already final (41 entries, every DOI and resolver URL clickable, the external standards well represented), and the five figure floats are placed with one-line captions, labels, and `\autoref`.
+
+```
+  codegen/ + execution/ + inputs/ + imagegen/        draft-paper/ (this bundle)
+  +---------------------------------------+          +---------------------------+
+  | source files named per section        |  cite    | main.tex + sections/*.tex |
+  | (the grounding for every claim)        | =======> | [bracketed instructions]  |
+  +---------------------------------------+  +refs    | references.bib (final)    |
+                                                      +---------------------------+
+        scaffold + instructions  ----------------->  future 70+ page full paper
+```
+
+The bundle ships as a single Overleaf-ready zip (`draft-paper.zip`). Until the author drops the five rendered PNGs into `Images/`, each figure float renders a labelled placeholder via `\IfFileExists`, so the draft compiles cleanly now and again once the images are added. The figures are `fig:wheel` (Methods), `fig:forest` and `fig:bands` (Results), and `fig:matrix` and `fig:cost` (Discussion). See the [draft-paper README](papers/VVUQ-02/draft-paper) for the section to source-file map, the figure table, and the senior-author formatting rules.
 
 ## Continuous Integration
 

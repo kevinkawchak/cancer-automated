@@ -5,6 +5,50 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-05-27
+
+### Added
+- `papers/VVUQ-02/draft-paper/`: a compilable single column LaTeX draft scaffold
+  for *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing
+  Priority over Code Generation*, built from the Template_04 regulatory and FDA
+  submission scaffold and authored by Claude Code Opus 4.7 (1M context) Max running
+  autonomously in a managed cloud container across 14 commits in a single pull
+  request, one file per commit pushed to GitHub in real time, then a
+  second-to-last error-fix and consolidation commit and a final repository-updates
+  commit.
+- `main.tex` (title page, table of contents, section `\input` wiring, and the
+  global production and formatting directives), `new_paper.sty` (the Palatino and
+  navy style carried from the template family), and eight `sections/*.tex` files
+  (abstract, introduction, methods, results, discussion, limitations and future
+  work, conclusions, and back matter), each a bracketed processing instruction that
+  names the exact codegen, execution, inputs, and imagegen files a future pass must
+  read and synthesise into publication-quality prose. No section is processed here.
+- `references.bib`: a final, polished bibliography of 41 entries with the DOI
+  string and its clickable resolver URL in every `note` field, the external
+  standards and regulations well represented (ASME V&V 40-2018, NASA-STD-7009A,
+  IEC 80601-2-77, IEC 60601-1, ISO/TS 15066, ISO 13482, ISO 10218-1, ISO 9283,
+  IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009, FDA CM&S credibility, FDA
+  real-time clinical trials, and ICH E6(R3)), GitHub and Zenodo links once each for
+  repositories, no `howpublished` field, and both the paper and repository DOIs
+  clickable.
+- Five figure floats placed with one-line captions, space and dash and underscore
+  free labels, and `\autoref` usage: `fig:wheel` (Methods), `fig:forest` and
+  `fig:bands` (Results), and `fig:matrix` and `fig:cost` (Discussion). Each wraps
+  the supplied figure code in `\IfFileExists` so the draft compiles before the
+  rendered PNGs are dropped into `Images/`.
+- `papers/VVUQ-02/draft-paper/README.md` with DOI badges, the lineage and file
+  layout ASCII diagrams, the section to source-file map, the figure table, the
+  senior-author formatting rules, and the references policy; `draft-paper.zip` (the
+  Overleaf-ready LaTeX bundle); and `prompt-draft-paper.md` and
+  `output-draft-paper.md`.
+
+### Changed
+- Top-level `README.md`: release badge to v1.1.0, a v1.1.0 summary above the prior
+  summary, a VVUQ-02 Draft Paper section with an ASCII flow diagram and a table of
+  contents entry, and the repository structure tree (the draft-paper directory
+  expanded to the scaffold file set).
+- `releases.md` (v1.1.0 release notes), `CITATION.cff` (version 1.1.0).
+
 ## [1.0.0] - 2026-05-26
 
 ### Added

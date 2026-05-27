@@ -4,6 +4,40 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-02 Draft Paper: LaTeX Scaffold with Bracketed Processing Instructions (v1.1.0)
+v1.1.0 - VVUQ-02 Draft Paper: LaTeX Scaffold with Bracketed Processing Instructions
+
+## Summary
+
+- Adds papers/VVUQ-02/draft-paper, a compilable single column LaTeX draft scaffold for the manuscript 10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation, built from the Template_04 regulatory and FDA submission scaffold and authored by Claude Code Opus 4.7 (1M context) Max running autonomously in a managed ephemeral cloud container across 14 commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix and consolidation commit and a final repository-updates commit.
+- Sets up the draft leg of the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: the scaffold is a head start, not a finished paper, and every body section is a bracketed processing instruction that names the exact files a future pass must read so the paper writes itself from the recorded assurance evidence rather than from estimation.
+- Keeps the scaffold faithful to the prompt: no section is processed, no template or VVUQ-01 prose is copied (only bibtex entries are reused), the long file paths are kept in tables while the prose is reserved for connected publication-quality argument, and the instructions name the precise codegen (v0.7.0), execution (v0.8.0), inputs, and imagegen sources for each section, including the 172-test suite, the ten gates and their thresholds, the five ACCEPT, BLOCK, and ESCALATE decision cases, the 32 of 32 sweep at composite mean near 93.6, the 1790-line four-entrant tournament in codegen/results/comparison.json, and the 1000-row non-repetitive humanoid sensor stream in codegen/data/sample_h2_sensor.csv.
+- Places five figure floats with one-line captions, space and dash and underscore free labels, and `\autoref` usage: fig:wheel (Methods, standards wheel), fig:forest and fig:bands (Results, ten-gate threshold forest and sensor safety bands), and fig:matrix and fig:cost (Discussion, gate to standard binding matrix and assurance cost assessment). Each wraps the supplied figure code in `\IfFileExists` so the draft compiles before the rendered PNGs are dropped into Images.
+- Finalises the bibliography: 41 entries with the DOI string and its clickable resolver URL in every note field, the external standards and regulations well represented (ASME V&V 40-2018, NASA-STD-7009A, IEC 80601-2-77, IEC 60601-1, ISO/TS 15066, ISO 13482, ISO 10218-1, ISO 9283, IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009, FDA CM&S credibility, FDA real-time clinical trials, and ICH E6(R3)), GitHub and Zenodo links once each for repositories, no howpublished field, and both the paper and repository DOIs clickable.
+- Ships the bundle as a single Overleaf-ready LaTeX zip (draft-paper.zip) and keeps the pull request green: no Python or linted YAML is added, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12 (verified locally with ruff check and ruff format).
+- Updates the main README (release badge to v1.1.0, a v1.1.0 summary above the prior summary, a VVUQ-02 Draft Paper section with an ASCII flow diagram and a table of contents entry, and the repository structure tree with the draft-paper directory expanded), this releases file, the CHANGELOG (v1.1.0), and CITATION.cff (version 1.1.0).
+
+## Features
+
+- papers/VVUQ-02/draft-paper/main.tex: the preamble, the title page (replacement title, the ORCID iD link, CEO ChemicalQDevice, the clickable Zenodo DOI, and May 28, 2026), the abstract and disclaimer and one-line keywords, the introduction before the table of contents, the body section `\input` wiring, the `\nocite{*}` and ieeetr bibliography, and the global production and formatting directives.
+- papers/VVUQ-02/draft-paper/new_paper.sty: the Palatino serif, single column, navy accent style carried from the template family so the draft keeps the same text colour formatting.
+- papers/VVUQ-02/draft-paper/references.bib: the final polished 41-entry bibliography.
+- papers/VVUQ-02/draft-paper/sections: abstract, introduction, methods, results, discussion, limitations_future, conclusions, and back_matter, each a bracketed processing instruction with exact source paths, plus the five placed figure floats.
+- papers/VVUQ-02/draft-paper/README.md: DOI badges, the lineage and file-layout ASCII diagrams, the section to source-file map, the figure table, the senior-author formatting rules, and the references policy.
+- papers/VVUQ-02/draft-paper/Images/README.md: the placeholder directory note; draft-paper.zip: the Overleaf-ready bundle; prompt-draft-paper.md and output-draft-paper.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials. The draft is a scaffold: the bracketed instructions are the build order for a future Claude Code Opus 4.7 (1M) Max pass that will produce a 70+ page full paper, and they must be processed, not shipped as is. pdflatex was not available in the container and the prompt asked not to compile, so the LaTeX was validated structurally (balanced braces and environments, matched figure labels and `\autoref` targets, single-hyphen and section-symbol scans) and made compile-safe with `\IfFileExists` figure placeholders; the author later drops the five rendered PNGs from papers/VVUQ-02/imagegen into Images. The Unitree H2-Surgical 1.0 is a clearly labelled hypothetical 2030 platform and every supporting number is a simulation result; the four-entrant comparison is simulation against simulation. The ten VVUQ gates plus a recorded human reviewer must clear any deliverable before clinical use, and a real deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization. Mentions of the FDA and other governing bodies are respectful and non-presumptuous.
+
+---
+
 VVUQ-02 Imagegen: 15 Rendered Publication Figures (v1.0.0)
 v1.0.0 - VVUQ-02 Imagegen: 15 Rendered Publication Figures
 
