@@ -1,0 +1,192 @@
+% ============================================================
+% main.tex
+% Full manuscript for:
+%   10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids:
+%   VVUQ Processing Priority over Code Generation
+% Author: Kevin Kawchak, CEO ChemicalQDevice
+% License: CC BY 4.0
+%
+% This is the processed full paper. Each section under sections/ carries
+% finished publication prose and left-aligned fixed-width tables synthesised
+% from the repository records under papers/VVUQ-02/ (inputs, codegen, and the
+% five-section execution record). The references.bib is final; do not weaken any
+% DOI, URL, or note field. The five figure floats keep their labels and
+% \autoref targets; the author drops the rendered PNGs into Images/ later, and a
+% labelled placeholder renders until then so the manuscript always compiles.
+%
+% GLOBAL PRODUCTION AND FORMATTING DIRECTIVES (held throughout):
+%   1. A comprehensive manuscript: each section gives full context, no filler.
+%   2. Prose reads as a senior human author wrote it: ideas connect across
+%      sections, tables and figures are referenced with \autoref rather than
+%      narrated row by row.
+%   3. Tables carry the dense facts. Long paths are given once near the top of a
+%      table (or its caption); body cells keep abbreviated leaf names.
+%   4. Every table column is left aligned and ragged right, set in a tabularx of
+%      width \textwidth so each table matches the body measure exactly. The L{}
+%      and Y column types below prepend \raggedright\arraybackslash to every
+%      width so there are no large inter-word gaps in cells.
+%   5. Body text avoids large white bands. \sloppy, \emergencystretch, microtype,
+%      and tuned penalties keep words evenly spaced with no right-margin overflow.
+%   6. No orphan or widow line and no lines of only one or two words; the widow
+%      and club penalties in new_paper.sty are 10000.
+%   7. The section symbol "§" is used for any clause reference (for example
+%      "ASME V&V 40-2018 §8"); "SS" is never used for a section.
+%   8. Single hyphens only. No em dashes, en dashes, double, or triple dashes.
+%   9. The navy accent and Palatino body from new_paper.sty are preserved.
+%  10. Senior-author finishing: each page balances so it stands on its own,
+%      without overcrowding (some white space is fine).
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{new_paper}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage[hidelinks,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+\usepackage{underscore}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{caption}
+
+% Author drops the five PNGs (named below) into Images/ later. Until then
+% each figure float shows a labelled placeholder so the manuscript compiles.
+\graphicspath{{Images/}{./}}
+
+\setlength{\headheight}{16pt}
+\renewcommand{\shorttitle}{\scriptsize\scshape H2 Surgical Humanoid VVUQ Priority}
+
+\tolerance=1200
+\emergencystretch=3em
+\hbadness=2000
+\hyphenpenalty=50
+\exhyphenpenalty=50
+\sloppy
+
+\hypersetup{
+  urlcolor=black,
+  linkcolor=black,
+  citecolor=black,
+  filecolor=black
+}
+
+\def\UrlBreaks{\do\/\do-\do.\do=\do_\do?\do\&\do\%\do\a\do\b\do\c\do\d\do\e%
+\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I%
+\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+\do\Y\do\Z}
+
+\IfFileExists{orcid_icon.png}{
+  \newcommand{\orcidicon}[1]{%
+    \href{https://orcid.org/#1}{%
+    \raisebox{-1pt}{\includegraphics[height=9pt]{orcid_icon.png}}}}
+}{
+  \definecolor{orcidgreen}{HTML}{A6CE39}
+  \newcommand{\orcidicon}[1]{%
+    \href{https://orcid.org/#1}{%
+    \textbf{\textcolor{orcidgreen}{\textsf{iD}}}}}
+}
+
+% Left-aligned, ragged-right fixed-width column (no large inter-word gaps).
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% Flexible ragged-right column for tabularx; tables are set to \textwidth so
+% they match the body measure exactly while keeping cells left aligned.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+
+\title{10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation}
+
+\author{
+  Kevin Kawchak\hspace{2pt}\orcidicon{0009-0007-5457-8667} \\
+  CEO ChemicalQDevice\\
+  \href{https://doi.org/10.5281/zenodo.xxxxxxxx}{10.5281/zenodo.xxxxxxxx} \\
+}
+
+\date{May 28, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+% Disclaimer rendered directly under the abstract (two lines), per the
+% title-page layout. Keep it verbatim.
+\vspace{0.2em}
+\noindent\footnotesize\textit{Disclaimer: This work is independent and not
+endorsed or sponsored by trial sponsors, FDA, CRO, site, IRB, regulator, or
+medical society; and was generated using Artificial Intelligence.}
+\normalsize
+
+% Keywords on page one immediately after the abstract; one line, no underline.
+\keywords{verification, validation, and uncertainty quantification | surgical
+humanoid | pancreatic cancer | autonomous code assurance | external standards |
+physical AI oncology trials | ASME V\&V 40-2018 | IEC 80601-2-77}
+
+\vspace{-0.2cm}
+
+\section{Introduction}
+\label{sec:introduction}
+\input{sections/introduction}
+
+\tableofcontents
+\vspace{0.4cm}
+
+\newpage
+\section{Methods}
+\label{sec:methods}
+\input{sections/methods}
+\newpage
+
+\section{Results}
+\label{sec:results}
+\input{sections/results}
+\newpage
+
+\section{Discussion}
+\label{sec:discussion}
+\input{sections/discussion}
+
+\section{Limitations and Future Work}
+\label{sec:limitations}
+\input{sections/limitations_future}
+\newpage
+
+\section{Conclusions}
+\label{sec:conclusions}
+\input{sections/conclusions}
+\newpage
+
+% References. The .bib is final and polished. \nocite{*} guarantees every entry
+% renders; the body prose additionally places inline \cite calls so each
+% reference is anchored where it is used. ieeetr prints the note field, so each
+% DOI string and its clickable resolver URL both appear.
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begingroup
+\raggedright
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+\newpage
+
+\input{sections/back_matter}
+
+\end{document}
