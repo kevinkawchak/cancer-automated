@@ -1,0 +1,182 @@
+% Discussion: what the VVUQ tests demonstrate, quality and confidence against the
+% external standards, the cost and speed half of the thesis, and comparison to
+% prior work with practical insight. Figures 04 and 13 are placed here and
+% referenced with \autoref. The through-line is the thesis: assurance, not
+% generation, is the decision-bearing work, and standards anchoring makes it
+% defensible.
+
+The discussion interprets the record rather than recapitulating it. The
+through-line is the thesis stated in the introduction: for a single autonomous
+humanoid the assurance process is the decision-bearing work, and binding that
+process to external standards is what makes its verdicts defensible. The four
+subsections take that claim through the test evidence, the credibility argument,
+the cost argument, and the comparison to prior work.
+
+\subsection{What the VVUQ tests demonstrate}
+
+The shape of the test suite is itself an argument. Of the 172 tests, the
+ten-gate assurance registry carries 64 and the safety module a further twelve, so
+the assurance and safety code together hold more than two-fifths of the budget
+and outweigh every behavior module they judge. A suite weighted this way is the
+thesis written in test counts: the organisation spent most of its verification
+effort on deciding whether a behavior may ship, not on producing the behavior.
+The tests also pin the safety semantics each standard requires rather than merely
+confirming that functions return. The catastrophe-gate tests assert that a hard
+stop, an e-stop, or a hand-back is produced at the boundary, matching the IEC
+80601-2-77 \S201.x hazardous-situation response and the IEC 60601-1 single-fault
+safe state \cite{iec8060127, iec60601}. The balance tests assert the
+zero-moment-point margin against the support polygon, the ISO 13482 stability
+property for a standing service robot \cite{iso13482}. The autonomy tests score
+phase-step concordance between the compiled plan and the annotated reference, the
+property UL 4600 and IEEE 7009 require of an autonomous system that must default
+to a safe state \cite{ul4600, ieee7009}. And the standards-corpus tests confirm
+that every gate resolves its governing designations through the wired manifest,
+so the credibility argument is traceable rather than asserted.
+
+\subsection{Quality and confidence against the external standards}
+
+The decision surface is credible because every gate decision is traceable to a
+published designation rather than an ad hoc threshold.
+\autoref{tab:pergatestandards} lists the standards each gate resolves at runtime,
+and the three credibility questions map cleanly onto them. Verification, the
+exact 1.0 pass fraction and the 172-test floor beneath it, answers to ASME V\&V
+40-2018 \S8 and IEC 62304 software verification \cite{asmevv40, iec62304}.
+Validation, the agreement against the independent references, answers to ASME
+V\&V 40 \S9 and to the recorded human review and risk control of ISO 14971
+\cite{iso14971}. Uncertainty, the coefficient-of-variation bounds and the
+escalate path, answers to NASA-STD-7009A, which treats uncertainty as a
+first-class credibility factor rather than an afterthought \cite{nasastd7009a}.
+Taken together these map onto the United States Food and Drug Administration
+framework for assessing the credibility of computational modeling and simulation,
+which asks exactly for a risk-proportionate credibility argument of this kind
+\cite{fda2023credibility}. \autoref{fig:matrix} shows the binding as a matrix:
+all fifteen governing standards are used by at least one gate or by the
+cross-cutting credibility set, and the densest anchoring falls on the three
+catastrophe gates and on the workhorse robotic-surgery standard IEC 80601-2-77,
+which is where the risk and therefore the required credibility are highest.
+
+\begin{table}[H]
+\caption{Resolved per-gate governing standards (from
+\texttt{papers/VVUQ-02/codegen/config/standards\_map.yaml} and the manifest);
+every decision carries these designations.}
+\label{tab:pergatestandards}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{4.2cm} Y}
+\toprule
+\textbf{Gate} & \textbf{Resolved governing standards} \\
+\midrule
+01 bimanual-handeye-servo & IEC 80601-2-77:2019, ISO 9283:1998, ASME V\&V 40-2018 \\
+02 dexterous-finger-force & IEC 80601-2-77:2019, ISO/TS 15066:2016 \\
+03 whole-body-balance & ISO 13482:2014, IEC 60601-1 \\
+04 autonomous-plan-correctness & UL 4600 (2023), IEEE 7009-2024, IEC 62304 \\
+05 instrument-grasp-handover & IEC 80601-2-77:2019, ISO 9283:1998 \\
+06 vascular-no-fly-hand & IEC 80601-2-77:2019, ISO 14971:2019 \\
+07 bimanual-suturing-anastomosis & IEC 80601-2-77:2019, Fistula Risk Score \\
+08 perception-scene-understanding & ASME V\&V 40-2018, IEC 62304 \\
+09 shared-or-human-collision & ISO/TS 15066:2016, ISO 10218-1:2011, ISO 13482:2014 \\
+10 fault-estop-graceful-degradation & IEC 60601-1, ISO 13849-1:2023, IEEE 7009-2024 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The cost and speed half of the thesis}
+
+The thesis claims the assurance work was done faster and less expensively than
+conventional verification, and the record supports that claim along four
+documented lines. Setup was near zero, because the tree is standard library plus
+four small packages with guarded optional imports, so everything core ran
+immediately rather than after installing a heavy optional matrix. The work was
+one integrated loop, reading code, running it, processing the two large
+artifacts, writing documentation, re-running lint, committing, and pushing, with
+no context switch between terminal, editor, and version-control client. The
+assurance breadth exceeded the shipped tests in a single pass, because the agent
+ran the full accept, block, and escalate surface and the full safety surface and
+processed the 1790-line comparison and the 1000-row stream structurally. And the
+record is self-verifying, since every command and its verbatim output is captured
+for re-derivation. \autoref{fig:cost} renders this as an explicit and honest cost
+bridge; the index is illustrative and grounded in direction only, because the
+repository records no dollar figures, and the time anchor is concrete in that the
+172-test suite runs in about 1.4 seconds while generation is microsecond-scale.
+Honesty requires stating what a conventional provisioned server still does
+better: live on-prem language-model intent and judging, real Zenodo deposition,
+and physics-backed simulation on a graphics processor all need a provisioned
+machine with keys and accelerators that the ephemeral container did not have, so
+the cost argument is about the assurance and documentation loop, not about
+workloads the container could not run.
+
+\subsection{Comparison to prior work and practical insight}
+
+Positioned against contemporary autonomous systems, the contribution is the
+emphasis on assurance over generation for a single embodied surgeon.
+\autoref{tab:priorwork} contrasts the present work with deterministic
+language-model code generation \cite{trooskens2026compiled}, autonomous
+clinical-trial statistical programming \cite{yan2026clinagent}, a validated
+generative clinical data pipeline \cite{carlisle2026pipeline}, and the
+digital-twin VVUQ survey that frames the field \cite{sel2025vvuq}. Each of those
+advances the generation or the validation of software; this paper makes the gate
+that decides whether generated behavior may ship the unit of automation. The
+practical insight is to be honest about how close to real life this is. It is a
+planning and assurance reference, not a robot controller; the platform is a
+clearly labelled hypothetical 2030 device; and every number is a simulation
+result, with the four-entrant comparison being simulation against simulation.
+Within those bounds, the framework nonetheless checks real assurance steps off,
+determinism from a fixed seed, traceable external standards, pass-or-fail
+verification, validation against independent references, a recorded human review,
+and a hand-back-to-human default on escalation, so the field does not have to
+re-derive them for each new deliverable. The regulatory posture is respectful but
+opportunistic: this is the kind of fast, standards-anchored assurance the United
+States Food and Drug Administration real-time clinical trials direction invites
+\cite{fda2026realtime}, and United States leadership in surgical-humanoid VVUQ
+tied to external standards would serve patient safety, efficacy, and trial speed
+together.
+
+\begin{table}[H]
+\caption{Comparison to prior autonomous and VVUQ work; the present study makes
+the ship-decision gate the unit of automation.}
+\label{tab:priorwork}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{3.4cm} Y Y}
+\toprule
+\textbf{Prior work} & \textbf{Focus} & \textbf{Contrast with this work} \\
+\midrule
+Deterministic LLM codegen & reproducible code generation & gates the generated behavior rather than the code \\
+Autonomous statistical programming & precise trial program output & adds risk-proportionate ship decisions \\
+Validated generative pipeline & a validation stage on extraction & makes the full VVUQ gate the deliverable \\
+Digital-twin VVUQ survey & vocabulary and perspective & executes the vocabulary on an embodied surgeon \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+   \centering
+   \IfFileExists{Images/04-gate-standard-binding-matrix.png}{%
+     \hspace{-0.95cm}%
+     \includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/04-gate-standard-binding-matrix.png}%
+     % \vspace{-0.25cm}
+   }{%
+     \setlength{\fboxsep}{10pt}%
+     \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
+     The author adds \texttt{Images/04-gate-standard-binding-matrix.png}, rendered by
+     \texttt{papers/VVUQ-02/imagegen/04-gate-standard-binding-matrix/04-gate-standard-binding-matrix.py}.}}%
+   }
+    \caption{Binding matrix of the ten VVUQ gates against the fifteen governing external standards, with every standard anchored by at least one gate.}
+    \label{fig:matrix}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+   \IfFileExists{Images/13-assurance-cost-assessment.png}{%
+     \hspace{-0.95cm}%
+     \includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/13-assurance-cost-assessment.png}%
+     % \vspace{-0.25cm}
+   }{%
+     \setlength{\fboxsep}{10pt}%
+     \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
+     The author adds \texttt{Images/13-assurance-cost-assessment.png}, rendered by
+     \texttt{papers/VVUQ-02/imagegen/13-assurance-cost-assessment/13-assurance-cost-assessment.py}.}}%
+   }
+    \caption{Assurance cost assessment, autonomous cloud VVUQ versus conventional verification, on an illustrative relative index grounded in direction.}
+    \label{fig:cost}
+\end{figure}
