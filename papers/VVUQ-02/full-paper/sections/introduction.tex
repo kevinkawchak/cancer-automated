@@ -1,0 +1,103 @@
+% Introduction: VVUQ primer, the single-humanoid thesis, the VVUQ-01 lineage,
+% scope and the regulatory moment, contributions and roadmap. Prose only; file
+% names are deferred to the Methods tables, and the literature is cited rather
+% than described.
+
+Verification, validation, and uncertainty quantification, abbreviated VVUQ, is
+the discipline that decides whether a computational result is credible enough to
+act on. In the plain language of an oncology clinical trial the three questions
+are concrete. Verification asks whether the code was built correctly, that the
+software computes what its specification says it computes. Validation asks
+whether the right model was built, that the computed behavior agrees with an
+independent reference of the real world. Uncertainty quantification asks how
+confident one should be in the answer, given the spread of results across
+repeated runs and the assumptions that produced them. These are the same three
+questions a trial statistician asks of an endpoint, a sponsor asks of a safety
+signal, and a regulator asks of any model offered as evidence. The survey
+vocabulary for digital twins in precision medicine frames VVUQ in exactly this
+way \cite{sel2025vvuq}, and the discipline already has direct oncology precedent
+in the verification, validation, and uncertainty quantification of
+physiologically based pharmacokinetic models used for treatment planning
+\cite{zaid2025pbpk}. What distinguishes the present work is that each of the
+three questions is not an abstraction but an executed check: a verification
+predicate that must pass, a validation comparison against a committed reference,
+and a dispersion bound computed across seeded runs, composed into a single gate
+that returns accept, block, or escalate. The reader should hold that picture
+throughout, because the entire argument of this paper rests on the claim that
+running those checks well, not generating the code they judge, is where the work
+and the risk actually live.
+
+That claim is the thesis. For a single autonomous surgical humanoid the robotic
+code assurance process, not code generation, is the substantial and
+decision-bearing part of the artificial intelligence workflow, and holding VVUQ
+to a higher standard than the code itself is what will make upcoming physical AI
+oncology trial deliverables faster, less expensive, and more beneficial to
+patients than conventional verifications. The asymmetry is sharpened by the
+embodiment. A teleoperated multi-arm cart distributes its action across several
+instruments under a surgeon's continuous control, with a bedside assistant and a
+second cart available to take over. A single humanoid concentrates all surgical
+action into two hands, with no second cart and no human bedside assistant in the
+loop, so all error potential is concentrated in one body. The consequence is
+structural rather than rhetorical: the assurance layer must be larger, stricter,
+and more thoroughly exercised than the control code it judges, and any candidate
+behavior must clear ten distinct humanoid-specific gates before it may ship. Code
+generation, by contrast, is fast and deterministic; a behavior model or a
+structured results file is produced in microseconds and reproduced exactly from a
+fixed seed. The decision to ship is the slow, expensive, judgement-bearing step.
+This paper operationalizes that asymmetry end to end and shows that an autonomous
+agent can carry the heavier half cheaply and reproducibly.
+
+The work extends a documented lineage. The prior paper established a two-stage
+VVUQ framework that placed verification over generation for a large language
+model oncology code workflow, treating the assurance of generated code as the
+deliverable rather than the code itself \cite{kawchak2026vvuq01}. The present
+study specializes that generic framework in three ways. It narrows generic code
+verification to ten humanoid-specific surgical gates, each tied to a named
+failure mode of a two-handed standing robot. It binds every gate to a wired
+corpus of robotic-surgery and service-robot safety standards resolved at runtime,
+so the thresholds are not invented but inherited from published consensus
+documents. And it exercises the whole apparatus over a concrete 60-second Whipple
+procedure rather than an abstract code artifact. The study sits within a broader
+program of autonomous physical AI oncology trial automation that includes a fully
+automated trial sponsor \cite{kawchak2026sponsor}, a federated multi-site trial
+unification layer \cite{kawchak2026federated}, and accelerated patient outcome
+prediction \cite{kawchak2026prediction}, and it draws its pancreatic cancer
+modelling heritage from a quantitative systems pharmacology in silico trial
+\cite{kawchak2025qsppdac} and an end-to-end pancreatic ductal adenocarcinoma
+digital twin proposal \cite{kawchak2025pdactwin}. The contribution here is to
+make the assurance step itself the unit of automation.
+
+The scope is deliberately frozen so the assurance argument stays clean. There is
+one simulated patient, the borderline-resectable pancreatic ductal
+adenocarcinoma case PAT-PDAC-0001, reused verbatim from the multi-arm baseline so
+the single-humanoid run is directly comparable. There is one procedure, a classic
+pancreaticoduodenectomy with pylorus preservation rendered as a 60-second
+eight-phase timeline. There is one robot, the hypothetical 2030 Unitree
+H2-Surgical 1.0 with two seven-degree-of-freedom arms and two
+twenty-degree-of-freedom dexterous hands. And there is one deterministic design,
+a 32-iteration sweep at seed 20260525. The timing is opportune. The United States
+Food and Drug Administration has announced steps toward real-time clinical trials
+\cite{fda2026realtime}, and its guidance on assessing the credibility of
+computational modeling and simulation in medical device submissions
+\cite{fda2023credibility} gives a concrete credibility framework that a
+standards-anchored, autonomous assurance pipeline is well placed to support.
+These references are made respectfully and without presumption; the argument is
+simply that a fast, reproducible, standards-anchored assurance method is timely,
+and that the United States is well positioned to lead the world in
+surgical-humanoid VVUQ tied to external standards for patient safety, efficacy,
+and trial speed.
+
+This paper makes four contributions, each mapped to the Results section that
+follows. First, it presents a ten-gate humanoid assurance decision surface and
+demonstrates that its accept, block, and escalate paths all behave as specified
+across five executed cases. Second, it reports a 32-iteration deterministic sweep
+and a four-entrant comparison tournament that together show the assurance overlay
+is decisive over any headline score. Third, it features two substantial generated
+artifacts, a structured four-competitor results file and a thousand-row
+non-repetitive humanoid sensor stream, and shows that producing them is cheap
+while verifying them is the work. Fourth, it argues that binding every gate to
+published external standards is what turns an inexpensive autonomous run into
+defensible evidence. The remainder of the paper proceeds from Methods, which
+describes the environment, the platform, the ten-gate design, the wired standards
+corpus, the pipeline, and the verification floor, through Results, Discussion,
+Limitations and Future Work, and Conclusions.

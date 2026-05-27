@@ -1,0 +1,271 @@
+% Results: the ten-gate decision surface (centerpiece), the executed control
+% behaviors, the 32-iteration sweep and four-entrant tournament, the featured
+% 1000-row sensor stream, the 60-second timeline and safety surface, and
+% determinism. Dense numbers live in body-width tables; figures 03 and 11 are
+% placed here and referenced with \autoref.
+
+The results lead with the decision surface, because it is the operational proof
+of the thesis, and then move outward to the behaviors that feed it, the
+integration layer that repeats it, the featured artifacts that stress it, and the
+determinism that lets every number stand as reproducible evidence. Throughout,
+the dense values are carried in the tables and the figures and are referenced
+rather than restated.
+
+\subsection{The ten-gate decision surface}
+
+The assurance layer was run over five cases that together exercise the full
+accept, block, and escalate surface. In the nominal case the observed metric for
+each gate equalled its independent reference, every verification, validation, and
+uncertainty dimension passed, a human review was recorded, and all ten gates
+returned accept; this is the only path on which the composite score is even
+reported. Four adversarial cases then proved that the failing paths actually
+fail. A catastrophe hard-predicate failure blocked the vascular no-fly gate even
+though every graded dimension passed, because the count of hard-stop volume
+breaches was non-zero. A verification fraction of 0.80 blocked the perception
+gate, since four of five structural checks passing is still not the exact 1.0 the
+gate demands. A validation collapse blocked the balance gate, where driving the
+observed zero-moment-point margin 50 percent off its reference dropped agreement
+to 0.00 and breached the 0.03 relative-error bound. And a dispersion of 0.163,
+above the 0.10 bound, escalated the finger-force gate while verification and
+validation both passed, which is the quantification dimension doing its job and
+defaulting to hand-back-to-human. \autoref{tab:decisionsurface} summarises the
+five cases and the dimension each exercised.
+
+\begin{table}[H]
+\caption{The five executed VVUQ decision cases (from
+\texttt{papers/VVUQ-02/execution/03-vvuq/}); three distinct block mechanisms, one
+escalate, and one full-accept sweep.}
+\label{tab:decisionsurface}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{1cm} L{3.4cm} Y L{1.9cm}}
+\toprule
+\textbf{Case} & \textbf{Gate} & \textbf{Dimension exercised} & \textbf{Decision} \\
+\midrule
+A & all ten gates & nominal, observed equals reference & ten ACCEPT \\
+B & 06 vascular-no-fly & hard catastrophe predicate (hard-stop count) & BLOCK \\
+C & 08 perception-scene & verification fraction 0.80 below 1.0 & BLOCK \\
+D & 03 whole-body-balance & validation agreement 0.00 and rel err 0.500 & BLOCK \\
+E & 02 dexterous-finger-force & uncertainty CV 0.163 above 0.10 & ESCALATE \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The reason the surface behaves this way is that the ten gate thresholds tighten
+with model risk toward the three immediate-catastrophe gates, as
+\autoref{fig:forest} makes visible and \autoref{tab:thresholds} states exactly.
+Every gate requires a verification fraction of exactly 1.0; what varies is the
+validation agreement, the maximum relative error, and the dispersion bound, all
+of which are strictest for the vascular no-fly, shared-operating-room collision,
+and fault e-stop gates. The harness blocks or escalates on the first failing
+dimension and accepts only when verification, validation, quantification, and any
+hard predicate all hold, so the decision is categorical, not a score to be traded
+off.
+
+\begin{table}[H]
+\caption{The ten VVUQ gate thresholds (from
+\texttt{papers/VVUQ-02/codegen/config/vvuq\_thresholds.yaml}). Every gate also
+requires a verification fraction equal to 1.0; the three catastrophe gates carry
+an extra hard predicate.}
+\label{tab:thresholds}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{0.5cm} Y L{1.9cm} L{1.7cm} L{1.5cm} L{1.5cm}}
+\toprule
+\textbf{\#} & \textbf{Gate} & \textbf{Agreement ($\geq$)} & \textbf{Max rel err ($\leq$)} & \textbf{CV bound ($\leq$)} & \textbf{Catastrophe} \\
+\midrule
+01 & bimanual-handeye-servo & 0.97 & 0.050 & 0.08 & no \\
+02 & dexterous-finger-force & 0.95 & 0.050 & 0.10 & no \\
+03 & whole-body-balance & 0.98 & 0.030 & 0.06 & no \\
+04 & autonomous-plan-correctness & 0.95 & 0.050 & 0.10 & no \\
+05 & instrument-grasp-handover & 0.96 & 0.050 & 0.10 & no \\
+06 & vascular-no-fly-hand & 1.00 & 0.010 & 0.05 & yes \\
+07 & bimanual-suturing-anastomosis & 0.96 & 0.050 & 0.08 & no \\
+08 & perception-scene-understanding & 0.95 & 0.050 & 0.10 & no \\
+09 & shared-or-human-collision & 1.00 & 0.020 & 0.06 & yes \\
+10 & fault-estop-graceful-degradation & 1.00 & 0.020 & 0.05 & yes \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The executed control behaviors}
+
+The candidates the gates judge were produced by the six behavior groups, and each
+behaved as its gate expects. \autoref{tab:behaviors} collects the headline result
+from each group: the autonomy intent and compile reached a phase-step concordance
+of 1.000 against the annotated reference plan, the right seven-axis arm solved to
+a tip pose in the world frame, scene segmentation degraded smoothly under
+occlusion with all five structures still usable after near-infrared, ultrasound,
+and bile-channel fusion, the fingertip force tracked under its soft cap with the
+summed two-hand force inside the hard cap, the balance margin held well inside the
+support polygon across the disturbance range, and all three anastomoses held ring
+tension in band for every stitch. This subsection is intentionally tight, because
+these behaviors are the cheap, fast half of the workflow; the substantial work is
+the gating already shown, and the integration that follows.
+
+\begin{table}[H]
+\caption{Executed control-behavior headlines (from
+\texttt{papers/VVUQ-02/execution/02-pipeline/}); each group is the candidate its
+gate then judges.}
+\label{tab:behaviors}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{4.2cm} Y}
+\toprule
+\textbf{Behavior group (gate)} & \textbf{Headline result} \\
+\midrule
+Autonomy intent and compile (04) & phase-step concordance 1.000 for phases 1 and 5 \\
+Forward kinematics (01) & right arm tip pose solved from the seven-axis chain \\
+Perception and fusion (08) & mean Dice 1.000 to 0.819 over occlusion 0.00 to 0.30; five of five structures usable \\
+Hands, force and grasp (02, 05) & fingertip 1.84 N under soft cap; summed 5.0 N within hard cap; grasp and handover succeed \\
+Whole-body balance (03) & margin 130.0 to 62.3 mm over a 0 to 40 N push; stable, no e-stop \\
+Suturing and anastomosis (07) & three anastomoses, RMSE 0.0033 to 0.0047 N, in-band 1.0 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The 32-iteration sweep and the four-entrant tournament}
+
+The integration layer repeats the whole pipeline under a deterministic
+32-iteration Latin hypercube and then stages a four-entrant comparison. All 32 of
+32 iterations cleared every one of the ten gates, and the gated composite spanned
+a minimum of 93.417, a maximum of 93.715, and a mean of 93.562; the composite is
+reported only because every gate accepted, since the gating overlay withholds the
+headline number on any block or escalate, which is the thesis made mechanical.
+The comparison is the first of the two featured generated artifacts. It is a
+1790-line structured results file of 32 iterations times four rounds, so 128
+round verdicts, with 100 percent of the robot-involving verdicts carrying the
+simulation-against-simulation caveat and every human-versus-robot round
+additionally carrying the structural time-dimension caveat.
+\autoref{tab:leaderboard} reads the leaderboard directly from that file.
+
+\begin{table}[H]
+\caption{Four-entrant tournament leaderboard (from
+\texttt{papers/VVUQ-02/codegen/results/comparison.json}); frozen-weight composite,
+simulation against simulation.}
+\label{tab:leaderboard}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{0.9cm} Y L{2.3cm} L{1.5cm} L{1.7cm}}
+\toprule
+\textbf{Rank} & \textbf{Entrant} & \textbf{Composite mean} & \textbf{Win rate} & \textbf{Total wins} \\
+\midrule
+1 & PancreSpeed 1.0 (8-arm cart) & 93.782 & 0.875 & 56 \\
+2 & H2-Surgical 1.0 (humanoid) & 93.334 & 0.75 & 72 \\
+3 & da Vinci-successor 2030 (teleop) & 83.970 & 0.0 & 0 \\
+4 & Dutch human baseline (2025) & 67.885 & 0.0 & 0 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The single mobile humanoid placed second, behind the eight-arm PancreSpeed cart
+by under half a composite point, and the reason is structural rather than a defect
+of the humanoid. The composite is weighted toward throughput-sensitive
+components, and eight arms working in parallel complete the same eight-phase
+procedure with more simultaneous action than two hands can, so the cart edges
+ahead on the time-weighted score and wins the head-to-head round 24 of 32 times,
+which lifts its win rate to 0.875. The humanoid nonetheless accumulates more total
+wins, 72 against 56, because it appears in three of the four rounds while the cart
+appears in two, and the win rate normalizes for those appearances. This ordering
+is exactly why the comparison is informative: where the prior PDAC paper featured
+the multi-arm cart as the lone fast baseline, the present study introduces the
+single mobile humanoid against it and finds the humanoid lands within striking
+distance of the parallel-arm platform while concentrating all risk into two hands,
+which is the higher-assurance case this paper is built around. The
+generation-versus-assurance point is explicit here too: producing a 1790-line
+structured tournament is fast and deterministic, while judging it, the caveat
+coverage, the win accounting, and the dispersion, is the assurance work.
+
+\subsection{The featured humanoid sensor stream}
+
+The second featured artifact is the positional sensor stream, and it is the
+substantial code-generation feat on the data side. The committed stream is 1000
+unique rows across 27 columns, 500 command ticks for each of the two hands,
+carrying seven arm-joint channels, five fingertip force channels, and three
+end-effector position channels per hand, plus the safety channels for vessel
+proximity, ring tension, support-polygon margin, balance state, forces, e-stop,
+and collision. Every whole row and every per-row arm-angle, finger-force, and
+end-effector payload is distinct, with zero duplicated rows and no constant-padded
+positional column, and the sample is the first 50 ms of phase 1 at the 10 kHz
+command rate. \autoref{fig:bands} plots three of its safety-relevant channels
+against the bounds their gates enforce, and \autoref{tab:bands} gives the
+per-channel statistics. The point the subsection makes is the thesis in miniature
+on the data side: generating a thousand non-repetitive rows of two hands, ten
+fingers, and arm channels is cheap, while verifying their uniqueness and their
+safety-channel ranges is the assurance work.
+
+\begin{table}[H]
+\caption{Per-channel statistics of the featured 1000-row stream (from
+\texttt{sample\_h2\_sensor.csv} and execution \S05), with the governing gate
+bounds.}
+\label{tab:bands}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{Y L{1.0cm} L{1.0cm} L{1.0cm} L{0.95cm} L{2.5cm} L{1.1cm}}
+\toprule
+\textbf{Channel (unit)} & \textbf{Min} & \textbf{Max} & \textbf{Mean} & \textbf{SD} & \textbf{Bound(s)} & \textbf{Gate} \\
+\midrule
+Bimanual cumulative force (N) & 4.366 & 6.716 & 5.507 & 0.388 & soft 5.0, hard 6.0 & 02 \\
+Support-polygon margin (mm) & 38.005 & 42.992 & 40.458 & 1.440 & floor 8.0 & 03 \\
+Vessel proximity (mm) & 6.018 & 9.999 & 7.983 & 1.155 & no-fly 6.0, hard-stop 2.0 & 06 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The 60-second timeline and the safety surface}
+
+The deployment reference runs the eight-phase 60-second Whipple, from the Kocher
+exploration in phase 1 to closure in phase 8, and exercises the three
+immediate-catastrophe safety surfaces at their boundaries. The vascular no-fly
+gate layers nested keep-out radii around each active vessel and reduces velocity
+and finally e-stops as the fingertip approaches, producing zero hard-stop
+violations on a safe path, which is the very hard predicate that blocked case B.
+The shared-operating-room collision gate drives a four-state machine from full
+speed when clear, through half speed in proximity and a crawl on contact, to an
+e-stop when the human clearance reaches the floor. The fault gate passes a clean
+snapshot, safe-parks a single balance fault within the 3 ms e-stop budget,
+hands back on a vision dropout, and escalates to hand-back on any multi-fault.
+These bounds are the same ones shown in \autoref{fig:bands}, so the subsection
+stays brief and defers to the figure rather than repeating the numbers.
+
+\subsection{Determinism}
+
+The results close where the methods began, on reproducibility. The thousand-row
+sensor stream regenerated byte-for-byte, the four-entrant comparison regenerated
+as an identical semantic match, and the sweep index regenerated identically, all
+from seed 20260525. That byte-level determinism is what lets every number in this
+section stand as reproducible evidence a reader can re-derive, rather than a
+summary that must be trusted, and it is the property the standards-anchored
+assurance argument in the Discussion depends on.
+
+\begin{figure}[H]
+   \centering
+   \IfFileExists{Images/03-ten-gate-threshold-forest.png}{%
+     \hspace{-0.95cm}%
+     \includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/03-ten-gate-threshold-forest.png}%
+     % \vspace{-0.25cm}
+   }{%
+     \setlength{\fboxsep}{10pt}%
+     \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
+     The author adds \nolinkurl{Images/03-ten-gate-threshold-forest.png}, rendered by
+     \nolinkurl{papers/VVUQ-02/imagegen/03-ten-gate-threshold-forest/03-ten-gate-threshold-forest.py}.}}%
+   }
+    \caption{Forest plot of the ten VVUQ gate thresholds, with bounds tightening toward the three immediate-catastrophe gates.}
+    \label{fig:forest}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+   \IfFileExists{Images/11-sensor-stream-safety-bands.png}{%
+     \hspace{-0.95cm}%
+     \includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/11-sensor-stream-safety-bands.png}%
+     % \vspace{-0.25cm}
+   }{%
+     \setlength{\fboxsep}{10pt}%
+     \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
+     The author adds \nolinkurl{Images/11-sensor-stream-safety-bands.png}, rendered by
+     \nolinkurl{papers/VVUQ-02/imagegen/11-sensor-stream-safety-bands/11-sensor-stream-safety-bands.py}.}}%
+   }
+    \caption{Live safety margins across the featured 1000-row humanoid sensor stream with mean and uncertainty bands against the governing gate bounds.}
+    \label{fig:bands}
+\end{figure}

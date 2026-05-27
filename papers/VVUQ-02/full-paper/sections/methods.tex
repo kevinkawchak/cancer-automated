@@ -1,0 +1,297 @@
+% Methods: environment and reproducibility, the generated platform, the ten-gate
+% design, the wired standards corpus, the pipeline and iteration design, and the
+% verification floor. Dense facts live in left-aligned, body-width tabularx
+% tables; long paths are given once near a table and abbreviated in cells.
+% Figure 05 (standards wheel) is placed here and referenced with \autoref.
+
+The methods are organised so the prose carries the argument and the tables carry
+the dense facts. Each subsection names the repository record it draws from once,
+then summarises the numbers in a left-aligned table set to the body measure and
+refers to it rather than narrating every row. Across the section the same
+discipline recurs: a reproducible model first, then the platform it represents,
+then the gates that judge it, then the standards that justify the gate bounds,
+then the pipeline that produces candidates, and finally the test floor that keeps
+the whole apparatus honest.
+
+\subsection{Environment and reproducibility}
+
+The execution host was a managed ephemeral cloud container running Linux 6.18.5
+on x86\_64, with CPython 3.11.15 as the single local interpreter and Claude Code
+Opus 4.7 (1M context) Max as the autonomous runner. The dependency posture was
+deliberately lean. The generated tree declares a core set of numpy, click,
+pyyaml, and jsonschema, and these were installed alongside the ruff, yamllint,
+and pytest tooling so the full check matrix could run. The heavy and
+network-bound optional groups, the on-prem language-model backends anthropic,
+ollama, and openai and the live Zenodo client, were intentionally left
+uninstalled, so every module exercised its guarded offline path, which is the
+honest continuous-integration behavior and the path a reviewer can reproduce
+without credentials. Cross-version coverage on Python 3.10, 3.11, and 3.12 is
+delegated to the integration matrix and is taken up in the Limitations section.
+
+Reproducibility is the credibility floor, because a defensible assurance argument
+begins with a model that regenerates exactly. Three committed artifacts, the
+thousand-row positional sensor stream, the four-entrant comparison, and the sweep
+index, were regenerated from scratch on the host and compared against the
+committed versions; all three matched, the sensor stream byte-for-byte and the
+other two as identical semantic reproductions. This byte-level determinism from a
+fixed seed is precisely what NASA-STD-7009A and ASME V\&V 40-2018 \S3 expect
+before any verification or validation claim can be called credible
+\cite{nasastd7009a, asmevv40}. \autoref{tab:determinism} lists the regenerated
+artifacts and the commands that produced them; all code was run from a scratch
+directory with the generated tree on the import path, so the repository itself
+stayed pristine throughout.
+
+\begin{table}[H]
+\caption{Determinism check, the reproducibility floor. Artifact leaf names under
+\texttt{papers/VVUQ-02/codegen/} (in \texttt{data/}, \texttt{results/}, and
+\texttt{data/iterations/}); all three regenerated from seed 20260525.}
+\label{tab:determinism}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{3.1cm} Y L{3.4cm}}
+\toprule
+\textbf{Artifact (leaf)} & \textbf{Regeneration command} & \textbf{Result vs committed} \\
+\midrule
+\texttt{sample\_h2\_sensor.csv} & \texttt{python -m src.sensors.ingest\_h2} & byte-for-byte identical \\
+\texttt{comparison.json} & \texttt{python -m src.llm.compare\_agent} & identical semantic match \\
+\texttt{index.jsonl} & \texttt{python -m src.simulation.iterate --seed 20260525 --iterations 32} & identical \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The generated platform}
+
+The generated tree models the hypothetical 2030 Unitree H2-Surgical 1.0, a
+bipedal humanoid standing at the operating table whose base form factor traces to
+the real Unitree H2 lineage and whose clinical-grade capability uplift is
+explicitly flagged hypothetical and paper-only. The robot carries 71 total
+degrees of freedom, distributed as fourteen across the two seven-axis arms, forty
+across the two hands of five four-joint fingers, fifteen across the legs and
+waist for stance, and two for the head. It commands its hands at a 10 kHz control
+rate while sampling fingertip force at 100 kHz, and it places a fingertip to a
+nominal accuracy near 0.05 mm under onboard vision. The platform performs the
+60-second eight-phase Whipple on patient PAT-PDAC-0001, from the Kocher
+exploration through the venous and uncinate dissections, transection and specimen
+removal, the three reconstructive anastomoses, and closure. \autoref{tab:platform}
+collects the morphology, timing, and force facts that the gates later check, and
+\autoref{tab:config} maps the frozen configuration set that fixes them.
+
+\begin{table}[H]
+\caption{H2-Surgical 1.0 platform specification (hypothetical 2030), as fixed in
+\texttt{papers/VVUQ-02/codegen/config/project.yaml}.}
+\label{tab:platform}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{5.2cm} Y}
+\toprule
+\textbf{Property} & \textbf{Value} \\
+\midrule
+Total degrees of freedom & 71 (14 arms, 40 hands, 15 stance, 2 head) \\
+Arms and hands & 2 arms at 7 DOF; 2 hands at 20 DOF (5 fingers, 4 joints each) \\
+Control and force rates & 10 kHz command; 100 kHz fingertip force \\
+Fingertip placement accuracy & 0.05 mm RMS under onboard vision \\
+Per-fingertip force caps & 2.5 N soft, 3.0 N hard \\
+Bimanual cumulative force caps & 5.0 N soft, 6.0 N hard \\
+Balance support-polygon margin floor & 8.0 mm \\
+Safety latencies & 10 us proximity stop, 50 us joint park, 3 ms hand-arm e-stop \\
+Procedure & pancreaticoduodenectomy, pylorus preserving, 8 phases, 3 anastomoses, 60 s \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The source it runs from is organised into thirteen subpackages, namely
+kinematics, sensors, perception, autonomy, hands, balance, safety, suturing,
+vvuq, simulation, metrics, llm, and zenodo, each exercised in the execution
+record and each mapped to the behavior or assurance role it plays. The
+configuration set in \autoref{tab:config} is what makes those modules
+deterministic: the kinematic chains, the hand and balance models, the perception
+channels, the reference plan, the safety volumes, the anastomosis targets, and
+the gate thresholds are all data, not code, so a re-generation from the same seed
+yields the same platform.
+
+\begin{table}[H]
+\caption{Frozen configuration set; leaf names under the common parent
+\texttt{papers/VVUQ-02/codegen/config/}.}
+\label{tab:config}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{4cm} Y}
+\toprule
+\textbf{Config file (leaf)} & \textbf{Defines} \\
+\midrule
+\texttt{project.yaml} & frozen scope: patient, seed 20260525, 32 iterations, phases, composite weights \\
+\texttt{h2\_kinematics.yaml} & the two seven-axis arm chains plus head, waist, and leg chains \\
+\texttt{hand\_model.yaml} & per-finger four-joint model, tendon coupling, and force caps \\
+\texttt{balance\_model.yaml} & mass, centre of mass, support polygon, and ZMP margins \\
+\texttt{perception\_model.yaml} & camera intrinsics and the NIR, ultrasound, and bile channels \\
+\texttt{autonomy\_plan.yaml} & the eight-phase reference plan for concordance scoring \\
+\texttt{safety\_zones.yaml} & the vessel no-fly keep-out volumes \\
+\texttt{shared\_or\_actors.yaml} & human actor poses and keep-out spheres \\
+\texttt{anastomosis\_targets.yaml} & the three ring-tension targets \\
+\texttt{vvuq\_thresholds.yaml} & the ten gate threshold sets and the hard predicates \\
+\texttt{standards\_map.yaml} & the machine-readable gate-to-standard binding \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The ten-gate assurance design}
+
+The methodological core is the gate, and there are ten of them, one for each
+named failure mode of a two-handed standing surgeon: bimanual hand-eye servoing,
+dexterous finger force, whole-body balance, autonomous plan correctness,
+instrument grasp and handover, the vascular no-fly hand, bimanual suturing and
+anastomosis, perception scene understanding, shared-operating-room human
+collision, and fault e-stop graceful degradation. Each gate is a fixed
+composition of four steps applied in order. Verify checks that every structural
+and policy predicate holds and requires a pass fraction of exactly 1.0, so a
+single failed check blocks; verification is pass or fail, never a weighted
+average. Validate compares the observed metric against an independent reference
+committed under the reference data directory and requires agreement at or above a
+per-gate bound within a maximum relative error, with a recorded human review.
+Quantify computes the coefficient of variation across three or more seeded runs
+and requires it to fall under a per-gate dispersion bound. Evaluate composes the
+three and, on the three immediate-catastrophe gates, applies one extra hard
+predicate that must also hold. The result is accept when every dimension passes,
+block on the first failing dimension, or escalate when dispersion alone exceeds
+its bound, which defaults the autonomy and fault paths to hand-back-to-human.
+
+The bounds are not invented. They are set in proportion to model risk in the
+manner ASME V\&V 40-2018 prescribes, so the three catastrophe gates carry the
+tightest agreement, relative-error, and dispersion bounds and the extra hard
+predicate, while the lower-risk behavior gates relax toward the defaults
+\cite{asmevv40}. The hard predicates and the recorded human review are the risk
+controls that ISO 14971:2019 expects for a high-severity hazard \cite{iso14971}.
+The full per-gate threshold values are reported alongside the forest plot in the
+Results section, in \autoref{tab:thresholds}, and are not reproduced here; the
+point of this subsection is the composition and the risk-proportionate logic, not
+the individual numbers.
+
+\subsection{The wired external-standards corpus}
+
+Credibility comes from binding each gate to published consensus standards already
+used in real life, resolved at runtime rather than asserted in prose. The gate
+registry loads a machine-readable manifest and attaches to each gate the
+governing designations and the clause-derived limits it enforces, so every
+decision the harness records carries its standards alongside its scores. The
+input corpus holds fourteen consensus standards across model credibility,
+robotic surgery, service-robot safety, software and risk, and autonomy, together
+with two clinical baselines, the 2025 Dutch nationwide robotic
+pancreatoduodenectomy cohort used as the human comparator and the Callery Fistula
+Risk Score used to ground anastomosis quality. \autoref{fig:wheel} organises the
+whole corpus into six domains radiating from the assurance hub, with the issuing
+body on each segment and a regulatory relevancy callout naming what a real
+deployment would require. The standards introduced here, and exercised across the
+gates, are the ASME and NASA credibility standards \cite{asmevv40, nasastd7009a},
+the robotic-surgery and medical-electrical standards \cite{iec8060127, iec60601},
+the service-robot and industrial-robot safety standards \cite{isots15066,
+iso13482, iso10218, iso9283}, the software life-cycle, risk, and control-system
+standards \cite{iec62304, iso14971, iso13849}, the autonomy standards
+\cite{ul4600, ieee7009}, and the United States Food and Drug Administration
+computational-model credibility guidance \cite{fda2023credibility}. The reason to
+wire them rather than cite them in passing is auditability: a reviewer or
+regulator can follow any gate to its governing standard, which is what makes the
+argument defensible and lets an inexpensive autonomous run stand as evidence.
+
+\subsection{The control pipeline and the iteration design}
+
+The candidates the gates judge come from a control pipeline that runs intent to
+compile to act to score across six behavior groups. An on-prem language-model
+step proposes phase-level intents, a deterministic policy compiles each intent
+into a schema-conformant command of a Cartesian fingertip target, twenty
+per-finger joint targets, and a grasp state, the behavior models act, and the
+result feeds the six-component composite that the assurance layer then gates. On
+this host the language-model step returned its offline fallback, the honest
+continuous-integration path, and emitted the frozen reference plan, so the
+phase-step concordance against that reference is 1.000 by construction. The
+iteration design wraps the pipeline in a 32-iteration Latin hypercube at seed
+20260525 over five free parameters, fingertip placement noise, finger force
+noise, balance disturbance amplitude, perception occlusion fraction, and ring
+tension drift, and the six-component composite reuses the frozen pancreatic
+cancer weights of quality 0.30, time 0.20, cost 0.15, safety 0.15, patient
+experience 0.05, and anastomosis quality 0.15. \autoref{tab:anchoring} reproduces
+the binding of each behavior group to its gate and governing standards, so the
+generation step is itself anchored, not just the assurance step that follows it.
+
+\begin{table}[H]
+\caption{External standards anchored at the pipeline stage; each behavior group
+maps to its gate and governing standards (from
+\texttt{papers/VVUQ-02/execution/02-pipeline/}).}
+\label{tab:anchoring}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{4.2cm} L{2.2cm} Y}
+\toprule
+\textbf{Behavior group} & \textbf{Gate} & \textbf{Governing standards} \\
+\midrule
+Autonomy intent and compile & VVUQ 04 & UL 4600 (2023), IEEE 7009-2024, IEC 62304 \\
+Forward kinematics & VVUQ 01 & ISO 9283:1998, IEC 80601-2-77:2019 \\
+Perception and fusion & VVUQ 08 & ASME V\&V 40-2018, IEC 62304 \\
+Fingertip force and grasp & VVUQ 02, 05 & ISO/TS 15066:2016, IEC 80601-2-77:2019 \\
+Whole-body balance & VVUQ 03 & ISO 13482:2014, IEC 60601-1 \\
+Suturing and anastomosis & VVUQ 07 & IEC 80601-2-77:2019, Fistula Risk Score \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{The verification floor}
+
+Underneath the decision surface sits a shipped automated test suite that is the
+verification floor in the sense of ASME V\&V 40-2018 \S8 and IEC 62304 software
+verification \cite{iec62304}. The suite is 172 tests across fifteen modules, and
+its weighting is itself evidence for the thesis: the assurance suite for the
+ten-gate registry alone carries 64 of the 172 tests, more than a third of the
+budget, and the safety module adds a further twelve, so the assurance and safety
+modules dominate the behavior modules they judge. \autoref{tab:tests} gives the
+per-module breakdown. The suite does not merely check that functions return; it
+pins the safety semantics each standard requires, asserting that the catastrophe
+gates produce a hard stop, an e-stop, or a hand-back at the boundary, that the
+balance gate holds its zero-moment-point margin, that the autonomy gate scores
+plan concordance, and that the standards-corpus tests resolve every binding to a
+published designation. The suite runs in about 1.4 seconds on the host, and it
+must be green before any sweep or decision-surface run is trusted.
+
+\begin{table}[H]
+\caption{Per-module automated test suite, the verification floor; module leaf
+names under \texttt{papers/VVUQ-02/codegen/tests/}. Total 172 tests, 0 skipped.}
+\label{tab:tests}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{L{4.2cm} L{1.4cm} Y}
+\toprule
+\textbf{Test module (leaf)} & \textbf{Tests} & \textbf{Subject} \\
+\midrule
+\texttt{test\_vvuq\_gates.py} & 64 & the ten-gate registry, thresholds, and decision surface \\
+\texttt{test\_safety.py} & 12 & e-stop fault monitor, human-collision FSM, vessel no-fly gate \\
+\texttt{test\_suturing.py} & 11 & bimanual suture, ring-tension restore, in-band metrics \\
+\texttt{test\_hands.py} & 11 & fingertip force tracking, bimanual caps, grasp, handover \\
+\texttt{test\_vvuq\_framework.py} & 9 & verify, validate, quantify, and gate composition \\
+\texttt{test\_kinematics.py} & 9 & forward kinematics, joint-limit clamp, distance \\
+\texttt{test\_perception.py} & 8 & scene segmentation, Dice, and channel fusion \\
+\texttt{test\_balance.py} & 8 & ZMP computation, support-polygon margin, recovery \\
+\texttt{test\_autonomy.py} & 8 & intent proposal, deterministic compile, concordance \\
+\texttt{test\_sensors.py} & 7 & per-tick per-hand sensor synthesis and serialization \\
+\texttt{test\_llm.py} & 7 & the four-entrant tournament agent and caveats \\
+\texttt{test\_simulation.py} & 6 & the 32-iteration Latin hypercube sweep \\
+\texttt{test\_metrics.py} & 5 & the six-component composite and the gating overlay \\
+\texttt{test\_zenodo.py} & 4 & L0 pointer JSON and the cross-iteration manifest \\
+\texttt{test\_standards\_corpus.py} & 3 & the wired external-standards manifest binding \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[H]
+   \centering
+   \IfFileExists{Images/05-clinical-regulatory-standards-wheel.png}{%
+     \hspace{-0.95cm}%
+     \includegraphics[width=1.1\linewidth, trim={0 0 0 0}, clip]{Images/05-clinical-regulatory-standards-wheel.png}%
+     % \vspace{-0.25cm}
+   }{%
+     \setlength{\fboxsep}{10pt}%
+     \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
+     The author adds \nolinkurl{Images/05-clinical-regulatory-standards-wheel.png},
+     rendered by
+     \nolinkurl{papers/VVUQ-02/imagegen/05-clinical-regulatory-standards-wheel/05-clinical-regulatory-standards-wheel.py}.}}%
+   }
+    \caption{Clinical and regulatory standards wheel for the wired VVUQ-02 input corpus of fourteen consensus standards and two clinical baselines across six domains.}
+    \label{fig:wheel}
+\end{figure}
