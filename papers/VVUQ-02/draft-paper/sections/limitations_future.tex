@@ -1,0 +1,43 @@
+% Limitations and Future Work. Built by the future pass from the instructions
+% below. Do not process now.
+
+[Write Limitations and Future Work as honest prose with one supporting table. The
+thesis depends on honest VVUQ, so state every gap plainly and do not approximate or
+omit any of the steps that could not be run.]
+
+[Subsection 1, limitations and approximations. Source this in full from the
+\texttt{Limitations, approximations, and what could not be run} section of
+\texttt{papers/VVUQ-02/execution/README.md}, and do not shorten it. Cover each
+item: the on-prem LLM backends (anthropic, ollama, openai) were not installed and
+no key was present, so the autonomy intent module
+(\texttt{papers/VVUQ-02/codegen/src/autonomy/llm\_intent.py}) and the comparison
+judge (\texttt{papers/VVUQ-02/codegen/src/llm/compare\_agent.py}) ran on their
+deterministic offline paths; live Zenodo deposition was not performed, so
+\texttt{papers/VVUQ-02/codegen/src/zenodo/patch\_pointers.py} wrote pointer JSON
+with placeholder hashes rather than depositing the L0 stream; there was no mujoco,
+NVIDIA Isaac, ROS 2, GPU, or display, so the behavior models are analytic
+references and no physics-backed or rendered simulation ran; the committed sensor
+sample is only the first 50 ms of the 60-second timeline (the full stream is the
+Zenodo L0, by design not committed); local execution used a single Python (3.11.15)
+with cross-version coverage delegated to the CI matrix; the paper templates were
+intentionally not processed; and the H2-Surgical 1.0 is a hypothetical 2030 device
+so every number is a simulation result and the four-entrant comparison is
+simulation against simulation. Present these as a limitation-and-mitigation table,
+abbreviating the module leaf names and giving the
+\texttt{papers/VVUQ-02/codegen/src/} parent path once at the top.]
+
+[Subsection 2, future work. Argue that the tractable next step is to adapt this
+ten-gate, standards-anchored humanoid VVUQ automation across all oncology clinical
+trial deliverables, because the speed, quality, and cost benefits shown here
+generalise: each new deliverable inherits a reproducible determinism floor, a
+pass-fail verification gate, validation against independent references, a
+first-class uncertainty bound, and a runtime binding to published standards.
+Sketch the path from this simulation-only reference toward physics-backed and
+live-backend runs (mujoco or NVIDIA Isaac, on-prem LLM intent and judging, real
+Zenodo deposition), then toward the regulatory artifacts a real deployment would
+require (IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB
+approval, and authorization), citing \texttt{iec8060127}, \texttt{iec60601},
+\texttt{iso13482}, and \texttt{fda2023credibility}. Connect to the broader
+autonomous oncology-trial program (\texttt{kawchak2026sponsor},
+\texttt{kawchak2026federated}) and frame the opportunity in terms of US leadership
+in surgical-humanoid VVUQ for patient safety, efficacy, and trial speed.]

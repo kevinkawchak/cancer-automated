@@ -1,0 +1,65 @@
+% Introduction: motivation, VVUQ primer, VVUQ-01 lineage, scope, contributions.
+% Built by the future pass from the instructions below. Do not process now.
+
+[Open the introduction by defining verification, validation, and uncertainty
+quantification in the plain language of an oncology clinical trial, then make the
+single-humanoid argument, then trace the lineage from the prior paper, then state
+the scope and contributions. Aim for several connected paragraphs of publication
+quality; do not enumerate file names in the prose, push those into the Methods
+tables, and cite rather than describe the literature.]
+
+[Paragraph 1, the VVUQ primer. Frame the three questions for a reader who knows
+oncology trials but not credibility engineering: verification asks did we build
+the code correctly, validation asks did we build the right model, and uncertainty
+quantification asks how confident we are in the results. Ground this framing in
+\texttt{papers/VVUQ-02/codegen/docs/vvuq\_methodology.md} and the survey vocabulary
+of \texttt{sel2025vvuq}, and note the oncology precedent for VVUQ on
+treatment-planning models with \texttt{zaid2025pbpk}. Connect the three questions
+to the gate primitives in \texttt{papers/VVUQ-02/codegen/src/vvuq/} (verification.py,
+validation.py, uncertainty.py) so the reader sees that each question is a concrete,
+executed check rather than an abstraction.]
+
+[Paragraph 2, the thesis and why one humanoid raises the bar. State the thesis
+verbatim in spirit from \texttt{papers/VVUQ-02/codegen/README.md} and
+\texttt{papers/VVUQ-02/execution/README.md}: because one autonomous humanoid
+concentrates all error potential into two hands, with no second cart and no human
+bedside assistant in the loop, the assurance layer must be larger, stricter, and
+more thoroughly exercised than the control code, and any candidate behavior must
+clear ten distinct humanoid-specific gates before it may ship. Make explicit that
+code generation is fast and deterministic while the decision to ship is the
+substantial work, and that this asymmetry is the paper's central claim.]
+
+[Paragraph 3, the lineage from VVUQ-01. Summarise, without copying text, the
+developments in \texttt{papers/VVUQ-01/final-paper/} that led here: the prior work
+established a two-stage VVUQ verification-over-generation framework for an LLM
+oncology code workflow (cite \texttt{kawchak2026vvuq01}). State what is new in this
+paper: the framework is specialised from generic code verification to ten
+humanoid-specific surgical gates, bound to a wired corpus of robotic-surgery and
+service-robot safety standards, and exercised over a concrete 60-second Whipple
+procedure. Reference the broader autonomous physical AI oncology program with
+\texttt{kawchak2026sponsor}, \texttt{kawchak2026federated}, and
+\texttt{kawchak2026prediction}, and the PDAC modelling lineage with
+\texttt{kawchak2025qsppdac} and \texttt{kawchak2025pdactwin}.]
+
+[Paragraph 4, scope and the regulatory moment. State the frozen scope from
+\texttt{papers/VVUQ-02/codegen/README.md} (one simulated patient PAT-PDAC-0001, one
+classic pancreaticoduodenectomy with pylorus preservation, one robot, the
+hypothetical 2030 Unitree H2-Surgical 1.0 with two seven-DOF arms and two
+twenty-DOF dexterous hands, and a 32-iteration deterministic design at seed
+20260525). Connect to the regulatory moment respectfully but opportunistically:
+the FDA real-time clinical trials initiative (\texttt{fda2026realtime}) and the FDA
+computational-model credibility guidance (\texttt{fda2023credibility}) make a fast,
+standards-anchored, autonomous assurance pipeline timely, and argue that the United
+States should lead the world in surgical-humanoid VVUQ tied to external standards
+for patient safety, efficacy, and trial speed. Keep all references to the FDA and
+other bodies respectful and non-presumptuous.]
+
+[Paragraph 5, contributions and roadmap. List three to four contributions mapped
+to the Results section, drawn from the \texttt{Execution results summary} and
+\texttt{Key quantitative results to cite} tables in
+\texttt{papers/VVUQ-02/execution/README.md}: the ten-gate decision surface, the
+32-iteration sweep and four-entrant tournament, the featured 1000-row sensor stream
+and 60-second timeline, and the reproducible standards-anchored credibility
+argument. End with a one-sentence roadmap of the paper. Do not include a table in
+this section; the Introduction is prose only, and the contributions table belongs
+to Methods.]
