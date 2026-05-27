@@ -39,6 +39,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   instructions section.
 - `releases.md` (v1.0.0 release notes), this `CHANGELOG.md` (v1.0.0), and
   `CITATION.cff` (v1.0.0).
+- @kevinkawchak relocated images from cancer-automated/tree/main/papers/VVUQ-02/imagegen to Google Drive, reducing repository size from 9MB to 1MB on 2026-05-26.
 
 ### Notes
 - Every script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, and
