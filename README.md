@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v1.1.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v1.2.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/27: v1.2.0 (VVUQ-02 Full Paper)** Processes the v1.1.0 scaffold into the full, Overleaf-compilable manuscript under [papers/VVUQ-02/full-paper](papers/VVUQ-02/full-paper): *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation*. Every bracketed instruction becomes finished prose and a left-aligned, body-width table grounded in the inputs, codegen (v0.7.0), and execution (v0.8.0) records: the 172 of 172 tests with 64 in the ten-gate suite, the five ACCEPT, BLOCK, and ESCALATE decision cases, the 32 of 32 sweep at composite mean near 93.6, the four-entrant tournament where the mobile humanoid places second to the eight-arm PancreSpeed cart by under half a composite point, and the 1000-row non-repetitive sensor stream, all reproduced from seed 20260525. The five figures keep their `\autoref` targets and render `\IfFileExists` placeholders, and the bundle ships as `full-paper.zip`. Authored across 14 commits in one pull request, pushed in real time, with the draft-paper directory left untouched.
 
 **5/27: v1.1.0 (VVUQ-02 Draft Paper)** Adds [papers/VVUQ-02/draft-paper](papers/VVUQ-02/draft-paper): a compilable single column LaTeX scaffold for *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation*, built from the Template_04 regulatory and FDA submission scaffold. Every body section is a bracketed processing instruction naming the exact codegen, execution, inputs, and imagegen files a future pass must read; the references (41 entries with clickable DOIs and well-represented external standards) are final, and the five figure floats (forest, binding matrix, standards wheel, sensor bands, cost assessment) are placed with captions, labels, and `\autoref`. Authored across 14 commits in a single pull request, one file per commit pushed in real time, and shipped as a single Overleaf-ready LaTeX zip.
 
@@ -58,6 +60,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Image Instructions](#vvuq-02-image-instructions)
 - [VVUQ-02 Imagegen](#vvuq-02-imagegen)
 - [VVUQ-02 Draft Paper](#vvuq-02-draft-paper)
+- [VVUQ-02 Full Paper](#vvuq-02-full-paper)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -357,7 +360,17 @@ cancer-automated/
         │   ├── draft-paper.zip     # Overleaf-ready LaTeX bundle
         │   ├── prompt-draft-paper.md   # the generating prompt, verbatim
         │   └── output-draft-paper.md   # the narrative output of the draft-paper step
-        └── full-paper/ final-paper/  # placeholders (future 70+ page manuscript)
+        ├── full-paper/             # ★ v1.2.0 processed full manuscript (finished prose)
+        │   ├── README.md           # DOI badges, lineage and assurance ASCII, results tables
+        │   ├── main.tex            # preamble, title page, TOC, \input wiring
+        │   ├── new_paper.sty       # Palatino + navy style (carried from the draft)
+        │   ├── references.bib      # 41 final entries; clickable DOIs; standards heavy
+        │   ├── sections/           # abstract..back_matter: finished prose + body-width tables
+        │   ├── Images/             # author drops the five rendered PNGs here later
+        │   ├── full-paper.zip      # Overleaf-ready LaTeX bundle
+        │   ├── prompt-full-paper.md    # the generating prompt, verbatim
+        │   └── output-full-paper.md    # the narrative output of the full-paper step
+        └── final-paper/            # placeholder (future submission-ready manuscript)
 ```
 
 ## Established Methods Proven Across Projects
@@ -587,6 +600,22 @@ As of v1.1.0 the draft manuscript scaffold lives under [papers/VVUQ-02/draft-pap
 ```
 
 The bundle ships as a single Overleaf-ready zip (`draft-paper.zip`). Until the author drops the five rendered PNGs into `Images/`, each figure float renders a labelled placeholder via `\IfFileExists`, so the draft compiles cleanly now and again once the images are added. The figures are `fig:wheel` (Methods), `fig:forest` and `fig:bands` (Results), and `fig:matrix` and `fig:cost` (Discussion). See the [draft-paper README](papers/VVUQ-02/draft-paper) for the section to source-file map, the figure table, and the senior-author formatting rules.
+
+## VVUQ-02 Full Paper
+
+As of v1.2.0 the full manuscript is realized under [papers/VVUQ-02/full-paper](papers/VVUQ-02/full-paper), built from the v1.1.0 draft scaffold without modifying it. Every bracketed processing instruction in the eight body sections is replaced with grounded, publication-grade prose and left-aligned tables set to the body text width, while the title page, the Palatino and navy style, the 41 entry `ieeetr` bibliography, and the back matter are carried over. The manuscript renders the recorded assurance evidence: the 172 of 172 tests with 64 in the ten-gate suite, the five ACCEPT, BLOCK, and ESCALATE decision cases, the ten gate thresholds tightening toward the three catastrophe gates, the 32 of 32 sweep at composite mean near 93.6, the four-entrant tournament, the featured 1000-row sensor stream, and byte-for-byte determinism from seed 20260525.
+
+```
+  draft-paper/ (scaffold)                     full-paper/ (this release)
+  +---------------------------+               +---------------------------+
+  | [bracketed instructions]  |   process     | finished prose + tables   |
+  | + final references.bib    | ============> | + 13 body-width tables    |
+  | + five \autoref figures   |   +grounding  | + five \autoref figures   |
+  +---------------------------+               +---------------------------+
+        the build order  ----------------->   the 70+ page manuscript
+```
+
+The four-entrant tournament is the comparison the abstract foregrounds: the single mobile humanoid lands second to the eight-arm PancreSpeed cart by under half a composite point, because parallel arms shorten the throughput-weighted score, whereas the prior PDAC paper featured that multi-arm baseline alone; the humanoid is nonetheless the higher-risk, higher-assurance platform the paper is built around. The five figures use placeholder slots that compile immediately and are replaced once the author drops the PNGs into `Images/`. A `full-paper.zip` bundle is provided for a one step Overleaf upload, and the additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [full-paper README](papers/VVUQ-02/full-paper) for the headline-results and leaderboard tables and the formatting rules.
 
 ## Continuous Integration
 

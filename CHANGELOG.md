@@ -5,6 +5,41 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-05-27
+
+### Added
+- `papers/VVUQ-02/full-paper/`: the full, Overleaf-compilable manuscript for *10
+  Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority
+  over Code Generation*, processed from the v1.1.0 draft scaffold by Claude Code
+  Opus 4.7 (1M context) Max running autonomously in a managed cloud container
+  across 14 commits in a single pull request, one file per commit pushed to GitHub
+  in real time, then a second-to-last error-fix and consolidation commit and a
+  final repository-updates commit. The draft-paper directory is left untouched.
+- `main.tex` (preamble, title page, abstract, table of contents, and section
+  `\input` wiring with a ragged-right tabularx column type), `new_paper.sty` (the
+  Palatino and navy style carried from the draft), `references.bib` (the final
+  41-entry `ieeetr` bibliography), and eight `sections/*.tex` files (abstract,
+  introduction, methods, results, discussion, limitations and future work,
+  conclusions, and back matter) with finished publication prose and 13 left-aligned
+  tables set to the body text width.
+- Grounded assurance evidence throughout: 172 of 172 tests with 64 in the ten-gate
+  suite, the five ACCEPT, BLOCK, and ESCALATE decision cases, the ten gate
+  thresholds, the 32 of 32 sweep at composite mean near 93.6, the four-entrant
+  tournament leaderboard (the mobile humanoid second to the eight-arm PancreSpeed
+  cart by under half a composite point), the 1000-row non-repetitive sensor stream,
+  and byte-for-byte determinism from seed 20260525.
+- Five figure floats kept with `\autoref` targets and `\IfFileExists` placeholders
+  (`fig:wheel`, `fig:forest`, `fig:bands`, `fig:matrix`, `fig:cost`); the
+  `full-paper.zip` Overleaf bundle; the `Images/` placeholder; and
+  `prompt-full-paper.md` and `output-full-paper.md`.
+
+### Changed
+- Top-level `README.md`: release badge to v1.2.0, a v1.2.0 summary above the prior
+  summary, a VVUQ-02 Full Paper section with an ASCII process diagram and a table
+  of contents entry, and the repository structure tree (the full-paper directory
+  expanded and final-paper kept as a placeholder).
+- `releases.md` (v1.2.0 release notes) and `CITATION.cff` (version 1.2.0).
+
 ## [1.1.0] - 2026-05-27
 
 ### Added

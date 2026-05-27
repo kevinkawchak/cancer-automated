@@ -4,6 +4,38 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-02 Full Paper: Processed Manuscript Built from the Scaffold (v1.2.0)
+v1.2.0 - VVUQ-02 Full Paper: Processed Manuscript Built from the Scaffold
+
+## Summary
+
+- Adds papers/VVUQ-02/full-paper, the full, Overleaf-compilable single column LaTeX manuscript for 10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation, processed from the v1.1.0 draft-paper scaffold by Claude Code Opus 4.7 (1M context) Max running autonomously in a managed ephemeral cloud container across 14 commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix and consolidation commit and a final repository-updates commit. The v1.1.0 draft-paper directory is left untouched, as instructed.
+- Completes the paper generation leg of the thesis that the robotic code assurance process, not code generation, is the substantial and decision-bearing part of the AI workflow: every bracketed processing instruction in the eight body sections becomes finished, publication-grade prose and a left-aligned table, so the paper is written from the recorded assurance evidence rather than from estimation, and the assurance layer is the visible center of the argument.
+- Grounds every claim in the inputs, codegen (v0.7.0), and execution (v0.8.0) records: 172 of 172 tests with 64 in the ten-gate assurance suite, the five ACCEPT, BLOCK, and ESCALATE decision cases, the ten gate thresholds tightening toward the three immediate-catastrophe gates, the 32 of 32 deterministic sweep at composite mean near 93.6, the four-entrant tournament, the featured 1790-line comparison.json and 1000-row non-repetitive sample_h2_sensor.csv, and byte-for-byte reproducibility from seed 20260525.
+- Discusses the four-robot competition and explains the second place result: the single mobile humanoid (composite mean 93.334, win rate 0.75) trails the eight-arm PancreSpeed 1.0 cart (93.782, 0.875) by under half a composite point because parallel arms shorten the throughput-weighted score, whereas the prior PDAC paper featured the multi-arm baseline alone; the humanoid carries more total wins (72 versus 56) by appearing in more rounds and is the higher-risk, higher-assurance platform the paper is built around. Every robot-involving verdict carries the simulation-against-simulation caveat.
+- Keeps the abstract under 250 words with no citations, opening on the autonomous workflow, moving to the headline metrics and the competition result, and closing on the external-standards strength, with file names kept short and reserved mainly for tables so they do not dominate the prose.
+- Holds the senior-author formatting contract: 13 tables set to the body text width as tabularx with left-aligned, ragged-right L and Y columns so there are no large inter-word gaps; long paths kept in tables and captions, not prose; each of the five figures referenced with \autoref and rendered through an \IfFileExists placeholder; the section symbol § for clause references; single hyphens only with double dashes confined to texttt CLI flags; and the navy Palatino styling carried from the draft.
+- Ships the bundle as a single Overleaf-ready LaTeX zip (full-paper.zip) and keeps the pull request green: no Python or linted YAML is added, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12 (verified locally with ruff check and ruff format --check).
+- Updates the main README (release badge to v1.2.0, a v1.2.0 summary above the prior summary, a VVUQ-02 Full Paper section with an ASCII process diagram and a table of contents entry, and the repository structure tree with the full-paper directory expanded and final-paper kept as a placeholder), this releases file, the CHANGELOG (v1.2.0), and CITATION.cff (version 1.2.0).
+
+## Features
+
+- papers/VVUQ-02/full-paper/main.tex: the preamble, the title page (replacement title, the ORCID iD link, CEO ChemicalQDevice, the clickable Zenodo DOI, and May 28, 2026), the abstract and disclaimer and one-line keywords, the introduction before the table of contents, the body section `\input` wiring, the `\nocite{*}` and ieeetr bibliography, a ragged-right tabularx column type, and the global production and formatting directives.
+- papers/VVUQ-02/full-paper/new_paper.sty: the Palatino serif, single column, navy accent style carried from the draft so the full paper keeps the same text colour formatting; references.bib: the final, polished 41-entry bibliography unchanged from the draft.
+- papers/VVUQ-02/full-paper/sections: abstract, introduction, methods, results, discussion, limitations_future, conclusions, and back_matter, each finished prose with body-width tables, plus the five placed figure floats with `\autoref`.
+- papers/VVUQ-02/full-paper/README.md: DOI and standards badges, the lineage and assurance-flow ASCII diagrams, the section to source-file map, the figure map, the headline-results and four-entrant leaderboard tables, and the senior-author formatting rules.
+- papers/VVUQ-02/full-paper/Images/README.md: the placeholder directory note; full-paper.zip: the Overleaf-ready bundle; prompt-full-paper.md and output-full-paper.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials. The full paper is processed from the v1.1.0 draft scaffold, which is not modified. pdflatex was not available in the container and the prompt asked not to compile, so the LaTeX was validated structurally (balanced braces and environments, every `\autoref` target matched to a `\label`, every `\cite` key present in the bibliography, even dollar pairs, single-hyphen and section-symbol scans) and made compile-safe with `\IfFileExists` figure placeholders; the long placeholder paths use `\nolinkurl` so no text runs off the right margin, and the author later drops the five rendered PNGs from papers/VVUQ-02/imagegen into Images. The Unitree H2-Surgical 1.0 is a clearly labelled hypothetical 2030 platform and every supporting number is a simulation result; the four-entrant comparison is simulation against simulation. The ten VVUQ gates plus a recorded human reviewer must clear any deliverable before clinical use, and a real deployment would require IEC 80601-2-77, IEC 60601, ISO 13482, FDA SaMD Class III clearance, IRB approval, and regulatory authorization. Mentions of the FDA and other governing bodies are respectful and non-presumptuous.
+
+---
+
 VVUQ-02 Draft Paper: LaTeX Scaffold with Bracketed Processing Instructions (v1.1.0)
 v1.1.0 - VVUQ-02 Draft Paper: LaTeX Scaffold with Bracketed Processing Instructions
 
