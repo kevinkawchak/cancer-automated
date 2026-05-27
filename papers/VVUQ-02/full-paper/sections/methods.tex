@@ -42,19 +42,19 @@ directory with the generated tree on the import path, so the repository itself
 stayed pristine throughout.
 
 \begin{table}[H]
-\caption{Determinism check, the reproducibility floor. Commands and artifact
-paths are relative to \texttt{papers/VVUQ-02/codegen/}; all three regenerated
-from seed 20260525.}
+\caption{Determinism check, the reproducibility floor. Artifact leaf names under
+\texttt{papers/VVUQ-02/codegen/} (in \texttt{data/}, \texttt{results/}, and
+\texttt{data/iterations/}); all three regenerated from seed 20260525.}
 \label{tab:determinism}
 \centering
 \footnotesize
-\begin{tabularx}{\textwidth}{L{3.2cm} Y L{3.5cm}}
+\begin{tabularx}{\textwidth}{L{3.1cm} Y L{3.4cm}}
 \toprule
 \textbf{Artifact (leaf)} & \textbf{Regeneration command} & \textbf{Result vs committed} \\
 \midrule
-\texttt{data/sample\_h2\_sensor.csv} & \texttt{python -m src.sensors.ingest\_h2} & byte-for-byte identical \\
-\texttt{results/comparison.json} & \texttt{python -m src.llm.compare\_agent} & identical semantic match \\
-\texttt{data/iterations/index.jsonl} & \texttt{python -m src.simulation.iterate --seed 20260525 --iterations 32} & identical \\
+\texttt{sample\_h2\_sensor.csv} & \texttt{python -m src.sensors.ingest\_h2} & byte-for-byte identical \\
+\texttt{comparison.json} & \texttt{python -m src.llm.compare\_agent} & identical semantic match \\
+\texttt{index.jsonl} & \texttt{python -m src.simulation.iterate --seed 20260525 --iterations 32} & identical \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -288,9 +288,9 @@ names under \texttt{papers/VVUQ-02/codegen/tests/}. Total 172 tests, 0 skipped.}
    }{%
      \setlength{\fboxsep}{10pt}%
      \fbox{\parbox[c][6cm][c]{0.9\linewidth}{\centering\itshape Figure placeholder.
-     The author adds \texttt{Images/05-clinical-regulatory-standards-wheel.png},
+     The author adds \nolinkurl{Images/05-clinical-regulatory-standards-wheel.png},
      rendered by
-     \texttt{papers/VVUQ-02/imagegen/05-clinical-regulatory-standards-wheel/05-clinical-regulatory-standards-wheel.py}.}}%
+     \nolinkurl{papers/VVUQ-02/imagegen/05-clinical-regulatory-standards-wheel/05-clinical-regulatory-standards-wheel.py}.}}%
    }
     \caption{Clinical and regulatory standards wheel for the wired VVUQ-02 input corpus of fourteen consensus standards and two clinical baselines across six domains.}
     \label{fig:wheel}
