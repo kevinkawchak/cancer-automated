@@ -1,6 +1,15 @@
 # VVUQ-02 full-paper
 
-Full, Overleaf-compilable LaTeX manuscript for **Mobile Pancreatic Cancer Unitree H2 Surgical Humanoid with Priority VVUQ**,
+[![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.20421754-blue.svg)](https://doi.org/10.5281/zenodo.20421754)
+[![Paper DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
+[![Template](https://img.shields.io/badge/Template-04%20regulatory%20fda-blue.svg)](../templates/Template_04/)
+[![Standard](https://img.shields.io/badge/Standard-ASME%20V%26V%2040--2018-orange.svg)](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices)
+[![Gates](https://img.shields.io/badge/VVUQ%20Gates-10-red.svg)](../codegen/docs/vvuq_gate_spec.md)
+[![Tests](https://img.shields.io/badge/pytest-172%20passed-brightgreen.svg)](../execution/01-foundation/test-suite.md)
+[![Standards corpus](https://img.shields.io/badge/Standards-14%20%2B%202%20clinical-9cf.svg)](../inputs/standards/manifest.yaml)
+
+[Full PDF and LaTeX Source Files](https://doi.org/10.5281/zenodo.20421754) are available on Zenodo. Overleaf-compilable LaTeX manuscript for **Mobile Pancreatic Cancer Unitree H2 Surgical Humanoid with Priority VVUQ**,
 processed from the bracketed scaffold in `papers/VVUQ-02/draft-paper/`.
 
 Every section now carries finished publication prose and left-aligned,
@@ -10,15 +19,6 @@ platform, and the five-section `execution/` record). The five figure floats keep
 their labels and `\autoref` targets; the author drops the rendered PNGs from
 `papers/VVUQ-02/imagegen/` into `Images/` later, and a labelled placeholder
 renders until then so the bundle always compiles.
-
-[![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.20421754-blue.svg)](https://doi.org/10.5281/zenodo.20421754)
-[![Paper DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
-[![Template](https://img.shields.io/badge/Template-04%20regulatory%20fda-blue.svg)](../templates/Template_04/)
-[![Standard](https://img.shields.io/badge/Standard-ASME%20V%26V%2040--2018-orange.svg)](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices)
-[![Gates](https://img.shields.io/badge/VVUQ%20Gates-10-red.svg)](../codegen/docs/vvuq_gate_spec.md)
-[![Tests](https://img.shields.io/badge/pytest-172%20passed-brightgreen.svg)](../execution/01-foundation/test-suite.md)
-[![Standards corpus](https://img.shields.io/badge/Standards-14%20%2B%202%20clinical-9cf.svg)](../inputs/standards/manifest.yaml)
 
 ## Thesis
 
