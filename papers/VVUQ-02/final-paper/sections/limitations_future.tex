@@ -1,0 +1,76 @@
+% Limitations and Future Work: honest prose with one supporting table. The thesis
+% depends on honest VVUQ, so every gap is stated plainly and none of the steps
+% that could not be run are omitted.
+
+The thesis depends on honest verification, validation, and uncertainty
+quantification, so this section states every gap plainly. None of the steps that
+could not be run is omitted or quietly approximated, and the future work follows
+directly from closing those gaps.
+
+\subsection{Limitations and approximations}
+
+Several capabilities were deliberately or necessarily not exercised live, and
+each is recorded with the module it affects and its mitigation in
+\autoref{tab:limitations}. The on-prem language-model backends were not installed
+and no key was present, so the autonomy intent module and the comparison judge
+ran on their deterministic offline paths; this is the guarded
+continuous-integration behavior and the correct default, but the live agentic
+authoring and judging paths were not executed here. Live Zenodo deposition was
+not performed, so the patcher wrote pointer JSON with placeholder hashes against
+an absent staging directory rather than depositing the level-0 stream; the
+pointer and manifest logic ran fully, only the network deposition did not. There
+was no MuJoCo, NVIDIA Isaac, ROS 2, graphics processor, or display in the
+container, so the behavior models are analytic standard-library references and no
+physics-backed or rendered simulation ran; these are planning and assurance
+references, not a robot controller. 
+
+The committed sensor sample is only the first
+50 ms of the 60-second timeline, since 500 ticks at the 10 kHz command rate sit
+entirely in phase 1 with a single grasp state, and the full stream of roughly
+600,000 ticks per hand is the Zenodo level-0 deposit, by design not committed.
+Local execution used a single Python, 3.11.15, with cross-version coverage on
+3.10, 3.11, and 3.12 delegated to the integration matrix rather than a local
+multi-version run. The paper templates were intentionally not processed. And the
+H2-Surgical 1.0 is a hypothetical 2030 device, so every number is a simulation
+result and the four-entrant comparison is simulation against simulation.
+
+\begin{table}[H]
+\caption{Limitations and mitigations; affected module leaf names under the common
+parent \texttt{papers/VVUQ-02/codegen/src/}.}
+\label{tab:limitations}
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{Y L{4.1cm} Y}
+\toprule
+\textbf{Limitation} & \textbf{Affected module (leaf)} & \textbf{Mitigation and status} \\
+\midrule
+On-prem LLM backends not installed & \texttt{autonomy/llm\_intent.py}, \texttt{llm/compare\_agent.py} & ran the deterministic offline path, the guarded CI behavior \\
+Live deposition not performed & \texttt{zenodo/patch\_pointers.py} & pointer, manifest logic ran; placeholder hashes; no net. deposit \\
+No physics or robotics backend & analytic behavior models & planning and assurance references; physics deferred to future work \\
+Committed sample is the first 50 ms & \texttt{sensors/ingest\_h2.py} & full 60 s stream is the Zenodo level-0 deposit, not committed \\
+Single local Python version (3.11.15) & whole tree & cross-version coverage delegated to the CI matrix (3.10, 3.11, 3.12) \\
+Paper templates not processed & \texttt{templates/Template\_04/} & out of scope by instruction \\
+Simulation-only platform & all entrants & every number is a simulation result; simulation vs.\ simulation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Future work}
+
+The tractable next step is to adapt this ten-gate, standards-anchored humanoid
+VVUQ automation across all oncology clinical trial deliverables, as speed, quality, and cost benefits here generalise. Each new deliverable
+inherits the same scaffold: a reproducible determinism floor from a fixed seed, a
+pass-or-fail verification gate, validation against independent references, a
+first-class uncertainty bound with an escalate path, and a runtime binding to
+published standards, so a sponsor adopting it does not re-derive the assurance
+argument. From this simulation-only reference the path forward
+is to add physics-backed and live-backend runs, MuJoCo or NVIDIA Isaac for
+contact dynamics, on-prem language-model intent and judging, and real Zenodo
+deposition of the level-0 stream, and then to assemble the regulatory artifacts: conformance to IEC 80601-2-77 and IEC 60601,
+ISO 13482, an FDA SaMD Class III
+submission, IRB
+approval, and regulatory authorization \cite{iec8060127, iec60601, iso13482,
+fda2023credibility}. This connects directly to the author's fully automated sponsor and the federated multi-site
+layer \cite{kawchak2026sponsor, kawchak2026federated}, and it frames the
+opportunity squarely: U.S. leadership in surgical-humanoid VVUQ tied to
+external standards would advance patient safety, efficacy, and trial speed.
