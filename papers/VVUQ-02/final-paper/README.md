@@ -13,7 +13,7 @@ renders until then so the bundle always compiles.
 
 [![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.20421754-blue.svg)](https://doi.org/10.5281/zenodo.20421754)
-[![Repository DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
+[![Paper DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
 [![Template](https://img.shields.io/badge/Template-04%20regulatory%20fda-blue.svg)](../templates/Template_04/)
 [![Standard](https://img.shields.io/badge/Standard-ASME%20V%26V%2040--2018-orange.svg)](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices)
 [![Gates](https://img.shields.io/badge/VVUQ%20Gates-10-red.svg)](../codegen/docs/vvuq_gate_spec.md)
