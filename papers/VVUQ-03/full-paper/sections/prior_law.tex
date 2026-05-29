@@ -1,0 +1,123 @@
+% Prior Law References and Statutory Crosswalk (MAIN POINT 3). Four connecting
+% movements; the dense citations live in three crosswalk tables. Every law
+% resolves to its bibliography entry (eCFR, Cornell LII, or legislature URL).
+
+This section ties H.R. 9510 to the federal and state law it builds on and to the
+author's prior regulatory adaptations. Each authority resolves to its
+bibliography entry so the rendered reference carries the eCFR, Cornell LII, or
+legislature link; the dense mapping is carried in the three crosswalk tables, and
+the prose states only how the bill extends each authority without displacing it.
+
+\subsection{Federal Law Crosswalk}
+
+The bill rests on the existing federal framework and adds one sequencing rule to
+it. Table~\ref{tab:prior-federal} sets out each authority, its citation, and the
+precise way the bill builds on it. A citation correction is recorded here: the
+federal antidiscrimination guarantees are codified at title 42 of the United
+States Code, not title 26. Title VI appears at 42 U.S.C. § 2000d and the
+Americans with Disabilities Act at 42 U.S.C. § 12101; the bill cites those titles.
+An earlier informal reference to 26 U.S.C., which is the Internal Revenue Code,
+for these provisions was a mislabel and is corrected throughout. Alongside the
+core authorities, the bill rests on the Federal Food, Drug, and Cosmetic Act, the
+Public Health Service Act, the electronic-records rule, and the investigational
+pathways of 21 CFR Parts 312 and 50; the authority-and-source style of the
+crosswalk follows the prior template's front matter and the national platform's
+government-framework and regulatory-landscape analyses.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{2.8cm} L{3.5cm} Y}
+\toprule
+\textbf{Authority} & \textbf{Citation} & \textbf{How the bill builds on it} \\
+\midrule
+Medicare \cite{usc-1395y} & 42 U.S.C. § 1395y & Medical-necessity determination stays with a licensed human \\
+HIPAA \cite{cfr-hipaa} & 45 CFR Parts 160, 164 & Privacy and security of the hash-chained audit trail \\
+Devices \cite{cfr-devices} & 21 CFR Parts 860 to 892 & Robot and software device documentation framing \\
+Title VI \cite{usc-titlevi} & 42 U.S.C. § 2000d & Bias minimization on protected characteristics \\
+ADA \cite{usc-ada} & 42 U.S.C. § 12101 & Accessibility and accommodation \\
+FD\&C Act \cite{usc-fdca} & 21 U.S.C. § 301 et seq. & Statutory basis for FDA authority over the trial \\
+PHSA \cite{usc-phsa} & 42 U.S.C. § 201 et seq. & Public-health and biologics oversight \\
+Electronic records \cite{cfr-part11} & 21 CFR Part 11 & Trustworthy electronic records and signatures \\
+IND pathway \cite{cfr-part312} & 21 CFR Part 312 & Trial-conduct frame the gate attaches to \\
+Human subjects \cite{cfr-part50} & 21 CFR Part 50 & Human-subject protection extended to robot contact \\
+\bottomrule
+\end{tabularx}
+\caption{Federal-law crosswalk; antidiscrimination citations corrected to 42 U.S.C.}
+\label{tab:prior-federal}
+\end{table}
+
+\subsection{State Law Crosswalk}
+
+Four states supply the closest analogues, each at the utilization-review or
+claims layer, and the bill is designed to harmonise with and build on all four.
+Table~\ref{tab:prior-state} states each requirement and the clause of this bill it
+informs. New York would require submission of the algorithm and training data for
+certification; Texas changed its governance between the filed version, which
+required submission of the algorithm and training datasets, and the committee
+substitute, which requires an annual compliance statement and the algorithms only
+on a commissioner finding of noncompliance; California keeps the medical-necessity
+determination with a licensed physician and bars reliance on generalized rather
+than individual clinical data; and Florida bars artificial intelligence as the
+sole basis for a denial and requires independent human review. The dual
+state-and-federal jurisdiction treatment is drawn from the national platform's
+regulatory-landscape analysis \cite{kawchak2026national}.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{2.6cm} Y L{3.3cm}}
+\toprule
+\textbf{State and bill} & \textbf{State requirement} & \textbf{Informs which clause} \\
+\midrule
+New York A9149 \cite{ny-a9149} & Submit AI algorithms and training data for certification of minimized bias and evidence-based guidelines & Documentation and nondiscrimination clauses \\
+Texas SB 1822 \cite{tx-sb1822} & Committee substitute: annual AI compliance statement; algorithms on a noncompliance finding & Compliance statement and enforcement trigger \\
+California SB 1120 \cite{ca-sb1120} & Licensed physician retains medical necessity; no reliance on generalized data & Retained-human-review clause \\
+Florida HB 527, SB 202 \cite{fl-hb527} & AI not the sole basis for denial; independent human review & Human-review backstop \\
+\bottomrule
+\end{tabularx}
+\caption{State-law crosswalk; the Texas committee substitute is the operative version.}
+\label{tab:prior-state}
+\end{table}
+
+\subsection{Prior Author Regulatory Adaptations}
+
+The bill is consistent with, and can codify portions of, the author's prior
+Physical AI regulatory adaptations. Table~\ref{tab:prior-adapt} shows how each
+section-by-section adaptation maps onto a bill clause, following the
+change-summary-table model of the prior template's front matter. The 21 CFR Part
+312 adaptation is the structural template for this bill; the 21 CFR Part 50 and
+ICH E6(R3) adaptations supply the human-subject and good-clinical-practice
+content; and the national MCP-PAI standard supplies the audit, ledger, and
+provenance infrastructure. The bill's own section-by-section analysis, in
+Section~\ref{sec:section_by_section}, completes the mapping from these adaptations
+to the enactable text.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{3.4cm} Y}
+\toprule
+\textbf{Prior adaptation} & \textbf{How it maps onto this bill} \\
+\midrule
+21 CFR Part 312 \cite{kawchak2026cfr312} & Structural template; cover, style, and the new-subpart model for statutory text \\
+21 CFR Part 50 \cite{kawchak2026cfr50} & Human-subject protections extended to robot-patient contact \\
+ICH E6(R3) \cite{kawchak2026iche6r3, iche6r3} & Good-clinical-practice basis for human review and audit \\
+National MCP-PAI \cite{kawchak2026mcp} & Hash-chained audit, ledger, and provenance infrastructure \\
+\bottomrule
+\end{tabularx}
+\caption{Prior author adaptations mapped onto the bill.}
+\label{tab:prior-adapt}
+\end{table}
+
+\subsection{Differing Governance and Corrections}
+
+The crosswalk surfaces four distinct governance models: New York's
+submit-and-certify model, the Texas attest-unless-noncompliant model, the
+California physician-decision model, and the Florida human-review model. H.R.
+9510 does not choose among them; it adopts a verification-before-generation
+standard that sits upstream of all four, at the trial-conduct robot-code layer
+they do not reach, so the states may continue to legislate at the claims layer on
+top of a uniform federal conduct-layer rule. Two corrections are confirmed: the
+federal antidiscrimination titles are cited at 42 U.S.C. § 2000d and 42 U.S.C.
+§ 12101, and the Texas committee substitute, not the filed version, is treated as
+the operative statute. The detailed mappings are in
+Tables~\ref{tab:prior-federal} through~\ref{tab:prior-adapt} and are not repeated
+here.
