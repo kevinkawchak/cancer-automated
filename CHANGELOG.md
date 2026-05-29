@@ -47,6 +47,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   table-of-contents entry, and the repository structure tree with a VVUQ-03
   full-paper block.
 - `releases.md` (v1.4.0 notes) and `CITATION.cff` (version 1.4.0).
+- @kevinkawchak updated README file DOI badge locations, created the instruct-paper file architecture, and populated instruct-paper with corresponding prompt and three outputs for cancer-automated/tree/main/papers/VVUQ-03 on 2026-05-29.
 
 ## [1.3.0] - 2026-05-30
 
