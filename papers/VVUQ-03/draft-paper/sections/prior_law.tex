@@ -1,0 +1,87 @@
+% Prior Law References and Statutory Crosswalk (MAIN POINT 3). Built by the
+% future pass from the instructions below. Do not process now. This is the
+% crosswalk that ties the bill to existing federal and state law and to the prior
+% author regulatory adaptations. The dense citations belong in the crosswalk
+% tables, not in the prose.
+
+[Write a connecting paragraph for each of the four movements, then carry the
+detail in crosswalk tables. Every law must resolve to its bibliography entry so
+the rendered reference carries the eCFR, Cornell LII, or legislature URL. Use the
+left-aligned ragged-right columns and put the longer parent citation context once
+near the top of each table.]
+
+[Movement 1, Federal law crosswalk. Present, in one table, each federal authority
+the bill builds on and the precise way the bill extends it without displacing it:
+Medicare reasonableness and medical-necessity determinations,
+\texttt{usc-1395y} (42 U.S.C. § 1395y); the HIPAA Privacy and Security Rules,
+\texttt{cfr-hipaa} (45 CFR Parts 160 and 164); the FDA medical-device
+regulations, \texttt{cfr-devices} (21 CFR Parts 860 to 892); and the federal
+antidiscrimination guarantees, \texttt{usc-titlevi} (Title VI, 42 U.S.C. § 2000d)
+and \texttt{usc-ada} (the Americans with Disabilities Act, 42 U.S.C. § 12101).
+State explicitly that these antidiscrimination provisions are codified at 42
+U.S.C., and that the bill cites 42 U.S.C. § 2000d and 42 U.S.C. § 12101; an
+earlier informal reference to 26 U.S.C. (the Internal Revenue Code) for these
+provisions was a mislabel and is corrected here. Add the supporting federal
+authorities the bill rests on: the Federal Food, Drug, and Cosmetic Act
+(\texttt{usc-fdca}), the Public Health Service Act (\texttt{usc-phsa}), the
+electronic-records rule (\texttt{cfr-part11}), and the investigational pathways
+21 CFR Part 312 and Part 50 (\texttt{cfr-part312}, \texttt{cfr-part50}). Use the
+authority and source lines modelled in
+\texttt{template-paper/chunk\_01\_front\_matter.md} and the federal-authority map
+in the national-platform \texttt{regulatory\_landscape.tex} and
+\texttt{gov\_framework.tex}.]
+
+[Movement 2, State law crosswalk. Present, in one table, the four state statutes
+the bill is designed to harmonise with and build on, with one column for the
+state requirement and one for how it informs a clause of this bill: New York
+Assembly Bill A9149 (\texttt{ny-a9149}), which requires insurers and HMOs to
+submit AI algorithms and training data sets to the Department of Financial
+Services for certification that they minimize bias on protected characteristics
+and adhere to evidence-based clinical guidelines; Texas Senate Bill 1822
+(\texttt{tx-sb1822}), noting the governance change from the filed version (submit
+the algorithm and training datasets) to the committee substitute (an annual AI
+compliance statement, with algorithms required only on a commissioner finding of
+noncompliance); California Senate Bill 1120, the Physicians Make Decisions Act
+(\texttt{ca-sb1120}), which keeps medical-necessity determinations with a licensed
+physician and bars reliance on generalized rather than individual clinical data;
+and Florida House Bill 527 with companion Senate Bill 202 (\texttt{fl-hb527}),
+which bars AI as the sole basis for a denial and requires independent human
+review. Draw the dual state-and-federal jurisdiction treatment from
+\texttt{regulatory\_landscape.tex}.]
+
+[Movement 3, Prior author regulatory adaptations. Note that the bill is consistent
+with, and can codify portions of, the author's prior Physical AI regulatory
+adaptations: the 21 CFR Part 312 adaptation (\texttt{kawchak2026cfr312}, the
+template source for this bill), the 21 CFR Part 50 adaptation
+(\texttt{kawchak2026cfr50}), the ICH E6(R3) adaptation (\texttt{kawchak2026iche6r3}
+and \texttt{iche6r3}), and the national MCP-PAI standard (\texttt{kawchak2026mcp}).
+Use the change-summary-table model from
+\texttt{template-paper/chunk\_01\_front\_matter.md} to show how a section-by-
+section adaptation maps onto a bill, and forward-reference the bill's own
+section-by-section analysis.]
+
+[Movement 4, Differing governance and corrections. In a short closing paragraph,
+state the governance differences the crosswalk surfaces (the New York submit-and-
+certify model versus the Texas attest-unless-noncompliant model versus the
+California physician-decision model versus the Florida human-review model), explain
+that the bill adopts a verification-before-generation standard that sits upstream
+of all of them at the trial-conduct robot-code layer, and confirm the corrected
+citations (42 U.S.C. for the antidiscrimination titles; the Texas committee-
+substitute as the operative version). Do not duplicate the crosswalk tables here;
+reference them.]
+
+% Model federal crosswalk table (citation context at top, abbreviated):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{3.0cm} L{3.6cm} Y}
+% \toprule
+% \textbf{Authority} & \textbf{Citation} & \textbf{How the bill builds on it} \\
+% \midrule
+% Medicare & 42 U.S.C. § 1395y & Medical-necessity stays with a licensed human \\
+% HIPAA & 45 CFR Parts 160, 164 & Audit-trail privacy and security \\
+% Devices & 21 CFR Parts 860--892 & Robot and software device documentation \\
+% Title VI & 42 U.S.C. § 2000d & Bias minimization on protected characteristics \\
+% ADA & 42 U.S.C. § 12101 & Accessibility and accommodation \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Federal-law crosswalk (corrected antidiscrimination citations at 42 U.S.C.).}
+% \end{table}
