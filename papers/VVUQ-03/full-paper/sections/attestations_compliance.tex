@@ -1,0 +1,98 @@
+% Attestations and Compliance Statements (MAIN POINT 2). Movement 1 sets the
+% duties and gives a model attestation block; Movement 2 maps each clause to the
+% machine-checkable VVUQ-02 evidence in one compliance-items table.
+
+This bill requires two instruments before any robot-patient interaction code is
+generated or executed: an artificial-intelligence compliance statement and a
+signed attestation by a responsible officer of the sponsor. Movement 1 sets out
+their content; Movement 2 shows that each attested clause is already
+machine-checkable against the recorded second-study evidence, so the attestation
+certifies facts a reviewer can independently confirm rather than promises a
+reviewer must trust.
+
+\subsection{The Attestation and Compliance-Statement Duties}
+
+The compliance statement is modelled on the Texas instrument: it states a summary
+of the artificial-intelligence system's function, a decision-making logic tree, a
+description of the training data sets, and a formal attestation that the system
+complies with bias-reduction and evidence-based clinical criteria. The signed
+attestation then certifies, under the penalties specified in
+Section~\ref{sec:implementation_enforcement}, each of the following: that the
+VVUQ verification process cleared before code generation, which is the
+verification-before-generation certification at the core of this bill; that each
+gate met its threshold bound to a named external standard; that the site passed
+its Physical AI Standard Level gate and each robot met the Unification Standard
+Level minimum for the procedure type; that the algorithm and its training data
+minimize the risk of bias on protected characteristics and adhere to
+evidence-based clinical guidelines, consistent with the New York certification
+\cite{ny-a9149} and the federal nondiscrimination guarantees
+\cite{usc-titlevi, usc-ada}; and that a licensed human retained the
+medical-necessity decision, consistent with the California physician-decision
+rule \cite{ca-sb1120} and the Florida human-review requirement \cite{fl-hb527}.
+The integrity of the attested records is tied to the HIPAA and electronic-records
+rules \cite{cfr-hipaa, cfr-part11} and to the risk-management standard
+\cite{iso14971}. A model attestation block follows; the full bill may refine its
+wording, but the certified facts are fixed.
+
+\begin{quote}
+\small\itshape
+I, the undersigned responsible officer of the sponsor, certify under the
+penalties of Section~\ref{sec:implementation_enforcement} that, for each
+robot-patient interaction algorithm covered by this submission: (1) the automated
+VVUQ verification process cleared before any covered code was generated or
+executed; (2) each VVUQ gate met its threshold bound to a named external
+standard; (3) the trial site passed its Physical AI Standard Level gate and each
+robot met the Unification Standard Level minimum for its procedure type; (4) the
+algorithm and its training data minimize the risk of bias on protected
+characteristics and adhere to evidence-based clinical guidelines; and (5) a
+licensed human professional retained the medical-necessity decision. The
+supporting records are referenced, not attached, and are reproducible from the
+stated seed.\par
+\medskip
+\upshape\rule{6cm}{0.4pt}\quad\rule{3.2cm}{0.4pt}\\
+\small Responsible officer (signature)\hspace{1.4cm} Date
+\end{quote}
+
+\subsection{Demonstration from the Recorded Compliance Evidence}
+
+Each certified clause maps to a recorded artifact that evidences it and to the
+standard it answers to, as set out in Table~\ref{tab:attest-items}. The
+verification-cleared-first clause is evidenced by the gate specification, which
+fixes the verification fraction at 1.0 in the spirit of the ASME V\&V 40
+credibility process. The gate-bound-to-a-standard clause is evidenced by the
+standards map, which records the governing standard and enforced limit for each
+of the ten gates. The continuous-integration clause is evidenced by the project
+compliance checklist, which runs a lint pass, the 172-test suite, schema
+validation, a YAML lint, and pre-commit hooks, and exercises the lint-and-format
+matrix across Python 3.10, 3.11, and 3.12, tracking the medical-device software
+life-cycle posture \cite{iec62304}. The readiness clause is evidenced by the
+national-platform standards section, which records the site Physical AI Standard
+Level pass or fail by dimension and the robot Unification Standard Level score by
+dimension \cite{kawchak2026national}. Because these checks are automated and
+reproducible, the attestation is an assertion about verifiable machine output,
+consistent with the agency credibility framework \cite{fda2023credibility,
+kawchak2026vvuq02}.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.4cm} L{4.0cm} Y}
+\toprule
+\textbf{Attestation clause} & \textbf{Evidencing artifact (abbreviated)} & \textbf{Answers to} \\
+\midrule
+\multicolumn{3}{l}{\textit{Parent: papers/VVUQ-02/codegen/docs/}} \\
+Verification cleared first & vvuq\_gate\_spec.md & ASME V\&V 40 § 8; verification fraction 1.0 \\
+Gate bound to a standard & standards\_map.md & IEC 80601-2-77; ISO 14971; per gate \\
+CI and tests pass & ci\_compliance\_checklist.md & IEC 62304; 172 tests; Python 3.10--3.12 \\
+\multicolumn{3}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+PSL and USL gates pass & psl\_usl\_standards.tex & Site PSL; robot USL minimum by procedure \\
+\bottomrule
+\end{tabularx}
+\caption{Attestation clauses mapped to the recorded evidence and governing standards.}
+\label{tab:attest-items}
+\end{table}
+
+No executable code, model weights, or training data sets are filed with the
+attestation; they are referenced, versioned, and reproducible from a stated seed,
+as Section~\ref{sec:supporting_documentation} specifies. The attestation files
+the certification and the pointers; the records remain in the repository where a
+reviewer can re-run them.
