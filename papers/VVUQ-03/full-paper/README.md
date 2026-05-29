@@ -1,5 +1,14 @@
 # VVUQ-03 full-paper
 
+[![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
+[![cancer-automated DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
+[![physical-ai DOI](https://img.shields.io/badge/National%20Platform%20DOI-10.5281%2Fzenodo.19244918-blue.svg)](https://doi.org/10.5281/zenodo.19244918)
+[![VVUQ-01 DOI](https://img.shields.io/badge/VVUQ--01%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
+[![VVUQ-02 DOI](https://img.shields.io/badge/VVUQ--02%20DOI-10.5281%2Fzenodo.20421754-blue.svg)](https://doi.org/10.5281/zenodo.20421754)
+[![Bill](https://img.shields.io/badge/Bill-H.R.%209510%20(119th%2C%202d%20Sess.)-darkblue.svg)](https://www.congress.gov/browse/119th-congress)
+[![Standards](https://img.shields.io/badge/Standards-USL%20%7C%20PSL%20%7C%2014%20External-orange.svg)](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices)
+
 LaTeX **full-paper** for the *VVUQ Physical AI Oncology Trial Bill*
 (**H.R. 9510**, 119th Congress, 2d Session; Draft 1.0), a proposed United States
 bill that would require an automated verification, validation, and uncertainty
@@ -11,15 +20,6 @@ This bundle is the **finished bill**, built from the `draft-paper` scaffold: eve
 publication-quality legislative prose with left-aligned, fixed-width tables that
 carry the dense facts. The references are final, no images are used anywhere, and
 the bundle compiles to PDF in Overleaf with the recipe below.
-
-[![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
-[![cancer-automated DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
-[![physical-ai DOI](https://img.shields.io/badge/National%20Platform%20DOI-10.5281%2Fzenodo.19244918-blue.svg)](https://doi.org/10.5281/zenodo.19244918)
-[![VVUQ-01 DOI](https://img.shields.io/badge/VVUQ--01%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
-[![VVUQ-02 DOI](https://img.shields.io/badge/VVUQ--02%20DOI-10.5281%2Fzenodo.20421754-blue.svg)](https://doi.org/10.5281/zenodo.20421754)
-[![Bill](https://img.shields.io/badge/Bill-H.R.%209510%20(119th%2C%202d%20Sess.)-darkblue.svg)](https://www.congress.gov/browse/119th-congress)
-[![Standards](https://img.shields.io/badge/Standards-USL%20%7C%20PSL%20%7C%2014%20External-orange.svg)](https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices)
 
 ## Thesis
 
