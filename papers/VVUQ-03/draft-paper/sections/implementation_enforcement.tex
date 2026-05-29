@@ -1,0 +1,73 @@
+% Implementation, Oversight, Enforcement, and Fiscal Provisions. Built by the
+% future pass from the instructions below. Do not process now. Covers the
+% implementation choices, the oversight and enforcement authority, the phased
+% rollout, and the budget, funding, and offsets. Carry the dense numbers in
+% tables sourced from the national-platform financial and implementation sections.
+
+[Write as connected legislative prose with two tables (an implementation-choices
+table and a fiscal table). Synthesise the sources; do not narrate them. Movement 1
+sets out the implementation design choices, Movement 2 the oversight and
+enforcement authority, Movement 3 the phased rollout and workforce, and Movement 4
+the budget, funding, and offsets.]
+
+[Movement 1, Implementation design choices. State, with one mapping table, the
+implementation levers the bill selects from the standard menu: mandatory
+disclosure of AI use in robot-patient interactions; auditability through a hash-
+chained audit trail and the five-server MCP-PAI topology; retained human review of
+medical-necessity decisions; an FDA review touchpoint consistent with the device
+and credibility framework; a CMS reimbursement pathway for verified Physical AI
+procedures; a grant program seeding site readiness; and a periodic reporting duty.
+Source the infrastructure and governance choices from the national-platform
+\texttt{national\_mcp.tex} (the five servers, 23 tools, role-based access, 21 CFR
+Part 11 alignment) and \texttt{implementation\_strategy.tex} (standards-integration
+gates, quality and risk management). Cite \texttt{kawchak2026mcp},
+\texttt{cfr-part11}, \texttt{fda2023credibility}, and \texttt{usc-1395y}.]
+
+[Movement 2, Oversight and enforcement authority. Designate the oversight roles
+(an FDA touchpoint for device and credibility review; a state insurance or health
+authority for the utilization-review-adjacent duties) and the enforcement
+mechanics: audits and compliance reviews, civil penalties for willful violations
+on the California model (\texttt{ca-sb1120}), a commissioner finding of
+noncompliance triggering algorithm production on the Texas model
+(\texttt{tx-sb1822}), and certification of bias minimization on the New York model
+(\texttt{ny-a9149}). Make the operative trigger the absence of a cleared
+verification-before-generation record. Cite \texttt{fl-hb527} for the human-review
+backstop.]
+
+[Movement 3, Phased rollout and workforce. Summarise a three-phase national
+rollout (a first state, then multi-state, then nationwide) and the workforce roles
+(Physical AI operators, technicians, safety specialists) from the national-
+platform \texttt{implementation\_strategy.tex} timeline and workforce tables;
+reference those tables rather than reproducing every row. Tie site activation to
+the PSL gate and robot admission to the USL minimum. Cite \texttt{kawchak2026national}
+and \texttt{kawchak2026sitedocs}.]
+
+[Movement 4, Budget, funding, and offsets. Present the fiscal case in one table:
+the cost of trial delay, the per-patient cost comparison, the single-site and
+national projections, and the patient and sponsor benefits, drawn from the
+national-platform \texttt{financial\_analysis.tex}. State the central offset
+argument, that automating the VVUQ assurance layer is inexpensive relative to its
+decision weight, supported by the VVUQ-01 and VVUQ-02 cost evidence (an autonomous
+agent carried the heavier assurance half cheaply and reproducibly) from
+\texttt{VVUQ-02/execution/README.md} (cost section) and the VVUQ-01 cost-and-
+credibility bridge in \texttt{VVUQ-01/final-paper/sections/discussion.tex}. Frame
+the savings from faster, safer trials as the funding offset for the grant program
+and oversight costs. Keep all figures as planning indices or simulation results,
+not guarantees. Cite \texttt{kawchak2026vvuq01}, \texttt{kawchak2026vvuq02}, and
+\texttt{fda2026realtime}.]
+
+% Model implementation-choices table (parent paths at top, abbreviated leaves):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{3.4cm} Y}
+% \toprule
+% \textbf{Lever} & \textbf{Bill choice and source} \\
+% \midrule
+% \multicolumn{2}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+% Auditability & Hash-chained trail, five MCP servers (national\_mcp.tex) \\
+% Human review & Retained medical-necessity decision (regulatory\_landscape.tex) \\
+% Reimbursement & CMS pathway for verified procedures (financial\_analysis.tex) \\
+% Rollout & Three phases, workforce roles (implementation\_strategy.tex) \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Implementation levers selected by the bill and their sources.}
+% \end{table}
