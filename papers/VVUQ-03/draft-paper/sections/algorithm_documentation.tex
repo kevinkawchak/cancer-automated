@@ -1,0 +1,78 @@
+% Algorithm Documentation Requirements (MAIN POINT 1). Built by the future pass
+% from the instructions below. Do not process now. The section both states what
+% algorithm documentation the bill requires to be filed and demonstrates that
+% requirement against the recorded VVUQ-02 codegen and execution artifacts. The
+% 1790-line comparison.json and the 1001-row sample_h2_sensor.csv must be
+% featured here.
+
+[Write this as connected legislative prose plus two tables. Movement 1 states the
+documentation duty the bill imposes; Movement 2 demonstrates that the duty is
+already met in practice by the recorded VVUQ-02 artifacts, which is the proof the
+requirement is feasible rather than burdensome. Keep file names in the tables.]
+
+[Movement 1, The documentation duty. Specify what a sponsor must document and file
+for each algorithm that governs a robot-patient interaction, framed so the
+verification record precedes the generated code (rigor above the code itself).
+The required filing items, to be presented as a numbered list and a table, are: a
+plain-language summary of the algorithm's function; the decision-logic or
+architecture description; a description of the data sets used to train or
+condition the algorithm; the VVUQ gate bindings (which external standard governs
+each gate and the numeric threshold enforced); the verification-before-generation
+record (the gate result that cleared before the code was generated or executed);
+and the determinism and reproducibility statement (seed and byte-for-byte
+regeneration). Align these items to the state utilization-review precedents so the
+bill is consistent with them: the Texas AI compliance statement of summary,
+decision-logic tree, training-data description, and attestation
+(\texttt{tx-sb1822}); the New York algorithm-and-training-data submission
+(\texttt{ny-a9149}); and the California individualized-data and transparency duty
+(\texttt{ca-sb1120}). Anchor the device-software framing to \texttt{cfr-devices}
+and the credibility framing to \texttt{fda2023credibility} and \texttt{asmevv40}.]
+
+[Movement 2, Demonstration from the recorded artifacts. Show that the VVUQ-02
+codegen and execution records already produce exactly this documentation, drawing
+from \texttt{VVUQ-02/codegen/} and \texttt{VVUQ-02/execution/}. Describe the
+generated platform and its documentation set from the docs in
+\texttt{VVUQ-02/codegen/docs/} (architecture, h2 robot specification, h2 hand
+kinematics, sensor spec, perception stack, autonomy policy, the gate spec, and the
+standards map) and the frozen configuration in \texttt{VVUQ-02/codegen/config/}.
+Two artifacts must be featured by name and described in detail, each in its own
+table, with the parent path given once at the top.]
+
+[Featured artifact 1, the four-entrant tournament. File:
+\texttt{papers/VVUQ-02/codegen/results/comparison.json}, 1790 lines, the result
+of a substantial code generation processing feat and its subsequent execution.
+Describe it as the machine-readable record of a 32-iteration sweep at seed
+20260525 with four rounds per iteration, comparing four entrants
+(\texttt{H2\_Surgical\_1\_0}, the single mobile humanoid; \texttt{PancreSpeed\_1\_0},
+the eight-arm cart baseline; \texttt{da\_Vinci\_successor\_2030}, a teleoperated
+telemanipulator; and \texttt{Dutch\_human\_baseline}, a 2025 human-surgeon
+cohort), each round carrying a composite score for each side, a winner, a
+confidence value, and explicit caveats that always include the simulation-against-
+simulation qualifier. Report the headline numbers from the record (composite range
+near 67.584 to 94.603; the humanoid mean near 93.334 placing second to PancreSpeed
+near 93.782 by under half a composite point) and state that the file regenerates
+byte for byte from the seed. Present this in one table; do not transcribe the
+JSON.]
+
+[Featured artifact 2, the humanoid sensor stream. File:
+\texttt{papers/VVUQ-02/codegen/data/sample\_h2\_sensor.csv}, 1001 lines (1 header
+plus 1000 non-repetitive data rows) across 27 columns, the flattened publication
+sample of the robot positional data produced by the code generation and confirmed
+in execution. Describe the columns by group (tick, hand identifier, phase, grasp
+state; the seven per-arm joint angles \texttt{q\_arm\_1} through \texttt{q\_arm\_7};
+the five per-finger forces \texttt{finger\_force\_1} through
+\texttt{finger\_force\_5}; the end-effector position \texttt{ee\_pos\_x/y/z} in the
+patient frame; and the vessel-proximity, ring-tension, balance, e-stop, and
+collision channels), so the reader sees that the data covers both hands, all five
+fingers, the arms, and the balance state with no repeated rows, deterministic from
+seed 20260525. Note the companion \texttt{sample\_h2\_sensor.jsonl} and the
+human-surgeon baseline \texttt{human\_surgeon\_baseline.csv}. Present the column
+groups in one table; do not transcribe the CSV.]
+
+[Close Movement 2 by connecting the demonstration back to the duty: because these
+artifacts were generated and executed autonomously and reproducibly, the bill's
+documentation requirement is shown to be practical and inexpensive. Defer the
+honest account of what could not be run or had to be approximated to
+\texttt{sections/limitations\_future.tex}, and the not-physically-attached
+treatment of these same files to \texttt{sections/supporting\_documentation.tex}.
+Cite \texttt{kawchak2026vvuq02} and \texttt{repo-cancer-automated}.]
