@@ -1,0 +1,244 @@
+% ============================================================
+% main.tex
+% Draft manuscript scaffold for:
+%   VVUQ Physical AI Oncology Trial Bill (Draft 1.0)
+% Author: Kevin Kawchak, CEO ChemicalQDevice
+% License: CC BY 4.0
+%
+% HOW TO USE THIS DRAFT (read before processing):
+%   This file and the sections/ files are a SCAFFOLD. Every section body is a
+%   [bracketed instruction] that names the exact repository files a future
+%   Claude Code Opus 4.8 (1M) Max pass must read and synthesise into
+%   publication-quality legislative prose. The brackets are NOT the bill; they
+%   are the build order. Replace each bracketed block with finished prose and
+%   left-aligned fixed-width tables. The references.bib is already final; do not
+%   weaken any DOI, URL, or note field when citing.
+%
+% GLOBAL PRODUCTION AND FORMATTING DIRECTIVES (apply to every section):
+%   1. Targeted length: a finished 70+ page bill. Give each section a
+%      comprehensive amount of context; do not pad with filler.
+%   2. Prose must read as if written by a top human author of legislation:
+%      connect ideas across sections, do not restate what a table already shows,
+%      and reference tables rather than narrating them.
+%   3. Tables carry the dense facts. Keep file and path names out of the prose
+%      where a table can hold them. Abbreviate long names inside tables and put
+%      the longer parent path once near the top of the table so body cells stay
+%      short and left aligned.
+%   4. Every table column MUST use a left-aligned fixed width of the form
+%      {>{\raggedright\arraybackslash}p{width}}; prepend \raggedright\arraybackslash
+%      to EVERY p{} width so there are no large inter-word gaps in cells.
+%   5. Body text: avoid large empty white bands. Where justification opens large
+%      inter-word gaps, tune the \raggedright spacing and the \sloppy,
+%      \emergencystretch, and microtype settings below so words are evenly spaced
+%      and no line runs off the right margin.
+%   6. Do not leave a single orphan line of a paragraph alone at the top or
+%      bottom of a page, do not leave a single line separated from its paragraph
+%      on the next page, and avoid lines of only one or two words. The widow and
+%      club penalties in new_paper.sty are 10000; keep them.
+%   7. Use the section symbol "§" for any clause reference (for example
+%      "42 U.S.C. § 1395y" or "ASME V&V 40-2018 § 8"); never write "SS".
+%   8. Use single hyphens only. No em dashes, en dashes, double, or triple dashes.
+%   9. No images anywhere. Keep the navy accent and Palatino body from
+%      new_paper.sty; do not restyle headings or the cover page.
+%  10. Senior-author finishing pass: balance each page so it stands on its own,
+%      adding or trimming text to remove awkward white space without overcrowding
+%      (some white space is fine).
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{new_paper}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage[colorlinks=true,pdfborder={0 0 0}]{hyperref}
+\usepackage{underscore}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{caption}
+
+\setlength{\headheight}{16pt}
+\renewcommand{\shorttitle}{\scriptsize\scshape VVUQ Physical AI Oncology Trial Bill}
+
+% Even word spacing, no right-margin overflow.
+\tolerance=1200
+\emergencystretch=3em
+\hbadness=2000
+\hyphenpenalty=50
+\exhyphenpenalty=50
+\sloppy
+
+% Navy, clickable links so every DOI and URL resolves and is visible.
+\hypersetup{
+  urlcolor=billnavy,
+  linkcolor=billnavy,
+  citecolor=billnavy,
+  filecolor=billnavy,
+  pdftitle={VVUQ Physical AI Oncology Trial Bill},
+  pdfauthor={Kevin Kawchak, ChemicalQDevice}
+}
+
+% Break long URLs on any character so no link runs off the right margin.
+\def\UrlBreaks{\do\/\do-\do.\do=\do_\do?\do\&\do\%\do\a\do\b\do\c\do\d\do\e%
+\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I%
+\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+\do\Y\do\Z}
+
+% Left-aligned, ragged-right fixed-width columns (no large inter-word gaps).
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% Flexible ragged-right column for tabularx; tables are set to \textwidth so
+% they match the body measure exactly while keeping cells left aligned.
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+
+\title{VVUQ Physical AI Oncology Trial Bill}
+\author{Kevin Kawchak, CEO ChemicalQDevice}
+\date{May 30, 2026}
+
+\begin{document}
+
+% ============================================================
+% COVER PAGE (kept verbatim; the future pass must not alter the wording)
+% ============================================================
+\begin{titlepage}
+\centering
+\vspace*{1.4cm}
+{\color{billnavy}\rule{\textwidth}{3pt}}\par
+\vspace{0.9cm}
+{\LARGE\bfseries\sffamily\color{billnavy} VVUQ Physical AI Oncology Trial Bill\par}
+\vspace{0.9cm}
+{\large\bfseries Draft 1.0\par}
+\vspace{0.9cm}
+{\normalsize CEO Kevin Kawchak\,\href{https://orcid.org/0009-0007-5457-8667}{(ORCID 0009-0007-5457-8667)}, ChemicalQDevice, \href{mailto:kevink@chemicalqdevice.com}{kevink@chemicalqdevice.com}\par}
+\vspace{1.3cm}
+\begin{minipage}{0.86\textwidth}
+\small\raggedright
+Notice: This draft was adapted from original CFR documents in the public domain.
+The original ICH document is copyrighted and may be used, reproduced,
+incorporated into other works, adapted, modified, translated or distributed
+under a public license. This current work is not endorsed or sponsored by CFR,
+ICH, or FDA.
+\par\vspace{\baselineskip}
+Disclaimer: This work is independent and is not endorsed, sponsored, or approved
+by any trial sponsor, CRO, site, IRB, regulator, or medical society; and was
+adapted using Claude Code Opus 4.6.
+\par\vspace{\baselineskip}
+\href{https://doi.org/10.5281/zenodo.xxxxxxxx}{10.5281/zenodo.xxxxxxxx}
+\end{minipage}\par
+\vspace{2.6cm}
+{\bfseries San Diego\par}
+\vspace{2.6cm}
+{\normalsize May 30, 2026\par}
+\vfill
+{\color{billnavy}\rule{\textwidth}{1pt}}\par
+\end{titlepage}
+
+% ============================================================
+% FRONT MATTER
+% ============================================================
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+% Abstract and one-line keywords on the first body page.
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\keywords{VVUQ | Physical AI oncology trials | Robot-patient interaction |
+Verification before code generation | USL and PSL | External standards |
+Algorithm documentation | Patient safety and efficacy}
+
+\vspace{0.2cm}
+
+% ============================================================
+% BODY SECTIONS (one \input per sections/ file; one commit per file)
+% ============================================================
+\section{Policy Memorandum and Concept Paper}
+\label{sec:policy_memo}
+\input{sections/policy_memo}
+
+\section{Problem Statement and Current-Law Gap}
+\label{sec:problem_statement}
+\input{sections/problem_statement}
+
+\section{Definitions and Technical Terminology}
+\label{sec:definitions}
+\input{sections/definitions}
+
+\section{Legislative Findings and Evidentiary Record}
+\label{sec:findings}
+\input{sections/findings}
+
+\section{Algorithm Documentation Requirements}
+\label{sec:algorithm_documentation}
+\input{sections/algorithm_documentation}
+
+\section{Attestations and Compliance Statements}
+\label{sec:attestations_compliance}
+\input{sections/attestations_compliance}
+
+\section{Prior Law References and Statutory Crosswalk}
+\label{sec:prior_law}
+\input{sections/prior_law}
+
+\section{Supporting Documentation Referenced (Not Physically Attached)}
+\label{sec:supporting_documentation}
+\input{sections/supporting_documentation}
+
+\section{Draft Statutory Text}
+\label{sec:statutory_text}
+\input{sections/statutory_text}
+
+\section{Implementation, Oversight, Enforcement, and Fiscal Provisions}
+\label{sec:implementation_enforcement}
+\input{sections/implementation_enforcement}
+
+\section{Section-by-Section Analysis}
+\label{sec:section_by_section}
+\input{sections/section_by_section}
+
+\section{Limitations and Future Work}
+\label{sec:limitations}
+\input{sections/limitations_future}
+
+\section{Conclusions and Effective Date}
+\label{sec:conclusions}
+\input{sections/conclusions}
+
+% ============================================================
+% REFERENCES
+% The .bib is final and polished. \nocite{*} guarantees every entry (60, with
+% the federal and state laws and the external standards well represented)
+% renders; the future pass should additionally place inline \cite calls in the
+% body so each reference is anchored where it is used. ieeetr prints the note
+% field, so each DOI string and its clickable resolver URL both appear.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begingroup
+\raggedright
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+
+\clearpage
+\input{sections/back_matter}
+
+\end{document}
