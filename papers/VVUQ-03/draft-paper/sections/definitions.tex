@@ -1,0 +1,80 @@
+% Definitions and Technical Terminology. Built by the future pass from the
+% instructions below. Do not process now. This is the bill's glossary; it must
+% define every term the operative sections rely on, with USL and PSL given full
+% treatment because they affect the VVUQ process synergistically.
+
+[Write a short connecting paragraph, then render the definitions as one
+\texttt{longtable} (Term, Definition, Source) so the dense glossary stays
+readable across pages; do not narrate each row. Use the left-aligned ragged-right
+column format for every column. Group the table into four labelled blocks. Pull
+the authoritative wording from the sources in the second table below, and cite
+each defining source.]
+
+[Block 1, Statutory technical terms. Define the terms the operative sections
+depend on, in plain legislative style: artificial intelligence; generative
+artificial intelligence; algorithm; high-risk artificial intelligence;
+AI-enabled device software function; clinical decision support; and utilization
+review tool. Anchor the device-software and clinical-decision-support framings to
+\texttt{cfr-devices} and \texttt{fda2023credibility}, and the utilization-review
+framing to the state statutes (\texttt{ca-sb1120}, \texttt{ny-a9149},
+\texttt{tx-sb1822}, \texttt{fl-hb527}).]
+
+[Block 2, VVUQ terms. Define verification (did we build the code correctly),
+validation (did we build the right code), uncertainty quantification (how
+confident across repeated runs), the VVUQ gate, the verification fraction (an
+equality to 1.0, not an inequality with slack), validation agreement, the
+coefficient-of-variation bound, the three-way ACCEPT, BLOCK, ESCALATE decision,
+and the hard catastrophe predicate. Source these verbatim in substance from
+\texttt{VVUQ-02/codegen/docs/vvuq\_methodology.md} and
+\texttt{vvuq\_gate\_spec.md}, and from the VVUQ-01 methods gate description. Cite
+\texttt{kawchak2026vvuq01}, \texttt{kawchak2026vvuq02}, \texttt{asmevv40},
+\texttt{nasastd7009a}, and \texttt{iso14971}.]
+
+[Block 3, USL and PSL, and their synergy with VVUQ. This block is required and
+must be comprehensive. Define the Unification Standard Level (USL) as the robot-
+level readiness score, 1.0 to 10.0, across four equally weighted dimensions
+(simulation-framework switching, AI integration, cross-robot sharing, clinical-
+trial collaboration) with the five bands (Initial, Foundational, Intermediate,
+Advanced, Exemplary). Define the Physical AI Standard Level (PSL) as the site-
+level compliance gate across three pass/fail dimensions (legislative
+authorization, regulatory compliance, operational readiness). Source both from
+\texttt{psl\_usl\_standards.tex} in the national-platform final paper. Then state,
+in connected prose after the table, how USL and PSL affect the VVUQ process
+synergistically: PSL verifies the environment (a compliant, prepared site) and
+USL validates the platform (a sufficiently mature robot), so the two form a dual-
+layer verification-and-validation gate around the code-level VVUQ, and a Physical
+AI trial requires all three to clear. Tie USL dimension scoring to uncertainty
+quantification (dimensional variation and field-wide weakness as quantified
+uncertainty) and to the Phase 0 simulation-validation pre-enrollment gate. Use the
+key synergy sentence from \texttt{psl\_usl\_standards.tex} (PSL ensures the
+environment is ready, USL ensures the robots are ready, a trial requires both).
+Cite \texttt{kawchak2026national} and \texttt{kawchak2026sitedocs}.]
+
+[Block 4, Physical AI system terms. Define Physical AI system, robot agent, the
+robot categories and functional types and their minimum USL thresholds by
+procedure type (surgical at least 7.0; therapeutic positioning and diagnostic
+needle at least 6.0; rehabilitative at least 4.0; companion monitoring at least
+3.0), digital twin, simulation framework, cross-framework tolerances (under 2 mm
+trajectory, under 0.5 N force), emergency stop, human oversight, and the hash-
+chained audit trail. Source these from
+\texttt{template-paper/chunk\_02\_subpart\_a\_general\_provisions.md} (the 22
+Physical AI definitions and § 312.1 thresholds) and the national MCP-PAI standard
+(\texttt{kawchak2026mcp}). Keep the section symbol § for any clause reference.]
+
+% Model sources table (parent paths at top, abbreviated leaves):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{4.8cm} Y}
+% \toprule
+% \textbf{Source file (abbreviated leaf)} & \textbf{Defines} \\
+% \midrule
+% \multicolumn{2}{l}{\textit{Parent: papers/VVUQ-03/template-paper/}} \\
+% chunk\_02\_subpart\_a\_general\_provisions.md & 22 Physical AI terms; robot categories; USL thresholds; tolerances \\
+% \multicolumn{2}{l}{\textit{Parent: physical-ai-oncology-trials/national-platform/new\_paper/final\_paper/sections/}} \\
+% psl\_usl\_standards.tex & USL 4 dimensions and 5 bands; PSL 3 dimensions; the synergy sentence \\
+% \multicolumn{2}{l}{\textit{Parent: papers/VVUQ-02/codegen/docs/}} \\
+% vvuq\_methodology.md & Verification, validation, uncertainty; model risk; context of use \\
+% vvuq\_gate\_spec.md & Gate, fraction, agreement, CV bound, hard predicate \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Authoritative sources for the definitions.}
+% \end{table}
