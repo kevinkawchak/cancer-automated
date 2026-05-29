@@ -1,0 +1,130 @@
+% Problem Statement and Current-Law Gap. Three connected movements plus one
+% source table. Laws are cited by key so each resolves in the bibliography; the
+% dense crosswalk is reserved for the prior-law section.
+
+The problem this bill addresses, the body of existing law that bears on it, and
+the reason that body falls short are set out below in three movements. The
+sources synthesised here are listed once in Table~\ref{tab:problem-sources}; the
+exhaustive statutory crosswalk is deferred to
+Section~\ref{sec:prior_law} so that the argument here stays readable.
+
+\subsection{The Problem}
+
+Physical AI oncology trials now place autonomous and semi-autonomous robots in
+direct physical contact with patients. The contact takes several forms:
+surgical humanoids that cut, suture, and manipulate tissue; therapeutic
+positioning systems that hold and move a patient during treatment; diagnostic
+platforms that place needles for biopsy or delivery; and rehabilitative and
+companion systems that support, monitor, and assist. In each form, the behavior
+of the robot at the moment it touches the patient is determined by software, and
+that software is increasingly machine-generated rather than written line by line
+by a human engineer. No current United States law requires the verification of
+that software to clear before the software is generated or executed. A sponsor
+may generate robot-patient interaction code, run it, and document the result
+afterward, in any order it chooses, because the order is not regulated. That
+absence is the core safety-and-efficacy gap H.R. 9510 closes.
+
+Embodiment is what raises the stakes from a software-quality concern to a
+patient-safety mandate. In a disembodied analytics pipeline, an error produces a
+wrong number that a human can catch downstream. In an embodied surgical system,
+the same class of error produces a wrong motion that a human cannot catch in
+time, because one body concentrates all of the error potential into a single
+moving instrument acting in real time. The author's first VVUQ study
+\cite{kawchak2026vvuq01} develops this argument and demonstrates its operational
+consequence, that the decision to permit execution must precede execution rather
+than follow it.
+
+A second structural feature of the field deepens the gap. A Physical AI system
+used in a trial occupies an ambiguous regulatory position: it is at once a
+medical product, when it administers or assists treatment, and a research tool,
+when it generates the evidence the trial is designed to collect. The national
+platform's regulatory analysis describes this dual classification and the
+uncertainty it creates about which authority, and which pathway, governs the
+robot's control code \cite{kawchak2026national}. Verification before generation
+is attractive precisely because it is agnostic to that classification: whatever
+the robot is called, its patient-facing code must clear the gate before it runs.
+
+\subsection{Current-Law Inventory and the Gap}
+
+The existing framework is substantial, and the bill builds on it rather than
+displacing it; but each component stops short of a verification-before-generation
+mandate for robot-patient interaction code. The Federal Food, Drug, and Cosmetic
+Act \cite{usc-fdca} and the medical-device regulations \cite{cfr-devices}
+establish device classification and premarket review, but they govern the device
+as a marketed article, not the order in which its trial-conduct code is verified
+and generated. The investigational pathways for new drugs and for the protection
+of human subjects \cite{cfr-part312, cfr-part50}, together with the author's
+Physical AI adaptations of those pathways and of good clinical practice
+\cite{kawchak2026cfr312, kawchak2026cfr50, kawchak2026iche6r3}, reach the conduct
+of the trial and the documentation of robotic systems, but they do not condition
+code generation on a cleared verification record. The Medicare standard of
+reasonableness and medical necessity \cite{usc-1395y} governs whether a procedure
+is covered, not whether the robot's code was verified before it ran. The Public
+Health Service Act \cite{usc-phsa} supplies public-health and biologics
+authority that sits beside, but does not reach, the sequencing question. The
+HIPAA Privacy and Security Rules \cite{cfr-hipaa} and the electronic-records rule
+\cite{cfr-part11} protect the integrity and confidentiality of the records a
+verification gate produces, which is necessary for an auditable gate but is not
+itself a gate.
+
+The federal nondiscrimination guarantees complete the inventory, and a citation
+correction belongs here. The guarantees against bias on protected
+characteristics are codified at title 42 of the United States Code, not title 26:
+Title VI of the Civil Rights Act appears at 42 U.S.C. § 2000d
+\cite{usc-titlevi}, and the Americans with Disabilities Act at 42 U.S.C. § 12101
+\cite{usc-ada}. An informal reference to 26 U.S.C., which is the Internal Revenue
+Code, for these provisions was a mislabel; this bill cites the correct titles
+throughout. These guarantees require that a robot-patient algorithm and its
+training data minimize the risk of bias and respect accessibility, but they do
+not require that the algorithm be verified before it is generated. The national
+platform's government-framework and regulatory-landscape analyses supply the
+three-branch authority map and the current posture of the Food and Drug
+Administration toward artificial intelligence on which this inventory draws
+\cite{kawchak2026national}. The pattern across the whole framework is consistent:
+the substantive content a gate would enforce already exists in scattered form,
+but the rule that makes verification a precondition of generation does not.
+
+\subsection{The State Patchwork and the Case for Uniform Federal Action}
+
+Several states have begun to regulate artificial intelligence in health
+decisions, but each acts at the utilization-review or claims-handling layer, not
+at the robot-patient code-verification layer. New York would require insurers to
+submit AI algorithms and training data for certification of minimized bias and
+adherence to evidence-based guidelines \cite{ny-a9149}. Texas would require an
+annual artificial-intelligence compliance statement, with the underlying
+algorithms produced only on a finding of noncompliance \cite{tx-sb1822}.
+California keeps medical-necessity determinations with a licensed physician and
+bars reliance on generalized rather than individual clinical data
+\cite{ca-sb1120}. Florida bars artificial intelligence as the sole basis for a
+claim denial and requires independent human review \cite{fl-hb527}. These are
+sound measures, and the bill is designed to harmonise with them; but every one
+of them addresses how a payer decides a claim, not how a robot's code is cleared
+before it acts on a patient in a trial.
+
+The consequence is that the most safety-critical software in the field, the code
+that governs a robot's physical contact with a patient during trial conduct, is
+the software least addressed by current law, and is addressed by no two
+jurisdictions in the same way. A patchwork at the claims layer cannot supply a
+uniform rule at the conduct layer, and a sponsor operating across states cannot
+build one robot-patient code base against four divergent regimes. A single
+federal verification-before-generation standard resolves this directly and gives
+the states a stable upstream rule to build on. The detailed mapping of each
+federal and state authority to the clause of this bill that extends it is carried
+in the crosswalk of Section~\ref{sec:prior_law}.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.6cm} Y}
+\toprule
+\textbf{Source file (abbreviated leaf)} & \textbf{What the section takes from it} \\
+\midrule
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-01/final-paper/sections/}} \\
+introduction.tex & Embodiment raises the stakes; the verification-first gap \\
+\multicolumn{2}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+regulatory\_landscape.tex & Medical-product versus research-tool classification; gaps and pathways \\
+gov\_framework.tex & Three-branch authority map; current FDA artificial-intelligence framework \\
+\bottomrule
+\end{tabularx}
+\caption{Sources for the problem statement and current-law gap.}
+\label{tab:problem-sources}
+\end{table}
