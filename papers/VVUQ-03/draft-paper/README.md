@@ -163,6 +163,28 @@ The federal laws are cited as `usc-1395y` (42 U.S.C. § 1395y, Medicare),
 `usc-titlevi` (42 U.S.C. § 2000d), and `usc-ada` (42 U.S.C. § 12101). The state
 laws are `ny-a9149`, `tx-sb1822`, `ca-sb1120`, and `fl-hb527`.
 
+## Build validation (draft compile-safety)
+
+The scaffold was validated structurally before each commit and consolidated in a
+second-to-last error-fix commit, because pdflatex is not available in the build
+container and the prompt asks not to compile here. The checks, all passing:
+
+- Every `\input{sections/...}` in `main.tex` resolves to a present file, and
+  every section file is wired into `main.tex` (15 of 15).
+- Braces balance in all files; `\begin`/`\end` environments balance in `main.tex`
+  (titlepage, abstract, minipage, document) and every section body (the model
+  tables are commented guidance, so the draft compiles from the bracket prose).
+- No unescaped `&`, no em or en or double or triple dashes, and balanced dollar
+  signs in active (non-comment) text; single hyphens only.
+- The only non-ASCII character is the intended `§`, which is safe under the
+  `utf8` inputenc and `T1` fontenc loaded in `main.tex`; `SS` is never used for a
+  section.
+- `references.bib` has 60 entries, no duplicate keys, and no `howpublished`
+  field; every `\url{...}` is free of raw ampersands.
+
+The rendered PDF, inline `\cite` placement, table construction, and final page
+balancing are left to Overleaf and the future full-paper pass.
+
 ## Responsible use
 
 This is an independent draft. It is not endorsed, sponsored, or approved by any
