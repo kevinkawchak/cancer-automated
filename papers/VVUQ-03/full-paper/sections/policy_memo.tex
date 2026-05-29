@@ -1,0 +1,137 @@
+% Policy Memorandum and Concept Paper. Synthesised, not narrated. File names
+% live in the source table; the prose cites works by bibliography key.
+
+\begin{flushleft}
+\textbf{MEMORANDUM}\\[3pt]
+\textbf{To:}\quad Committee on Energy and Commerce, U.S. House of Representatives
+(Subcommittee on Health), and Members with jurisdiction over the Food and Drug
+Administration\\
+\textbf{From:}\quad Office of the Sponsor, H.R. 9510 (CEO Kevin Kawchak,
+ChemicalQDevice)\\
+\textbf{Re:}\quad VVUQ Physical AI Oncology Trial Bill: concept paper and
+statement of legislative intent\\
+\textbf{Date:}\quad May 30, 2026
+\end{flushleft}
+
+This memorandum accompanies and introduces H.R. 9510. It is offered in the form
+that precedes a serious bill: a concept paper that fixes the idea, a statement of
+why the law is needed now, and an account of the new method by which the
+supporting record was assembled. The sources drawn on throughout are listed once,
+with their repository locations, in Table~\ref{tab:policy-sources}; the body that
+follows cites those works by name and does not repeat their paths.
+
+\subsection{Concept and Legislative Intent}
+
+The concept of this bill is narrow, deliberate, and new. It elevates the
+verification of robot-patient interaction code above the code itself, and it
+requires that verification to clear before the code is generated or executed in a
+Physical AI oncology clinical trial. The instrument does not regulate a drug, a
+device, or a diagnosis in the first instance; it regulates the order of
+operations by which autonomous software is allowed to touch a patient. That a
+statute should govern sequence rather than substance is unusual, and the reason
+is specific to this moment in oncology research.
+
+Three fronts that matured separately are now converging in the same procedure
+room. In silico simulation has become accurate enough to stand in for early
+clinical testing; autonomous code generation has become capable enough to write
+the control software that drives a procedure; and robotic platforms have become
+dexterous enough to perform that procedure on a body. The author's first VVUQ
+study \cite{kawchak2026vvuq01} examined what happens when these fronts meet and
+reached a conclusion that the present bill codifies: when software is generated
+autonomously and then executed against a patient, the act of generation is cheap
+and fast, while the act of deciding whether the generated software may run is the
+work that carries the consequence. An error caught at a verification gate before
+delivery costs a regenerated artifact and a few milliseconds; the same error
+discovered after delivery costs a patient. That asymmetry is the entire economic
+and ethical case for verification before generation, and it grows sharper as
+embodiment concentrates every failure mode into one moving body.
+
+The vocabulary this bill carries forward is the vocabulary of the prior
+template's prefatory framing and of the national platform. The Unification
+Standard Level (USL) scores how ready a robot platform is; the Physical AI
+Standard Level (PSL) scores how ready a trial site is; and the national MCP-PAI
+standard supplies the audit, ledger, and provenance infrastructure that makes a
+verification record trustworthy after the fact. The national platform
+\cite{kawchak2026national} demonstrates these standards at the scale of a working
+trial, and the author's prior survey of proposed United States bills
+\cite{kawchak2026bills} establishes the patient-priority framing that this
+instrument adopts: the patient, not the platform vendor and not the sponsor, is
+the party the verification gate protects.
+
+\subsection{Why a Law, and Why Now}
+
+A reasonable reader will ask whether existing authority already reaches this
+problem, and whether a new statute is premature for a field this young. The
+national platform's executive summary answers both questions, and the bill adopts
+its posture. On the first question, the existing frameworks can be adapted rather
+than replaced. The Federal Food, Drug, and Cosmetic Act, the investigational
+pathways, the Medicare medical-necessity standard, the privacy and
+electronic-records rules, and the consensus engineering standards already supply
+most of the substantive content a verification gate must enforce; what they do
+not supply is the sequencing rule that makes verification a precondition of
+generation rather than an afterthought. This bill adds that one rule and leaves
+the adapted frameworks in place, a far less disruptive intervention than a new
+regulatory regime would be.
+
+On the second question, the timing is not premature but overdue. Physical AI
+complexity has already passed the point at which manual, document-by-document
+review can keep pace with the volume of machine-generated control code that a
+multi-site trial produces, and the gap widens with every robot added to a site.
+At the same time, the Food and Drug Administration's 2026 initiative to implement
+real-time clinical trials \cite{fda2026realtime} makes faster, automated
+assurance not merely tolerable but desirable, because a real-time trial cannot
+wait weeks for a manual code review between procedures. The bill is written to
+serve that initiative rather than to constrain it: its gate is automated, its
+thresholds are bound to the agency's own credibility framework
+\cite{fda2023credibility}, and its human-review and good-clinical-practice
+requirements track the harmonised guidance the agency already recognises
+\cite{iche6r3}. The purpose throughout is patient safety and efficacy, expressed
+as a single operational rule. Mentions of the Food and Drug Administration and of
+other bodies in this bill are respectful and opportunistic in the proper sense:
+the United States can lead the world in surgical-humanoid VVUQ if it sets the
+standard first, and this bill is offered to help it do so.
+
+\subsection{Repository-Based AI as a Legislative Accelerator}
+
+The second half of the bill's thesis concerns how this very document was made,
+because the method is itself part of the argument. State-of-the-art
+repository-based artificial intelligence models can read a corpus of technical
+evidence, generate and execute verification code against it, and synthesise the
+results into a public, reproducible document. This bill is such a document. Its
+findings are not assertions; they are the recorded outputs of pipelines that any
+reader can re-run from a stated seed, deposited under the repositories listed in
+Table~\ref{tab:policy-sources} and citable by DOI \cite{repo-cancer-automated,
+repo-physical-ai}.
+
+The synthesis pattern is drawn from two places. The national platform's catalog
+of source documents shows how adapted consensus standards and open repositories
+can be turned into legislative blueprints rather than left as inert technical
+artifacts. The author's second VVUQ study supplies the operational lineage that
+this bill follows end to end: an instruction is written, code is generated from
+it, the code is executed under an assurance gate, and the run is synthesised into
+a paper. The coding agent that performs those steps \cite{anthropicclaudecode}
+makes the path from technical evidence to statutory text short enough that the
+evidence and the law can be revised together. The practical consequence for the
+Committee is that the record behind H.R. 9510 is not a static appendix but a
+living, re-executable corpus, and the bill's documentation and attestation
+sections are written so that any sponsor can produce the same kind of record for
+its own robot-patient code.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.7cm} Y}
+\toprule
+\textbf{Source file (abbreviated leaf)} & \textbf{What the section takes from it} \\
+\midrule
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-03/template-paper/}} \\
+chunk\_01\_front\_matter.md & Prefatory-note tone; USL, PSL, and MCP-PAI vocabulary \\
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-01/final-paper/sections/}} \\
+introduction.tex & Converging fronts; cost asymmetry; verification-first thesis \\
+\multicolumn{2}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+executive\_summary.tex & Adapt-not-replace argument; economic and governance framing \\
+source\_documents.tex & How adapted standards and repositories become legislative blueprints \\
+\bottomrule
+\end{tabularx}
+\caption{Sources for the policy memorandum and concept paper.}
+\label{tab:policy-sources}
+\end{table}
