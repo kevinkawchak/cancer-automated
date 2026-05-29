@@ -5,6 +5,49 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-05-30
+
+### Added
+- `papers/VVUQ-03/full-paper/`: the full, Overleaf-compilable manuscript for the
+  *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session;
+  Draft 1.0), a proposed United States bill requiring an automated VVUQ
+  verification process to clear robot-patient interaction code before that code is
+  generated or executed. Processed from the v1.3.0 draft-paper scaffold by Claude
+  Code Opus 4.8 (1M context) Max running autonomously across 21 commits in a
+  single pull request, one file per commit pushed to GitHub in real time, then a
+  second-to-last error-fix and consolidation commit and a final
+  repository-updates commit. The `draft-paper/` directory is left untouched.
+- `main.tex` (cover page with the H.R. 9510 and 119th Congress designation, table
+  of contents, fifteen section `\input` lines, `xltabular` and `float` added for
+  full-width breakable tables, navy clickable hyperlinks, and the global
+  formatting directives), `new_paper.sty` (Palatino body with the navy accent
+  carried from the draft, widow, club, and broken penalties at 10000, and even
+  list spacing), and `references.bib` (the final 60-entry `ieeetr` bibliography
+  with DOIs and clickable URLs and no `howpublished` field).
+- Fifteen `sections/*.tex` files, each finished legislative prose with
+  left-aligned body-width tables (21 tables total): abstract, policy_memo,
+  problem_statement, definitions, findings, algorithm_documentation,
+  attestations_compliance, prior_law, supporting_documentation, statutory_text,
+  implementation_enforcement, section_by_section, limitations_future, conclusions,
+  and back_matter.
+- The four required main points as their own sections, with Algorithm
+  Documentation featuring the 1790-line four-entrant `comparison.json` and the
+  1001-row non-repetitive `sample_h2_sensor.csv`; USL and PSL given full treatment
+  with their synergistic effect on the VVUQ process; the fourteen external
+  standards and two clinical baselines and the ten gate thresholds; the Draft
+  Statutory Text as Sections 1 to 9 with the (a)(1)(i) hierarchy and an enacting
+  clause; and the federal laws (42 U.S.C. for Title VI and the ADA) and the four
+  state laws (NY A9149, TX SB 1822, CA SB 1120, FL HB 527).
+- `full-paper.zip` (the Overleaf-ready LaTeX bundle), `prompt-full-paper.md`, and
+  `output-full-paper.md`.
+
+### Changed
+- Top-level `README.md`: release badge to v1.4.0, a v1.4.0 summary above the prior
+  summary, a VVUQ-03 Full Paper section with an ASCII process diagram and a
+  table-of-contents entry, and the repository structure tree with a VVUQ-03
+  full-paper block.
+- `releases.md` (v1.4.0 notes) and `CITATION.cff` (version 1.4.0).
+
 ## [1.3.0] - 2026-05-30
 
 ### Added

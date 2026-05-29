@@ -1,0 +1,117 @@
+% Implementation, Oversight, Enforcement, and Fiscal Provisions. Four movements;
+% the dense numbers are carried in the implementation-choices table and the
+% fiscal table. All figures are planning indices or simulation results.
+
+This section sets out how the bill is implemented, who oversees and enforces it,
+how it is phased in, and how it is paid for. The implementation levers are
+mapped in Table~\ref{tab:impl-levers} and the fiscal case in
+Table~\ref{tab:impl-fiscal}; the prose synthesises the design rather than
+narrating the tables.
+
+\subsection{Implementation Design Choices}
+
+From the standard menu of implementation levers, the bill selects a coherent set
+that all serve the verification-before-generation rule. It requires mandatory
+disclosure of artificial-intelligence use in any robot-patient interaction; it
+secures auditability through the hash-chained audit trail and the five-server
+MCP-PAI topology, with its role-based access and alignment to the
+electronic-records rule \cite{kawchak2026mcp, cfr-part11}; it retains human review
+of the medical-necessity decision; it provides a Food and Drug Administration
+review touchpoint consistent with the device and credibility framework
+\cite{fda2023credibility}; it opens a reimbursement pathway for verified Physical
+AI procedures under the Medicare standard \cite{usc-1395y}; it seeds site
+readiness through a grant program; and it imposes a periodic reporting duty. The
+infrastructure and governance choices draw on the national platform's MCP and
+implementation-strategy sections, including its standards-integration gates and
+its quality and risk management. Table~\ref{tab:impl-levers} records each lever
+and its source.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{3.4cm} Y}
+\toprule
+\textbf{Lever} & \textbf{Bill choice and source} \\
+\midrule
+\multicolumn{2}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+Disclosure & Mandatory disclosure of AI use in robot-patient interactions \\
+Auditability & Hash-chained trail, five MCP servers, 23 tools (national\_mcp.tex) \\
+Human review & Retained medical-necessity decision (regulatory\_landscape.tex) \\
+FDA touchpoint & Device and credibility review (fda2023credibility) \\
+Reimbursement & CMS pathway for verified procedures (financial\_analysis.tex) \\
+Grant program & Seeds site readiness toward the PSL gate (implementation\_strategy.tex) \\
+Reporting duty & Periodic performance and USL reporting (implementation\_strategy.tex) \\
+\bottomrule
+\end{tabularx}
+\caption{Implementation levers selected by the bill and their sources.}
+\label{tab:impl-levers}
+\end{table}
+
+\subsection{Oversight and Enforcement Authority}
+
+Oversight is split along the lines the existing law already draws. A Food and
+Drug Administration touchpoint reviews the device and credibility dimensions,
+while a state insurance or health authority reaches the
+utilization-review-adjacent duties. The enforcement mechanics are audits and
+compliance reviews, civil penalties for willful violations on the California
+model \cite{ca-sb1120}, a commissioner finding of noncompliance that triggers
+production of the underlying algorithms on the Texas model \cite{tx-sb1822}, and
+certification of bias minimization on the New York model \cite{ny-a9149}. The
+operative enforcement trigger throughout is a single fact: the absence of a
+cleared verification-before-generation record for a robot-patient interaction.
+Where a denial or a halt is involved, the Florida human-review backstop applies,
+so that no automated decision stands as the sole basis for action without
+qualified human review \cite{fl-hb527}.
+
+\subsection{Phased Rollout and Workforce}
+
+The bill follows a three-phase national rollout. The first phase activates a
+single state, building on the California legislative authorization and the
+operational record of the 24-hour, 168-patient simulation that demonstrated 99.7
+percent uptime with zero harm. The second phase expands to five to ten sites
+across multiple states under the five-server MCP architecture, with site
+selection governed by the Physical AI Standard Level and robot admission by the
+Unification Standard Level minimum. The third phase reaches nationwide coverage
+across many sites, with governance transitioning from centralized to federated.
+The workforce roles, Physical AI system operators, robot maintenance technicians,
+and safety specialists, and their certification under the adapted good-clinical-
+practice training standard, are drawn from the national platform's
+implementation-strategy timeline and workforce tables and are referenced rather
+than reproduced \cite{kawchak2026national, kawchak2026sitedocs}. Site activation
+is tied to the Physical AI Standard Level gate and robot admission to the
+Unification Standard Level minimum, so the rollout and the readiness gates of
+Section~\ref{sec:statutory_text} advance together.
+
+\subsection{Budget, Funding, and Offsets}
+
+The fiscal case is summarised in Table~\ref{tab:impl-fiscal}; every figure is a
+planning index or a simulation result, not a guarantee. The central offset
+argument is that automating the VVUQ assurance layer is inexpensive relative to
+its decision weight: an autonomous agent carried the heavier assurance half of
+the work cheaply and reproducibly, as the cost evidence of the two studies shows,
+so the gate that makes the safety decision is among the least expensive
+components of the trial \cite{kawchak2026vvuq01, kawchak2026vvuq02}. Against that
+modest assurance cost stands the cost of delay, where each day of slower drug
+development is materially expensive, so the savings from faster and safer trials
+are the funding offset for the grant program and the oversight costs. The 2026
+real-time clinical trials initiative reinforces the case, because automated
+assurance is what makes a real-time trial feasible at all \cite{fda2026realtime}.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.4cm} Y}
+\toprule
+\textbf{Fiscal item} & \textbf{Planning index or simulation result} \\
+\midrule
+\multicolumn{2}{l}{\textit{Source: financial\_analysis.tex; figures are planning ranges}} \\
+Cost of trial delay & Each day of delayed approval is materially costly (driver of the offset) \\
+Per-patient cost & Lower than traditional trials through continuous operation and automated capture \\
+Phase 1 capital (1 to 2 sites) & About \$15.5M to \$24.5M (California activation) \\
+Phase 2 capital (5 to 10 sites) & About \$72M to \$120M (multi-state) \\
+Phase 3 capital (50 to 100 sites) & About \$377M to \$630M (nationwide) \\
+Assurance-layer cost & Inexpensive relative to its decision weight (the offset argument) \\
+Patient and sponsor benefit & Faster access; more trials within existing budgets \\
+\bottomrule
+\end{tabularx}
+\caption{Fiscal case as planning indices and simulation results, not guarantees.}
+\label{tab:impl-fiscal}
+\end{table}

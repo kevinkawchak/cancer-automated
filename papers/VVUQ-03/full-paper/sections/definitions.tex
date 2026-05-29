@@ -1,0 +1,109 @@
+% Definitions and Technical Terminology. A short connector, one full-width
+% longtable (Term, Definition, Source) in four labelled blocks, then the
+% required USL/PSL-with-VVUQ synergy prose. Authoritative sources are listed in
+% the sources table at the end.
+
+The operative sections of this bill rely on terms drawn from three vocabularies
+that rarely appear together: the statutory language of artificial-intelligence
+and device regulation, the engineering language of verification, validation, and
+uncertainty quantification, and the readiness language of the national platform.
+Table~\ref{tab:definitions} gives the controlling definitions in four blocks, with
+the authoritative source for each; the authoritative documents themselves are
+listed in Table~\ref{tab:definitions-sources}. The Unification and Physical AI
+Standard Levels are defined in the table and then developed in prose, because
+their interaction with the code-level gate is the load-bearing idea of the bill.
+
+\begin{xltabular}{\textwidth}{L{2.7cm} Y L{2.5cm}}
+\toprule
+\textbf{Term} & \textbf{Definition} & \textbf{Source} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Term} & \textbf{Definition} & \textbf{Source} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{3}{l}{\textit{Block 1: Statutory technical terms}} \\
+Artificial intelligence & A machine-based system that, for a set of objectives, makes predictions, recommendations, or decisions affecting real or virtual environments. & \cite{cfr-devices} \\
+Generative artificial intelligence & An artificial-intelligence system that produces novel content, including text, code, or robot action sequences, from learned patterns; here, the systems that generate robot-patient interaction code. & \cite{fda2023credibility} \\
+Algorithm & A defined computational procedure that maps inputs to outputs; under this bill, any procedure governing a robot-patient interaction. & \cite{cfr-devices} \\
+High-risk artificial intelligence & An artificial-intelligence system whose output materially influences a clinical decision or a robot action that can affect patient safety; subject to the gate. & \cite{fda2023credibility} \\
+AI-enabled device software function & A software function, within or constituting a medical device, that uses a machine-learning model to achieve its intended purpose. & \cite{cfr-devices, fda2023credibility} \\
+Clinical decision support & Software providing patient-specific recommendations to inform a clinical decision, with the licensed clinician remaining the decision-maker. & \cite{cfr-devices} \\
+Utilization review tool & An algorithmic or artificial-intelligence system used by a payer to assess medical necessity or appropriateness of care; the layer the four state statutes regulate. & \cite{ca-sb1120, ny-a9149, tx-sb1822, fl-hb527} \\
+\multicolumn{3}{l}{\textit{Block 2: Verification, validation, and uncertainty quantification}} \\
+Verification & Confirmation that the code was built correctly, that is, the implementation conforms to its specification. & \cite{asmevv40} \\
+Validation & Confirmation that the right code was built, that is, the result agrees with an independent reference of reality. & \cite{asmevv40} \\
+Uncertainty quantification & Measurement of how confident a result is across repeated runs, expressed as statistical dispersion. & \cite{nasastd7009a} \\
+VVUQ gate & A self-contained verify, validate, and quantify checkpoint that a robot-patient interaction must clear; it emits one of three decisions. & \cite{kawchak2026vvuq02} \\
+Verification fraction & The fraction of verification checks that pass, defined as an equality to 1.0 (every check passes), not an inequality with slack. & \cite{kawchak2026vvuq01} \\
+Validation agreement & Agreement with an independent reference at or above a per-gate threshold, with maximum relative error at or below a bound and human review recorded. & \cite{kawchak2026vvuq02} \\
+Coefficient-of-variation bound & The maximum allowed ratio of standard deviation to mean across at least three seeded runs; exceeding it sets ESCALATE. & \cite{nasastd7009a} \\
+ACCEPT, BLOCK, ESCALATE & The three-way gate decision; any single failing dimension blocks, and ambiguity or divergence escalates and hands back to a human. & \cite{kawchak2026vvuq02} \\
+Hard catastrophe predicate & An additional pass/fail condition on immediate-catastrophe interactions (for example zero vessel breaches, a minimum human clearance, a guaranteed safe state) that must also hold. & \cite{iso14971} \\
+\multicolumn{3}{l}{\textit{Block 3: Unification and Physical AI Standard Levels}} \\
+Unification Standard Level (USL) & A robot-level readiness score from 1.0 to 10.0 computed across four equally weighted dimensions: simulation-framework switching, AI integration, cross-robot sharing, and clinical-trial collaboration. & \cite{kawchak2026national} \\
+USL bands & The five bands that classify a USL score: Initial (1.0 to 2.9), Foundational (3.0 to 4.9), Intermediate (5.0 to 6.9), Advanced (7.0 to 8.9), and Exemplary (9.0 to 10.0). & \cite{kawchak2026national} \\
+Physical AI Standard Level (PSL) & A site-level compliance gate scored pass or fail across three dimensions: legislative authorization, regulatory compliance, and operational readiness. & \cite{kawchak2026sitedocs} \\
+\multicolumn{3}{l}{\textit{Block 4: Physical AI system terms}} \\
+Physical AI system & An artificial-intelligence system operating in the physical world through a robotic platform, comprising hardware, control software, embedded models, and sensors. & \cite{kawchak2026mcp} \\
+Robot agent & An autonomous Physical AI system executing trial procedures through protocol-mediated data access under a defined authenticate-retrieve-execute-record workflow. & \cite{kawchak2026mcp} \\
+Functional type and USL minimum & The procedure-type thresholds: surgical at least 7.0; therapeutic positioning and diagnostic needle placement at least 6.0; rehabilitative at least 4.0; companion monitoring at least 3.0. & \cite{kawchak2026mcp} \\
+Digital twin & A patient-specific computational model used for planning, rehearsal, and intraoperative guidance, calibrated to imaging and validated against outcomes. & \cite{kawchak2026national} \\
+Simulation framework & A physics-based computational environment used to validate robot behavior before clinical use. & \cite{kawchak2026national} \\
+Cross-framework tolerances & The consistency bounds across at least two simulation frameworks: trajectory deviation under 2 mm and force discrepancy under 0.5 N. & \cite{kawchak2026national} \\
+Emergency stop & An immediate halt capability that brings the system to a safe state within the procedure-appropriate budget, with mandatory audit recording. & \cite{kawchak2026mcp} \\
+Human oversight & The retained authority of qualified personnel to monitor, intervene, override, or terminate a Physical AI system at any time. & \cite{kawchak2026mcp} \\
+Hash-chained audit trail & An immutable, tamper-evident SHA-256-linked record of every system action, satisfying the electronic-records integrity of 21 CFR Part 11. & \cite{cfr-part11} \\
+\end{xltabular}
+
+\subsection{How USL and PSL Strengthen the VVUQ Process Synergistically}
+
+The two readiness standards are not parallel to the code-level gate; they wrap
+around it. The Physical AI Standard Level verifies the environment, confirming
+that a site is legislatively authorized, regulatorily compliant, and
+operationally prepared. The Unification Standard Level validates the platform,
+confirming that a specific robot is mature enough across its four dimensions to
+be trusted with the procedure at hand. Read together, PSL and USL form a
+dual-layer verification-and-validation gate that surrounds the code-level VVUQ
+gate: PSL ensures the environment is ready and USL ensures the robots are ready,
+so a Physical AI oncology trial requires all three to clear before a patient is
+enrolled or a robot acts \cite{kawchak2026national, kawchak2026sitedocs}.
+
+The synergy is more than additive, because USL scoring is itself a form of
+uncertainty quantification. A robot whose four dimension scores are uneven
+carries more uncertainty about its real-world behavior than a robot with the same
+mean score spread evenly, and the field-wide weakness in the clinical-trial
+collaboration dimension that the national platform documents is a quantified
+statement of where the ecosystem is least certain. The bill therefore treats USL
+dimensional variation and field-wide dimensional weakness as quantified
+uncertainty that informs how much human oversight a deployment requires, in the
+same spirit as the coefficient-of-variation bound at the code-level gate. The
+two layers also share a common entry point: the Phase 0 simulation-validation
+step is a pre-enrollment gate at which a robot's behavior is checked across
+simulation frameworks within the cross-framework tolerances before any patient is
+involved, so that platform validation and environment verification are confirmed
+together, ahead of generation, rather than discovered during conduct.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.8cm} Y}
+\toprule
+\textbf{Source file (abbreviated leaf)} & \textbf{Defines} \\
+\midrule
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-03/template-paper/}} \\
+chunk\_02\_subpart\_a\_general\_provisions.md & 22 Physical AI terms; robot categories; USL thresholds; tolerances \\
+\multicolumn{2}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+psl\_usl\_standards.tex & USL four dimensions and five bands; PSL three dimensions; the synergy sentence \\
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-02/codegen/docs/}} \\
+vvuq\_methodology.md & Verification, validation, uncertainty; model risk; context of use \\
+vvuq\_gate\_spec.md & Gate, fraction, agreement, CV bound, hard predicate \\
+\bottomrule
+\end{tabularx}
+\caption{Authoritative sources for the definitions.}
+\label{tab:definitions-sources}
+\end{table}

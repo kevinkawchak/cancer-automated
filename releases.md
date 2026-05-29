@@ -4,6 +4,39 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-03 Full Paper: VVUQ Physical AI Oncology Trial Bill, H.R. 9510 (v1.4.0)
+v1.4.0 - VVUQ-03 Full Paper: VVUQ Physical AI Oncology Trial Bill (H.R. 9510)
+
+## Summary
+
+- Adds papers/VVUQ-03/full-paper, the full, Overleaf-compilable manuscript for the VVUQ Physical AI Oncology Trial Bill (H.R. 9510, 119th Congress, 2d Session; Draft 1.0), processed from the v1.3.0 draft-paper scaffold by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across 21 commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix and consolidation commit and a final repository-updates commit. The draft-paper directory is left untouched.
+- Synthesises every bracketed processing instruction from the scaffold into finished, publication-quality legislative prose that reads as a top human author would write it, with ideas connected across sections, file names kept in tables, and the recorded VVUQ-01, VVUQ-02, and national-platform evidence carried in as real numbers rather than estimates.
+- Designates the bill H.R. 9510, a 2026-specific number chosen to sit ahead of bills already filed in the 119th Congress; a web check confirmed the number is unused in the 119th Congress (it last appeared in the closed 117th and 118th Congresses), so there is no collision. The bill carries the short title Verification Before Generation in Physical AI Oncology Trials Act of 2026 and an enacting clause.
+- Completes the four required main points: Algorithm Documentation (the six-item filing duty demonstrated against the 1790-line four-entrant comparison.json and the 1001-row non-repetitive sample_h2_sensor.csv), Attestations and Compliance Statements (a model attestation block mapped to machine-checkable evidence), Prior Law References (federal, state, and prior-adaptation crosswalk tables), and Supporting Documentation Referenced (Not Physically Attached), with the deposit-and-reference rule.
+- Codifies the operative bill as Draft Statutory Text, Sections 1 to 9, in the (a)(1)(i) hierarchy: verification before generation, the ten gate thresholds in one full-width table bound to the fourteen external standards and two clinical baselines, the readiness gates (PSL pass, USL minimum by procedure type, Phase 0 validation), documentation and attestation, cybersecurity and human oversight and lifecycle, nondiscrimination, and enforcement and effective date.
+- Gives USL and PSL full treatment and states their synergy with the code-level gate (PSL verifies the site, USL validates the robot, a trial requires all three), and retains the federal antidiscrimination correction to 42 U.S.C. 2000d and 42 U.S.C. 12101 alongside the four state laws.
+- Keeps the pull request green: the additions are LaTeX, Markdown, a .bib, a .sty, and a zip, all outside the ruff and yamllint surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v1.4.0, a v1.4.0 summary above the prior summary, a VVUQ-03 Full Paper section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-03 full-paper block), this releases file, the CHANGELOG (v1.4.0), and CITATION.cff (version 1.4.0).
+
+## Features
+
+- papers/VVUQ-03/full-paper/main.tex: the cover page with the H.R. 9510 and 119th Congress, 2d Session designation, an A BILL line, and a one-sentence purpose, on the preserved navy accent and Palatino body; the table of contents; the fifteen section `\input` lines; xltabular and float added for full-width breakable tables; navy clickable hyperlinks; URL line breaking; and the global formatting directives. No images.
+- papers/VVUQ-03/full-paper/new_paper.sty: the Palatino body with the navy accent (billnavy 143A5A) carried from the draft so the bill keeps the same text colour formatting, the widow, club, and broken penalties at 10000, even list spacing, navy bold sans headings, and the navy-tinted abstract box.
+- papers/VVUQ-03/full-paper/references.bib: the final 60-entry ieeetr bibliography with DOIs and clickable resolver URLs, GitHub and Zenodo links once each for repositories, and no howpublished field; all 47 inline citation keys resolve.
+- papers/VVUQ-03/full-paper/sections: abstract (under 250 words, no citations), policy_memo, problem_statement, definitions, findings, algorithm_documentation, attestations_compliance, prior_law, supporting_documentation, statutory_text, implementation_enforcement, section_by_section, limitations_future, conclusions, and back_matter, each finished prose with left-aligned body-width tables (21 tables total).
+- papers/VVUQ-03/full-paper/README.md: DOI badges, the bill-identity table, the lineage and assembly ASCII diagrams, the file-layout tree, the section-to-source-file map, the build-validation note, and the senior-author formatting rules.
+- papers/VVUQ-03/full-paper/full-paper.zip: the Overleaf-ready LaTeX bundle; prompt-full-paper.md and output-full-paper.md: the generating prompt verbatim and the narrative output of this full-paper step.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials, which is read only as a sibling source for the USL and PSL standards and the simulations. The input draft-paper directory is not modified. pdflatex was not available in the container and the prompt asked not to compile, so the LaTeX was validated structurally (all fifteen `\input` targets resolve, balanced braces and environments across the bundle, balanced dollar signs, no unescaped ampersands outside tables, single hyphens only with no em, en, double, or triple dashes, the section symbol used in place of SS, all 21 tables set to the body width with ragged-right columns, and a 60-entry bibliography with no duplicate keys, no howpublished field, and no raw ampersand inside any URL) and made compile-safe; the rendered PDF and final page balancing are left to Overleaf. The Unitree H2-Surgical 1.0 is a clearly labelled hypothetical 2030 platform and every supporting number is a simulation result. Mentions of the FDA and other governing bodies are respectful and non-presumptuous, written to advance Physical AI oncology trials and to keep the United States first in surgical-humanoid VVUQ with external standards for patient safety, efficacy, and clinical-trial speed.
+
+---
+
 VVUQ-03 Draft Paper: VVUQ Physical AI Oncology Trial Bill Scaffold (v1.3.0)
 v1.3.0 - VVUQ-03 Draft Paper: VVUQ Physical AI Oncology Trial Bill Scaffold
 

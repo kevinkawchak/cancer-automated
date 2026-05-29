@@ -1,0 +1,200 @@
+% Draft Statutory Text. Enactable legislative language in the (a)(1)(i)
+% hierarchy, in the style of the template's new Subpart J. The ten-gate
+% thresholds are codified in one table sourced from the VVUQ-02 gate spec and
+% standards map; the prose references the table rather than restating numbers.
+
+The operative text of H.R. 9510 follows. It is drafted as enactable legislative
+language and is preceded by the customary bill header and enacting clause.
+
+\begin{flushleft}
+\textbf{119th Congress, 2d Session \quad H. R. 9510}\\[3pt]
+\textbf{A BILL}\\[2pt]
+To require an automated verification, validation, and uncertainty quantification
+process to clear robot-patient interaction code before that code is generated or
+executed in a Physical AI oncology clinical trial, and for other purposes.
+\end{flushleft}
+
+\textit{Be it enacted by the Senate and House of Representatives of the United
+States of America in Congress assembled,}
+
+\subsection{Section 1. Short Title}
+
+(a) \textit{Short title.} This Act may be cited as the ``Verification Before
+Generation in Physical AI Oncology Trials Act of 2026''.
+
+(b) \textit{Popular name.} This Act may also be referred to as the VVUQ Physical
+AI Oncology Trial Bill.
+
+\subsection{Section 2. Definitions}
+
+(a) \textit{Incorporation by reference.} The terms used in this Act have the
+meanings given them in the definitions set out in
+Section~\ref{sec:definitions} of this instrument, which are incorporated by
+reference and not restated here.
+
+(b) \textit{Operative terms.} The terms on which the operative sections depend
+include: Physical AI system; robot-patient interaction; VVUQ gate; verification
+fraction; Unification Standard Level (USL); Physical AI Standard Level (PSL);
+high-risk artificial intelligence; and AI-enabled device software function.
+
+\subsection{Section 3. Verification Before Generation}
+
+(a) \textit{Requirement.} No robot-patient interaction code may be generated or
+executed in a Physical AI oncology clinical trial unless an automated VVUQ
+verification process, bound to one or more named external standards, has first
+cleared for that interaction, and the cleared verification record has been
+documented and attested under Section 6.
+
+(b) \textit{Priority.} The verification process is held to a higher standard
+than, and shall precede, the generated code. Where resources or time are
+constrained, the verification process takes precedence over the generation step,
+because the verification is the decision-bearing work and the generation is
+not \cite{kawchak2026vvuq01, kawchak2026vvuq02}.
+
+(c) \textit{Order of operations.} A sponsor shall not generate, and shall not
+execute, robot-patient interaction code in advance of the cleared verification
+record. A record created after generation or execution does not satisfy this
+section.
+
+(d) \textit{Scope.} For purposes of this section, robot-patient interaction code
+is any algorithm or generated software that governs a Physical AI system's
+physical contact with, or action upon, a human subject, whether the system is
+classified as a medical product, a research tool, or both. The verification
+process and the credibility framework it serves track the agency credibility
+guidance and the ASME V\&V 40 standard \cite{asmevv40, fda2023credibility}.
+
+\subsection{Section 4. Validation Requirements and Gate Thresholds}
+
+(a) \textit{Verification fraction.} For each robot-patient interaction, the
+verification fraction shall equal 1.0; every verification check shall pass. This
+is an equality, not an inequality with slack.
+
+(b) \textit{Validation agreement.} The result shall agree with an independent
+reference at or above the per-gate agreement threshold, with the maximum relative
+error at or below the per-gate bound, and with the human review recorded.
+
+(c) \textit{Uncertainty bound.} The coefficient of variation across at least
+three seeded runs shall not exceed the per-gate bound; divergence beyond the
+bound sets ESCALATE.
+
+(d) \textit{Hard predicate.} For immediate-catastrophe interactions, an
+additional pass/fail predicate shall also hold: zero breaches of a vascular
+no-fly volume, a minimum human clearance in a shared operating room, and a
+guaranteed safe state under fault or emergency stop. These gates carry a
+verification fraction of 1.0 and the tightest dispersion bounds
+\cite{iso14971, isots15066}.
+
+(e) \textit{Decision rule.} The gate emits ACCEPT, BLOCK, or ESCALATE. Any single
+failing dimension blocks; ambiguity or divergence escalates and hands the
+interaction back to a qualified human.
+
+(f) \textit{Threshold schedule.} The per-gate agreement and dispersion bounds,
+the gates that carry a hard predicate, and the external standard that governs
+each gate are codified in Table~\ref{tab:statute-thresholds}; the numeric values
+are not restated in this subsection \cite{nasastd7009a, iec8060127, ul4600,
+ieee7009}.
+
+\begin{xltabular}{\textwidth}{L{3.2cm} L{1.5cm} L{1.3cm} L{1.5cm} Y}
+\toprule
+\textbf{Gate} & \textbf{Agree $\geq$} & \textbf{Max CV $\leq$} & \textbf{Hard pred.} & \textbf{Governing standards} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Gate} & \textbf{Agree $\geq$} & \textbf{Max CV $\leq$} & \textbf{Hard pred.} & \textbf{Governing standards} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\textit{Continued on next page}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+01 Bimanual hand-eye servo & 0.97 & 0.08 & No & IEC 80601-2-77; ISO 9283; ASME V\&V 40 \\
+02 Dexterous finger force & 0.95 & 0.10 & No & IEC 80601-2-77; ISO/TS 15066 \\
+03 Whole-body balance & 0.98 & 0.06 & No & ISO 13482; IEC 60601-1 \\
+04 Autonomous plan correctness & 0.95 & 0.10 & No & UL 4600; IEEE 7009; IEC 62304 \\
+05 Instrument grasp and handover & 0.96 & 0.10 & No & IEC 80601-2-77; ISO 9283 \\
+06 Vascular no-fly (hand) & 1.00 & 0.05 & Yes & IEC 80601-2-77; ISO 14971 \\
+07 Bimanual suturing anastomosis & 0.96 & 0.08 & No & IEC 80601-2-77; Fistula Risk Score \\
+08 Perception scene understanding & 0.95 & 0.10 & No & ASME V\&V 40; IEC 62304 \\
+09 Shared-OR human collision & 1.00 & 0.06 & Yes & ISO/TS 15066; ISO 10218-1; ISO 13482 \\
+10 Fault, e-stop, degradation & 1.00 & 0.05 & Yes & IEC 60601-1; ISO 13849-1; IEEE 7009 \\
+\end{xltabular}
+
+\subsection{Section 5. Readiness Gates}
+
+(a) \textit{Site gate.} Before enrollment, the trial site shall pass the Physical
+AI Standard Level gate on all three dimensions: legislative authorization,
+regulatory compliance, and operational readiness \cite{kawchak2026national}.
+
+(b) \textit{Robot gate.} Before enrollment, each robot shall meet the minimum
+Unification Standard Level score for its procedure type: surgical, at least 7.0;
+therapeutic positioning and diagnostic needle placement, at least 6.0;
+rehabilitative, at least 4.0; and companion monitoring, at least 3.0.
+
+(c) \textit{Phase 0 simulation validation.} Before enrollment, each robot's
+behavior shall be validated across at least two simulation frameworks within the
+cross-framework tolerances of under 2 mm trajectory deviation and under 0.5 N
+force discrepancy. The site gate, the robot gate, and the code-level gate of
+Sections 3 and 4 shall all clear before a patient is enrolled or a robot acts.
+
+\subsection{Section 6. Documentation and Attestation}
+
+(a) \textit{Algorithm documentation.} For each covered algorithm, the sponsor
+shall file the algorithm documentation specified in
+Section~\ref{sec:algorithm_documentation}, including the
+verification-before-generation record.
+
+(b) \textit{Compliance statement and attestation.} The sponsor shall file the
+artificial-intelligence compliance statement and the signed attestation specified
+in Section~\ref{sec:attestations_compliance}, consistent with the state
+precedents \cite{tx-sb1822, ny-a9149, ca-sb1120}.
+
+(c) \textit{Filed before generation.} The verification record shall be filed
+before the covered code is generated or executed.
+
+\subsection{Section 7. Cybersecurity, Human Oversight, and Lifecycle}
+
+(a) \textit{Cybersecurity.} Each Physical AI system shall incorporate
+authentication and access control, encryption of data in transit and at rest,
+network segmentation, software-integrity verification, and a hash-chained,
+cryptographically signed audit trail that satisfies the electronic-records rule
+\cite{cfr-part11, kawchak2026mcp}.
+
+(b) \textit{Human oversight.} Each robot-patient interaction shall be conducted
+under recorded human oversight, with a manual override and an emergency stop that
+brings the system to a safe state within the procedure-appropriate budget, and
+with a hand-back-to-human escalation whenever the gate escalates or a fault is
+detected \cite{iec60601}.
+
+(c) \textit{Lifecycle and decommissioning.} The sponsor shall maintain
+configuration and model-version management, monitor for model and data drift, and,
+on decommissioning, archive the audit trail, securely erase patient data, and
+revoke access.
+
+\subsection{Section 8. Nondiscrimination}
+
+(a) \textit{Bias minimization.} Each covered algorithm and its training data
+shall minimize the risk of bias on protected characteristics and shall adhere to
+evidence-based clinical guidelines \cite{usc-titlevi, ny-a9149}.
+
+(b) \textit{Accessibility.} Each Physical AI system shall be designed and operated
+consistent with the accessibility and accommodation requirements of the Americans
+with Disabilities Act \cite{usc-ada}.
+
+\subsection{Section 9. Enforcement and Effective Date}
+
+(a) \textit{Enforcement.} The oversight roles, audit and penalty mechanics, and
+the operative trigger, which is the absence of a cleared
+verification-before-generation record, are set out in
+Section~\ref{sec:implementation_enforcement} and are not restated here.
+
+(b) \textit{Effective date.} The effective date and the phasing of the readiness
+and documentation duties are set out in Section~\ref{sec:conclusions} and are not
+restated here.
+
+\vspace{0.4em}
+\noindent\textit{Authority and source.} This Act adapts material in the public
+domain under 17 U.S.C. § 105, including 21 CFR Parts 312 and 50, and is not
+endorsed or sponsored by CFR, ICH, or FDA. The validation thresholds are drawn
+from the author's second-study gate specification and standards map, and the
+new-subpart structure follows the prior 21 CFR Part 312 adaptation.

@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v1.3.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v1.4.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/30: v1.4.0 (VVUQ-03 Full Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). Every bracketed instruction becomes finished legislative prose with left-aligned, body-width tables (21 in all); the four main points, the USL and PSL synergy, the fourteen external standards, the ten gate thresholds, and the federal and state laws are carried in from the recorded evidence.
 
 **5/30: v1.3.0 (VVUQ-03 Draft Paper)** Adds [papers/VVUQ-03/draft-paper](papers/VVUQ-03/draft-paper): a compilable single column LaTeX scaffold for the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed U.S. law requiring the VVUQ verification process to clear robot-patient interaction code before that code is generated or executed. Every body section is a bracketed processing instruction naming the exact VVUQ-01, VVUQ-02, national-platform, and template files; the four main points, the USL and PSL synergy, the external standards, and the federal and state laws are all wired in.
 
@@ -64,6 +66,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Draft Paper](#vvuq-02-draft-paper)
 - [VVUQ-02 Full Paper](#vvuq-02-full-paper)
 - [VVUQ-03 Draft Paper](#vvuq-03-draft-paper)
+- [VVUQ-03 Full Paper](#vvuq-03-full-paper)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -374,17 +377,26 @@ cancer-automated/
         │   ├── prompt-full-paper.md    # the generating prompt, verbatim
         │   └── output-full-paper.md    # the narrative output of the full-paper step
         └── final-paper/            # placeholder (future submission-ready manuscript)
-    └── VVUQ-03/                     # ★ v1.3.0 draft paper (VVUQ Physical AI Oncology Trial Bill)
+    └── VVUQ-03/                     # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
         ├── template-paper/         # 21 CFR Part 312 adaptation chunks + .sty + .bib (source model)
-        └── draft-paper/            # ★ v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
-            ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
-            ├── main.tex            # cover page, TOC, fifteen section \input lines, format directives
-            ├── new_paper.sty       # Palatino body, navy accent (prior template family)
-            ├── references.bib      # 60 final entries; clickable DOIs; federal and state laws; standards
-            ├── sections/           # abstract..back_matter: 15 bracketed build-instruction files
-            ├── draft-paper.zip     # Overleaf-ready LaTeX bundle
-            ├── prompt-draft-paper.md   # the generating prompt, verbatim
-            └── output-draft-paper.md   # the narrative output of the draft-paper step
+        ├── draft-paper/            # v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
+        │   ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
+        │   ├── main.tex            # cover page, TOC, fifteen section \input lines, format directives
+        │   ├── new_paper.sty       # Palatino body, navy accent (prior template family)
+        │   ├── references.bib      # 60 final entries; clickable DOIs; federal and state laws; standards
+        │   ├── sections/           # abstract..back_matter: 15 bracketed build-instruction files
+        │   ├── draft-paper.zip     # Overleaf-ready LaTeX bundle
+        │   ├── prompt-draft-paper.md   # the generating prompt, verbatim
+        │   └── output-draft-paper.md   # the narrative output of the draft-paper step
+        └── full-paper/             # ★ v1.4.0 finished bill (H.R. 9510; 15 sections; 21 body-width tables)
+            ├── README.md           # DOI badges, bill-identity table, ASCII diagrams, source map
+            ├── main.tex            # cover + H.R. 9510 header, TOC, fifteen \input lines, xltabular
+            ├── new_paper.sty       # Palatino body, navy accent; widow/club/broken penalties 10000
+            ├── references.bib      # 60 final entries; clickable DOIs; no howpublished
+            ├── sections/           # abstract..back_matter: 15 finished legislative-prose files
+            ├── full-paper.zip      # Overleaf-ready LaTeX bundle
+            ├── prompt-full-paper.md    # the generating prompt, verbatim
+            └── output-full-paper.md    # the narrative output of the full-paper step
 ```
 
 ## Established Methods Proven Across Projects
@@ -647,6 +659,18 @@ As of v1.3.0 a new draft paper is staged under [papers/VVUQ-03/draft-paper](pape
 ```
 
 The additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [draft-paper README](papers/VVUQ-03/draft-paper) for the DOI badges, the section-to-source map, the build-validation note, and the senior-author formatting rules.
+
+## VVUQ-03 Full Paper
+
+As of v1.4.0 the full bill is realized under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper), built from the v1.3.0 draft scaffold without modifying it. Every bracketed processing instruction in the fifteen sections becomes finished, publication-quality legislative prose and left-aligned tables set to the body text width (21 tables in all), while the navy Palatino style and the 60-entry `ieeetr` bibliography are carried over. The instrument is designated **H.R. 9510** (119th Congress, 2d Session), a 2026-specific number confirmed unused in the current Congress, with the short title *Verification Before Generation in Physical AI Oncology Trials Act of 2026* and an enacting clause. The Draft Statutory Text is enactable language in Sections 1 to 9 with the (a)(1)(i) hierarchy: verification before generation, the ten gate thresholds in one full-width table bound to the fourteen external standards and two clinical baselines, the PSL and USL readiness gates with Phase 0 validation, documentation and attestation, cybersecurity and human oversight, nondiscrimination, and enforcement. Algorithm Documentation features the 1790-line four-entrant `comparison.json` and the 1001-row non-repetitive `sample_h2_sensor.csv`, and the four required main points are each a section.
+
+```
+  VVUQ-03/draft-paper (scaffold)              VVUQ-03/full-paper (this release)
+  [bracketed instructions per section]   ==>  finished legislative prose + 21 tables
+  + final references.bib + Overleaf zip       H.R. 9510; Sections 1 to 9; no images
+```
+
+The additions are LaTeX, Markdown, a `.bib`, a `.sty`, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [full-paper README](papers/VVUQ-03/full-paper) for the DOI badges, the bill-identity table, the section-to-source map, and the senior-author formatting rules.
 
 ## Continuous Integration
 

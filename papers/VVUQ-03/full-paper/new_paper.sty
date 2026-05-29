@@ -1,0 +1,98 @@
+% ============================================================
+% new_paper.sty
+% Style file for:
+%   VVUQ Physical AI Oncology Trial Bill (H.R. 9510, Draft 1.0)
+%
+% Palatino serif body, single column, navy accent. The navy accent
+% (billnavy = HTML 143A5A) is carried from the prior VVUQ-03 template
+% Physical_AI_21_CFR_Part_312.sty (CFRBlue) so the bill keeps the same text
+% colour formatting as the prior template family, on the Palatino body used by
+% the VVUQ-01 and VVUQ-02 manuscripts. The navy accent, the Palatino body, and
+% the abstract box are preserved; the look matches the draft-paper exactly.
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProcessOptions\relax
+
+% Palatino body, Helvetica sans for headings.
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{phv}
+
+\usepackage[verbose=true,letterpaper]{geometry}
+\AtBeginDocument{
+  \newgeometry{textheight=9in,textwidth=6.4in,top=1in,headheight=14pt,headsep=20pt,footskip=30pt}
+}
+
+% Navy accent, carried from the prior template (CFRBlue 143A5A).
+\usepackage{xcolor}
+\definecolor{billnavy}{HTML}{143A5A}
+
+% No orphan or widow line, no single or two word line left hanging.
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\predisplaypenalty=10000
+\brokenpenalty=10000
+\flushbottom
+\sloppy
+
+\newcommand{\headeright}{}
+\newcommand{\shorttitle}{\@title}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.3pt}
+\fancyheadoffset{0pt}
+\rhead{\small\color{billnavy}\thepage}
+\lhead{\footnotesize\itshape\color{billnavy}\shorttitle}
+
+\def\keywordname{{\color{billnavy}\bfseries Keywords}}%
+\def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
+\def\and{\ifhmode\unskip\nobreak\fi\ |\
+}\noindent\keywordname\enspace\ignorespaces#1\par}}
+
+\renewcommand{\normalsize}{\@setfontsize\normalsize\@xipt{13.6}}
+\normalsize
+
+% Navy, bold, sans-serif section headings.
+\providecommand{\section}{}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+  {-2.2ex \@plus -0.5ex \@minus -0.2ex}{1.5ex \@plus 0.3ex \@minus 0.2ex}
+  {\large\bfseries\sffamily\color{billnavy}\raggedright}}
+\providecommand{\subsection}{}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
+  {-1.6ex \@plus -0.4ex \@minus -0.2ex}{0.6ex \@plus 0.2ex}
+  {\normalsize\bfseries\sffamily\color{billnavy}\raggedright}}
+\providecommand{\subsubsection}{}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}
+  {-1.3ex \@plus -0.3ex \@minus -0.2ex}{0.5ex \@plus 0.2ex}
+  {\normalsize\bfseries\sffamily\color{billnavy}\raggedright}}
+
+\setlength{\parindent}{\z@}
+\setlength{\parskip}{5.5\p@}
+
+% Tighter, even list spacing so enumerated statutory clauses do not open large
+% vertical white bands between items.
+\setlist{topsep=2pt,itemsep=2pt,parsep=0pt,leftmargin=1.6em}
+
+\providecommand{\maketitle}{}
+\renewcommand{\maketitle}{\par\begingroup
+  \thispagestyle{empty}\@maketitle\endgroup
+  \let\maketitle\relax}
+
+\providecommand{\@maketitle}{}
+\renewcommand{\@maketitle}{\vbox{\hsize\textwidth \linewidth\hsize
+  \vskip 0.1in
+  {\color{billnavy}\rule{\textwidth}{4pt}}\vskip 0.15in
+  \raggedright {\Huge\bfseries\sffamily\color{billnavy}\@title\par}\vskip 0.3in
+  {\large\@author}\vskip 0.1in
+  {\small\@date}\vskip 0.2in
+  {\color{billnavy}\rule{\textwidth}{1pt}}\vskip 0.15in}}
+
+% Abstract rendered as a navy-tinted block, matching the template family box.
+\renewenvironment{abstract}
+  {\par\noindent\colorbox{billnavy!8}{\parbox{\dimexpr\textwidth-2\fboxsep}{
+    {\bfseries\color{billnavy} Abstract.}\quad}}\par\vskip 0.3em\begin{quote}}
+  {\end{quote}}
+
+\endinput
