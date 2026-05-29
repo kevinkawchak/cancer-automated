@@ -1,0 +1,88 @@
+% Legislative Findings and Evidentiary Record. Built by the future pass from the
+% instructions below. Do not process now. This is Theme B of the prompt: the
+% recorded evidence the bill rests on. Cast each finding in the numbered-finding
+% legislative style ("The Congress finds the following:"), then support it from
+% the named records. Keep the dense numbers in the evidence table.
+
+[Open with the standard findings preamble, then enumerate the findings in three
+grouped subsections. Each finding is one or two sentences of legislative
+declaration supported by a sentence that points (by table reference, not inline
+path) to the recorded evidence. Build one evidence table (Finding, Source record,
+Headline metric) using the left-aligned ragged-right columns, with the parent
+paths given once at the top of each block. Do not narrate the table row by row.]
+
+[Group A, LLMs are appropriate for VVUQ code verification (two author studies).
+Finding A1, from VVUQ-01: an autonomous large language model agent built,
+executed, and documented a VVUQ pipeline under strict assurance, and the gate, not
+the generation, was the decision-bearing step (the pipeline emitted a complete
+deliverable in under a millisecond while the gate accepted only one of six
+candidates, blocking five and escalating one, with the verification fraction held
+at exactly 1.0 and 51 of 51 tests passing). Finding A2, from VVUQ-02: the same
+priority held for an embodied surgical humanoid, where the assurance suite carried
+64 of 172 tests, more than a third of the budget, evidence in itself that
+verification outweighs generation. Source from
+\texttt{VVUQ-01/final-paper/sections/} (results, discussion, methods) and
+\texttt{VVUQ-01/execution/README.md}, and from
+\texttt{VVUQ-02/final-paper/sections/} and \texttt{VVUQ-02/execution/README.md}.
+Cite \texttt{kawchak2026vvuq01} and \texttt{kawchak2026vvuq02}.]
+
+[Group B, Practical VVUQ code generation and execution against External Standards
+(the substantial external-standard incorporation). This group is required to be
+comprehensive about the External Standards, which are the heart of the VVUQ-02
+contribution. State the finding that VVUQ code generation and execution are
+practical today and, crucially, that every gate was bound to published consensus
+standards already used in real life rather than to ad hoc thresholds, which is
+what makes the assurance argument traceable and defensible to a regulator. Pull
+the standards corpus and the per-gate bindings from
+\texttt{VVUQ-02/codegen/docs/standards\_map.md} and the per-standard input
+summaries under \texttt{VVUQ-02/inputs/standards/}, and the methodology from
+\texttt{vvuq\_methodology.md} and \texttt{vvuq\_gate\_spec.md}. Enumerate the
+fourteen standards and two clinical baselines (ASME V\&V 40-2018, NASA-STD-7009A,
+IEC 80601-2-77, IEC 60601-1, ISO/TS 15066, ISO 13482, ISO 10218-1, ISO 9283,
+IEC 62304, ISO 14971, ISO 13849-1, UL 4600, IEEE 7009, the FDA credibility
+guidance, the Dutch cohort, and the Callery Fistula Risk Score) in a table, not
+in prose, and cite each: \texttt{asmevv40}, \texttt{nasastd7009a},
+\texttt{iec8060127}, \texttt{iec60601}, \texttt{isots15066}, \texttt{iso13482},
+\texttt{iso10218}, \texttt{iso9283}, \texttt{iec62304}, \texttt{iso14971},
+\texttt{iso13849}, \texttt{ul4600}, \texttt{ieee7009}, \texttt{fda2023credibility}.
+Reference, by table, the two featured artifacts processed and executed (the
+1790-line four-entrant comparison and the 1001-row non-repetitive humanoid sensor
+stream) but reserve their detailed treatment for
+\texttt{sections/algorithm\_documentation.tex} and
+\texttt{sections/supporting\_documentation.tex}.]
+
+[Group C, Physical AI VVUQ is supported by two author standards and five trial,
+sponsor, and mobile simulations. State the finding that the readiness standards
+and the simulation record make the robot-patient case concrete. The two author
+standards are USL and PSL, sourced from \texttt{psl\_usl\_standards.tex} and the
+site documentation package; cite \texttt{kawchak2026national} and
+\texttt{kawchak2026sitedocs}. The five simulations, to be listed in the evidence
+table with one headline metric each, are: (1) the national-platform 24-hour
+multi-patient trial simulation (168 patients, 29 robots, 99.7 percent uptime,
+zero harm) from \texttt{site\_establishment.tex}; (2) the single-patient ten-stage
+journey (Stage IIIB NSCLC over 1,120 days) from \texttt{patient\_journey.tex};
+(3) the fully automated sponsor simulation (288 sponsor decisions across a
+24-hour trial), \texttt{kawchak2026sponsor}; (4) the mobile pancreatic-cancer
+Unitree H2 surgical humanoid simulation, \texttt{kawchak2026vvuq02}; and (5) the
+accelerated patient-prediction study of four extensive simulations,
+\texttt{kawchak2026prediction}. Add the federated-learning triple-AI peer review
+as supporting infrastructure, \texttt{kawchak2026federated}.]
+
+% Model evidence table (parent paths at top of each block, abbreviated leaves):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{2.0cm} L{5.2cm} Y}
+% \toprule
+% \textbf{Finding} & \textbf{Source record (abbreviated)} & \textbf{Headline metric} \\
+% \midrule
+% \multicolumn{3}{l}{\textit{Parent: papers/VVUQ-01/ and papers/VVUQ-02/}} \\
+% A1 & VVUQ-01 execution/README.md & 51/51 tests; 1 ACCEPT, 5 BLOCK, 1 ESCALATE \\
+% A2 & VVUQ-02 execution/README.md & 172 tests; 64 in the 10-gate suite \\
+% B  & VVUQ-02 codegen/docs/standards\_map.md & 14 standards + 2 clinical baselines, per gate \\
+% \multicolumn{3}{l}{\textit{Parent: physical-ai .../final\_paper/sections/ and Zenodo}} \\
+% C1 & site\_establishment.tex & 168 patients, 29 robots, 99.7\% uptime, 0 harm \\
+% C2 & patient\_journey.tex & 1 patient, 10 stages, 1{,}120 days \\
+% C3--C5 & sponsor; H2 humanoid; prediction (Zenodo) & 288 decisions; mobile Whipple; 4 simulations \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Evidentiary record underlying the legislative findings.}
+% \end{table}

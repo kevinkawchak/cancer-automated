@@ -1,0 +1,43 @@
+% Section-by-Section Analysis. Built by the future pass from the instructions
+% below. Do not process now. The standard legislative section-by-section
+% explanation, mapping each section of the draft statutory text to its purpose
+% and evidentiary basis. The model for the crosswalk longtable is the template's
+% Change Summary Table.
+
+[Write a brief connecting paragraph, then carry the analysis in one
+\texttt{longtable} (Section, Purpose, Evidentiary basis) modelled on the Change
+Summary Table in \texttt{template-paper/chunk\_01\_front\_matter.md}. Use the
+left-aligned ragged-right columns. One row per section of the draft statutory text
+in \texttt{sections/statutory\_text.tex}: short title; definitions; the
+verification-before-generation requirement; validation requirements and gate
+thresholds; readiness gates (PSL and USL, Phase 0); documentation and attestation;
+cybersecurity, human oversight, and lifecycle; nondiscrimination; and enforcement
+and effective date. For each row, give a one-line purpose and a one-line
+evidentiary basis that points to the finding or source that supports it (for
+example, the verification-before-generation row points to the two author VVUQ
+studies, the gate-threshold row to the VVUQ-02 gate spec and standards map, the
+readiness-gate row to the national-platform USL and PSL section, and the
+nondiscrimination row to Title VI, the ADA, and New York A9149). Do not restate
+the statutory text; summarise each section's effect. Cite the supporting works by
+bibliography key in the basis column where a citation is natural
+(\texttt{kawchak2026vvuq01}, \texttt{kawchak2026vvuq02}, \texttt{kawchak2026national},
+\texttt{asmevv40}, \texttt{usc-titlevi}, \texttt{ny-a9149}).]
+
+[Close with one short paragraph noting that the section-by-section analysis is the
+bridge between the recorded technical evidence and the enactable text, and that
+every section traces to a finding in \texttt{sections/findings.tex} and a source
+in the section-to-source map; reference that map rather than repeating it.]
+
+% Model crosswalk longtable (left-aligned, ragged-right; abbreviated):
+% \begin{longtable}{>{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}p{4.6cm} >{\raggedright\arraybackslash}p{4.6cm}}
+% \toprule
+% \textbf{Section} & \textbf{Purpose} & \textbf{Evidentiary basis} \\
+% \midrule \endfirsthead
+% \toprule \textbf{Section} & \textbf{Purpose} & \textbf{Evidentiary basis} \\ \midrule \endhead
+% \midrule \multicolumn{3}{r}{\textit{Continued on next page}} \\ \endfoot
+% \bottomrule \endlastfoot
+% § 3 Verify before generate & Bar generation or execution until VVUQ clears & VVUQ-01 and VVUQ-02 studies \\
+% § 4 Gate thresholds & Codify fraction, agreement, CV, hard predicate & VVUQ-02 gate spec; standards map \\
+% § 5 Readiness gates & Require PSL pass and USL minimum, Phase 0 & National-platform USL and PSL \\
+% § 8 Nondiscrimination & Minimize bias; evidence-based guidelines & Title VI; ADA; NY A9149 \\
+% \end{longtable}

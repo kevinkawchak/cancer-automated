@@ -1,0 +1,75 @@
+% Supporting Documentation Referenced (Not Physically Attached). MAIN POINT 4,
+% required. Built by the future pass from the instructions below. Do not process
+% now. This section lists the supporting materials the bill relies on but does
+% not attach, with a stable path and DOI for each, per the policy-development
+% guidance that executable code, model weights, training data sets, and Git
+% repositories are referenced rather than filed.
+
+[Open with a short paragraph stating the principle: consistent with how
+legislation is assembled, the bill references its supporting documentation rather
+than physically attaching it, because executable code, model weights, training
+data sets, and Git repositories are not appropriate attachments to a statute; they
+are deposited, versioned, and citable. Each referenced item must be reachable by a
+repository path and a resolvable DOI or URL. Then carry the inventory in one
+referenced-documentation table; do not narrate it row by row.]
+
+[Build the referenced-documentation table with columns for the artifact, its
+repository path (abbreviated leaf, parent path given once at the top of each
+block), its DOI or URL by bibliography key, and the reason it is referenced rather
+than attached. Populate it from the records below, and feature the two large data
+artifacts again in this not-attached context so the reader sees they are
+deposited, not pasted into the bill.]
+
+[Block 1, VVUQ-02 codegen and data (referenced, not attached). The generated code
+tree and its documentation under \texttt{papers/VVUQ-02/codegen/} (src, config,
+docs, schemas, tests); the four-entrant tournament
+\texttt{papers/VVUQ-02/codegen/results/comparison.json} (1790 lines); the humanoid
+sensor stream \texttt{papers/VVUQ-02/codegen/data/sample\_h2\_sensor.csv} (1001
+lines, 27 columns, non-repetitive), its companion
+\texttt{sample\_h2\_sensor.jsonl}, and \texttt{human\_surgeon\_baseline.csv}; and
+the decision record \texttt{results/vvuq\_decisions.json}. Note that the raw
+level-0 humanoid sensor stream is deposited to Zenodo and referenced by per-
+iteration pointer files under \texttt{codegen/data/iterations/} rather than
+committed, exactly the deposit-and-reference pattern the bill prescribes. Cite
+\texttt{kawchak2026vvuq02} and \texttt{repo-cancer-automated}.]
+
+[Block 2, VVUQ-02 and VVUQ-01 execution records (referenced, not attached). The
+five-section VVUQ-02 execution record under \texttt{papers/VVUQ-02/execution/}
+(foundation, pipeline, vvuq, automation, humanoid-deployment) and its README, and
+the VVUQ-01 execution record under \texttt{papers/VVUQ-01/execution/} (the five
+numbered sections). These are the run logs and artifacts that evidence the
+attestations; they are referenced so a reviewer can reproduce, not re-litigate,
+the runs. Cite \texttt{kawchak2026vvuq01}.]
+
+[Block 3, National-platform documentation package (referenced, not attached). Use
+the national-platform \texttt{source\_documents.tex} catalog and
+\texttt{appendices.tex} (Appendix A source-files directory and Appendix C cross-
+reference matrix) as the model for how a comprehensive documentation package is
+referenced from a single instrument, and reference the USL and PSL standards and
+the site documentation package by DOI. Cite \texttt{kawchak2026national},
+\texttt{kawchak2026sitedocs}, and \texttt{kawchak2026mcp}.]
+
+[Close with the deposit-and-reference rule the bill adopts: each supporting
+artifact must carry a resolvable DOI and a repository URL (GitHub and Zenodo), be
+versioned, and be reproducible from a stated seed, so that the not-attached
+documentation is nonetheless fully auditable. Cross-reference
+\texttt{sections/algorithm\_documentation.tex} (which features the same two data
+artifacts as filed documentation) and \texttt{sections/attestations\_compliance.tex}
+(which relies on these records as evidence). Cite \texttt{zenodo}.]
+
+% Model referenced-documentation table (parent paths at top, abbreviated leaves):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{4.6cm} L{2.8cm} Y}
+% \toprule
+% \textbf{Artifact (abbreviated leaf)} & \textbf{Reference} & \textbf{Why referenced, not attached} \\
+% \midrule
+% \multicolumn{3}{l}{\textit{Parent: papers/VVUQ-02/codegen/}} \\
+% results/comparison.json & kawchak2026vvuq02 & 1790-line result file; deposited and versioned \\
+% data/sample\_h2\_sensor.csv & kawchak2026vvuq02 & 1001-row data set; not a statutory attachment \\
+% src/, config/, tests/ & repo-cancer-automated & Executable code and configuration; referenced \\
+% \multicolumn{3}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+% source\_documents.tex & kawchak2026national & Model for referencing a documentation package \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Supporting documentation referenced by path and DOI, not physically attached.}
+% \end{table}

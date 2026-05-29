@@ -1,0 +1,66 @@
+% Attestations and Compliance Statements (MAIN POINT 2). Built by the future pass
+% from the instructions below. Do not process now. States the attestation and
+% compliance-statement duties the bill imposes, aligned to the state precedents,
+% and demonstrates them against the recorded compliance evidence.
+
+[Write as connected legislative prose plus one compliance-items table and one
+attestation-block model. Movement 1 sets out the attestation and compliance-
+statement duties; Movement 2 shows the duties are machine-checkable against the
+recorded VVUQ-02 evidence. Keep file names in the table.]
+
+[Movement 1, The attestation and compliance-statement duties. Require that, before
+any robot-patient interaction code is generated or executed, a responsible officer
+of the sponsor files an artificial-intelligence compliance statement and a signed
+attestation. Model the compliance statement on the Texas instrument
+(\texttt{tx-sb1822}): a summary of the AI's function, a decision-making logic
+tree, a description of the training data sets, and a formal attestation that the
+system complies with bias-reduction and evidence-based clinical criteria. Require
+the attestation to certify, under the penalties the enforcement section specifies,
+each of: that the VVUQ verification process cleared before code generation (the
+verification-before-generation certification, the core of this bill); that each
+gate met its threshold bound to a named external standard; that the site PSL gate
+passed and the robot USL score met the minimum for the procedure type; that the
+algorithm and its training data minimize the risk of bias on protected
+characteristics and adhere to evidence-based clinical guidelines, consistent with
+the New York certification (\texttt{ny-a9149}) and the federal nondiscrimination
+guarantees (\texttt{usc-titlevi}, \texttt{usc-ada}); and that a licensed human
+retained the medical-necessity decision, consistent with California
+(\texttt{ca-sb1120}) and the Florida human-review requirement (\texttt{fl-hb527}).
+Tie the records integrity to HIPAA and the electronic-records rule
+(\texttt{cfr-hipaa}, \texttt{cfr-part11}) and to risk management
+(\texttt{iso14971}).]
+
+[Movement 2, Demonstration from the recorded compliance evidence. Show that the
+attestation items are already machine-checkable, drawing the continuous-integration
+gate from \texttt{VVUQ-02/codegen/docs/ci\_compliance\_checklist.md} (ruff lint,
+the 172-test pytest suite, schema validation, YAML lint, pre-commit hooks, and the
+lint-and-format matrix across Python 3.10, 3.11, and 3.12), the per-gate external-
+standard bindings and enforced limits from \texttt{standards\_map.md} and
+\texttt{vvuq\_gate\_spec.md}, and the readiness attestations (PSL pass/fail by
+dimension and USL score by dimension) from the national-platform
+\texttt{psl\_usl\_standards.tex}. Present the compliance items in one table that
+maps each attestation clause to the artifact that evidences it and the standard it
+answers to, with the parent paths given once at the top. Cite
+\texttt{kawchak2026vvuq02}, \texttt{kawchak2026national}, \texttt{iec62304}, and
+\texttt{fda2023credibility}. Provide a short model attestation block (a quoted
+specimen the future full paper can refine) so the statutory form is concrete, and
+note that no executable code, model weights, or training data sets are filed with
+the attestation; they are referenced, per
+\texttt{sections/supporting\_documentation.tex}.]
+
+% Model compliance-items table (parent paths at top, abbreviated leaves):
+% \begin{table}[h]\centering
+% \begin{tabularx}{\textwidth}{L{4.6cm} L{4.2cm} Y}
+% \toprule
+% \textbf{Attestation clause} & \textbf{Evidencing artifact (abbreviated)} & \textbf{Answers to} \\
+% \midrule
+% \multicolumn{3}{l}{\textit{Parent: papers/VVUQ-02/codegen/docs/}} \\
+% Verification cleared first & vvuq\_gate\_spec.md & ASME V\&V 40 \S~8; verification fraction 1.0 \\
+% Gate bound to a standard & standards\_map.md & IEC 80601-2-77; ISO 14971; per gate \\
+% CI and tests pass & ci\_compliance\_checklist.md & IEC 62304; 172 tests; Py 3.10--3.12 \\
+% \multicolumn{3}{l}{\textit{Parent: physical-ai .../final\_paper/sections/}} \\
+% PSL and USL gates pass & psl\_usl\_standards.tex & Site PSL; robot USL minimum by procedure \\
+% \bottomrule
+% \end{tabularx}
+% \caption{Attestation clauses mapped to the recorded evidence and governing standards.}
+% \end{table}
