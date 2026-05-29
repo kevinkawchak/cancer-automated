@@ -4,6 +4,41 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-03 Draft Paper: VVUQ Physical AI Oncology Trial Bill Scaffold (v1.3.0)
+v1.3.0 - VVUQ-03 Draft Paper: VVUQ Physical AI Oncology Trial Bill Scaffold
+
+## Summary
+
+- Adds papers/VVUQ-03/draft-paper, a compilable single column LaTeX draft scaffold for the VVUQ Physical AI Oncology Trial Bill (Draft 1.0), a proposed United States bill requiring an automated VVUQ verification process to clear robot-patient interaction code before that code is generated or executed in a Physical AI oncology clinical trial. It was built from the VVUQ-03 template-paper (the 21 CFR Part 312 adaptation) with the direct CFR context removed and new section names created, and authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across 21 commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix and consolidation commit and a final repository-updates commit.
+- Sets up the bill on the prompt thesis: rigor above the generated code, with the VVUQ code-verification process required ahead of code generation for patient safety and efficacy, and repository-based AI models synthesising VVUQ code generation and execution into public, reproducible documents that accelerate the legislative process. The scaffold is a head start, not a finished bill: every body section is a bracketed processing instruction that names the exact files a future pass must read, so the bill writes itself from the recorded evidence rather than from estimation.
+- Addresses the four required main points as their own sections: Algorithm Documentation (featuring the 1790-line four-entrant comparison.json and the 1001-row non-repetitive sample_h2_sensor.csv of hand, five-finger, and arm positional data); Attestations and Compliance Statements (the AI compliance statement and attestation, mapped to machine-checkable evidence); Prior Law References (a federal and state statutory crosswalk); and Supporting Documentation Referenced (Not Physically Attached), which references the codegen tree, execution records, data files, and the Zenodo level-0 pointer pattern by path and DOI.
+- Incorporates and corrects the laws: the federal authorities 42 U.S.C. 1395y (Medicare), 45 CFR Parts 160 and 164 (HIPAA), 21 CFR Parts 860 to 892 (devices), and the antidiscrimination titles, with the prompt's 26 U.S.C. label corrected to 42 U.S.C. 2000d (Title VI) and 42 U.S.C. 12101 (the ADA), plus the FD&C Act, the PHSA, and 21 CFR Part 11. State legislation is addressed for all four requested states: New York A9149, Texas SB 1822 (with its filed-to-committee-substitute governance change), California SB 1120 (the Physicians Make Decisions Act), and Florida HB 527 with companion SB 202. The cover-page title is corrected from the prompt's Bil to Bill.
+- Gives USL and PSL full treatment in the definitions section and states how they strengthen the VVUQ process synergistically as a dual-layer site-and-robot gate, and requires a comprehensive treatment of the fourteen external standards and two clinical baselines and their per-gate bindings from VVUQ-02, which is what makes the assurance argument defensible to a regulator.
+- Finalises the bibliography: 60 ieeetr entries carrying the two author VVUQ studies and the six legislation and platform works verbatim from the prompt, the required federal and state laws, the external standards, and the VVUQ and autonomous-code literature, with the DOI string and its clickable resolver URL in every note field, GitHub and Zenodo links once each for repositories, no howpublished field, no duplicate links within an entry, and both the paper and repository DOIs clickable.
+- Ships the bundle as a single Overleaf-ready LaTeX zip (draft-paper.zip) and keeps the pull request green: no Python or linted YAML is added, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12 (verified locally with ruff check and ruff format --check).
+- Updates the main README (release badge to v1.3.0, a v1.3.0 summary above the prior summary, a VVUQ-03 Draft Paper section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-03 block), this releases file, the CHANGELOG (v1.3.0), and CITATION.cff (version 1.3.0).
+
+## Features
+
+- papers/VVUQ-03/draft-paper/main.tex: the cover page kept verbatim to the prompt spec (the corrected title, bold Draft 1.0, the clickable ORCID and email, the CFR/ICH/FDA notice and the independent-work disclaimer, the clickable placeholder Zenodo DOI, bold San Diego, and the May 30, 2026 date), the table of contents, the fifteen section `\input` lines, navy clickable hyperlinks, ragged-right tabularx column types, URL line breaking, and the global production and formatting directives. No images.
+- papers/VVUQ-03/draft-paper/new_paper.sty: the Palatino body with the navy accent (billnavy 143A5A) carried from the prior VVUQ-03 template so the bill keeps the same text colour formatting, widow and club penalties at 10000, navy bold sans headings, and the navy-tinted abstract box.
+- papers/VVUQ-03/draft-paper/references.bib: the final 60-entry ieeetr bibliography with DOIs and clickable URLs and no howpublished field.
+- papers/VVUQ-03/draft-paper/sections: abstract, policy_memo, problem_statement, definitions, findings, algorithm_documentation, attestations_compliance, prior_law, supporting_documentation, statutory_text, implementation_enforcement, section_by_section, limitations_future, conclusions, and back_matter, each a bracketed processing instruction with exact source paths and citation keys (back_matter carries final boilerplate plus a bracketed stakeholder register).
+- papers/VVUQ-03/draft-paper/README.md: DOI badges, the lineage and file-layout ASCII diagrams, the section-to-source-file map, the build-validation note, the senior-author formatting rules, and the references policy.
+- papers/VVUQ-03/draft-paper/draft-paper.zip: the Overleaf-ready LaTeX bundle; prompt-draft-paper.md and output-draft-paper.md: the generating prompt verbatim and the narrative output of this draft-paper step.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials, which is read only as a sibling source for the USL and PSL standards and the simulations. No section is processed; the brackets are the build order for a future 70+ page bill. pdflatex was not available in the container and the prompt asked not to compile, so the LaTeX was validated structurally (all fifteen `\input` targets resolve, balanced braces and environments, balanced dollar signs, no unescaped ampersands, single hyphens only, the section symbol used in place of SS, the only non-ASCII character the intended section symbol under utf8 and T1, and a 60-entry bibliography with no duplicate keys, no howpublished field, and no raw ampersand inside any URL) and made compile-safe; the rendered PDF and final page balancing are left to Overleaf and the future full-paper pass. The Unitree H2-Surgical 1.0 is a clearly labelled hypothetical 2030 platform and every supporting number is a simulation result. Mentions of the FDA and other governing bodies are respectful and non-presumptuous, written to advance Physical AI oncology trials and to keep the United States first in surgical-humanoid VVUQ with external standards for patient safety, efficacy, and clinical-trial speed.
+
+---
+
 VVUQ-02 Full Paper: Processed Manuscript Built from the Scaffold (v1.2.0)
 v1.2.0 - VVUQ-02 Full Paper: Processed Manuscript Built from the Scaffold
 

@@ -5,6 +5,46 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-05-30
+
+### Added
+- `papers/VVUQ-03/draft-paper/`: a compilable single-column LaTeX draft scaffold
+  for the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed United
+  States bill requiring an automated VVUQ verification process to clear
+  robot-patient interaction code before that code is generated or executed in a
+  Physical AI oncology clinical trial. Built from the VVUQ-03 template-paper (the
+  21 CFR Part 312 adaptation) with the direct CFR context removed and new section
+  names created, authored by Claude Code Opus 4.8 (1M context) Max running
+  autonomously across 21 commits in a single pull request, one file per commit
+  pushed to GitHub in real time, then a second-to-last error-fix and consolidation
+  commit and a final repository-updates commit.
+- `main.tex` (cover page kept verbatim to spec, table of contents, fifteen section
+  `\input` lines, navy clickable hyperlinks, ragged-right tabularx column types,
+  and the global production and formatting directives; no images), `new_paper.sty`
+  (Palatino body with the navy accent carried from the prior template), and
+  `references.bib` (the final 60-entry `ieeetr` bibliography with DOIs and
+  clickable URLs and no `howpublished` field).
+- Fifteen `sections/*.tex` files, each a bracketed processing instruction naming
+  the exact source files: abstract, policy_memo, problem_statement, definitions,
+  findings, algorithm_documentation, attestations_compliance, prior_law,
+  supporting_documentation, statutory_text, implementation_enforcement,
+  section_by_section, limitations_future, conclusions, and back_matter.
+- The four required main points as their own sections, with Algorithm
+  Documentation featuring the 1790-line four-entrant `comparison.json` and the
+  1001-row non-repetitive `sample_h2_sensor.csv`; USL and PSL given full treatment
+  with their synergistic effect on the VVUQ process; the fourteen external
+  standards and two clinical baselines from VVUQ-02; and the federal laws (with the
+  prompt's 26 U.S.C. corrected to 42 U.S.C. for Title VI and the ADA) and the four
+  state laws (NY A9149, TX SB 1822, CA SB 1120, FL HB 527).
+- `draft-paper.zip` (the Overleaf-ready LaTeX bundle), `prompt-draft-paper.md`, and
+  `output-draft-paper.md`.
+
+### Changed
+- Top-level `README.md`: release badge to v1.3.0, a v1.3.0 summary above the prior
+  summary, a VVUQ-03 Draft Paper section with an ASCII process diagram and a
+  table-of-contents entry, and the repository structure tree with a VVUQ-03 block.
+- `releases.md` (v1.3.0 notes) and `CITATION.cff` (version 1.3.0).
+
 ## [1.2.0] - 2026-05-27
 
 ### Added

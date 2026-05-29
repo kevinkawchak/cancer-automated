@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v1.2.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v1.3.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/30: v1.3.0 (VVUQ-03 Draft Paper)** Adds [papers/VVUQ-03/draft-paper](papers/VVUQ-03/draft-paper): a compilable single column LaTeX scaffold for the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed U.S. law requiring the VVUQ verification process to clear robot-patient interaction code before that code is generated or executed. Every body section is a bracketed processing instruction naming the exact VVUQ-01, VVUQ-02, national-platform, and template files; the four main points, the USL and PSL synergy, the external standards, and the federal and state laws are all wired in.
 
 **5/27: v1.2.0 (VVUQ-02 Full Paper)** Processes the v1.1.0 scaffold into the full, Overleaf-compilable manuscript under [papers/VVUQ-02/full-paper](papers/VVUQ-02/full-paper): *10 Mobile Pancreatic Cancer Unitree H2 Surgical Humanoids: VVUQ Processing Priority over Code Generation*. Every bracketed instruction becomes finished prose and a left-aligned, body-width table grounded in the inputs, codegen (v0.7.0), and execution (v0.8.0) records. 
 
@@ -61,6 +63,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Imagegen](#vvuq-02-imagegen)
 - [VVUQ-02 Draft Paper](#vvuq-02-draft-paper)
 - [VVUQ-02 Full Paper](#vvuq-02-full-paper)
+- [VVUQ-03 Draft Paper](#vvuq-03-draft-paper)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -300,7 +303,7 @@ cancer-automated/
             ├── Images/             # Four author supplied figure slots plus a guide
             └── sections/           # abstract, intro, methods, results, discussion,
                                     #   limitations_future, conclusions, references, back_matter
-    └── VVUQ-02/                     # ★ v0.7.0 codegen, ★ v0.8.0 execution
+    ├── VVUQ-02/                     # ★ v0.7.0 codegen, ★ v0.8.0 execution
         ├── instructions/           # prompt-instruct.md, output-instruct.md (lineage)
         ├── inputs/                 # ★ wired standards corpus + clinical baselines
         │   ├── standards/          # ASME V&V 40, IEC 80601-2-77, ISO/TS 15066, ...
@@ -371,6 +374,17 @@ cancer-automated/
         │   ├── prompt-full-paper.md    # the generating prompt, verbatim
         │   └── output-full-paper.md    # the narrative output of the full-paper step
         └── final-paper/            # placeholder (future submission-ready manuscript)
+    └── VVUQ-03/                     # ★ v1.3.0 draft paper (VVUQ Physical AI Oncology Trial Bill)
+        ├── template-paper/         # 21 CFR Part 312 adaptation chunks + .sty + .bib (source model)
+        └── draft-paper/            # ★ v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
+            ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
+            ├── main.tex            # cover page, TOC, fifteen section \input lines, format directives
+            ├── new_paper.sty       # Palatino body, navy accent (prior template family)
+            ├── references.bib      # 60 final entries; clickable DOIs; federal and state laws; standards
+            ├── sections/           # abstract..back_matter: 15 bracketed build-instruction files
+            ├── draft-paper.zip     # Overleaf-ready LaTeX bundle
+            ├── prompt-draft-paper.md   # the generating prompt, verbatim
+            └── output-draft-paper.md   # the narrative output of the draft-paper step
 ```
 
 ## Established Methods Proven Across Projects
@@ -616,6 +630,23 @@ As of v1.2.0 the full manuscript is realized under [papers/VVUQ-02/full-paper](p
 ```
 
 The four-entrant tournament is the comparison the abstract foregrounds: the single mobile humanoid lands second to the eight-arm PancreSpeed cart by under half a composite point, because parallel arms shorten the throughput-weighted score, whereas the prior PDAC paper featured that multi-arm baseline alone; the humanoid is nonetheless the higher-risk, higher-assurance platform the paper is built around. The five figures use placeholder slots that compile immediately and are replaced once the author drops the PNGs into `Images/`. A `full-paper.zip` bundle is provided for a one step Overleaf upload, and the additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [full-paper README](papers/VVUQ-02/full-paper) for the headline-results and leaderboard tables and the formatting rules.
+
+## VVUQ-03 Draft Paper
+
+As of v1.3.0 a new draft paper is staged under [papers/VVUQ-03/draft-paper](papers/VVUQ-03/draft-paper): the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed United States bill that would require an automated VVUQ verification process to clear robot-patient interaction code before that code is generated or executed in a Physical AI oncology clinical trial. It is built from the VVUQ-03 template-paper (the 21 CFR Part 312 adaptation) with the CFR context removed and new section names created, and is a head start, not a finished bill: every body section is a bracketed processing instruction that names the exact VVUQ-01, VVUQ-02, national-platform, and template files a future Claude Code Opus 4.8 (1M) Max pass must read. The four required main points (algorithm documentation; attestations and compliance; prior law; and supporting documentation referenced, not attached) are each a section; USL and PSL are given full treatment for their synergistic effect on the VVUQ process; the fourteen external standards and two clinical baselines and the featured 1790-line `comparison.json` and 1001-row `sample_h2_sensor.csv` are wired in; and the federal laws (with the antidiscrimination citation corrected to 42 U.S.C.) and the New York, Texas, California, and Florida statutes are cited in a 60-entry bibliography with clickable DOIs and URLs and no `howpublished` field.
+
+```
+  VVUQ-01 + VVUQ-02 + national-platform + template
+       (evidence, standards, simulations, cover model)
+                          |
+                          v
+  VVUQ-03/draft-paper  ====>  [bracketed instructions per section]
+          |                   + final references.bib + Overleaf zip
+          v
+  VVUQ-03 full-paper / final-paper   (future 70+ page bill)
+```
+
+The additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [draft-paper README](papers/VVUQ-03/draft-paper) for the DOI badges, the section-to-source map, the build-validation note, and the senior-author formatting rules.
 
 ## Continuous Integration
 
