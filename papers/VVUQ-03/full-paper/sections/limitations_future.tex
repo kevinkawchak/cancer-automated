@@ -1,0 +1,86 @@
+% Limitations and Future Work. Four candid groups plus one limitation-and-remedy
+% table. The credibility of the bill depends on stating plainly what the record
+% does and does not establish.
+
+The credibility of this bill depends on an honest account of what the record does
+and does not establish. Four groups of limitations follow; each limitation that
+admits a concrete remedy is paired with one in Table~\ref{tab:limits-remedies}.
+
+\subsection{Codegen and Execution Limitations}
+
+Several capabilities could not be run live and were handled by deterministic
+fallbacks, and the bill rests on the record as it actually is. The agentic and
+on-premise large language model backends were not live and ran on deterministic
+offline fallbacks, so intent generation used a frozen reference plan rather than a
+live model. Live web search and PDF ingestion were unreachable and used offline
+stubs or size estimates. The physics and robotics backends, including the major
+simulation engines, were not installed, so behaviors ran on standard-library
+references rather than a full physics engine. Local execution used a single
+Python interpreter, with cross-version coverage delegated to the continuous
+integration matrix across Python 3.10, 3.11, and 3.12. In the first study, a
+multibyte autochunk step lost six characters on one oversized line, a defect
+reported and left in scope rather than repaired. And the first study had no
+independent gold-standard validation reference, so one accept case was
+self-referential. Two assurance gaps from the first study are therefore on the
+record: the absence of an independent reference, and a rich input corpus not yet
+wired end to end into the executed pipeline \cite{kawchak2026vvuq01,
+kawchak2026vvuq02}.
+
+\subsection{Simulation Caveats}
+
+The Unitree H2-Surgical 1.0 is a clearly labelled hypothetical 2030 platform, and
+every supporting number in this bill is a simulation result. The four-entrant
+comparison is simulation against simulation, and the human-surgeon baseline round
+carries a time-dimension caveat, because it compares a short robot run against a
+multi-hour human procedure. A real deployment would require, at minimum, the
+robotic-surgery and medical-electrical safety standards, the service-robot
+stability standard, Food and Drug Administration Software as a Medical Device
+Class III clearance, institutional review board approval, and regulatory
+authorization; the bill does not presume any of these \cite{iec8060127, iec60601,
+iso13482}.
+
+\subsection{This Full-Paper Step}
+
+This full-paper step has its own limits worth stating. A PDF compiler was not
+available in the build container, and the prompt asked that the bill not be
+compiled here, so the LaTeX was validated structurally rather than rendered: the
+checks confirmed balanced braces and environments, that every citation key is
+present in the bibliography, balanced dollar pairs, and single-hyphen and
+section-symbol scans, and the bundle was made compile-safe. The rendered PDF and
+the final page balancing are left to Overleaf. No images are used anywhere
+\cite{lamport1994latex}.
+
+\subsection{Legislative Limitations and Future Work}
+
+This is an independent draft bill, not enacted law, and is not endorsed by CFR,
+ICH, FDA, or any sponsor, contract research organization, site, institutional
+review board, regulator, or medical society. It reflects one author and needs the
+stakeholder input the policy memorandum names. The state-law landscape is moving,
+including the Texas committee substitute and the Florida 2026 bills, so the
+citations should be refreshed at enactment. For future work, the central forward
+claim is that this verification-before-generation standard should extend across
+the full breadth of oncology trials, with the remedies in
+Table~\ref{tab:limits-remedies} prioritised: supply an independent validation
+reference, wire the standards corpus end to end, enable the live backends, repair
+the multibyte chunker, and broaden the simulation set toward real-world
+validation \cite{kawchak2026bills, kawchak2026prediction, fda2026realtime}.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{5.0cm} Y}
+\toprule
+\textbf{Limitation (abbreviated source)} & \textbf{Concrete remedy} \\
+\midrule
+\multicolumn{2}{l}{\textit{Parent: papers/VVUQ-01/ and papers/VVUQ-02/}} \\
+LLM backends offline (execution READMEs) & Enable live backends; re-run with the same seed \\
+No independent reference (VVUQ-01 limits) & Supply a gold-standard reference; retest validation \\
+Offline web and PDF ingestion (execution READMEs) & Connect live retrieval; re-ingest the full corpus \\
+No physics engine installed (VVUQ-02 limits) & Run behaviors under a full physics engine \\
+Single interpreter locally & Already covered by the CI 3.10 to 3.12 matrix \\
+Multibyte chunker dropped six characters & Repair the chunker; re-run the affected step \\
+Simulation against simulation (VVUQ-02 limits) & Stage toward physical validation under full standards \\
+\bottomrule
+\end{tabularx}
+\caption{Limitations from the codegen and execution steps, each with a remedy.}
+\label{tab:limits-remedies}
+\end{table}
