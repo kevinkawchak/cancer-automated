@@ -1,0 +1,83 @@
+% Draft Statutory Text. Built by the future pass from the instructions below. Do
+% not process now. This is the operative bill: real, enactable statutory language
+% in proper legislative form. The model for wholly new Physical AI statutory text
+% is the template's new Subpart J; the validation thresholds come from the
+% VVUQ-02 gate spec. Use the section symbol § throughout and the lettered,
+% numbered, roman subparagraph hierarchy (a)(1)(i).
+
+[Draft the statutory text as enactable legislative language, organised into
+numbered sections with the (a)(1)(i) subparagraph hierarchy, in the style and tone
+of the template's new Subpart J. Build each section from the sources named below;
+keep any threshold tables in the left-aligned ragged-right format and reference
+them from the text rather than restating the numbers in prose. Do not narrate the
+sources; convert them into statute. Suggested sections follow.]
+
+[Section 1, Short title. "VVUQ Physical AI Oncology Trial Bill." One clause.]
+
+[Section 2, Definitions. Incorporate by reference the defined terms set out in the
+bill's definitions section, listing the operative terms (Physical AI system,
+robot-patient interaction, VVUQ gate, verification fraction, USL, PSL, high-risk
+artificial intelligence, AI-enabled device software function) without re-defining
+them. Cross-reference \texttt{sections/definitions.tex}.]
+
+[Section 3, The verification-before-generation requirement (the core of the bill).
+Draft the operative mandate: no robot-patient interaction code may be generated or
+executed in a Physical AI oncology clinical trial unless an automated VVUQ
+verification process, bound to named external standards, has first cleared for
+that interaction, and the cleared verification record has been documented and
+attested. Make the priority explicit, that the verification process is held to a
+higher standard than, and precedes, the generated code. Draw the structure from
+the template's \texttt{chunk\_10\_subpart\_j\_physical\_ai\_references.md}
+(§ 312.402 Validation Requirements and § 312.400 Purpose and Scope) and the gate
+mechanics from \texttt{VVUQ-02/codegen/docs/vvuq\_gate\_spec.md} and
+\texttt{vvuq\_methodology.md}. Cite \texttt{kawchak2026vvuq01},
+\texttt{kawchak2026vvuq02}, \texttt{asmevv40}, and \texttt{fda2023credibility}.]
+
+[Section 4, Validation requirements and gate thresholds. Codify, in subparagraph
+form and one threshold table, the gate requirements a robot-patient interaction
+must clear: a verification fraction equal to 1.0; a validation agreement against an
+independent reference; a coefficient-of-variation dispersion bound across repeated
+seeded runs; and a hard predicate for immediate-catastrophe interactions (vascular
+no-fly, shared-operating-room collision, fault and e-stop). Source the ten-gate
+threshold structure from \texttt{vvuq\_gate\_spec.md} and bind each requirement to
+its external standard via \texttt{standards\_map.md}. Cite \texttt{iso14971},
+\texttt{iec8060127}, \texttt{isots15066}, \texttt{nasastd7009a}, \texttt{ul4600},
+and \texttt{ieee7009}.]
+
+[Section 5, Readiness gates. Require that the site clear the PSL pass/fail gate and
+the robot clear the minimum USL score for the procedure type (surgical at least
+7.0; therapeutic positioning and diagnostic needle at least 6.0; rehabilitative at
+least 4.0; companion monitoring at least 3.0) before enrollment, and require Phase
+0 simulation validation. Source from the national-platform
+\texttt{psl\_usl\_standards.tex} and the template's § 312.401 classification and
+§ 312.402 validation. Cite \texttt{kawchak2026national}.]
+
+[Section 6, Documentation and attestation. Require the algorithm documentation and
+the compliance statement and attestation set out in the bill's documentation and
+attestation sections, by cross-reference, and require the verification record to
+be filed before generation. Cross-reference
+\texttt{sections/algorithm\_documentation.tex} and
+\texttt{sections/attestations\_compliance.tex}, and cite \texttt{tx-sb1822},
+\texttt{ny-a9149}, and \texttt{ca-sb1120}.]
+
+[Section 7, Cybersecurity, human oversight, and lifecycle. Codify the cybersecurity
+requirements, the recorded human-oversight and hand-back-to-human escalation, and
+the lifecycle and decommissioning duties, drawn from the template's § 312.403
+(cybersecurity), § 312.404 (human oversight), and § 312.405 (lifecycle
+management). Tie the electronic-records integrity to \texttt{cfr-part11} and the
+hash-chained audit trail to the national MCP-PAI standard. Cite
+\texttt{kawchak2026mcp} and \texttt{iec60601}.]
+
+[Section 8, Nondiscrimination. Require that algorithms and their training data
+minimize the risk of bias on protected characteristics and adhere to evidence-
+based clinical guidelines, consistent with \texttt{usc-titlevi},
+\texttt{usc-ada}, and \texttt{ny-a9149}.]
+
+[Section 9, Enforcement and effective date. Cross-reference the enforcement and
+fiscal section and the effective-date clause in the conclusions section; do not
+restate them. Cross-reference \texttt{sections/implementation\_enforcement.tex} and
+\texttt{sections/conclusions.tex}.]
+
+[Add a closing authority-and-source line in the template's bracketed-citation
+style (modelled on \texttt{chunk\_01\_front\_matter.md}), making clear the bill
+adapts public-domain federal material and is not endorsed by CFR, ICH, or FDA.]
