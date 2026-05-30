@@ -48,6 +48,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   full-paper block.
 - `releases.md` (v1.4.0 notes) and `CITATION.cff` (version 1.4.0).
 - @kevinkawchak updated README file DOI badge locations, created the instruct-paper file architecture, and populated instruct-paper with corresponding prompt and three outputs for cancer-automated/tree/main/papers/VVUQ-03 on 2026-05-29.
+- @kevinkawchak updated the final bill LaTeX source files and README on cancer-automated/tree/main/papers/VVUQ-03/final-paper; and also included the bill link for main/README.md on 2026-05-30.
 
 ## [1.3.0] - 2026-05-30
 
