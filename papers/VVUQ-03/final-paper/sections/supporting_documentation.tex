@@ -1,0 +1,67 @@
+% Supporting Documentation Referenced (Not Physically Attached). MAIN POINT 4.
+% One referenced-documentation table in three blocks, then the deposit-and-
+% reference rule. The two large data artifacts appear again in the not-attached
+% context so the reader sees they are deposited, not pasted into the bill.
+
+Consistent with how legislation is assembled, this bill references its supporting
+documentation rather than physically attaching it. Executable code, model
+weights, training data sets, and Git repositories are not appropriate attachments
+to a statute; they are deposited, versioned, and citable, and each is reachable by
+a repository path and a resolvable DOI or URL. Table~\ref{tab:support-docs}
+carries the inventory in three blocks; it is not narrated row by row, and the two
+large data artifacts featured in Section~\ref{sec:algorithm_documentation} appear
+again here so the reader sees they are deposited, not embedded.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{6.9cm} L{2.8cm} Y}
+\toprule
+\textbf{Artifact (abbreviated leaf)} & \textbf{Reference} & \textbf{Why referenced, not attached} \\
+\midrule
+\multicolumn{3}{l}{\textbf{papers/VVUQ-02/codegen/}} \\
+results/comparison.json & \cite{kawchak2026vvuq02} & 1{,}790-line result file; deposited and versioned \\
+data/sample\_h2\_sensor.csv & \cite{kawchak2026vvuq02} & 1{,}001-row data set; not a statutory attachment \\
+data/sample\_h2\_sensor.jsonl & \cite{kawchak2026vvuq02} & Companion stream: same rows \\
+data/human\_surgeon\_baseline.csv & \cite{kawchak2026vvuq02} & Human baseline; versus input \\
+results/vvuq\_decisions.json & \cite{kawchak2026vvuq02} & Gate decision record per artifact \\
+src/, config/, docs/, schemas/, tests/ & \cite{repo-cancer-automated} & Executable code and configuration \\
+data/iterations/ (L0 pointers) & \cite{zenodo} & Raw level-0 stream deposited to Zenodo; pointers committed \\
+\multicolumn{3}{l}{\textbf{VVUQ-02/execution/, VVUQ-01/execution/}} \\
+VVUQ-02 execution/ and README & \cite{kawchak2026vvuq02} & Five-section run record evidencing the attestations \\
+VVUQ-01 execution/ (five sections) & \cite{kawchak2026vvuq01} & First-study run record; reproduce, do not re-litigate \\
+\multicolumn{3}{l}{\textbf{physical-ai .../final\_paper/sections/}} \\
+source\_documents.tex; appendices.tex & \cite{kawchak2026national} & Model for referencing a documentation package \\
+USL and PSL standards; site docs & \cite{kawchak2026sitedocs} & Readiness standards by DOI \\
+National MCP-PAI standard & \cite{kawchak2026mcp} & Audit, ledger, and provenance infrastructure \\
+\bottomrule
+\end{tabularx}
+\caption{Supporting documentation referenced by path and DOI, not physically attached.}
+\label{tab:support-docs}
+\end{table}
+
+Block 1 records the generated code tree and its documentation, the two featured
+data artifacts and their companion stream and human baseline, and the gate
+decision record; it also records that the raw level-0 humanoid sensor stream is
+deposited to Zenodo and referenced by per-iteration pointer files under the
+iterations directory rather than committed, which is exactly the
+deposit-and-reference pattern the bill prescribes. Block 2 records the run logs
+that evidence the attestations, referenced so that a reviewer can reproduce the
+runs rather than re-litigate them. Block 3 uses the national platform's catalog of
+source documents and its appendices, the source-files directory and the
+cross-reference matrix, as the model for referencing a comprehensive
+documentation package from a single instrument.
+
+The bill adopts a deposit-and-reference rule for all such material: each
+supporting artifact must carry a resolvable DOI and a repository URL, on GitHub
+and Zenodo, must be versioned, and must be reproducible from a stated seed, so
+that documentation which is not attached is nonetheless fully auditable
+\cite{zenodo}. This rule connects the two halves of the documentation duty: the
+same two data artifacts that Section~\ref{sec:algorithm_documentation} treats as
+filed documentation are deposited and referenced here, and the records that
+Section~\ref{sec:attestations_compliance} relies on as attestation evidence are
+the run logs catalogued in Block 2. The statute therefore never asks a sponsor to
+attach a data set to a bill; it asks the sponsor to deposit it, version it, and
+make it re-runnable, and to file the pointer.
+
+\newpage
+

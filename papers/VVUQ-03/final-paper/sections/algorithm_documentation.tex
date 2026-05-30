@@ -1,0 +1,170 @@
+% Algorithm Documentation Requirements (MAIN POINT 1). Movement 1 states the
+% documentation duty; Movement 2 demonstrates it against the recorded VVUQ-02
+% codegen and execution artifacts. The 1790-line comparison.json and the
+% 1001-row sample_h2_sensor.csv are featured. File names live in the tables.
+
+This bill imposes an algorithm-documentation duty and then demonstrates, against
+the recorded second-study artifacts, that the duty is already met in practice and
+is therefore feasible rather than burdensome. Movement 1 states what a sponsor
+must file; Movement 2 shows that the generation-and-execution loop already
+produces exactly that filing.
+
+\clearpage
+
+\subsection{The Documentation Duty}
+
+For each algorithm that governs a robot-patient interaction, the sponsor must
+document and file a record built in the order the bill requires, with the
+verification record preceding the generated code so that rigor sits above the
+code itself. The required filing has six items:
+
+\begin{enumerate}[label=(\arabic*)]
+\item a plain-language summary of the algorithm's function;
+\item a description of the decision logic or architecture;
+\item a description of the data sets used to train or condition the algorithm;
+\item the VVUQ gate bindings, identifying which external standard governs each
+gate and the numeric threshold enforced;
+\item the verification-before-generation record, that is, the gate result that
+cleared before the code was generated or executed; and
+\item a determinism and reproducibility statement giving the seed and confirming
+byte-for-byte regeneration.
+\end{enumerate}
+
+These items are deliberately consistent with the state utilization-review
+precedents, so that a sponsor already preparing a state filing can satisfy this
+bill with the same materials. The summary, decision-logic description, and
+training-data description track the Texas compliance statement and its
+attestation; the algorithm-and-training-data description tracks the New York
+submission; and the training-data and transparency items track California's
+individualized-data duty. The device-software framing of items (1) through (3) is
+anchored to the medical-device regulations, and the credibility framing of items
+(4) and (5) to the agency credibility guidance and the ASME V\&V 40 standard.
+Table~\ref{tab:algdoc-items} maps each filing item to the precedent and standard
+it answers to.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{4.25cm} Y L{2.0cm}}
+\toprule
+\textbf{Filing item} & \textbf{What it contains} & \textbf{Aligns to} \\
+\midrule
+(1) Function summary & Plain-language statement of what the algorithm does in the interaction & \cite{tx-sb1822, cfr-devices} \\
+(2) Decision logic & Decision-logic tree or architecture description & \cite{tx-sb1822, ny-a9149} \\
+(3) Training data & Description of data sets used to train the model & \cite{ny-a9149, ca-sb1120} \\
+(4) Gate bindings & External standard governing each gate and the numeric threshold enforced & \cite{asmevv40, fda2023credibility} \\
+(5) Verify-first record & Gate result that cleared before the code was generated or executed & \cite{fda2023credibility} \\
+(6) Reproducibility & Seed and byte-for-byte regeneration statement & \cite{asmevv40} \\
+\bottomrule
+\end{tabularx}
+\caption{The six required algorithm-documentation filings and their precedents.}
+\label{tab:algdoc-items}
+\end{table}
+
+\subsection{Demonstration from the Recorded Artifacts}
+
+The author's second study already produces this documentation in full. The
+generated platform ships with a documentation set covering its architecture,
+robot and hand specifications, sensor and perception stacks, autonomy policy, the
+gate specification, and the standards map, alongside a frozen configuration that
+fixes every threshold and seed. Table~\ref{tab:algdoc-docset} lists that set;
+read against Table~\ref{tab:algdoc-items}, it shows that items (1) through (6) are
+not aspirations but files that exist. Two of those files are featured here
+because they demonstrate the method at a scale a regulator can inspect.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{6cm} Y}
+\toprule
+\textbf{Document (abbreviated leaf)} & \textbf{Filing item it evidences} \\
+\midrule
+\multicolumn{2}{l}{\textbf{papers/VVUQ-02/codegen/docs/}} \\
+architecture.md & Decision logic and system architecture, item (2) \\
+h2\_robot\_specification.md & Platform description for the function summary, item (1) \\
+h2\_hand\_kinematics.md & Dexterous-hand kinematics behind force, grasp gates \\
+sensor\_spec.md; perception\_stack\_spec.md & Sensing and perception inputs, items (1) and (3) \\
+autonomy\_policy\_spec.md & Autonomous-plan logic, item (2) \\
+vvuq\_gate\_spec.md & Gate thresholds and decisions, items (4) and (5) \\
+standards\_map.md & External-standard binding per gate, item (4) \\
+\multicolumn{2}{l}{\textbf{papers/VVUQ-02/codegen/config/}} \\
+vvuq\_thresholds.yaml; standards\_map.yaml & Frozen thresholds and seed, item (6) \\
+\bottomrule
+\end{tabularx}
+\caption{The generated platform documentation set evidencing each filing item.}
+\label{tab:algdoc-docset}
+\end{table}
+
+\subsubsection{Featured Artifact 1: The Four-Entrant Tournament}
+
+The first featured artifact is the machine-readable record of a substantial code
+generation and its execution: a four-entrant comparison produced as a
+32-iteration sweep at seed 20260525, with four rounds per iteration, in which a
+single mobile surgical humanoid is scored against an eight-arm cart baseline, a
+teleoperated telemanipulator, and a 2025 human-surgeon cohort. Each round carries
+a composite score for each side, a winner, a confidence value, and explicit
+caveats that always include the simulation-against-simulation qualifier.
+Table~\ref{tab:algdoc-comparison} gives its structure and headline numbers; the
+file is not transcribed, and it regenerates byte for byte from the seed.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{3.6cm} Y}
+\toprule
+\textbf{Attribute} & \textbf{Value} \\
+\midrule
+\multicolumn{2}{l}{\textbf{papers/VVUQ-02/codegen/results/comparison.json}} \\
+Size and shape & 1{,}790 lines; 32 iterations; four rounds per iteration \\
+Determinism & Seed 20260525; regenerates byte for byte \\
+Entrant 1 & H2\_Surgical\_1\_0, the single mobile surgical humanoid (hypothetical) \\
+Entrant 2 & PancreSpeed\_1\_0, the eight-arm cart baseline \\
+Entrant 3 & da\_Vinci\_successor\_2030, a teleoperated telemanipulator \\
+Entrant 4 & Dutch\_human\_baseline, a 2025 human-surgeon cohort \\
+Per-round fields & Composite score per side, winner, confidence, caveats \\
+Headline range & Composite scores span about 67.584 to 94.603 across the sweep \\
+Headline result & Humanoid mean about 93.334, second to PancreSpeed at about 93.782, a margin under half a composite point \\
+Standing caveat & Every round flags simulation against simulation; the human-baseline round also flags the time-dimension difference \\
+\bottomrule
+\end{tabularx}
+\caption{Featured artifact 1: the four-entrant tournament (comparison.json).}
+\label{tab:algdoc-comparison}
+\end{table}
+
+\subsubsection{Featured Artifact 2: The Humanoid Sensor Stream}
+
+The second featured artifact is the flattened publication sample of the robot
+positional data the generation produced and the execution confirmed: a sensor
+stream of 1{,}001 lines, one header and 1{,}000 non-repetitive data rows, across
+27 columns. The columns cover both hands, all five fingers, the seven joints of
+each arm, the end-effector position in the patient frame, and the balance and
+safety channels, with no row repeated and every value deterministic from seed
+20260525. Table~\ref{tab:algdoc-sensor} groups the columns; the file is not
+transcribed, and its companion stream and the human-surgeon baseline are noted in
+the final row.
+
+\begin{table}[ht]
+\centering
+\begin{tabularx}{\textwidth}{L{3.8cm} Y}
+\toprule
+\textbf{Column group} & \textbf{Contents} \\
+\midrule
+\multicolumn{2}{l}{\textbf{VVUQ-02/codegen/data/sample\_h2\_sensor.csv}} \\
+Shape & 1{,}001 lines (1 header, 1{,}000 non-repetitive rows); 27 columns \\
+Indexing & tick, hand\_id (both hands), phase, grasp\_state \\
+Arm joint angles & q\_arm\_1 through q\_arm\_7 (seven per-arm joints) \\
+Finger forces & finger\_force\_1 through finger\_force\_5 (all five fingers) \\
+End-effector position & ee\_pos\_x, ee\_pos\_y, ee\_pos\_z in the patient frame \\
+Safety channels & vessel\_proximity, ring\_tension, support\_polygon\_margin, balance\_state, tip\_force\_scalar, bimanual\_cumulative\_force, estop\_state, collision\_state \\
+Companions & sample\_h2\_sensor.jsonl; human\_surgeon\_baseline.csv \\
+\bottomrule
+\end{tabularx}
+\caption{Featured artifact 2: the humanoid sensor stream (sample\_h2\_sensor.csv).}
+\label{tab:algdoc-sensor}
+\end{table}
+
+Because these artifacts were generated and executed autonomously and reproducibly,
+the documentation requirement this bill imposes is shown to be practical and
+inexpensive: the filing is a by-product of a run that already happens, not an
+added manual burden \cite{kawchak2026vvuq02, repo-cancer-automated}. The honest
+account of what could not be run or had to be approximated is given in
+Section~\ref{sec:limitations}, and the treatment of these same files as
+referenced rather than physically attached materials is given in
+Section~\ref{sec:supporting_documentation}.
