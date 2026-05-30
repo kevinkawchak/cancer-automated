@@ -14,7 +14,7 @@ This repository packages the established methods for generating instructions, ge
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
 
-**5/30: v1.4.0 (VVUQ-03 Full Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). Every bracketed instruction becomes finished legislative prose with left-aligned, body-width tables (21 in all); the four main points, the USL and PSL synergy, and the fourteen external standards.
+**5/30 [Final PDF](https://doi.org/10.5281/zenodo.20454870): v1.4.0 (VVUQ-03 Final Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). Every bracketed instruction becomes finished legislative prose with left-aligned, body-width tables (21 in all); the four main points, the USL and PSL synergy, and the fourteen external standards.
 
 **5/30: v1.3.0 (VVUQ-03 Draft Paper)** Adds [papers/VVUQ-03/draft-paper](papers/VVUQ-03/draft-paper): a compilable single column LaTeX scaffold for the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed U.S. law requiring the VVUQ verification process to clear robot-patient interaction code before that code is generated or executed. Every body section is a bracketed processing instruction.
 
