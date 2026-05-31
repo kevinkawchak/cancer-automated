@@ -1,17 +1,12 @@
-## README instruct-paper 
+## README for update-bill 
 
-prompt-instruct-paper.md
+prompt-update-bill.md
 - The author prompt is based on U.S. medical AI bills and laws.
-- The same prompt was provided to three different AI model to obtain output-1, output-2, and output-3.
-- Information was utilized from outputs based on assigned author ratings: Haiku 4.5 Extended: 9.5, ChatGPT 5.5 Thinking Extended: 8.5, Gemini 3.1 Pro: 8.0.
+- The same prompt was provided to three different AI model to obtain output-1 and output-2.
+- Information was utilized from outputs based on assigned author ratings: ChatGPT 5.5 Thinking Extended: 9.5, Gemini 3.1 Pro: 8.5.
 
-output-1-instruct-paper.md
+output-1-update-bill.md
 - ChatGPT 5.5 Thinking Extended
   
-output-2-instruct-paper.md
-- Haiku 4.5 Extended
-  
-output-3-instruct-paper.md
+output-2-update-bill.md
 - Gemini 3.1 Pro
-
-
