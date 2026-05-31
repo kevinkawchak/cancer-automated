@@ -1,0 +1,449 @@
+% ============================================================
+% standards-and-literature.bib
+% VVUQ-04 instruct-bill bibliography 5 of 5: consensus standards,
+% AI governance standards, clinical-study reporting guidelines,
+% clinical-trial regulations and ICH guidelines, oncology programs,
+% autonomous-surgery and digital-twin literature, and the prior-bill
+% and project anchors. Cited by file 09 and file 10. DOIs are included
+% where they exist; standards and statutes without a DOI carry the
+% canonical publisher or eCFR URL. Each link appears once across the
+% five .bib files. No howpublished. § used, never SS.
+% ============================================================
+
+% ---------------- Computational model credibility and VVUQ ----------------
+
+@misc{asmevv40,
+  author    = {{American Society of Mechanical Engineers}},
+  title     = {ASME V&V 40-2018: Assessing Credibility of Computational Modeling through Verification and Validation: Application to Medical Devices},
+  year      = {2018},
+  publisher = {ASME},
+  url       = {https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices},
+  note      = {The keystone credibility standard (augmented by ASME V&V 10-2019 for solid mechanics and V&V 20-2009 for fluid dynamics): model risk equals influence times decision consequence, with V&V rigor scaled to risk. \url{https://www.asme.org/codes-standards/find-codes-standards/assessing-credibility-of-computational-modeling-through-verification-and-validation-application-to-medical-devices}.}
+}
+
+@misc{asmevvuq70,
+  author    = {{American Society of Mechanical Engineers}},
+  title     = {ASME VVUQ 70: Verification and Validation of Machine Learning (In Development)},
+  year      = {2026},
+  publisher = {ASME},
+  url       = {https://www.asme.org/codes-standards/publications-information/verification-validation-uncertainty},
+  note      = {The machine-learning-specific V&V standard in development; the most direct future anchor for AI robot-control code. There is no ASME V&V 90 for machine learning. \url{https://www.asme.org/codes-standards/publications-information/verification-validation-uncertainty}.}
+}
+
+@misc{nasastd7009,
+  author    = {{National Aeronautics and Space Administration}},
+  title     = {NASA-STD-7009A: Standard for Models and Simulations},
+  year      = {2016},
+  publisher = {NASA},
+  url       = {https://standards.nasa.gov/standard/NASA/NASA-STD-7009},
+  note      = {Treats uncertainty quantification as a first-class credibility factor (epistemic and aleatory); the basis for the gate dispersion bounds and a credibility-scoring rubric. \url{https://standards.nasa.gov/standard/NASA/NASA-STD-7009}.}
+}
+
+% ---------------- Autonomous-system fail-safe and safety case ----------------
+
+@misc{ieee7009,
+  author    = {{Institute of Electrical and Electronics Engineers}},
+  title     = {IEEE Std 7009-2024: Standard for Fail-Safe Design of Autonomous and Semi-Autonomous Systems},
+  year      = {2024},
+  publisher = {IEEE},
+  doi       = {10.1109/IEEESTD.2024.10582898},
+  url       = {https://doi.org/10.1109/IEEESTD.2024.10582898},
+  note      = {DOI: 10.1109/IEEESTD.2024.10582898. Fail-safe behavior demonstrated before execution; the hand-back-to-human escalation rule. \url{https://doi.org/10.1109/IEEESTD.2024.10582898}.}
+}
+
+@misc{ul4600,
+  author    = {{UL Standards and Engagement}},
+  title     = {ANSI/UL 4600 (Edition 3, 2023): Standard for Safety for the Evaluation of Autonomous Products},
+  year      = {2023},
+  publisher = {UL},
+  url       = {https://www.shopulstandards.com/ProductDetail.aspx?productId=UL4600_3_S_20230317},
+  note      = {A claim-based safety case (claims, argument, evidence); the structured artifact the gate produces and checks. \url{https://www.shopulstandards.com/ProductDetail.aspx?productId=UL4600_3_S_20230317}.}
+}
+
+% ---------------- Robotic surgery, medical electrical, functional safety ----------------
+
+@misc{iec8060127,
+  author    = {{International Electrotechnical Commission}},
+  title     = {IEC 80601-2-77:2019 (with Amd 1:2023): Robotically Assisted Surgical Equipment},
+  year      = {2019},
+  publisher = {IEC},
+  url       = {https://webstore.iec.ch/en/publication/29933},
+  note      = {The dedicated surgical-robot safety standard; defines the essential performance the VVUQ protects. \url{https://webstore.iec.ch/en/publication/29933}.}
+}
+
+@misc{iec60601,
+  author    = {{International Electrotechnical Commission}},
+  title     = {IEC 60601-1: Medical Electrical Equipment, General Requirements for Basic Safety and Essential Performance},
+  year      = {2020},
+  publisher = {IEC},
+  url       = {https://webstore.iec.ch/en/publication/2606},
+  note      = {The single-fault safe-state requirement underlying the fault and e-stop paths; 80601-2-77 builds on it. \url{https://webstore.iec.ch/en/publication/2606}.}
+}
+
+@misc{iec62304,
+  author    = {{International Electrotechnical Commission}},
+  title     = {IEC 62304: Medical Device Software, Software Life Cycle Processes},
+  year      = {2015},
+  publisher = {IEC},
+  url       = {https://webstore.iec.ch/publication/22794},
+  note      = {Software safety classification (A, B, C) and life-cycle verification; its sole normative reference is ISO 14971. \url{https://webstore.iec.ch/publication/22794}.}
+}
+
+@misc{iso14971,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO 14971:2019: Application of Risk Management to Medical Devices},
+  year      = {2019},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/72704.html},
+  note      = {The master risk-management process; the gate is a risk-control measure under ISO 14971. \url{https://www.iso.org/standard/72704.html}.}
+}
+
+@misc{iso13849,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO 13849-1:2023: Safety of Machinery, Safety-Related Parts of Control Systems},
+  year      = {2023},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/73481.html},
+  note      = {Performance levels for the protective-stop and force-limiting control path. \url{https://www.iso.org/standard/73481.html}.}
+}
+
+@misc{iso10218,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO 10218-1 and -2: Safety Requirements for Industrial Robots (2025 Revision)},
+  year      = {2025},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/51330.html},
+  note      = {Speed and separation monitoring and safety-rated stops; the 2025 revision integrates ISO/TS 15066. \url{https://www.iso.org/standard/51330.html}.}
+}
+
+@misc{isots15066,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO/TS 15066:2016: Robots and Robotic Devices, Collaborative Robots},
+  year      = {2016},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/62996.html},
+  note      = {Power-and-force limiting and biomechanical pain and injury thresholds for robot-patient contact. \url{https://www.iso.org/standard/62996.html}.}
+}
+
+@misc{iso13482,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO 13482:2014: Safety Requirements for Personal Care Robots},
+  year      = {2014},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/53820.html},
+  note      = {Stability, collision avoidance, and fail-safe behavior for a close-contact humanoid. \url{https://www.iso.org/standard/53820.html}.}
+}
+
+@misc{iso9283,
+  author    = {{International Organization for Standardization}},
+  title     = {ISO 9283:1998: Manipulating Industrial Robots, Performance Criteria and Related Test Methods},
+  year      = {1998},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/22244.html},
+  note      = {Pose accuracy, repeatability, and path accuracy; the measurable metrics the gate verifies. \url{https://www.iso.org/standard/22244.html}.}
+}
+
+% ---------------- AI governance and trustworthiness ----------------
+
+@misc{isoiec42001,
+  author    = {{International Organization for Standardization and International Electrotechnical Commission}},
+  title     = {ISO/IEC 42001:2023: Artificial Intelligence Management System},
+  year      = {2023},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/42001},
+  note      = {The organizational layer that operates the gate: policy, roles, internal audit, and continual improvement. \url{https://www.iso.org/standard/42001}.}
+}
+
+@misc{isoiec23894,
+  author    = {{International Organization for Standardization and International Electrotechnical Commission}},
+  title     = {ISO/IEC 23894:2023: Artificial Intelligence, Guidance on Risk Management},
+  year      = {2023},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/77304.html},
+  note      = {The AI-specific risk process (bias, robustness, failure modes), complemented by ISO/IEC TR 24028:2020 on trustworthiness. \url{https://www.iso.org/standard/77304.html}.}
+}
+
+@misc{isoiec24028,
+  author    = {{International Organization for Standardization and International Electrotechnical Commission}},
+  title     = {ISO/IEC TR 24028:2020: Overview of Trustworthiness in Artificial Intelligence},
+  year      = {2020},
+  publisher = {ISO},
+  url       = {https://www.iso.org/standard/77608.html},
+  note      = {The property catalog (transparency, robustness, reliability, safety, security, privacy) the bill can enumerate as VVUQ-checkable. \url{https://www.iso.org/standard/77608.html}.}
+}
+
+@misc{nist-airmf,
+  author    = {{National Institute of Standards and Technology}},
+  title     = {NIST AI Risk Management Framework 1.0 (AI 100-1)},
+  year      = {2023},
+  publisher = {NIST},
+  doi       = {10.6028/NIST.AI.100-1},
+  url       = {https://doi.org/10.6028/NIST.AI.100-1},
+  note      = {DOI: 10.6028/NIST.AI.100-1. The Govern, Map, Measure, Manage functions; the Measure function is the VVUQ home. \url{https://doi.org/10.6028/NIST.AI.100-1}.}
+}
+
+@misc{nist-genai-profile,
+  author    = {{National Institute of Standards and Technology}},
+  title     = {NIST AI 600-1: Generative AI Profile of the AI Risk Management Framework},
+  year      = {2024},
+  publisher = {NIST},
+  url       = {https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf},
+  note      = {A generative-AI risk taxonomy for VVUQ test design where the robot uses generative planning or perception. \url{https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf}.}
+}
+
+% ---------------- AI clinical-study reporting guidelines ----------------
+
+@article{tripodai,
+  author    = {Collins, Gary S. and Moons, Karel G. M. and Dhiman, Paula and others},
+  title     = {{TRIPOD+AI} Statement: Updated Guidance for Reporting Clinical Prediction Models That Use Regression or Machine Learning Methods},
+  journal   = {BMJ},
+  year      = {2024},
+  doi       = {10.1136/bmj-2023-078378},
+  url       = {https://doi.org/10.1136/bmj-2023-078378},
+  note      = {DOI: 10.1136/bmj-2023-078378. Reporting completeness for any predictive model in the surgical AI. \url{https://doi.org/10.1136/bmj-2023-078378}.}
+}
+
+@article{decideai,
+  author    = {Vasey, Baptiste and Nagendran, Myura and Campbell, Bruce and others},
+  title     = {Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: {DECIDE-AI}},
+  journal   = {Nature Medicine},
+  year      = {2022},
+  doi       = {10.1038/s41591-022-01772-9},
+  url       = {https://doi.org/10.1038/s41591-022-01772-9},
+  note      = {DOI: 10.1038/s41591-022-01772-9. First-in-human and early-trial reporting for a first surgical-humanoid oncology trial. \url{https://doi.org/10.1038/s41591-022-01772-9}.}
+}
+
+@article{spiritai,
+  author    = {Cruz Rivera, Samantha and Liu, Xiaoxuan and Chan, An-Wen and others},
+  title     = {Guidelines for Clinical Trial Protocols for Interventions Involving Artificial Intelligence: {SPIRIT-AI}},
+  journal   = {Nature Medicine},
+  year      = {2020},
+  doi       = {10.1038/s41591-020-1037-7},
+  url       = {https://doi.org/10.1038/s41591-020-1037-7},
+  note      = {DOI: 10.1038/s41591-020-1037-7. Protocol-level disclosure of AI version, inputs, outputs, and human-AI interaction. \url{https://doi.org/10.1038/s41591-020-1037-7}.}
+}
+
+@article{consortai,
+  author    = {Liu, Xiaoxuan and Cruz Rivera, Samantha and Moher, David and others},
+  title     = {Reporting Guidelines for Clinical Trial Reports for Interventions Involving Artificial Intelligence: {CONSORT-AI}},
+  journal   = {Nature Medicine},
+  year      = {2020},
+  doi       = {10.1038/s41591-020-1034-x},
+  url       = {https://doi.org/10.1038/s41591-020-1034-x},
+  note      = {DOI: 10.1038/s41591-020-1034-x. Results-level disclosure of AI interventions. \url{https://doi.org/10.1038/s41591-020-1034-x}.}
+}
+
+@article{claim,
+  author    = {Tejani, Ali S. and Klontzas, Michail E. and Gatti, Anthony A. and others},
+  title     = {Checklist for Artificial Intelligence in Medical Imaging ({CLAIM}): 2024 Update},
+  journal   = {Radiology: Artificial Intelligence},
+  year      = {2024},
+  doi       = {10.1148/ryai.240300},
+  url       = {https://doi.org/10.1148/ryai.240300},
+  note      = {DOI: 10.1148/ryai.240300. Perception and imaging-model reporting for surgical vision and guidance. \url{https://doi.org/10.1148/ryai.240300}.}
+}
+
+% ---------------- Clinical-trial regulatory framework and ICH ----------------
+
+@misc{cfr-part312,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {21 CFR Part 312: Investigational New Drug Application},
+  year      = {2026},
+  publisher = {eCFR},
+  url       = {https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312},
+  note      = {The legal vehicle under which an oncology trial and its VVUQ gate operate. \url{https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312}.}
+}
+
+@misc{cfr-part50,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {21 CFR Part 50: Protection of Human Subjects, Informed Consent},
+  year      = {2026},
+  publisher = {eCFR},
+  url       = {https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-50},
+  note      = {Patient-protection and disclosure of robot autonomy. \url{https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-50}.}
+}
+
+@misc{cfr-part56,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {21 CFR Part 56: Institutional Review Boards},
+  year      = {2026},
+  publisher = {eCFR},
+  url       = {https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-56},
+  note      = {Independent ethics oversight of the trial. \url{https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-56}.}
+}
+
+@misc{cfr-part11,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {21 CFR Part 11: Electronic Records and Electronic Signatures},
+  year      = {2026},
+  publisher = {eCFR},
+  url       = {https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11},
+  note      = {Record integrity for the gate's logs and generated-code records. \url{https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11}.}
+}
+
+@misc{iche6r3,
+  author    = {{International Council for Harmonisation}},
+  title     = {ICH E6(R3) Good Clinical Practice (GCP)},
+  year      = {2025},
+  publisher = {ICH and FDA},
+  url       = {https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e6r3-good-clinical-practice-gcp},
+  note      = {Adopted Jan. 6, 2025; FDA final guidance Sept. 2025. The risk-based, quality-by-design GCP backbone (with E8(R1) and E9(R1)) a VVUQ gate mirrors. \url{https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e6r3-good-clinical-practice-gcp}.}
+}
+
+@misc{iche8r1,
+  author    = {{International Council for Harmonisation}},
+  title     = {ICH E8(R1): General Considerations for Clinical Studies},
+  year      = {2021},
+  publisher = {ICH and FDA},
+  url       = {https://www.fda.gov/media/157560/download},
+  note      = {Quality by design and critical-to-quality factors that a pre-execution VVUQ gate operationalizes. \url{https://www.fda.gov/media/157560/download}.}
+}
+
+@misc{iche9r1,
+  author    = {{International Council for Harmonisation}},
+  title     = {ICH E9(R1): Statistical Principles for Clinical Trials, Estimands Addendum},
+  year      = {2021},
+  publisher = {Federal Register},
+  url       = {https://www.federalregister.gov/documents/2021/05/12/2021-10066/e9r1-statistical-principles-for-clinical-trials-addendum-estimands-and-sensitivity-analysis-in},
+  note      = {The estimand framework for rigorous definition of the treatment effect and endpoints. \url{https://www.federalregister.gov/documents/2021/05/12/2021-10066/e9r1-statistical-principles-for-clinical-trials-addendum-estimands-and-sensitivity-analysis-in}.}
+}
+
+@misc{fda-dct-2024,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {Conducting Clinical Trials With Decentralized Elements},
+  year      = {2024},
+  publisher = {FDA},
+  url       = {https://www.federalregister.gov/documents/2024/09/18/2024-21078/conducting-clinical-trials-with-decentralized-elements-guidance-for-industry-investigators-and-other},
+  note      = {Final guidance (Sept. 18, 2024); remote and automated trial-conduct safeguards that expect Part 11-compliant systems. \url{https://www.federalregister.gov/documents/2024/09/18/2024-21078/conducting-clinical-trials-with-decentralized-elements-guidance-for-industry-investigators-and-other}.}
+}
+
+@misc{fda-ema-2026,
+  author    = {{U.S. Food and Drug Administration and European Medicines Agency}},
+  title     = {Guiding Principles of Good AI Practice in Drug Development},
+  year      = {2026},
+  publisher = {FDA and EMA},
+  url       = {https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development},
+  note      = {Joint principles (Jan. 14, 2026) across the medicines lifecycle; the most current federal framing for the findings section. \url{https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development}.}
+}
+
+% ---------------- Oncology programs ----------------
+
+@misc{fda-oce,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {Oncology Center of Excellence (OCE)},
+  year      = {2026},
+  publisher = {FDA},
+  url       = {https://www.fda.gov/about-fda/fda-organization/oncology-center-excellence},
+  note      = {The institutional home for an oncology-specific gate; runs Real-Time Oncology Review and, with Project Orbis, concurrent multinational review. \url{https://www.fda.gov/about-fda/fda-organization/oncology-center-excellence}.}
+}
+
+@misc{fda-project-optimus,
+  author    = {{U.S. Food and Drug Administration}},
+  title     = {Project Optimus: Dose Optimization in Oncology Drug Development},
+  year      = {2021},
+  publisher = {FDA},
+  url       = {https://www.fda.gov/about-fda/oncology-center-excellence/project-optimus},
+  note      = {Rigorous pre-specified evidence before locking a treatment parameter; an in-silico dose model itself needs VVUQ. \url{https://www.fda.gov/about-fda/oncology-center-excellence/project-optimus}.}
+}
+
+% ---------------- Autonomous-surgery and digital-twin literature ----------------
+
+@article{yang2017autonomy,
+  author    = {Yang, Guang-Zhong and Cambias, James and Cleary, Kevin and others},
+  title     = {Medical Robotics: Regulatory, Ethical, and Legal Considerations for Increasing Levels of Autonomy},
+  journal   = {Science Robotics},
+  volume    = {2},
+  number    = {15},
+  year      = {2017},
+  doi       = {10.1126/scirobotics.aam8638},
+  url       = {https://doi.org/10.1126/scirobotics.aam8638},
+  note      = {DOI: 10.1126/scirobotics.aam8638. The 0 to 5 autonomy taxonomy scoping which systems trigger the gate and how strictly. \url{https://doi.org/10.1126/scirobotics.aam8638}.}
+}
+
+@article{lee2024lasr,
+  author    = {Lee, Rachel and others},
+  title     = {Levels of Autonomy in FDA-Cleared Surgical Robots: A Systematic Review},
+  journal   = {npj Digital Medicine},
+  volume    = {7},
+  year      = {2024},
+  doi       = {10.1038/s41746-024-01102-y},
+  url       = {https://doi.org/10.1038/s41746-024-01102-y},
+  note      = {DOI: 10.1038/s41746-024-01102-y. Empirical baseline: cleared robots are overwhelmingly Level 1, so a higher-autonomy humanoid trial is genuinely novel. \url{https://doi.org/10.1038/s41746-024-01102-y}.}
+}
+
+@article{kim2025srth,
+  author    = {Kim, Ji Woong and others},
+  title     = {{SRT-H}: A Hierarchical Framework for Autonomous Surgery via Language-Conditioned Imitation Learning},
+  journal   = {Science Robotics},
+  volume    = {10},
+  number    = {104},
+  year      = {2025},
+  doi       = {10.1126/scirobotics.adt5254},
+  url       = {https://doi.org/10.1126/scirobotics.adt5254},
+  note      = {DOI: 10.1126/scirobotics.adt5254. Demonstrated language-conditioned autonomous soft-tissue surgery, the capability the bill anticipates. \url{https://doi.org/10.1126/scirobotics.adt5254}.}
+}
+
+@article{sel2025digitaltwin,
+  author    = {Sel, Kaan and Hawkins-Daarud, Andrea and Chaudhuri, Anirban and others},
+  title     = {Survey and Perspective on Verification, Validation, and Uncertainty Quantification of Digital Twins for Precision Medicine},
+  journal   = {npj Digital Medicine},
+  volume    = {8},
+  number    = {1},
+  year      = {2025},
+  doi       = {10.1038/s41746-025-01447-y},
+  url       = {https://doi.org/10.1038/s41746-025-01447-y},
+  note      = {DOI: 10.1038/s41746-025-01447-y. The academic state of the art tying medical-AI VVUQ to ASME V&V 40 and NASA-STD-7009 thinking. \url{https://doi.org/10.1038/s41746-025-01447-y}.}
+}
+
+% ---------------- Prior-bill and project anchors ----------------
+
+@misc{kawchak2026vvuqbill,
+  author    = {Kawchak, Kevin},
+  title     = {VVUQ Physical AI Oncology Trial Bill},
+  month     = may,
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20454870},
+  url       = {https://doi.org/10.5281/zenodo.20454870},
+  note      = {DOI: 10.5281/zenodo.20454870. The prior bill (H.R. 9510, Draft 1.0) this VVUQ-04 work updates. \url{https://doi.org/10.5281/zenodo.20454870}.}
+}
+
+@misc{repo-cancer-automated,
+  author    = {Kawchak, Kevin},
+  title     = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
+  year      = {2026},
+  publisher = {GitHub and Zenodo},
+  doi       = {10.5281/zenodo.20372501},
+  url       = {https://github.com/kevinkawchak/cancer-automated},
+  note      = {DOI: 10.5281/zenodo.20372501. The source repository (including the VVUQ-01 record) for this work. GitHub: \url{https://github.com/kevinkawchak/cancer-automated}. Zenodo: \url{https://doi.org/10.5281/zenodo.20372501}.}
+}
+
+@misc{repo-physical-ai,
+  author    = {Kawchak, Kevin},
+  title     = {physical-ai-oncology-trials: National Platform and Standards},
+  year      = {2026},
+  publisher = {GitHub and Zenodo},
+  doi       = {10.5281/zenodo.19244918},
+  url       = {https://github.com/kevinkawchak/physical-ai-oncology-trials},
+  note      = {DOI: 10.5281/zenodo.19244918. The source of the USL and PSL standards and the simulations referenced by the bill. GitHub: \url{https://github.com/kevinkawchak/physical-ai-oncology-trials}. Zenodo: \url{https://doi.org/10.5281/zenodo.19244918}.}
+}
+
+@misc{kawchak2026vvuq01,
+  author    = {Kawchak, Kevin},
+  title     = {VVUQ-01: LLM Verification Automation Priority over Existing Generated Code},
+  year      = {2026},
+  publisher = {GitHub},
+  url       = {https://github.com/kevinkawchak/cancer-automated/tree/main/papers/VVUQ-01/final-paper},
+  note      = {Establishes that an LLM VVUQ gate, held to a higher standard than code generation, is appropriate for verification. \url{https://github.com/kevinkawchak/cancer-automated/tree/main/papers/VVUQ-01/final-paper}.}
+}
+
+@misc{kawchak2026vvuq02,
+  author    = {Kawchak, Kevin},
+  title     = {Mobile Pancreatic Cancer Unitree H2 Surgical Humanoid with Priority VVUQ},
+  month     = may,
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20421754},
+  url       = {https://doi.org/10.5281/zenodo.20421754},
+  note      = {DOI: 10.5281/zenodo.20421754. Practical VVUQ against fourteen external standards and two clinical baselines; the gate evidence the bill cites. \url{https://doi.org/10.5281/zenodo.20421754}.}
+}
