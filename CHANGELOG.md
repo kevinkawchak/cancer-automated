@@ -5,6 +5,48 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-05-31
+
+### Added
+- `papers/VVUQ-04/template-bill/LaTeX/`: a LaTeX template bill that reproduces
+  the look and feel of the official United States Code, Title 21 - Food and Drugs
+  (current through Public Law 119-93), reduced from the source USLM XML
+  (`papers/VVUQ-04/template-bill/xml_usc21@119-93.zip`; 29 chapters, 757
+  sections) to the 11 Federal Food, Drug, and Cosmetic Act device sections
+  relevant to the Physical AI oncology trial context, so a future Claude Code
+  Opus 4.8 (1M context) Max pass can read the laws in place and, with
+  `papers/VVUQ-04/instruct-bill` and `papers/VVUQ-03/final-paper`, draft the
+  amendment to Public Law 119-93, Title 21. No bracketed instructions or file
+  names are inserted into the statutory text. Authored autonomously across
+  sequential commits in a single pull request, one file per commit pushed in real
+  time, then a second-to-last error-fix commit and this final
+  repository-updates commit.
+- `main.tex` (Title 21 head, section analysis, Chapter 9 / subchapter / part
+  structure, eleven `\input` lines, provenance references), `usctitle.sty` (the
+  United States Code style: Times-like serif, hanging-indent (a)(1)(A)(i)(I)
+  hierarchy, cross-headings, small-caps note headings, source credits), and
+  `references.bib` (11 ieeetr entries, bare DOIs, resolver URLs, no
+  `howpublished`, no duplicate links).
+- Eleven section files, one per retained section: `s301` (short title), `s321`
+  (definitions; device definition in (h)), `s331` (prohibited acts), `s351`
+  (adulterated drugs and devices), `s355g` (real world evidence), `s360`
+  (registration; 510(k) in (k)), `s360c` (classification), `s360e` (premarket
+  approval), `s360e-4` (predetermined change control plans), `s360j` (general
+  device provisions; software/CDS exclusion in (o)), and `s360k` (state
+  preemption).
+- `README.md` (DOI badges, per-section contents table, statutory-layering and
+  file-correlation diagrams, exclusion rationale, Overleaf compile recipe),
+  `template-bill-LaTeX.zip` (Overleaf-ready bundle),
+  `prompt-template-bill/LaTeX.md` (the generating prompt, verbatim), and
+  `output-template-bill/LaTeX.md` (the narrative output of this step).
+
+### Changed
+- `README.md` release badge to v2.1.0, a v2.1.0 summary above the prior summary,
+  a VVUQ-04 Template Bill (LaTeX) section with an ASCII process diagram and a
+  table-of-contents entry, and the repository structure tree with a VVUQ-04
+  template-bill/LaTeX block; `releases.md` (v2.1.0); and `CITATION.cff` (version
+  2.1.0).
+
 ## [2.0.0] - 2026-05-31
 
 ### Added

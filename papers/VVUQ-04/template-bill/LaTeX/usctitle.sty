@@ -1,0 +1,171 @@
+% ============================================================
+% usctitle.sty
+% Style file for:
+%   VVUQ-04 template-bill: United States Code, Title 21 (Food and Drugs)
+%   device-provisions excerpt, current through Public Law 119-93.
+%
+% Purpose: reproduce the look and feel of the official United States Code
+% PDF (OLRC, rendered from USLM XML) so the curated Title 21 excerpt reads
+% like the source statute. Black body text, a Times-like serif, bold section
+% catchlines, hanging-indent statutory hierarchy, centered cross-headings for
+% the editorial and statutory notes, and parenthetical source credits.
+%
+% The visual model is the printed and PDF United States Code, not the navy
+% Palatino VVUQ bill family; this excerpt is a faithful statutory reproduction
+% whose section selection is driven by VVUQ-03/final-paper and
+% VVUQ-04/instruct-bill (the device-regulation backbone of the FD&C Act).
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{usctitle}[2026/05/31 v2.1.0 US Code Title 21 reproduction style]
+
+% --- Times-like serif body to match the printed United States Code. -------
+% newtx is standard on Overleaf and TeX Live full. If a minimal installation
+% lacks it, substitute \usepackage{mathptmx} for an equivalent Times body.
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
+
+% --- Page geometry: letter paper, statute-style measure. ------------------
+\RequirePackage[letterpaper,top=1.0in,bottom=1.0in,left=1.1in,right=1.1in,%
+  headheight=15pt,headsep=18pt,footskip=24pt]{geometry}
+
+% --- Black body text, faithful to the United States Code (no accent). -----
+\RequirePackage{xcolor}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+\RequirePackage{microtype}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{ragged2e}
+\RequirePackage{needspace}
+
+% --- Hyperref for PDF bookmarks; links kept black to match the print. -----
+\RequirePackage[hidelinks,pdfusetitle]{hyperref}
+
+% --- Even justification with no right-margin overflow. --------------------
+\tolerance=1400
+\emergencystretch=3em
+\hbadness=3000
+\hyphenpenalty=50
+\exhyphenpenalty=50
+\sloppy
+
+% --- Paragraph defaults: small inter-clause gap, no first-line indent. ----
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.2pt plus 1pt minus 0.5pt}
+
+% --- Running header: page | TITLE 21---FOOD AND DRUGS | current section. --
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\footnotesize\thepage}
+\fancyhead[C]{\footnotesize\scshape Title 21---Food and Drugs}
+\fancyhead[R]{\footnotesize\rightmark}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\thepage}}
+
+% --- Indentation unit for the statutory hierarchy. ------------------------
+\newlength{\uscunit}\setlength{\uscunit}{1.7em}
+
+% ==========================================================================
+% Structural headings (set in main.tex around the section \input lines):
+%   \usctitlehead, \uscchapterhead, \uscsubchapterhead, \uscparthead.
+% These mirror the centered, capitalized headings of the United States Code.
+% ==========================================================================
+\newcommand{\usctitlehead}[2]{%
+  \begin{center}
+  {\Large\bfseries #1}\\[0.25em]
+  {\Large\bfseries #2}
+  \end{center}}
+
+\newcommand{\uscchapterhead}[2]{%
+  \par\addvspace{1.4\baselineskip}%
+  \needspace{4\baselineskip}%
+  \phantomsection\addcontentsline{toc}{section}{#1 #2}%
+  \begin{center}{\large\bfseries #1\\[0.15em]#2}\end{center}%
+  \par\addvspace{0.5\baselineskip}}
+
+\newcommand{\uscsubchapterhead}[1]{%
+  \par\addvspace{1.1\baselineskip}%
+  \needspace{3\baselineskip}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}%
+  \begin{center}{\bfseries #1}\end{center}%
+  \par\addvspace{0.35\baselineskip}}
+
+\newcommand{\uscparthead}[1]{%
+  \par\addvspace{0.8\baselineskip}%
+  \needspace{3\baselineskip}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}%
+  \begin{center}{\bfseries\scshape #1}\end{center}%
+  \par\addvspace{0.3\baselineskip}}
+
+% ==========================================================================
+% Section catchline: "§ 360e-4. Predetermined change control plans ...".
+% Bold, slightly larger, bookmarked, and recorded in the running header.
+% ==========================================================================
+\newcommand{\uscsection}[2]{%
+  \par\addvspace{1.15\baselineskip}%
+  \needspace{4\baselineskip}%
+  \phantomsection
+  \addcontentsline{toc}{subsubsection}{#1 #2}%
+  \markright{#1 #2}%
+  {\setlength{\parindent}{0pt}\bfseries\large #1\hskip 0.45em #2\par}%
+  \nopagebreak\par\addvspace{0.35\baselineskip}}
+
+% ==========================================================================
+% Statutory provision with a hanging indent at depth #1 (0 = flush body).
+% The bold marker hangs one unit to the left; wrapped lines align under the
+% body, the standard United States Code (a)(1)(A)(i)(I) layout.
+% ==========================================================================
+\newcommand{\uscprov}[2]{%
+  \par
+  \begingroup
+  \ifnum#1>0
+    \setlength{\leftskip}{\dimexpr#1\uscunit\relax}%
+    \setlength{\parindent}{-\uscunit}%
+  \else
+    \setlength{\leftskip}{0pt}%
+    \setlength{\parindent}{1.0em}%
+  \fi
+  #2\par
+  \endgroup}
+
+% --- Quoted statutory or amendment text, indented and set off. ------------
+\newcommand{\uscquote}[2]{%
+  \par
+  \begingroup
+  \setlength{\leftskip}{\dimexpr#1\uscunit + \uscunit\relax}%
+  \setlength{\rightskip}{0.5\uscunit}%
+  \setlength{\parindent}{0.8em}%
+  \small #2\par
+  \endgroup}
+
+% --- Source credit: parenthetical Public Law lineage at the left margin. --
+\newcommand{\uscsource}[1]{%
+  \par\addvspace{0.25\baselineskip}%
+  {\setlength{\parindent}{0pt}\small #1\par}%
+  \addvspace{0.2\baselineskip}}
+
+% --- Cross-heading: centered bold (Editorial Notes; Statutory Notes ...). --
+\newcommand{\usccrosshead}[1]{%
+  \par\addvspace{0.7\baselineskip}%
+  \needspace{2.5\baselineskip}%
+  \begin{center}{\bfseries #1}\end{center}%
+  \par\addvspace{0.2\baselineskip}}
+
+% --- Note heading: centered small caps (Amendments; Effective Date; ...). -
+\newcommand{\uscnotehead}[1]{%
+  \par\addvspace{0.45\baselineskip}%
+  \needspace{2\baselineskip}%
+  \begin{center}{\scshape #1}\end{center}%
+  \par\addvspace{0.1\baselineskip}}
+
+% --- Note paragraph: flush body text within a note. -----------------------
+\newcommand{\uscnotepar}[1]{%
+  \par{\setlength{\parindent}{1.0em}#1\par}}
+
+\endinput

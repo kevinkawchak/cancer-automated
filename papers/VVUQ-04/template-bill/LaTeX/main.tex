@@ -1,0 +1,153 @@
+% ============================================================
+% main.tex
+% VVUQ-04 template-bill (LaTeX)
+%   United States Code, Title 21 -- Food and Drugs
+%   Federal Food, Drug, and Cosmetic Act device-provisions excerpt,
+%   current through Public Law 119-93.
+%
+% This is a faithful reproduction of the look and feel of the official
+% United States Code (OLRC, rendered from USLM XML at
+% papers/VVUQ-04/template-bill/xml_usc21@119-93.zip). It is a TEMPLATE BILL:
+% the irrelevant chapters and sections of Title 21 have been removed and only
+% the sections relevant to the Physical AI oncology trial context are retained,
+% so a future AI pass can read the laws currently in place and draft the
+% required amendment to Public Law 119-93, Title 21. The section selection is
+% driven by papers/VVUQ-04/instruct-bill and papers/VVUQ-03/final-paper; no
+% bracketed instructions or file names are inserted into the statutory text.
+%
+% Each retained section lives in its own sections/ file and is wired in below
+% under its Federal Food, Drug, and Cosmetic Act subchapter and part.
+%
+% Compile recipe (Overleaf, pdfLaTeX):
+%   pdflatex main.tex
+%   bibtex   main
+%   pdflatex main.tex
+%   pdflatex main.tex
+%
+% Formatting fidelity directives (every section file obeys these):
+%   1. Black body text, Times-like serif (newtxtext), justified, no images.
+%   2. Bold section catchlines; centered cross-headings; small-caps note
+%      headings; parenthetical source credits; hanging-indent hierarchy.
+%   3. The section symbol "§" is used for every codified reference.
+%   4. The em dash and en dash of the source are reproduced as the printed
+%      United States Code prints them (Title 21---FOOD AND DRUGS; § 360e--4).
+%   5. Titles, references, and headings keep their exact source formatting.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{usctitle}
+
+\title{United States Code, Title 21 -- Food and Drugs (Device-Provisions Excerpt, through Pub. L. 119-93)}
+\author{Office of the Law Revision Counsel (source); curated excerpt for VVUQ-04}
+\date{Current through Public Law 119-93}
+
+\begin{document}
+
+% ============================================================
+% FRONT MATTER (the Title 21 head, current-through note, scope note,
+% disclaimer, and the section analysis of the retained provisions).
+% ============================================================
+\thispagestyle{plain}
+\pagenumbering{roman}
+
+\usctitlehead{TITLE 21---FOOD AND DRUGS}{(Device-Provisions Excerpt)}
+
+\begin{center}
+\small Current through Public Law 119-93.\\
+Source: Office of the Law Revision Counsel, United States Code (USLM XML).
+\end{center}
+
+\vspace{0.4em}
+\noindent\rule{\textwidth}{0.4pt}
+
+\uscnotepar{This document is a curated excerpt of Title 21 of the United States
+Code. The chapters and sections that are not relevant to the Physical AI
+oncology clinical-trial context have been removed; the retained sections are the
+device-regulation backbone of the Federal Food, Drug, and Cosmetic Act on which
+the \emph{VVUQ Physical AI Oncology Trial Bill} (H.R. 9510, Draft 1.0; prior bill
+DOI 10.5281/zenodo.20454870) builds. The selection follows the legal crosswalk in
+papers/VVUQ-04/instruct-bill and the statutory crosswalk in
+papers/VVUQ-03/final-paper. The statutory text, headings, references, and source
+credits are reproduced as they appear in the official United States Code; no
+bracketed instructions or file names are inserted into the law. The purpose is to
+let a future AI pass read the laws currently in place and, together with the
+instruct-bill and the final paper, draft the required amendment to Public Law
+119-93, Title 21.}
+
+\uscnotepar{This excerpt is an independent research aid, not legal advice and not
+an enacted law, and is not endorsed by the FDA, HHS, the Office of the Law
+Revision Counsel, or any member of Congress. The authoritative text is the
+United States Code as published by the Office of the Law Revision Counsel.}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+% --- Section analysis of the retained provisions (United States Code style). ---
+\usccrosshead{Sections Retained in This Excerpt}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{9.6cm}@{}}
+\multicolumn{2}{@{}l}{\textbf{Chapter 9---Federal Food, Drug, and Cosmetic Act}}\\[0.3em]
+\multicolumn{2}{@{}l}{\itshape Subchapter I---Short Title}\\
+\quad § 301 & Short title.\\[0.2em]
+\multicolumn{2}{@{}l}{\itshape Subchapter II---Definitions}\\
+\quad § 321 & Definitions; generally.\\[0.2em]
+\multicolumn{2}{@{}l}{\itshape Subchapter III---Prohibited Acts and Penalties}\\
+\quad § 331 & Prohibited acts.\\[0.2em]
+\multicolumn{2}{@{}l}{\itshape Subchapter V---Drugs and Devices, Part A---Drugs and Devices}\\
+\quad § 351 & Adulterated drugs and devices.\\
+\quad § 355g & Utilizing real world evidence.\\
+\quad § 360 & Registration of producers of drugs or devices.\\
+\quad § 360c & Classification of devices intended for human use.\\
+\quad § 360e & Premarket approval.\\
+\quad § 360e--4 & Predetermined change control plans for devices.\\
+\quad § 360j & General provisions respecting control of devices intended for human use.\\
+\quad § 360k & State and local requirements respecting devices.\\
+\end{longtable}
+}
+
+\clearpage
+\pagenumbering{arabic}
+
+% ============================================================
+% CHAPTER 9 -- FEDERAL FOOD, DRUG, AND COSMETIC ACT
+% Retained device-regulation provisions, one \input per section file.
+% ============================================================
+\uscchapterhead{CHAPTER 9}{FEDERAL FOOD, DRUG, AND COSMETIC ACT}
+
+\uscsubchapterhead{SUBCHAPTER I---SHORT TITLE}
+\input{sections/s301}
+
+\uscsubchapterhead{SUBCHAPTER II---DEFINITIONS}
+\input{sections/s321}
+
+\uscsubchapterhead{SUBCHAPTER III---PROHIBITED ACTS AND PENALTIES}
+\input{sections/s331}
+
+\uscsubchapterhead{SUBCHAPTER V---DRUGS AND DEVICES}
+\uscparthead{Part A---Drugs and Devices}
+\input{sections/s351}
+\input{sections/s355g}
+\input{sections/s360}
+\input{sections/s360c}
+\input{sections/s360e}
+\input{sections/s360e-4}
+\input{sections/s360j}
+\input{sections/s360k}
+
+% ============================================================
+% PROVENANCE AND RELATED MATERIALS
+% The reproduced statute is in the public domain; these references record the
+% authoritative source and the VVUQ research lineage that selected the sections.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Provenance and Related Materials}
+\usccrosshead{Provenance and Related Materials}
+\begingroup
+\RaggedRight
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+
+\end{document}
