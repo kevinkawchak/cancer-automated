@@ -4,6 +4,40 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-04 Template Bill: United States Code Title 21 Device-Provisions Excerpt in LaTeX (v2.1.0)
+v2.1.0 - VVUQ-04 Template Bill: United States Code Title 21 Device-Provisions Excerpt (LaTeX)
+
+## Summary
+
+- Adds papers/VVUQ-04/template-bill/LaTeX, a LaTeX template bill that reproduces the look and feel of the official United States Code, Title 21 - Food and Drugs (current through Public Law 119-93), authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- Reduces the source Title 21 (the OLRC USLM XML in papers/VVUQ-04/template-bill/xml_usc21@119-93.zip; 29 chapters, 757 sections) to the 11 Federal Food, Drug, and Cosmetic Act device sections relevant to the Physical AI oncology trial context, so a future pass can read the laws in place and, with the instruct-bill and the final paper, draft the amendment to Public Law 119-93, Title 21. No bracketed instructions or file names are inserted into the statutory text.
+- Retains, each in its own .tex file: § 301 (short title), § 321 (definitions; the device definition in (h)), § 331 (prohibited acts), § 351 (adulterated drugs and devices), § 355g (utilizing real world evidence), § 360 (registration; the 510(k) pathway in (k)), § 360c (classification of devices), § 360e (premarket approval), § 360e-4 (predetermined change control plans, the keystone for an automated verification-before-change rule), § 360j (general device provisions; the software and CDS exclusion in (o)), and § 360k (state and local requirements). The selection follows VVUQ-04/instruct-bill (files 01, 02, 10) and the prior-bill crosswalk in VVUQ-03/final-paper.
+- Reproduces the United States Code look and feel rather than the navy Palatino VVUQ bill family: black Times-like serif body, bold section catchlines, the hanging-indent (a)(1)(A)(i)(I) statutory hierarchy, centered cross-headings (Editorial Notes; Statutory Notes and Related Subsidiaries), small-caps note headings (Amendments; Effective Date; Prior Provisions), and parenthetical source credits, all defined in usctitle.sty and driven from one main.tex.
+- Keeps titles, references, and headings in their exact source formatting, uses the section symbol § for every codified reference, and reproduces the em dash and en dash of the Code as the printed Code prints them (Title 21---FOOD AND DRUGS; § 360e--4); editorial footnotes are kept as superscript markers with the note text inline so headings and the table of contents never break.
+- Keeps the pull request green: the additions are LaTeX, BibTeX, Markdown, and a zip, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v2.1.0, a v2.1.0 summary above the prior summary, a VVUQ-04 Template Bill (LaTeX) section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-04 template-bill/LaTeX block), this releases file, the CHANGELOG (v2.1.0), and CITATION.cff (version 2.1.0).
+
+## Features
+
+- papers/VVUQ-04/template-bill/LaTeX/main.tex: the Title 21 head and current-through note, a section analysis of the retained provisions, the Chapter 9 / subchapter / part headings, eleven \input lines in United States Code order, and the provenance references; no images.
+- papers/VVUQ-04/template-bill/LaTeX/usctitle.sty: the United States Code style file (Times-like serif via newtxtext, letter geometry, a running header, and the \uscsection, \uscprov, \uscquote, \usccrosshead, \uscnotehead, \uscnotepar, \uscsource, and structural heading commands).
+- papers/VVUQ-04/template-bill/LaTeX/references.bib: eleven ieeetr entries recording the authoritative source (OLRC Title 21 USLM XML), the publication point (Public Law 119-93), the codified anchors (FD&C Act, 21 U.S.C. 360e-4, FDORA, 21st Century Cures Act), and the VVUQ lineage, with bare DOIs, resolver URLs, notes with clickable links, no howpublished field, and no duplicate links.
+- papers/VVUQ-04/template-bill/LaTeX/sections: s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, and s360k, each one Title 21 section reproduced faithfully with its subsections, source credit, and editorial and statutory notes.
+- papers/VVUQ-04/template-bill/LaTeX/README.md: DOI badges, the repository structure, a per-section contents table, the statutory-layering ASCII diagram, the file-to-main.tex correlation diagram and table, the exclusion rationale (1 of 29 chapters, 11 of 757 sections), the Overleaf compile recipe, and how the next pass should draft the amendment.
+- papers/VVUQ-04/template-bill/LaTeX/template-bill-LaTeX.zip: the Overleaf-ready bundle; prompt-template-bill/LaTeX.md and output-template-bill/LaTeX.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials, which is read only as a sibling source. The reproduced statutory text is a work of the United States Government and is in the public domain; the authoritative version is the United States Code as published by the Office of the Law Revision Counsel. This curated excerpt is an independent research aid, not legal advice and not an enacted law, and is not endorsed by the FDA, HHS, the OLRC, or any member of Congress. pdflatex was not available in the container and the bundle is compiled in Overleaf, so the LaTeX was validated structurally and made compile-safe: all eleven \input targets resolve, braces and environments balance across main.tex, usctitle.sty, and every section file, every \usc command used is defined, no blank line falls inside any macro argument, the only non-ASCII character in compiled text is the intended section symbol with em and en dashes rendered as ligatures, and references.bib has no duplicate keys or links; the rendered PDF and final page balancing are left to Overleaf. The section selection reflects the Physical AI oncology trial context and is intended to advance patient safety, efficacy, and clinical-trial speed; it is not a statement that the omitted provisions are unimportant generally.
+
+---
+
 VVUQ-04 Instruct Bill: U.S. Medical AI Law Summaries (v2.0.0)
 v2.0.0 - VVUQ-04 Instruct Bill: U.S. Medical AI Law Summaries
 
