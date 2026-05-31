@@ -4,6 +4,39 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-04 Instruct Bill: U.S. Medical AI Law Summaries (v2.0.0)
+v2.0.0 - VVUQ-04 Instruct Bill: U.S. Medical AI Law Summaries
+
+## Summary
+
+- Adds papers/VVUQ-04/instruct-bill, a structured set of U.S. medical AI bill and law summaries current through May 31, 2026, authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix commit and a final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- Gives the next bill pass a head start: it will read these files plus papers/VVUQ-03/final-paper and draft a more current and relevant version of the VVUQ Physical AI Oncology Trial Bill (H.R. 9510), which is then converted to XML in a later step.
+- Ten markdown files each cover one legal domain: 01 federal statutory framework; 02 FDA AI and ML device regulation; 03 ONC and ASTP algorithm transparency; 04 CMS coverage and payment; 05 privacy, security, and nondiscrimination; 06 state medical AI laws; 07 executive actions and national AI strategy; 08 emerging federal bills as research influences; 09 VVUQ standards and clinical-trial and oncology law; and 10 a legal crosswalk, research matrix, and bill-style template.
+- Separates operative law (mass-adopted statutes, in-force rules, and recognized standards) from emerging research influences (119th Congress bills and executive actions), so the next pass keeps the bills out of operative text and uses them only in a memo, appendix, testimony, or research matrix.
+- Five BibTeX bibliographies carry 145 entries with bare DOIs, resolver or canonical URLs, and a note with the clickable link; there is no howpublished field and no duplicate links across the set, so a later merge with the prior final paper produces no duplicate references.
+- Corrects citations and symbols: antidiscrimination provisions are in Title 42 or Title 29 (never Title 26), the 510(k) pathway is 21 U.S.C. 360(k), the machine-learning credibility standard is ASME VVUQ 70 (there is no ASME V&V 90), and the section symbol § is used throughout with single hyphens only.
+- Keeps the pull request green: the additions are Markdown and BibTeX, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v2.0.0, a v2.0.0 summary above the prior summary, a VVUQ-04 Instruct Bill section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-04 instruct-bill block), this releases file, the CHANGELOG (v2.0.0), and CITATION.cff (version 2.0.0).
+
+## Features
+
+- papers/VVUQ-04/instruct-bill 01 to 10: ten domain summaries using only machine-readable text, tables, ASCII diagrams, numbered lists, and bullet points (no images), each with a role-in-the-bill mapping to goals a through d, a crosswalk to the prior-bill provisions, and a correlations section linking it to the other files.
+- papers/VVUQ-04/instruct-bill federal-statutes.bib (20), federal-regulations-guidance.bib (36), state-laws.bib (20), executive-actions-and-emerging-bills.bib (25), and standards-and-literature.bib (44): the cited sources in BibTeX, grouped by domain, with DOIs and URLs.
+- papers/VVUQ-04/instruct-bill/README.md: DOI badges, the repository structure, a per-file detail table, the file-to-file and file-to-bibliography correlation diagrams, the processing order for the next pass, and the formatting and citation conventions.
+- papers/VVUQ-04/instruct-bill/prompt-instruct-bill.md and output-instruct-bill.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+This release edits only kevinkawchak/cancer-automated; no other repository is touched, and in particular nothing is committed to kevinkawchak/physical-ai-oncology-trials, which is read only as a sibling source. The summaries are an independent research aid, not legal advice and not an enacted law, and are not endorsed by the FDA, CMS, HHS, ONC/ASTP, OCR, any standards body, or any member of Congress. Proposed rules and draft guidances are labeled as direction, not operative authority, and emerging 119th Congress bills are labeled as research influences excluded from operative text. Data is current through May 31, 2026 against official sources (govinfo.gov, the Federal Register, eCFR.gov, FDA.gov, CMS.gov, HHS.gov OCR, congress.gov, state legislature sites, and the NCSL database) and consensus-standard publishers.
+
+---
+
 VVUQ-03 Full Paper: VVUQ Physical AI Oncology Trial Bill, H.R. 9510 (v1.4.0)
 v1.4.0 - VVUQ-03 Full Paper: VVUQ Physical AI Oncology Trial Bill (H.R. 9510)
 

@@ -5,6 +5,46 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-05-31
+
+### Added
+- `papers/VVUQ-04/instruct-bill/`: structured U.S. medical AI bill and law
+  summaries (current through May 31, 2026) that bring the *VVUQ Physical AI
+  Oncology Trial Bill* (H.R. 9510, Draft 1.0) up to date for a future Claude Code
+  Opus 4.8 (1M context) Max pass that will read these files plus
+  `papers/VVUQ-03/final-paper` and draft a new bill version (later converted to
+  XML). Authored autonomously across sequential commits in a single pull request,
+  one file per commit pushed to GitHub in real time, then a second-to-last
+  error-fix commit and this final repository-updates commit.
+- Ten instruction markdown files (01 to 10): federal statutory framework; FDA AI
+  and ML device regulation; ONC and ASTP algorithm transparency; CMS coverage and
+  payment; privacy, security, and nondiscrimination; state medical AI laws;
+  executive actions and national AI strategy; emerging federal bills (research
+  influences only); VVUQ standards with clinical-trial and oncology law; and a
+  legal crosswalk, research matrix, and bill-style template.
+- Five BibTeX bibliographies (145 entries total): federal-statutes.bib (20),
+  federal-regulations-guidance.bib (36), state-laws.bib (20),
+  executive-actions-and-emerging-bills.bib (25), and standards-and-literature.bib
+  (44), each with bare DOIs, resolver or canonical URLs, and a note with the
+  clickable link; no `howpublished` field and no duplicate links across the set.
+- `README.md` (DOI badges, repository structure, file-to-file and
+  file-to-bibliography correlation diagrams), `prompt-instruct-bill.md` (the
+  generating prompt, verbatim), and `output-instruct-bill.md` (the narrative
+  output of this step).
+- Verified developments through May 31, 2026 including the FDA PCCP final
+  guidance and QMSR, the ONC HTI-1 and HTI-5 rules, the CMS Medicare Advantage AI
+  rule and WISeR model, Section 1557 § 92.210, the 2024 to 2026 state AI laws, EO
+  14179 and the AI Action Plan, the 119th Congress bills, and the ASME, IEC, ISO,
+  IEEE, and ICH standards, with antidiscrimination citations corrected to Title 42
+  and Title 29 and the section symbol § used throughout.
+
+### Changed
+- Top-level `README.md`: release badge to v2.0.0, a v2.0.0 summary above the prior
+  summary, a VVUQ-04 Instruct Bill section with an ASCII process diagram and a
+  table-of-contents entry, and the repository structure tree with a VVUQ-04
+  instruct-bill block.
+- `releases.md` (v2.0.0 notes) and `CITATION.cff` (version 2.0.0).
+
 ## [1.4.0] - 2026-05-30
 
 ### Added

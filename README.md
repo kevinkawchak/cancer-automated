@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v1.4.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v2.0.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**5/31: v2.0.0 (VVUQ-04 Instruct Bill)** Adds [papers/VVUQ-04/instruct-bill](papers/VVUQ-04/instruct-bill): structured U.S. medical AI bill and law summaries current through May 31, 2026 that make the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510) more current, better grounded, and XML-ready. Ten markdown files cover federal statutes, FDA device regulation, ONC algorithm transparency, CMS payment, privacy and nondiscrimination, state law, executive actions, emerging bills, VVUQ standards, and a legal crosswalk; five BibTeX bibliographies carry 145 entries with DOIs and URLs and no duplicate links; a README maps every file and bibliography correlation for the next Claude Code Opus 4.8 (1M) Max bill pass.
 
 **5/30 [Final PDF](https://doi.org/10.5281/zenodo.20454870): v1.4.0 (VVUQ-03 Final Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). Every bracketed instruction becomes finished legislative prose with left-aligned, body-width tables (21 in all); the four main points, the USL and PSL synergy, and the fourteen external standards.
 
@@ -67,6 +69,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-02 Full Paper](#vvuq-02-full-paper)
 - [VVUQ-03 Draft Paper](#vvuq-03-draft-paper)
 - [VVUQ-03 Full Paper](#vvuq-03-full-paper)
+- [VVUQ-04 Instruct Bill](#vvuq-04-instruct-bill)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -377,7 +380,7 @@ cancer-automated/
         │   ├── prompt-full-paper.md    # the generating prompt, verbatim
         │   └── output-full-paper.md    # the narrative output of the full-paper step
         └── final-paper/            # placeholder (future submission-ready manuscript)
-    └── VVUQ-03/                     # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
+    ├── VVUQ-03/                     # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
         ├── template-paper/         # 21 CFR Part 312 adaptation chunks + .sty + .bib (source model)
         ├── draft-paper/            # v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
         │   ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
@@ -397,6 +400,26 @@ cancer-automated/
             ├── full-paper.zip      # Overleaf-ready LaTeX bundle
             ├── prompt-full-paper.md    # the generating prompt, verbatim
             └── output-full-paper.md    # the narrative output of the full-paper step
+    └── VVUQ-04/                     # ★ v2.0.0 instruct bill (U.S. medical AI law summaries)
+        └── instruct-bill/          # head start for the next bill draft (10 md + 5 bib + README)
+            ├── README.md           # DOI badges, repo structure, file and bib correlations
+            ├── 01-federal-statutory-framework.md        # Title 21, 42, 29, 15 statutes
+            ├── 02-fda-ai-device-regulation.md           # PCCP, lifecycle, QMSR, credibility
+            ├── 03-onc-astp-algorithm-transparency.md    # HTI-1 DSI, source attributes, HTI-5
+            ├── 04-cms-coverage-payment-ai.md            # MA AI rule, WISeR, CPT autonomy
+            ├── 05-privacy-security-nondiscrimination.md # HIPAA, Section 1557 and 92.210, FTC
+            ├── 06-state-medical-ai-laws.md              # CA, CO, UT, TX, IL, MD, NE, NV, NY
+            ├── 07-executive-actions-national-ai-strategy.md # EO 14179, AI Action Plan, OMB
+            ├── 08-emerging-federal-bills.md             # 119th Congress, research influences
+            ├── 09-vvuq-standards-clinical-trial-oncology.md # ASME, IEC, ISO, IEEE, ICH, OCE
+            ├── 10-legal-crosswalk-and-bill-style.md     # research matrix + bill-style template
+            ├── federal-statutes.bib                     # bib 1 (20 entries)
+            ├── federal-regulations-guidance.bib         # bib 2 (36 entries)
+            ├── state-laws.bib                           # bib 3 (20 entries)
+            ├── executive-actions-and-emerging-bills.bib # bib 4 (25 entries)
+            ├── standards-and-literature.bib             # bib 5 (44 entries)
+            ├── prompt-instruct-bill.md                  # the generating prompt, verbatim
+            └── output-instruct-bill.md                  # the narrative output of this step
 ```
 
 ## Established Methods Proven Across Projects
@@ -671,6 +694,19 @@ As of v1.4.0 the full bill is realized under [papers/VVUQ-03/full-paper](papers/
 ```
 
 The additions are LaTeX, Markdown, a `.bib`, a `.sty`, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green. See the [full-paper README](papers/VVUQ-03/full-paper) for the DOI badges, the bill-identity table, the section-to-source map, and the senior-author formatting rules.
+
+## VVUQ-04 Instruct Bill
+
+As of v2.0.0 a new instruction set is staged under [papers/VVUQ-04/instruct-bill](papers/VVUQ-04/instruct-bill): structured U.S. medical AI bill and law summaries, current through May 31, 2026, that give the next Claude Code Opus 4.8 (1M context) Max pass a head start in producing a more current and relevant draft of the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510), which is then converted to XML in a later step. Ten markdown files each cover one legal domain: federal statutes (01); FDA AI device regulation (02); ONC and ASTP algorithm transparency (03); CMS coverage and payment (04); privacy, security, and nondiscrimination (05); state medical AI laws (06); executive actions and national AI strategy (07); emerging federal bills as research influences (08); VVUQ and robotics standards with clinical-trial and oncology law (09); and a legal crosswalk, research matrix, and bill-style template (10). Five BibTeX bibliographies carry 145 entries with DOIs and URLs, no `howpublished` field, and no duplicate links, and a README maps every file-to-file and file-to-bibliography correlation. The emerging bills and executive actions are flagged as research influences for a memo, appendix, testimony, or research matrix, not for operative bill text.
+
+```
+  Ten domain summaries (01 to 09)            Synthesis and reuse
+  federal + state + agency + standards  ==>  10 crosswalk: operative vs memo
+  five .bib (statutes; rules; state;         + structured law format for XML
+  exec and bills; standards)                 + prior bill at VVUQ-03/final-paper
+```
+
+The additions are Markdown and BibTeX, all outside the `ruff` and `yamllint` surface, so the lint-and-format CI job stays green across Python 3.10, 3.11, and 3.12. See the [instruct-bill README](papers/VVUQ-04/instruct-bill) for the DOI badges, the repository structure, the correlation diagrams, and the operative-versus-influence rule.
 
 ## Continuous Integration
 
