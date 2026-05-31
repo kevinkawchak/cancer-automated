@@ -1,6 +1,7 @@
 ## output-2-update-bill
 
 ### Gemini 3.1 Pro
+Author Rating: 8.5
 
 Drafting a bill to amend an existing law requires a specific structural approach known as **amendatory drafting**. When you are updating Public Law 119-93 (Title 21 - Food and Drugs) with new regulations for "physical AI oncology trials," you do not rewrite or reproduce the entire existing law. Instead, your bill acts as a set of instructions on how to alter the current law.
 
