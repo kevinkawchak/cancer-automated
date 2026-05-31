@@ -58,7 +58,7 @@ of VVUQ and is referenced from here.
 | hhs-ai-strategy-2025 | HHS Artificial Intelligence Strategy (OneHHS) | Released Dec. 4, 2025 | Five pillars including governance and risk management and research reproducibility, with an AI Governance Board and an Acting Chief AI Officer. The reproducibility emphasis resonates with VVUQ goals. |
 
 FDA agency AI use (the Elsa tool and the FDA AI Councils) is treated in file 02
-and carried under fda-elsa-2025 and fda-ai-councils-2025 in
+and carried under fda-elsa-2025 in
 federal-regulations-guidance.bib, referenced from here as a signal that FDA itself
 governs agentic AI with built-in human oversight.
 
@@ -105,6 +105,6 @@ The executive orders, the AI Action Plan, the OMB memoranda, CAISI, and the HHS
 strategies are carried in executive-actions-and-emerging-bills.bib under the keys
 in the tables (for example eo-14179, ai-action-plan-2025, omb-m2521,
 hhs-ai-strategy-2025). The NIST frameworks (nist-airmf, nist-genai-profile) live
-in standards-and-literature.bib, and the FDA agency-AI items (fda-elsa-2025,
-fda-ai-councils-2025) live in federal-regulations-guidance.bib, each referenced
-once to avoid duplicate links.
+in standards-and-literature.bib, and the FDA agency-AI item fda-elsa-2025 lives
+in federal-regulations-guidance.bib, each referenced once to avoid duplicate
+links.

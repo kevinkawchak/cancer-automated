@@ -35,7 +35,6 @@ for robot-patient interaction code.
 | fda-aidsf-lifecycle-2025 | AI-Enabled Device Software Functions: Lifecycle Management and Marketing Submission Recommendations | Draft guidance | FR Doc. 2024-31543 | Draft, FR availability Jan. 7, 2025; comments closed Apr. 7, 2025 | Total Product Life Cycle approach to design, validation, transparency, and bias, including evidence that the device performs across demographic groups. Supports validate-across-the-use-population and continuous monitoring. |
 | fda-gmlp-2021 | Good Machine Learning Practice for Medical Device Development: Guiding Principles | Joint principles (FDA, Health Canada, MHRA) | 10 principles | Oct. 27, 2021 | Principles 2, 4, 7, 8, 10 cover software engineering, train/test independence, human-AI team performance, clinically relevant testing, and deployed-model monitoring. The V&V and human-team backbone of the gate. |
 | fda-transparency-2024 | Transparency for Machine Learning-Enabled Medical Devices: Guiding Principles | Joint principles | 6 principles | June 2024 | Lifecycle transparency on who, what, where, when, why, and how, communicated to users. Supports disclosing uncertainty and credibility evidence to surgeons and patients before robot action. |
-| fda-pccp-principles-2023 | Predetermined Change Control Plans for ML-Enabled Devices: Guiding Principles | Joint principles | - | Oct. 2023 | Foundation for the PCCP final guidance: pre-specified, validated, controlled change management. |
 
 ## B. Computational model credibility, the strongest VVUQ precedent
 
@@ -63,8 +62,6 @@ motion on a patient is unambiguously a device, so a VVUQ mandate applies squarel
 |:--|:--|:--|:--|:--|
 | cfr-part860 | 21 CFR Part 860 | Classification procedures, including De Novo (Subpart D) | Current | Pathway for a novel low-to-moderate-risk component with no predicate; the natural place to write a VVUQ special control. |
 | cfr-part814 | 21 CFR Part 814 | Premarket Approval (PMA) | Current | The Class III pathway most apt for a high-risk autonomous surgical humanoid; where a pre-execution VVUQ requirement would attach. |
-| cfr-device-panels | 21 CFR Parts 862 to 892 | Device classification panels (e.g., 876, 878, 882) | Current | Surgical-robot product codes live here; device-specific special controls are the location to embed automated VVUQ. |
-| cfr-part807e | 21 CFR Part 807, Subpart E | 510(k) premarket notification | Current | Substantial equivalence; least suited to a novel autonomous humanoid, which supports the case for a bespoke gate. |
 | fr-qmsr-2024 | FR Doc. 2024-01709; 21 CFR Part 820 | Quality Management System Regulation (QMSR), incorporating ISO 13485:2016 | Final Feb. 2, 2024; effective Feb. 2, 2026 | Now mandates design verification, design validation, software validation, and lifecycle risk management. The live quality scaffold a 2026 trial sponsor already meets; the bill can be a special control bolted onto QMSR. |
 
 ## E. Inventory, oncology, and governance venues

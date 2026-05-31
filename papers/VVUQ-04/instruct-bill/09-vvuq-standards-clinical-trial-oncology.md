@@ -100,7 +100,6 @@ and fda-ai-drugs-2025, referenced here as the regulatory bridge to ASME V&V 40.
 |:--|:--|:--|:--|:--|
 | fda-oce | FDA Oncology Center of Excellence | 2017 | The institutional home for an oncology-specific gate. | n/a |
 | fda-project-optimus | Project Optimus, dose optimization | 2021 | Rigorous pre-specified evidence before locking a treatment parameter; an in-silico dose model needs VVUQ. | n/a |
-| fda-project-orbis | Project Orbis, concurrent multinational review | 2019 | International review alignment for an oncology trial. | n/a |
 | yang2017autonomy | Yang et al., levels of autonomy in medical robotics | 2017 | The 0 to 5 autonomy taxonomy scoping which systems trigger the gate and how strictly. | 10.1126/scirobotics.aam8638 |
 | lee2024lasr | Lee et al., levels of autonomy in FDA-cleared surgical robots | 2024 | Empirical baseline: cleared robots are overwhelmingly Level 1, so a higher-autonomy humanoid trial is genuinely novel. | 10.1038/s41746-024-01102-y |
 | kim2025srth | Kim et al., SRT-H hierarchical framework for autonomous surgery | 2025 | The 2025 state of the art: language-conditioned autonomous soft-tissue surgery is demonstrated, the capability the bill anticipates. | 10.1126/scirobotics.adt5254 |
