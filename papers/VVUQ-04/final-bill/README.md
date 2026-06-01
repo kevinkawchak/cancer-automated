@@ -1,4 +1,4 @@
-# VVUQ-04 full-bill (LaTeX) - v2.3.0
+# VVUQ-04 final-bill (LaTeX) - v2.3.0
 
 [![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Statute](https://img.shields.io/badge/Statute-Public%20Domain%20(U.S.%20Code)-lightgrey.svg)](https://uscode.house.gov)
