@@ -9,3 +9,11 @@ output-1-update-bill.md
   
 output-2-update-bill.md
 - Gemini 3.1 Pro
+
+---
+
+prompt-a-update-bill.md
+- The author prompt is based on Public Law 119-93, Title 21 - Food and Drugs.
+  
+output-a-update-bill.md
+- ChatGPT 5.5 Thinking Extended
