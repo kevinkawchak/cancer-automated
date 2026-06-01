@@ -4,6 +4,43 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-04 Draft Bill: Federal Food, Drug, and Cosmetic Act Amendment Scaffold in LaTeX (v2.2.0)
+v2.2.0 - VVUQ-04 Draft Bill: Federal Food, Drug, and Cosmetic Act Amendment Scaffold (LaTeX)
+
+## Summary
+
+- Adds papers/VVUQ-04/draft-bill, a LaTeX draft amendment to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.) that recasts the prior VVUQ Physical AI Oncology Trial Bill (H.R. 9510) as a properly targeted amendment, authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- Follows the amendment-drafting correction: it amends the Federal Food, Drug, and Cosmetic Act and cites each affected provision by its 21 U.S.C. section number, naming Public Law 119-93 only as the currency point, rather than amending Public Law 119-93 or Title 21 generally.
+- Provides an amendment scaffold with bracketed DRAFTING INSTRUCTIONS, not a finished bill: the caption, SECTION 1 short title and table of contents, SEC. 2 findings, SEC. 3 amendment (new section 515D / 21 U.S.C. § 360e-5 for verification before generation, plus conforming, clerical, rule-of-construction, and effective-date changes), and SEC. 4 comparative print each name the exact papers/VVUQ-04/instruct-bill and papers/VVUQ-03/final-paper files a future Claude Code Opus 4.8 (1M context) Max pass must process.
+- Carries the 11 reproduced Title 21 sections forward from the template bill, each keeping its original text and adding a draftbox with exact directories and file names: § 301, § 321 (the device definition in (h)), § 331, § 351, § 355g, § 360 (the 510(k) pathway in (k)), § 360c, § 360e, § 360e-4 (the change-control keystone), § 360j (the software and CDS exclusion in (o)), and § 360k. The new operative duty is a new section 515D inserted after § 360e-4.
+- Keeps the four goals: up to date with today's medical AI law (FDA PCCP guidance, QMSR, 45 CFR § 92.210, CMS Medicare Advantage AI guardrail, CPT autonomy taxonomy); grounded in mass-adopted references; emerging bills used only as research influences in a non-operative appendix, findings, memo, or testimony; and streamlined to the structured amendment format.
+- Applies senior-author formatting throughout: RaggedRight body for even interword spacing and no right-margin overflow, maximal widow and orphan penalties, single hyphens only (no em or double dashes), the § symbol for every codified reference, and left-aligned ragged-right tables.
+- Keeps the pull request green: the additions are LaTeX, BibTeX, Markdown, and a zip, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v2.2.0, a v2.2.0 summary above the prior summary, a VVUQ-04 Draft Bill (LaTeX) section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-04 draft-bill block), this releases file, the CHANGELOG (v2.2.0), and CITATION.cff (version 2.2.0).
+
+## Features
+
+- papers/VVUQ-04/draft-bill/main.tex: the bill caption, A BILL head and enacting clause, SECTION 1 short title and table of contents, SEC. 2 findings, SEC. 3 amendment to the Federal Food, Drug, and Cosmetic Act (new section 515D, conforming amendments, clerical amendment, rule of construction, effective date), SEC. 4 comparative print wiring the 11 section files, an Appendix A research-influence matrix, the authorship and notices block, and the provenance references; no images.
+- papers/VVUQ-04/draft-bill/usctitle.sty: the United States Code reproduction commands plus the congressional amendment apparatus (billcaption, billlongtitle, billintro, billhead, enactingclause, billsec), the comparative-print markers (cprstrike, cprinsert), and the set-off DRAFTING INSTRUCTIONS block (draftbox, dstep, dquote), with formatting hardening centralized (RaggedRight, widow and orphan penalties, ragged-right table column type).
+- papers/VVUQ-04/draft-bill/references.bib: provenance and research sources for the back matter, including the required Office of the Law Revision Counsel download reference (uscode_download), the underlying Act and device anchors, the in-force regulatory anchors, the VVUQ lineage, and three research-influence entries; ieeetr, bare DOIs, unique links, no howpublished.
+- papers/VVUQ-04/draft-bill/sections: s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, and s360k, each reproducing one Title 21 section unchanged and adding a draftbox of bracketed instructions naming the exact instruct-bill and final-paper files, the amendatory action, and the comparative-print markers.
+- papers/VVUQ-04/draft-bill/README.md: DOI badges, the why-an-amendment correction, the four goals, the lineage and statutory-layering and file-correlation ASCII diagrams, the per-section contents table, the Overleaf compile recipe, and the formatting conventions.
+- papers/VVUQ-04/draft-bill/draft-bill-LaTeX.zip: the Overleaf-ready bundle; prompt-draft-bill.md and output-draft-bill.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+- This is a draft amendment scaffold, not an enacted law and not legal advice; it is independent and not endorsed by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress. The reproduced statutory text is in the public domain; the generated framing is released under CC BY 4.0.
+- Built autonomously by Claude Code Opus 4.8 (1M context) Max across sequential commits in a single pull request, pushing each file in real time, with a second-to-last error-fix commit and a final repository-updates commit. Only kevinkawchak/cancer-automated was edited.
+
+---
+
 VVUQ-04 Template Bill: United States Code Title 21 Device-Provisions Excerpt in LaTeX (v2.1.0)
 v2.1.0 - VVUQ-04 Template Bill: United States Code Title 21 Device-Provisions Excerpt (LaTeX)
 
