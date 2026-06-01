@@ -1,0 +1,287 @@
+% ============================================================
+% main.tex
+% VVUQ-04 draft-bill (LaTeX)
+%   A DRAFT AMENDMENT to the Federal Food, Drug, and Cosmetic Act
+%   (21 U.S.C. 301 et seq.), grounded on the Title 21 device provisions
+%   current through Public Law 119-93.
+%
+% WHAT THIS FILE IS. This is an amendment SCAFFOLD with bracketed DRAFTING
+% INSTRUCTIONS, not a finished bill. It lays out the exact congressional
+% amendment structure (caption, A BILL, enacting clause, SECTION 1 short title
+% and table of contents, SEC. 2 findings, SEC. 3 the operative amendment to the
+% Federal Food, Drug, and Cosmetic Act, and SEC. 4 the comparative print of
+% changes in existing law), and under each part it carries a draftbox that
+% tells a future Claude Code Opus 4.8 (1M context) Max pass exactly which files
+% in this repository to process, how to process them, and how to combine them
+% to produce publication-quality statutory text. The bracketed instructions are
+% deleted as each part is drafted.
+%
+% WHY AN AMENDMENT, AND TO WHAT. Per the amendment-drafting instructions, the
+% correct target is NOT "Public Law 119-93, Title 21." Public Law 119-93 is the
+% public law THROUGH WHICH Title 21 is current; it is not itself the law being
+% changed. The substantive device authorities live in the Federal Food, Drug,
+% and Cosmetic Act, codified in Title 21. This bill therefore amends the Federal
+% Food, Drug, and Cosmetic Act and cites each affected provision by its
+% 21 U.S.C. section number, with Public Law 119-93 named only as the currency
+% point of the reproduced existing law.
+%
+% Compile recipe (Overleaf, pdfLaTeX):
+%   pdflatex main.tex
+%   bibtex   main
+%   pdflatex main.tex
+%   pdflatex main.tex
+%
+% Formatting directives (centralized in usctitle.sty, restated for drafters):
+%   1. Body set RaggedRight: even interword spacing, no rivers, no big gaps,
+%      and no text running off the right margin anywhere.
+%   2. Maximal widow and orphan penalties: never strand a single line at the
+%      top or bottom of a page; reword to avoid one- or two-word last lines.
+%   3. Single hyphens only; no en dashes, em dashes, double, or triple dashes.
+%   4. The section symbol § for every codified reference; never "SS".
+%   5. Every table cell set >{\raggedright\arraybackslash}p{...} via \ragcol.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{usctitle}
+
+\title{Verification Before Generation in Physical AI Oncology Trials Act of 2026:
+A Draft Amendment to the Federal Food, Drug, and Cosmetic Act (Draft 2.0)}
+\author{Kevin Kawchak, CEO ChemicalQDevice (drafting framing);
+amendment apparatus prepared for VVUQ-04}
+\date{June 1, 2026 - current through Public Law 119-93}
+
+\begin{document}
+
+% ============================================================
+% BILL CAPTION AND FRONT MATTER
+% ============================================================
+\thispagestyle{plain}
+\pagenumbering{roman}
+
+\billcaption{119TH CONGRESS}{2d Session}{H.\,R. \rule{2.2cm}{0.4pt}}
+
+\billlongtitle{To amend the Federal Food, Drug, and Cosmetic Act to require an
+automated verification, validation, and uncertainty quantification process to
+clear robot-patient interaction code before that code is generated or executed
+in a Physical AI oncology clinical investigation, and for other purposes.}
+
+\billintro{IN THE HOUSE OF REPRESENTATIVES}{June 1, 2026}{%
+Mr./Ms. \rule{3.2cm}{0.4pt} introduced the following bill; which was referred
+to the Committee on Energy and Commerce}
+
+\billhead
+
+\billlongtitle{To amend the Federal Food, Drug, and Cosmetic Act to require an
+automated verification, validation, and uncertainty quantification process to
+clear robot-patient interaction code before that code is generated or executed
+in a Physical AI oncology clinical investigation, and for other purposes.}
+
+\enactingclause
+
+\begin{draftbox}{Bill caption, long title, and referral}
+\dstep{Process papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section D, structured law format) and papers/VVUQ-03/final-paper/main.tex (the prior caption, H.R. 9510, 119th Congress, 2d Session) to finalize this caption.}
+\dstep{Confirm the bill number: the prior draft was H.R. 9510; assign the next House number or retain H.R. 9510 if this is filed as a substitute. Keep "119TH CONGRESS, 2d Session" because the prior bill and the reproduced law (Public Law 119-93) sit in the 119th Congress.}
+\dstep{Confirm the committee of referral is the Committee on Energy and Commerce, the committee of jurisdiction for the Federal Food, Drug, and Cosmetic Act device provisions; cross-check the referral patterns recorded for H.R. 238, H.R. 5045, and H.R. 6361 in papers/VVUQ-04/instruct-bill/08-emerging-federal-bills.md.}
+\dstep{Keep the long title in the "To amend the Federal Food, Drug, and Cosmetic Act to ... and for other purposes." form required by the amendment instructions; do not write "to amend Public Law 119-93" or "to amend Title 21" generally.}
+\dstep{Fill the sponsor name once known; until then leave the rule and the Mr./Ms. placeholder.}
+\end{draftbox}
+
+\clearpage
+\pagenumbering{arabic}
+
+% ============================================================
+% SECTION 1. SHORT TITLE; TABLE OF CONTENTS.
+% ============================================================
+\billsec{SECTION 1.}{SHORT TITLE; TABLE OF CONTENTS.}
+
+\uscprov{1}{\textbf{(a) Short Title.} This Act may be cited as the
+``Verification Before Generation in Physical AI Oncology Trials Act of 2026''.}
+\uscprov{1}{\textbf{(b) Table of Contents.} The table of contents for this Act
+is as follows:}
+
+\begin{draftbox}{Section 1 - short title and table of contents}
+\dstep{Retain the short title "Verification Before Generation in Physical AI Oncology Trials Act of 2026" from papers/VVUQ-03/final-paper/sections/statutory_text.tex so the amendment carries the prior bill's identity; verify the name against papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section D and the drafting-conventions checklist, Section E, item 1: verify every bill and law name).}
+\dstep{Generate the table of contents as a single-column left-aligned list (column preamble \ragcol{0.9\linewidth}) listing: Sec. 1 Short title; table of contents; Sec. 2 Findings; Sec. 3 Amendment to the Federal Food, Drug, and Cosmetic Act; Sec. 4 Comparative print; changes in existing law. Keep entries to one line each; if a heading wraps, reword so no entry leaves a one- or two-word last line.}
+\dstep{Do not number the new FD&C Act section here; the new section number (proposed FD&C Act § 515D, 21 U.S.C. § 360e-5) is established in Sec. 3 and recorded in the clerical amendment to the Act's own table of contents.}
+\end{draftbox}
+
+% ============================================================
+% SECTION 2. FINDINGS.
+% ============================================================
+\billsec{SEC. 2.}{FINDINGS.}
+
+\uscprov{1}{\textbf{(a) Findings.} Congress finds the following:}
+
+\begin{draftbox}{Section 2 - findings (this is where research-influence material belongs)}
+\dstep{Draft 10 to 16 numbered findings as paragraphs (1), (2), (3), ... at hanging-indent depth 2, each one to three sentences, each tied to a recorded authority. Synthesize them from: papers/VVUQ-03/final-paper/sections/problem_statement.tex (the current-law sequencing gap), sections/findings.tex (the evidentiary record), and sections/policy_memo.tex (why now).}
+\dstep{Ground the technical findings in papers/VVUQ-04/instruct-bill/09-vvuq-standards-clinical-trial-oncology.md (ASME V&V 40-2018, NASA-STD-7009A, IEEE 7009-2024, IEC 80601-2-77, ISO 14971, ISO/TS 15066) and in papers/VVUQ-03/final-paper/sections/definitions.tex (verification, validation, uncertainty quantification; verification fraction = 1.0; ACCEPT, BLOCK, ESCALATE).}
+\dstep{Ground the legal-context findings in papers/VVUQ-04/instruct-bill/01-federal-statutory-framework.md, 02-fda-ai-device-regulation.md (PCCP final guidance, QMSR effective Feb. 2, 2026), 04-cms-coverage-payment-ai.md (Medicare Advantage AI guardrail; CPT autonomy taxonomy assistive/augmentative/autonomous), and 05-privacy-security-nondiscrimination.md (45 CFR § 92.210).}
+\dstep{Findings is the ONE operative-document location where research-influence material may appear as legislative findings of fact: cite the mass-adopted state human-in-the-loop pattern from papers/VVUQ-04/instruct-bill/06-state-medical-ai-laws.md (California SB 1120 Physicians Make Decisions Act; Illinois HB 1806 WOPR Act; Texas HB 149; Maryland HB 820) to show that human-over-AI review is already widely adopted. Cite these as findings of existing practice, not as the authority being amended.}
+\dstep{Do NOT place the 119th Congress emerging bills (papers/VVUQ-04/instruct-bill/08-emerging-federal-bills.md: H.R. 238, S. 1399, H.Res. 694, H.R. 6361, H.R. 5045) or the executive actions (07-executive-actions-national-ai-strategy.md: EO 14179, EO 14365, OMB M-25-21) in operative text; per 10-legal-crosswalk-and-bill-style.md (Section B) they belong only in the Research Influence Matrix appendix, a policy memo, testimony, or this findings section if framed strictly as the state of legislative attention.}
+\dstep{Resolve every cited authority to a BibTeX key from references.bib (which mirrors the five instruct-bill .bib files). Use § for every codified reference; single hyphens only; keep each finding from ending in a one- or two-word line.}
+\end{draftbox}
+
+% ============================================================
+% SECTION 3. AMENDMENT TO THE FEDERAL FOOD, DRUG, AND COSMETIC ACT.
+% ============================================================
+\billsec{SEC. 3.}{AMENDMENT TO THE FEDERAL FOOD, DRUG, AND COSMETIC ACT.}
+
+\uscprov{1}{\textbf{(a) In General.} Subchapter V of the Federal Food, Drug, and
+Cosmetic Act (21 U.S.C. 351 et seq.) is amended by inserting after section 515C
+(21 U.S.C. 360e-4) the following new section:}
+
+\begin{draftbox}{Section 3(a) - the new operative section (FD\&C Act § 515D; 21 U.S.C. § 360e-5)}
+\dstep{Draft a new FD&C Act section 515D, to be codified at 21 U.S.C. § 360e-5, titled "Verification before generation of robot-patient interaction code in Physical AI oncology investigations." Place it immediately after section 515C (§ 360e-4, the predetermined change control plan authority) because the new duty is the change-control authority's mandatory, ex ante, automated complement. Render the whole new section as quoted statutory text using \uscquote at the matching depth, in the (a)(1)(A)(i)(I) hierarchy.}
+\dstep{Convert the prior bill's nine operative sections in papers/VVUQ-03/final-paper/sections/statutory_text.tex into the subsections of § 360e-5, preserving substance and defined terms: (a) Requirement (verify before generate; no robot-patient interaction code may be generated or executed in a Physical AI oncology clinical investigation unless an automated VVUQ process bound to one or more named external standards has first cleared for that interaction, and the cleared record has been documented and attested); (b) Order of operations (a record created after generation or execution does not satisfy this section); (c) Gate thresholds (verification fraction = 1.0 as an equality; validation agreement at or above the per-gate threshold; coefficient-of-variation bound; hard catastrophe predicate; the ACCEPT, BLOCK, ESCALATE decision rule); (d) Readiness gates (site-level Physical AI Standard Level pass and robot-level Unification Standard Level minimum by functional type); (e) Documentation and attestation (algorithm documentation and a signed compliance statement filed before generation; hash-chained, tamper-evident audit trail satisfying 21 CFR part 11); (f) Cybersecurity, human oversight, and lifecycle (override and emergency stop; decommissioning); (g) Nondiscrimination (bias minimization and accessibility); (h) Regulations; (i) Definitions; (j) Rule of construction.}
+\dstep{For the gate-threshold table in subsection (c), reproduce the ten-gate schedule in papers/VVUQ-03/final-paper/sections/statutory_text.tex (Table of statute thresholds: agreement, max CV, hard predicate, governing standards) as a longtable whose columns all use \ragcol: \ragcol{1.6cm} for the gate number, \ragcol{4.8cm} for the gate name, \ragcol{1.4cm} for agreement, \ragcol{1.4cm} for max CV, \ragcol{1.2cm} for hard predicate, and \ragcol{3.6cm} for governing standards. Do not let any cell overflow; reword long standard lists onto two lines.}
+\dstep{Anchor each operative duty to in-force authority per papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section B, operative law vs. research influence): the change-control link to § 360e-4 and FDA PCCP final guidance (02-fda-ai-device-regulation.md; .bib keys usc-360e4, fda-pccp-2024); the credibility basis to ASME V&V 40-2018 (09; asmevv40); the record-integrity basis to 21 CFR part 11 and the HIPAA Security Rule (05; cfr-part11, cfr-hipaa-164); the nondiscrimination basis to 45 CFR § 92.210, Title VI, and the ADA (05, 01; cfr-92-210, usc-titlevi, usc-ada); the human-oversight basis to the CMS Medicare Advantage AI guardrail (04; cms-4201-ma).}
+\dstep{Draft subsection (h) Regulations as a deadline duty: "Not later than 365 days after the date of enactment of this Act, the Secretary of Health and Human Services shall issue final regulations to carry out this section," and add an interim-guidance clause if the prior bill's implementation section (papers/VVUQ-03/final-paper/sections/implementation_enforcement.tex) supplies one.}
+\dstep{Draft subsection (i) Definitions for every operative term used: Physical AI system; robot agent; robot-patient interaction code; generative artificial intelligence; AI-enabled device software function; verification; validation; uncertainty quantification; verification fraction; validation agreement; coefficient-of-variation bound; hard catastrophe predicate; Physical AI Standard Level; Unification Standard Level; hash-chained audit trail. Take the wording from papers/VVUQ-03/final-paper/sections/definitions.tex and reconcile it with the device definition in 21 U.S.C. § 321(h) (see sections/s321.tex) and the software/CDS exclusion in 21 U.S.C. § 360j(o) (see sections/s360j.tex).}
+\dstep{Draft subsection (j) Rule of construction so the new section does not displace the investigational-device exemption (§ 360j(g)), the human-subject protections (21 CFR part 50), or the IND framework (21 CFR part 312), and does not itself reclassify any device; cross-reference papers/VVUQ-04/instruct-bill/09-vvuq-standards-clinical-trial-oncology.md.}
+\end{draftbox}
+
+\uscprov{1}{\textbf{(b) Conforming Amendments.} The Federal Food, Drug, and
+Cosmetic Act is amended as set out in the comparative print in section 4 of this
+Act and as summarized in this subsection.}
+
+\begin{draftbox}{Section 3(b) - conforming amendments (one directive per reproduced section file)}
+\dstep{Draft the operative amendatory instructions for each affected existing section. The precise existing text, the strike/insert substance, and the source synthesis for each are carried in the matching file under papers/VVUQ-04/draft-bill/sections/. Read each section file's own draftbox and produce both (i) the operative amendatory language here and (ii) the marked comparative print in section 4.}
+\dstep{sections/s321.tex - amend the device definition in § 321(h) to make explicit that a Physical AI system, and any software function that generates or executes robot-patient interaction code, is a device, and is not removed from that definition by § 360j(o).}
+\dstep{sections/s331.tex - amend the prohibited-acts list in § 331 to add a new prohibited act: the generation or execution of robot-patient interaction code in a Physical AI oncology clinical investigation without a cleared verification-before-generation record, or the failure to file the documentation and attestation required by § 360e-5.}
+\dstep{sections/s351.tex - amend the adulteration standard in § 351 so a Physical AI device software function used without a cleared verification record under § 360e-5 is deemed adulterated, tying to the current good manufacturing practice and Quality Management System Regulation hook in § 351(a)(2)(B) and (h).}
+\dstep{sections/s355g.tex - amend § 355g so the real-world-evidence program expressly reaches device and Physical AI oncology investigations and recognizes VVUQ records as a real-world data source.}
+\dstep{sections/s360.tex - amend § 360 so a change to a Physical AI device cleared under § 360(k) that is consistent with a § 360e-5 verification protocol and an established predetermined change control plan does not require a new premarket notification.}
+\dstep{sections/s360c.tex - amend § 360c to add special-controls and classification considerations for Physical AI device software functions, graduated by the assistive, augmentative, and autonomous taxonomy in 04-cms-coverage-payment-ai.md, and reconcile with substantial equivalence in § 360c(i).}
+\dstep{sections/s360e.tex - amend § 360e so a premarket approval application for a high-risk autonomous Physical AI device must include the verification record and gate evidence required by § 360e-5.}
+\dstep{sections/s360e-4.tex - amend § 360e-4 (the keystone) so a predetermined change control plan for an AI-enabled or Physical AI device software function must include an automated verification-before-change protocol consistent with § 360e-5.}
+\dstep{sections/s360j.tex - amend § 360j(o) to confirm that software which generates or executes robot-patient interaction code, or otherwise controls an autonomous surgical or therapeutic robot, is not within the clinical-decision-support exclusion and remains a device.}
+\dstep{sections/s360k.tex - add a rule-of-construction or savings clause at § 360k so state human-in-the-loop and audit requirements that are not different from or in addition to a federal device requirement are not preempted, preserving the state pattern cited in the findings.}
+\end{draftbox}
+
+\uscprov{1}{\textbf{(c) Clerical Amendment.} The table of contents for the
+Federal Food, Drug, and Cosmetic Act is amended by inserting after the item
+relating to section 515C the following:}
+
+\begin{draftbox}{Section 3(c) - clerical amendment}
+\dstep{Insert into the Act's table of contents, after the item for section 515C, a single quoted item: "Sec. 515D. Verification before generation of robot-patient interaction code in Physical AI oncology investigations." Render it with \uscquote.}
+\dstep{Confirm the section-number convention against sections/s301.tex (the § 301 et seq. anchor and the existing short-title notes) and against sections/s360e-4.tex (the § 515C / § 360e-4 placement), so 515D maps to 21 U.S.C. § 360e-5.}
+\end{draftbox}
+
+\uscprov{1}{\textbf{(d) Rule of Construction.} Nothing in this Act, or the
+amendments made by this Act, shall be construed as described in this subsection.}
+
+\begin{draftbox}{Section 3(d) - rule of construction}
+\dstep{Draft a rule of construction stating that nothing in the Act displaces the investigational-device exemption (§ 360j(g)), the protection of human subjects (21 CFR part 50), the IND framework (21 CFR part 312), the predetermined change control plan authority (§ 360e-4) as it applies outside Physical AI, or any State law preserved under § 360k as amended.}
+\dstep{Source the construction limits from papers/VVUQ-03/final-paper/sections/prior_law.tex (the statutory crosswalk) and papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section E, items 2 to 4: antidiscrimination citations in Title 42 or Title 29 not Title 26; § 360(k) for 510(k) versus § 360k for state preemption; emerging bills marked as influences).}
+\end{draftbox}
+
+\uscprov{1}{\textbf{(e) Effective Date; Implementation Deadline; Transition
+Rule.} The amendments made by this section shall take effect as described in this
+subsection.}
+
+\begin{draftbox}{Section 3(e) - effective date, implementation deadline, transition rule}
+\dstep{Draft an effective date keyed to enactment plus a transition window for trials already enrolling; draft the agency implementation deadline to match subsection (h) of § 360e-5 (final regulations not later than 365 days after enactment); draft a transition rule allowing ongoing Physical AI oncology investigations a stated number of days to come into compliance.}
+\dstep{Take the timing from papers/VVUQ-03/final-paper/sections/conclusions.tex and sections/implementation_enforcement.tex; confirm no conflict with the QMSR effective date (Feb. 2, 2026) recorded in papers/VVUQ-04/instruct-bill/02-fda-ai-device-regulation.md.}
+\end{draftbox}
+
+% ============================================================
+% SECTION 4. COMPARATIVE PRINT; CHANGES IN EXISTING LAW.
+% The reproduced existing-law sections are wired in below in 21 U.S.C. order.
+% Each section file carries the original text and the bracketed instructions for
+% the marked strike/insert changes.
+% ============================================================
+\billsec{SEC. 4.}{COMPARATIVE PRINT; CHANGES IN EXISTING LAW.}
+
+\uscprov{1}{The following comparative print shows the changes proposed to
+existing law by this Act. Matter proposed to be deleted is shown as
+\cprstrike{text to be deleted}; matter proposed to be inserted is shown as
+\cprinsert{text to be inserted}; existing law in which no change is proposed is
+shown as regular text.}
+
+\begin{draftbox}{Section 4 - comparative print convention (applies to every reproduced section below)}
+\dstep{For each reproduced section that follows, render the unchanged statutory text as plain body text, wrap each deletion in \cprstrike{...} and each insertion in \cprinsert{...}, and keep every change consistent with the operative amendatory language drafted in section 3. Use bracket labels, not strikethrough or underline, exactly as the amendment instructions require.}
+\dstep{Process the reproduced sections in this 21 U.S.C. order: s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, s360k. Each is one file under papers/VVUQ-04/draft-bill/sections/ and each carries its own draftbox with the exact change for that section.}
+\end{draftbox}
+
+\usccrosshead{CHANGES IN EXISTING LAW MADE BY THE BILL}
+\begin{center}\small\itshape Federal Food, Drug, and Cosmetic Act
+(reproduced from Title 21, United States Code, current through Public Law
+119-93)\end{center}
+
+\input{sections/s301}
+\input{sections/s321}
+\input{sections/s331}
+\input{sections/s351}
+\input{sections/s355g}
+\input{sections/s360}
+\input{sections/s360c}
+\input{sections/s360e}
+\input{sections/s360e-4}
+\input{sections/s360j}
+\input{sections/s360k}
+
+% ============================================================
+% RESEARCH INFLUENCE MATRIX (NON-OPERATIVE APPENDIX)
+% Emerging bills and executive actions live here, never in the bill text.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A. Research Influence Matrix (Non-Operative)}
+\usccrosshead{APPENDIX A. RESEARCH INFLUENCE MATRIX (NON-OPERATIVE)}
+
+\begin{draftbox}{Appendix A - research influence matrix (kept out of the bill text)}
+\dstep{Build a left-aligned matrix (every column \ragcol; suggested widths \ragcol{3.2cm}, \ragcol{4.6cm}, \ragcol{3.0cm}, \ragcol{3.0cm}) mapping each research-influence authority to the bill artifact it informs and to its placement (memo, appendix, testimony, or research matrix), drawn from papers/VVUQ-04/instruct-bill/08-emerging-federal-bills.md (H.R. 238 Healthy Technology Act; S. 1399 Health Tech Investment Act; H.R. 6361 Ban AI Denials in Medicare Act; H.R. 5045 HEALTH AI Act; H.Res. 694 on the CMS WISeR pilot) and 07-executive-actions-national-ai-strategy.md (EO 14179; EO 14365; OMB M-25-21; HHS AI Strategy).}
+\dstep{State at the top of the matrix that these authorities are research influences only and do not appear in the operative text of this amendment, consistent with papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section B) and the verification cautions in 08-emerging-federal-bills.md (no VALID Act in the 119th Congress; confirm sponsors before use).}
+\dstep{Resolve each entry to a BibTeX key in the executive-actions-and-emerging-bills category of references.bib; do not cite any of these keys from the operative sections 1 through 4.}
+\end{draftbox}
+
+% ============================================================
+% AUTHORSHIP, NOTICES, AND PROVENANCE
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Authorship, Notices, and Provenance}
+\usccrosshead{AUTHORSHIP, NOTICES, AND PROVENANCE}
+
+\uscnotepar{Prepared by CEO Kevin Kawchak
+(\href{https://orcid.org/0009-0007-5457-8667}{https://orcid.org/0009-0007-5457-8667}),
+ChemicalQDevice,
+\href{mailto:kevink@chemicalqdevice.com}{kevink@chemicalqdevice.com}.}
+
+\uscnotepar{Notice: This amendment was adapted from original CFR documents in the
+public domain. The original ICH document is copyrighted and may be used,
+reproduced, incorporated into other works, adapted, modified, translated or
+distributed under a public license. This current work is not endorsed or
+sponsored by CFR, ICH, or FDA.}
+
+\uscnotepar{Disclaimer: This work is independent and is not endorsed, sponsored,
+or approved by any trial sponsor, CRO, site, IRB, regulator, or medical society;
+and was adapted using Claude Code Opus 4.8 (1M context) Max.}
+
+\uscnotepar{DOI: 10.5281/zenodo.xxxxxxxx
+(\href{https://doi.org/10.5281/zenodo.xxxxxxxx}{https://doi.org/10.5281/zenodo.xxxxxxxx}).}
+
+\uscnotepar{San Diego}
+\uscnotepar{June 1, 2026}
+
+\begin{draftbox}{Authorship and provenance block}
+\dstep{Keep this block at the end of the amendment. Replace 10.5281/zenodo.xxxxxxxx with the minted Zenodo DOI for this draft once assigned; mirror the back-matter conventions in papers/VVUQ-03/final-paper/sections/back_matter.tex (CC BY 4.0 framing, 17 U.S.C. § 105 public-domain adaptation note, deterministic-seed data-availability statement).}
+\dstep{Do not add images, mermaid diagrams, or colored figures anywhere in this document.}
+\end{draftbox}
+
+% ============================================================
+% PROVENANCE AND RESEARCH SOURCES (BIBLIOGRAPHY)
+% Real congressional bills carry no bibliography; this research-aid back matter
+% does, so the operative text stays clean while sources remain auditable.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Provenance and Research Sources}
+\usccrosshead{Provenance and Research Sources}
+\begingroup
+\RaggedRight
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+
+\end{document}
