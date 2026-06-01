@@ -4,6 +4,40 @@ Release notes for the cancer-automated repository.
 
 ---
 
+Papers Directory READMEs: Five Comprehensive Landing Pages for the VVUQ-01 to VVUQ-04 Works (v2.3.1)
+v2.3.1 - Papers Directory READMEs: VVUQ-01 to VVUQ-04 Landing Pages
+
+## Summary
+
+- Adds five comprehensive README.md landing pages under papers/: the main papers/README.md plus one for each of papers/VVUQ-01, papers/VVUQ-02, papers/VVUQ-03, and papers/VVUQ-04, authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one README per commit pushed to GitHub in real time, then a second-to-last error-fix commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- The main papers/README.md details the VVUQ verification developments and progress for each of the four VVUQ-xx works, shows the building process from one work to the next with ASCII diagrams, and discusses what the results mean for establishing the new Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods to reach the final VVUQ-04 bill.
+- Each VVUQ-xx/README.md focuses only on its own directory: the verification developments and progress, the building process within the work shown with ASCII diagrams, what the results mean for the Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods to reach that work's end goal.
+- Includes the common components on every page: DOI badges, repository structure, and ASCII diagrams where appropriate. The main papers page carries the final paper or bill DOI for each work in a "Please see Zenodo for author final edits: PDF and LaTeX Source Files" line, and each VVUQ-xx page shows the final paper or bill DOI for all four works in an organized table (VVUQ-01 10.5281/zenodo.20372501, VVUQ-02 10.5281/zenodo.20421754, VVUQ-03 10.5281/zenodo.20454870, VVUQ-04 10.5281/zenodo.20485580).
+- No images, mermaid diagrams, or colored images anywhere; the building process is shown only with ASCII diagrams in fenced code blocks, single hyphens are used throughout, and the section symbol is the only intended non-ASCII character.
+- Keeps the pull request green: the additions and edits are Markdown only, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12 and the previously flagged lint-and-format (3.10), (3.11), and (3.12) checks pass.
+- Updates the main README (release badge to v2.3.1, a v2.3.1 summary above the prior summary, a new "Papers Directory READMEs" section with a table-of-contents entry, and the repository structure tree extended with the five new README.md files), this releases file, the CHANGELOG (v2.3.1), and CITATION.cff (version 2.3.1).
+
+## Features
+
+- papers/README.md: the flagship landing page; a final-DOI table with the "Please see Zenodo" line per work, an at-a-glance table of the four works, ASCII diagrams of the cross-work building process and the shared five-method gate flow, one section per work, and sections on industry impact, the AI processing feat, the accelerated timeline, the repository structure, and responsible use.
+- papers/VVUQ-01/README.md: the Two Stage VVUQ Oncology Clinical Trial Verification Automation method paper; the v0.1.0 to v0.6.0 progression, ASCII diagrams of the inputs-to-final-paper build and the two-stage verification design, the 51-test and 1 ACCEPT, 5 BLOCK, 1 ESCALATE gate results, the AI processing feat, the accelerated timeline, and the final DOI 10.5281/zenodo.20372501.
+- papers/VVUQ-02/README.md: the Mobile Pancreatic Cancer Unitree H2 Surgical Humanoid with Priority VVUQ work; the v0.7.0 to v1.2.0 progression, ASCII diagrams of the codegen-to-paper lineage and the ten humanoid-specific gates, the 172-test and 32 of 32 sweep results, the AI processing feat, the accelerated timeline, and the final DOI 10.5281/zenodo.20421754.
+- papers/VVUQ-03/README.md: the VVUQ Physical AI Oncology Trial Bill (H. R. 9510); the v1.3.0 to v1.4.0 progression, ASCII diagrams of the template-to-finished-bill build and the bill assembly, the 15-section and 21-table result, the AI processing feat, the accelerated timeline, and the final DOI 10.5281/zenodo.20454870.
+- papers/VVUQ-04/README.md: the Verification Before Generation in Physical AI Oncology Trials Act of 2026 (H. R. 9510, the FD&C Act amendment); the v2.0.0 to v2.3.0 progression, ASCII diagrams of the instruct-and-template-to-full-bill build and the statutory layering through Title 21, the new section 515D subsection map, the AI processing feat, the accelerated timeline, and the final DOI 10.5281/zenodo.20485580.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+- These are independent research drafts, not enacted law and not legal advice; they are not endorsed by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress. The reproduced statutory text is in the public domain; the generated framing is released under CC BY 4.0. All supporting numbers are simulation results, and the Unitree H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform.
+- Built autonomously by Claude Code Opus 4.8 (1M context) Max across sequential commits in a single pull request, one README per commit pushed in real time, with a second-to-last error-fix commit and this final repository-updates commit. The additions are Markdown only, so no LaTeX compilation was required. Only kevinkawchak/cancer-automated was edited; nothing was committed to kevinkawchak/physical-ai-oncology-trials or any other repository. The contributor set includes @openai and @google-gemini because earlier instruction-generation steps (papers/VVUQ-03/instruct-paper and papers/VVUQ-04/update-bill) drew on rated outputs from ChatGPT and Gemini alongside Claude.
+
+---
+
 VVUQ-04 Full Bill: Finished Federal Food, Drug, and Cosmetic Act Amendment in LaTeX (v2.3.0)
 v2.3.0 - VVUQ-04 Full Bill: Finished FD&C Act Amendment, H. R. 9510 (LaTeX)
 

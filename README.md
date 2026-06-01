@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v2.3.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v2.3.1-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-June%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**6/1: v2.3.1 (Papers Directory READMEs)** Adds five comprehensive landing READMEs: [papers](papers) plus one each for [papers/VVUQ-01](papers/VVUQ-01), [papers/VVUQ-02](papers/VVUQ-02), [papers/VVUQ-03](papers/VVUQ-03), and [papers/VVUQ-04](papers/VVUQ-04). Each details the VVUQ verification developments and progress, shows the building process with ASCII diagrams, and covers what the results mean for the Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods. Each carries DOI badges and the final paper or bill DOI (VVUQ-01 20372501, VVUQ-02 20421754, VVUQ-03 20454870, VVUQ-04 20485580).
 
 **6/1 [Bill PDF](https://doi.org/10.5281/zenodo.20485580): v2.3.0 (VVUQ-04 Full Bill, LaTeX)** Adds [papers/VVUQ-04/full-bill](papers/VVUQ-04/full-bill): the finished LaTeX amendment to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.), processed from the v2.2.0 draft scaffold by executing every bracketed drafting instruction against the named instruct-bill and final-paper sources. The bill is **H. R. 9510**, the *Verification Before Generation in Physical AI Oncology Trials Act of 2026*, adding a new section 515D (21 U.S.C. § 360e-5). 
 
@@ -64,6 +66,7 @@ This repository is complementary and open source. Please implement code safely a
 - [Established Methods Proven Across Projects](#established-methods-proven-across-projects)
 - [Core Capabilities](#core-capabilities)
 - [VVUQ Held Higher Than Code Generation](#vvuq-held-higher-than-code-generation)
+- [Papers Directory READMEs](#papers-directory-readmes)
 - [VVUQ-01 Figures and Image Instructions](#vvuq-01-figures-and-image-instructions)
 - [VVUQ-01 Draft Paper](#vvuq-01-draft-paper)
 - [VVUQ-01 Full Paper](#vvuq-01-full-paper)
@@ -267,7 +270,9 @@ cancer-automated/
 │   └── test_physical_ai.py
 │
 └── papers/                         # Paper workspaces, execution records, figures
+    ├── README.md                   # ★ v2.3.1 papers landing page: four works, lineage, final DOIs
     ├── VVUQ-01/
+        ├── README.md           # ★ v2.3.1 VVUQ-01 landing page: developments, build, results, DOIs
         ├── inputs/                 # Source paper and research chunks (ingestion inputs)
         ├── templates/Template_10/  # LaTeX manuscript template (future paper build)
         ├── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
@@ -319,6 +324,7 @@ cancer-automated/
             └── sections/           # abstract, intro, methods, results, discussion,
                                     #   limitations_future, conclusions, references, back_matter
     ├── VVUQ-02/                     # ★ v0.7.0 codegen, ★ v0.8.0 execution
+        ├── README.md           # ★ v2.3.1 VVUQ-02 landing page: developments, build, results, DOIs
         ├── instructions/           # prompt-instruct.md, output-instruct.md (lineage)
         ├── inputs/                 # ★ wired standards corpus + clinical baselines
         │   ├── standards/          # ASME V&V 40, IEC 80601-2-77, ISO/TS 15066, ...
@@ -390,6 +396,7 @@ cancer-automated/
         │   └── output-full-paper.md    # the narrative output of the full-paper step
         └── final-paper/            # placeholder (future submission-ready manuscript)
     ├── VVUQ-03/                     # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
+        ├── README.md           # ★ v2.3.1 VVUQ-03 landing page: developments, build, results, DOIs
         ├── template-paper/         # 21 CFR Part 312 adaptation chunks + .sty + .bib (source model)
         ├── draft-paper/            # v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
         │   ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
@@ -410,6 +417,7 @@ cancer-automated/
             ├── prompt-full-paper.md    # the generating prompt, verbatim
             └── output-full-paper.md    # the narrative output of the full-paper step
     └── VVUQ-04/                     # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft + v2.3.0 full bill (LaTeX)
+        ├── README.md           # ★ v2.3.1 VVUQ-04 landing page: developments, build, results, DOIs
         ├── instruct-bill/          # head start for the next bill draft (10 md + 5 bib + README)
         │   ├── README.md           # DOI badges, repo structure, file and bib correlations
         │   ├── 01-federal-statutory-framework.md        # Title 21, 42, 29, 15 statutes
@@ -500,6 +508,18 @@ A central Stage 1 principle is that VVUQ is more robust than code generation. Co
 - Uncertainty quantification: the three simulation runs agree within the configured coefficient of variation.
 
 Thresholds live in `configs/vvuq_thresholds.yaml`, and the gate blocks on any failure and escalates divergence to a human.
+
+## Papers Directory READMEs
+
+As of v2.3.1 the [papers/](papers) directory carries five comprehensive landing READMEs that document the four sequential VVUQ works as one evidence-to-law pipeline. The [papers README](papers) details the verification developments and progress for each of the four works, shows the building process from one work to the next with ASCII diagrams, and discusses what the results mean for the new Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods to reach the final VVUQ-04 bill. One landing README per work then focuses on that work alone, each with DOI badges, the repository structure, ASCII diagrams of the building process within the work, and the final paper or bill DOI shown in an organized way.
+
+| Landing page | Focus | Final paper or bill DOI |
+|:--|:--|:--|
+| [papers](papers) | All four works, lineage, and the final DOIs | the four below |
+| [papers/VVUQ-01](papers/VVUQ-01) | Two Stage VVUQ method paper | [10.5281/zenodo.20372501](https://doi.org/10.5281/zenodo.20372501) |
+| [papers/VVUQ-02](papers/VVUQ-02) | Mobile humanoid priority VVUQ paper | [10.5281/zenodo.20421754](https://doi.org/10.5281/zenodo.20421754) |
+| [papers/VVUQ-03](papers/VVUQ-03) | VVUQ Physical AI Oncology Trial Bill (H. R. 9510) | [10.5281/zenodo.20454870](https://doi.org/10.5281/zenodo.20454870) |
+| [papers/VVUQ-04](papers/VVUQ-04) | FD&C Act amendment (H. R. 9510) | [10.5281/zenodo.20485580](https://doi.org/10.5281/zenodo.20485580) |
 
 ## VVUQ-01 Figures and Image Instructions
 
