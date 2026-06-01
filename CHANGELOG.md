@@ -41,6 +41,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - `releases.md`: v2.3.0 release notes added above v2.2.0.
 - `CITATION.cff`: version bumped to 2.3.0.
 - @kevinkawchak updated cancer-automated/blob/main/papers/VVUQ-04/final-bill/README.md with final bill files and link to Zenodo PDF on 2026-06-01.
+- @kevinkawchak added a supplementary prompt and output to cancer-automated/tree/main/papers/VVUQ-04/update-bill, and made version summaries more concise in main/README on 2026-06-01.
 
 ## [2.2.0] - 2026-06-01
 
