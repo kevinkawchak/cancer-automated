@@ -29,19 +29,19 @@
 %   - single hyphens only (no en or em dashes) appear in this file.
 % ============================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{usctitle}[2026/06/01 v2.2.0 FD&C Act amendment + US Code reproduction style]
+\ProvidesPackage{usctitle}[2026/06/01 v2.2.0 Food, Drug, and Cosmetic Act amendment style]
 
-% --- Times-like serif body to match the printed United States Code. -------
+% - Times-like serif body to match the printed United States Code. -
 % newtx is standard on Overleaf and TeX Live full. If a minimal installation
 % lacks it, substitute \usepackage{mathptmx} for an equivalent Times body.
 \RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
 
-% --- Page geometry: letter paper, statute-style measure. ------------------
+% - Page geometry: letter paper, statute-style measure. -
 \RequirePackage[letterpaper,top=1.0in,bottom=1.0in,left=1.1in,right=1.1in,%
   headheight=15pt,headsep=18pt,footskip=24pt]{geometry}
 
-% --- Black body text, faithful to the United States Code (no accent). -----
+% - Black body text, faithful to the United States Code (no accent). -
 \RequirePackage{xcolor}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -53,10 +53,10 @@
 \RequirePackage{needspace}
 \RequirePackage{enumitem}
 
-% --- Hyperref for PDF bookmarks; links kept black to match the print. -----
+% - Hyperref for PDF bookmarks; links kept black to match the print. -
 \RequirePackage[hidelinks,pdfusetitle]{hyperref}
 
-% --- Even spacing with no right-margin overflow and no big interword gaps. -
+% - Even spacing with no right-margin overflow and no big interword gaps. -
 % The draft-bill task asks for evenly spaced words and no text running off the
 % right edge. RaggedRight from ragged2e gives a soft right margin with even
 % spacing while still allowing hyphenation, so lines are neither stretched nor
@@ -70,7 +70,7 @@
 \setlength{\RaggedRightParindent}{0pt}
 \setlength{\RaggedRightRightskip}{0pt plus 2.2em}
 
-% --- No stranded lines: maximal widow, orphan, and broken-line penalties. --
+% - No stranded lines: maximal widow, orphan, and broken-line penalties. -
 \widowpenalty=10000
 \clubpenalty=10000
 \displaywidowpenalty=10000
@@ -78,11 +78,11 @@
 \interlinepenalty=0
 \predisplaypenalty=10000
 
-% --- Paragraph defaults: small inter-clause gap, no first-line indent. ----
+% - Paragraph defaults: small inter-clause gap, no first-line indent. -
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3.2pt plus 1pt minus 0.5pt}
 
-% --- Running header: page | short act title | current section. -----------
+% - Running header: page | short act title | current section. -
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -96,10 +96,10 @@
   \renewcommand{\headrulewidth}{0pt}%
   \fancyfoot[C]{\footnotesize\thepage}}
 
-% --- Indentation unit for the statutory hierarchy. ------------------------
+% - Indentation unit for the statutory hierarchy. -
 \newlength{\uscunit}\setlength{\uscunit}{1.7em}
 
-% --- Left-aligned, ragged-right table column type. ------------------------
+% - Left-aligned, ragged-right table column type. -
 % Use \ragcol{<width>} as the column preamble so every cell is set
 % >{\raggedright\arraybackslash}p{<width>}; this is the column format every
 % table in the draft-bill must use to keep interword spacing even.
