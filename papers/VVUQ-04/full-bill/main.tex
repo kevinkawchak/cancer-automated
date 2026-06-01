@@ -1,0 +1,632 @@
+% ============================================================
+% main.tex
+% VVUQ-04 full-bill (LaTeX)
+%   THE FINISHED AMENDMENT to the Federal Food, Drug, and Cosmetic Act
+%   (21 U.S.C. 301 et seq.), grounded on the Title 21 device provisions current
+%   through Public Law 119-93.
+%
+% This is the finished bill produced from the v2.2.0 draft-bill scaffold by
+% executing every bracketed drafting instruction against the named instruct-bill
+% and VVUQ-03/final-paper sources. The bill is H. R. 9510, the Verification
+% Before Generation in Physical AI Oncology Trials Act of 2026. It amends the
+% Federal Food, Drug, and Cosmetic Act and cites each affected provision by its
+% 21 U.S.C. section number; Public Law 119-93 is named only as the currency
+% point of the reproduced existing law.
+%
+% Compile recipe (Overleaf, pdfLaTeX):
+%   pdflatex main.tex
+%   bibtex   main
+%   pdflatex main.tex
+%   pdflatex main.tex
+%
+% Formatting (centralized in usctitle.sty): RaggedRight body with even
+% interword spacing and no right-margin overflow; maximal widow and orphan
+% penalties; an abbreviated running header with no overlapping fields; URL
+% breaking in the references; single hyphens only; the section symbol for every
+% codified reference; and full-width left-aligned tables.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{usctitle}
+
+\title{Verification Before Generation in Physical AI Oncology Trials Act of 2026
+(H. R. 9510): A Finished Amendment to the Federal Food, Drug, and Cosmetic Act}
+\author{Prepared for VVUQ-04 by CEO Kevin Kawchak, ChemicalQDevice}
+\date{June 1, 2026 (current through Public Law 119-93)}
+
+\begin{document}
+
+% ============================================================
+% BILL CAPTION AND FRONT MATTER (the caption page).
+% ============================================================
+\thispagestyle{plain}
+\pagenumbering{roman}
+
+\billcaption{119TH CONGRESS}{2d Session}{H.\,R. 9510}
+
+\billlongtitle{To amend the Federal Food, Drug, and Cosmetic Act to require an
+automated verification, validation, and uncertainty quantification process to
+clear robot-patient interaction code before that code is generated or executed
+in a Physical AI oncology clinical investigation, and for other purposes.}
+
+\billintro{IN THE HOUSE OF REPRESENTATIVES}{June 1, 2026}{%
+Mr./Ms. \rule[0.4pt]{3.0cm}{0.4pt} introduced the following bill; which was
+referred to the Committee on Energy and Commerce}
+
+\billhead
+
+\billlongtitle{To amend the Federal Food, Drug, and Cosmetic Act to require an
+automated verification, validation, and uncertainty quantification process to
+clear robot-patient interaction code before that code is generated or executed
+in a Physical AI oncology clinical investigation, and for other purposes.}
+
+\enactingclause
+
+\billcovernote{This measure was prepared with the assistance of an autonomous
+artificial intelligence coding agent (Claude Code Opus 4.8, 1M context, Max)
+operating under human direction, by executing recorded drafting instructions
+against in-force statutes, rules, and recognized standards. To the drafters'
+knowledge it is among the first bills generated at scale by such a system for
+the implementation of Physical AI oncology trials. It is an independent research
+draft, is not an enacted law, and is not legal advice; the development record
+appears in the transparency statement near the end of this measure.}
+
+\clearpage
+\pagenumbering{arabic}
+
+% ============================================================
+% SECTION 1. SHORT TITLE; TABLE OF CONTENTS.
+% ============================================================
+\billsec{SECTION 1.}{SHORT TITLE; TABLE OF CONTENTS.}
+
+\uscprov{1}{\textbf{(a) Short Title.} This Act may be cited as the
+``Verification Before Generation in Physical AI Oncology Trials Act of 2026''.}
+
+\uscprov{1}{\textbf{(b) Table of Contents.} The table of contents for this Act is
+as follows:}
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.9\linewidth}@{}}
+Sec. 1. Short title; table of contents.\\
+Sec. 2. Findings.\\
+Sec. 3. Amendment to the Federal Food, Drug, and Cosmetic Act.\\
+Sec. 4. Comparative print; changes in existing law.\\
+\end{tabular}
+\end{center}
+
+% ============================================================
+% SECTION 2. FINDINGS.
+% ============================================================
+\billsec{SEC. 2.}{FINDINGS.}
+
+\uscprov{1}{\textbf{(a) Findings.} Congress finds the following:}
+
+\uscprov{2}{\textbf{(1)} Physical AI oncology clinical investigations place
+autonomous and semi-autonomous robots in direct physical contact with patients,
+and the behavior of such a robot at the moment of contact is determined by
+software that is increasingly machine-generated \cite{kawchak2026national}.}
+
+\uscprov{2}{\textbf{(2)} No Federal law requires the verification of
+robot-patient interaction code to clear before that code is generated or
+executed; a sponsor may generate the code, execute it, and document afterward,
+because the order of operations is not regulated \cite{kawchak2026vvuq01}.}
+
+\uscprov{2}{\textbf{(3)} Embodiment raises the stakes from software quality to
+patient safety: in a disembodied pipeline an error yields a wrong number a human
+can catch downstream, while in an embodied surgical system the same error class
+yields a wrong motion a human cannot catch in time \cite{kawchak2026vvuq01}.}
+
+\uscprov{2}{\textbf{(4)} The predetermined change control plan authority in
+section 515C of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 360e-4) and
+the Food and Drug Administration final guidance on such plans for artificial
+intelligence-enabled device software functions are the closest existing
+analogues to validating a change before deployment, but each remains voluntary,
+submission-based, and neither automated nor required in advance of generation
+\cite{fda-pccp-2024}.}
+
+\uscprov{2}{\textbf{(5)} The Quality Management System Regulation (part 820 of
+title 21, Code of Federal Regulations), effective February 2, 2026, and the
+electronic-records requirements of part 11 of such title supply quality and
+record-integrity scaffolding but do not impose a rule that verification precede
+generation \cite{fr-qmsr-2024}.}
+
+\uscprov{2}{\textbf{(6)} A recognized consensus standard, ASME V\&V 40-2018, and
+the Food and Drug Administration guidance assessing the credibility of
+computational modeling establish a credibility framework, in which model risk is
+the product of model influence and decision consequence, that an automated gate
+can implement \cite{asmevv40, fda-credibility-2023}.}
+
+\uscprov{2}{\textbf{(7)} Recognized consensus standards, including NASA-STD-7009A,
+IEEE Std 7009-2024, IEC 80601-2-77, ISO 14971, and ISO/TS 15066, supply the
+dispersion bounds, fail-safe requirements, and biomechanical contact limits to
+which such a gate may be bound \cite{nasastd7009, isots15066}.}
+
+\uscprov{2}{\textbf{(8)} Automated verification of robot-patient interaction code
+is feasible today: a pipeline held the verification fraction at 1.0, accepting
+one candidate artifact and blocking five, and a ten-gate assurance suite over
+control software for a surgical humanoid cleared reproducibly from a fixed seed,
+each gate bound to a published external standard \cite{kawchak2026vvuq01,
+kawchak2026vvuq02}.}
+
+\uscprov{2}{\textbf{(9)} Human-over-AI review is already widely adopted in State
+law, including the California Physicians Make Decisions Act (Senate Bill 1120),
+the Illinois Wellness and Oversight for Psychological Resources Act (House Bill
+1806), the Texas Responsible Artificial Intelligence Governance Act (House Bill
+149), and Maryland House Bill 820, each preserving a licensed human's authority
+over an artificial-intelligence-influenced decision \cite{ca-sb1120, il-hb1806,
+tx-hb149, md-hb820}.}
+
+\uscprov{2}{\textbf{(10)} The strongest Federal precedent for mandatory
+human-over-AI oversight is the Medicare Advantage artificial-intelligence
+guardrail (section 422.101(c) of title 42, Code of Federal Regulations), under
+which an algorithm alone may not justify a coverage denial \cite{cms-4201-ma}.}
+
+\uscprov{2}{\textbf{(11)} Federal nondiscrimination law, including section 92.210
+of title 45, Code of Federal Regulations, title VI of the Civil Rights Act of
+1964 (42 U.S.C. 2000d), and the Americans with Disabilities Act of 1990 (42
+U.S.C. 12101 et seq.), requires that a patient-facing algorithm minimize the
+risk of bias and respect accessibility \cite{cfr-92-210, usc-titlevi, usc-ada}.}
+
+\uscprov{2}{\textbf{(12)} The artificial-intelligence taxonomy maintained by the
+American Medical Association, distinguishing assistive, augmentative, and
+autonomous functions, provides a graduated spine for matching verification rigor
+to the degree of autonomy of a device \cite{cpt-appendix-s}.}
+
+\uscprov{2}{\textbf{(13)} A Physical AI system is at once a medical product and a
+research tool, and a requirement that verification precede generation is
+agnostic to that classification, because whatever the system is called, its
+patient-facing code must clear the gate before it runs \cite{kawchak2026national}.}
+
+\uscprov{2}{\textbf{(14)} As clinical investigation moves toward real-time and
+decentralized designs governed by harmonized good clinical practice, manual,
+document-by-document review cannot keep pace with the volume of machine-generated
+control code, and an automated gate that clears before generation serves rather
+than impedes that modernization \cite{iche6r3}.}
+
+% ============================================================
+% SECTION 3. AMENDMENT TO THE FEDERAL FOOD, DRUG, AND COSMETIC ACT.
+% ============================================================
+\billsec{SEC. 3.}{AMENDMENT TO THE FEDERAL FOOD, DRUG, AND COSMETIC ACT.}
+
+\uscprov{1}{\textbf{(a) In General.} Subchapter V of the Federal Food, Drug, and
+Cosmetic Act (21 U.S.C. 351 et seq.) is amended by inserting after section 515C
+(21 U.S.C. 360e-4) the following new section:}
+
+\uscquote{0}{``SEC. 515D. VERIFICATION BEFORE GENERATION OF ROBOT-PATIENT
+INTERACTION CODE IN PHYSICAL AI ONCOLOGY INVESTIGATIONS.}
+\uscquote{0}{``(a) Requirement.- No robot-patient interaction code may be
+generated or executed in a Physical AI oncology clinical investigation unless an
+automated verification, validation, and uncertainty quantification process,
+bound to one or more named external standards, has first cleared for that
+interaction, and the cleared verification record has been documented and
+attested under subsection (e).}
+\uscquote{0}{``(b) Order of Operations.- A sponsor shall not generate, and shall
+not execute, robot-patient interaction code in advance of the cleared
+verification record. A record created after generation or execution does not
+satisfy this section.}
+\uscquote{0}{``(c) Gate Thresholds and Decision Rule.-}
+\uscquote{1}{``(1) In general.- For each robot-patient interaction, the
+verification process shall apply the gate thresholds set out in the schedule in
+paragraph (4).}
+\uscquote{1}{``(2) Decision rule.- Each gate shall emit a determination of
+ACCEPT, BLOCK, or ESCALATE. A single failing dimension shall set BLOCK, and
+ambiguity or divergence shall set ESCALATE and return the interaction to a
+qualified human.}
+\uscquote{1}{``(3) Conditions.- For each interaction the verification fraction
+shall equal 1.0, so that every verification check passes; the validation
+agreement shall meet or exceed the per-gate threshold, with the maximum relative
+error at or below the per-gate bound and the human review recorded; the
+coefficient of variation across not fewer than three seeded runs shall not
+exceed the per-gate bound; and, for an interaction subject to a hard catastrophe
+predicate, that predicate shall also hold.}
+\uscquote{1}{``(4) Threshold schedule.- The per-gate agreement and dispersion
+bounds, the gates that carry a hard catastrophe predicate, and the external
+standard that governs each gate are as follows:}
+
+% The threshold schedule is set at the body measure (matching \textwidth) with
+% left-aligned, ragged-right columns so no cell opens a large interword gap.
+{\footnotesize
+\begin{xltabular}{\textwidth}{L{3.9cm} L{1.7cm} L{1.2cm} L{1.6cm} Y}
+\hline
+\textbf{Gate} & \textbf{Min.\ agreement} & \textbf{Max.\ CV} & \textbf{Hard
+predicate} & \textbf{Governing external standards}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Gate} & \textbf{Min.\ agreement} & \textbf{Max.\ CV} & \textbf{Hard
+predicate} & \textbf{Governing external standards}\\
+\hline
+\endhead
+\hline
+\endlastfoot
+01 Bimanual hand-eye servo & 0.97 & 0.08 & No & IEC 80601-2-77; ISO 9283; ASME
+V\&V 40\\
+02 Dexterous finger force & 0.95 & 0.10 & No & IEC 80601-2-77; ISO/TS 15066\\
+03 Whole-body balance & 0.98 & 0.06 & No & ISO 13482; IEC 60601-1\\
+04 Autonomous plan correctness & 0.95 & 0.10 & No & UL 4600; IEEE 7009; IEC
+62304\\
+05 Instrument grasp and handover & 0.96 & 0.10 & No & IEC 80601-2-77; ISO 9283\\
+06 Vascular no-fly volume (hand) & 1.00 & 0.05 & Yes & IEC 80601-2-77; ISO
+14971\\
+07 Bimanual suturing anastomosis & 0.96 & 0.08 & No & IEC 80601-2-77; Fistula
+Risk Score\\
+08 Perception scene understanding & 0.95 & 0.10 & No & ASME V\&V 40; IEC 62304\\
+09 Shared-room human collision & 1.00 & 0.06 & Yes & ISO/TS 15066; ISO 10218-1;
+ISO 13482\\
+10 Fault, emergency stop, degradation & 1.00 & 0.05 & Yes & IEC 60601-1; ISO
+13849-1; IEEE 7009\\
+\end{xltabular}}
+
+\uscquote{0}{``(d) Readiness Gates.- Before a patient is enrolled or a robot
+acts, the trial site shall pass the Physical AI Standard Level gate on
+legislative authorization, regulatory compliance, and operational readiness;
+each robot shall meet the minimum Unification Standard Level for its functional
+type, which is not less than 7.0 for a surgical type, not less than 6.0 for a
+therapeutic positioning or diagnostic needle placement type, not less than 4.0
+for a rehabilitative type, and not less than 3.0 for a companion monitoring
+type; and each robot's behavior shall be validated across not fewer than two
+simulation frameworks within the cross-framework tolerances of less than 2
+millimeters of trajectory deviation and less than 0.5 newton of force
+discrepancy.}
+\uscquote{0}{``(e) Documentation and Attestation.- Before robot-patient
+interaction code is generated or executed, the sponsor shall make and file the
+following:}
+\uscquote{1}{``(1) Algorithm documentation.- For each covered algorithm,
+documentation that includes a plain-language summary of its function, a
+description of its decision logic or architecture, a description of the data sets
+used to train or condition it, the gate bindings identifying the external
+standard that governs each gate and the threshold enforced, the
+verification-before-generation record showing the gate cleared before the code
+was generated or executed, and a determinism statement giving the seed and
+confirming reproducible regeneration.}
+\uscquote{1}{``(2) Compliance statement and attestation.- A compliance statement
+and a signed attestation by a responsible officer of the sponsor certifying
+that the automated verification process cleared before any covered code was
+generated or executed, that each gate met its threshold bound to a named
+external standard, that the trial site passed its Physical AI Standard Level gate
+and each robot met its Unification Standard Level minimum, that the algorithm and
+its training data minimize the risk of bias on protected characteristics and
+adhere to evidence-based clinical guidelines, and that a licensed human retained
+the medical-necessity decision.}
+\uscquote{1}{``(3) Record integrity.- The records required by this subsection
+shall be maintained in a hash-chained, tamper-evident audit trail that satisfies
+part 11 of title 21, Code of Federal Regulations.}
+\uscquote{0}{``(f) Cybersecurity, Human Oversight, and Lifecycle.- Each Physical
+AI system shall incorporate authentication and access control, encryption of
+data in transit and at rest, network segmentation, and software-integrity
+verification; shall operate under recorded human oversight with a manual override
+and an emergency stop that brings the system to a safe state within the
+procedure-appropriate budget and a hand-back-to-human escalation when a gate
+escalates or a fault is detected; and shall maintain configuration and
+model-version management, monitor for model and data drift, and, on
+decommissioning, archive the audit trail, securely erase patient data, and
+revoke access.}
+\uscquote{0}{``(g) Nondiscrimination.- Each covered algorithm and its training
+data shall minimize the risk of bias on protected characteristics and adhere to
+evidence-based clinical guidelines, and each Physical AI system shall be designed
+and operated consistent with applicable accessibility and accommodation
+requirements.}
+\uscquote{0}{``(h) Regulations.- Not later than 365 days after the date of
+enactment of this section, the Secretary shall issue final regulations to carry
+out this section. Pending the issuance of those regulations, the Secretary may
+issue interim guidance, and a sponsor may comply with this section by meeting the
+requirements of subsections (a) through (g).}
+\uscquote{0}{``(i) Definitions.- In this section:}
+\uscquote{1}{``(1) The term `Physical AI system' means an artificial-intelligence
+system operating in the physical world through a robotic platform, comprising
+hardware, control software, embedded models, and sensors.}
+\uscquote{1}{``(2) The term `robot agent' means an autonomous Physical AI system
+executing trial procedures through protocol-mediated data access under a defined
+workflow.}
+\uscquote{1}{``(3) The term `robot-patient interaction code' means any algorithm
+or generated software that governs a Physical AI system's physical contact with,
+or action upon, a human subject, whether the system is a medical product, a
+research tool, or both.}
+\uscquote{1}{``(4) The term `generative artificial intelligence' means an
+artificial-intelligence system that produces novel content, including text,
+code, or robot action sequences, from learned patterns.}
+\uscquote{1}{``(5) The term `AI-enabled device software function' means a
+software function, within or constituting a device, that uses a machine-learning
+model to achieve its intended purpose.}
+\uscquote{1}{``(6) The terms `verification', `validation', and `uncertainty
+quantification' mean, respectively, confirmation that an implementation conforms
+to its specification, confirmation that a result agrees with an independent
+reference of reality, and measurement of how confident a result is across runs,
+expressed as statistical dispersion.}
+\uscquote{1}{``(7) The term `verification fraction' means the fraction of
+verification checks that pass, defined as an equality to 1.0.}
+\uscquote{1}{``(8) The term `validation agreement' means agreement with an
+independent reference at or above a per-gate threshold, with the maximum relative
+error at or below a per-gate bound and the human review recorded.}
+\uscquote{1}{``(9) The term `coefficient-of-variation bound' means the maximum
+allowed ratio of standard deviation to mean across not fewer than three seeded
+runs.}
+\uscquote{1}{``(10) The term `hard catastrophe predicate' means an additional
+pass-fail condition on an immediate-catastrophe interaction, such as zero breach
+of a vascular no-fly volume, a minimum human clearance, or a guaranteed safe
+state, that must also hold.}
+\uscquote{1}{``(11) The term `Physical AI Standard Level' means a site-level
+compliance gate scored pass or fail across legislative authorization, regulatory
+compliance, and operational readiness.}
+\uscquote{1}{``(12) The term `Unification Standard Level' means a robot-level
+readiness score from 1.0 to 10.0 computed across simulation-framework switching,
+artificial-intelligence integration, cross-robot sharing, and clinical-trial
+collaboration.}
+\uscquote{1}{``(13) The term `hash-chained audit trail' means an immutable,
+tamper-evident, cryptographically linked record of every system action.}
+\uscquote{0}{``(j) Rule of Construction.- Nothing in this section displaces the
+investigational-device exemption under section 520(g), the protection of human
+subjects under part 50 of title 21, Code of Federal Regulations, the
+investigational new drug framework under part 312 of such title, or the
+predetermined change control plan authority under section 515C as it applies
+outside Physical AI, and nothing in this section itself reclassifies any
+device.''.}
+
+\uscprov{1}{\textbf{(b) Conforming Amendments.} The Federal Food, Drug, and
+Cosmetic Act is amended as follows, with the corresponding changes shown in the
+comparative print in section 4 of this Act:}
+
+\uscprov{2}{\textbf{(1)} Section 201(h) (21 U.S.C. 321(h)) is amended in the
+concluding matter of paragraph (1) by inserting after the sentence relating to
+software functions excluded under section 520(o) a sentence providing that a
+software function that generates or executes robot-patient interaction code, or
+that directs the autonomous physical action of a robot in contact with a human
+subject, is a device and is not so excluded.}
+\uscprov{2}{\textbf{(2)} Section 301 (21 U.S.C. 331) is amended by adding at the
+end a new prohibited act reaching the generation or execution of robot-patient
+interaction code in violation of section 515D and the failure to make or file the
+required documentation and attestation.}
+\uscprov{2}{\textbf{(3)} Section 501 (21 U.S.C. 351) is amended by adding a new
+subsection deeming adulterated a Physical AI device software function used to
+generate or execute robot-patient interaction code without a cleared section
+515D verification record.}
+\uscprov{2}{\textbf{(4)} Section 505F (21 U.S.C. 355g) is amended to recognize
+records generated under section 515D as real world evidence and to apply the
+program to devices in Physical AI oncology investigations.}
+\uscprov{2}{\textbf{(5)} Section 510(k) (21 U.S.C. 360(k)) is amended so a
+verification-governed change to a Physical AI device consistent with an
+established predetermined change control plan does not require a new premarket
+notification.}
+\uscprov{2}{\textbf{(6)} Section 513 (21 U.S.C. 360c) is amended to graduate
+special controls for a device that generates or executes robot-patient
+interaction code by its degree of autonomy.}
+\uscprov{2}{\textbf{(7)} Section 515 (21 U.S.C. 360e) is amended so a premarket
+approval application for such a device must include the cleared verification
+record and gate evidence required by section 515D.}
+\uscprov{2}{\textbf{(8)} Section 515C (21 U.S.C. 360e-4) is amended so a
+predetermined change control plan for such a device must include an automated
+verification-before-change protocol consistent with section 515D.}
+\uscprov{2}{\textbf{(9)} Section 520(o) (21 U.S.C. 360j(o)) is amended to confirm
+that such a software function is not within the clinical-decision-support
+exclusion and remains a device.}
+\uscprov{2}{\textbf{(10)} Section 521 (21 U.S.C. 360k) is amended by adding a
+savings clause preserving State human-in-the-loop and audit requirements that are
+not different from, or in addition to, a Federal device requirement.}
+
+\uscprov{1}{\textbf{(c) Clerical Amendment.} The table of contents for the
+Federal Food, Drug, and Cosmetic Act is amended by inserting after the item
+relating to section 515C the following new item:}
+
+\uscquote{0}{``Sec. 515D. Verification before generation of robot-patient
+interaction code in Physical AI oncology investigations.''.}
+
+\uscprov{1}{\textbf{(d) Rule of Construction.} Nothing in this Act, or the
+amendments made by this Act, shall be construed to displace the
+investigational-device exemption under section 520(g) of the Federal Food, Drug,
+and Cosmetic Act (21 U.S.C. 360j(g)), the protection of human subjects under part
+50 of title 21, Code of Federal Regulations, the investigational new drug
+framework under part 312 of such title, the predetermined change control plan
+authority under section 515C of such Act as it applies outside Physical AI, or
+any State law preserved under section 521 of such Act as amended by this Act;
+and nothing in this Act reclassifies any device.}
+
+\uscprov{1}{\textbf{(e) Effective Date; Implementation Deadline; Transition
+Rule.}}
+\uscprov{2}{\textbf{(1)} \textbf{Effective date.} This Act and the amendments
+made by this Act shall take effect on the first day of the first calendar quarter
+beginning not less than one year after the date of enactment of this Act.}
+\uscprov{2}{\textbf{(2)} \textbf{Implementation deadline.} The Secretary shall
+issue the final regulations required by section 515D(h) of the Federal Food,
+Drug, and Cosmetic Act not later than 365 days after the date of enactment of
+this Act.}
+\uscprov{2}{\textbf{(3)} \textbf{Transition rule.} A Physical AI oncology
+clinical investigation already enrolling on the effective date shall have 180
+days after that date to come into compliance with section 515D, and this Act
+does not disturb the February 2, 2026, effective date of the Quality Management
+System Regulation.}
+
+% ============================================================
+% SECTION 4. COMPARATIVE PRINT; CHANGES IN EXISTING LAW.
+% The reproduced existing-law sections are wired in below in 21 U.S.C. order.
+% Each shows only the affected provisions, marking insertions and deletions.
+% ============================================================
+\billsec{SEC. 4.}{COMPARATIVE PRINT; CHANGES IN EXISTING LAW.}
+
+\uscprov{1}{The following comparative print shows the changes proposed to
+existing law by this Act. Matter proposed to be deleted is shown as
+\cprstrike{matter to be deleted}; matter proposed to be inserted is shown as
+\cprinsert{matter to be inserted}; existing law in which no change is proposed is
+shown as regular text, and unchanged matter omitted for brevity is shown by a
+row of asterisks.}
+
+\usccrosshead{CHANGES IN EXISTING LAW MADE BY THE BILL}
+\begin{center}\small\itshape Federal Food, Drug, and Cosmetic Act (reproduced
+from Title 21, United States Code, current through Public Law 119-93)\end{center}
+
+\input{sections/s301}
+\input{sections/s321}
+\input{sections/s331}
+\input{sections/s351}
+\input{sections/s355g}
+\input{sections/s360}
+\input{sections/s360c}
+\input{sections/s360e}
+\input{sections/s360e-4}
+\input{sections/s360j}
+\input{sections/s360k}
+
+% ============================================================
+% APPENDIX A. RESEARCH INFLUENCE MATRIX (NON-OPERATIVE).
+% Emerging bills and executive actions live here, never in the bill text.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A. Research Influence Matrix (Non-Operative)}
+\usccrosshead{APPENDIX A. RESEARCH INFLUENCE MATRIX (NON-OPERATIVE)}
+
+\uscprov{1}{The authorities in this appendix are research influences only. They
+inform the legislative findings, a policy memorandum, testimony, and this matrix,
+but none is cited as the legal basis of an operative clause of this Act. Only
+enacted statutes, in-force rules, and recognized standards carry operative weight.}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{L{2.7cm} L{4.3cm} Y L{2.5cm}}
+\hline
+\textbf{Authority} & \textbf{What it is} & \textbf{What it informs} &
+\textbf{Placement}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Authority} & \textbf{What it is} & \textbf{What it informs} &
+\textbf{Placement}\\
+\hline
+\endhead
+\hline
+\endlastfoot
+EO 14179 & Removing Barriers to American Leadership in AI (90 FR 8741) &
+Deregulatory posture in the findings narrative \cite{eo-14179} & Memo; matrix\\
+EO 14365 & Ensuring a National Policy Framework for AI & State-law review and
+preemption context \cite{eo-14365} & Appendix; matrix\\
+OMB M-25-21 & Accelerating Federal Use of AI & Pre-deployment testing analogue
+\cite{omb-m2521} & Memo; matrix\\
+HHS AI Strategy & OneHHS AI Strategy (Dec. 2025) & Governance and reproducibility
+framing \cite{hhs-ai-strategy-2025} & Memo; matrix\\
+H.R. 238 & Healthy Technology Act of 2025 & AI prescribing-authority direction
+\cite{hr238-healthy-tech} & Testimony; matrix\\
+S. 1399 & Health Tech Investment Act & Medicare payment-class direction
+\cite{s1399-health-tech-investment} & Testimony; matrix\\
+H.R. 6361 & Ban AI Denials in Medicare Act & Human-over-AI signal
+\cite{hr6361-ban-ai-denials} & Findings narrative; matrix\\
+H.R. 5045 & HEALTH AI Act & Generative-AI research direction
+\cite{hr5045-health-ai} & Memo; matrix\\
+H.Res. 694 & Sense of the House on the CMS WISeR AI pilot & Countervailing
+human-review signal \cite{hres694-wiser} & Findings narrative; matrix\\
+\end{xltabular}}
+
+% ============================================================
+% APPENDIX B. DEVELOPMENT TRANSPARENCY AND IMPLEMENTATION STATEMENT.
+% Covers the v2.0.0 to v2.3.0 development of this measure and how to implement it.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix B. Development Transparency and Implementation Statement}
+\usccrosshead{APPENDIX B. DEVELOPMENT TRANSPARENCY AND IMPLEMENTATION STATEMENT}
+
+\uscprov{1}{\textbf{What was built, and how.} This measure was produced by an
+autonomous artificial intelligence coding agent, Claude Code Opus 4.8 (1M
+context, Max), operating under human direction across four recorded development
+versions. Each version was authored across sequential commits in a single pull
+request, one file per commit pushed in real time, with a second-to-last
+error-fix commit and a final repository-updates commit. The versions are as
+follows:}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{L{1.5cm} L{3.4cm} L{4.3cm} Y}
+\hline
+\textbf{Version} & \textbf{Step} & \textbf{Directory} & \textbf{Role}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Version} & \textbf{Step} & \textbf{Directory} & \textbf{Role}\\
+\hline
+\endhead
+\hline
+\endlastfoot
+v2.0.0 & Instruct bill & papers/VVUQ-04/instruct-bill & U.S. medical AI law
+summaries and the BibTeX grounding\\
+v2.1.0 & Template bill & papers/VVUQ-04/template-bill & Faithful Title 21
+device-provisions excerpt\\
+v2.2.0 & Draft bill & papers/VVUQ-04/draft-bill & Amendment scaffold with
+bracketed drafting instructions\\
+v2.3.0 & Full bill & papers/VVUQ-04/full-bill & This finished amendment, with the
+instructions executed and removed\\
+\end{xltabular}}
+
+\uscprov{1}{\textbf{What Claude Code changed in this version.} From the v2.2.0
+scaffold, the agent (1) executed every bracketed drafting instruction against the
+named instruct-bill and prior-paper sources; (2) drafted the operative new
+section 515D and the ten conforming amendments, anchoring each duty to an
+in-force statute, rule, or recognized standard; (3) reduced the reproduced law to
+a focused comparative print that shows only the affected provisions, marking
+insertions and deletions; (4) removed every drafting-instruction block; and (5)
+applied senior-author formatting, including an abbreviated running header with no
+overlapping fields, reference URLs that break rather than overflow, even
+RaggedRight spacing, single hyphens, the section symbol for every codified
+reference, and full-width left-aligned tables. The emerging 119th Congress bills
+and executive actions were kept out of operative text and confined to Appendix A.}
+
+\uscprov{1}{\textbf{How to implement this measure as new law.} On enactment, the
+Secretary issues final regulations within 365 days under section 515D(h) and may
+issue interim guidance in the meantime; the amendments take effect on the first
+day of the first calendar quarter beginning not less than one year after
+enactment; an investigation already enrolling has 180 days to come into
+compliance; a trial site must pass its Physical AI Standard Level gate and each
+robot must meet its Unification Standard Level minimum before enrollment or
+action; and, for each robot-patient interaction, the automated verification
+process must clear, and the documentation and attestation must be filed, before
+the code is generated or executed. The enforcement trigger is a single fact: the
+absence of a cleared verification-before-generation record.}
+
+% ============================================================
+% AUTHORSHIP, NOTICES, AND PROVENANCE.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Authorship, Notices, and Provenance}
+\usccrosshead{AUTHORSHIP, NOTICES, AND PROVENANCE}
+
+\uscnotepar{Prepared by CEO Kevin Kawchak
+(\href{https://orcid.org/0009-0007-5457-8667}{ORCID 0009-0007-5457-8667}),
+ChemicalQDevice (\href{mailto:kevink@chemicalqdevice.com}{kevink@chemicalqdevice.com}).
+Adapted using Claude Code Opus 4.8 (1M context) Max; research assisted by ChatGPT,
+Claude Haiku, and Google Gemini.}
+
+\uscnotepar{Notice: This measure was adapted from documents of the United States
+Government in the public domain under 17 U.S.C. 105. The reproduced statutory
+text is in the public domain; the authoritative version is the United States Code
+as published by the Office of the Law Revision Counsel. This work is not endorsed
+or sponsored by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress.}
+
+\uscnotepar{Disclaimer: This work is an independent research draft, is not an
+enacted law, and is not legal advice; it is not endorsed, sponsored, or approved
+by any trial sponsor, contract research organization, site, institutional review
+board, regulator, or medical society. All supporting numbers are simulation or
+illustrative results reproducible from the deterministic seed 20260525, and no
+patient-identifiable information is included.}
+
+\uscnotepar{Rights: The reproduced statutory text is in the public domain; the
+generated amendment framing, tables, and notices are released under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0),
+\href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/}.}
+
+\uscnotepar{DOI: 10.5281/zenodo.xxxxxxxx
+(\href{https://doi.org/10.5281/zenodo.20454870}{prior bill 10.5281/zenodo.20454870}).}
+
+\uscnotepar{San Diego. June 1, 2026.}
+
+% ============================================================
+% PROVENANCE AND RESEARCH SOURCES (BIBLIOGRAPHY).
+% A real congressional bill carries no bibliography; this research-aid back
+% matter does, so the operative text stays clean while sources remain auditable.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Provenance and Research Sources}
+\usccrosshead{Provenance and Research Sources}
+\begingroup
+\RaggedRight
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+
+\end{document}
