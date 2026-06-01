@@ -11,7 +11,7 @@
 [![National Platform DOI](https://img.shields.io/badge/National%20Platform%20DOI-10.5281%2Fzenodo.19244918-blue.svg)](https://doi.org/10.5281/zenodo.19244918)
 [![Files](https://img.shields.io/badge/Files-main.tex%20%7C%20.sty%20%7C%20.bib%20%7C%2011%20sections%20%7C%20zip-orange.svg)](.)
 
-The finished LaTeX **amendment** to the **Federal Food, Drug, and Cosmetic Act**
+[PDF](https://doi.org/10.5281/zenodo.20485580) The finished LaTeX **amendment** to the **Federal Food, Drug, and Cosmetic Act**
 (21 U.S.C. § 301 et seq.), grounded on the Title 21 device provisions current
 through **Public Law 119-93**. This is **H. R. 9510**, the *Verification Before
 Generation in Physical AI Oncology Trials Act of 2026*. It was produced from the
