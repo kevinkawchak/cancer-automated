@@ -1,8 +1,8 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v2.1.0-brightgreen.svg)](releases.md)
-[![Last Updated](https://img.shields.io/badge/Updated-May%202026-blue.svg)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v2.2.0-brightgreen.svg)](releases.md)
+[![Last Updated](https://img.shields.io/badge/Updated-June%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
 [![CI](https://img.shields.io/badge/CI-lint%20and%20format-blue.svg)](.github/workflows/ci.yml)
@@ -13,6 +13,8 @@
 This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**6/1: v2.2.0 (VVUQ-04 Draft Bill, LaTeX)** Adds [papers/VVUQ-04/draft-bill](papers/VVUQ-04/draft-bill): a LaTeX draft amendment to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.) that recasts the prior *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510) as a properly targeted amendment, citing each affected provision by its 21 U.S.C. section number and naming Public Law 119-93 only as the currency point, not amending Public Law 119-93 or Title 21 generally. It is an amendment scaffold with bracketed DRAFTING INSTRUCTIONS: the caption, SECTION 1 short title and table of contents, SEC. 2 findings, SEC. 3 the amendment (new section 515D / 21 U.S.C. § 360e-5 for verification before generation, plus conforming, clerical, rule-of-construction, and effective-date changes), and SEC. 4 comparative print each name the exact instruct-bill and final-paper files a future Claude Code Opus 4.8 (1M) Max pass must process. Each of the 11 reproduced sections keeps its original text and adds a draftbox with exact directories and file names; emerging bills stay in a non-operative research-influence appendix. Up to date with today's medical AI law and grounded in mass-adopted references.
 
 **5/31: v2.1.0 (VVUQ-04 Template Bill, LaTeX)** Adds [papers/VVUQ-04/template-bill/LaTeX](papers/VVUQ-04/template-bill/LaTeX): a LaTeX template bill that reproduces the look and feel of the official United States Code, Title 21 - Food and Drugs (current through Public Law 119-93), reduced from 29 chapters and 757 sections to the 11 Federal Food, Drug, and Cosmetic Act device sections relevant to the Physical AI oncology trial context (§§ 301, 321, 331, 351, 355g, 360, 360c, 360e, 360e-4, 360j, 360k). Section selection follows VVUQ-04/instruct-bill and VVUQ-03/final-paper; each section is its own .tex file wired into one main.tex, with a usctitle.sty that renders the bold catchlines, hanging-indent hierarchy, cross-headings, and source credits, a references.bib of provenance, a detailed README, and an Overleaf-ready zip. No bracketed instructions are inserted into the law, so a future Claude Code Opus 4.8 (1M) Max pass can read the laws in place and draft the amendment to Public Law 119-93, Title 21.
 
@@ -73,6 +75,7 @@ This repository is complementary and open source. Please implement code safely a
 - [VVUQ-03 Full Paper](#vvuq-03-full-paper)
 - [VVUQ-04 Instruct Bill](#vvuq-04-instruct-bill)
 - [VVUQ-04 Template Bill (LaTeX)](#vvuq-04-template-bill-latex)
+- [VVUQ-04 Draft Bill (LaTeX)](#vvuq-04-draft-bill-latex)
 - [Dependencies](#dependencies)
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
@@ -403,7 +406,7 @@ cancer-automated/
             ├── full-paper.zip      # Overleaf-ready LaTeX bundle
             ├── prompt-full-paper.md    # the generating prompt, verbatim
             └── output-full-paper.md    # the narrative output of the full-paper step
-    └── VVUQ-04/                     # ★ v2.0.0 instruct bill + v2.1.0 template bill (LaTeX)
+    └── VVUQ-04/                     # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft bill (LaTeX)
         ├── instruct-bill/          # head start for the next bill draft (10 md + 5 bib + README)
         │   ├── README.md           # DOI badges, repo structure, file and bib correlations
         │   ├── 01-federal-statutory-framework.md        # Title 21, 42, 29, 15 statutes
@@ -423,19 +426,30 @@ cancer-automated/
         │   ├── standards-and-literature.bib             # bib 5 (44 entries)
         │   ├── prompt-instruct-bill.md                  # the generating prompt, verbatim
         │   └── output-instruct-bill.md                  # the narrative output of this step
-        └── template-bill/          # ★ v2.1.0 Title 21 device-provisions excerpt (LaTeX)
-            ├── xml_usc21@119-93.zip # input: full Title 21 USLM XML (12.4 MB)
-            └── LaTeX/              # Overleaf-ready U.S. Code look-and-feel reproduction
-                ├── README.md       # DOI badges, section/interaction/file tables, ASCII
-                ├── main.tex        # Title 21 head, structure, 11 \input lines, references
-                ├── usctitle.sty    # U.S. Code style: serif, hanging indents, note styling
-                ├── references.bib  # provenance + VVUQ lineage (11 entries)
-                ├── template-bill-LaTeX.zip   # Overleaf-ready bundle
-                ├── prompt-template-bill/LaTeX.md  # the generating prompt, verbatim
-                ├── output-template-bill/LaTeX.md  # the narrative output of this step
-                └── sections/       # 11 FD&C Act device sections, one .tex each
-                    ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
-                    └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
+        ├── template-bill/          # ★ v2.1.0 Title 21 device-provisions excerpt (LaTeX)
+        │   ├── xml_usc21@119-93.zip # input: full Title 21 USLM XML (12.4 MB)
+        │   └── LaTeX/              # Overleaf-ready U.S. Code look-and-feel reproduction
+        │       ├── README.md       # DOI badges, section/interaction/file tables, ASCII
+        │       ├── main.tex        # Title 21 head, structure, 11 \input lines, references
+        │       ├── usctitle.sty    # U.S. Code style: serif, hanging indents, note styling
+        │       ├── references.bib  # provenance + VVUQ lineage (11 entries)
+        │       ├── template-bill-LaTeX.zip   # Overleaf-ready bundle
+        │       ├── prompt-template-bill/LaTeX.md  # the generating prompt, verbatim
+        │       ├── output-template-bill/LaTeX.md  # the narrative output of this step
+        │       └── sections/       # 11 FD&C Act device sections, one .tex each
+        │           ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
+        │           └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
+        └── draft-bill/             # ★ v2.2.0 FD&C Act amendment scaffold (LaTeX)
+            ├── README.md           # DOI badges, amendment-structure map, ASCII diagrams
+            ├── main.tex            # caption, SECTION 1-2, SEC. 3 amendment, SEC. 4 comparative print
+            ├── usctitle.sty        # US Code reproduction + amendment apparatus + draftbox
+            ├── references.bib      # provenance + research sources (uscode_download + lineage)
+            ├── draft-bill-LaTeX.zip   # Overleaf-ready bundle
+            ├── prompt-draft-bill.md   # the generating prompt, verbatim
+            ├── output-draft-bill.md   # the narrative output of this step
+            └── sections/           # 11 reproduced sections, each + bracketed draft instructions
+                ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
+                └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
 ```
 
 ## Established Methods Proven Across Projects
@@ -746,6 +760,26 @@ The retained sections are the device-regulation backbone of the Act: § 301 (sho
 ```
 
 The additions are LaTeX, BibTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the lint-and-format CI job stays green across Python 3.10, 3.11, and 3.12. See the [template-bill/LaTeX README](papers/VVUQ-04/template-bill/LaTeX) for the DOI badges, the per-section contents table, the statutory-layering and file-correlation diagrams, the exclusion rationale, and the Overleaf compile recipe.
+
+## VVUQ-04 Draft Bill (LaTeX)
+
+As of v2.2.0 a LaTeX draft amendment is staged under [papers/VVUQ-04/draft-bill](papers/VVUQ-04/draft-bill): a draft amendment to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.) that recasts the prior *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510) as a properly targeted amendment. Following the amendment-drafting correction, it amends the Act and cites each affected provision by its 21 U.S.C. section number, naming Public Law 119-93 only as the currency point, rather than amending Public Law 119-93 or Title 21 generally. It is an amendment scaffold with bracketed DRAFTING INSTRUCTIONS, not a finished bill: under each part, a draftbox names the exact files in `papers/VVUQ-04/instruct-bill` and `papers/VVUQ-03/final-paper` that a future Claude Code Opus 4.8 (1M context) Max pass must process to produce publication-quality statutory text.
+
+The operative mechanism is a new section 515D of the Act (21 U.S.C. § 360e-5), "Verification before generation of robot-patient interaction code in Physical AI oncology investigations," inserted after the predetermined change control plan authority (§ 515C; § 360e-4), with conforming amendments to the device definition (§ 321(h)), prohibited acts (§ 331), adulteration (§ 351), real world evidence (§ 355g), the 510(k) pathway (§ 360(k)), classification (§ 360c), premarket approval (§ 360e), the change-control keystone (§ 360e-4), the software and CDS exclusion (§ 360j(o)), and state preemption (§ 360k). Each of the 11 reproduced sections keeps its original statutory text and adds a draftbox of bracketed instructions with exact directories and file names. The emerging 119th Congress bills and executive actions are kept to a non-operative Research Influence Matrix appendix, the findings, or a memo.
+
+```
+  VVUQ-03/final-paper + VVUQ-04/instruct-bill + VVUQ-04/template-bill
+        |  prior bill text + medical-AI law crosswalk + Title 21 sections
+        v
+  draft-bill: amend the Federal Food, Drug, and Cosmetic Act
+   SECTION 1 short title -> SEC. 2 findings -> SEC. 3 amendment
+   (new § 360e-5 after § 360e-4, plus conforming) -> SEC. 4 comparative print
+        |  each part = original text + bracketed DRAFTING INSTRUCTIONS
+        v
+  Next pass: process the named files to produce the finished amendment
+```
+
+The additions are LaTeX, BibTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the lint-and-format CI job stays green across Python 3.10, 3.11, and 3.12. See the [draft-bill README](papers/VVUQ-04/draft-bill) for the DOI badges, the amendment-structure map, the per-section contents table, the statutory-layering and file-correlation diagrams, and the Overleaf compile recipe.
 
 ## Continuous Integration
 

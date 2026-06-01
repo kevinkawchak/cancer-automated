@@ -5,6 +5,47 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2.2.0] - 2026-06-01
+
+### Added
+- `papers/VVUQ-04/draft-bill/`: a LaTeX draft amendment to the Federal Food,
+  Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.) that recasts the prior *VVUQ
+  Physical AI Oncology Trial Bill* (H.R. 9510) as a properly targeted amendment.
+  Following the amendment-drafting correction, it amends the Act and cites each
+  affected provision by its 21 U.S.C. section number, naming Public Law 119-93
+  only as the currency point, rather than amending Public Law 119-93 or Title 21
+  generally. It is an amendment scaffold with bracketed DRAFTING INSTRUCTIONS,
+  not a finished bill: each part names the exact `papers/VVUQ-04/instruct-bill`
+  and `papers/VVUQ-03/final-paper` files a future Claude Code Opus 4.8 (1M
+  context) Max pass must process. Authored autonomously across sequential commits
+  in a single pull request, one file per commit pushed in real time, then a
+  second-to-last error-fix commit and a final repository-updates commit.
+- `main.tex` (bill caption, A BILL head and enacting clause, SECTION 1 short
+  title and table of contents, SEC. 2 findings, SEC. 3 amendment with new section
+  515D / 21 U.S.C. § 360e-5 plus conforming, clerical, rule-of-construction, and
+  effective-date changes, SEC. 4 comparative print, Appendix A research-influence
+  matrix, authorship and notices, references), `usctitle.sty` (US Code
+  reproduction commands plus the congressional amendment apparatus, the
+  comparative-print markers, the DRAFTING INSTRUCTIONS `draftbox`, and formatting
+  hardening), `references.bib` (provenance and research sources including the
+  required `uscode_download` reference), a detailed `README.md` with DOI badges
+  and ASCII diagrams, `draft-bill-LaTeX.zip` (Overleaf-ready bundle), and
+  `prompt-draft-bill.md` and `output-draft-bill.md`.
+- `papers/VVUQ-04/draft-bill/sections/`: the 11 reproduced Title 21 device
+  sections (s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j,
+  s360k), each keeping its original statutory text and adding a `draftbox` of
+  bracketed instructions with exact directories and file names, the amendatory
+  action, and the comparative-print markers. The new operative duty is a new
+  section 515D inserted after § 360e-4 (the change-control keystone).
+
+### Changed
+- `README.md`: release badge to v2.2.0, last-updated badge to June 2026, a
+  v2.2.0 summary above the prior summary, a new "VVUQ-04 Draft Bill (LaTeX)"
+  section with an ASCII process diagram and a table-of-contents entry, and the
+  repository structure tree extended with a `VVUQ-04/draft-bill` block.
+- `releases.md`: v2.2.0 release notes added above v2.1.0.
+- `CITATION.cff`: version bumped to 2.2.0 and date to 2026-06-01.
+
 ## [2.1.0] - 2026-05-31
 
 ### Added

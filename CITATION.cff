@@ -6,8 +6,8 @@ authors:
   - family-names: Kawchak
     given-names: Kevin
     affiliation: ChemicalQDevice
-version: "2.1.0"
-date-released: "2026-05-31"
+version: "2.2.0"
+date-released: "2026-06-01"
 url: "https://github.com/kevinkawchak/cancer-automated"
 repository-code: "https://github.com/kevinkawchak/cancer-automated"
 license: MIT

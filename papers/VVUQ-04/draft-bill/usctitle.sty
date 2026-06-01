@@ -1,0 +1,292 @@
+% ============================================================
+% usctitle.sty
+% Style file for:
+%   VVUQ-04 draft-bill: a draft AMENDMENT to the Federal Food, Drug, and
+%   Cosmetic Act (21 U.S.C. 301 et seq.), built on the Title 21 device
+%   provisions current through Public Law 119-93.
+%
+% This style descends from the VVUQ-04 template-bill style (v2.1.0). It keeps
+% the United States Code look and feel for the reproduced existing-law text
+% (black Times-like serif, bold section catchlines, hanging-indent statutory
+% hierarchy, centered cross-headings, small-caps note headings, parenthetical
+% source credits) and ADDS the apparatus of a congressional amendment:
+%   - the bill caption (Congress, session, bill number, long title, referral),
+%   - the "A BILL" head and the enacting clause,
+%   - run-in bill-section catchlines (SECTION 1., SEC. 2., ...),
+%   - the comparative-print convention markers (strike and insert), and
+%   - the set-off DRAFTING INSTRUCTIONS block (the draftbox environment) that
+%     carries the bracketed, file-specific instructions a future Claude Code
+%     Opus 4.8 (1M context) Max pass executes to produce the finished section.
+%
+% Formatting hardening required by the draft-bill task is centralized here:
+%   - body text is set RaggedRight (ragged2e) so interword spacing is even and
+%     no big gaps or rivers appear, and no line runs off the right margin;
+%   - widow and orphan penalties are maximal so no single line is stranded at
+%     the top or bottom of a page;
+%   - a left-aligned, ragged-right table column type (\ragcol) is provided so
+%     every table cell uses >{\raggedright\arraybackslash}p{...} with no big
+%     interword gaps;
+%   - single hyphens only (no en or em dashes) appear in this file.
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{usctitle}[2026/06/01 v2.2.0 Food, Drug, and Cosmetic Act amendment style]
+
+% - Times-like serif body to match the printed United States Code. -
+% newtx is standard on Overleaf and TeX Live full. If a minimal installation
+% lacks it, substitute \usepackage{mathptmx} for an equivalent Times body.
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
+
+% - Page geometry: letter paper, statute-style measure. -
+\RequirePackage[letterpaper,top=1.0in,bottom=1.0in,left=1.1in,right=1.1in,%
+  headheight=15pt,headsep=18pt,footskip=24pt]{geometry}
+
+% - Black body text, faithful to the United States Code (no accent). -
+\RequirePackage{xcolor}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+\RequirePackage{microtype}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{ragged2e}
+\RequirePackage{needspace}
+\RequirePackage{enumitem}
+
+% - Hyperref for PDF bookmarks; links kept black to match the print. -
+\RequirePackage[hidelinks,pdfusetitle]{hyperref}
+
+% - Even spacing with no right-margin overflow and no big interword gaps. -
+% The draft-bill task asks for evenly spaced words and no text running off the
+% right edge. RaggedRight from ragged2e gives a soft right margin with even
+% spacing while still allowing hyphenation, so lines are neither stretched nor
+% overfull. The emergencystretch is a backstop for any justified remnant.
+\tolerance=2000
+\emergencystretch=3em
+\hbadness=4000
+\hyphenpenalty=70
+\exhyphenpenalty=70
+\RaggedRight
+\setlength{\RaggedRightParindent}{0pt}
+\setlength{\RaggedRightRightskip}{0pt plus 2.2em}
+
+% - No stranded lines: maximal widow, orphan, and broken-line penalties. -
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\interlinepenalty=0
+\predisplaypenalty=10000
+
+% - Paragraph defaults: small inter-clause gap, no first-line indent. -
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.2pt plus 1pt minus 0.5pt}
+
+% - Running header: page | short act title | current section. -
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[L]{\footnotesize\thepage}
+\fancyhead[C]{\footnotesize\scshape Verification Before Generation Act of 2026 (Draft)}
+\fancyhead[R]{\footnotesize\rightmark}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\thepage}}
+
+% - Indentation unit for the statutory hierarchy. -
+\newlength{\uscunit}\setlength{\uscunit}{1.7em}
+
+% - Left-aligned, ragged-right table column type. -
+% Use \ragcol{<width>} as the column preamble so every cell is set
+% >{\raggedright\arraybackslash}p{<width>}; this is the column format every
+% table in the draft-bill must use to keep interword spacing even.
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\ragcol}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% ==========================================================================
+% UNITED STATES CODE REPRODUCTION COMMANDS (existing-law text in the
+% comparative print). These are unchanged from the template-bill style so the
+% reproduced section files render identically.
+% ==========================================================================
+\newcommand{\usctitlehead}[2]{%
+  \begin{center}
+  {\Large\bfseries #1}\\[0.25em]
+  {\Large\bfseries #2}
+  \end{center}}
+
+\newcommand{\uscchapterhead}[2]{%
+  \par\addvspace{1.4\baselineskip}%
+  \needspace{4\baselineskip}%
+  \phantomsection\addcontentsline{toc}{section}{#1 #2}%
+  \begin{center}{\large\bfseries #1\\[0.15em]#2}\end{center}%
+  \par\addvspace{0.5\baselineskip}}
+
+\newcommand{\uscsubchapterhead}[1]{%
+  \par\addvspace{1.1\baselineskip}%
+  \needspace{3\baselineskip}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}%
+  \begin{center}{\bfseries #1}\end{center}%
+  \par\addvspace{0.35\baselineskip}}
+
+\newcommand{\uscparthead}[1]{%
+  \par\addvspace{0.8\baselineskip}%
+  \needspace{3\baselineskip}%
+  \phantomsection\addcontentsline{toc}{subsection}{#1}%
+  \begin{center}{\bfseries\scshape #1}\end{center}%
+  \par\addvspace{0.3\baselineskip}}
+
+% Section catchline: "§ 360e-4. Predetermined change control plans ...".
+\newcommand{\uscsection}[2]{%
+  \par\addvspace{1.15\baselineskip}%
+  \needspace{4\baselineskip}%
+  \phantomsection
+  \addcontentsline{toc}{subsubsection}{#1 #2}%
+  \markright{#1 #2}%
+  {\setlength{\parindent}{0pt}\bfseries\large #1\hskip 0.45em #2\par}%
+  \nopagebreak\par\addvspace{0.35\baselineskip}}
+
+% Statutory provision with a hanging indent at depth #1 (0 = flush body).
+\newcommand{\uscprov}[2]{%
+  \par
+  \begingroup
+  \ifnum#1>0
+    \setlength{\leftskip}{\dimexpr#1\uscunit\relax}%
+    \setlength{\parindent}{-\uscunit}%
+  \else
+    \setlength{\leftskip}{0pt}%
+    \setlength{\parindent}{1.0em}%
+  \fi
+  #2\par
+  \endgroup}
+
+% Quoted statutory or amendment text, indented and set off.
+\newcommand{\uscquote}[2]{%
+  \par
+  \begingroup
+  \setlength{\leftskip}{\dimexpr#1\uscunit + \uscunit\relax}%
+  \setlength{\rightskip}{0.5\uscunit}%
+  \setlength{\parindent}{0.8em}%
+  \small #2\par
+  \endgroup}
+
+% Source credit: parenthetical Public Law lineage at the left margin.
+\newcommand{\uscsource}[1]{%
+  \par\addvspace{0.25\baselineskip}%
+  {\setlength{\parindent}{0pt}\small #1\par}%
+  \addvspace{0.2\baselineskip}}
+
+% Cross-heading: centered bold (Editorial Notes; Statutory Notes ...).
+\newcommand{\usccrosshead}[1]{%
+  \par\addvspace{0.7\baselineskip}%
+  \needspace{2.5\baselineskip}%
+  \begin{center}{\bfseries #1}\end{center}%
+  \par\addvspace{0.2\baselineskip}}
+
+% Note heading: centered small caps (Amendments; Effective Date; ...).
+\newcommand{\uscnotehead}[1]{%
+  \par\addvspace{0.45\baselineskip}%
+  \needspace{2\baselineskip}%
+  \begin{center}{\scshape #1}\end{center}%
+  \par\addvspace{0.1\baselineskip}}
+
+% Note paragraph: flush body text within a note.
+\newcommand{\uscnotepar}[1]{%
+  \par{\setlength{\parindent}{1.0em}#1\par}}
+
+% ==========================================================================
+% CONGRESSIONAL AMENDMENT APPARATUS (the new draft-bill matter).
+% ==========================================================================
+
+% Bill caption: Congress and session at the left, bill number at the right.
+% \billcaption{119TH CONGRESS}{2d Session}{H. R. ____}
+\newcommand{\billcaption}[3]{%
+  \begin{center}
+  \makebox[\textwidth][s]{\bfseries #1\hfill #3}\\[0.15em]
+  {\itshape #2}
+  \end{center}%
+  \vspace{0.2em}\noindent\rule{\textwidth}{0.8pt}\par}
+
+% Long title: "To amend ... and for other purposes." centered, justified-narrow.
+\newcommand{\billlongtitle}[1]{%
+  \par\addvspace{0.4\baselineskip}%
+  \begin{center}\begin{minipage}{0.86\textwidth}\centering #1\end{minipage}\end{center}%
+  \par\addvspace{0.3\baselineskip}}
+
+% Referral block: chamber, date, and the "introduced the following bill" line.
+% \billintro{IN THE HOUSE OF REPRESENTATIVES}{June 1, 2026}{Mr./Ms. ... introduced ...}
+\newcommand{\billintro}[3]{%
+  \par\addvspace{0.3\baselineskip}%
+  \begin{center}{\scshape #1}\\[0.2em]{\itshape #2}\end{center}%
+  \par{\setlength{\parindent}{1.0em}#3\par}%
+  \par\addvspace{0.3\baselineskip}}
+
+% "A BILL" head, centered, with rules above and below.
+\newcommand{\billhead}{%
+  \par\addvspace{0.5\baselineskip}%
+  \noindent\rule{\textwidth}{0.8pt}\par
+  \begin{center}{\LARGE\bfseries A BILL}\end{center}%
+  \noindent\rule{\textwidth}{0.8pt}\par
+  \addvspace{0.3\baselineskip}}
+
+% Enacting clause, centered small caps per congressional convention.
+\newcommand{\enactingclause}{%
+  \par\addvspace{0.3\baselineskip}%
+  {\itshape Be it enacted by the Senate and House of Representatives of the
+  United States of America in Congress assembled,}\par
+  \addvspace{0.4\baselineskip}}
+
+% Bill-section catchline, run in to the first line of text, bold small caps
+% label. \billsec{SECTION 1.}{SHORT TITLE; TABLE OF CONTENTS.}
+\newcommand{\billsec}[2]{%
+  \par\addvspace{0.9\baselineskip}%
+  \needspace{4\baselineskip}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1 #2}%
+  \markright{#1 #2}%
+  {\setlength{\parindent}{0pt}\bfseries #1\hskip 0.4em #2\par}%
+  \nopagebreak\par\addvspace{0.2\baselineskip}}
+
+% Comparative-print convention markers. Per the amendment instructions, matter
+% to be deleted is shown as [strike: ...] and matter to be inserted as
+% [insert: ...]; unchanged law is plain text. These render those brackets.
+\newcommand{\cprstrike}[1]{[strike: #1]}
+\newcommand{\cprinsert}[1]{[insert: #1]}
+
+% ==========================================================================
+% DRAFTING INSTRUCTIONS BLOCK (draftbox).
+% A set-off, ruled, sans-serif block that carries the bracketed, file-specific
+% instructions a future Claude Code pass executes. It is visually distinct from
+% statutory text so it is never mistaken for operative law, and it is meant to
+% be deleted once the section it governs has been drafted. Use \dstep for each
+% bracketed directive and \dquote for an illustrative quoted amendment line.
+% ==========================================================================
+\newenvironment{draftbox}[1]{%
+  \par\addvspace{0.6\baselineskip}%
+  \needspace{5\baselineskip}%
+  \begingroup
+  \footnotesize\sffamily\RaggedRight
+  \setlength{\parindent}{0pt}%
+  \noindent\rule{\linewidth}{0.7pt}\par\vspace{2.5pt}%
+  \noindent\textbf{[DRAFTING INSTRUCTIONS - #1]}\par\vspace{2.5pt}%
+}{%
+  \par\vspace{2.5pt}\noindent\rule{\linewidth}{0.7pt}\par
+  \endgroup
+  \addvspace{0.5\baselineskip}}
+
+% One bracketed directive, set as its own indented paragraph. The opening
+% bracket hangs at the indent and wrapped lines align under the text.
+\newcommand{\dstep}[1]{%
+  \par\setlength{\parindent}{0pt}%
+  \begingroup\setlength{\leftskip}{1.2em}%
+  \noindent[#1]\par\endgroup}
+
+% An illustrative quoted line inside a draftbox (e.g., a model amendment
+% instruction), indented and in the serif body face so it reads as draft text.
+\newcommand{\dquote}[1]{%
+  \par\setlength{\leftskip}{2.0em}\setlength{\rightskip}{1.0em}%
+  {\rmfamily\itshape #1\par}\setlength{\leftskip}{0pt}\setlength{\rightskip}{0pt}}
+
+\endinput
