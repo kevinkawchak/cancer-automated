@@ -1,0 +1,214 @@
+% ============================================================
+% references.bib
+% Provenance and research sources for the VVUQ-04 draft-bill (LaTeX).
+%
+% A finished congressional amendment carries no bibliography; its operative text
+% cites authority inline by United States Code and Public Law numbers. This file
+% backs only the research-aid back matter (the Provenance and Research Sources
+% appendix and, when drafted, the findings and the research-influence matrix),
+% so the operative sections stay clean while every source remains auditable.
+%
+% House conventions (carried from the template-bill and the instruct-bill .bib
+% files): a bare doi field where a DOI exists; a resolver or canonical url; a
+% note that opens with "DOI: <doi>." when a DOI exists and ends with the
+% clickable link in \url{...}; no howpublished field; no duplicate link across
+% the set. Rendered with ieeetr, which prints the note. Operative-authority keys
+% mirror the keys used in papers/VVUQ-04/instruct-bill so a future pass can
+% resolve them without renaming.
+% ============================================================
+
+% --- Required source of record for the reproduced statutory text. ---------
+% The full Title 21 USLM XML download point (the xml_usc21@119-93.zip input).
+% Kept as @misc so the ieeetr style prints it; the original portal reference is
+% the Office of the Law Revision Counsel download page.
+@misc{uscode_download,
+  author       = {{Office of the Law Revision Counsel}},
+  title        = {Download the United States Code},
+  year         = {2026},
+  publisher    = {United States House of Representatives},
+  note         = {Source portal for the Title 21 USLM XML reproduced in this draft (urldate 2026-05-31). \url{https://uscode.house.gov/download/download.shtml}}
+}
+
+@misc{olrc-usc21,
+  author       = {{Office of the Law Revision Counsel}},
+  title        = {United States Code, Title 21 -- Food and Drugs (USLM XML)},
+  year         = {2026},
+  publisher    = {U.S. House of Representatives},
+  note         = {Authoritative source of the reproduced existing-law text, current through Public Law 119-93. \url{https://uscode.house.gov}}
+}
+
+@misc{pl-119-93,
+  author       = {{United States Congress}},
+  title        = {Public Law 119-93 (the publication point Title 21 is current through)},
+  year         = {2026},
+  publisher    = {U.S. Government Publishing Office},
+  note         = {The public law through which the reproduced Title 21 text is current; named as the currency point, not as the law being amended. \url{https://www.govinfo.gov/app/collection/plaw}}
+}
+
+% --- The underlying Act amended and its load-bearing device provisions. ----
+@misc{usc-fdca,
+  author       = {{United States Congress}},
+  title        = {Federal Food, Drug, and Cosmetic Act, 21 U.S.C. § 301 et seq.},
+  year         = {1938},
+  publisher    = {Cornell Legal Information Institute},
+  note         = {The underlying Act this amendment changes; the device-regulation backbone reproduced in the comparative print. \url{https://www.law.cornell.edu/uscode/text/21/chapter-9}}
+}
+
+@misc{usc-360e4,
+  author       = {{United States Congress}},
+  title        = {Predetermined change control plans for devices, 21 U.S.C. § 360e-5 anchor at § 360e-4 (FD\&C Act § 515C)},
+  year         = {2022},
+  publisher    = {Cornell Legal Information Institute},
+  note         = {The keystone change-control authority after which the new section 515D (21 U.S.C. § 360e-5) is inserted. \url{https://www.law.cornell.edu/uscode/text/21/360e-4}}
+}
+
+@misc{pl-fdora,
+  author       = {{United States Congress}},
+  title        = {Food and Drug Omnibus Reform Act of 2022 (FDORA), Pub. L. 117-328, div. FF, title III},
+  year         = {2022},
+  publisher    = {U.S. Congress},
+  note         = {Added FD\&C Act § 515C (21 U.S.C. § 360e-4), the predetermined change control plan authority. \url{https://www.congress.gov/bill/117th-congress/house-bill/2617}}
+}
+
+@misc{pl-cures,
+  author       = {{United States Congress}},
+  title        = {21st Century Cures Act, Pub. L. 114-255},
+  year         = {2016},
+  publisher    = {U.S. Congress},
+  note         = {Source of the software and clinical decision support exclusion (FD\&C Act § 520(o), 21 U.S.C. § 360j(o)) and the real-world-evidence program (21 U.S.C. § 355g). \url{https://www.congress.gov/bill/114th-congress/house-bill/34}}
+}
+
+% --- In-force regulatory anchors for the operative duties. ------------------
+@misc{fda-pccp-2024,
+  author       = {{U.S. Food and Drug Administration}},
+  title        = {Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence-Enabled Device Software Functions},
+  year         = {2024},
+  publisher    = {U.S. Food and Drug Administration},
+  note         = {Final guidance (Dec. 4, 2024) operationalizing § 360e-4 for AI-enabled device software; the closest existing analogue to the verification-before-change duty. \url{https://www.fda.gov/regulatory-information/search-fda-guidance-documents/predetermined-change-control-plan-artificial-intelligence-enabled-device-software-functions}}
+}
+
+@misc{asmevv40,
+  author       = {{ASME}},
+  title        = {ASME V\&V 40-2018: Assessing Credibility of Computational Modeling through Verification and Validation: Application to Medical Devices},
+  year         = {2018},
+  publisher    = {American Society of Mechanical Engineers},
+  note         = {FDA-recognized consensus standard; the credibility basis for the verification, validation, and uncertainty quantification gate. \url{https://www.asme.org/codes-standards/find-codes-standards/v-v-40-assessing-credibility-computational-modeling-verification-validation-application-medical-devices}}
+}
+
+@misc{cfr-part11,
+  author       = {{Office of the Federal Register}},
+  title        = {Electronic Records; Electronic Signatures, 21 CFR Part 11},
+  year         = {2026},
+  publisher    = {U.S. Government},
+  note         = {The record-integrity basis for the hash-chained, tamper-evident audit trail required by the new section. \url{https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-11}}
+}
+
+@misc{cfr-92-210,
+  author       = {{Office for Civil Rights, HHS}},
+  title        = {Nondiscrimination in the use of patient care decision support tools, 45 CFR § 92.210},
+  year         = {2024},
+  publisher    = {U.S. Department of Health and Human Services},
+  note         = {Section 1557 rule (effective July 5, 2024); the in-force anchor for the bias-minimization and accessibility duties. \url{https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-92/subpart-B/section-92.210}}
+}
+
+@misc{cms-4201-ma,
+  author       = {{Centers for Medicare and Medicaid Services}},
+  title        = {Medicare Advantage and Part D Final Rule, Artificial Intelligence and Algorithm Guardrail, 42 CFR § 422.101(c)},
+  year         = {2023},
+  publisher    = {U.S. Government},
+  note         = {88 FR 22120; the strongest federal precedent for mandatory human-over-AI oversight in coverage decisions. \url{https://www.federalregister.gov/documents/2023/04/12/2023-07115}}
+}
+
+@misc{usc-titlevi,
+  author       = {{United States Congress}},
+  title        = {Title VI of the Civil Rights Act of 1964, 42 U.S.C. § 2000d},
+  year         = {1964},
+  publisher    = {Cornell Legal Information Institute},
+  note         = {Nondiscrimination basis (Title 42, not Title 26) for the bias-minimization duty. \url{https://www.law.cornell.edu/uscode/text/42/2000d}}
+}
+
+@misc{usc-ada,
+  author       = {{United States Congress}},
+  title        = {Americans with Disabilities Act of 1990, 42 U.S.C. § 12101 et seq.},
+  year         = {1990},
+  publisher    = {Cornell Legal Information Institute},
+  note         = {Accessibility and accommodation basis (Title 42) for the nondiscrimination duty. \url{https://www.law.cornell.edu/uscode/text/42/12101}}
+}
+
+% --- VVUQ research lineage (prior bill, repositories, prior VVUQ-04 steps). -
+@misc{kawchak2026vvuqbill,
+  author       = {Kawchak, Kevin},
+  title        = {VVUQ Physical AI Oncology Trial Bill (H.R. 9510, Draft 1.0)},
+  month        = may,
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20454870},
+  note         = {DOI: 10.5281/zenodo.20454870. The prior bill this amendment recasts; source at papers/VVUQ-03/final-paper. \url{https://doi.org/10.5281/zenodo.20454870}}
+}
+
+@misc{repo-cancer-automated,
+  author       = {Kawchak, Kevin},
+  title        = {cancer-automated: Automated Physical AI Oncology Trial Daily Deliverables},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.20372501},
+  note         = {DOI: 10.5281/zenodo.20372501. Repository holding the VVUQ-01 through VVUQ-04 records and this draft-bill. \url{https://github.com/kevinkawchak/cancer-automated}}
+}
+
+@misc{repo-physical-ai,
+  author       = {Kawchak, Kevin},
+  title        = {physical-ai-oncology-trials: National Platform},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.19244918},
+  note         = {DOI: 10.5281/zenodo.19244918. Sibling repository with the USL and PSL standards and the trial simulations. \url{https://github.com/kevinkawchak/physical-ai-oncology-trials}}
+}
+
+@misc{vvuq04-instruct-bill,
+  author       = {Kawchak, Kevin},
+  title        = {VVUQ-04 instruct-bill: U.S. Medical AI Bill and Law Summaries (through May 31, 2026)},
+  year         = {2026},
+  publisher    = {GitHub},
+  note         = {The legal crosswalk and bill-style instruction set whose ten markdown files and five .bib files drive the section drafting in this draft. \url{https://github.com/kevinkawchak/cancer-automated/tree/main/papers/VVUQ-04/instruct-bill}}
+}
+
+@misc{vvuq03-final-paper,
+  author       = {Kawchak, Kevin},
+  title        = {VVUQ-03 final-paper: VVUQ Physical AI Oncology Trial Bill source},
+  year         = {2026},
+  publisher    = {GitHub},
+  note         = {The prior-bill LaTeX source whose operative text, definitions, and crosswalk this amendment converts into FD\&C Act amendatory form. \url{https://github.com/kevinkawchak/cancer-automated/tree/main/papers/VVUQ-03/final-paper}}
+}
+
+@misc{vvuq04-template-bill,
+  author       = {Kawchak, Kevin},
+  title        = {VVUQ-04 template-bill: Title 21 device-provisions excerpt (LaTeX)},
+  year         = {2026},
+  publisher    = {GitHub},
+  note         = {The faithful Title 21 reproduction whose eleven section files are carried into this draft as the comparative-print base. \url{https://github.com/kevinkawchak/cancer-automated/tree/main/papers/VVUQ-04/template-bill}}
+}
+
+% --- Research influences (Appendix A and findings only; never operative). ---
+@misc{eo-14179,
+  author       = {{Executive Office of the President}},
+  title        = {Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence},
+  year         = {2025},
+  publisher    = {Office of the Federal Register},
+  note         = {Research influence only (90 FR 8741); deregulatory posture cited in the memo and findings, not in operative text. \url{https://www.federalregister.gov/documents/2025/01/31/2025-02172}}
+}
+
+@misc{hr238-healthy-tech,
+  author       = {{United States Congress}},
+  title        = {H.R. 238, Healthy Technology Act of 2025},
+  year         = {2025},
+  publisher    = {U.S. Congress},
+  note         = {Research influence only; 119th Congress bill on AI prescribing authority, referred to Energy and Commerce. \url{https://www.congress.gov/bill/119th-congress/house-bill/238}}
+}
+
+@misc{hres694-wiser,
+  author       = {{United States Congress}},
+  title        = {H.Res. 694, Sense of the House on the CMS WISeR artificial intelligence pilot},
+  year         = {2025},
+  publisher    = {U.S. Congress},
+  note         = {Research influence only; countervailing human-review signal, used as direction in the memo and findings. \url{https://www.congress.gov/bill/119th-congress/house-resolution/694}}
+}
