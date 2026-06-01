@@ -284,7 +284,7 @@ papers/
     image-instruct/  v0.3.0 ten figure specifications
     imagegen/        v0.4.0 ten rendered figures (scripts + PNGs)
     draft-paper/     v0.5.0 LaTeX scaffold (bracketed instructions)
-    full-paper/      v0.6.0 finished manuscript (18 tables, 5 figures, 29 refs)
+    full-paper/      v0.6.0 finished manuscript (18 tables, 4 figures, 29 refs)
     final-paper/     author-finalized manuscript (Zenodo)
   VVUQ-02/           (humanoid VVUQ; final paper DOI 10.5281/zenodo.20421754)
     instructions/    prompt and output lineage
