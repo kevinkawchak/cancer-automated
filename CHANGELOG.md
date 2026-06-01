@@ -5,6 +5,38 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2.3.1] - 2026-06-01
+
+### Added
+- `papers/README.md`: a comprehensive landing page for the four sequential VVUQ
+  works, detailing the verification developments and progress for each VVUQ-xx
+  directory, the building process from one work to the next with ASCII diagrams,
+  what the results mean for the new Physical AI oncology trial industry, the
+  processing feat accomplished by AI, and the accelerated timeline versus
+  conventional methods to reach the final VVUQ-04 bill. Includes DOI badges, the
+  repository structure, ASCII diagrams, and the final paper or bill DOI for each
+  work in a "Please see Zenodo for author final edits: PDF and LaTeX Source
+  Files" line.
+- `papers/VVUQ-01/README.md`, `papers/VVUQ-02/README.md`,
+  `papers/VVUQ-03/README.md`, and `papers/VVUQ-04/README.md`: one landing page per
+  work, each focused only on its own directory, with the verification
+  developments and progress, the building process within the work shown with
+  ASCII diagrams, what the results mean for the industry, the processing feat
+  accomplished by AI, and the accelerated timeline versus conventional methods to
+  reach that work's end goal. Each includes DOI badges, the repository structure,
+  and the final paper or bill DOI for all four works in an organized table.
+- Authored autonomously across sequential commits in a single pull request, one
+  README per commit pushed in real time, then a second-to-last error-fix commit
+  and this final repository-updates commit. The additions are Markdown only and
+  contain no images or mermaid diagrams.
+
+### Changed
+- `README.md`: release badge to v2.3.1, a v2.3.1 summary above the prior summary,
+  a new "Papers Directory READMEs" section with a table-of-contents entry, and the
+  repository structure tree extended with the five new `README.md` files.
+- `releases.md`: v2.3.1 release notes added above v2.3.0.
+- `CITATION.cff`: version bumped to 2.3.1.
+
 ## [2.3.0] - 2026-06-01
 
 ### Added
