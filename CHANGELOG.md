@@ -5,6 +5,42 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2.3.0] - 2026-06-01
+
+### Added
+- `papers/VVUQ-04/full-bill/`: the finished, Overleaf-compilable LaTeX amendment
+  to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.),
+  processed from the v2.2.0 `draft-bill` scaffold by executing every bracketed
+  drafting instruction against the named `instruct-bill` and `VVUQ-03/final-paper`
+  sources. The bill is H. R. 9510, the Verification Before Generation in Physical
+  AI Oncology Trials Act of 2026. Authored autonomously across sequential commits
+  in a single pull request, one file per commit pushed in real time, then a
+  second-to-last error-fix-and-bundle commit and a final repository-updates
+  commit. The input `draft-bill` directory is left untouched.
+- `main.tex` (caption with H. R. 9510 and a cover-page provenance note, SECTION 1
+  short title and table of contents, SEC. 2 with 14 grounded findings, SEC. 3 the
+  new section 515D / 21 U.S.C. § 360e-5 plus ten conforming amendments and the
+  clerical, rule-of-construction, and effective-date changes, SEC. 4 the
+  comparative print, Appendix A research-influence matrix, Appendix B
+  development-transparency and implementation statement, and references),
+  `usctitle.sty` (US Code reproduction plus the amendment apparatus, the
+  header-overlap fix, URL breaking, and full-width ragged-right tables; the
+  draftbox is removed), `references.bib` (79 ieeetr entries), a detailed
+  `README.md` with DOI badges and ASCII diagrams, `full-bill-LaTeX.zip`, and
+  `prompt-full-bill.md` and `output-full-bill.md`.
+- `papers/VVUQ-04/full-bill/sections/`: the 11 comparative-print sections (s301,
+  s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, s360k), each a
+  focused print of the affected provisions with insertions and deletions marked.
+  The new operative duty is section 515D inserted after § 360e-4.
+
+### Changed
+- `README.md`: release badge to v2.3.0, a v2.3.0 summary above the prior summary,
+  a new "VVUQ-04 Full Bill (LaTeX)" section with an ASCII process diagram and a
+  table-of-contents entry, and the repository structure tree extended with a
+  `VVUQ-04/full-bill` block.
+- `releases.md`: v2.3.0 release notes added above v2.2.0.
+- `CITATION.cff`: version bumped to 2.3.0.
+
 ## [2.2.0] - 2026-06-01
 
 ### Added

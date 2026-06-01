@@ -4,6 +4,40 @@ Release notes for the cancer-automated repository.
 
 ---
 
+VVUQ-04 Full Bill: Finished Federal Food, Drug, and Cosmetic Act Amendment in LaTeX (v2.3.0)
+v2.3.0 - VVUQ-04 Full Bill: Finished FD&C Act Amendment, H. R. 9510 (LaTeX)
+
+## Summary
+
+- Adds papers/VVUQ-04/full-bill, the finished, Overleaf-compilable LaTeX amendment to the Federal Food, Drug, and Cosmetic Act (21 U.S.C. § 301 et seq.), processed from the v2.2.0 draft-bill scaffold by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix-and-bundle commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- Designates the bill H. R. 9510, the Verification Before Generation in Physical AI Oncology Trials Act of 2026, executing every bracketed drafting instruction in the draft scaffold against the named papers/VVUQ-04/instruct-bill and papers/VVUQ-03/final-paper sources; the drafting-instruction blocks are removed and the input draft-bill directory is left untouched.
+- Drafts the operative new section 515D (21 U.S.C. § 360e-5) inserted after the predetermined change control plan keystone (§ 360e-4): subsections (a) through (j) carry the verify-before-generate requirement, the order of operations, the ten-gate threshold schedule set to the body measure, the readiness gates, documentation and attestation, cybersecurity and human oversight, nondiscrimination, regulations within 365 days, fifteen definitions, and a rule of construction.
+- Drafts ten conforming amendments and a focused comparative print (changes in existing law) for § 321(h), § 331, § 351, § 355g, § 360(k), § 360c, § 360e, § 360e-4, § 360j(o), and § 360k, marking each insertion and deletion and using the asterisk convention for omitted unchanged matter; SECTION 1 short title and table of contents and SEC. 2 with 14 grounded findings complete the operative text.
+- Keeps the four goals: up to date with today's medical AI law (FDA PCCP guidance, QMSR, 45 CFR § 92.210, CMS Medicare Advantage AI guardrail, CPT autonomy taxonomy); grounded in mass-adopted references anchored to a BibTeX key; emerging 119th Congress bills and executive actions confined to a non-operative Appendix A research-influence matrix, the findings, or a memo; and streamlined to the structured amendment format.
+- Addresses the flagged issues: abbreviates the running header so no two fields overlap, breaks long reference URLs so none runs off the page, keeps the authentic House caption long title, sets every table to the body width with left-aligned ragged-right columns, uses single hyphens and the section symbol throughout, and adds a brief cover-page note and an Appendix B development-transparency statement covering v2.0.0 to v2.3.0 and the implementation pathway for lawmakers.
+- Keeps the pull request green: the additions are LaTeX, BibTeX, Markdown, and a zip, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v2.3.0, a v2.3.0 summary above the prior summary, a VVUQ-04 Full Bill (LaTeX) section with an ASCII process diagram and a table-of-contents entry, and the repository structure tree with a VVUQ-04/full-bill block), this releases file, the CHANGELOG (v2.3.0), and CITATION.cff (version 2.3.0).
+
+## Features
+
+- papers/VVUQ-04/full-bill/main.tex: the caption (H. R. 9510, the long title, the referral, the enacting clause, and a cover-page provenance note), SECTION 1 short title and table of contents, SEC. 2 findings, SEC. 3 the new section 515D plus the ten conforming amendments and the clerical, rule-of-construction, and effective-date changes, SEC. 4 the comparative print wiring the 11 section files, Appendix A research-influence matrix, Appendix B development-transparency and implementation statement, authorship and provenance, and ieeetr references; no images.
+- papers/VVUQ-04/full-bill/usctitle.sty: the United States Code reproduction commands plus the congressional amendment apparatus and comparative-print markers, with the running-header overlap fixed, URL breaking added, xltabular and tabularx loaded with left-aligned ragged-right columns set to the body measure, RaggedRight spacing, and maximal widow and orphan penalties; the draft-bill drafting-instruction block is removed.
+- papers/VVUQ-04/full-bill/references.bib: 79 ieeetr entries with bare DOIs, single resolver or canonical URLs, notes ending in a clickable link, no howpublished, and no duplicate keys or links, covering the operative anchors, recognized consensus standards, state human-in-the-loop laws as findings, the VVUQ lineage, and the research influences.
+- papers/VVUQ-04/full-bill/sections: s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, and s360k, each a focused comparative print of the affected provisions with insertions and deletions marked.
+- papers/VVUQ-04/full-bill/README.md: DOI badges, the what-changed-from-the-draft table, the bill-at-a-glance table, the section 515D subsection map, the per-section comparative-print table, the statutory-layering, file-correlation, and lineage ASCII diagrams, the issues addressed, and the Overleaf compile recipe.
+- papers/VVUQ-04/full-bill/full-bill-LaTeX.zip: the Overleaf-ready bundle; prompt-full-bill.md and output-full-bill.md: the generating prompt verbatim and the narrative output of this step.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+- This is an independent research draft of a bill, not an enacted law and not legal advice; it is not endorsed by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress. The reproduced statutory text is in the public domain; the generated framing is released under CC BY 4.0. The emerging 119th Congress bills and executive actions appear only as research influences in Appendix A and are never cited as the basis of an operative clause.
+- Built autonomously by Claude Code Opus 4.8 (1M context) Max across sequential commits in a single pull request, pushing each file in real time, with a second-to-last error-fix-and-bundle commit and this final repository-updates commit. pdflatex was not available in the container, so the LaTeX was validated structurally and made compile-safe (balanced braces and environments, all 11 input targets resolve, every macro used is defined, no stray math or unescaped specials, the section symbol the only intended non-ASCII, single hyphens only, and tables set to the body measure); the rendered PDF and final page balancing are produced in Overleaf. Only kevinkawchak/cancer-automated was edited; nothing was committed to kevinkawchak/physical-ai-oncology-trials.
+
+---
+
 VVUQ-04 Draft Bill: Federal Food, Drug, and Cosmetic Act Amendment Scaffold in LaTeX (v2.2.0)
 v2.2.0 - VVUQ-04 Draft Bill: Federal Food, Drug, and Cosmetic Act Amendment Scaffold (LaTeX)
 
