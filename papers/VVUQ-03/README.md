@@ -114,13 +114,13 @@ analysis.
    Findings + Algorithm Doc +   --->   Prior-Law Crosswalk   --->   Draft Statutory Text
    Attestations + Supporting Doc                                    (H. R. 9510, Sections 1-9)
             |                                                              |
-            +----------------------> Section-by-Section Analysis <---------+
+            +------------------> Section-by-Section Analysis <-------------+
                                               |
                                               v
                               Implementation, Enforcement, Fiscal
                                               |
                                               v
-                                   Limitations -> Conclusions
+                                  Limitations -> Conclusions
 ```
 
 The Draft Statutory Text is enactable language in Sections 1 to 9 with the
