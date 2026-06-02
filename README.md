@@ -94,7 +94,7 @@ The thesis above is realized by a pipeline that runs the five established method
 ## Daily Deliverable Pipeline
 
 ```
-  Inputs                     Five Established Methods            Assured Output
+  Inputs                     Five Established Methods           Assured Output
   (web + PDF)            --> (per daily deliverable)        --> (committed + archived)
   +-------------------+      +---------------------------+      +-------------------+
   | Web search        |  ->  | 1. Instruction generation |  ->  | Daily deliverable |
@@ -102,8 +102,8 @@ The thesis above is realized by a pipeline that runs the five established method
   | Autochunk to 200K |      | 3. Code execution         |      | with per-chunk    |
   | READMEs per chunk |      | 4. Paper assembly         |      | READMEs at 200K   |
   +-------------------+      +---------------------------+      +-------------------+
-            |                            |                                ^
-            v                            v                                |
+            |                             |                               ^
+            v                             v                               |
   +-------------------+      +---------------------------+      +-------------------+
   | Non-stop commit   |      | Triple simulation         |      | VVUQ gate         |
   | scheduler 24/day  |  ->  | run each project 3 times, |  ->  | V and V and UQ,   |
@@ -272,7 +272,7 @@ cancer-automated/
 └── papers/                         # Paper workspaces, execution records, figures
     ├── README.md                   # ★ v2.3.1 papers landing page: four works, lineage, final DOIs
     ├── VVUQ-01/
-        ├── README.md           # ★ v2.3.1 VVUQ-01 landing page: developments, build, results, DOIs
+        ├── README.md               # ★ v2.3.1 VVUQ-01 landing page: developments, build, results, DOIs
         ├── inputs/                 # Source paper and research chunks (ingestion inputs)
         ├── templates/Template_10/  # LaTeX manuscript template (future paper build)
         ├── execution/              # ★ v0.2.0 execution record of the v0.1.0 codebase
@@ -284,16 +284,16 @@ cancer-automated/
         │   └── 05-physical-ai-stage2/ # 2030 PDAC pilot and lights-off safety surface
         ├── image-instruct/         # ★ v0.3.0 image instructions (10 specs + master README)
         │   ├── README.md           # Processing model, page frame, palette, 10-spec index
-        │   ├── 01-vvuq-gate-funnel/        # Funnel: 6 candidates to 1 accepted
-        │   ├── 02-acceleration-waterfall/  # Waterfall: 30 to 12 days, 2.5x
-        │   ├── 03-five-methods-flowchart/  # Flowchart: the five established methods
-        │   ├── 04-vvuq-assurance-wheel/    # Radar wheel: threshold vs achieved
-        │   ├── 05-pdac-pilot-timeline/     # Gantt: 168-day 2030 PDAC pilot
-        │   ├── 06-test-coverage-treemap/   # Treemap: 51 tests across 8 modules
+        │   ├── 01-vvuq-gate-funnel/          # Funnel: 6 candidates to 1 accepted
+        │   ├── 02-acceleration-waterfall/    # Waterfall: 30 to 12 days, 2.5x
+        │   ├── 03-five-methods-flowchart/    # Flowchart: the five established methods
+        │   ├── 04-vvuq-assurance-wheel/      # Radar wheel: threshold vs achieved
+        │   ├── 05-pdac-pilot-timeline/       # Gantt: 168-day 2030 PDAC pilot
+        │   ├── 06-test-coverage-treemap/     # Treemap: 51 tests across 8 modules
         │   ├── 07-lights-off-state-machine/  # State diagram: factory safety surface
-        │   ├── 08-fda-cost-efficiency-bridge/  # Financial bridge plus credibility
+        │   ├── 08-fda-cost-efficiency-bridge/# Financial bridge plus credibility
         │   ├── 09-value-proposition-matrix/  # Matrix: cloud vs conventional server
-        │   └── 10-file-generation-sankey/  # Sankey: 13 files to 4 paper roles
+        │   └── 10-file-generation-sankey/    # Sankey: 13 files to 4 paper roles
         ├── imagegen/               # ★ v0.4.0 rendered figures (10 scripts + 10 PNGs + README)
         │   ├── README.md           # Rendered gallery, generated code vs execution, reproduction
         │   ├── 01-vvuq-gate-funnel/           # 01-vvuq-gate-funnel.py + .png (funnel)
@@ -323,8 +323,8 @@ cancer-automated/
             ├── Images/             # Four author supplied figure slots plus a guide
             └── sections/           # abstract, intro, methods, results, discussion,
                                     #   limitations_future, conclusions, references, back_matter
-    ├── VVUQ-02/                     # ★ v0.7.0 codegen, ★ v0.8.0 execution
-        ├── README.md           # ★ v2.3.1 VVUQ-02 landing page: developments, build, results, DOIs
+    ├── VVUQ-02/                    # ★ v0.7.0 codegen, ★ v0.8.0 execution
+        ├── README.md               # ★ v2.3.1 VVUQ-02 landing page: developments, build, results, DOIs
         ├── instructions/           # prompt-instruct.md, output-instruct.md (lineage)
         ├── inputs/                 # ★ wired standards corpus + clinical baselines
         │   ├── standards/          # ASME V&V 40, IEC 80601-2-77, ISO/TS 15066, ...
@@ -363,7 +363,7 @@ cancer-automated/
         │   ├── 07-validation-parity-scatter/     # Parity: observed vs reference
         │   ├── 08-sweep-composite-stripplot/     # Strip: 32-iteration composite
         │   ├── 09-composite-weighting-waterfall/ # Waterfall: 6 weights to 1.00, gated
-        │   ├── 10-four-entrant-comparison-violin/  # Box: 4 entrants, humanoid rank 2
+        │   ├── 10-four-entrant-comparison-violin/# Box: 4 entrants, humanoid rank 2
         │   ├── 11-sensor-stream-safety-bands/    # Line bands: 1000-row sensor stream
         │   ├── 12-eight-phase-whipple-swimmer/   # Swimmer: 60 s 8-phase Whipple
         │   ├── 13-assurance-cost-assessment/     # Financial: autonomous vs conventional
@@ -395,8 +395,8 @@ cancer-automated/
         │   ├── prompt-full-paper.md    # the generating prompt, verbatim
         │   └── output-full-paper.md    # the narrative output of the full-paper step
         └── final-paper/            # placeholder (future submission-ready manuscript)
-    ├── VVUQ-03/                     # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
-        ├── README.md           # ★ v2.3.1 VVUQ-03 landing page: developments, build, results, DOIs
+    ├── VVUQ-03/                    # ★ v1.4.0 full paper (VVUQ Physical AI Oncology Trial Bill, H.R. 9510)
+        ├── README.md               # ★ v2.3.1 VVUQ-03 landing page: developments, build, results, DOIs
         ├── template-paper/         # 21 CFR Part 312 adaptation chunks + .sty + .bib (source model)
         ├── draft-paper/            # v1.3.0 LaTeX bill scaffold (bracketed instructions + final refs)
         │   ├── README.md           # DOI badges, ASCII diagrams, section-to-source map, build validation
@@ -416,8 +416,8 @@ cancer-automated/
             ├── full-paper.zip      # Overleaf-ready LaTeX bundle
             ├── prompt-full-paper.md    # the generating prompt, verbatim
             └── output-full-paper.md    # the narrative output of the full-paper step
-    └── VVUQ-04/                     # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft + v2.3.0 full bill (LaTeX)
-        ├── README.md           # ★ v2.3.1 VVUQ-04 landing page: developments, build, results, DOIs
+    └── VVUQ-04/                        # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft + v2.3.0 full bill (LaTeX)
+        ├── README.md               # ★ v2.3.1 VVUQ-04 landing page: developments, build, results, DOIs
         ├── instruct-bill/          # head start for the next bill draft (10 md + 5 bib + README)
         │   ├── README.md           # DOI badges, repo structure, file and bib correlations
         │   ├── 01-federal-statutory-framework.md        # Title 21, 42, 29, 15 statutes
@@ -438,13 +438,13 @@ cancer-automated/
         │   ├── prompt-instruct-bill.md                  # the generating prompt, verbatim
         │   └── output-instruct-bill.md                  # the narrative output of this step
         ├── template-bill/          # ★ v2.1.0 Title 21 device-provisions excerpt (LaTeX)
-        │   ├── xml_usc21@119-93.zip # input: full Title 21 USLM XML (12.4 MB)
+        │   ├── xml_usc21@119-93.zip# input: full Title 21 USLM XML (12.4 MB)
         │   └── LaTeX/              # Overleaf-ready U.S. Code look-and-feel reproduction
         │       ├── README.md       # DOI badges, section/interaction/file tables, ASCII
         │       ├── main.tex        # Title 21 head, structure, 11 \input lines, references
         │       ├── usctitle.sty    # U.S. Code style: serif, hanging indents, note styling
         │       ├── references.bib  # provenance + VVUQ lineage (11 entries)
-        │       ├── template-bill-LaTeX.zip   # Overleaf-ready bundle
+        │       ├── template-bill-LaTeX.zip        # Overleaf-ready bundle
         │       ├── prompt-template-bill/LaTeX.md  # the generating prompt, verbatim
         │       ├── output-template-bill/LaTeX.md  # the narrative output of this step
         │       └── sections/       # 11 FD&C Act device sections, one .tex each
@@ -458,7 +458,7 @@ cancer-automated/
         │   ├── draft-bill-LaTeX.zip   # Overleaf-ready bundle
         │   ├── prompt-draft-bill.md   # the generating prompt, verbatim
         │   ├── output-draft-bill.md   # the narrative output of this step
-        │   └── sections/           # 11 reproduced sections, each + bracketed draft instructions
+        │   └── sections/              # 11 reproduced sections, each + bracketed draft instructions
         │       ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
         │       └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
         └── full-bill/              # ★ v2.3.0 finished FD&C Act amendment, H. R. 9510 (LaTeX)
@@ -469,7 +469,7 @@ cancer-automated/
             ├── full-bill-LaTeX.zip    # Overleaf-ready bundle
             ├── prompt-full-bill.md    # the generating prompt, verbatim
             ├── output-full-bill.md    # the narrative output of this step
-            └── sections/           # 11 comparative-print sections, each finished + marked
+            └── sections/              # 11 comparative-print sections, each finished + marked
                 ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
                 └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
 ```
@@ -526,7 +526,7 @@ As of v2.3.1 the [papers/](papers) directory carries five comprehensive landing 
 The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct) and rendered under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). The instructions hold 10 comprehensive specifications plus a master README; each fully specifies one publication ready, portrait, full-size, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0). As of v0.4.0 the figures are built: `imagegen` carries 10 self-contained matplotlib scripts (the generated code) and the 10 rendered PNG figures (the execution output), one numbered subdirectory per figure. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the build follows that specification with no manual positioning.
 
 ```
-  image-instruct/NN-name/         imagegen/NN-name/            imagegen/NN-name/
+  image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
   +----------------------+        +----------------------+      +-------------------+
   | README.md            |  -->   | NN-name.py           |  --> | NN-name.png       |
   | full figure spec     |  spec  | self-contained       | run  | portrait, 300 dpi |
@@ -557,13 +557,13 @@ The set avoids basic bar, pie, and line charts, shares one professional palette 
 The paper generation leg of the thesis begins under [papers/VVUQ-01/draft-paper](papers/VVUQ-01/draft-paper), a complete and compilable single column LaTeX scaffold for the manuscript *Two Stage VVUQ Oncology Clinical Trial Verification Automation Priority over Existing Generated Code*. The scaffold separates final files from instruction files: the title page (`main.tex`), the style (`new_paper.sty`), the 29 entry bibliography (`references.bib`), the references section, and the back matter are final, while the seven body section files carry bracketed processing instructions that name the exact repository directories and files for a future Claude Code Opus 4.7 (1M) Max pass to write a 70+ page paper. Writing the assurance specification (which sources, which metrics, which figures, and the formatting contract) ahead of the prose is the paper generation analog of the VVUQ gate.
 
 ```
-  draft-paper/ (now)                          Future pass (full paper)
-  +-----------------------------------+       +-----------------------------------+
-  | FINAL    main.tex, new_paper.sty, | -->   | REPLACE the bracketed [ ... ]     |
-  |          references.bib, back      | 70+  | blocks in the seven body sections |
-  |          matter, references        | page | with grounded prose, tables, and  |
-  | INSTRUCT the seven body sections   | ===> | figures; keep the scaffold intact |
-  +-----------------------------------+       +-----------------------------------+
+  draft-paper/ (now)                            Future pass (full paper)
+  +------------------------------------+        +-----------------------------------+
+  | FINAL    main.tex, new_paper.sty,  |  -->   | REPLACE the bracketed [ ... ]     |
+  |          references.bib, back      |  70+   | blocks in the seven body sections |
+  |          matter, references        |  page  | with grounded prose, tables, and  |
+  | INSTRUCT the seven body sections   |  ===>  | figures; keep the scaffold intact |
+  +------------------------------------+        +-----------------------------------+
 ```
 
 The bibliography is final: every DOI entry carries its human readable DOI and a clickable resolver URL, and repository entries carry both a GitHub and a Zenodo URL, each once, with no duplicate link and no `howpublished` field. A `draft-paper.zip` bundle is provided for a one step Overleaf upload. The additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green.
@@ -573,13 +573,13 @@ The bibliography is final: every DOI entry carries its human readable DOI and a 
 The full manuscript is realized under [papers/VVUQ-01/full-paper](papers/VVUQ-01/full-paper). It is built from the v0.5.0 draft scaffold without modifying it: every bracketed processing instruction in the seven body sections is replaced with grounded, publication grade prose, tables, and figures, targeting roughly 70 typeset pages, while the title page, style file, bibliography, references block, and back matter are carried over. The paper renders the executed evidence (51 of 51 tests, the 2.5x acceleration, the full VVUQ gate decision surface of 1 accept and 5 block with 1 escalate, triple run consensus, the lights off factory safety cases, and the 2030 PDAC pilot) across 18 tabularx tables sized to the body text width, 5 figures, and 29 `ieeetr` references.
 
 ```
-  draft-paper/ (scaffold)                     full-paper/ (this release)
-  +-----------------------------------+       +-----------------------------------+
-  | FINAL    main.tex, new_paper.sty, | -->   | CARRIED OVER, plus the seven body |
-  |          references.bib, back      | 70   | sections written in full with     |
-  |          matter, references        | page | grounded prose, 18 tables, and    |
-  | INSTRUCT the seven body sections   | ===> | 5 figure slots; scaffold intact   |
-  +-----------------------------------+       +-----------------------------------+
+  draft-paper/ (scaffold)                       full-paper/ (this release)
+  +------------------------------------+        +-----------------------------------+
+  | FINAL    main.tex, new_paper.sty,  |  -->   | CARRIED OVER, plus the seven body |
+  |          references.bib, back      |  70    | sections written in full with     |
+  |          matter, references        |  page  | grounded prose, 18 tables, and    |
+  | INSTRUCT the seven body sections   |  ===>  | 5 figure slots; scaffold intact   |
+  +------------------------------------+        +-----------------------------------+
 ```
 
 The four figures use placeholder slots that compile immediately and are replaced automatically once the author drops the final image into `Images/`. A `full-paper.zip` bundle is provided for a one step Overleaf upload, and the additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamllint` surface, so the CI stays green.
@@ -591,21 +591,21 @@ The code generation leg of the thesis advances to a harder subject under [papers
 The assurance layer is built against external standards already used in real life, so the credibility argument is defensible to a regulator. Each gate binds to its governing standards through a machine-readable map and the wired standards input corpus, validates observed metrics against an independent reference, and quantifies uncertainty across seeded runs.
 
 ```
-  candidate humanoid behaviors per iteration
+   candidate humanoid behaviors per iteration
         |
-   +----v-------------------------------------------------------+
+   +----v--------------------------------------------------------+
    | 01 bimanual-handeye-servo        06 vascular-no-fly-hand *  |
    | 02 dexterous-finger-force        07 bimanual-suturing       |
    | 03 whole-body-balance            08 perception-scene        |
    | 04 autonomous-plan-correctness   09 shared-or-collision *   |
    | 05 instrument-grasp-handover     10 fault-estop-degrade *   |
-   +----v-------------------------------------------------------+
+   +----v--------------------------------------------------------+
         |  each gate: Verify (== 1.0) -> Validate (independent
         |  reference) -> Quantify (coefficient of variation)
         v
-   ACCEPT (all 10 pass)  /  BLOCK (any fail)  /  ESCALATE (divergence)
-   composite reported only when all 10 gates ACCEPT
-   * immediate-catastrophe gates: V == 1.0, tightest CV, plus a hard predicate
+    ACCEPT (all 10 pass)  /  BLOCK (any fail)  /  ESCALATE (divergence)
+    composite reported only when all 10 gates ACCEPT
+    * immediate-catastrophe gates: V == 1.0, tightest CV, plus a hard predicate
 ```
 
 Standards anchor set: ASME V&V 40-2018 and NASA-STD-7009A for model credibility (with the FDA 2023 computational modeling guidance), IEC 80601-2-77 and IEC 60601-1 for robotic surgery, ISO 13482 and ISO/TS 15066 and ISO 10218-1 and ISO 9283 for service and collaborative robot safety, IEC 62304 and ISO 14971 and ISO 13849-1 for software and risk, and UL 4600 and IEEE 7009 for autonomy and fail-safe design. The deterministic 32-iteration Latin hypercube sweep (seed 20260525) clears all 10 gates on every iteration; the composite mean is 93.56, reported only because all gates ACCEPT. The tree is standalone, runs on the Python standard library with guarded optional backends, and keeps `ruff check`, `ruff format --check`, and `yamllint` clean across Python 3.10, 3.11, and 3.12; its 172 tests include a 64-item 10-gate decision surface (one ACCEPT plus several BLOCK and ESCALATE cases per gate). The execution record is realized in v0.8.0 and the 15 image instructions in v0.9.0 (both below); the manuscript is reserved as a placeholder for a future pull request.
@@ -637,7 +637,7 @@ The image generation leg of the thesis is specified under [papers/VVUQ-02/image-
   +----------------------+        +----------------------+      +-------------------+
   | README.md            |  -->   | NN-name.py           |  --> | NN-name.png       |
   | full figure spec     |  spec  | self-contained       | run  | portrait, 300 dpi |
-  | (data, layout, color,| =====> | matplotlib + numpy,  | ===> | white background, |
+  | (data, layout, color,|  ===>  | matplotlib + numpy,  | ===> | white background, |
   |  page frame, paths)  |        | hardcoded grounded   |      | full size, aligned|
   |  v0.9.0 instructions |        | values, ruff clean   |      | no positioning    |
   +----------------------+        +----------------------+      +-------------------+
@@ -669,12 +669,12 @@ The 15 chart families are all distinct, chosen from a 20-family menu for best da
 As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README and the two lineage files. Each script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, hardcodes its grounded values, and renders a fixed `figsize=(8.5, 11)` frame at 300 dpi (2550 by 3300 pixels) on a white background. A shared auto-fit frame keeps the header, subtitle, and footer from clipping, so no manual positioning is needed.
 
 ```
-  image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
-  +----------------------+        +----------------------+      +-------------------+
-  | README.md            |  read  | NN-name.py           |  run | NN-name.png       |
-  | full figure spec     | =====> | self-contained       | ===> | portrait, 300 dpi |
-  | v0.9.0 instructions  |  spec  | matplotlib + numpy   |      | white background  |
-  +----------------------+        +----------------------+      +-------------------+
+  image-instruct/NN-name/         imagegen/NN-name/              imagegen/NN-name/
+  +----------------------+        +----------------------+       +-------------------+
+  | README.md            |  read  | NN-name.py           |  run  | NN-name.png       |
+  | full figure spec     |  ===>  | self-contained       |  ===> | portrait, 300 dpi |
+  | v0.9.0 instructions  |  spec  | matplotlib + numpy   |       | white background  |
+  +----------------------+        +----------------------+       +-------------------+
         assurance specification  ----------------->  rendered figure (v1.0.0)
 ```
 
@@ -706,9 +706,9 @@ As of v1.1.0 the draft manuscript scaffold lives under [papers/VVUQ-02/draft-pap
   codegen/ + execution/ + inputs/ + imagegen/        draft-paper/ (this bundle)
   +---------------------------------------+          +---------------------------+
   | source files named per section        |  cite    | main.tex + sections/*.tex |
-  | (the grounding for every claim)        | =======> | [bracketed instructions]  |
-  +---------------------------------------+  +refs    | references.bib (final)    |
-                                                      +---------------------------+
+  | (the grounding for every claim)       | =======> | [bracketed instructions]  |
+  +---------------------------------------+  +refs   | references.bib (final)    |
+                                                     +---------------------------+
         scaffold + instructions  ----------------->  future 70+ page full paper
 ```
 
@@ -723,7 +723,7 @@ As of v1.2.0 the full manuscript is realized under [papers/VVUQ-02/full-paper](p
   +---------------------------+               +---------------------------+
   | [bracketed instructions]  |   process     | finished prose + tables   |
   | + final references.bib    | ============> | + 13 body-width tables    |
-  | + five \autoref figures   |   +grounding  | + five \autoref figures   |
+  | + five \autoref figures   |  +grounding   | + five \autoref figures   |
   +---------------------------+               +---------------------------+
         the build order  ----------------->   the 70+ page manuscript
 ```
