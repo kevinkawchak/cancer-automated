@@ -63,17 +63,17 @@ earlier works into law. The internal build runs from the template adaptation
 through to the finished bill.
 
 ```
-  template-paper/              instruct-paper/           draft-paper/  (v1.3.0)
-  (21 CFR Part 312 model)      (multi-model, rated)      (bill scaffold)
-  +----------------------+     +------------------+      +----------------------+
-  | chunk_01..chunk_10   |     | prompt           |      | main.tex + 15        |
-  | Physical_AI_...sty   | ->  | output-1 ChatGPT |  ->  |   sections =         |
-  | Physical_AI_...bib   |     | output-2 Haiku   |      |   [bracketed         |
-  | (cover, style, cite  |     | output-3 Gemini  |      |    instructions]     |
-  |  model only)         |     | (rated: 9.5/8.5/ |      | references.bib (60)  |
-  +----------------------+     |  8.0)            |      +----------------------+
-                               +------------------+                 |
-                                                                    v
+  template-paper/               instruct-paper/           draft-paper/  (v1.3.0)
+  (21 CFR Part 312 model)       (multi-model, rated)      (bill scaffold)
+  +----------------------+      +------------------+      +----------------------+
+  | chunk_01..chunk_10   |      | prompt           |      | main.tex + 15        |
+  | Physical_AI_...sty   |  ->  | output-1 ChatGPT |  ->  |   sections =         |
+  | Physical_AI_...bib   |      | output-2 Haiku   |      |   [bracketed         |
+  | (cover, style, cite  |      | output-3 Gemini  |      |    instructions]     |
+  |  model only)         |      | (rated: 9.5/8.5/ |      | references.bib (60)  |
+  +----------------------+      |  8.0)            |      +----------------------+
+                                +------------------+                 |
+                                                                     v
                                                          full-paper/  (v1.4.0)
                                                          +----------------------+
                                                          | 15 finished sections |
@@ -106,8 +106,8 @@ crosswalk, then drafted into the statutory text and the section-by-section
 analysis.
 
 ```
-   Recorded technical evidence              Existing law
-   (VVUQ-01, VVUQ-02, national              (federal + 4 states)
+   Recorded technical evidence             Existing law
+   (VVUQ-01, VVUQ-02, national             (federal + 4 states)
    platform, USL/PSL, simulations)                |
             |                                     |
             v                                     v
