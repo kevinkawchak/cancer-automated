@@ -69,8 +69,8 @@ center.
   | output-instruct| -> | clinical/ (2)    | ->  | data/ docs/ tests/(172) |
   | templates/T_04 |    | (ASME, IEC, ISO, |     | kinematics..vvuq..llm   |
   +----------------+    |  ISO/TS, UL, ...)|     +-------------------------+
-                        +------------------+                 |
-                                                             v
+                        +------------------+                  |
+                                                              v
   execution/  (v0.8.0)                           image-instruct/    imagegen/
   +-------------------------+                    (v0.9.0, 15 specs) (v1.0.0, 15 figs)
   | 01 foundation           |                    +------------+     +------------+
