@@ -62,37 +62,37 @@ finished manuscript, with the generated codebase and its execution record at the
 center.
 
 ```
-  instructions/        inputs/                 codegen/  (v0.7.0)
-  (spec, zero code)     (standards + clinical)  (generated 10-gate codebase)
+  instructions/         inputs/                  codegen/  (v0.7.0)
+  (spec, zero code)     (standards + clinical)   (generated 10-gate codebase)
   +----------------+    +------------------+     +-------------------------+
   | prompt-instruct|    | standards/ (14)  |     | config/ schemas/ src/   |
   | output-instruct| -> | clinical/ (2)    | ->  | data/ docs/ tests/(172) |
   | templates/T_04 |    | (ASME, IEC, ISO, |     | kinematics..vvuq..llm   |
   +----------------+    |  ISO/TS, UL, ...)|     +-------------------------+
-                       +------------------+                 |
-                                                            v
-  execution/  (v0.8.0)                          image-instruct/   imagegen/
+                        +------------------+                 |
+                                                             v
+  execution/  (v0.8.0)                           image-instruct/    imagegen/
   +-------------------------+                    (v0.9.0, 15 specs) (v1.0.0, 15 figs)
   | 01 foundation           |                    +------------+     +------------+
-  | 02 pipeline             |   ------------>     | NN/README  | --> | NN.py +    |
-  | 03 vvuq (10-gate)       |   recorded          | full spec  |     | NN.png     |
-  | 04 automation (sweep)   |   evidence          +------------+     +------------+
+  | 02 pipeline             |   ------------>    | NN/README  | --> | NN.py +    |
+  | 03 vvuq (10-gate)       |   recorded         | full spec  |     | NN.png     |
+  | 04 automation (sweep)   |   evidence         +------------+     +------------+
   | 05 humanoid-deployment  |                                 |
   +-------------------------+                                 v
-            |                                       draft-paper/  (v1.1.0)
-            |                                       +----------------------+
-            +-------------------------------------> | scaffold + bracketed |
-                          source files named        | build instructions   |
-                          per section               | + final 41 refs      |
-                                                     +----------------------+
-                                                                |
-                                                                v
-                                                     full-paper/  (v1.2.0)
-                                                     finished prose + 13 tables
-                                                                |
-                                                                v
-                                                     final-paper/  (Zenodo)
-                                                DOI 10.5281/zenodo.20421754
+              |                                       draft-paper/  (v1.1.0)
+              |                                       +----------------------+
+              +-------------------------------------> | scaffold + bracketed |
+                          source files named          | build instructions   |
+                          per section                 | + final 41 refs      |
+                                                      +----------------------+
+                                                                 |
+                                                                 v
+                                                      full-paper/  (v1.2.0)
+                                                      finished prose + 13 tables
+                                                                 |
+                                                                 v
+                                                      final-paper/  (Zenodo)
+                                                      DOI 10.5281/zenodo.20421754
 ```
 
 The execution record is staged in five numbered sections:
@@ -119,13 +119,13 @@ tightest bounds plus a hard predicate.
 ```
   candidate humanoid behaviors per iteration
         |
-   +----v-------------------------------------------------------+
+   +----v--------------------------------------------------------+
    | 01 bimanual-handeye-servo        06 vascular-no-fly-hand *  |
    | 02 dexterous-finger-force        07 bimanual-suturing       |
    | 03 whole-body-balance            08 perception-scene        |
    | 04 autonomous-plan-correctness   09 shared-or-collision *   |
    | 05 instrument-grasp-handover     10 fault-estop-degrade *   |
-   +----v-------------------------------------------------------+
+   +----v--------------------------------------------------------+
         |  each gate: Verify (== 1.0) -> Validate (independent
         |  reference) -> Quantify (coefficient of variation)
         v
@@ -205,7 +205,7 @@ its execution evidence, a figure program, and a manuscript would take.
   | produce the figure program        |      | v0.9.0 + v1.0.0 figures (15)      |
   | draft + revise the manuscript     |      | v1.1.0 + v1.2.0 paper (13 tables) |
   +-----------------------------------+      +-----------------------------------+
-        serial, multi-month effort             autonomous, real-time commits
+  serial, multi-month effort                 autonomous, real-time commits
 ```
 
 ## Repository structure
