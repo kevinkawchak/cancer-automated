@@ -495,19 +495,9 @@ Several prior projects established and proved the methods that this repository a
 | Autochunking | `chunking/` | 200K per-file caps with a generated README per chunk |
 | Non-stop scheduling | `scheduler/commit_scheduler.py` | Autonomous commit cadence for continuous daily deliverables |
 
-## VVUQ Held Higher Than Code Generation
-
-A central Stage 1 principle is that VVUQ is more robust than code generation. Code generation produces a candidate deliverable. VVUQ decides whether that candidate is allowed to ship. The gate enforces:
-
-- Verification: every structural and schema check passes, and the deliverable lints cleanly.
-- Validation: agreement with a reference meets the threshold and a human review is recorded.
-- Uncertainty quantification: the three simulation runs agree within the configured coefficient of variation.
-
-Thresholds live in `configs/vvuq_thresholds.yaml`, and the gate blocks on any failure and escalates divergence to a human.
-
 ## Papers Directory READMEs
 
-As of v2.3.1 the [papers/](papers) directory carries five comprehensive landing READMEs that document the four sequential VVUQ works as one evidence-to-law pipeline. The [papers README](papers) details the verification developments and progress for each of the four works, shows the building process from one work to the next with ASCII diagrams, and discusses what the results mean for the new Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods to reach the final VVUQ-04 bill. One landing README per work then focuses on that work alone, each with DOI badges, the repository structure, ASCII diagrams of the building process within the work, and the final paper or bill DOI shown in an organized way.
+As of v2.3.1 the [papers/](papers) directory carries five comprehensive landing READMEs that document the four sequential VVUQ works as one evidence-to-law pipeline. The [papers README](papers) details the verification developments and progress for each of the four works.
 
 | Landing page | Focus | Final paper or bill DOI |
 |:--|:--|:--|
@@ -519,7 +509,7 @@ As of v2.3.1 the [papers/](papers) directory carries five comprehensive landing 
 
 ## VVUQ-01 Figures and Image Instructions
 
-The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct) and rendered under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). The instructions hold 10 comprehensive specifications plus a master README; each fully specifies one publication ready, portrait, full-size, 300 dpi figure, grounded in code generation (v0.1.0) and code execution (v0.2.0). As of v0.4.0 the figures are built: `imagegen` carries 10 self-contained matplotlib scripts (the generated code) and the 10 rendered PNG figures (the execution output), one numbered subdirectory per figure. Writing the full assurance specification before any pixel is rendered is the image generation analog of the VVUQ gate, and the build follows that specification with no manual positioning.
+The image generation leg of the thesis is specified under [papers/VVUQ-01/image-instruct](papers/VVUQ-01/image-instruct) and rendered under [papers/VVUQ-01/imagegen](papers/VVUQ-01/imagegen). 
 
 ```
   image-instruct/NN-name/         imagegen/NN-name/             imagegen/NN-name/
