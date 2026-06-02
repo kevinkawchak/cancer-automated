@@ -116,7 +116,7 @@ amendments to the surrounding provisions.
   Class II -> 510(k) premarket notice ....   § 360(k)        (s360)
   Class III -> premarket approval (PMA) ..   § 360e          (s360e)
         |                                       |
-        +----------> Predetermined change ->   § 360e-4      (s360e-4)
+        +----------> Predetermined change -> § 360e-4        (s360e-4)
                      control plans (PCCP)  ===> NEW § 360e-5 (verify before
                      the keystone the new            generation; the mandatory,
                      section makes mandatory         ex ante, automated VVUQ rule)
