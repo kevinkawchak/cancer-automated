@@ -36,6 +36,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   repository structure tree extended with the five new `README.md` files.
 - `releases.md`: v2.3.1 release notes added above v2.3.0.
 - `CITATION.cff`: version bumped to 2.3.1.
+- @kevinkawchak made main/README.md more concise by abbreviating summaries and paragraphs on 2026-06-02.
 
 ## [2.3.0] - 2026-06-01
 
