@@ -93,9 +93,9 @@ makes that law precise and current as a targeted FD&C Act amendment.
        zenodo.20372501          zenodo.20421754          zenodo.20454870          zenodo.20485580
             \________________________\________________________\_______________________/
                                                  |
-                evidence flows forward: each work cites the records of the prior works
-                (VVUQ-02 cites VVUQ-01; VVUQ-03 cites VVUQ-01, VVUQ-02, and the
-                 national-platform paper; VVUQ-04 cites VVUQ-03 and the Title 21 statute)
+              evidence flows forward: each work cites the records of the prior works
+              (VVUQ-02 cites VVUQ-01; VVUQ-03 cites VVUQ-01, VVUQ-02, and the
+              national-platform paper; VVUQ-04 cites VVUQ-03 and the Title 21 statute)
 ```
 
 The same five established methods run inside every work: instruction generation,
@@ -107,7 +107,7 @@ verified, validated, and within its uncertainty budget.
   instructions  ->  code/text  ->  execution  ->  figures  ->  paper/bill
        |               |               |             |             |
        +---------------+------ VVUQ gate (stricter than generation) ----+
-                              ACCEPT  /  BLOCK  /  ESCALATE to human
+                               ACCEPT  /  BLOCK  /  ESCALATE to human
 ```
 
 ## VVUQ-01: establishing the verification thesis
@@ -259,8 +259,8 @@ amendment, ran from 2026-05-21 to 2026-06-01, roughly eleven days.
   | Peer-style manuscript   ~months   |      | VVUQ-03  v1.3.0 -> v1.4.0  ~1 day  |
   | Federal bill + counsel  mo-years  |      | VVUQ-04  v2.0.0 -> v2.3.0  ~2 days |
   +-----------------------------------+      +------------------------------------+
-        years of serial effort                days of autonomous, real-time work
-                                              reaching the final VVUQ-04 Bill
+  years of serial effort                     days of autonomous, real-time work
+                                             reaching the final VVUQ-04 Bill
 ```
 
 Conventionally, each step is its own multi-month project: a methodology paper,
