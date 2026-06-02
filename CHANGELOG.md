@@ -37,6 +37,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 - `releases.md`: v2.3.1 release notes added above v2.3.0.
 - `CITATION.cff`: version bumped to 2.3.1.
 - @kevinkawchak made main/README.md more concise by abbreviating summaries and paragraphs on 2026-06-02.
+- @kevinkawchak added prompts and outputs to next-steps; and added prompt and outputs to figures-bill 2026-06-02.
 
 ## [2.3.0] - 2026-06-01
 
