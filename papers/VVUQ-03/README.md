@@ -63,16 +63,16 @@ earlier works into law. The internal build runs from the template adaptation
 through to the finished bill.
 
 ```
-  template-paper/             instruct-paper/          draft-paper/  (v1.3.0)
-  (21 CFR Part 312 model)      (multi-model, rated)     (bill scaffold)
+  template-paper/              instruct-paper/           draft-paper/  (v1.3.0)
+  (21 CFR Part 312 model)      (multi-model, rated)      (bill scaffold)
   +----------------------+     +------------------+      +----------------------+
   | chunk_01..chunk_10   |     | prompt           |      | main.tex + 15        |
-  | Physical_AI_...sty   | ->  | output-1 ChatGPT | ->   |   sections =         |
+  | Physical_AI_...sty   | ->  | output-1 ChatGPT |  ->  |   sections =         |
   | Physical_AI_...bib   |     | output-2 Haiku   |      |   [bracketed         |
   | (cover, style, cite  |     | output-3 Gemini  |      |    instructions]     |
   |  model only)         |     | (rated: 9.5/8.5/ |      | references.bib (60)  |
   +----------------------+     |  8.0)            |      +----------------------+
-                              +------------------+                  |
+                               +------------------+                 |
                                                                     v
                                                          full-paper/  (v1.4.0)
                                                          +----------------------+
@@ -83,7 +83,7 @@ through to the finished bill.
                                                                     |
                                                                     v
                                                          final-paper/  (Zenodo)
-                                                    DOI 10.5281/zenodo.20454870
+                                                         DOI 10.5281/zenodo.20454870
 ```
 
 The 15 sections follow the order in `main.tex`:
@@ -107,10 +107,10 @@ analysis.
 
 ```
    Recorded technical evidence              Existing law
-   (VVUQ-01, VVUQ-02, national               (federal + 4 states)
-    platform, USL/PSL, simulations)                |
-            |                                       |
-            v                                       v
+   (VVUQ-01, VVUQ-02, national              (federal + 4 states)
+   platform, USL/PSL, simulations)                |
+            |                                     |
+            v                                     v
    Findings + Algorithm Doc +   --->   Prior-Law Crosswalk   --->   Draft Statutory Text
    Attestations + Supporting Doc                                    (H. R. 9510, Sections 1-9)
             |                                                              |
@@ -188,9 +188,9 @@ counsel.
   | gather + vet the evidence base    |      | template + multi-model instruct   |
   | draft the prior-law crosswalk     |  vs  | v1.3.0 bill scaffold (60 refs)    |
   | write the statutory text          |      | v1.4.0 finished H. R. 9510        |
-  | section-by-section + revisions     |      |   (15 sections, 21 tables)        |
+  | section-by-section + revisions    |      |   (15 sections, 21 tables)        |
   +-----------------------------------+      +-----------------------------------+
-        serial, multi-month effort             autonomous, real-time commits
+  serial, multi-month effort                 autonomous, real-time commits
 ```
 
 ## Repository structure
