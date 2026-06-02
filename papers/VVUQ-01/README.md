@@ -72,17 +72,17 @@ whole flow.
   +----------------+       +------------------+      +------------+    +------------+
          |                        | 51 tests, gate surface, PDAC pilot       |
          |                        v                                          v
-         |                 draft-paper/  (v0.5.0)            full-paper/  (v0.6.0)
-         |                 +----------------------+          +----------------------+
-         +---------------> | FINAL  main.tex,     |   ===>   | CARRIED OVER + seven |
-            specification  |        new_paper.sty,|  process |   body sections      |
-            ahead of prose |        references.bib|  +ground |   WRITTEN IN FULL:   |
-                           | INSTRUCT 7 sections  |          |   18 tables, figures |
-                           +----------------------+          +----------------------+
-                                                                       |
-                                                                       v
-                                                            final-paper/  (Zenodo)
-                                                       DOI 10.5281/zenodo.20372501
+         |                 draft-paper/  (v0.5.0)             full-paper/  (v0.6.0)
+         |                 +----------------------+           +----------------------+
+         +---------------> | FINAL  main.tex,     |   ===>    | CARRIED OVER + seven |
+         specification     |        new_paper.sty,|  process  |   body sections      |
+         ahead of prose    |        references.bib|  +ground  |   WRITTEN IN FULL:   |
+                           | INSTRUCT 7 sections  |           |   18 tables, figures |
+                           +----------------------+           +----------------------+
+                                                                          |
+                                                                          v
+                                                               final-paper/  (Zenodo)
+                                                             DOI 10.5281/zenodo.20372501
 ```
 
 The execution record itself is staged into five numbered sections, mirroring the
@@ -114,7 +114,7 @@ stage, with the gate held higher than generation in both.
   | robust ingestion, autochunking    |      | hybrid surgery and medicine, the  |
   | non-stop commit scheduling        |      |   2030 PDAC 60-second Whipple     |
   +-----------------------------------+      +-----------------------------------+
-        verify before you ship                  verify before you operate
+  verify before you ship                     verify before you operate
 ```
 
 ## Results and what they mean for the industry
@@ -169,7 +169,7 @@ program would take.
   | design + draw the figures         |      | v0.3.0 + v0.4.0 figures (10)      |
   | draft + revise the manuscript     |      | v0.5.0 + v0.6.0 paper (70 pages)  |
   +-----------------------------------+      +-----------------------------------+
-        serial, multi-month effort             autonomous, real-time commits
+  serial, multi-month effort                 autonomous, real-time commits
 ```
 
 ## Repository structure
