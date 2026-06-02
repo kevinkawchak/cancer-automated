@@ -644,11 +644,11 @@ The image generation leg of the thesis is specified under [papers/VVUQ-02/image-
 | 14 | `14-value-proposition-matrix` | Value matrix | both |
 | 15 | `15-platform-mindmap` | Mind map | both |
 
-The 15 chart families are all distinct, chosen from a 20-family menu for best data availability and relevance, and avoid basic bar, pie, and line charts. Six figures satisfy a required-data brief: 172 tests (06), the external-standards anchoring (04), the 10 gates and thresholds (03), the clinical and regulatory corpus (05), the featured 1000-row sensor stream (11), and the four-entrant comparison (10). The set shares one professional palette and portrait page frame, uses the section symbol `§` where required, uses single dashes only, and renders on a white background with no dark mode. See the [image-instruct README](papers/VVUQ-02/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
+The 15 chart families are all distinct, chosen from a 20-family menu for best data availability and relevance, and avoid basic bar, pie, and line charts. Six figures satisfy a required-data brief: 172 tests (06), the external-standards anchoring (04), the 10 gates and thresholds (03), the clinical and regulatory corpus (05), the featured 1000-row sensor stream (11), and the four-entrant comparison (10). See the [image-instruct README](papers/VVUQ-02/image-instruct) for the processing model, the page frame, the palette, and the per figure specifications.
 
 ## VVUQ-02 Imagegen
 
-As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README and the two lineage files. Each script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, hardcodes its grounded values, and renders a fixed `figsize=(8.5, 11)` frame at 300 dpi (2550 by 3300 pixels) on a white background. A shared auto-fit frame keeps the header, subtitle, and footer from clipping, so no manual positioning is needed.
+As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](papers/VVUQ-02/imagegen): 15 self-contained matplotlib scripts (the generated code) and the 15 portrait, full-size, 300 dpi PNG figures they produce (the execution output), one numbered subdirectory per figure, plus a comprehensive README and the two lineage files. Each script is pure `matplotlib` plus `numpy`, sets `matplotlib.use("Agg")`, hardcodes its grounded values, and renders a fixed `figsize=(8.5, 11)` frame at 300 dpi (2550 by 3300 pixels) on a white background. 
 
 ```
   image-instruct/NN-name/         imagegen/NN-name/              imagegen/NN-name/
@@ -678,7 +678,7 @@ As of v1.0.0 the 15 instructions are rendered under [papers/VVUQ-02/imagegen](pa
 | 14 | `14-value-proposition-matrix` | Value matrix | - |
 | 15 | `15-platform-mindmap` | Mind map | - |
 
-The arithmetic reconciles to the source files: the treemap tile areas sum to 172 tests across 15 modules, the composite weights sum to 1.00, the swimmer durations sum to 60 s, the four-entrant appearances sum to 256 over 128 verdicts, and the sweep strip plot reproduces min 93.417, max 93.715, and mean 93.562. The scripts depend only on `matplotlib` and `numpy` and keep `ruff check` and `ruff format --check` clean across Python 3.10, 3.11, and 3.12; the core CI does not import `imagegen/`. See the [imagegen README](papers/VVUQ-02/imagegen) for the rendered gallery, the generated-code versus execution split, and reproduction with matplotlib.
+The arithmetic reconciles to the source files: the treemap tile areas sum to 172 tests across 15 modules, the composite weights sum to 1.00, the swimmer durations sum to 60 s, the four-entrant appearances sum to 256 over 128 verdicts, and the sweep strip plot reproduces min 93.417, max 93.715, and mean 93.562. See the [imagegen README](papers/VVUQ-02/imagegen) for the rendered gallery, the generated-code versus execution split, and reproduction with matplotlib.
 
 ## VVUQ-02 Draft Paper
 
@@ -729,7 +729,7 @@ The additions are LaTeX, Markdown, and a zip, all outside the `ruff` and `yamlli
 
 ## VVUQ-03 Full Paper
 
-As of v1.4.0 the full bill is realized under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper), built from the v1.3.0 draft scaffold without modifying it. Every bracketed processing instruction in the fifteen sections becomes finished, publication-quality legislative prose and left-aligned tables set to the body text width (21 tables in all), while the navy Palatino style and the 60-entry `ieeetr` bibliography are carried over. 
+As of v1.4.0 the full bill is realized under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper), built from the v1.3.0 draft scaffold without modifying it. Every bracketed processing instruction in the fifteen sections becomes finished, publication-quality legislative prose. 
 
 ```
   VVUQ-03/draft-paper (scaffold)              VVUQ-03/full-paper (this release)
@@ -799,8 +799,6 @@ The additions are LaTeX, BibTeX, Markdown, and a zip, all outside the `ruff` and
 
 As of v2.3.0 the finished LaTeX amendment is staged under [papers/VVUQ-04/full-bill](papers/VVUQ-04/full-bill): **H. R. 9510**, the *Verification Before Generation in Physical AI Oncology Trials Act of 2026*, produced from the v2.2.0 draft scaffold by executing every bracketed drafting instruction against the named `papers/VVUQ-04/instruct-bill` and `papers/VVUQ-03/final-paper` sources. 
 
-The operative mechanism is a new section 515D of the Act (21 U.S.C. § 360e-5): no robot-patient interaction code may be generated or executed in a Physical AI oncology investigation until an automated verification, validation, and uncertainty quantification process bound to named external standards has cleared, with the cleared record documented and attested. 
-
 ```
   VVUQ-04/draft-bill (v2.2.0 scaffold + bracketed DRAFTING INSTRUCTIONS)
         |  execute each instruction against the named instruct-bill and
@@ -845,7 +843,7 @@ numpy>=1.24.0
 pyyaml>=6.0.0
 ```
 
-The core daily-deliverable engine runs on the Python standard library so the lint-and-format and test CI jobs stay green without heavy installs. Every heavy or optional dependency is imported through a try/except guard in the module that uses it, so the package remains importable when the dependency is absent. See [requirements.txt](requirements.txt) for the full optional list (agentic backends, ingestion libraries, and simulation backends).
+The core daily-deliverable engine runs on the Python standard library so the lint-and-format and test CI jobs stay green without heavy installs. See [requirements.txt](requirements.txt) for the full optional list (agentic backends, ingestion libraries, and simulation backends).
 
 ## Related Repositories
 
