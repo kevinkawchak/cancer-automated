@@ -59,7 +59,7 @@ crosswalk and a faithful Title 21 excerpt, scaffolds the amendment, and processe
 it into the finished bill.
 
 ```
-  instruct-bill/  (v2.0.0)        template-bill/  (v2.1.0)
+  instruct-bill/  (v2.0.0)         template-bill/  (v2.1.0)
   (legal crosswalk, current)       (Title 21 device sections, LaTeX)
   +----------------------+         +----------------------+
   | 01..10 md summaries  |         | xml_usc21@119-93.zip |
@@ -67,9 +67,9 @@ it into the finished bill.
   | operative vs memo    |         | -> 11 sections, US   |
   | (through 2026-05-31) |         |    Code look + feel  |
   +----------------------+         +----------------------+
-            \                               /
-             \                             /
-              v                           v
+             \                                /
+              \                              /
+               v                            v
             draft-bill/  (v2.2.0)  amendment scaffold
             +-------------------------------------------+
             | 11 reproduced sections + draftbox each:   |
@@ -77,8 +77,8 @@ it into the finished bill.
             | the exact instruct-bill and final-paper   |
             | files a processing pass must read         |
             +-------------------------------------------+
-                              |
-                              v
+                                  |
+                                  v
             full-bill/  (v2.3.0)  finished amendment
             +-------------------------------------------+
             | SECTION 1 short title + contents          |
@@ -88,8 +88,8 @@ it into the finished bill.
             | Appendix A research-influence matrix      |
             | Appendix B transparency; 79 references    |
             +-------------------------------------------+
-                              |
-                              v
+                                  |
+                                  v
             final-bill/  (Zenodo)   DOI 10.5281/zenodo.20485580
 ```
 
@@ -109,15 +109,15 @@ amendments to the surrounding provisions.
         v
   Is it a "device"?  ......................  § 321(h)        (s321)
         |  the § 360j(o) CDS exclusion does NOT carve out
-        |  autonomous robot-control software  § 360j(o)      (s360j)
+        |  autonomous robot-control software § 360j(o)       (s360j)
         v
   Classify the device  ...................   § 360c          (s360c)
         |                                       |
   Class II -> 510(k) premarket notice ....   § 360(k)        (s360)
-  Class III -> premarket approval (PMA) ..    § 360e          (s360e)
+  Class III -> premarket approval (PMA) ..   § 360e          (s360e)
         |                                       |
-        +----------> Predetermined change ->   § 360e-4       (s360e-4)
-                     control plans (PCCP)  ===> NEW § 360e-5  (verify before
+        +----------> Predetermined change ->   § 360e-4      (s360e-4)
+                     control plans (PCCP)  ===> NEW § 360e-5 (verify before
                      the keystone the new            generation; the mandatory,
                      section makes mandatory         ex ante, automated VVUQ rule)
         |
@@ -199,14 +199,14 @@ the months to years a conventional amendment, drafted with counsel against the
 live United States Code and a current medical AI legal crosswalk, would take.
 
 ```
-  Conventional path (months to years)        VVUQ-04 (about 2 days)
-  +-----------------------------------+      +-----------------------------------+
-  | research current medical AI law   |      | v2.0.0 instruct bill (145 refs)   |
-  | reproduce the Title 21 provisions |  vs  | v2.1.0 template bill (11 sects)   |
-  | draft the amendment + conforming  |      | v2.2.0 draft bill (scaffold)      |
-  | comparative print + counsel review|      | v2.3.0 full bill (new 360e-5)     |
-  +-----------------------------------+      +-----------------------------------+
-        serial, multi-month effort             autonomous, real-time commits
+  Conventional path (months to years)         VVUQ-04 (about 2 days)
+  +------------------------------------+      +----------------------------------+
+  | research current medical AI law    |      | v2.0.0 instruct bill (145 refs)  |
+  | reproduce the Title 21 provisions  |  vs  | v2.1.0 template bill (11 sects)  |
+  | draft the amendment + conforming   |      | v2.2.0 draft bill (scaffold)     |
+  | comparative print + counsel review |      | v2.3.0 full bill (new 360e-5)    |
+  +------------------------------------+      +----------------------------------+
+  serial, multi-month effort                  autonomous, real-time commits
 ```
 
 ## Repository structure
