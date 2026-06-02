@@ -10,8 +10,6 @@
 
 **Production-ready, scalable automation for Physical AI oncology trial daily deliverables, by Claude Code Opus 4.7, Cowork; building on developments proven across physical-ai-oncology-trials, robotic-surgeries, and Clinical-AI-Demos.**
 
-This repository packages the established methods for generating instructions, generating code, executing code, and creating papers into a single repeatable daily-deliverable pipeline. It then layers verification, validation, and uncertainty quantification (VVUQ), triple simulation, robust web, and PDF ingestion.
-
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
 
 **6/1: v2.3.1 (Papers Directory READMEs)** Adds five comprehensive landing READMEs: [papers](papers) plus one each for [papers/VVUQ-01](papers/VVUQ-01), [papers/VVUQ-02](papers/VVUQ-02), [papers/VVUQ-03](papers/VVUQ-03), and [papers/VVUQ-04](papers/VVUQ-04). Each details the VVUQ verification developments and progress, shows the building process with ASCII diagrams, and covers what the results mean for the Physical AI oncology trial industry, the processing feat accomplished by AI, and the accelerated timeline versus conventional methods.
