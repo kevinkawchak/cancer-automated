@@ -110,8 +110,6 @@ The thesis above is realized by a pipeline that runs the five established method
   +-------------------+      +---------------------------+      +-------------------+
 ```
 
-The pipeline mirrors the multi-stage workflow proven in the prior repositories: instructions feed code generation, code generation feeds execution, and execution feeds paper assembly. Triple simulation and the VVUQ gate sit across the whole flow so a deliverable is only committed once it is verified, validated, and within its uncertainty budget.
-
 ## Two-Stage Roadmap
 
 ```
