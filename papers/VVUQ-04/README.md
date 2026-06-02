@@ -67,9 +67,9 @@ it into the finished bill.
   | operative vs memo    |         | -> 11 sections, US   |
   | (through 2026-05-31) |         |    Code look + feel  |
   +----------------------+         +----------------------+
-             \                                /
-              \                              /
-               v                            v
+                \                               /
+                 \                             /
+                  v                           v
             draft-bill/  (v2.2.0)  amendment scaffold
             +-------------------------------------------+
             | 11 reproduced sections + draftbox each:   |
