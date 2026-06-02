@@ -253,12 +253,12 @@ amendment, ran from 2026-05-21 to 2026-06-01, roughly eleven days.
 
 ```
   Conventional path (months to years)        This directory (about 11 days)
-  +-----------------------------------+      +------------------------------------+
-  | Method paper drafting   ~months   |      | VVUQ-01  v0.1.0 -> v0.6.0  ~5 days |
-  | Verified robotics code  6-18 mo   |  vs  | VVUQ-02  v0.7.0 -> v1.2.0  ~2 days |
-  | Peer-style manuscript   ~months   |      | VVUQ-03  v1.3.0 -> v1.4.0  ~1 day  |
-  | Federal bill + counsel  mo-years  |      | VVUQ-04  v2.0.0 -> v2.3.0  ~2 days |
-  +-----------------------------------+      +------------------------------------+
+  +-----------------------------------+      +-------------------------------------+
+  | Method paper drafting   ~months   |      | VVUQ-01  v0.1.0 -> v0.6.0  ~5 days  |
+  | Verified robotics code  6-18 mo   |  vs  | VVUQ-02  v0.7.0 -> v1.2.0  ~2 days  |
+  | Peer-style manuscript   ~months   |      | VVUQ-03  v1.3.0 -> v1.4.0  ~1 day   |
+  | Federal bill + counsel  mo-years  |      | VVUQ-04  v2.0.0 -> v2.3.0  ~2 days  |
+  +-----------------------------------+      +-------------------------------------+
   years of serial effort                     days of autonomous, real-time work
                                              reaching the final VVUQ-04 Bill
 ```
