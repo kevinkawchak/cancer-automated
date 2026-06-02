@@ -61,8 +61,8 @@ Each stage consumes the prior stage's output, and the VVUQ gate sits across the
 whole flow.
 
 ```
-  inputs/                  execution/               image-instruct/   imagegen/
-  (ingested sources)       (run the v0.1.0 code)    (10 figure specs) (10 figures)
+  inputs/                  execution/                image-instruct/   imagegen/
+  (ingested sources)       (run the v0.1.0 code)     (10 figure specs) (10 figures)
   +----------------+       +------------------+      +------------+    +------------+
   | Paper-VVUQ-1   |       | 01-foundation    |      | NN-name/   |    | NN-name/   |
   | Paper-VVUQ-2   |  ->   | 02-pipeline      |  ->  | README.md  | -> | NN.py +    |
@@ -70,13 +70,13 @@ whole flow.
   | VVUQ-Research-2|       | 04-stage1-autom. |      | (no pixels |    | 300 dpi,   |
   | templates/T_10 |       | 05-physical-ai-2 |      |  yet)      |    | no manual  |
   +----------------+       +------------------+      +------------+    +------------+
-         |                        | 51 tests, gate surface, PDAC pilot     |
-         |                        v                                        v
+         |                        | 51 tests, gate surface, PDAC pilot       |
+         |                        v                                          v
          |                 draft-paper/  (v0.5.0)            full-paper/  (v0.6.0)
          |                 +----------------------+          +----------------------+
          +---------------> | FINAL  main.tex,     |   ===>   | CARRIED OVER + seven |
             specification  |        new_paper.sty,|  process |   body sections      |
-            ahead of prose |        references.bib|  +ground |   WRITTEN IN FULL:    |
+            ahead of prose |        references.bib|  +ground |   WRITTEN IN FULL:   |
                            | INSTRUCT 7 sections  |          |   18 tables, figures |
                            +----------------------+          +----------------------+
                                                                        |
@@ -107,12 +107,12 @@ near-to-mid-term automation stage and the mid-to-long-term physical deployment
 stage, with the gate held higher than generation in both.
 
 ```
-  Stage 1 (automation and assurance)        Stage 2 (physical AI deployment)
+  Stage 1 (automation and assurance)         Stage 2 (physical AI deployment)
   +-----------------------------------+      +-----------------------------------+
   | VVUQ stricter than code gen       |      | code runs physical AI in          |
   | triple simulation with consensus  |  ->  |   lights-off factories            |
   | robust ingestion, autochunking    |      | hybrid surgery and medicine, the  |
-  | non-stop commit scheduling        |      |   2030 PDAC 60-second Whipple      |
+  | non-stop commit scheduling        |      |   2030 PDAC 60-second Whipple     |
   +-----------------------------------+      +-----------------------------------+
         verify before you ship                  verify before you operate
 ```
