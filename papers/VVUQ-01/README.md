@@ -70,8 +70,8 @@ whole flow.
   | VVUQ-Research-2|       | 04-stage1-autom. |      | (no pixels |    | 300 dpi,   |
   | templates/T_10 |       | 05-physical-ai-2 |      |  yet)      |    | no manual  |
   +----------------+       +------------------+      +------------+    +------------+
-         |                        | 51 tests, gate surface, PDAC pilot       |
-         |                        v                                          v
+         |                          | 51 tests, gate surface, PDAC pilot      |
+         |                          v                                         v
          |                 draft-paper/  (v0.5.0)             full-paper/  (v0.6.0)
          |                 +----------------------+           +----------------------+
          +---------------> | FINAL  main.tex,     |   ===>    | CARRIED OVER + seven |
