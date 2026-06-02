@@ -88,11 +88,11 @@ makes that law precise and current as a targeted FD&C Act amendment.
   | draft -> full ->  |    | draft -> full ->  |    | full-paper/       |    | draft -> full ->  |
   | final-paper       |    | final-paper       |    | final-paper (bill)|    | final-bill        |
   +-------------------+    +-------------------+    +-------------------+    +-------------------+
-        | DOI                    | DOI                    | DOI                    | DOI
-        v                        v                        v                        v
-   zenodo.20372501          zenodo.20421754          zenodo.20454870          zenodo.20485580
-        \________________________\________________________\_______________________/
-                                          |
+            | DOI                    | DOI                    | DOI                    | DOI
+            v                        v                        v                        v
+       zenodo.20372501          zenodo.20421754          zenodo.20454870          zenodo.20485580
+            \________________________\________________________\_______________________/
+                                                 |
                 evidence flows forward: each work cites the records of the prior works
                 (VVUQ-02 cites VVUQ-01; VVUQ-03 cites VVUQ-01, VVUQ-02, and the
                  national-platform paper; VVUQ-04 cites VVUQ-03 and the Title 21 statute)
@@ -105,7 +105,7 @@ verified, validated, and within its uncertainty budget.
 
 ```
   instructions  ->  code/text  ->  execution  ->  figures  ->  paper/bill
-       |               |              |              |             |
+       |               |               |             |             |
        +---------------+------ VVUQ gate (stricter than generation) ----+
                               ACCEPT  /  BLOCK  /  ESCALATE to human
 ```
@@ -253,12 +253,12 @@ amendment, ran from 2026-05-21 to 2026-06-01, roughly eleven days.
 
 ```
   Conventional path (months to years)        This directory (about 11 days)
-  +-----------------------------------+      +-----------------------------------+
+  +-----------------------------------+      +------------------------------------+
   | Method paper drafting   ~months   |      | VVUQ-01  v0.1.0 -> v0.6.0  ~5 days |
   | Verified robotics code  6-18 mo   |  vs  | VVUQ-02  v0.7.0 -> v1.2.0  ~2 days |
   | Peer-style manuscript   ~months   |      | VVUQ-03  v1.3.0 -> v1.4.0  ~1 day  |
   | Federal bill + counsel  mo-years  |      | VVUQ-04  v2.0.0 -> v2.3.0  ~2 days |
-  +-----------------------------------+      +-----------------------------------+
+  +-----------------------------------+      +------------------------------------+
         years of serial effort                days of autonomous, real-time work
                                               reaching the final VVUQ-04 Bill
 ```
