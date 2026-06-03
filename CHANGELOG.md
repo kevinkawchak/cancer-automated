@@ -5,6 +5,49 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-06-03
+
+### Added
+- `papers/VVUQ-05/draft-bill/`: H. R. 9510 Bill v3.0, a LaTeX visual draft of the
+  *Verification Before Generation in Physical AI Oncology Trials Act of 2026*. It
+  keeps the full operative text of Bill v2.0 (the `papers/VVUQ-04/final-bill`
+  amendment) so it stands on its own, and adds a more visual perspective: every
+  operative part carries a figure or table slot, and a set-off drafting-instruction
+  block names the exact repository files a future Claude Code Opus 4.8 (1M context)
+  Max pass processes to render that figure or table on a white background as a
+  text-based diagram, with no raster image.
+- `papers/VVUQ-05/draft-bill/main.tex`, `usctitle.sty`, and `references.bib`: the
+  assembler (condensed caption with the v3.0 process diagram, SECTION 1, the
+  section inputs, and the back matter), the v3.0.0 style (US Code reproduction,
+  amendment apparatus, the restored draftbox, and the white-background asciifig,
+  figslot, and figcaption visual primitives), and 94 ieeetr sources (the Bill v2.0
+  authority set plus the v3.0 layer).
+- `papers/VVUQ-05/draft-bill/sections/`: eight section files defined by their
+  common figures and tables (`s2-findings`, `s3-amendment`, `s4-comparative`,
+  `a5-evidence`, `a6-deliverables`, `a7-explainability`, `a8-research-matrix`,
+  `a9-transparency`), each with operative or framing text, figure and table slots,
+  and a draftbox of bracketed instructions naming the exact files to process.
+- `papers/VVUQ-05/draft-bill/README.md`, `prompt-draft-bill.md`,
+  `output-draft-bill.md`, and `draft-bill-LaTeX.zip`: the landing page, the prompt
+  verbatim, the narrative output, and the Overleaf-ready bundle.
+- Answers three objectives: a visualization of Bill v2.0 from
+  `papers/VVUQ-05/update-bill/figures-bill`; instructions for every U.S. House
+  submission deliverable to be written under `papers/VVUQ-05/deliverables` based on
+  `papers/VVUQ-05/update-bill/next-steps`, each complete and submission quality;
+  and a new explainability standard from the VVUQ-01 through VVUQ-04 record.
+- Authored autonomously across sequential commits in a single pull request, one
+  file per commit pushed in real time, then a second-to-last error-fix-and-bundle
+  commit and a final repository-updates commit. The additions are LaTeX, BibTeX,
+  Markdown, and a zip, outside the ruff, yamllint, and pytest surface, so the
+  lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+
+### Changed
+- `README.md`: release badge to v3.0.0, a v3.0.0 summary above the prior summary,
+  one new "H. R. 9510 Bill v3.0 (Visual Draft)" section with a table-of-contents
+  entry, and the repository structure tree extended with a `VVUQ-05` block.
+- `releases.md`: v3.0.0 release notes added above v2.3.1.
+- `CITATION.cff`: version bumped to 3.0.0.
+
 ## [2.3.1] - 2026-06-01
 
 ### Added

@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v2.3.1-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v3.0.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-June%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -11,6 +11,8 @@
 **Production-ready, scalable automation for Physical AI oncology trial daily deliverables, by Claude Code Opus 4.7, Cowork; building on developments proven across physical-ai-oncology-trials, robotic-surgeries, and Clinical-AI-Demos.**
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**6/3: v3.0.0 (H. R. 9510 Bill v3.0, Visual Draft)** Adds [papers/VVUQ-05/draft-bill](papers/VVUQ-05/draft-bill): a LaTeX visual draft of **H. R. 9510** that keeps the full operative text of Bill v2.0 and layers a visual perspective: figure and table slots, a visual engineering-evidence appendix, a submission-deliverables appendix, and a VVUQ explainability-standard appendix, each carrying bracketed instructions that name the exact repository files a future Claude Code pass renders.
 
 **6/1: v2.3.1 (Papers Directory READMEs)** Adds five comprehensive landing READMEs: [papers](papers) plus one each for [papers/VVUQ-01](papers/VVUQ-01), [papers/VVUQ-02](papers/VVUQ-02), [papers/VVUQ-03](papers/VVUQ-03), and [papers/VVUQ-04](papers/VVUQ-04). Each details the VVUQ verification developments and progress, shows the building process with ASCII diagrams, and covers what the results mean for the Physical AI oncology trial industry.
 
@@ -56,6 +58,7 @@ This repository is complementary and open source. Please implement code safely a
 
 ## Table of Contents
 
+- [H. R. 9510 Bill v3.0 (Visual Draft)](#h-r-9510-bill-v30-visual-draft)
 - [Thesis and Roadmap](#thesis-and-roadmap)
 - [Daily Deliverable Pipeline](#daily-deliverable-pipeline)
 - [Two-Stage Roadmap](#two-stage-roadmap)
@@ -84,6 +87,25 @@ This repository is complementary and open source. Please implement code safely a
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
 - [License](#license)
+
+## H. R. 9510 Bill v3.0 (Visual Draft)
+
+As of v3.0.0 the four sequential VVUQ works carry forward into a third bill version. [papers/VVUQ-05/draft-bill](papers/VVUQ-05/draft-bill) is **H. R. 9510 Bill v3.0**, a LaTeX visual draft of the *Verification Before Generation in Physical AI Oncology Trials Act of 2026*. It keeps the full operative text of Bill v2.0 (the [VVUQ-04 final-bill](papers/VVUQ-04/final-bill)) so it stands on its own as a bill, and it adds a more visual perspective: every operative part carries a figure or table slot, and a set-off drafting-instruction block names the exact files a future Claude Code Opus 4.8 (1M context) Max pass processes to render that figure or table on a white background as a text-based diagram, with no raster image.
+
+The visual draft answers three objectives. It is a **visualization of Bill v2.0**, drawing its figures and tables from the verbatim catalog in [papers/VVUQ-05/update-bill/figures-bill](papers/VVUQ-05/update-bill/figures-bill); it **instructs every submission deliverable**, scaffolding the supplementary Markdown documents a U.S. House bill needs before submission (to be written later under [papers/VVUQ-05/deliverables](papers/VVUQ-05/deliverables), based on the feedback in [papers/VVUQ-05/update-bill/next-steps](papers/VVUQ-05/update-bill/next-steps)), each specified as complete and submission quality; and it **establishes a new explainability standard**, treating the VVUQ-01 through VVUQ-04 record of prompts, outputs, VVUQ gates, and commit trails as a reusable way to explain how United States legislation was created.
+
+```
+  VVUQ-01 + VVUQ-02 evidence   ->   VVUQ-03 + VVUQ-04 law   ->   VVUQ-05 visual draft (v3.0)
+  method + hard proof               H. R. 9510 bill + FD&C        full v2.0 text + figure/table
+  (51 and 172 tests)                Act amendment (360e-5)        slots + bracketed instructions
+        |                                  |                              |
+        +---------- figures-bill + next-steps inputs -------------------- +
+                                                                          v
+                                            a future pass renders the figures and writes the
+                                            deliverables -> final visual bill + deliverables package
+```
+
+The bill body keeps SECTION 1 through SEC. 4 (short title, findings, the new section 515D and ten conforming amendments, and the comparative print), and five non-operative appendices carry the visual engineering evidence, the submission deliverables, the explainability standard, the research-influence matrix, and the development transparency and commit schedule. See the [draft-bill README](papers/VVUQ-05/draft-bill) for the badges, repository structure, figure and table inventory, and the Overleaf compile recipe.
 
 ## Thesis and Roadmap
 
@@ -412,7 +434,7 @@ cancer-automated/
             ├── full-paper.zip      # Overleaf-ready LaTeX bundle
             ├── prompt-full-paper.md    # the generating prompt, verbatim
             └── output-full-paper.md    # the narrative output of the full-paper step
-    └── VVUQ-04/                        # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft + v2.3.0 full bill (LaTeX)
+    ├── VVUQ-04/                        # ★ v2.0.0 instruct + v2.1.0 template + v2.2.0 draft + v2.3.0 full bill (LaTeX)
         ├── README.md               # ★ v2.3.1 VVUQ-04 landing page: developments, build, results, DOIs
         ├── instruct-bill/          # head start for the next bill draft (10 md + 5 bib + README)
         │   ├── README.md           # DOI badges, repo structure, file and bib correlations
@@ -468,6 +490,20 @@ cancer-automated/
             └── sections/              # 11 comparative-print sections, each finished + marked
                 ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
                 └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
+    └── VVUQ-05/                        # ★ v3.0.0 H. R. 9510 Bill v3.0 visual draft (LaTeX)
+        ├── update-bill/            # figures-bill (verbatim visual catalog) + next-steps (submission steps)
+        ├── deliverables/           # submission deliverables package (written in a later step)
+        └── draft-bill/             # ★ v3.0.0 visual draft scaffold of H. R. 9510 (Bill v3.0)
+            ├── README.md           # badges, repo structure, figure and table inventory, ASCII diagrams, toc
+            ├── main.tex            # caption + v3.0 process diagram, SECTION 1, section inputs, back matter
+            ├── usctitle.sty        # US Code reproduction + amendment apparatus + draftbox + white-bg visual macros
+            ├── references.bib      # 94 provenance + research sources (ieeetr)
+            ├── draft-bill-LaTeX.zip   # Overleaf-ready bundle
+            ├── prompt-draft-bill.md   # the generating prompt, verbatim
+            ├── output-draft-bill.md   # the narrative output of this step
+            └── sections/              # 8 files: 3 bill-body (s2-s4) + 5 appendices (a5-a9)
+                ├── s2-findings.tex s3-amendment.tex s4-comparative.tex
+                └── a5-evidence.tex a6-deliverables.tex a7-explainability.tex a8-research-matrix.tex a9-transparency.tex
 ```
 
 ## Established Methods Proven Across Projects
