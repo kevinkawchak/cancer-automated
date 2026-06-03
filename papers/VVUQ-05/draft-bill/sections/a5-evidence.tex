@@ -1,0 +1,62 @@
+%% ============================================================
+%% sections/a5-evidence.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX A. VISUAL ENGINEERING EVIDENCE (NON-OPERATIVE).
+%% The visualization of Bill v2.0: the VVUQ-01 and VVUQ-02 engineering record that
+%% grounds the findings, drawn from papers/VVUQ-05/update-bill/figures-bill.
+%% Common visuals: Figure 6 (gate funnel comparison), Figure 7 (procedure
+%% timelines), Figure 8 (humanoid safety figure), Table 5 (external standards map).
+%% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A. Visual Engineering Evidence (Non-Operative)}
+\usccrosshead{APPENDIX A. VISUAL ENGINEERING EVIDENCE (NON-OPERATIVE)}
+
+\uscprov{1}{This appendix is non-operative. It visualizes the engineering record
+of VVUQ-01 and VVUQ-02 that grounds the findings in section 2 and the gate
+discipline codified in section 515D, so a reader can see the evidence the bill
+rests on without leaving the document. None of these figures is cited as the
+legal basis of an operative clause; only the enacted statutes, in-force rules, and
+recognized standards named in the bill carry operative weight
+\cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\figslot{Figure 6.}{The Gate, From One Dimension to Ten}{Side by side: the VVUQ-01
+six-candidate funnel that accepted one artifact and blocked five over the verify,
+validate, quantify dimensions, and the VVUQ-02 ten-gate funnel that cleared a
+surgical humanoid behavior against ten standards-bound gates, three of them
+carrying a hard catastrophe predicate.}
+
+\uscprov{1}{The gate is the load-bearing object of the whole record: VVUQ-01 holds
+it to a single behavior across three dimensions, and VVUQ-02 scales it to ten
+humanoid-specific gates without changing the ACCEPT, BLOCK, ESCALATE semantics.
+The verification fraction stays an equality at 1.0 in both, which is why the bill
+can require it as an equality \cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\figslot{Figure 7.}{The Procedure Timelines}{The VVUQ-02 sixty-second eight-phase
+Whipple performed by one humanoid with two hands, set over the VVUQ-01 hundred-
+and-sixty-eight-day PDAC hybrid pilot, so the single-procedure assurance window
+and the full adjuvant pilot window are read on one page.}
+
+\figslot{Figure 8.}{The Humanoid Safety Figure}{A combined view of the
+seventy-one-degree-of-freedom kinematic chain, the balance zero-moment-point and
+support polygon, and the vessel no-fly proximity bands, the three drawn artifacts
+that make the catastrophe gates concrete.}
+
+\uscprov{1}{The safety figure is where embodiment becomes visible: the kinematic
+chain shows how many ways a body can move, the support polygon shows the balance
+margin a fall would cross, and the no-fly bands show the vascular volume the hard
+predicate forbids breaching. These are the dimensions a wrong motion would violate
+and a human could not catch in time \cite{isots15066, iec8060127}.}
+
+\figslot{Table 5.}{External Standards Map}{The recognized consensus standards bound
+to the gates: ASME V\&V 40, NASA-STD-7009A, IEEE 7009, IEC 80601-2-77, ISO 14971,
+ISO/TS 15066, ISO 13482, IEC 60601-1, ISO 13849-1, and ISO 9283, with the gate or
+duty each governs.}
+
+\begin{draftbox}{Appendix A - the four visual-evidence artifacts}
+\dstep{Figure 6 (gate funnel comparison): render two funnels side by side in the asciifig environment. The VVUQ-01 funnel (6 candidates to 1 accepted, with the per-stage verification, validation, and uncertainty cuts) comes verbatim from papers/VVUQ-05/update-bill/figures-bill/02VVUQ01.md (the "VVUQ Gate Decision Funnel" image spec and the gate decision-surface table). The VVUQ-02 ten-gate funnel (candidates to ACCEPT, with the per-gate V and CV thresholds and the three immediate-catastrophe gates) comes verbatim from papers/VVUQ-05/update-bill/figures-bill/03VVUQ02.md (the "Ten VVUQ Gate Funnel (candidates to ACCEPT)" block). Preserve original spacing on a white background.}
+\dstep{Figure 7 (procedure timelines): render the sixty-second eight-phase Whipple timeline from papers/VVUQ-05/update-bill/figures-bill/03VVUQ02.md ("60-Second 8-Phase Whipple Timeline") over the one-hundred-sixty-eight-day PDAC hybrid pilot timeline from papers/VVUQ-05/update-bill/figures-bill/02VVUQ01.md (the PDAC pilot timeline and pdac\_hybrid\_pilot\_timeline.txt block). Keep both as fenced ASCII timelines in the asciifig environment; do not redraw as a chart.}
+\dstep{Figure 8 (humanoid safety figure): combine the three drawn artifacts from papers/VVUQ-05/update-bill/figures-bill/03VVUQ02.md - the "H2-Surgical 1.0 Kinematic Chain (71 DOF)", the "Balance ZMP and Support Polygon", and the "Vessel No-Fly Proximity Bands (VVUQ 06)" - into one full-page text figure, each panel labeled, all in the asciifig environment with exact spacing on a white background.}
+\dstep{Table 5 (external standards map): build from papers/VVUQ-05/update-bill/figures-bill/03VVUQ02.md (the "Per-gate primary standards", "Cross-cutting standards", and "standards-map" tables) reconciled with the ten-gate schedule in papers/VVUQ-04/final-bill/main.tex (section 515D(c)(4)); columns Standard, What it governs, and Gate or duty; left aligned and ragged right at the body measure (each width prepended with \raggedright\arraybackslash).}
+\dstep{Synthesis guidance: these four artifacts are the visual basis for the findings in section 2 and the gate schedule in section 515D, so keep the numbers consistent across them (verification fraction 1.0; the three hard-predicate gates 06, 09, 10; composite mean 93.56; seed 20260525). Use the correlation map in papers/VVUQ-05/update-bill/figures-bill/README.md (Section 4, the cross-file map and the shared evidentiary objects) to confirm each artifact's source and that the 10-gate schedule is the same object cited as evidence in VVUQ-03 and anchored to Title 21 in VVUQ-04.}
+\dstep{Formatting: single hyphens only; the section symbol where a codified reference appears; even RaggedRight spacing; keep every figure and table on a white background; prefer full vertical page figures and avoid large empty white bands by sizing each asciifig to its content.}
+\end{draftbox}
