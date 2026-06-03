@@ -355,21 +355,39 @@
 % off-center nor stretched, and its visual weight matches the body. The optional
 % first argument sets the monospace size (default \footnotesize); pass a smaller
 % size for a wide diagram so no line runs off the page.
+% The font size is fixed per environment rather than passed as an optional
+% argument, because an optional argument on a verbatim-wrapping environment makes
+% the optional-argument lookahead gobble the leading spaces of the first ASCII
+% line. Two environments share one savebox and one placement macro: asciifig at
+% footnotesize for ordinary figures, and asciifigsmall at scriptsize for a wide
+% figure so no line runs off the right margin.
 \newsavebox{\asciifigbox}
-\newenvironment{asciifig}[1][\footnotesize]{%
-  \VerbatimEnvironment
-  \par\addvspace{0.55\baselineskip}%
-  \needspace{6\baselineskip}%
-  \begin{lrbox}{\asciifigbox}%
-  \begin{BVerbatim}[fontsize=#1,baselinestretch=0.96]%
-}{%
-  \end{BVerbatim}%
-  \end{lrbox}%
+\newcommand{\asciifigplace}{%
   \begin{center}%
   \setlength{\fboxrule}{0.4pt}\setlength{\fboxsep}{8pt}%
   \fcolorbox{billblack}{billwhite}{\usebox{\asciifigbox}}%
   \end{center}%
   \par\addvspace{0.15\baselineskip}}
+\newenvironment{asciifig}{%
+  \VerbatimEnvironment
+  \par\addvspace{0.55\baselineskip}%
+  \needspace{6\baselineskip}%
+  \begin{lrbox}{\asciifigbox}%
+  \begin{BVerbatim}[fontsize=\footnotesize,baselinestretch=0.96]%
+}{%
+  \end{BVerbatim}%
+  \end{lrbox}%
+  \asciifigplace}
+\newenvironment{asciifigsmall}{%
+  \VerbatimEnvironment
+  \par\addvspace{0.55\baselineskip}%
+  \needspace{6\baselineskip}%
+  \begin{lrbox}{\asciifigbox}%
+  \begin{BVerbatim}[fontsize=\scriptsize,baselinestretch=0.96]%
+}{%
+  \end{BVerbatim}%
+  \end{lrbox}%
+  \asciifigplace}
 
 % Figure or table caption: a small centered italic line set under an asciifig or
 % a table. Single hyphens only; never an en or em dash.
