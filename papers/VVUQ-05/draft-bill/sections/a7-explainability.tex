@@ -1,0 +1,69 @@
+%% ============================================================
+%% sections/a7-explainability.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX C. THE VVUQ EXPLAINABILITY STANDARD
+%% (NON-OPERATIVE). Establishes the VVUQ-01 through VVUQ-04 developments as a new
+%% standard for explainability of the U.S. legislation-creation process.
+%% Common visuals: Figure 9 (prompt evolution across the works), Figure 10
+%% (internal bill evolution), Table 7 (the explainability standard).
+%% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix C. The VVUQ Explainability Standard (Non-Operative)}
+\usccrosshead{APPENDIX C. THE VVUQ EXPLAINABILITY STANDARD (NON-OPERATIVE)}
+
+\uscprov{1}{This appendix is non-operative. It establishes the VVUQ-01 through
+VVUQ-04 developments as a reusable standard for explaining how a piece of United
+States legislation was created. The claim is narrow and demonstrable: every step
+that produced this bill, from the first method paper to the precise amendment,
+recorded the exact prompt that drove it, the full output it produced, a VVUQ gate
+decision that held the output to its specification, and a commit trail that pushed
+each file in real time. A reader can therefore reconstruct how the law was built,
+which is the property an explainable process must have \cite{nist-ai-explainability,
+nist-ai-600}.}
+
+\figslot{Figure 9.}{Prompt Evolution Across the Works}{The chain of recorded
+prompts from VVUQ-02 and VVUQ-03 (instruct, draft, full) through VVUQ-04 (instruct,
+update, draft, full) to VVUQ-05 (figures, next-steps, this draft), showing how the
+instruction to the agent sharpened as the work moved from method to statute.}
+
+\uscprov{1}{The prompt record is the first half of the standard. Because each
+stage keeps its prompt and its output side by side, the reasoning that turned
+evidence into statutory language is inspectable rather than hidden: a reviewer can
+read prompt-a-update-bill and see the instruction that retargeted the bill onto
+the Federal Food, Drug, and Cosmetic Act, then read the output that resulted
+\cite{vvuq05-figures-bill}.}
+
+\figslot{Figure 10.}{Internal Bill Evolution}{The VVUQ-04 internal stages
+instruct-bill, template-bill, update-bill, draft-bill, full-bill, and final-bill,
+extended by the VVUQ-05 update-bill (figures-bill and next-steps) into this v3.0
+draft-bill, each stage a labeled box feeding the next.}
+
+\uscprov{1}{The stage record is the second half. The bill did not appear in one
+pass: a legal crosswalk was assembled, the real statute was reproduced, the
+amendment was scaffolded with bracketed instructions, the instructions were
+executed, and the result was finalized, with this visual draft a further stage.
+Each stage is a directory a reviewer can open, so the provenance of every clause
+is traceable to the files it was synthesized from \cite{kawchak2026vvuq04bill}.}
+
+\figslot{Table 7.}{The VVUQ Explainability Standard}{Each explainability dimension
+(explanation, meaningful, accuracy, knowledge limits), what makes the
+legislation-creation step satisfy it, and the artifact in the repository that
+records it.}
+
+\uscprov{1}{Mapped to the four principles of explainable artificial intelligence,
+the standard reads as follows: explanation is met because every step has a
+recorded prompt and output; meaningful is met because each stage carries a README
+that explains the step to a human; accuracy is met because the VVUQ gate holds
+each output to its specification and the results reproduce from a fixed seed; and
+the knowledge-limits principle is met because the gate escalates to a human and the
+disclaimers mark where the system must hand back. This is the explainability the
+legislation-creation process should carry, demonstrated end to end
+\cite{nist-ai-explainability, kawchak2026vvuq01}.}
+
+\begin{draftbox}{Appendix C - the explainability standard and its two evolution figures}
+\dstep{Figure 9 (prompt evolution): render a left-to-right box-and-arrow chain in the asciifig environment from the recorded prompt files, in this order: papers/VVUQ-02/instructions/prompt-instruct.md, papers/VVUQ-02/draft-paper/prompt-draft-paper.md, papers/VVUQ-02/full-paper/prompt-full-paper.md; papers/VVUQ-03/instruct-paper/prompt-instruct-paper.md, papers/VVUQ-03/draft-paper/prompt-draft-paper.md, papers/VVUQ-03/full-paper/prompt-full-paper.md; papers/VVUQ-04/instruct-bill/prompt-instruct-bill.md, papers/VVUQ-04/update-bill/prompt-update-bill.md and prompt-a-update-bill.md, papers/VVUQ-04/draft-bill/prompt-draft-bill.md, papers/VVUQ-04/full-bill/prompt-full-bill.md; and papers/VVUQ-05/update-bill/figures-bill/prompt-figures-bill.md, papers/VVUQ-05/update-bill/next-steps/prompt-1-next-steps.md and prompt-2-next-steps.md, papers/VVUQ-05/draft-bill/prompt-draft-bill.md. Label each box with the stage and a few words of how the instruction sharpened; keep exact spacing on a white background.}
+\dstep{Figure 10 (internal bill evolution): render a box-and-arrow chain in the asciifig environment over the VVUQ-04 stage directories papers/VVUQ-04/instruct-bill, template-bill, update-bill, draft-bill, full-bill, and final-bill, extended by papers/VVUQ-05/update-bill (figures-bill and next-steps) to papers/VVUQ-05/draft-bill (this v3.0 draft). Reuse the lineage motif from papers/VVUQ-05/update-bill/figures-bill/05VVUQ04.md ("Purpose and place in the lineage") and papers/VVUQ-04/final-bill/README.md ("Lineage"); mark the v3.0 endpoint with a "<== THIS DRAFT" pointer.}
+\dstep{Table 7 (the explainability standard): build a left-aligned, ragged-right table at the body measure (each width prepended with \raggedright\arraybackslash) with columns Dimension, What makes the legislation-creation step satisfy it, and Recording artifact. Use the four NISTIR 8312 principles (explanation, meaningful, accuracy, knowledge limits) for the rows; resolve to references.bib keys nist-ai-explainability and nist-ai-600. Map each row to the concrete artifacts: the prompt and output Markdown pairs at each stage; the per-stage README; the VVUQ gate decision surface and the seed-20260525 reproducibility; and the ESCALATE rule and the disclaimers.}
+\dstep{Framing source: ground the standard in papers/VVUQ-05/update-bill/figures-bill/README.md (Section 4, how the five catalogs correlate, and Section 5, how a downstream AI should use the corpus) and papers/README.md ("The processing feat accomplished by AI"), which already describe the self-similar, fully recorded pipeline. Keep the claim narrow and demonstrable: this is an explainability standard for the legislation-creation process, not a claim about the merits of the bill.}
+\dstep{Formatting: single hyphens only; the section symbol where a codified reference appears; even RaggedRight spacing with no overflow; keep both figures and the table on a white background; size each asciifig to its content so no large empty white band opens, and avoid leaving a single line stranded onto the next page.}
+\end{draftbox}
