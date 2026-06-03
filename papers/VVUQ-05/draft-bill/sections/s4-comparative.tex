@@ -1,0 +1,49 @@
+%% ============================================================
+%% sections/s4-comparative.tex
+%% H. R. 9510 Bill v3.0 - SEC. 4. COMPARATIVE PRINT; CHANGES IN EXISTING LAW.
+%% Presents the comparative print visually: the convention statement, a
+%% per-section change map (Table 4), and the device-pathway threading figure
+%% (Figure 5). The eleven marked section files are reproduced by the future pass
+%% from the Bill v2.0 sources named in the draftbox.
+%% ============================================================
+\billsec{SEC. 4.}{COMPARATIVE PRINT; CHANGES IN EXISTING LAW.}
+
+\uscprov{1}{The following comparative print shows the changes proposed to existing
+law by this Act. Matter proposed to be deleted is shown as \cprstrike{matter to be
+deleted}; matter proposed to be inserted is shown as \cprinsert{matter to be
+inserted}; existing law in which no change is proposed is shown as regular text,
+and unchanged matter omitted for brevity is shown by a row of asterisks
+\cite{usc-fdca, olrc-usc21}.}
+
+\usccrosshead{CHANGES IN EXISTING LAW MADE BY THE BILL}
+\begin{center}\small\itshape Federal Food, Drug, and Cosmetic Act (reproduced from
+Title 21,\\United States Code, current through Public Law 119-93)\end{center}
+
+\uscprov{1}{The comparative print reaches eleven Title 21 device sections in 21
+U.S.C. order, each shown only as to its affected provisions. The map in Table 4
+identifies every reproduced section, its 21 U.S.C. citation, the Federal Food,
+Drug, and Cosmetic Act section number, and the change H. R. 9510 makes to it, and
+Figure 5 shows where each change sits on the device-regulation pathway the new
+section 360e-5 attaches to \cite{pl-119-93}.}
+
+\figslot{Table 4.}{Per-Section Comparative-Print Change Map}{For each reproduced
+section (s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j,
+s360k): the 21 U.S.C. citation, the FD\&C Act section, and the marked change.}
+
+\figslot{Figure 5.}{How the Eleven Reproduced Sections Thread Through Title
+21}{The device-regulation pathway with the changed nodes marked: the device
+definition and CDS exclusion, classification, the 510(k) and PMA pathways, the
+predetermined change control plan keystone, and the cross-cutting adulteration,
+prohibited-acts, real-world-evidence, and preemption duties.}
+
+\uscprov{1}{Each reproduced section, with its insertions and deletions marked,
+follows in the rendered bill in the order s301, s321, s331, s351, s355g, s360,
+s360c, s360e, s360e-4, s360j, and s360k \cite{usc-360e4, usc-360j, usc-360k}.}
+
+\begin{draftbox}{Section 4 - comparative print, the change map, and the threading figure}
+\dstep{Table 4 (per-section change map): build from papers/VVUQ-04/final-bill/README.md ("Per-section comparative print (changes in existing law)") with columns File, 21 U.S.C., FD\&C section, and Change made by H. R. 9510, for all eleven sections; use the L and Y columns at the body measure (each width prepended with \rabs); keep cells left aligned with no overflow and no big interword gaps.}
+\dstep{Figure 5 (threading figure): render the device-pathway diagram from papers/VVUQ-05/update-bill/figures-bill/05VVUQ04.md ("How the conforming amendments thread through Title 21") and the same diagram in papers/VVUQ-04/final-bill/README.md ("How the conforming amendments thread through Title 21"); this is the same pathway as Figure 4 but annotated to the comparative print, so keep the two visually consistent and mark which nodes carry a marked change. Set it verbatim in the asciifig environment on a white background.}
+\dstep{Marked comparative print: reproduce the eleven affected sections, wrapping each insertion in the cprinsert marker and each deletion in the cprstrike marker (the same two markers shown in the convention statement above), from the finished section files in papers/VVUQ-04/final-bill/sections/ (s301.tex, s321.tex, s331.tex, s351.tex, s355g.tex, s360.tex, s360c.tex, s360e.tex, s360e-4.tex, s360j.tex, s360k.tex), which already carry the focused affected-provisions print and the asterisk convention for omitted matter. Wire them in with one LaTeX input line per section in 21 U.S.C. order, exactly as papers/VVUQ-04/final-bill/main.tex does, and keep each change consistent with the operative amendatory language in SEC. 3.}
+\dstep{Source of record: confirm the reproduced text against papers/VVUQ-04/template-bill/xml\_usc21@119-93.zip (the OLRC USLM XML) and name Public Law 119-93 only as the currency point, never as the law being amended, per papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md.}
+\dstep{Formatting: single hyphens only; the section symbol for every codified reference; even RaggedRight spacing with no overflow; keep the bracket convention (no strikethrough or underline) and avoid stranding a single reproduced line onto the next page; keep the table and figure on a white background.}
+\end{draftbox}

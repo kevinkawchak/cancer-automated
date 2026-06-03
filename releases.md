@@ -4,6 +4,41 @@ Release notes for the cancer-automated repository.
 
 ---
 
+H. R. 9510 Bill v3.0: Visual Draft of the FD&C Act Amendment (v3.0.0)
+v3.0.0 - H. R. 9510 Bill v3.0, the Visual Draft (LaTeX)
+
+## Summary
+
+- Adds papers/VVUQ-05/draft-bill, H. R. 9510 Bill v3.0, a LaTeX visual draft of the Verification Before Generation in Physical AI Oncology Trials Act of 2026, authored by Claude Code Opus 4.8 (1M context) Max running autonomously in a managed ephemeral cloud container across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, then a second-to-last error-fix-and-bundle commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- Bill v3.0 keeps the full operative text of Bill v2.0 (the papers/VVUQ-04/final-bill amendment, new section 515D and ten conforming amendments) so it stands on its own, and adapts a new template from that bill with fewer numbered and lettered lists, adding a more visual perspective: every operative part carries a figure or table slot, and a set-off drafting-instruction block names the exact repository files a future pass processes to render that figure or table on a white background as a text-based diagram, with no raster image.
+- Answers three primary objectives: (a) a visualization of Bill v2.0, drawing its figures and tables from papers/VVUQ-05/update-bill/figures-bill; (b) instructions for every required U.S. House submission deliverable, scaffolding the supplementary Markdown documents to be written later under papers/VVUQ-05/deliverables based on papers/VVUQ-05/update-bill/next-steps, each specified as complete and submission quality; and (c) establishing the VVUQ-01 through VVUQ-04 developments as a new standard for explainability of the U.S. legislation-creation process.
+- Keeps the four bill-content goals: up to date with today's medical-AI law, grounded in current mass-adopted references anchored to a BibTeX key, emerging 119th Congress bills and executive actions confined to a non-operative research-influence matrix, and streamlined to the structured amendment format.
+- Defines sections by their common figures and tables, one .tex file per section: SEC. 2 findings, SEC. 3 the amendment, SEC. 4 comparative print, and five non-operative appendices (visual engineering evidence, submission deliverables, the explainability standard, the research-influence matrix, and development transparency). The cover page is condensed to a single long title dated June 3, 2026, closing with an ASCII overview of the v3.0 process.
+- Centralizes senior-author formatting in usctitle.sty on a white background throughout: RaggedRight even interword spacing with no right-margin overflow, maximal widow and orphan penalties so no single line is stranded, an abbreviated non-overlapping running header, URL breaking, single hyphens only, the section symbol for every codified reference, left-aligned ragged-right full-width tables (every column prepended with \raggedright\arraybackslash), and verbatim white-framed ASCII figures that preserve spacing. No images, mermaid diagrams, or colored figures.
+- Keeps the pull request green: the additions are LaTeX, BibTeX, Markdown, and a zip, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12 and the previously flagged lint-and-format (3.10), (3.11), and (3.12) checks pass.
+- Updates the main README (release badge to v3.0.0, a v3.0.0 summary above the prior summary, one new "H. R. 9510 Bill v3.0 (Visual Draft)" section with a table-of-contents entry, and the repository structure tree extended with a VVUQ-05 block), this releases file, the CHANGELOG (v3.0.0), and CITATION.cff (version 3.0.0).
+
+## Features
+
+- papers/VVUQ-05/draft-bill/main.tex: the assembler; the condensed caption with the v3.0 process diagram, SECTION 1 short title and table of contents, the eight section inputs, the authorship and provenance back matter, and ieeetr references; no images.
+- papers/VVUQ-05/draft-bill/usctitle.sty: the United States Code reproduction commands, the congressional amendment apparatus, the restored draftbox drafting-instruction block, and three white-background visual primitives (an asciifig verbatim environment, a compact figslot deferred-figure placeholder, and a figcaption command), with the formatting hardening above.
+- papers/VVUQ-05/draft-bill/references.bib: 94 ieeetr entries carrying the full Bill v2.0 authority set unchanged plus the v3.0 layer (the four prior works, the VVUQ-05 update-bill inputs, the U.S. House process and CRS deliverable sources, and the NIST explainability sources).
+- papers/VVUQ-05/draft-bill/sections: s2-findings, s3-amendment, s4-comparative, a5-evidence, a6-deliverables, a7-explainability, a8-research-matrix, and a9-transparency, each carrying its operative or framing text, its figure and table slots, and a draftbox of bracketed instructions naming the exact files to process.
+- papers/VVUQ-05/draft-bill/README.md, prompt-draft-bill.md, output-draft-bill.md, and draft-bill-LaTeX.zip: the landing page (badges, repository structure, figure and table inventory, ASCII diagrams, and table of contents), the generating prompt verbatim, the narrative output, and the Overleaf-ready bundle.
+
+## Contributors
+@kevinkawchak
+@claude
+@openai
+@google-gemini
+
+## Notes
+
+- These are independent research drafts, not enacted law and not legal advice; they are not endorsed by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress. The reproduced statutory text is in the public domain; the generated framing is released under CC BY 4.0. All supporting numbers are simulation results, and the Unitree H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform.
+- Built autonomously by Claude Code Opus 4.8 (1M context) Max across sequential commits in a single pull request, one file per commit pushed in real time, with a second-to-last error-fix-and-bundle commit and this final repository-updates commit. Bill v3.0 is a scaffold: it does not process its own bracketed instructions but names the exact directories and files for a future pass to process. Only kevinkawchak/cancer-automated was edited; nothing was committed to kevinkawchak/physical-ai-oncology-trials or any other repository. The contributor set includes @openai and @google-gemini because earlier instruction-generation steps (papers/VVUQ-03/instruct-paper, papers/VVUQ-04/update-bill, and papers/VVUQ-05/update-bill/next-steps) drew on rated outputs from ChatGPT and Gemini alongside Claude.
+
+---
+
 Papers Directory READMEs: Five Comprehensive Landing Pages for the VVUQ-01 to VVUQ-04 Works (v2.3.1)
 v2.3.1 - Papers Directory READMEs: VVUQ-01 to VVUQ-04 Landing Pages
 

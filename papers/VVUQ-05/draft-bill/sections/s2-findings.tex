@@ -1,0 +1,100 @@
+%% ============================================================
+%% sections/s2-findings.tex
+%% H. R. 9510 Bill v3.0 - SEC. 2. FINDINGS; THE EVIDENCE TO LAW RECORD.
+%% Common visuals in this section: Figure 1 (four-work evidence-to-law lineage),
+%% Table 1 (the four works at a glance), Figure 2 (accelerated timeline). The
+%% findings are presented as a condensed narrative plus the three visuals, so the
+%% section uses prose and figures in place of a long numbered list.
+%% ============================================================
+\billsec{SEC. 2.}{FINDINGS; THE EVIDENCE TO LAW RECORD.}
+
+\uscprov{1}{\textbf{(a) In General.} Congress finds that an automated process
+must verify robot-patient interaction code before that code is generated or
+executed in a Physical AI oncology clinical investigation, and that the record of
+the VVUQ-01 through VVUQ-04 developments, visualized in this section, establishes
+both the need for and the feasibility of that requirement \cite{kawchak2026national,
+vvuq05-figures-bill}.}
+
+\figslot{Figure 1.}{Four-Work Evidence-to-Law Lineage}{VVUQ-01 method and
+pipeline, to VVUQ-02 hard engineering proof, to VVUQ-03 proposed bill, to VVUQ-04
+precise amendment; evidence flows forward and each work cites the records of the
+prior works.}
+
+\uscprov{1}{\textbf{(b) The Embodiment Problem and the Sequencing Gap.} Physical
+AI oncology investigations place autonomous and semi-autonomous robots in direct
+physical contact with patients, and the behavior of a robot at the moment of
+contact is determined by software that is increasingly machine-generated. In a
+disembodied pipeline an error yields a wrong number a human can catch downstream;
+in an embodied surgical system the same error class yields a wrong motion a human
+cannot catch in time. No Federal law requires the verification of robot-patient
+interaction code to clear before that code is generated or executed, because the
+order of operations is not regulated \cite{kawchak2026vvuq01, kawchak2026national}.}
+
+\figslot{Table 1.}{The Four Works at a Glance}{Each work, what it is, its release
+range, its headline assurance result (51 of 51 tests; 172 of 172 tests and
+composite 93.56; 15 sections and 21 tables; new section 360e-5 and 10 conforming
+amendments), and its end-goal DOI.}
+
+\uscprov{1}{\textbf{(c) Feasibility Is Demonstrated.} Automated verification of
+robot-patient interaction code is feasible today. A pipeline held the
+verification fraction at 1.0, accepting one candidate artifact and blocking five,
+and a ten-gate assurance suite over control software for a surgical humanoid
+cleared reproducibly from a fixed seed, each gate bound to a published external
+standard \cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\uscprov{1}{\textbf{(d) The Closest Existing Analogues.} The predetermined change
+control plan authority in section 515C of the Federal Food, Drug, and Cosmetic
+Act (21 U.S.C. 360e-4) and the Food and Drug Administration final guidance on such
+plans for artificial-intelligence-enabled device software functions are the
+closest existing analogues to validating a change before deployment, but each
+remains voluntary, submission-based, and neither automated nor required in
+advance of generation. The Quality Management System Regulation (part 820 of
+title 21, Code of Federal Regulations), effective February 2, 2026, and the
+electronic-records requirements of part 11 of such title supply quality and
+record-integrity scaffolding but do not impose a rule that verification precede
+generation \cite{fda-pccp-2024, fr-qmsr-2024}.}
+
+\uscprov{1}{\textbf{(e) A Recognized Standards Basis.} Recognized consensus
+standards, including ASME V\&V 40-2018, the Food and Drug Administration guidance
+assessing the credibility of computational modeling, NASA-STD-7009A, IEEE Std
+7009-2024, IEC 80601-2-77, ISO 14971, and ISO/TS 15066, supply the credibility
+framework, dispersion bounds, fail-safe requirements, and biomechanical contact
+limits to which an automated gate may be bound \cite{asmevv40, fda-credibility-2023,
+nasastd7009, isots15066}.}
+
+\uscprov{1}{\textbf{(f) Human-Over-AI Review Is Already Widely Adopted.}
+Human-over-AI review is already widely adopted in State law, including the
+California Physicians Make Decisions Act (Senate Bill 1120), the Illinois Wellness
+and Oversight for Psychological Resources Act (House Bill 1806), the Texas
+Responsible Artificial Intelligence Governance Act (House Bill 149), and Maryland
+House Bill 820, and the strongest Federal precedent for mandatory human-over-AI
+oversight is the Medicare Advantage artificial-intelligence guardrail (section
+422.101(c) of title 42, Code of Federal Regulations) \cite{ca-sb1120, il-hb1806,
+tx-hb149, md-hb820, cms-4201-ma}.}
+
+\figslot{Figure 2.}{Accelerated Timeline Versus Conventional Methods}{The
+conventional months-to-years path for a method paper, verified robotics code, a
+manuscript, and a federal bill, set beside the about eleven days of autonomous,
+real-time work that produced VVUQ-01 through VVUQ-04.}
+
+\uscprov{1}{\textbf{(g) Modernization, Nondiscrimination, and Classification.} As
+clinical investigation moves toward real-time and decentralized designs governed
+by harmonized good clinical practice, manual review cannot keep pace with the
+volume of machine-generated control code, and an automated gate that clears
+before generation serves that modernization. Federal nondiscrimination law,
+including section 92.210 of title 45, Code of Federal Regulations, title VI of the
+Civil Rights Act of 1964 (42 U.S.C. 2000d), and the Americans with Disabilities
+Act of 1990 (42 U.S.C. 12101 et seq.), requires that a patient-facing algorithm
+minimize the risk of bias and respect accessibility, and the artificial-
+intelligence taxonomy maintained by the American Medical Association provides a
+graduated spine for matching verification rigor to the degree of autonomy of a
+device \cite{iche6r3, cfr-92-210, usc-titlevi, usc-ada, cpt-appendix-s}.}
+
+\begin{draftbox}{Section 2 - findings and the three findings visuals}
+\dstep{Figure 1 (four-work evidence-to-law lineage): render the lineage diagram verbatim from papers/VVUQ-05/update-bill/figures-bill/01RootREADME.md (Visual 3, under the heading "Building process from one work to the next"), reconciled against the same diagram in papers/README.md and the "Lineage" diagram in papers/VVUQ-04/final-bill/README.md. Set it inside the asciifig environment so the boxes, arrows, and DOIs keep their exact spacing on a white background; place it as a full-width text figure. Do not redraw it as a raster image.}
+\dstep{Table 1 (the four works at a glance): build the table from papers/VVUQ-05/update-bill/figures-bill/01RootREADME.md (Visual 2) and papers/README.md ("The four works at a glance"). Use the xltabular Y and L columns at the body measure with columns Work, What it is, Releases, Headline assurance result, and End-goal DOI; keep every cell left aligned and ragged right (each width prepended with \rabs) so no big interword gaps open; reword long cells onto two lines rather than letting any cell overflow.}
+\dstep{Figure 2 (accelerated timeline): render the conventional-versus-this side-by-side timeline verbatim from papers/VVUQ-05/update-bill/figures-bill/01RootREADME.md (Visual 5) and papers/README.md ("Accelerated timeline versus conventional methods") in the asciifig environment; confirm the per-work spans (VVUQ-01 about 5 days, VVUQ-02 about 2 days, VVUQ-03 about 1 day, VVUQ-04 about 2 days, about eleven days total).}
+\dstep{Findings prose: carry the fourteen grounded findings of Bill v2.0 from papers/VVUQ-04/final-bill/main.tex (SEC. 2, paragraphs (1) through (14)) and condense them into the lettered narrative paragraphs above, preserving every cited authority but using prose and the three visuals in place of a long numbered list, consistent with the instruction to use fewer numbered and lettered lists. Keep each finding tied to a recorded authority and resolve every citation to a key in references.bib.}
+\dstep{Grounding: re-confirm the technical findings against papers/VVUQ-04/instruct-bill/09-vvuq-standards-clinical-trial-oncology.md and papers/VVUQ-03/final-paper/sections/definitions.tex; the legal-context findings against papers/VVUQ-04/instruct-bill/01-federal-statutory-framework.md, 02-fda-ai-device-regulation.md, 04-cms-coverage-payment-ai.md, and 05-privacy-security-nondiscrimination.md; and the state human-in-the-loop practice against 06-state-medical-ai-laws.md. Keep the 119th Congress emerging bills and the executive actions out of the findings and confine them to Appendix D per 10-legal-crosswalk-and-bill-style.md (Section B).}
+\dstep{Formatting: single hyphens only; the section symbol for every codified reference; even RaggedRight spacing; reword so no finding ends in a one- or two-word line and no single line is stranded onto the next page; keep the white background on both figures and the table.}
+\end{draftbox}
