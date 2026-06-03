@@ -1,0 +1,52 @@
+%% ============================================================
+%% sections/a6-deliverables.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX B. REQUIRED SUBMISSION DELIVERABLES
+%% (NON-OPERATIVE). The instruction set for the supplementary Markdown documents a
+%% future pass writes under papers/VVUQ-05/deliverables for U.S. House submission,
+%% grounded in papers/VVUQ-05/update-bill/next-steps.
+%% Common visual: Table 6 (the submission deliverables matrix).
+%% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix B. Required Submission Deliverables (Non-Operative)}
+\usccrosshead{APPENDIX B. REQUIRED SUBMISSION DELIVERABLES (NON-OPERATIVE)}
+
+\uscprov{1}{This appendix is non-operative. It identifies the supplementary
+documents a draft United States House bill needs before it can be introduced, as
+recorded in the pre-submission analysis in papers/VVUQ-05/update-bill/next-steps,
+and it instructs a future pass to write each one as a separate, complete, and
+submission-quality Markdown document under papers/VVUQ-05/deliverables. The bill
+itself is the LaTeX measure compiled separately into a PDF; these deliverables are
+the package that accompanies it to a sponsoring office \cite{vvuq05-next-steps,
+crs-r44001}.}
+
+\uscprov{1}{The two reality checks from the next-steps analysis govern the whole
+package: H. R. 9510 is illustrative because the Clerk assigns a bill its number
+only at introduction, and a private project cannot submit a bill directly because
+only a sitting Member may introduce a House bill. Every deliverable is therefore
+framed to get the text into final form and into the hands of a Member who will
+introduce it, and each preserves the standing disclaimer that the work is an
+independent research draft, not pending legislation, and not legal advice
+\cite{house-rule-xii, congress-howlawsmade}.}
+
+\figslot{Table 6.}{The Submission Deliverables Matrix}{For each deliverable: the
+output Markdown file under papers/VVUQ-05/deliverables, its purpose, and the lead
+source files a future pass synthesizes it from.}
+
+\begin{draftbox}{Appendix B - Table 6 and the per-deliverable build instructions}
+\dstep{Table 6 (the deliverables matrix): build a left-aligned, ragged-right xltabular at the body measure (each width prepended with \raggedright\arraybackslash) with columns Deliverable and output file, Purpose, and Lead source files, with one row per deliverable below. State at the top that every deliverable is a standalone Markdown document, complete and submission quality at this bill version, with white-background Markdown tables, single hyphens, the section symbol where a codified reference appears, and no images or mermaid diagrams.}
+\dstep{Deliverable 01 - papers/VVUQ-05/deliverables/01-one-page-summary.md: a one-page plain-English summary of H. R. 9510 (the problem, the verify-before-generate rule, the new section 515D, the ten conforming amendments, and the assurance numbers). Synthesize from papers/VVUQ-04/final-bill/main.tex (SECTION 1 and SEC. 2), papers/VVUQ-04/final-bill/README.md ("The bill at a glance"), and papers/README.md ("The four works at a glance"). Keep it to one page and submission quality.}
+\dstep{Deliverable 02 - papers/VVUQ-05/deliverables/02-section-by-section-analysis.md: a section-by-section analysis of every operative part. Synthesize from papers/VVUQ-04/final-bill/main.tex (SEC. 3, the section 515D subsections (a) through (j), and the ten conforming amendments) and papers/VVUQ-04/final-bill/README.md ("The new operative section" and "Per-section comparative print"). One subheading per subsection and per conforming amendment, each with a plain-English explanation; complete and submission quality.}
+\dstep{Deliverable 03 - papers/VVUQ-05/deliverables/03-plain-english-policy-memo.md: a problem-and-solution policy memo for a Member's staff. Synthesize from papers/VVUQ-03/final-paper/sections/policy\_memo.tex and problem\_statement.tex and papers/VVUQ-04/instruct-bill/01-federal-statutory-framework.md through 05-privacy-security-nondiscrimination.md. State the sequencing gap, why now, and the in-force analogues (PCCP, QMSR, the CMS guardrail); complete and submission quality.}
+\dstep{Deliverable 04 - papers/VVUQ-05/deliverables/04-legislative-findings.md: the standalone findings of fact. Synthesize from papers/VVUQ-04/final-bill/main.tex (SEC. 2, the fourteen findings) and this bill's sections/s2-findings.tex, each finding tied to its references.bib authority; complete and submission quality.}
+\dstep{Deliverable 05 - papers/VVUQ-05/deliverables/05-ramseyer-comparative-print.md: the Ramseyer comparative print (changes to existing law) in Markdown. Synthesize from papers/VVUQ-04/final-bill/sections/ (all eleven section files) and this bill's sections/s4-comparative.tex, showing deletions and insertions for each affected section; complete and submission quality.}
+\dstep{Deliverable 06 - papers/VVUQ-05/deliverables/06-constitutional-authority-statement.md: the Constitutional Authority Statement required by House Rule XII, clause 7(c). Cite the Commerce Clause (Article I, section 8, clause 3) on which the Federal Food, Drug, and Cosmetic Act rests; synthesize the form and currency from papers/VVUQ-04/instruct-bill/01-federal-statutory-framework.md and resolve to references.bib keys crs-if12335 and house-rule-xii; complete and submission quality.}
+\dstep{Deliverable 07 - papers/VVUQ-05/deliverables/07-paygo-and-cost-estimate.md: a PAYGO and cost-estimate note and an earmark declaration. Frame the budgetary effects of the section 515D(h) rulemaking and the Secretary's implementation, drawing on papers/VVUQ-04/final-bill/main.tex (SEC. 3(e) and section 515D(h)) and references.bib key cbo-paygo; note that formal scoring follows introduction; complete and submission quality.}
+\dstep{Deliverable 08 - papers/VVUQ-05/deliverables/08-sponsor-and-cosponsor-packet.md: the sponsor and original cosponsor packet (the one sponsor, the cosponsor form, and the Energy and Commerce referral expectation). Synthesize from papers/VVUQ-05/update-bill/next-steps/output-1-next-steps.md (Phase 2) and output-2-next-steps.md (steps 4 and 7) and references.bib keys crs-rs22477 and house-ehopper; complete and submission quality.}
+\dstep{Deliverable 09 - papers/VVUQ-05/deliverables/09-stakeholder-engagement-plan.md: the stakeholder engagement and outreach plan (FDA and HHS, patient-advocacy groups, industry, academic societies, and the standards bodies). Synthesize from papers/VVUQ-05/update-bill/next-steps/output-1-next-steps.md (Phase 2 stakeholder engagement) and papers/VVUQ-04/instruct-bill/09-vvuq-standards-clinical-trial-oncology.md (the standards bodies: ASME V\&V 40, IEC 80601-2-77, ISO 13482, ISO/TS 15066); keep outreach respectful and forward looking; complete and submission quality.}
+\dstep{Deliverable 10 - papers/VVUQ-05/deliverables/10-legislative-counsel-routing-memo.md: the House Office of Legislative Counsel routing memo (legislative form, amendatory instructions, cross-references, positive-law question). Synthesize from papers/VVUQ-05/update-bill/next-steps/output-2-next-steps.md (steps 2 and 3) and papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md; resolve to references.bib key house-holc; complete and submission quality.}
+\dstep{Deliverable 11 - papers/VVUQ-05/deliverables/11-currency-and-cross-reference-matrix.md: the currency and cross-reference verification matrix (re-verify that no newer public law has changed Title 21, that the target number section 515D / 21 U.S.C. section 360e-5 is still unused, and that every cross-reference and each of the ten conforming amendments still lands). Synthesize from papers/VVUQ-05/update-bill/next-steps/output-1-next-steps.md (Phase 1 currency check), papers/VVUQ-04/instruct-bill (current through May 31, 2026), and references.bib key pl-119-93; a left-aligned matrix; complete and submission quality.}
+\dstep{Deliverable 12 - papers/VVUQ-05/deliverables/12-testimony-and-research-influence-brief.md: hearing testimony and the research-influence brief, the one place the 119th Congress emerging bills and the executive actions may be discussed (never in the bill text). Synthesize from papers/VVUQ-04/instruct-bill/07-executive-actions-national-ai-strategy.md and 08-emerging-federal-bills.md and this bill's sections/a8-research-matrix.tex; complete and submission quality.}
+\dstep{Deliverable 00 - papers/VVUQ-05/deliverables/README.md: the package index (badges, a repository-structure tree of the deliverables folder, a table of contents, and a one-line gloss per deliverable), consistent with this draft-bill README; no images or mermaid diagrams; white-background tables; single hyphens.}
+\dstep{Cross-cutting requirements: every deliverable is its own Markdown file, each complete and submission quality at this bill version (Bill v3.0), so a sponsoring office could act on it without the others. Keep the bill itself in LaTeX (compiled to PDF separately) and never fold a deliverable into the bill text. Preserve the disclaimers, use single hyphens only, render every table on a white background, use the section symbol for codified references, and include no images, mermaid diagrams, or colored figures.}
+\end{draftbox}
