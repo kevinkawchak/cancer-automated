@@ -1,0 +1,58 @@
+%% ============================================================
+%% sections/a9-transparency.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX E. DEVELOPMENT TRANSPARENCY AND COMMIT SCHEDULE.
+%% How Bill v3.0 was built and how a future pass finishes it.
+%% Common visuals: Table 9 (version lineage), Table 10 (single-PR commit
+%% schedule), Figure 11 (the build-and-handoff process).
+%% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix E. Development Transparency and Commit Schedule}
+\usccrosshead{APPENDIX E. DEVELOPMENT TRANSPARENCY AND COMMIT SCHEDULE}
+
+\uscprov{1}{\textbf{What was built, and how.} Bill v3.0 (v3.0.0) is the visual
+draft of H. R. 9510. It was produced by an autonomous artificial intelligence
+coding agent, Claude Code Opus 4.8 (1M context, Max), operating under human
+direction in a managed, ephemeral cloud container. It was authored across
+sequential commits in a single pull request, one file per commit pushed to GitHub
+in real time, with a second-to-last error-fix-and-bundle commit and a final
+repository-updates commit. Only kevinkawchak/cancer-automated was edited
+\cite{anthropic-claude-code, repo-cancer-automated}.}
+
+\figslot{Table 9.}{Bill Version Lineage}{Bill v1.0 (VVUQ-03 standalone bill), Bill
+v2.0 (VVUQ-04 FD&C Act amendment, v2.0.0 through v2.3.0), and Bill v3.0 (this
+VVUQ-05 visual draft, v3.0.0), each with its directory, role, and DOI.}
+
+\uscprov{1}{\textbf{What this version adds.} From Bill v2.0, this version keeps
+the full operative text and reorganizes it as a visual perspective: it adds the
+figure and table slots and their build instructions, the visual engineering
+evidence in Appendix A, the submission deliverables in Appendix B, the
+explainability standard in Appendix C, and the commit record here, while confining
+the emerging bills and executive actions to Appendix D, exactly as the prior bill
+does \cite{kawchak2026vvuq04bill}.}
+
+\figslot{Table 10.}{Single-Pull-Request Commit Schedule}{The ordered commits that
+build this bundle: main.tex, the style file, the bibliography, the eight section
+files, the README, the error-fix-and-bundle commit with the prompt, output, and
+zip, and the final repository-updates commit.}
+
+\uscprov{1}{\textbf{How to finish this measure.} A future Claude Code Opus 4.8 (1M
+context) Max pass executes the bracketed drafting instructions in each section
+against the named files, rendering every figure and table on a white background as
+a text-based diagram and writing each Appendix B deliverable as a separate,
+submission-quality Markdown document under papers/VVUQ-05/deliverables. The handoff
+is deliberate: this draft names the exact files so the next pass spends its effort
+on synthesis, not on searching \cite{vvuq05-figures-bill, vvuq05-next-steps}.}
+
+\figslot{Figure 11.}{The Build-and-Handoff Process}{This v3.0 draft, with its
+bracketed instructions and figure and table slots, handed to a future pass that
+renders the figures and writes the deliverables, yielding the final visual bill and
+the papers/VVUQ-05/deliverables package.}
+
+\begin{draftbox}{Appendix E - the lineage, the commit schedule, and the handoff figure}
+\dstep{Table 9 (bill version lineage): build a left-aligned, ragged-right table at the body measure (each width prepended with \raggedright\arraybackslash) with columns Version, Directory, Role, and DOI. Rows: Bill v1.0, papers/VVUQ-03/final-paper, standalone VVUQ Physical AI Oncology Trial Bill, 10.5281/zenodo.20454870; Bill v2.0, papers/VVUQ-04/final-bill, FD&C Act amendment (new section 360e-5 and ten conforming amendments), 10.5281/zenodo.20485580; Bill v3.0, papers/VVUQ-05/draft-bill, this visual draft, DOI to be minted. Confirm the directories and DOIs against papers/README.md ("Final Papers and Bills on Zenodo") and papers/VVUQ-04/final-bill/README.md.}
+\dstep{Table 10 (commit schedule): build a left-aligned, ragged-right table at the body measure with columns Commit, File or action, and Role. List the fourteen commits of this single pull request in order: (1) main.tex; (2) usctitle.sty; (3) references.bib; (4) sections/s2-findings.tex; (5) sections/s3-amendment.tex; (6) sections/s4-comparative.tex; (7) sections/a5-evidence.tex; (8) sections/a6-deliverables.tex; (9) sections/a7-explainability.tex; (10) sections/a8-research-matrix.tex; (11) sections/a9-transparency.tex; (12) README.md; (13) the error-fix-and-bundle commit adding prompt-draft-bill.md, output-draft-bill.md, and draft-bill-LaTeX.zip; and (14) the final repository-updates commit. Confirm against the actual commit history of this pull request.}
+\dstep{Figure 11 (build-and-handoff): render a compact box-and-arrow process in the asciifig environment showing this draft (instructions plus slots) handed to a future pass that renders the figures and writes the deliverables, yielding the final bill and the deliverables package. Reuse the shape of the cover figure in papers/VVUQ-05/draft-bill/main.tex so the two are consistent; keep exact spacing on a white background.}
+\dstep{Implementation note: summarize how the measure is implemented as law from papers/VVUQ-04/final-bill/main.tex (Appendix B, the implementation pathway) so the transparency statement and the implementation guidance stay aligned: final regulations within 365 days under section 515D(h), an effective date one year out, a 180-day transition for enrolling investigations, and the readiness gates before enrollment.}
+\dstep{Formatting: single hyphens only; the section symbol where a codified reference appears; even RaggedRight spacing with no overflow; keep both tables and the figure on a white background; avoid leaving a single line stranded onto the next page and avoid large empty white bands.}
+\end{draftbox}
