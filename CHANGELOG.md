@@ -5,6 +5,49 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-06-03
+
+### Added
+- `papers/VVUQ-05/full-bill/`: the finished H. R. 9510 Bill v3.0, a LaTeX visual
+  amendment of the *Verification Before Generation in Physical AI Oncology Trials
+  Act of 2026*, produced from the v3.0.0 `papers/VVUQ-05/draft-bill` scaffold by
+  executing every bracketed drafting instruction against the named figures-bill,
+  next-steps, and `papers/VVUQ-04/final-bill` sources. The drafting-instruction
+  blocks and figure slots are gone: eleven text figures and ten full-width tables
+  are rendered, each centered on a white background and sized to its content, with
+  no raster image, and the full operative text of Bill v2.0 is carried so the bill
+  stands on its own.
+- `papers/VVUQ-05/full-bill/main.tex`, `usctitle.sty`, and `references.bib`: the
+  assembler (condensed caption with the centered cover figure, SECTION 1 with a
+  clickable, page-filling table of contents, the eight section inputs, and the back
+  matter with the Bill v3.0 DOI), the v3.1.0 style (US Code reproduction, amendment
+  apparatus, the clickable table-of-contents macros, and the centered
+  content-width `asciifig` and `asciifigsmall` figure environments), and the
+  bibliography.
+- `papers/VVUQ-05/full-bill/sections/`: s2-findings, s3-amendment, s4-comparative,
+  a5-evidence, a6-deliverables, a7-explainability, a8-research-matrix, and
+  a9-transparency, each rendering its figures and tables on a white background; the
+  comparative print reproduces the eleven affected Title 21 provisions inline.
+- `papers/VVUQ-05/full-bill/deliverables/`: thirteen standalone, submission-quality
+  Markdown documents (01 through 12 plus a package README), each processed as a
+  separate task and committed individually.
+- `papers/VVUQ-05/full-bill/README.md`, `prompt-full-bill.md`,
+  `output-full-bill.md`, and `full-bill-LaTeX.zip`: the landing page, the
+  generating prompt verbatim, the narrative output, and the Overleaf-ready bundle.
+
+### Fixed
+- Replaced the optional-argument ASCII figure environment (whose lookahead
+  gobbled the leading spaces of the first verbatim line) with two fixed-size
+  environments, so every figure preserves its exact spacing, is centered, and is
+  correctly weighted.
+
+### Changed
+- Updated the main `README.md` (release badge to v3.1.0, a v3.1.0 summary above
+  the prior summary, one new "H. R. 9510 Bill v3.0 (Visual Amendment, Full Bill)"
+  section with a table-of-contents entry, and the repository structure tree
+  extended with the full-bill block), `releases.md` (v3.1.0 notes), and
+  `CITATION.cff` (version 3.1.0).
+
 ## [3.0.0] - 2026-06-03
 
 ### Added
