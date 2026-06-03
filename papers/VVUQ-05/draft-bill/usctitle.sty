@@ -57,7 +57,10 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{textcomp}
-\RequirePackage{microtype}
+% Protrusion improves the right margin; expansion is disabled so the document
+% compiles on any installation (auto font expansion requires expansion-capable
+% scalable font instances that a minimal TeX setup may not register).
+\RequirePackage[protrusion=true,expansion=false]{microtype}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{tabularx}
@@ -113,6 +116,12 @@
 \do\W\do\X\do\Y\do\Z\do\0\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9}
 \Urlmuskip=0mu plus 3mu\relax
 
+% The ieeetr bibliography style lowercases title fields, so a section symbol
+% written as \S in a BibTeX title is emitted into the .bbl as \s, which is
+% otherwise undefined. Provide \s as the section symbol so every codified
+% reference in the bibliography renders correctly and the compile stays clean.
+\providecommand{\s}{\S}
+
 % - Paragraph defaults: small inter-clause gap, no first-line indent. -
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3.2pt plus 1pt minus 0.5pt}
@@ -145,6 +154,12 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\ragcol}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Literal, non-executing rendering of the ragged-right column prefix, for use in
+% the drafting instructions where the prefix is shown as text rather than run.
+% Renders the characters backslash-raggedright-backslash-arraybackslash in
+% typewriter so the instruction displays the exact column preamble to apply.
+\newcommand{\rabs}{\texttt{\textbackslash raggedright\textbackslash arraybackslash}}
 
 % ==========================================================================
 % UNITED STATES CODE REPRODUCTION COMMANDS (existing-law text in the
