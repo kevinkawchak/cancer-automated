@@ -1,0 +1,228 @@
+% ============================================================
+% main.tex
+% VVUQ-05 draft-bill (LaTeX)
+%   H. R. 9510 BILL v3.0 - a VISUAL DRAFT amendment to the Federal Food, Drug,
+%   and Cosmetic Act (21 U.S.C. 301 et seq.), grounded on the Title 21 device
+%   provisions current through Public Law 119-93.
+%
+% WHAT THIS FILE IS. This is the v3.0 visual scaffold for H. R. 9510. It is NOT
+% a finished bill. It keeps the full congressional amendment structure of Bill
+% v2.0 (the VVUQ-04 final-bill: caption, A BILL, enacting clause, SECTION 1 short
+% title and table of contents, SEC. 2 findings, SEC. 3 the operative amendment
+% and new section 515D, SEC. 4 comparative print) so it stands on its own as a
+% bill, and it ADDS a more visual perspective: every operative part carries a
+% figure or table slot and a set-off DRAFTING INSTRUCTIONS block that tells a
+% future Claude Code Opus 4.8 (1M context) Max pass exactly which files in this
+% repository to process to render that figure or table on a white background as
+% a text-based diagram, with no raster image. Five non-operative appendices
+% extend the perspective: Appendix A visualizes the VVUQ-01 and VVUQ-02
+% engineering evidence; Appendix B instructs the build of every required U.S.
+% Bill submission deliverable; Appendix C establishes the VVUQ-01 through VVUQ-04
+% developments as a new standard for explainability of the legislation-creation
+% process; Appendix D is the research-influence matrix; and Appendix E is the
+% development-transparency statement and commit schedule.
+%
+% WHY A VISUAL PERSPECTIVE. Bill v3.0 answers three goals. First, it is a
+% visualization of Bill v2.0, built on the VVUQ-01 through VVUQ-04 record and the
+% verbatim visual catalog in papers/VVUQ-05/update-bill/figures-bill. Second, it
+% scaffolds the supplementary Markdown deliverables that papers/VVUQ-05/update-
+% bill/next-steps says a U.S. House bill needs before submission, to be added in
+% a later step under papers/VVUQ-05/deliverables. Third, it establishes the
+% four-work evidence-to-law pipeline as a reusable explainability standard. The
+% bill is separately compiled in LaTeX into a PDF; the deliverables are separate
+% Markdown documents, each complete and submission quality at this bill version.
+%
+% Compile recipe (Overleaf, pdfLaTeX):
+%   pdflatex main.tex
+%   bibtex   main
+%   pdflatex main.tex
+%   pdflatex main.tex
+%
+% Formatting (centralized in usctitle.sty): white background throughout;
+% RaggedRight body with even interword spacing and no right-margin overflow;
+% maximal widow and orphan penalties so no single line is stranded; an
+% abbreviated running header with no overlapping fields; URL breaking in the
+% references; single hyphens only; the section symbol for every codified
+% reference; full-width left-aligned ragged-right tables; and ASCII figures set
+% verbatim in white, black-ruled monospace frames that preserve spacing exactly.
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage{usctitle}
+
+\title{Verification Before Generation in Physical AI Oncology Trials Act of 2026
+(H. R. 9510), Bill v3.0: A Visual Draft Amendment to the Federal Food, Drug, and
+Cosmetic Act}
+\author{Prepared for VVUQ-05 by CEO Kevin Kawchak, ChemicalQDevice}
+\date{June 3, 2026 (current through Public Law 119-93)}
+
+\begin{document}
+
+% ============================================================
+% BILL CAPTION AND FRONT MATTER (the caption page). The House and Senate
+% statements are condensed: the long title appears once, the referral block is
+% brief, and the standard enacting clause is retained. An ASCII overview of the
+% v3.0 visual draft process closes the page.
+% ============================================================
+\thispagestyle{plain}
+\pagenumbering{roman}
+
+\billcaption{119TH CONGRESS}{2d Session}{H.\,R. 9510}
+
+\billlongtitle{To amend the Federal Food, Drug, and Cosmetic Act to require an
+automated verification, validation, and uncertainty quantification process to
+clear robot-patient interaction code before that code is generated or executed
+in a Physical AI oncology clinical investigation.}
+
+\billintro{IN THE HOUSE OF REPRESENTATIVES}{June 3, 2026}{%
+Mr. \underline{Kevin Kawchak} authored the following bill with the assistance of
+artificial intelligence; which was referred to the Committee on Energy and
+Commerce}
+
+\billhead
+
+\enactingclause
+
+\billcovernote{Bill v3.0 is a visual draft of H. R. 9510, the Verification
+Before Generation in Physical AI Oncology Trials Act of 2026. It keeps the full
+operative text of Bill v2.0 so it stands on its own, and it adds a visual
+perspective: figure and table slots, an engineering-evidence appendix, a
+submission-deliverables appendix, and an explainability-standard appendix. It
+was prepared with the assistance of an autonomous artificial intelligence coding
+agent (Claude Code Opus 4.8, 1M context, Max) under human direction. It is an
+independent research draft, is not an enacted law, and is not legal advice; the
+development record appears in Appendix E.}
+
+\begin{asciifig}
+  EVIDENCE (VVUQ-01, VVUQ-02)         LAW (VVUQ-03 bill, VVUQ-04 amendment)
+  +----------------------------+      +-----------------------------------+
+  | method + 51-test pipeline  |      | H. R. 9510 standalone bill        |
+  | 10-gate humanoid, 172 test | ===> | FD&C Act amendment, new 360e-5    |
+  +----------------------------+      +-----------------------------------+
+               |                                       |
+               +------------------+--------------------+
+                                  v
+             VVUQ-05/update-bill  (the inputs to this draft)
+             +---------------------------------------------+
+             | figures-bill : every ASCII diagram + table  |
+             | next-steps   : the submission deliverables  |
+             +---------------------------------------------+
+                                  |
+                                  v
+         H. R. 9510 BILL v3.0   <== THIS VISUAL DRAFT SCAFFOLD
+         bracketed instructions name the exact files to process
+                                  |
+                                  v
+         A future Claude Code pass renders the figures and the
+         deliverables, yielding the final visual bill and the
+         papers/VVUQ-05/deliverables submission package
+\end{asciifig}
+\figcaption{Cover Figure. The Bill v3.0 visual draft process: VVUQ-01 through
+VVUQ-04 evidence and law, reorganized through the VVUQ-05 update-bill inputs into
+this scaffold, then rendered by a future pass into the final bill and the
+deliverables package.}
+
+\clearpage
+\pagenumbering{arabic}
+
+% ============================================================
+% SECTION 1. SHORT TITLE; TABLE OF CONTENTS.
+% ============================================================
+\billsec{SECTION 1.}{SHORT TITLE; TABLE OF CONTENTS.}
+
+\uscprov{1}{\textbf{(a) Short Title.} This Act may be cited as the
+``Verification Before Generation in Physical AI Oncology Trials Act of 2026''.}
+
+\uscprov{1}{\textbf{(b) Table of Contents.} The table of contents for this Act is
+as follows:}
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.9\linewidth}@{}}
+Sec. 1. Short title; table of contents.\\
+Sec. 2. Findings; the evidence to law record.\\
+Sec. 3. Amendment to the Federal Food, Drug, and Cosmetic Act.\\
+Sec. 4. Comparative print; changes in existing law.\\
+Appendix A. Visual engineering evidence (non-operative).\\
+Appendix B. Required submission deliverables (non-operative).\\
+Appendix C. The VVUQ explainability standard (non-operative).\\
+Appendix D. Research influence matrix (non-operative).\\
+Appendix E. Development transparency and commit schedule.\\
+\end{tabular}
+\end{center}
+
+\begin{draftbox}{Section 1 - short title and table of contents}
+\dstep{Retain the short title verbatim from papers/VVUQ-04/final-bill/main.tex (SECTION 1(a)); verify the bill name and the Act name against papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section D and the drafting-conventions checklist in Section E, item 1: verify every bill and law name). Confirm H. R. 9510 and "119TH CONGRESS, 2d Session" against papers/VVUQ-04/final-bill/README.md.}
+\dstep{Keep the table of contents as a single-column left-aligned list (the ragcol helper at width 0.9 of the line); list Sec. 1 through Sec. 4 and Appendix A through Appendix E exactly as above; keep each entry to one line and reword any wrap so no entry leaves a one- or two-word last line.}
+\dstep{Do not number the new FD&C Act section here; the new section number (FD&C Act section 515D, 21 U.S.C. section 360e-5) is established in Sec. 3 and recorded in the clerical amendment to the Act's own table of contents.}
+\end{draftbox}
+
+% ============================================================
+% BILL BODY AND APPENDICES (one file per section; each corresponds to main.tex).
+% The bill body (SEC. 2 through SEC. 4) carries the operative text and the
+% comparative print; the appendices carry the visual, deliverable, and
+% explainability perspective. Each file opens with its own heading and ends with
+% the DRAFTING INSTRUCTIONS that name the exact files a future pass must process.
+% ============================================================
+\input{sections/s2-findings}
+\input{sections/s3-amendment}
+\input{sections/s4-comparative}
+\input{sections/a5-evidence}
+\input{sections/a6-deliverables}
+\input{sections/a7-explainability}
+\input{sections/a8-research-matrix}
+\input{sections/a9-transparency}
+
+% ============================================================
+% AUTHORSHIP, NOTICES, AND PROVENANCE.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Authorship, Notices, and Provenance}
+\usccrosshead{AUTHORSHIP, NOTICES, AND PROVENANCE}
+
+\uscnotepar{Prepared by CEO Kevin Kawchak
+(\href{https://orcid.org/0009-0007-5457-8667}{ORCID 0009-0007-5457-8667}),
+ChemicalQDevice (\href{mailto:kevink@chemicalqdevice.com}{kevink@chemicalqdevice.com}).
+Adapted using Claude Code Opus 4.8 (1M context) Max; research assisted by ChatGPT
+and Google Gemini.}
+
+\uscnotepar{Notice: This measure was adapted from documents of the United States
+Government in the public domain under 17 U.S.C. 105. The reproduced statutory
+text is in the public domain; the authoritative version is the United States Code
+as published by the Office of the Law Revision Counsel. This work is not endorsed
+or sponsored by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress.}
+
+\uscnotepar{Disclaimer: This work is an independent research draft, is not an
+enacted law, and is not legal advice; it is not endorsed, sponsored, or approved
+by any trial sponsor, contract research organization, site, institutional review
+board, regulator, or medical society. All supporting numbers are simulation or
+illustrative results reproducible from the deterministic seed 20260525, and no
+patient-identifiable information is included.}
+
+\uscnotepar{Rights: The reproduced statutory text is in the public domain; the
+generated amendment framing, figures, tables, and notices are released under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0),
+\href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/}.}
+
+\href{https://doi.org/10.5281/zenodo.20485580}{DOI prior bill (v2.0): 10.5281/zenodo.20485580}
+
+\href{https://doi.org/10.5281/zenodo.20372501}{DOI repository: 10.5281/zenodo.20372501}
+
+\uscnotepar{San Diego. June 3, 2026.}
+
+% ============================================================
+% PROVENANCE AND RESEARCH SOURCES (BIBLIOGRAPHY).
+% A real congressional bill carries no bibliography; this research-aid back
+% matter does, so the operative text stays clean while sources remain auditable.
+% ============================================================
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Provenance and Research Sources}
+\usccrosshead{Provenance and Research Sources}
+\begingroup
+\RaggedRight
+\nocite{*}
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\endgroup
+
+\end{document}
