@@ -1,7 +1,7 @@
 # Production Automated Physical AI Oncology Trial Daily Deliverables
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/badge/Release-v3.0.0-brightgreen.svg)](releases.md)
+[![Release](https://img.shields.io/badge/Release-v3.1.0-brightgreen.svg)](releases.md)
 [![Last Updated](https://img.shields.io/badge/Updated-June%202026-blue.svg)](CHANGELOG.md)
 [![Python](https://img.shields.io/badge/Python-3.10%20|%203.11%20|%203.12-blue.svg)](https://www.python.org/)
 [![Protocol](https://img.shields.io/badge/Protocol-MCP-purple.svg)](https://modelcontextprotocol.io/)
@@ -11,6 +11,8 @@
 **Production-ready, scalable automation for Physical AI oncology trial daily deliverables, by Claude Code Opus 4.7, Cowork; building on developments proven across physical-ai-oncology-trials, robotic-surgeries, and Clinical-AI-Demos.**
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
+
+**6/3: v3.1.0 (H. R. 9510 Bill v3.0, Visual Amendment)** Adds [papers/VVUQ-05/full-bill](papers/VVUQ-05/full-bill): the finished LaTeX visual amendment of **H. R. 9510**, rendering eleven centered, white-background text figures and ten body-width tables from the v3.0 scaffold, carrying the full operative section 515D and the ten conforming amendments, with thirteen submission deliverables and an Overleaf-ready compile zip.
 
 **6/3: v3.0.0 (H. R. 9510 Bill v3.0, Visual Draft)** Adds [papers/VVUQ-05/draft-bill](papers/VVUQ-05/draft-bill): a LaTeX visual draft of **H. R. 9510** that keeps the full operative text of Bill v2.0 and layers a visual perspective: figure and table slots, a visual engineering-evidence appendix, a submission-deliverables appendix, and a VVUQ explainability-standard appendix, each carrying bracketed instructions that name the exact repository files a future Claude Code pass renders.
 
@@ -58,6 +60,7 @@ This repository is complementary and open source. Please implement code safely a
 
 ## Table of Contents
 
+- [H. R. 9510 Bill v3.0 (Visual Amendment, Full Bill)](#h-r-9510-bill-v30-visual-amendment-full-bill)
 - [H. R. 9510 Bill v3.0 (Visual Draft)](#h-r-9510-bill-v30-visual-draft)
 - [Thesis and Roadmap](#thesis-and-roadmap)
 - [Daily Deliverable Pipeline](#daily-deliverable-pipeline)
@@ -87,6 +90,24 @@ This repository is complementary and open source. Please implement code safely a
 - [Related Repositories](#related-repositories)
 - [Citation](#citation)
 - [License](#license)
+
+## H. R. 9510 Bill v3.0 (Visual Amendment, Full Bill)
+
+As of v3.1.0 the v3.0 scaffold is rendered into the finished bill. [papers/VVUQ-05/full-bill](papers/VVUQ-05/full-bill) is **H. R. 9510 Bill v3.0**, the LaTeX visual amendment of the *Verification Before Generation in Physical AI Oncology Trials Act of 2026*, produced from the [draft-bill](papers/VVUQ-05/draft-bill) scaffold by executing every bracketed drafting instruction against the named [figures-bill](papers/VVUQ-05/update-bill/figures-bill), [next-steps](papers/VVUQ-05/update-bill/next-steps), and [VVUQ-04 final-bill](papers/VVUQ-04/final-bill) sources. The drafting-instruction blocks and figure slots are gone: eleven text figures and ten full-width tables are rendered, each on a white background, centered, and sized to its content, so they read as they would in a fenced GitHub Markdown block, with no raster image. The full operative text of Bill v2.0 is carried so the bill stands on its own.
+
+The finished bill also resolves the cover-figure issue: in the style file each ASCII figure is captured into a content-width box, framed with a thin black rule on a white fill, and centered on the page, so it is neither off-center nor stretched, and a wide diagram is set a size smaller so no line runs off the right margin. SECTION 1 carries a clickable, page-filling table of contents whose entries link to their parts.
+
+```
+  VVUQ-05/draft-bill (v3.0 scaffold)   ->   VVUQ-05/full-bill (v3.0 visual amendment)
+  figure/table slots + bracketed             eleven figures + ten tables rendered;
+  drafting instructions                      section 515D + ten conforming amendments
+        |                                            |
+        +-- figures-bill + next-steps inputs --------+
+                                                     v
+                          thirteen submission deliverables + Overleaf-ready zip
+```
+
+The submission package under [papers/VVUQ-05/full-bill/deliverables](papers/VVUQ-05/full-bill/deliverables) holds thirteen standalone, submission-quality Markdown documents (the one-page summary, section-by-section analysis, policy memo, legislative findings, Ramseyer comparative print, Constitutional Authority Statement, PAYGO note, sponsor and cosponsor packet, stakeholder plan, Legislative Counsel routing memo, currency matrix, testimony brief, and a package index). The Bill v3.0 DOI is [10.5281/zenodo.xxxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxxx). See the [full-bill README](papers/VVUQ-05/full-bill) for the badges, repository structure, figure and table inventory, and the Overleaf compile recipe.
 
 ## H. R. 9510 Bill v3.0 (Visual Draft)
 
@@ -490,20 +511,21 @@ cancer-automated/
             └── sections/              # 11 comparative-print sections, each finished + marked
                 ├── s301.tex s321.tex s331.tex s351.tex s355g.tex
                 └── s360.tex s360c.tex s360e.tex s360e-4.tex s360j.tex s360k.tex
-    └── VVUQ-05/                        # ★ v3.0.0 H. R. 9510 Bill v3.0 visual draft (LaTeX)
+    └── VVUQ-05/                        # ★ v3.1.0 H. R. 9510 Bill v3.0 visual amendment (LaTeX)
         ├── update-bill/            # figures-bill (verbatim visual catalog) + next-steps (submission steps)
-        ├── deliverables/           # submission deliverables package (written in a later step)
-        └── draft-bill/             # ★ v3.0.0 visual draft scaffold of H. R. 9510 (Bill v3.0)
+        ├── draft-bill/             # v3.0.0 visual draft scaffold of H. R. 9510 (Bill v3.0)
+        │   ├── README.md  main.tex  usctitle.sty  references.bib  draft-bill-LaTeX.zip
+        │   ├── prompt-draft-bill.md  output-draft-bill.md
+        │   └── sections/           # 8 files: 3 bill-body (s2-s4) + 5 appendices (a5-a9)
+        └── full-bill/              # ★ v3.1.0 finished visual amendment of H. R. 9510 (Bill v3.0)
             ├── README.md           # badges, repo structure, figure and table inventory, ASCII diagrams, toc
-            ├── main.tex            # caption + v3.0 process diagram, SECTION 1, section inputs, back matter
-            ├── usctitle.sty        # US Code reproduction + amendment apparatus + draftbox + white-bg visual macros
-            ├── references.bib      # 94 provenance + research sources (ieeetr)
-            ├── draft-bill-LaTeX.zip   # Overleaf-ready bundle
-            ├── prompt-draft-bill.md   # the generating prompt, verbatim
-            ├── output-draft-bill.md   # the narrative output of this step
-            └── sections/              # 8 files: 3 bill-body (s2-s4) + 5 appendices (a5-a9)
-                ├── s2-findings.tex s3-amendment.tex s4-comparative.tex
-                └── a5-evidence.tex a6-deliverables.tex a7-explainability.tex a8-research-matrix.tex a9-transparency.tex
+            ├── main.tex            # caption + centered cover figure, SECTION 1 clickable toc, section inputs
+            ├── usctitle.sty        # US Code reproduction + amendment apparatus + centered ASCII figure + toc macros
+            ├── references.bib      # provenance + research sources (ieeetr)
+            ├── full-bill-LaTeX.zip    # Overleaf-ready bundle (main + sty + bib + 8 sections)
+            ├── prompt-full-bill.md  output-full-bill.md
+            ├── sections/           # 8 files: s2-s4 (bill body) + a5-a9 (appendices), figures rendered
+            └── deliverables/       # 13 submission documents (01-12 + package README)
 ```
 
 ## Established Methods Proven Across Projects

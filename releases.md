@@ -4,6 +4,39 @@ Release notes for the cancer-automated repository.
 
 ---
 
+H. R. 9510 Bill v3.0: Visual Amendment of the FD&C Act Amendment (v3.1.0)
+v3.1.0 - H. R. 9510 Bill v3.0, the Visual Amendment (Full Bill, LaTeX)
+
+## Summary
+
+- Adds papers/VVUQ-05/full-bill, the finished H. R. 9510 Bill v3.0, the LaTeX visual amendment of the Verification Before Generation in Physical AI Oncology Trials Act of 2026, produced from the v3.0.0 papers/VVUQ-05/draft-bill scaffold by executing every bracketed drafting instruction against the named figures-bill, next-steps, and papers/VVUQ-04/final-bill sources. Authored by Claude Code Opus 4.8 (1M context) Max running autonomously across sequential commits in a single pull request, one file per commit pushed to GitHub in real time, with a second-to-last error-fix-and-bundle commit and this final repository-updates commit. Only kevinkawchak/cancer-automated is edited.
+- The drafting-instruction blocks and figure slots are gone: eleven text figures and ten full-width tables are rendered, each on a white background, centered, and sized to its content, so they read as they would in a fenced GitHub Markdown block, with no raster image. The full operative text of Bill v2.0 (new section 515D, 21 U.S.C. 360e-5, and the ten conforming amendments) is carried so the bill stands on its own, and the eleven affected Title 21 provisions are reproduced inline in the comparative print with insertions and deletions marked.
+- Resolves the cover-figure issue: each ASCII figure is captured into a content-width box, framed with a thin black rule on a white fill, and centered on the page, so it is neither off-center nor stretched, and a wide diagram is set a size smaller so no line runs off the right margin. SECTION 1 carries a clickable, page-filling table of contents whose entries link to their parts.
+- Processes the thirteen submission deliverables under papers/VVUQ-05/full-bill/deliverables as separate tasks, one commit each: the one-page summary, section-by-section analysis, policy memo, legislative findings, Ramseyer comparative print, Constitutional Authority Statement, PAYGO note, sponsor and cosponsor packet, stakeholder engagement plan, Legislative Counsel routing memo, currency and cross-reference matrix, testimony and research-influence brief, and a package README, each a standalone, submission-quality Markdown document.
+- Keeps the four bill-content goals: up to date with today's medical-AI law, grounded in current mass-adopted references, the emerging 119th Congress bills and executive actions confined to a non-operative research-influence matrix, and streamlined to the structured amendment format.
+- Keeps the pull request green: the additions are LaTeX, BibTeX, Markdown, and a zip, all outside the ruff, yamllint, and pytest surface, so the lint-and-format CI job passes across Python 3.10, 3.11, and 3.12.
+- Updates the main README (release badge to v3.1.0, a 425-character v3.1.0 summary above the prior summary, one new "H. R. 9510 Bill v3.0 (Visual Amendment, Full Bill)" section with a table-of-contents entry, and the repository structure tree extended with the full-bill block), this releases file, the CHANGELOG (v3.1.0), and CITATION.cff (version 3.1.0).
+
+## Features
+
+- papers/VVUQ-05/full-bill/main.tex: the assembler; the condensed caption with the centered cover figure, SECTION 1 with a clickable, page-filling table of contents, the eight section inputs, the authorship and provenance back matter with the Bill v3.0 DOI 10.5281/zenodo.xxxxxxxx, and ieeetr references; no images.
+- papers/VVUQ-05/full-bill/usctitle.sty: the United States Code reproduction commands, the congressional amendment apparatus, the clickable table-of-contents macros, and the centered, content-width, white-background ASCII figure environments (asciifig and asciifigsmall) that frame and center each diagram, with the senior-author formatting hardening.
+- papers/VVUQ-05/full-bill/references.bib: the ieeetr entries carrying the full Bill v2.0 authority set plus the v3.0 layer and the Bill v3.0 DOI entry.
+- papers/VVUQ-05/full-bill/sections: s2-findings, s3-amendment, s4-comparative, a5-evidence, a6-deliverables, a7-explainability, a8-research-matrix, and a9-transparency, each rendering its figures and tables (eleven figures, ten tables) on a white background.
+- papers/VVUQ-05/full-bill/deliverables: thirteen submission documents (01 through 12 plus a package README), each standalone and submission quality.
+- papers/VVUQ-05/full-bill/README.md, prompt-full-bill.md, output-full-bill.md, and full-bill-LaTeX.zip: the landing page (badges, repository structure, figure and table inventory, ASCII diagrams, and table of contents), the generating prompt verbatim, the narrative output, and the Overleaf-ready bundle.
+
+## Contributors
+@kevinkawchak
+@claude
+
+## Notes
+
+- This is an independent research draft, not enacted law and not legal advice; it is not endorsed by the FDA, HHS, the OLRC, CFR, ICH, or any member of Congress. The reproduced statutory text is in the public domain; the generated framing is released under CC BY 4.0. All supporting numbers are simulation results reproducible from the deterministic seed 20260525, and the Unitree H2-Surgical 1.0 is a clearly labeled hypothetical 2030 platform.
+- Built autonomously by Claude Code Opus 4.8 (1M context) Max across sequential commits in a single pull request, one file per commit pushed in real time, with the thirteen deliverables processed as separate tasks, a second-to-last error-fix-and-bundle commit, and this final repository-updates commit. Only kevinkawchak/cancer-automated was edited; nothing was committed to kevinkawchak/physical-ai-oncology-trials or any other repository.
+
+---
+
 H. R. 9510 Bill v3.0: Visual Draft of the FD&C Act Amendment (v3.0.0)
 v3.0.0 - H. R. 9510 Bill v3.0, the Visual Draft (LaTeX)
 

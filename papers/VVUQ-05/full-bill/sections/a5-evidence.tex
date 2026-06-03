@@ -1,0 +1,184 @@
+%% ============================================================
+%% sections/a5-evidence.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX A. VISUAL ENGINEERING EVIDENCE (NON-OPERATIVE).
+%% The visualization of Bill v2.0: the VVUQ-01 and VVUQ-02 engineering record that
+%% grounds the findings. Rendered visuals: Figure 6 (gate funnel comparison),
+%% Figure 7 (procedure timelines), Figure 8 (humanoid safety figure), Table 5
+%% (external standards map).
+%% ============================================================
+\clearpage
+\phantomsection\label{toc:a5}
+\addcontentsline{toc}{section}{Appendix A. Visual Engineering Evidence (Non-Operative)}
+\usccrosshead{APPENDIX A. VISUAL ENGINEERING EVIDENCE (NON-OPERATIVE)}
+
+\uscprov{1}{This appendix is non-operative. It visualizes the engineering record
+of VVUQ-01 and VVUQ-02 that grounds the findings in section 2 and the gate
+discipline codified in section 515D, so a reader can see the evidence the bill
+rests on without leaving the document. None of these figures is cited as the
+legal basis of an operative clause; only the enacted statutes, in-force rules, and
+recognized standards named in the bill carry operative weight
+\cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\uscprov{1}{The gate is the load-bearing object of the whole record. VVUQ-01 holds
+it to a single behavior across three dimensions, accepting one candidate and
+blocking five; VVUQ-02 scales it to ten humanoid-specific gates without changing
+the ACCEPT, BLOCK, ESCALATE semantics. Figure 6 sets the two side by side, and the
+verification fraction stays an equality at 1.0 in both, which is why the bill can
+require it as an equality \cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\begin{asciifig}
+VVUQ-01: 6 candidates, 3 dimensions   VVUQ-02: 10 humanoid gates
++---------------------------------+   +---------------------------------+
+| verify  : fraction == 1.0       |   | [01] handeye-servo    V>=0.97   |
+| validate: agree>=0.95 err<=0.05 |   | [02] finger-force     V>=0.95   |
+| quantify: CV<=0.10 over >=3 runs|   | [03] whole-body-bal   V>=0.98   |
++---------------------------------+   | [04] plan-correct     V>=0.95   |
+ case 1 clean ............ ACCEPT     | [05] grasp-handover   V>=0.96   |
+ case 2 no human review .. BLOCK      | [06] vascular-no-fly* V=1.00    |
+ case 3 high CV 0.365 .... ESCALATE   | [07] suturing         V>=0.96   |
+ case 4 disagree ref ..... BLOCK      | [08] perception       V>=0.95   |
+ case 5 only 2 runs ...... BLOCK      | [09] human-collision* V=1.00    |
+ case 6 over 200K cap .... BLOCK      | [10] fault-estop    * V=1.00    |
+          |                           +---------------------------------+
+          v                                     v
+ 1 ACCEPT, 5 BLOCK (1 escalates)       ACCEPT iff all 10; composite 93.56
+ verification fraction held at 1.0     * three hard-catastrophe gates
+\end{asciifig}
+\figcaption{Figure 6. The gate, from one dimension to ten. The VVUQ-01
+six-candidate funnel that accepted one artifact and blocked five, beside the
+VVUQ-02 ten-gate funnel that cleared a surgical humanoid behavior against ten
+standards-bound gates, three of them carrying a hard catastrophe predicate.}
+
+\uscprov{1}{Figure 7 reads the assurance windows on one page: the
+sixty-second eight-phase robotic Whipple a single humanoid performs with two
+hands, over the one-hundred-sixty-eight-day pancreatic-cancer adjuvant pilot the
+procedure opens \cite{kawchak2026vvuq02, kawchak2026vvuq01}.}
+
+\begin{asciifig}
+60-Second 8-Phase Whipple Timeline (single humanoid, two hands)
+
+  s  0      6        16      24      32          42      48     54     60
+     |------|--------|-------|-------|-----------|-------|------|------|
+  P1 |Kocher|
+  P2        |venous  |
+            |control |
+  P3                 |uncin. |
+  P4                         |specimen|
+  P5                                  |PJ suture  |
+  P6                                              |HJ     |
+  P7                                                      |GJ    |
+  P8                                                             |close|
+
+168-Day PDAC Hybrid Pilot (the same procedure, then adjuvant therapy)
+
+  day 0        28        56        84       112       140       168
+   |---------|---------|---------|---------|---------|---------|
+   [Whipple]  [cyc 1]   [cyc 2]   [cyc 3]   [cyc 4]   [cyc 5]   [cyc 6]
+   8-arm      adjuvant Daraxonrasib, one cycle every 28 days
+   60 s
+\end{asciifig}
+\figcaption{Figure 7. The procedure timelines: the sixty-second eight-phase
+Whipple window over the one-hundred-sixty-eight-day adjuvant pilot, so the
+single-procedure assurance window and the full pilot window read together.}
+
+\uscprov{1}{The safety figure is where embodiment becomes visible. Figure 8
+combines the seventy-one-degree-of-freedom kinematic chain, the balance
+zero-moment-point and support polygon, and the vessel no-fly proximity bands: the
+kinematic chain shows how many ways a body can move, the support polygon shows the
+balance margin a fall would cross, and the no-fly bands show the vascular volume
+the hard predicate forbids breaching. These are the dimensions a wrong motion
+would violate and a human could not catch in time \cite{isots15066, iec8060127}.}
+
+\begin{asciifigsmall}
+(A) H2-Surgical Kinematic Chain (71 DOF, hypothetical 2030)
+
+                       [head pan/tilt] 2 DOF
+                            |
+                        [ head ]
+                            |
+      [L arm 7 DOF]----[ torso ]----[R arm 7 DOF]
+            |          [waist 3]          |
+      [L hand 20 DOF]      |        [R hand 20 DOF]
+      5 fingers x 4        |         5 fingers x 4
+                        [ pelvis ]
+                        /        \
+                [L leg 6]        [R leg 6]
+                    |                |
+                [L foot]          [R foot]
+                ==========  support polygon  ==========
+   arms 14 + hands 40 + stance 15 + head 2 = 71 DOF
+
+(B) Balance ZMP and Support Polygon (VVUQ 03, top-down)
+
+   +175 +-------------------------------+  <- support polygon edge
+        |        warning ring (15 mm)   |
+        |      .......................  |
+        |      :  floor ring (8 mm)   : |
+      0 |      :      +-----+         : |  ZMP margin 45 mm (nominal)
+        |      :      | ZMP |  o CoM  : |  ACCEPT while margin >= 8 mm
+        |      :.....................:  |
+   -175 +-------------------------------+
+        -130             0           +130   x (mm)
+
+(C) Vessel No-Fly Proximity Bands (VVUQ 06, cross-section)
+
+   tip far .................................. clear     v=1.0  cap 3.0 N
+   | 6 mm ----------------------------------- no_fly    v=0.5  cap 2.5 N
+   | 4 mm ----------------------------------- soft_warn v=0.1  cap 1.5 N
+   | 2 mm ================================== HARD STOP  v=0.0  e-stop
+   o vessel centerline (SMV, PV, hepatic, celiac, SMA); 0 breaches required
+\end{asciifigsmall}
+\figcaption{Figure 8. The humanoid safety figure: the kinematic chain, the
+balance zero-moment-point and support polygon, and the vessel no-fly proximity
+bands, the three drawn artifacts that make the catastrophe gates concrete.}
+
+\uscprov{1}{Table 5 maps the recognized consensus standards bound to the gates and
+duties, so each row of the threshold schedule in section 515D traces to a
+published standard \cite{asmevv40, isots15066, iec60601, iso13849}.}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{@{}L{3.5cm} Y L{3.0cm}@{}}
+\hline
+\textbf{Standard} & \textbf{What it governs} & \textbf{Gate or duty}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Standard} & \textbf{What it governs} & \textbf{Gate or duty}\\
+\hline
+\endhead
+\hline
+\endlastfoot
+ASME V\&V 40-2018 & Model credibility (risk equals influence times consequence) &
+Gates 01, 08; the gate credibility basis\\
+\hline
+NASA-STD-7009A & Uncertainty quantification as a credibility factor & The
+coefficient-of-variation bounds\\
+\hline
+IEEE Std 7009-2024 & Fail-safe design and hand-back-to-human & Gates 04, 10; the
+ESCALATE rule\\
+\hline
+IEC 80601-2-77 & Basic safety of robotically assisted surgery & Gates 01, 02, 05,
+06, 07\\
+\hline
+ISO 14971 & Risk management; risk control verification & Gate 06; the hard
+predicate as a risk limit\\
+\hline
+ISO/TS 15066 & Power-and-force limits for human contact & Gates 02, 09\\
+\hline
+ISO 13482 & Stability and collision for close-contact robots & Gates 03, 09\\
+\hline
+IEC 60601-1 & Single-fault safe state for medical electrical equipment & Gates 03,
+10; cybersecurity and lifecycle\\
+\hline
+ISO 13849-1 & Performance level of the safety control path & Gate 10; the
+emergency-stop path\\
+\hline
+ISO 9283 & Pose accuracy and repeatability & Gates 01, 05\\
+\hline
+21 CFR part 11 & Electronic-record integrity & The hash-chained audit trail in
+subsection (e)\\
+\hline
+\end{xltabular}}
+\figcaption{Table 5. External standards map: the recognized consensus standards
+bound to the gates and duties of section 515D, with the gate or duty each
+governs.}
