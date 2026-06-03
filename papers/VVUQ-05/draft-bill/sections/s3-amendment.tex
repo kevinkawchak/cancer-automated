@@ -1,0 +1,164 @@
+%% ============================================================
+%% sections/s3-amendment.tex
+%% H. R. 9510 Bill v3.0 - SEC. 3. AMENDMENT TO THE FEDERAL FOOD, DRUG, AND
+%% COSMETIC ACT. Carries the operative new section 515D (21 U.S.C. 360e-5), the
+%% ten conforming amendments, the clerical amendment, the rule of construction,
+%% and the effective date, so the bill stands on its own.
+%% Common visuals: Table 2 (ten-gate threshold schedule), Figure 3 (gate
+%% decision surface and funnel), Figure 4 (statutory layering through Title 21),
+%% Table 3 (ten conforming amendments crosswalk).
+%% ============================================================
+\billsec{SEC. 3.}{AMENDMENT TO THE FEDERAL FOOD, DRUG, AND COSMETIC ACT.}
+
+\uscprov{1}{\textbf{(a) In General.} Subchapter V of the Federal Food, Drug, and
+Cosmetic Act (21 U.S.C. 351 et seq.) is amended by inserting after section 515C
+(21 U.S.C. 360e-4) the following new section:}
+
+\uscquote{0}{``SEC. 515D. VERIFICATION BEFORE GENERATION OF ROBOT-PATIENT
+INTERACTION CODE IN PHYSICAL AI ONCOLOGY INVESTIGATIONS.}
+\uscquote{0}{``(a) Requirement.- No robot-patient interaction code may be
+generated or executed in a Physical AI oncology clinical investigation unless an
+automated verification, validation, and uncertainty quantification process, bound
+to one or more named external standards, has first cleared for that interaction,
+and the cleared verification record has been documented and attested under
+subsection (e).}
+\uscquote{0}{``(b) Order of Operations.- A sponsor shall not generate, and shall
+not execute, robot-patient interaction code in advance of the cleared
+verification record. A record created after generation or execution does not
+satisfy this section.}
+\uscquote{0}{``(c) Gate Thresholds and Decision Rule.- For each robot-patient
+interaction, the verification process shall apply the gate thresholds set out in
+the schedule in Table 2. Each gate shall emit a determination of ACCEPT, BLOCK,
+or ESCALATE; a single failing dimension shall set BLOCK, and ambiguity or
+divergence shall set ESCALATE and return the interaction to a qualified human.
+For each interaction the verification fraction shall equal 1.0, the validation
+agreement shall meet or exceed the per-gate threshold with the maximum relative
+error at or below the per-gate bound and the human review recorded, the
+coefficient of variation across not fewer than three seeded runs shall not exceed
+the per-gate bound, and, for an interaction subject to a hard catastrophe
+predicate, that predicate shall also hold \cite{asmevv40, nasastd7009}.}
+
+\figslot{Table 2.}{Ten-Gate Threshold Schedule}{For each gate: the minimum
+validation agreement, the maximum coefficient of variation, whether the gate
+carries a hard catastrophe predicate, and the governing external standards.}
+
+\figslot{Figure 3.}{VVUQ Gate Decision Surface and Funnel}{The
+ACCEPT, BLOCK, ESCALATE decision rule over the verify, validate, quantify
+dimensions, set beside the candidate-to-ACCEPT funnel that accepted one artifact
+and blocked five.}
+
+\uscquote{0}{``(d) Readiness Gates.- Before a patient is enrolled or a robot
+acts, the trial site shall pass the Physical AI Standard Level gate on
+legislative authorization, regulatory compliance, and operational readiness; each
+robot shall meet the minimum Unification Standard Level for its functional type,
+which is not less than 7.0 for a surgical type, 6.0 for a therapeutic positioning
+or diagnostic needle placement type, 4.0 for a rehabilitative type, and 3.0 for a
+companion monitoring type; and each robot's behavior shall be validated across not
+fewer than two simulation frameworks within the cross-framework tolerances of
+less than 2 millimeters of trajectory deviation and less than 0.5 newton of force
+discrepancy \cite{kawchak2026national}.}
+\uscquote{0}{``(e) Documentation and Attestation.- Before robot-patient
+interaction code is generated or executed, the sponsor shall make and file, for
+each covered algorithm, algorithm documentation including a plain-language
+summary, the decision logic or architecture, the training or conditioning data
+sets, the gate bindings identifying the governing external standard and the
+threshold enforced, the verification-before-generation record, and a determinism
+statement giving the seed; a compliance statement and a signed attestation by a
+responsible officer; and a hash-chained, tamper-evident audit trail that satisfies
+part 11 of title 21, Code of Federal Regulations \cite{cfr-part11, cfr-hipaa-164}.}
+\uscquote{0}{``(f) Cybersecurity, Human Oversight, and Lifecycle.- Each Physical
+AI system shall incorporate authentication and access control, encryption of data
+in transit and at rest, network segmentation, and software-integrity
+verification; shall operate under recorded human oversight with a manual override
+and an emergency stop that brings the system to a safe state within the
+procedure-appropriate budget and a hand-back-to-human escalation when a gate
+escalates or a fault is detected; and shall maintain configuration and
+model-version management, monitor for model and data drift, and, on
+decommissioning, archive the audit trail, securely erase patient data, and revoke
+access \cite{iec60601, iso13849}.}
+\uscquote{0}{``(g) Nondiscrimination.- Each covered algorithm and its training
+data shall minimize the risk of bias on protected characteristics and adhere to
+evidence-based clinical guidelines, and each Physical AI system shall be designed
+and operated consistent with applicable accessibility and accommodation
+requirements \cite{cfr-92-210, usc-titlevi, usc-ada}.}
+\uscquote{0}{``(h) Regulations.- Not later than 365 days after the date of
+enactment of this section, the Secretary shall issue final regulations to carry
+out this section. Pending those regulations, the Secretary may issue interim
+guidance, and a sponsor may comply by meeting the requirements of subsections (a)
+through (g).}
+\uscquote{0}{``(i) Definitions.- In this section, the terms `Physical AI system',
+`robot agent', `robot-patient interaction code', `generative artificial
+intelligence', `AI-enabled device software function', `verification',
+`validation', `uncertainty quantification', `verification fraction', `validation
+agreement', `coefficient-of-variation bound', `hard catastrophe predicate',
+`Physical AI Standard Level', `Unification Standard Level', and `hash-chained
+audit trail' have the meanings carried forward from the prior bill and reconciled
+with section 201(h) and section 520(o) of this Act.}
+\uscquote{0}{``(j) Rule of Construction.- Nothing in this section displaces the
+investigational-device exemption under section 520(g), the protection of human
+subjects under part 50 of title 21, Code of Federal Regulations, the
+investigational new drug framework under part 312 of such title, or the
+predetermined change control plan authority under section 515C as it applies
+outside Physical AI, and nothing in this section itself reclassifies any
+device.''.}
+
+\uscprov{1}{\textbf{(b) Conforming Amendments.} The Federal Food, Drug, and
+Cosmetic Act is amended, with the corresponding changes shown in the comparative
+print in section 4, so that the device definition in section 201(h) reaches
+software that generates or executes robot-patient interaction code; the prohibited
+acts in section 301 reach a violation of section 515D; a device used without a
+cleared section 515D record is adulterated under section 501; the real world
+evidence program in section 505F recognizes section 515D records; a
+verification-governed change consistent with a predetermined change control plan
+needs no new premarket notification under section 510(k); special controls under
+section 513 are graduated by degree of autonomy; a premarket approval application
+under section 515 must include the cleared verification record; a predetermined
+change control plan under section 515C must include an automated
+verification-before-change protocol; the clinical-decision-support exclusion in
+section 520(o) does not reach robot-control software; and a savings clause at
+section 521 preserves State human-in-the-loop requirements that are not different
+from, or in addition to, a Federal device requirement \cite{usc-321h, usc-331,
+usc-351, usc-355g, usc-360, usc-360c, usc-360e, usc-360e4, usc-360j, usc-360k}.}
+
+\figslot{Figure 4.}{Statutory Layering of New Section 360e-5 Through Title 21}{The
+device-regulation pathway the amendment threads: is it a device (321(h)); not
+excluded by the CDS carve-out (360j(o)); classify (360c); 510(k) or PMA (360,
+360e); the predetermined change control plan keystone (360e-4); and the new,
+mandatory, ex ante section 360e-5.}
+
+\figslot{Table 3.}{Ten Conforming Amendments Crosswalk}{Each conforming amendment:
+the section file, the 21 U.S.C. citation, the FD&C Act section, and the change made
+by H. R. 9510.}
+
+\uscprov{1}{\textbf{(c) Clerical Amendment.} The table of contents for the Federal
+Food, Drug, and Cosmetic Act is amended by inserting after the item relating to
+section 515C the following new item:}
+\uscquote{0}{``Sec. 515D. Verification before generation of robot-patient
+interaction code in Physical AI oncology investigations.''.}
+
+\uscprov{1}{\textbf{(d) Rule of Construction.} Nothing in this Act displaces the
+investigational-device exemption under section 520(g) of the Federal Food, Drug,
+and Cosmetic Act (21 U.S.C. 360j(g)), the protection of human subjects under part
+50 of title 21, Code of Federal Regulations, the investigational new drug
+framework under part 312 of such title, the predetermined change control plan
+authority under section 515C as it applies outside Physical AI, or any State law
+preserved under section 521 as amended; and nothing in this Act reclassifies any
+device \cite{cfr-part50, cfr-part312}.}
+
+\uscprov{1}{\textbf{(e) Effective Date; Implementation Deadline; Transition Rule.}
+This Act takes effect on the first day of the first calendar quarter beginning not
+less than one year after enactment; the Secretary shall issue the final
+regulations required by section 515D(h) not later than 365 days after enactment;
+and a Physical AI oncology clinical investigation already enrolling on the
+effective date shall have 180 days to come into compliance with section 515D, and
+this Act does not disturb the February 2, 2026, effective date of the Quality
+Management System Regulation \cite{fr-qmsr-2024}.}
+
+\begin{draftbox}{Section 3 - the operative amendment and its four visuals}
+\dstep{Table 2 (ten-gate threshold schedule): render the ten-gate table from papers/VVUQ-04/final-bill/main.tex (the xltabular under section 515D(c)(4): gate, minimum agreement, maximum CV, hard predicate, governing external standards), reconciled against papers/VVUQ-05/update-bill/figures-bill/03VVUQ02.md (the "Ten VVUQ Gate Funnel" and the per-gate primary-standards and master tables) and papers/VVUQ-03/final-paper/sections/statutory\_text.tex. Use the L and Y columns (each width prepended with \raggedright\arraybackslash) at the body measure; reword long standard lists onto two lines so no cell overflows; keep the three hard-predicate gates (06 vascular no-fly, 09 human collision, 10 fault and emergency stop) at agreement 1.00.}
+\dstep{Figure 3 (gate decision surface and funnel): render two synthesized text panels side by side in the asciifig environment. The decision surface (verify, validate, quantify dimensions to the ACCEPT, BLOCK, ESCALATE rule) comes from papers/VVUQ-05/update-bill/figures-bill/02VVUQ01.md ("The three dimensions, as executed" and the gate decision-surface table) and 03VVUQ02.md ("The three dimensions, as executed"). The funnel (candidates to ACCEPT, with the 6-to-1 VVUQ-01 case and the 10-gate VVUQ-02 case) comes from 02VVUQ01.md (the VVUQ gate funnel, 6 candidates to 1 accepted) and 03VVUQ02.md (the Ten VVUQ Gate Funnel). Preserve original spacing on a white background.}
+\dstep{Figure 4 (statutory layering): render the device-pathway diagram verbatim from papers/VVUQ-05/update-bill/figures-bill/05VVUQ04.md (the "How the sections interact" and "How the conforming amendments thread through Title 21" diagrams) and the same diagram in papers/VVUQ-04/final-bill/README.md; mark the new section 360e-5 node and the section 360e-4 keystone clearly. Set it in the asciifig environment at full width.}
+\dstep{Table 3 (ten conforming amendments crosswalk): build from papers/VVUQ-04/final-bill/README.md ("Per-section comparative print (changes in existing law)") with columns File, 21 U.S.C., FD&C section, and Change made by H. R. 9510, for s301, s321, s331, s351, s355g, s360, s360c, s360e, s360e-4, s360j, and s360k; left aligned and ragged right at the body measure.}
+\dstep{Operative text: carry the new section 515D and the ten conforming amendments verbatim in substance from papers/VVUQ-04/final-bill/main.tex (SEC. 3); keep the (a) through (j) subsection lettering because statutory form requires it, but render the long subsection (i) definitions and the conforming list as condensed prose rather than expanded numbered lists. Anchor each duty to an in-force authority per papers/VVUQ-04/instruct-bill/10-legal-crosswalk-and-bill-style.md (Section B): the change-control link to section 360e-4 and the FDA PCCP final guidance (keys usc-360e4, fda-pccp-2024); the credibility basis to ASME V\&V 40-2018 (key asmevv40); record integrity to 21 CFR part 11 and the HIPAA Security Rule (keys cfr-part11, cfr-hipaa-164); nondiscrimination to 45 CFR 92.210, Title VI, and the ADA (keys cfr-92-210, usc-titlevi, usc-ada); and human oversight to the CMS Medicare Advantage guardrail (key cms-4201-ma).}
+\dstep{Formatting: single hyphens only; the section symbol for every codified reference (correct any "SS" to the section symbol); even RaggedRight spacing with no overflow; place each figure or table slot near the subsection it supports and avoid leaving a single subsection line stranded on the next page; keep all four visuals on a white background.}
+\end{draftbox}
