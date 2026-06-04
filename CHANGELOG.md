@@ -47,6 +47,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
   section with a table-of-contents entry, and the repository structure tree
   extended with the full-bill block), `releases.md` (v3.1.0 notes), and
   `CITATION.cff` (version 3.1.0).
+- @kevinkawchak updated cancer-automated/tree/main/papers/VVUQ-05/final-bill with final v3.0 Bill LaTeX source files and 12 markdown deliverables on 2026-06-03.
 
 ## [3.0.0] - 2026-06-03
 
