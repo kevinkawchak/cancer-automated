@@ -179,17 +179,17 @@ Each is a separate, complete, submission-quality Markdown document under
 ## Lineage
 
 ```
-  VVUQ-01 + VVUQ-02            VVUQ-03 bill (v1.0)        VVUQ-04 amendment (v2.0)
-  (method + hard proof)        H. R. 9510 standalone      H. R. 9510 FD&C amendment
-        |                              |                          |
-        |   figures-bill (every ASCII diagram + table)            |
-        |   next-steps   (the submission deliverables)            |
-        +------------------------------+--------------------------+
+VVUQ-01 + VVUQ-02              VVUQ-03 bill (v1.0)         VVUQ-04 amendment (v2.0)
+(method + hard proof)          H. R. 9510 standalone       H. R. 9510 FD&C amendment
+        |                              |                              |
+        |   figures-bill (every ASCII diagram + table)                |
+        |   next-steps   (the submission deliverables)                |
+        +------------------------------+------------------------------+
                                        v
-        +-----------------------------------------------------------+
-        |  VVUQ-05/draft-bill   (Bill v3.0 scaffold: slots +        |
-        |  bracketed DRAFTING INSTRUCTIONS naming exact files)      |
-        +------------------------------+----------------------------+
+        +-------------------------------------------------------------+
+        |  VVUQ-05/draft-bill   (Bill v3.0 scaffold: slots +          |
+        |  bracketed DRAFTING INSTRUCTIONS naming exact files)        |
+        +------------------------------+------------------------------+
                                        v
         +-------------------------------------------------------------+
         |  VVUQ-05/full-bill   <== THIS (Bill v3.0, visual amendment) |
