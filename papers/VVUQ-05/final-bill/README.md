@@ -1,4 +1,4 @@
-# VVUQ-05 full-bill (LaTeX): H. R. 9510 Bill v3.0, the Visual Amendment - v3.1.0
+# VVUQ-05 final-bill (LaTeX): H. R. 9510 Bill v3.0, the Visual Amendment - v3.1.0
 
 [![License](https://img.shields.io/badge/License-CC%20BY%204.0-yellow.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Statute](https://img.shields.io/badge/Statute-Public%20Domain%20(U.S.%20Code)-lightgrey.svg)](https://uscode.house.gov)
@@ -6,13 +6,13 @@
 [![Current through](https://img.shields.io/badge/Current%20through-Pub.%20L.%20119--93-green.svg)](https://www.govinfo.gov/app/collection/plaw)
 [![Stage](https://img.shields.io/badge/Stage-Finished%20visual%20amendment%20(v3.0)-brightgreen.svg)](.)
 [![Bill](https://img.shields.io/badge/Bill-H.%20R.%209510%20(119th%20Cong.%2C%202d%20Sess.)-darkblue.svg)](.)
-[![Bill DOI (v3.0)](https://img.shields.io/badge/Bill%20DOI%20(v3.0)-10.5281%2Fzenodo.xxxxxxxx-blue.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
+[![Bill DOI (v3.0)](https://img.shields.io/badge/Bill%20DOI%20(v3.0)-10.5281%2Fzenodo.20535429-blue.svg)](https://doi.org/10.5281/zenodo.20535429)
 [![Prior Bill DOI (v2.0)](https://img.shields.io/badge/Prior%20Bill%20DOI%20(v2.0)-10.5281%2Fzenodo.20485580-blue.svg)](https://doi.org/10.5281/zenodo.20485580)
 [![Repository DOI](https://img.shields.io/badge/Repository%20DOI-10.5281%2Fzenodo.20372501-blue.svg)](https://doi.org/10.5281/zenodo.20372501)
 [![National Platform DOI](https://img.shields.io/badge/National%20Platform%20DOI-10.5281%2Fzenodo.19244918-blue.svg)](https://doi.org/10.5281/zenodo.19244918)
 [![Release](https://img.shields.io/badge/Release-v3.1.0-orange.svg)](.)
 
-A LaTeX **finished visual amendment** of **H. R. 9510**, the *Verification Before
+[Bill PDF and Source Files](https://doi.org/10.5281/zenodo.20535429): A LaTeX **finished visual amendment** of **H. R. 9510**, the *Verification Before
 Generation in Physical AI Oncology Trials Act of 2026*, an amendment to the
 **Federal Food, Drug, and Cosmetic Act** (21 U.S.C. § 301 et seq.), grounded on
 the Title 21 device provisions current through **Public Law 119-93**. It was
@@ -184,28 +184,28 @@ Each is a separate, complete, submission-quality Markdown document under
         |                              |                          |
         |   figures-bill (every ASCII diagram + table)            |
         |   next-steps   (the submission deliverables)            |
-        +--------------------+---------+--------------------------+
-                             v
+        +------------------------------+--------------------------+
+                                       v
         +-----------------------------------------------------------+
         |  VVUQ-05/draft-bill   (Bill v3.0 scaffold: slots +        |
         |  bracketed DRAFTING INSTRUCTIONS naming exact files)      |
-        +----------------------------+------------------------------+
-                                     v
-        +-----------------------------------------------------------+
-        |  VVUQ-05/full-bill   <== THIS (Bill v3.0, visual amendment)|
-        |  every figure and table rendered; deliverables written     |
-        +-----------------------------------------------------------+
+        +------------------------------+----------------------------+
+                                       v
+        +-------------------------------------------------------------+
+        |  VVUQ-05/full-bill   <== THIS (Bill v3.0, visual amendment) |
+        |  every figure and table rendered; deliverables written      |
+        +-------------------------------------------------------------+
 ```
 
 ## How every file correlates to main.tex
 
 ```
-                         +------------------+
-                         |   main.tex       |
-                         | (assembles all)  |
-                         +---+----------+---+
-        \usepackage{usctitle}|          | \bibliography{references}
-                             v          v
+                         +-------------------------+
+                         |        main.tex         |
+                         |      (assembles all)    |
+                         +-------------------------+
+   \usepackage{usctitle} |                         | \bibliography{references}
+                         v                         v
                    +-----------------+  +-----------------+
                    | usctitle.sty    |  | references.bib  |
                    | reproduction +  |  | provenance +    |
@@ -214,7 +214,7 @@ Each is a separate, complete, submission-quality Markdown document under
                    | clickable toc   |  |                 |
                    +-----------------+  +-----------------+
                              |
-        \input{sections/...}  (8 files: 3 bill-body + 5 appendices)
+        \input{sections/...} | (8 files: 3 bill-body + 5 appendices)
                              v
   s2-findings  s3-amendment  s4-comparative  a5-evidence  a6-deliverables
   a7-explainability  a8-research-matrix  a9-transparency
