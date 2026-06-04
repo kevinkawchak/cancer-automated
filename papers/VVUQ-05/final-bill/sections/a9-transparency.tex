@@ -1,0 +1,123 @@
+%% ============================================================
+%% sections/a9-transparency.tex
+%% H. R. 9510 Bill v3.0 - APPENDIX E. DEVELOPMENT TRANSPARENCY AND COMMIT SCHEDULE.
+%% How Bill v3.0 was built. Rendered visuals: Table 9 (version lineage), Table 10
+%% (single-PR commit schedule), Figure 11 (the build-and-handoff process).
+%% ============================================================
+% \clearpage
+\phantomsection\label{toc:a9}
+\addcontentsline{toc}{section}{Appendix E. Development Transparency and Commit Schedule}
+\usccrosshead{APPENDIX E. DEVELOPMENT TRANSPARENCY AND COMMIT SCHEDULE}
+
+\uscprov{1}{\textbf{What was built, and how.} Bill v3.0 (documentation release
+v3.1.0) is the finished visual amendment of H. R. 9510. It was produced by an
+autonomous artificial intelligence coding agent, Claude Code Opus 4.8 (1M context,
+Max), operating under human direction in a managed, ephemeral cloud container, by
+executing the bracketed drafting instructions in the VVUQ-05 draft-bill scaffold
+against the named figures-bill, next-steps, and VVUQ-04 final-bill sources. It was
+authored across sequential commits in a single pull request, one file per commit
+pushed to GitHub in real time, with a second-to-last error-fix-and-bundle commit
+and a final repository-updates commit. Only kevinkawchak/cancer-automated was
+edited \cite{anthropic-claude-code, repo-cancer-automated}.}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{@{}L{1.4cm} L{4.2cm} Y L{2.9cm}@{}}
+\hline\noalign{\vskip 0.04cm}
+\textbf{Version} & \textbf{Directory} & \textbf{Role} & \textbf{DOI}\\
+\hline\noalign{\vskip 0.04cm}
+\endfirsthead
+\hline\noalign{\vskip 0.04cm}
+\textbf{Version} & \textbf{Directory} & \textbf{Role} & \textbf{DOI}\\
+\hline\noalign{\vskip 0.04cm}
+\endhead
+\hline\noalign{\vskip 0.04cm}
+\endlastfoot
+Bill v1.0 & papers/VVUQ-03/final-paper & Standalone Physical AI Oncology Trial
+Bill & \tiny 10.5281/zenodo.20454870\\
+\hline\noalign{\vskip 0.04cm}
+Bill v2.0 & papers/VVUQ-04/final-bill & FD\&C Act amendment: new section 360e-5 & \tiny 10.5281/zenodo.20485580\\
+\hline\noalign{\vskip 0.04cm}
+Bill v3.0 & papers/VVUQ-05/full-bill & This finished visual amendment & \tiny
+10.5281/zenodo.20535429\\
+\hline
+\end{xltabular}}
+\vspace{-1cm}
+\figcaption{Table 9. Bill version lineage: each bill version, its directory, its
+role, and its DOI.}
+
+\uscprov{1}{\textbf{What this version adds.} From Bill v2.0, this version keeps the
+full operative text and reorganizes it as a visual perspective: it renders eleven
+text figures and ten full-width tables, adds the visual engineering evidence in
+Appendix A, the submission deliverables in Appendix B, the explainability standard
+in Appendix C, and the commit record here, while confining the emerging bills and
+executive actions to Appendix D, exactly as the prior bill does
+\cite{kawchak2026vvuq04bill}. The ordered commits of this single pull request are
+listed in Table 10.}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{@{}L{1.6cm} L{5.6cm} Y@{}}
+\hline\noalign{\vskip 0.04cm}
+\textbf{Commits} & \textbf{Files or action} & \textbf{Role}\\
+\hline\noalign{\vskip 0.04cm}
+\endfirsthead
+\hline\noalign{\vskip 0.04cm}
+\textbf{Commits} & \textbf{Files or action} & \textbf{Role}\\
+\hline\noalign{\vskip 0.04cm}
+\endhead
+\hline\noalign{\vskip 0.04cm}
+\endlastfoot
+1 to 3 & main.tex; usctitle.sty; references.bib & The assembler, the style, and
+the sources\\
+\hline\noalign{\vskip 0.04cm}
+4 to 11 & sections/s2 through s4 and a5 through a9 & The bill body and the five
+appendices, one file per commit\\
+\hline\noalign{\vskip 0.04cm}
+12 & README.md & The folder README (badges, tree, conventions)\\
+\hline\noalign{\vskip 0.04cm}
+13 to 25 & deliverables/01 through 12 and the package README & The submission
+deliverables, processed as separate tasks, one commit each\\
+\hline\noalign{\vskip 0.04cm}
+26 & prompt-full-bill.md; output-full-bill.md; full-bill-LaTeX.zip & The
+error-fix-and-bundle commit\\
+\hline\noalign{\vskip 0.04cm}
+27 & The main README, releases.md, CHANGELOG.md, and CITATION.cff & The final
+repository-updates commit\\
+\hline
+\end{xltabular}}
+\vspace{-0.8cm}
+\figcaption{Table 10. Single-pull-request commit schedule: the ordered commits
+that build this bundle, one file per\\commit pushed in real time, ending with an
+error-fix-and-bundle commit and a repository-updates commit.}
+
+\uscprov{1}{\textbf{How this measure is implemented as law.} On enactment, the
+Secretary issues final regulations within 365 days under section 515D(h) and may
+issue interim guidance in the meantime; the amendments take effect on the first
+day of the first calendar quarter beginning not less than one year after
+enactment; an investigation already enrolling has 180 days to come into
+compliance; a trial site must pass its Physical AI Standard Level gate and each
+robot must meet its Unification Standard Level minimum before enrollment or
+action; and, for each robot-patient interaction, the automated verification
+process must clear, and the documentation and attestation must be filed, before
+the code is generated or executed. The enforcement trigger is a single fact: the
+absence of a cleared verification-before-generation record. Figure 11 shows the
+build and handoff to the deliverables.}
+
+\begin{asciifig}
+BUILD AND HANDOFF (single pull request, real time)
+
+  VVUQ-05/draft-bill (v3.0 scaffold: slots + bracketed instructions)
+                                 |
+                                 v
+  THIS PASS  rendered every figure and table; wrote each deliverable
+  +-----------------------------------------------------------------+
+  | full-bill/  main.tex + .sty + .bib + 8 sections + README + zip  |
+  | full-bill/deliverables/  12 documents + a package README        |
+  +-----------------------------------------------------------------+
+                                 |
+                                 v
+  the final visual bill (this PDF) and the submission-deliverables package
+\end{asciifig}
+\vspace{-0.7cm}
+\figcaption{Figure 11. The build-and-handoff process: the v3.0 scaffold rendered
+in this pass into\\the finished visual bill and the deliverables package, all
+within one pull request.}

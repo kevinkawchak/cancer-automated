@@ -1,0 +1,163 @@
+%% ============================================================
+%% sections/s2-findings.tex
+%% H. R. 9510 Bill v3.0 - SEC. 2. FINDINGS; THE EVIDENCE TO LAW RECORD.
+%% Rendered visuals: Figure 1 (four-work evidence-to-law lineage), Table 1 (the
+%% four works at a glance), Figure 2 (accelerated timeline). The fourteen findings
+%% of Bill v2.0 are condensed into a lettered narrative carried by the three
+%% visuals, in place of a long numbered list.
+%% ============================================================
+
+\billsec{SEC. 2.}{FINDINGS; THE EVIDENCE TO LAW RECORD.}\phantomsection\label{toc:s2}
+
+\uscprov{1}{\textbf{(a) In General.} Congress finds that an automated process
+must verify robot-patient interaction code before that code is generated or
+executed in a Physical AI oncology clinical investigation, and that the record of
+the VVUQ-01 through VVUQ-04 developments, visualized in this section, establishes
+both the need for and the feasibility of that requirement \cite{kawchak2026national,
+vvuq05-figures-bill}. The lineage in Figure 1 shows how engineering evidence
+became proposed law and then a precise amendment.}
+
+\begin{asciifigsmall}
+VVUQ-01                  VVUQ-02                  VVUQ-03                  VVUQ-04
+(method + pipeline)      (hard engineering)       (proposed law)           (precise amendment)
++-------------------+    +-------------------+    +-------------------+    +-------------------+
+| inputs/ ingest    |    | instructions/     |    | template-paper/   |    | instruct-bill/    |
+| execution/ 51 tst | -> | codegen/ 10 gates | -> | 21 CFR Part 312   | -> | 10 md + 5 bib     |
+| image-instruct/   |    | execution/ 172tst |    | instruct-paper/   |    | template-bill/    |
+| imagegen/ 10 figs |    | imagegen/ 15 figs |    | draft-paper/      |    | draft-bill/       |
+| draft -> full ->  |    | draft -> full ->  |    | full-paper/       |    | full-bill/        |
+| final-paper       |    | final-paper       |    | final-paper(bill) |    | final-bill        |
++-------------------+    +-------------------+    +-------------------+    +-------------------+
+         | DOI                    | DOI                    | DOI                    | DOI
+         v                        v                        v                        v
+      zenodo.20372501          zenodo.20421754          zenodo.20454870          zenodo.20485580
+         \________________________\________________________\_______________________/
+                                               |
+             evidence flows forward: each work cites the records of the prior
+             works (VVUQ-02 cites VVUQ-01; VVUQ-03 cites VVUQ-01, VVUQ-02, and
+             the national platform; VVUQ-04 cites VVUQ-03 and the Title 21 Code)
+\end{asciifigsmall}
+\vspace{-0.6cm}
+\figcaption{Figure 1. Four-work evidence-to-law lineage. The method and pipeline
+(VVUQ-01), the hard engineering proof (VVUQ-02), the proposed bill (VVUQ-03), and
+the precise amendment (VVUQ-04), each released to a DOI.}
+
+\uscprov{1}{\textbf{(b) The Embodiment Problem and the Sequencing Gap.} Physical
+AI oncology investigations place autonomous and semi-autonomous robots in direct
+physical contact with patients, and the behavior of a robot at the moment of
+contact is determined by software that is increasingly machine-generated. In a
+disembodied pipeline an error yields a wrong number a human can catch downstream;
+in an embodied surgical system the same error class yields a wrong motion a human
+cannot catch in time. No Federal law requires the verification of robot-patient
+interaction code to clear before that code is generated or executed, because the
+order of operations is not regulated \cite{kawchak2026vvuq01, kawchak2026national}.
+Table 1 records what each of the four works produced.}
+
+{\footnotesize
+\begin{xltabular}{\textwidth}{@{}L{1.5cm} Y L{1.6cm} Y L{2cm}@{}}
+\hline\noalign{\vskip 0.04cm}
+\textbf{Work} & \textbf{What it is} & \textbf{Releases} & \textbf{Headline
+assurance result} & \textbf{End-goal DOI}\\
+\hline\noalign{\vskip 0.04cm}
+\endfirsthead
+\hline\noalign{\vskip 0.04cm}
+\textbf{Work} & \textbf{What it is} & \textbf{Releases} & \textbf{Headline
+assurance result} & \textbf{End-goal DOI}\\
+\hline\noalign{\vskip 0.04cm}
+\endhead
+\hline\noalign{\vskip 0.04cm}
+\endlastfoot
+VVUQ-01 & Method paper plus working pipeline and an execution record, holding
+VVUQ higher than code generation & v0.1.0 to v0.6.0 & 51 of 51 tests; a 1 ACCEPT,
+5 BLOCK, 1 ESCALATE gate surface; 2.5x acceleration &
+\href{https://doi.org/10.5281/zenodo.20372501}{20372501}\\
+\hline\noalign{\vskip 0.04cm}
+VVUQ-02 & Generated ten-gate humanoid surgical codebase, autonomous
+execution record, and manuscript & v0.7.0 to v1.2.0 & 172 of
+172 tests; 10 gates; 32 of 32 sweep iterations clear; composite mean 93.56 &
+\href{https://doi.org/10.5281/zenodo.20421754}{20421754}\\
+\hline\noalign{\vskip 0.04cm}
+VVUQ-03 & Standalone Physical AI Oncology Trial Bill (H. R. 9510),
+synthesized from the recorded evidence & v1.3.0 to v1.4.0 & 15 sections; 21
+body-width tables; 60 references; verification before generation as statute &
+\href{https://doi.org/10.5281/zenodo.20454870}{20454870}\\
+\hline\noalign{\vskip 0.04cm}
+VVUQ-04 & Bill recast as an amendment to the Federal Food, Drug, and
+Cosmetic Act, through Public Law 119-93 & v2.0.0 to v2.3.0 & New section
+360e-5 plus ten conforming amendments; legal crosswalk current to May 31, 2026 &
+\href{https://doi.org/10.5281/zenodo.20485580}{20485580}\\
+\hline
+\end{xltabular}}
+\vspace{-1cm}
+\figcaption{Table 1. The four works at a glance, with each work's role, release
+range, headline assurance result, and DOI.}
+
+\clearpage
+
+\uscprov{1}{\textbf{(c) Feasibility Is Demonstrated.} Automated verification of
+robot-patient interaction code is feasible today. A pipeline held the
+verification fraction at 1.0, accepting one candidate artifact and blocking five,
+and a ten-gate assurance suite over control software for a surgical humanoid
+cleared reproducibly from a fixed seed, each gate bound to a published external
+standard \cite{kawchak2026vvuq01, kawchak2026vvuq02}.}
+
+\uscprov{1}{\textbf{(d) The Closest Existing Analogues.} The predetermined change
+control plan authority in section 515C of the Federal Food, Drug, and Cosmetic
+Act (21 U.S.C. 360e-4) and the Food and Drug Administration final guidance on such
+plans for artificial-intelligence-enabled device software functions are the
+closest existing analogues to validating a change before deployment, but each
+remains voluntary, submission-based, and neither automated nor required in
+advance of generation. The Quality Management System Regulation (part 820 of
+title 21, Code of Federal Regulations), effective February 2, 2026, and the
+electronic-records requirements of part 11 of such title supply quality and
+record-integrity scaffolding but with no rule that verification precedes
+generation \cite{fda-pccp-2024, fr-qmsr-2024}.}
+
+\uscprov{1}{\textbf{(e) A Recognized Standards Basis.} Recognized consensus
+standards, including ASME V\&V 40-2018, the Food and Drug Administration guidance
+assessing the credibility of computational modeling, NASA-STD-7009A, IEEE Std
+7009-2024, IEC 80601-2-77, ISO 14971, and ISO/TS 15066, supply the credibility
+framework, dispersion bounds, fail-safe requirements, and biomechanical contact
+limits to which an automated gate may be bound \cite{asmevv40, fda-credibility-2023,
+nasastd7009, isots15066}.}
+
+\uscprov{1}{\textbf{(f) Human-Over-AI Review Is Already Widely Adopted.}
+Human-over-AI review is already widely adopted in State law, including the
+California Physicians Make Decisions Act (Senate Bill 1120), the Illinois Wellness
+and Oversight for Psychological Resources Act (House Bill 1806), the Texas
+Responsible Artificial Intelligence Governance Act (House Bill 149), and Maryland
+House Bill 820, and the strongest Federal precedent for mandatory human-over-AI
+oversight is the Medicare Advantage artificial-intelligence guardrail (section
+422.101(c) of title 42, Code of Federal Regulations) \cite{ca-sb1120, il-hb1806,
+tx-hb149, md-hb820, cms-4201-ma}.}
+
+\uscprov{1}{\textbf{(g) Modernization, Nondiscrimination, and Classification.} As
+clinical investigation moves toward real-time and decentralized designs governed
+by harmonized good clinical practice, manual review cannot keep pace with the
+volume of machine-generated control code, and an automated gate that clears
+before generation serves that modernization. The acceleration the four works show
+is set against the conventional path in Figure 2. Federal nondiscrimination law,
+including section 92.210 of title 45, Code of Federal Regulations, title VI of the
+Civil Rights Act of 1964 (42 U.S.C. 2000d), and the Americans with Disabilities
+Act of 1990 (42 U.S.C. 12101 et seq.), requires that a patient-facing algorithm
+minimize the risk of bias and respect accessibility, and the
+artificial-intelligence taxonomy maintained by the American Medical Association
+provides a graduated spine for matching verification rigor to the degree of
+autonomy of a device \cite{iche6r3, cfr-92-210, usc-titlevi, usc-ada,
+cpt-appendix-s}.}
+
+\begin{asciifig}
+Conventional path (months to years)        This directory (about 11 days)
++-----------------------------------+      +-------------------------------------+
+| Method paper drafting   ~months   |      | VVUQ-01  v0.1.0 -> v0.6.0  ~5 days  |
+| Verified robotics code  6-18 mo   |  vs  | VVUQ-02  v0.7.0 -> v1.2.0  ~2 days  |
+| Peer-style manuscript   ~months   |      | VVUQ-03  v1.3.0 -> v1.4.0  ~1 day   |
+| Federal bill + counsel  mo-years  |      | VVUQ-04  v2.0.0 -> v2.3.0  ~2 days  |
++-----------------------------------+      +-------------------------------------+
+years of serial effort                     days of autonomous, real-time work
+                                           reaching the final VVUQ-04 amendment
+\end{asciifig}
+\vspace{-0.7cm}
+\figcaption{Figure 2. Accelerated timeline versus conventional methods. The
+conventional months-to-years path\\beside the about eleven days of autonomous,
+real-time work that produced VVUQ-01 through VVUQ-04.}
