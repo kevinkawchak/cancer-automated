@@ -179,8 +179,8 @@ Each is a separate, complete, submission-quality Markdown document under
 ## Lineage
 
 ```
-VVUQ-01 + VVUQ-02              VVUQ-03 bill (v1.0)         VVUQ-04 amendment (v2.0)
-(method + hard proof)          H. R. 9510 standalone       H. R. 9510 FD&C amendment
+VVUQ-01 + VVUQ-02              VVUQ-03 bill (v1.0)           VVUQ-04 amendment (v2.0)
+(method + hard proof)          H. R. 9510 standalone         H. R. 9510 FD&C amendment
         |                              |                              |
         |   figures-bill (every ASCII diagram + table)                |
         |   next-steps   (the submission deliverables)                |
