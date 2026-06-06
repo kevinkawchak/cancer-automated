@@ -12,7 +12,7 @@
 
 > **Thesis.** Production-ready, scalable, and automated Physical AI oncology trial daily deliverables are obtained based on established methods for generating instructions, code, code execution, and creating papers, and are further automated, accelerated, and the VVUQ is improved.
 
-**6/3: v3.1.0 (H. R. 9510 Bill v3.0, Visual Amendment)** [Bill v3.0 PDF](https://doi.org/10.5281/zenodo.20535429) Source Files, and Deliverables A LaTeX **finished visual amendment** of **H. R. 9510**, the *Verification Before
+**6/3 [Bill v3.0 PDF](https://doi.org/10.5281/zenodo.20535429): v3.1.0 (H. R. 9510 Bill v3.0, Visual Amendment)** Source Files, and Deliverables A LaTeX **finished visual amendment** of **H. R. 9510**, the *Verification Before
 Generation in Physical AI Oncology Trials Act of 2026*. Final v3.0 bill and deliverables directory. [papers/VVUQ-05/final-bill](papers/VVUQ-05/final-bill).
 
 **6/3: v3.1.0 (H. R. 9510 Bill v3.0, Visual Amendment)** Adds [papers/VVUQ-05/full-bill](papers/VVUQ-05/full-bill): the finished LaTeX visual amendment of **H. R. 9510**, rendering eleven centered, white-background text figures and ten body-width tables from the v3.0 scaffold, carrying the full operative section 515D and the ten conforming amendments, with thirteen submission deliverables and compile zip.
