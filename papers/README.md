@@ -14,10 +14,7 @@ from a method, to a hard engineering proof, to a manuscript, and finally to a
 ready-to-introduce United States bill. Each work is built on the one before it.
 Together they are a reproducible **evidence to law** pipeline for the new
 Physical AI oncology trial industry, where the central principle is
-**verification before generation**: an automated verification, validation, and
-uncertainty quantification (VVUQ) process, held to a higher standard than code
-generation, must clear robot-patient interaction code before that code is
-generated or executed.
+**verification before generation**.
 
 > **Thesis carried across all four works.** The large language model VVUQ
 > process needs to be more substantial than automated code generation itself, as
