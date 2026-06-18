@@ -117,7 +117,9 @@ execution, paper) and a complete execution record. The execution leg runs all 15
 example scripts to exit 0, passes 51 of 51 tests with zero skipped, keeps the
 lint-and-format surface clean, and reports the full VVUQ gate decision surface (1
 ACCEPT, 5 BLOCK, 1 ESCALATE) along with a 2.5x schedule acceleration and the
-2030 PDAC 60-second Whipple pilot reference. Ten publication figures are
+2030 PDAC 60-second Whipple pilot reference. 
+
+Ten publication figures are
 specified before any pixel is rendered (the image-generation analog of the gate)
 and then rendered as self-contained matplotlib scripts, before the draft
 scaffold is processed into a full, 70-page manuscript with 18 tables and 29
@@ -138,7 +140,9 @@ hands and no teleoperation. Because one body concentrates all error potential,
 the assurance layer must be more substantial than the control code, and a
 candidate behavior must clear 10 humanoid-specific gates bound to external
 standards (ASME V&V 40, IEC 80601-2-77, ISO 13482, ISO/TS 15066, and more)
-before it ships. Claude generated the standalone codebase (v0.7.0), executed the
+before it ships. 
+
+Claude generated the standalone codebase (v0.7.0), executed the
 whole tree (v0.8.0, 172 of 172 tests, byte-identical determinism from seed
 20260525, a 32 of 32 iteration sweep at composite mean 93.56), specified and
 rendered 15 figures (v0.9.0 and v1.0.0), then processed the draft scaffold
@@ -159,6 +163,7 @@ template-paper that adapts the structure of 21 CFR Part 312, with instruction
 generation drawing on multiple AI models, and a draft scaffold of bracketed
 instructions processed into a finished bill of 15 sections and 21 body-width
 tables grounded in the 1790-line `comparison.json` and 1001-row sensor stream.
+
 The Draft Statutory Text codifies verification before generation, the ten-gate
 threshold schedule bound to the external standards, and the PSL and USL readiness
 gates.
@@ -178,6 +183,7 @@ research head start (instruct-bill: 10 markdown summaries plus 5 BibTeX files,
 145 entries, current through May 31, 2026) and a faithful LaTeX reproduction of
 the 11 relevant Title 21 device sections (template-bill) feed a draft amendment
 scaffold (draft-bill), which is processed into the finished amendment (full-bill).
+
 The operative mechanism is a new section 515D of the Act (21 U.S.C. § 360e-5),
 inserted after the predetermined change control plan keystone (§ 360e-4), with
 ten conforming amendments threaded through the surrounding device provisions and a
