@@ -27,9 +27,9 @@ Generation in Physical AI Oncology Trials Act of 2026*. Final v3.0 bill and deli
 
 **5/31: v2.1.0 (VVUQ-04 Template Bill, LaTeX)** Adds [papers/VVUQ-04/template-bill/LaTeX](papers/VVUQ-04/template-bill/LaTeX): a LaTeX template bill that reproduces the look and feel of the official United States Code, Title 21 - Food and Drugs (current through Public Law 119-93), reduced from 29 chapters and 757 sections to the 11 Federal Food, Drug, and Cosmetic Act device sections. 
 
-**5/31: v2.0.0 (VVUQ-04 Instruct Bill)** Adds [papers/VVUQ-04/instruct-bill](papers/VVUQ-04/instruct-bill): structured U.S. medical AI bill and law summaries current through May 31, 2026 that make the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510) more current, better grounded, and XML-ready. Ten markdown files cover federal statutes, FDA device regulation, ONC algorithm transparency, CMS payment, and privacy.
+**5/31: v2.0.0 (VVUQ-04 Instruct Bill)** Adds [papers/VVUQ-04/instruct-bill](papers/VVUQ-04/instruct-bill): structured U.S. medical AI bill and law summaries current through May 31, 2026 that make the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510) more current, better grounded, and XML-ready. Ten markdown files cover federal statutes and FDA device regulation.
 
-**5/30 [Final PDF](https://doi.org/10.5281/zenodo.20454870): v1.4.0 (VVUQ-03 Final Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). Every bracketed instruction becomes finished legislative prose.
+**5/30 [Final PDF](https://doi.org/10.5281/zenodo.20454870): v1.4.0 (VVUQ-03 Final Paper)** Processes the v1.3.0 scaffold into the full, Overleaf-compilable bill under [papers/VVUQ-03/full-paper](papers/VVUQ-03/full-paper): the *VVUQ Physical AI Oncology Trial Bill* (H.R. 9510, 119th Congress, 2d Session; Draft 1.0). 
 
 **5/30: v1.3.0 (VVUQ-03 Draft Paper)** Adds [papers/VVUQ-03/draft-paper](papers/VVUQ-03/draft-paper): a compilable single column LaTeX scaffold for the *VVUQ Physical AI Oncology Trial Bill* (Draft 1.0), a proposed U.S. law requiring the VVUQ verification process to clear robot-patient interaction code before that code is generated.
 
