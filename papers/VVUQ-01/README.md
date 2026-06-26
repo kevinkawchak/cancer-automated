@@ -16,7 +16,7 @@ governing thesis of the whole directory: the large language model VVUQ process
 must be held to a higher standard than the code generation it checks. It pairs a
 method paper, *Two Stage VVUQ Oncology Clinical Trial Verification Automation
 Priority over Existing Generated Code*, with a working pipeline and a complete,
-honest execution record. This README focuses only on the VVUQ-01 directory.
+honest execution record.
 
 > **Thesis.** The LLM VVUQ process needs to be more substantial than the
 > automated code generation itself, as well as subsequent code execution, chart
