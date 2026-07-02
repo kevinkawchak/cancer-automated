@@ -138,22 +138,22 @@ The thesis above is realized by a pipeline that runs the five established method
 ## Daily Deliverable Pipeline
 
 ```
-  Inputs                     Five Established Methods           Assured Output
-  (web + PDF)            --> (per daily deliverable)        --> (committed + archived)
-  +-------------------+      +---------------------------+      +-------------------+
-  | Web search        |  ->  | 1. Instruction generation |  ->  | Daily deliverable |
-  | PDF processing    |      | 2. Code generation        |      | committed to Git  |
-  | Autochunk to 200K |      | 3. Code execution         |      | with per-chunk    |
-  | READMEs per chunk |      | 4. Paper assembly         |      | READMEs at 200K   |
-  +-------------------+      +---------------------------+      +-------------------+
-            |                             |                               ^
-            v                             v                               |
-  +-------------------+      +---------------------------+      +-------------------+
-  | Non-stop commit   |      | Triple simulation         |      | VVUQ gate         |
-  | scheduler 24/day  |  ->  | run each project 3 times, |  ->  | V and V and UQ,   |
-  | autonomous cadence|      | consensus across runs     |      | stricter than     |
-  |                   |      |                           |      | code generation   |
-  +-------------------+      +---------------------------+      +-------------------+
+  Inputs                      Five Established Methods           Assured Output
+  (web + PDF)            -->  (per daily deliverable)        --> (committed + archived)
+  +-------------------+       +---------------------------+      +-------------------+
+  | Web search        |  ->   | 1. Instruction generation |  ->  | Daily deliverable |
+  | PDF processing    |       | 2. Code generation        |      | committed to Git  |
+  | Autochunk to 200K |       | 3. Code execution         |      | with per-chunk    |
+  | READMEs per chunk |       | 4. Paper assembly         |      | READMEs at 200K   |
+  +-------------------+       +---------------------------+      +-------------------+
+            |                              |                               ^
+            v                              v                               |
+  +-------------------+       +---------------------------+      +-------------------+
+  | Non-stop commit   |       | Triple simulation         |      | VVUQ gate         |
+  | scheduler 24/day  |  ->   | run each project 3 times, |  ->  | V and V and UQ,   |
+  | autonomous cadence|       | consensus across runs     |      | stricter than     |
+  |                   |       |                           |      | code generation   |
+  +-------------------+       +---------------------------+      +-------------------+
 ```
 
 ## Two-Stage Roadmap
