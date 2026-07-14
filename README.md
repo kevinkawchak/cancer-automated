@@ -110,7 +110,7 @@ The finished bill also resolves the cover-figure issue: in the style file each A
                           thirteen submission deliverables + Overleaf-ready zip
 ```
 
-The submission package under [papers/VVUQ-05/full-bill/deliverables](papers/VVUQ-05/full-bill/deliverables) holds thirteen standalone, submission-quality Markdown documents. The Bill v3.0 DOI is [10.5281/zenodo.xxxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxxx). See the [full-bill README](papers/VVUQ-05/full-bill) for the badges, repository structure, figure and table inventory, and the Overleaf compile recipe.
+The submission package under [papers/VVUQ-05/full-bill/deliverables](papers/VVUQ-05/full-bill/deliverables) holds thirteen standalone, submission-quality Markdown documents. See the [full-bill README](papers/VVUQ-05/full-bill) for the badges, repository structure, figure and table inventory, and the Overleaf compile recipe.
 
 ## H. R. 9510 Bill v3.0 (Visual Draft)
 
