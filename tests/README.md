@@ -21,14 +21,22 @@ which keeps CI green when only core dependencies are available.
 install (pytest plus pyyaml).
 
 ### test_ingestion.py
-
+- Tests for robust web search and PDF processing.
 
 ### test_physical_ai.py
+- Tests for the Stage 2 deployment references.
 
 ### test_pipeline.py
+- Tests for the daily-deliverable pipeline (the five established methods).
+
+- Modules are loaded by file path through the conftest ``load_module`` helper, so
+the hyphen-free ``pipeline/`` modules import cleanly without packaging.
+
 
 ### test_scheduler.py
+- Tests for the non-stop commit scheduler.
 
 ### test_simulation.py
+- 
 
 ### test_vvuq.py
