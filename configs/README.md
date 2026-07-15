@@ -1,4 +1,4 @@
-## Cancer-Automated configs
+## Cancer-Automated Configs
 
 #### pipeline_config.yaml
 - Daily-deliverable pipeline configuration for cancer-automated.
