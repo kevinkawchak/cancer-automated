@@ -32,11 +32,11 @@ install (pytest plus pyyaml).
 - Modules are loaded by file path through the conftest ``load_module`` helper, so
 the hyphen-free ``pipeline/`` modules import cleanly without packaging.
 
-
 ### test_scheduler.py
 - Tests for the non-stop commit scheduler.
 
 ### test_simulation.py
-- 
+- Tests for triple simulation and consensus.
 
 ### test_vvuq.py
+- Tests for the VVUQ framework and gate.
